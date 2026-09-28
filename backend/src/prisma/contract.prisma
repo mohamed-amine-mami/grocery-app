@@ -1,0 +1,18 @@
+// use prisma-8
+
+enum UserRole {
+  CUSTOMER
+  OWNER
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  passwordHash   String
+  name           String
+  phone          String?
+  whatsappNumber String?
+  role           UserRole @default(CUSTOMER)
+  createdAt      TimestamptzString @default(now())
+  updatedAt      temporal.updatedAtString()
+}
