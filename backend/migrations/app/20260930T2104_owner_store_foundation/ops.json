@@ -1,0 +1,276 @@
+[
+  {
+    "id": "column.public.Store.isOpen",
+    "label": "Add column \"isOpen\" to \"Store\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "isOpen",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"isOpen\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "isOpen"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"isOpen\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ADD COLUMN \"isOpen\" bool DEFAULT false NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"isOpen\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "isOpen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.Store.address",
+    "label": "Add column \"address\" to \"Store\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "address",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"address\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "address"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"address\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ADD COLUMN \"address\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"address\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "address"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data.Store.address.backfill",
+    "label": "Backfill missing Store.address with a placeholder the owner can edit",
+    "operationClass": "data",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Store"
+      }
+    },
+    "precheck": [],
+    "execute": [
+      {
+        "description": "Backfill missing Store.address with a placeholder the owner can edit",
+        "sql": "UPDATE \"public\".\"Store\" SET \"address\" = 'Adresse à renseigner' WHERE \"address\" IS NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify no NULL Store.address",
+        "sql": "SELECT NOT EXISTS (SELECT 1 FROM \"public\".\"Store\" WHERE \"address\" IS NULL) AS \"result\""
+      }
+    ]
+  },
+  {
+    "id": "alterNullability.setNotNull.Store.address",
+    "label": "Set NOT NULL on \"Store\".\"address\"",
+    "operationClass": "destructive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "address",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"address\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "address"
+        ]
+      },
+      {
+        "description": "ensure no NULL values in \"address\"",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"public\".\"Store\" WHERE \"address\" IS NULL) AS \"result\"",
+        "params": []
+      }
+    ],
+    "execute": [
+      {
+        "description": "set NOT NULL on \"address\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ALTER COLUMN \"address\" SET NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"address\" is NOT NULL",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3 AND \"is_nullable\" = $4)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "address",
+          "NO"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data.User.phoneNumber.backfill",
+    "label": "Give phone-less legacy users a unique placeholder (they could never log in by phone)",
+    "operationClass": "data",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "User"
+      }
+    },
+    "precheck": [],
+    "execute": [
+      {
+        "description": "Give phone-less legacy users a unique placeholder (they could never log in by phone)",
+        "sql": "UPDATE \"public\".\"User\" SET \"phoneNumber\" = 'inconnu-' || \"id\" WHERE \"phoneNumber\" IS NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify no NULL User.phoneNumber",
+        "sql": "SELECT NOT EXISTS (SELECT 1 FROM \"public\".\"User\" WHERE \"phoneNumber\" IS NULL) AS \"result\""
+      }
+    ]
+  },
+  {
+    "id": "alterNullability.setNotNull.User.phoneNumber",
+    "label": "Set NOT NULL on \"User\".\"phoneNumber\"",
+    "operationClass": "destructive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "phoneNumber",
+        "table": "User"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"phoneNumber\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "phoneNumber"
+        ]
+      },
+      {
+        "description": "ensure no NULL values in \"phoneNumber\"",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"public\".\"User\" WHERE \"phoneNumber\" IS NULL) AS \"result\"",
+        "params": []
+      }
+    ],
+    "execute": [
+      {
+        "description": "set NOT NULL on \"phoneNumber\"",
+        "sql": "ALTER TABLE \"public\".\"User\" ALTER COLUMN \"phoneNumber\" SET NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"phoneNumber\" is NOT NULL",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3 AND \"is_nullable\" = $4)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "phoneNumber",
+          "NO"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "checkConstraint.Store.store_coordinates_together_5072a0f2",
+    "label": "Add check constraint \"store_coordinates_together_5072a0f2\" on \"Store\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "checkConstraint",
+        "name": "store_coordinates_together_5072a0f2",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"store_coordinates_together_5072a0f2\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "store_coordinates_together_5072a0f2",
+          "public",
+          "\"public\".\"Store\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add check constraint \"store_coordinates_together_5072a0f2\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ADD CONSTRAINT \"store_coordinates_together_5072a0f2\" CHECK ((latitude IS NULL) = (longitude IS NULL))"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"store_coordinates_together_5072a0f2\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "store_coordinates_together_5072a0f2",
+          "public",
+          "\"public\".\"Store\""
+        ]
+      }
+    ]
+  }
+]

@@ -1,18 +1,86 @@
 // use prisma-8
 
 enum UserRole {
-  CUSTOMER
   OWNER
+  CLIENT
+}
+
+/// How a product is priced. Quantities are integers in the unit's base:
+/// PIECE = pieces, KG = grams, L = millilitres.
+enum SaleUnit {
+  PIECE
+  KG
+  L
 }
 
 model User {
   id             Int      @id @default(autoincrement())
-  email          String   @unique
-  passwordHash   String
   name           String
-  phone          String?
+  email          String   @unique
+  password       String
+  phoneNumber    String   @unique
   whatsappNumber String?
-  role           UserRole @default(CUSTOMER)
+  photo          String?
+  role           UserRole @default(CLIENT)
   createdAt      TimestamptzString @default(now())
   updatedAt      temporal.updatedAtString()
+}
+
+model Store {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  photo       String?
+  address     String
+  latitude    Float?
+  longitude   Float?
+  isOpen      Boolean  @default(false)
+  ownerId     Int      @unique
+  owner       User     @relation(fields: [ownerId], references: [id])
+  createdAt   TimestamptzString @default(now())
+  updatedAt   temporal.updatedAtString()
+
+  @@check(expression: "(latitude IS NULL) = (longitude IS NULL)", name: "store_coordinates_together")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  storeId   Int
+  store     Store    @relation(fields: [storeId], references: [id])
+  name      String
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  @@index(expression: "\"storeId\", lower(\"name\")", unique: true, name: "category_store_name_unique")
+}
+
+model Product {
+  id            Int      @id @default(autoincrement())
+  storeId       Int
+  store         Store    @relation(fields: [storeId], references: [id])
+  categoryId    Int?
+  category      Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  name          String
+  description   String?
+  photo         String?
+  saleUnit      SaleUnit
+  priceMillimes Int
+  minQuantity   Int
+  quantityStep  Int
+  maxQuantity   Int?
+  isAvailable   Boolean  @default(true)
+  archivedAt    TimestamptzString?
+  createdAt     TimestamptzString @default(now())
+  updatedAt     temporal.updatedAtString()
+
+  // Names are unique among a store's *active* products; archived ones free the name.
+  @@index(expression: "\"storeId\", lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL)", name: "product_store_active_name_unique")
+  @@index([storeId, categoryId])
+  @@check(expression: "length(btrim(\"name\")) > 0", name: "product_name_not_blank")
+  @@check(expression: "\"priceMillimes\" > 0", name: "product_price_positive")
+  @@check(expression: "\"minQuantity\" > 0", name: "product_min_quantity_positive")
+  @@check(expression: "\"quantityStep\" > 0", name: "product_quantity_step_positive")
+  @@check(expression: "\"minQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "product_min_aligned_to_step")
+  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" >= \"minQuantity\"", name: "product_max_not_below_min")
+  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "product_max_aligned_to_step")
 }
