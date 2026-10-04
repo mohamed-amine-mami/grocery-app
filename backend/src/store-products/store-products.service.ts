@@ -305,8 +305,13 @@ export class StoreProductsService {
       );
     }
     try {
-      const updated = await query.update(columns);
-      if (updated) {
+      // `updateAndCount`, not `update`: the ORM's single-row `update()` picks the
+      // row first and then updates it by id, so after waiting for a concurrent
+      // writer it would apply the edit even though the stock check no longer
+      // holds. `updateAndCount` is one conditional UPDATE the database
+      // re-checks, so a stale edit changes nothing.
+      const updated = await query.updateAndCount(columns);
+      if (updated > 0) {
         return toStoreProductEntity(await this.findRow(storeId, id));
       }
     } catch (error) {

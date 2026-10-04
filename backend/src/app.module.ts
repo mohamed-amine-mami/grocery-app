@@ -7,6 +7,8 @@ import { StoresModule } from './stores/stores.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { CatalogModule } from './catalog/catalog.module.js';
 import { StoreProductsModule } from './store-products/store-products.module.js';
+import { CustomerCatalogModule } from './customer-catalog/customer-catalog.module.js';
+import { OrdersModule } from './orders/orders.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -24,6 +26,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     AuthModule,
     CatalogModule,
     StoreProductsModule,
+    OrdersModule,
+    CustomerCatalogModule,
   ],
   controllers: [AppController],
   providers: [AppService],

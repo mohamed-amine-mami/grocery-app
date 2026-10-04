@@ -27,13 +27,26 @@ const EXPECTED_ROUTES = [
   'GET /owner/catalog/products',
   'GET /owner/store',
   'GET /owner/store-products',
+  'GET /owner/orders',
+  'GET /owner/orders/{id}',
   'GET /owner/store-products/{id}',
+  'GET /orders',
+  'GET /orders/{id}',
+  'GET /stores',
+  'GET /stores/{id}/products',
   'PATCH /owner/store',
   'PATCH /owner/store-products/{id}',
   'PATCH /owner/store-products/{id}/availability',
   'POST /auth/login',
   'POST /auth/register',
   'POST /owner/store',
+  'POST /orders',
+  'POST /orders/{id}/cancel',
+  'POST /owner/orders/{id}/cancel',
+  'POST /owner/orders/{id}/complete',
+  'POST /owner/orders/{id}/confirm',
+  'POST /owner/orders/{id}/no-show',
+  'POST /owner/orders/{id}/ready',
   'POST /owner/store-products',
   'POST /owner/store-products/{id}/restore',
 ];
@@ -82,8 +95,14 @@ describe('the route table', () => {
     for (const { path } of routes) {
       expect(path).not.toMatch(/\{(ownerId|storeId)\}/);
     }
-    expect(routes.some((route) => /^\/(users|stores)\b/.test(route.path))).toBe(
-      false,
+    expect(routes.some((route) => /^\/users\b/.test(route.path))).toBe(false);
+    // Customers only browse stores: nothing under /stores writes.
+    const storeRoutes = routes.filter((route) =>
+      /^\/stores\b/.test(route.path),
+    );
+    expect(storeRoutes.length).toBeGreaterThan(0);
+    expect(storeRoutes.map((route) => route.method)).toEqual(
+      storeRoutes.map(() => 'get'),
     );
   });
 });
@@ -106,16 +125,36 @@ describe('the global catalog has no write route', () => {
     ).toEqual([]);
   });
 
-  it('allows writes only on the store, the store products and auth', () => {
+  it('allows writes only on the store, the store products, orders and auth', () => {
     const writers = routes
       .filter((route) => route.method !== 'get')
       .map((route) => route.path.split('/').slice(0, 3).join('/'));
     expect([...new Set(writers)].sort()).toEqual([
       '/auth/login',
       '/auth/register',
+      '/orders',
+      '/orders/{id}',
+      '/owner/orders',
       '/owner/store',
       '/owner/store-products',
     ]);
+  });
+});
+
+describe('every customer route (/orders, /stores) is CLIENT-only', () => {
+  it('returns 403 for an authenticated OWNER', async () => {
+    const owner = await register('OWNER');
+    const customerRoutes = routes.filter((route) =>
+      /^\/(orders|stores)(\/|$)/.test(route.path),
+    );
+    expect(customerRoutes.length).toBeGreaterThan(0);
+    for (const { method, path, label } of customerRoutes) {
+      const response = await call(method, path).set(auth(owner)).send({});
+      expect({ label, status: response.status }).toEqual({
+        label,
+        status: 403,
+      });
+    }
   });
 });
 

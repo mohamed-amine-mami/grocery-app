@@ -37,14 +37,47 @@ export async function startApp(): Promise<void> {
   }).compile();
   app = moduleFixture.createNestApplication();
   setupApp(app);
-  await app.init();
+  // Listen once, on one port, for the whole suite. Left unbound, supertest
+  // opens and closes a fresh ephemeral port for every request; with hundreds
+  // of setup requests some of those connections were answered by an unrelated
+  // local listener (404/401/403 on public routes), which made suites flaky.
+  await app.listen(0, '127.0.0.1');
+}
+
+/** Deletes orders with their events and items (one row per `delete()` call). */
+async function deleteOrders(orders: { id: number }[]): Promise<void> {
+  for (const order of orders) {
+    for (const event of await db.orm.public.OrderStatusEvent.where({
+      orderId: order.id,
+    }).all()) {
+      await db.orm.public.OrderStatusEvent.select('id')
+        .where({ id: event.id })
+        .delete();
+    }
+    for (const item of await db.orm.public.OrderItem.where({
+      orderId: order.id,
+    }).all()) {
+      await db.orm.public.OrderItem.select('id')
+        .where({ id: item.id })
+        .delete();
+    }
+    await db.orm.public.Order.select('id').where({ id: order.id }).delete();
+  }
 }
 
 /** Removes everything the suite created (children first), then stops the app. */
 export async function stopApp(): Promise<void> {
   for (const id of createdUserIds) {
     const store = await db.orm.public.Store.first({ ownerId: id });
+    // Orders reference the customer, the store and its offerings (all Restrict),
+    // so they go first — together with their items and status events.
+    await deleteOrders(
+      await db.orm.public.Order.where({ customerId: id }).all(),
+    );
     if (store) {
+      await deleteOrders(
+        await db.orm.public.Order.where({ storeId: store.id }).all(),
+      );
       // `delete()` removes one row per call, so walk the store's offerings first
       // (they reference the store). Global catalog rows are shared and never
       // removed here — a suite that creates any removes them itself.
@@ -77,8 +110,12 @@ export async function register(role: Role): Promise<Account> {
       password: 'changeme123',
       phoneNumber,
       role,
-    })
-    .expect(201);
+    });
+  if (response.status !== 201) {
+    throw new Error(
+      `register failed: ${response.status} ${JSON.stringify(response.body)}`,
+    );
+  }
   createdUserIds.push(response.body.user.id);
   return {
     id: response.body.user.id,

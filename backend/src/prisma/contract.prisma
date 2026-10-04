@@ -13,6 +13,24 @@ enum SaleUnit {
   L
 }
 
+/// Where an order is in its life. Allowed transitions live in code, not here.
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  READY_FOR_PICKUP
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+/// Who caused an order status change.
+enum OrderActorType {
+  CLIENT
+  OWNER
+  SYSTEM
+  CHANNEL
+}
+
 model User {
   id             Int      @id @default(autoincrement())
   name           String
@@ -123,4 +141,90 @@ model StoreProduct {
   @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "store_product_max_aligned_to_step")
   @@check(expression: "\"stockQuantity\" IS NULL OR \"stockQuantity\" >= 0", name: "store_product_stock_not_negative")
   @@check(expression: "\"trackStock\" = (\"stockQuantity\" IS NOT NULL)", name: "store_product_stock_tracking_pairing")
+}
+
+/// One customer's order at one store. Pickup only, paid at the store, so there
+/// are no payment columns. History (confirmed, ready, cancelled by whom and why)
+/// lives in OrderStatusEvent, not in per-status columns. Orders are never
+/// deleted: every foreign key is Restrict.
+model Order {
+  id                Int               @id @default(autoincrement())
+  /// Short, human-friendly reference and pickup code. Not an authentication secret.
+  code              String            @unique
+  customerId        Int
+  customer          User              @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  storeId           Int
+  store             Store             @relation(fields: [storeId], references: [id], onDelete: Restrict)
+  status            OrderStatus       @default(PENDING)
+  /// Advisory pickup time, not a slot.
+  requestedPickupAt TimestamptzString
+  /// Sum of the lines that are not removed, in millimes; computed by the server.
+  totalMillimes     Int
+  /// Chosen by the client for one creation attempt; unique per customer.
+  idempotencyKey    String
+  createdAt         TimestamptzString @default(now())
+  updatedAt         temporal.updatedAtString()
+
+  @@unique([customerId, idempotencyKey])
+  @@index([storeId, status])
+  @@index([customerId, createdAt])
+  @@check(expression: "\"code\" ~ '^[A-Z0-9]{4,12}$'", name: "order_code_format")
+  @@check(expression: "\"totalMillimes\" > 0", name: "order_total_positive")
+  @@check(expression: "length(btrim(\"idempotencyKey\")) > 0 AND length(\"idempotencyKey\") <= 100", name: "order_idempotency_key_valid")
+  @@check(expression: "\"requestedPickupAt\" > \"createdAt\"", name: "order_pickup_after_creation")
+}
+
+/// A historical order line: name, unit and price are snapshots, so the order
+/// stays readable whatever happens to the catalog. A removed line stays here
+/// with removedAt set and no longer counts toward the total.
+model OrderItem {
+  id                       Int               @id @default(autoincrement())
+  orderId                  Int
+  order                    Order             @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  storeProductId           Int
+  storeProduct             StoreProduct      @relation(fields: [storeProductId], references: [id], onDelete: Restrict)
+  productNameSnapshot      String
+  saleUnitSnapshot         SaleUnit
+  /// Price of ONE sale unit when the order was placed, in millimes.
+  unitPriceMillimes        Int
+  /// Requested quantity in base units (pieces / g / mL).
+  quantity                 Int
+  lineTotalMillimes        Int
+  /// How much stock was actually taken from the StoreProduct for this line:
+  /// 0 for an untracked product. A historical fact; never derived from the
+  /// StoreProduct's current stock.
+  stockDecrementedQuantity Int               @default(0)
+  removedAt                TimestamptzString?
+  createdAt                TimestamptzString @default(now())
+
+  @@unique([orderId, storeProductId])
+  @@check(expression: "length(btrim(\"productNameSnapshot\")) > 0", name: "order_item_name_not_blank")
+  @@check(expression: "\"unitPriceMillimes\" > 0", name: "order_item_price_positive")
+  @@check(expression: "\"quantity\" > 0", name: "order_item_quantity_positive")
+  @@check(expression: "\"lineTotalMillimes\" >= 0", name: "order_item_line_total_not_negative")
+  @@check(expression: "\"stockDecrementedQuantity\" >= 0 AND \"stockDecrementedQuantity\" <= \"quantity\"", name: "order_item_stock_decrement_within_quantity")
+}
+
+/// Append-only history of an order's status changes. Written in the same
+/// transaction as the change; never updated or deleted (hence no updatedAt).
+model OrderStatusEvent {
+  id         Int               @id @default(autoincrement())
+  orderId    Int
+  order      Order             @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  /// Null only for the creation event.
+  fromStatus OrderStatus?
+  toStatus   OrderStatus
+  actorType  OrderActorType
+  /// The user behind a CLIENT or OWNER action; null for SYSTEM.
+  actorId    Int?
+  actor      User?             @relation(fields: [actorId], references: [id], onDelete: Restrict)
+  reason     String?
+  createdAt  TimestamptzString @default(now())
+
+  @@index([orderId, createdAt])
+  @@check(expression: "\"fromStatus\" IS NOT NULL OR \"toStatus\" = 'PENDING'", name: "order_event_creation_is_pending")
+  @@check(expression: "\"fromStatus\" IS NULL OR \"fromStatus\" <> \"toStatus\"", name: "order_event_status_changes")
+  @@check(expression: "\"actorType\" NOT IN ('CLIENT', 'OWNER') OR \"actorId\" IS NOT NULL", name: "order_event_user_actor_has_id")
+  @@check(expression: "\"actorType\" <> 'SYSTEM' OR \"actorId\" IS NULL", name: "order_event_system_has_no_actor")
+  @@check(expression: "\"reason\" IS NULL OR (length(btrim(\"reason\")) > 0 AND length(\"reason\") <= 500)", name: "order_event_reason_valid")
 }

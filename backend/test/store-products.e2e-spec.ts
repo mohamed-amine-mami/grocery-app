@@ -1,5 +1,6 @@
 import request from 'supertest';
 import { db } from '../src/prisma/db.js';
+import { warmPool } from './order-test-helpers.js';
 import {
   archiveCategory,
   archiveProduct,
@@ -811,6 +812,35 @@ describe('stock', () => {
       const after = await stockOf(owner, created.id);
       expect(after.stockQuantity).toBe(17_500);
       expect(after.priceMillimes).toBe(created.priceMillimes);
+    });
+
+    it('lets only one of several simultaneous edits win (the guard is atomic)', async () => {
+      const owner = await freshOwner();
+      const created = await added(owner, 'banane', {
+        trackStock: true,
+        stockQuantity: 20_000,
+      });
+      await warmPool();
+
+      // Six edits, all loaded when the stock was 20 000. Only the first to be
+      // applied may succeed: the others must see the stock has changed, or
+      // they would silently overwrite it (and, with orders, an order's decrement).
+      const edits = await Promise.all(
+        Array.from({ length: 6 }, (_, index) =>
+          patch(owner, created.id, {
+            stockQuantity: 1000 * (index + 1),
+            expectedStockQuantity: 20_000,
+          }),
+        ),
+      );
+
+      const statuses = edits.map((response) => response.status);
+      expect(statuses.filter((status) => status === 200)).toHaveLength(1);
+      expect(statuses.filter((status) => status === 409)).toHaveLength(5);
+      const winner = edits.findIndex((response) => response.status === 200);
+      expect((await stockOf(owner, created.id)).stockQuantity).toBe(
+        1000 * (winner + 1),
+      );
     });
 
     it('answers 409 when tracking was switched on meanwhile', async () => {

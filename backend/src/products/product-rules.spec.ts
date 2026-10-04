@@ -3,6 +3,7 @@ import {
   isOrderable,
   lineTotalMillimes,
   quantityRuleErrors,
+  requestedQuantityErrors,
   saleUnitErrors,
   stockErrors,
   unavailabilityReason,
@@ -435,5 +436,84 @@ describe('unavailabilityReason', () => {
                   unavailabilityReason(input) === null,
                 );
               }
+  });
+});
+
+describe('requestedQuantityErrors', () => {
+  const kg = rules({ minQuantity: 500, quantityStep: 100, maxQuantity: 2_000 });
+
+  it.each([500, 600, 1_000, 2_000])('accepts %i g', (quantity) => {
+    expect(requestedQuantityErrors(quantity, kg)).toEqual([]);
+  });
+
+  it('rejects below the minimum', () => {
+    expect(requestedQuantityErrors(400, kg)).toEqual([
+      'quantity must be at least 500 grams',
+    ]);
+  });
+
+  it('rejects above the maximum', () => {
+    expect(requestedQuantityErrors(2_100, kg)).toEqual([
+      'quantity must be at most 2000 grams',
+    ]);
+  });
+
+  it('accepts any size when there is no maximum', () => {
+    expect(
+      requestedQuantityErrors(50_000, rules({ maxQuantity: null })),
+    ).toEqual([]);
+  });
+
+  it('rejects a quantity off the step', () => {
+    expect(requestedQuantityErrors(550, kg)).toEqual([
+      'quantity must be a multiple of 100 grams',
+    ]);
+  });
+
+  it('reports every violated rule', () => {
+    expect(requestedQuantityErrors(250, kg)).toEqual([
+      'quantity must be at least 500 grams',
+      'quantity must be a multiple of 100 grams',
+    ]);
+  });
+
+  it.each([0, -100, 1.5, Number.NaN])('rejects %s', (quantity) => {
+    expect(requestedQuantityErrors(quantity, kg)).toEqual([
+      'quantity must be a positive integer (in grams)',
+    ]);
+  });
+
+  it('names the unit: pieces and millilitres', () => {
+    const eggs = rules({
+      saleUnit: SaleUnit.PIECE,
+      minQuantity: 6,
+      quantityStep: 6,
+      maxQuantity: 24,
+    });
+    expect(requestedQuantityErrors(12, eggs)).toEqual([]);
+    expect(requestedQuantityErrors(7, eggs)).toEqual([
+      'quantity must be a multiple of 6 pieces',
+    ]);
+    const milk = rules({
+      saleUnit: SaleUnit.L,
+      minQuantity: 500,
+      quantityStep: 250,
+    });
+    expect(requestedQuantityErrors(250, milk)).toEqual([
+      'quantity must be at least 500 millilitres',
+    ]);
+  });
+
+  it('agrees with the documented orderable list: min, min + step, …', () => {
+    const r = rules({
+      minQuantity: 500,
+      quantityStep: 250,
+      maxQuantity: 1_500,
+    });
+    const orderable = [];
+    for (let q = 1; q <= 2_000; q += 1) {
+      if (requestedQuantityErrors(q, r).length === 0) orderable.push(q);
+    }
+    expect(orderable).toEqual([500, 750, 1_000, 1_250, 1_500]);
   });
 });

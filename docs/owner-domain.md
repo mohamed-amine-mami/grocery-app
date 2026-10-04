@@ -45,7 +45,7 @@ Owners never create or manage global Categories or Products, and there is no Adm
 
 - **Rules** (units, quantity granularity, stock validation, the derived `isOrderable` and `unavailabilityReason`, `lineTotalMillimes`) are defined in `backend/src/products/product-rules.ts`. Dart mirrors the unit rules and validation, tested on the same cases.
 - **Orderability.** The backend's `isOrderable` / `unavailabilityReason` (`ARCHIVED`, `OWNER_DISABLED`, `CATALOG_ARCHIVED`, `OUT_OF_STOCK`, `STOCK_BELOW_MINIMUM`) is the only source of truth for what customers can order. Flutter displays it and never computes it, and never changes the owner's `isAvailable` because of stock.
-- **Stock** belongs to the StoreProduct. Editing `trackStock` or `stockQuantity` requires `expectedStockQuantity` (`null` if untracked); if the stock changed meanwhile the response is 409 `STOCK_CHANGED` with `currentStockQuantity`, and nothing is applied. With tracking on and a stock of 0 the backend makes the product unorderable (`OUT_OF_STOCK`) while the owner's switch is untouched; with tracking off, stock plays no part.
+- **Stock** belongs to the StoreProduct and means the quantity available for new orders (net of open orders once orders exist; see `orders.md`). Editing `trackStock` or `stockQuantity` requires `expectedStockQuantity` (`null` if untracked); if the stock changed meanwhile the response is 409 `STOCK_CHANGED` with `currentStockQuantity`, and nothing is applied. With tracking on and a stock of 0 the backend makes the product unorderable (`OUT_OF_STOCK`) while the owner's switch is untouched; with tracking off, stock plays no part.
 - **Importer** (`npm run catalog:import`, `--dry-run` first). It validates the whole file before writing, matches Categories and Products by `slug` (a changed name updates the same row), applies everything in one transaction, and is idempotent. A catalog entry is archived only when the file flags it `"archived": true` (leaving it out does nothing); the report warns about the active store products an archive affects. It only writes Category and Product, never StoreProduct.
 - **Stock edits** go through `PATCH /owner/store-products/:id` (there is no separate stock route); only the owner can change a StoreProduct's stock.
 - **Archive, never delete.** An archived StoreProduct, or one whose product or category the catalog archived, is unorderable and kept. Restoring reactivates the same StoreProduct (same id, same configuration); it never creates another, and the add flow is blocked for a product the store already has (409).
@@ -75,8 +75,7 @@ Owners never create or manage global Categories or Products, and there is no Adm
 ## 6. Scope
 
 - **Built:** auth and roles, store, global catalog + importer, store products with stock, owner shell, dashboard, and the Owner catalog (Catalogue, picker, Quick Add, StoreProduct editor, archive and restore).
-- **Next:** orders.
-- **Decided for orders (not built):** lifecycle `PENDING → CONFIRMED → READY_FOR_PICKUP → COMPLETED`, `PENDING`/`CONFIRMED → CANCELLED`, `READY_FOR_PICKUP → NO_SHOW` (set manually, never automatic), no `PREPARING`; a customer may cancel only while `PENDING`; `requestedPickupAt` is an advisory time, not a slot; stock is decremented at placement and restored on `CANCELLED`, `NO_SHOW` or a removed line, not on `COMPLETED`; items snapshot name, unit and price.
+- **Next:** orders. The V1 contract is frozen in `orders.md` (lifecycle, stock rules, snapshots, events, errors, API surface); it is not built.
 - **Not planned:** delivery, online payment, loyalty, promotions, analytics.
 
 ## 7. Known limitations
@@ -87,4 +86,4 @@ Owners never create or manage global Categories or Products, and there is no Adm
 
 ## 8. Open decisions
 
-Weighed items: estimated vs real weight · pickup-time bounds (30 min minimum, 48 h maximum proposed) · out-of-stock handling (removing a line is leading, unconfirmed) · store contact number · `NO_SHOW → COMPLETED` and `READY_FOR_PICKUP → CANCELLED` · an `OrderEvent` audit table · new-order awareness without push · opening hours · image upload · owner sign-up approval · one person as owner and customer · `design.md` still shows `Preparing` and `Uncollected`.
+Store contact number · what the owner sees of the customer (name, phone) · opening hours · image upload · owner sign-up approval · one person as owner and customer. (Orders decisions are settled in `orders.md`.)

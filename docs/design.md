@@ -10,8 +10,8 @@ Pickup-only grocery app. **No delivery flow, ever.**
 
 Customer journey: **Find → Add → Confirm → Pick up → Pay at store**
 
-- Customer: browse, search/filter, product detail, adjust quantity, place order, track prep status, get pickup info, pay in-store.
-- Owner: manage products, view/confirm orders, prepare, mark ready, manage uncollected orders.
+- Customer: browse, search/filter, product detail, adjust quantity, place order, track order status, get pickup info, pay in-store.
+- Owner: manage products, view/confirm orders, mark ready, hand over, mark uncollected. The order contract (lifecycle, rules) is `orders.md`.
 - V1 payment is always at pickup — never design or imply online payment.
 
 ## Direction: "Fresh Market Utility"
@@ -98,8 +98,8 @@ Owner: same visual system, denser and more operational.
 
 **Cart** — show products, quantity, prices, subtotal, pickup info, payment info. State "Payment: at pickup" clearly. Primary action reads as confirmation, e.g. `Confirm order` — never styled like an online checkout.
 
-**Pickup status** — show store, pickup time/window, preparation status. Lifecycle:
-`Order received → Confirmed → Preparing → Ready for pickup → Collected / Uncollected / Cancelled`
+**Pickup status** — show store, requested pickup time (advisory, not a slot), order status. Lifecycle (statuses in `orders.md`):
+`Order received → Confirmed → Ready for pickup → Collected`, or `Cancelled` (while received or confirmed), or `Uncollected` (after ready). There is no "Preparing" step.
 "Ready for pickup" must read unambiguously. "Uncollected" is a calm, distinct state — not styled as an aggressive error. Don't imitate delivery-tracking UI.
 
 ## Customer vs Owner

@@ -32,7 +32,9 @@ describe('AppController (e2e)', () => {
     ['GET', '/users/1'],
     ['PATCH', '/users/1'],
     ['DELETE', '/users/1'],
-    ['GET', '/stores'],
+    // `GET /stores` is now the customer's read-only store list (authenticated;
+    // see customer-catalog and route-guards e2e), so only the writes and
+    // the by-id route of the old open CRUD stay gone.
     ['GET', '/stores/1'],
     ['POST', '/stores'],
     ['PATCH', '/stores/1'],

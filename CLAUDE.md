@@ -1,10 +1,10 @@
 # GrocerGo — pickup-only grocery app
 
 Portfolio project. Pickup only: no delivery. `backend/` NestJS (ESM) + Prisma 8 (`@prisma/orm-postgres`) + PostgreSQL · `mobile/` Flutter · `infrastructure/` docker-compose (Postgres) · `docs/`. No root package manager: run each app from its own directory.
-Docs: `docs/owner-domain.md` (owner workflow and API surface) · `docs/design.md` (UI/UX source of truth — read it before any Flutter UI work).
+Docs: `docs/owner-domain.md` (owner workflow and API surface) · `docs/orders.md` (Orders V1 contract; backend services and HTTP API built, no Flutter yet) · `docs/design.md` (UI/UX source of truth — read it before any Flutter UI work).
 
 ## Conventions
-- UI text is French; API error messages are English (Flutter maps status/`code` to French). The only stable error `code` so far is `STOCK_CHANGED` (409).
+- UI text is French; API error messages are English (Flutter maps status/`code` to French). The only stable error `code` built so far is `STOCK_CHANGED` (409); the Orders codes are listed in `docs/orders.md`.
 - Money = integer millimes (1800 = 1,800 DT). Quantities = integer base units (pieces / grams / mL). No floats for money or quantities.
 - Owner routes: `JwtAuthGuard` + `RolesGuard` + `@Roles(OWNER)`. The owner comes from the JWT, never the body or URL; scope by `storeId`.
 - Controllers thin, logic in services, DTOs with class-validator. Every endpoint is documented in Swagger and matches real behavior. After an API change, check the OpenAPI document (the route-guards e2e builds it) and the e2e tests before touching Flutter.
@@ -15,8 +15,8 @@ Category → Product (global catalog) → StoreProduct (a store's offering) → 
 - Global Category/Product carry no store, price, stock or availability. Owners cannot write them; only the importer does. A `slug` is a permanent identity: renaming keeps the slug. The importer never touches StoreProduct.
 - StoreProduct owns price, sale unit, quantity rules, stock, owner availability and archive state. Archive, never delete.
 - Customer availability is derived, never stored. `isOrderable` / `unavailabilityReason`, and the unit and stock validation, live in `backend/src/products/product-rules.ts` — that file is the rule; don't restate it.
-- Stock edits send `expectedStockQuantity`. Orders (not built) must decrement stock atomically at placement, inside one `db.transaction`.
-- Not started — don't build unless asked: orders, cart, customer UI, WhatsApp/n8n/LLM, payments, notifications, deployment.
+- Stock edits send `expectedStockQuantity`. Orders (`docs/orders.md`) decrement tracked stock atomically at placement, inside one `db.transaction`, with order logic in a channel-agnostic service, not in controllers.
+- Not started — don't build unless asked: Flutter orders/cart UI, customer UI, WhatsApp/n8n/LLM, payments, notifications, deployment.
 
 ## Commands and environment
 - Postgres: Docker Desktop running (`open -a Docker`), then `docker compose up -d` in `infrastructure/`. Test DB `grocery_db_test` (= dev `DATABASE_URL` + `_test`).

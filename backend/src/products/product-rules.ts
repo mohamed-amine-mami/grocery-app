@@ -121,6 +121,35 @@ export function quantityRuleErrors(rules: QuantityRules): string[] {
 }
 
 /**
+ * Whether a *requested* quantity (base units) can be ordered under a store
+ * product's rules: at least the minimum, at most the maximum (if any), and a
+ * multiple of the step — the orderable quantities are `min`, `min + step`, ….
+ * The rules themselves are assumed valid (see `quantityRuleErrors`). Returns
+ * every violated rule; empty means orderable.
+ */
+export function requestedQuantityErrors(
+  quantity: number,
+  rules: QuantityRules,
+): string[] {
+  const { saleUnit, minQuantity, quantityStep, maxQuantity } = rules;
+  const baseName = { PIECE: 'pieces', KG: 'grams', L: 'millilitres' }[saleUnit];
+  if (!Number.isInteger(quantity) || quantity <= 0) {
+    return [`quantity must be a positive integer (in ${baseName})`];
+  }
+  const errors: string[] = [];
+  if (quantity < minQuantity) {
+    errors.push(`quantity must be at least ${minQuantity} ${baseName}`);
+  }
+  if (maxQuantity !== null && quantity > maxQuantity) {
+    errors.push(`quantity must be at most ${maxQuantity} ${baseName}`);
+  }
+  if (quantity % quantityStep !== 0) {
+    errors.push(`quantity must be a multiple of ${quantityStep} ${baseName}`);
+  }
+  return errors;
+}
+
+/**
  * The units a store may sell a catalog product in: the product's own default
  * unit, or `PIECE`. A product is never sold in an unrelated unit (bananas are
  * not sold by the litre), and a product that is already counted in pieces
