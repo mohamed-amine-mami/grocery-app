@@ -5,13 +5,26 @@ import 'package:http/http.dart' as http;
 /// Thrown when the backend responds with a non-2xx status code.
 ///
 /// Carries the raw [statusCode] and, when present, the backend's own
-/// `message`. Callers (view models) decide how to translate this into a
+/// `message`, its machine-readable [code] (e.g. `STOCK_CHANGED`) and the whole
+/// error [body]. Callers (view models) decide how to translate this into a
 /// French, user-facing message — this layer never invents wording.
 class ApiException implements Exception {
-  const ApiException({required this.statusCode, this.message});
+  const ApiException({
+    required this.statusCode,
+    this.message,
+    this.code,
+    this.body,
+  });
 
   final int statusCode;
   final String? message;
+
+  /// The backend's stable error code, when the response carries one.
+  final String? code;
+
+  /// The decoded error response, for the few errors that carry data
+  /// (`STOCK_CHANGED` says what the stock is now).
+  final Map<String, dynamic>? body;
 
   @override
   String toString() =>
@@ -108,6 +121,10 @@ class ApiClient {
     throw ApiException(
       statusCode: response.statusCode,
       message: _extractMessage(decoded),
+      code: decoded is Map<String, dynamic> && decoded['code'] is String
+          ? decoded['code'] as String
+          : null,
+      body: decoded is Map<String, dynamic> ? decoded : null,
     );
   }
 

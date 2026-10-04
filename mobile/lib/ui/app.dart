@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../data/repositories/category_repository.dart';
-import '../data/repositories/product_repository.dart';
+import '../data/repositories/catalog_repository.dart';
+import '../data/repositories/store_products_repository.dart';
 import '../data/repositories/store_repository.dart';
 import 'core/app_services.dart';
 import 'core/theme/app_theme.dart';
@@ -14,22 +14,22 @@ class GroceryApp extends StatelessWidget {
   const GroceryApp({
     required this.authViewModel,
     required this.storeRepository,
-    required this.categoryRepository,
-    required this.productRepository,
+    required this.catalogRepository,
+    required this.storeProductsRepository,
     super.key,
   });
 
   final AuthViewModel authViewModel;
   final StoreRepository storeRepository;
-  final CategoryRepository categoryRepository;
-  final ProductRepository productRepository;
+  final CatalogRepository catalogRepository;
+  final StoreProductsRepository storeProductsRepository;
 
   @override
   Widget build(BuildContext context) {
     return AppServices(
       storeRepository: storeRepository,
-      categoryRepository: categoryRepository,
-      productRepository: productRepository,
+      catalogRepository: catalogRepository,
+      storeProductsRepository: storeProductsRepository,
       child: AuthScope(
         authViewModel: authViewModel,
         child: MaterialApp(

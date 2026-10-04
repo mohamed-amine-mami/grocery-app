@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/product.dart';
+import '../../../../data/models/store_product.dart';
 import '../../../core/app_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/utils/product_formatters.dart';
+import '../../../core/widgets/app_load_failed.dart';
 import '../../../core/widgets/app_primary_button.dart';
+import '../../../core/widgets/product_image.dart';
 import '../view_models/catalog_view_model.dart';
-import 'categories_view.dart';
-import 'product_editor_view.dart';
+import 'catalog_picker_view.dart';
+import 'store_product_editor_view.dart';
 
-/// `Catalogue` tab — the active products, organized by category, with the
-/// availability switch right in the list. Categories are managed from the
-/// app bar; archived products never appear here.
+/// `Catalogue` tab — the store's active `StoreProduct`s, grouped by their
+/// global category, with the owner's availability switch right in the list.
+/// Tapping a row opens the StoreProduct editor; "Ajouter depuis le catalogue"
+/// opens the global product picker. Archived products never appear here.
 class CatalogView extends StatefulWidget {
   const CatalogView({super.key});
 
@@ -27,8 +30,7 @@ class _CatalogViewState extends State<CatalogView> {
     super.didChangeDependencies();
     final services = AppServices.of(context);
     _viewModel ??= CatalogViewModel(
-      productRepository: services.productRepository,
-      categoryRepository: services.categoryRepository,
+      storeProductsRepository: services.storeProductsRepository,
     )..load();
   }
 
@@ -44,26 +46,31 @@ class _CatalogViewState extends State<CatalogView> {
       ..showSnackBar(SnackBar(content: Text(message)));
   }
 
-  Future<void> _openEditor([Product? product]) async {
-    final message = await Navigator.of(context).push<String>(
-      MaterialPageRoute(builder: (_) => ProductEditorView(product: product)),
-    );
-    if (!mounted || message == null) {
+  /// Opens the catalog picker, where the owner adds products to the store,
+  /// then reloads the list so what was added shows up.
+  Future<void> _openPicker() async {
+    await Navigator.of(
+      context,
+    ).push<void>(MaterialPageRoute(builder: (_) => const CatalogPickerView()));
+    if (mounted) {
+      await _viewModel!.refresh();
+    }
+  }
+
+  /// Opens the editor for [product], then reloads the list: whatever was
+  /// saved or archived there shows up.
+  Future<void> _edit(StoreProduct product) async {
+    final message = await openStoreProductEditor(context, product);
+    if (!mounted) {
       return;
     }
-    _showMessage(message);
-    await _viewModel!.load();
-  }
-
-  Future<void> _openCategories() async {
-    await Navigator.of(context)
-        .push<void>(MaterialPageRoute(builder: (_) => const CategoriesView()));
-    if (mounted) {
-      await _viewModel!.load();
+    await _viewModel!.refresh();
+    if (message != null && mounted) {
+      _showMessage(message);
     }
   }
 
-  Future<void> _toggle(Product product) async {
+  Future<void> _toggle(StoreProduct product) async {
     final error = await _viewModel!.toggleAvailability(product);
     if (error != null && mounted) {
       _showMessage(error);
@@ -81,21 +88,12 @@ class _CatalogViewState extends State<CatalogView> {
             viewModel.products.isNotEmpty;
 
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Catalogue'),
-            actions: [
-              IconButton(
-                tooltip: 'Gérer les catégories',
-                icon: const Icon(Icons.category_rounded),
-                onPressed: _openCategories,
-              ),
-            ],
-          ),
+          appBar: AppBar(title: const Text('Catalogue')),
           floatingActionButton: showList
               ? FloatingActionButton.extended(
-                  onPressed: _openEditor,
+                  onPressed: _openPicker,
                   icon: const Icon(Icons.add_rounded),
-                  label: const Text('Ajouter un produit'),
+                  label: const Text('Ajouter depuis le catalogue'),
                 )
               : null,
           body: SafeArea(
@@ -103,13 +101,16 @@ class _CatalogViewState extends State<CatalogView> {
               CatalogStatus.loading => const Center(
                 child: CircularProgressIndicator(color: AppColors.primary),
               ),
-              CatalogStatus.failed => _LoadFailed(onRetry: viewModel.load),
+              CatalogStatus.failed => AppLoadFailed(
+                title: 'Impossible de charger le catalogue.',
+                onRetry: viewModel.load,
+              ),
               CatalogStatus.ready when viewModel.products.isEmpty =>
-                _EmptyState(onAdd: _openEditor),
+                _EmptyState(onAdd: _openPicker),
               CatalogStatus.ready => _ProductList(
                 viewModel: viewModel,
-                onOpen: _openEditor,
                 onToggle: _toggle,
+                onEdit: _edit,
               ),
             },
           ),
@@ -122,13 +123,13 @@ class _CatalogViewState extends State<CatalogView> {
 class _ProductList extends StatelessWidget {
   const _ProductList({
     required this.viewModel,
-    required this.onOpen,
     required this.onToggle,
+    required this.onEdit,
   });
 
   final CatalogViewModel viewModel;
-  final ValueChanged<Product> onOpen;
-  final ValueChanged<Product> onToggle;
+  final ValueChanged<StoreProduct> onToggle;
+  final ValueChanged<StoreProduct> onEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -178,8 +179,8 @@ class _ProductList extends StatelessWidget {
                     _ProductRow(
                       product: product,
                       isToggling: viewModel.isToggling(product),
-                      onTap: () => onOpen(product),
                       onToggle: () => onToggle(product),
+                      onEdit: () => onEdit(product),
                     ),
                   ],
                 ],
@@ -203,8 +204,6 @@ class _FilterChips extends StatelessWidget {
     final filters = <(String, int?)>[
       ('Tous', null),
       for (final category in viewModel.categories) (category.name, category.id),
-      if (viewModel.hasUncategorized)
-        ('Sans catégorie', CatalogViewModel.uncategorizedFilter),
     ];
 
     return SingleChildScrollView(
@@ -229,90 +228,134 @@ class _ProductRow extends StatelessWidget {
   const _ProductRow({
     required this.product,
     required this.isToggling,
-    required this.onTap,
     required this.onToggle,
+    required this.onEdit,
   });
 
-  final Product product;
+  final StoreProduct product;
   final bool isToggling;
-  final VoidCallback onTap;
   final VoidCallback onToggle;
+  final VoidCallback onEdit;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final available = product.isAvailable;
+    // What customers can order — the owner's switch, the catalog and stock
+    // combined — not just the switch.
+    final available = product.isOrderable;
+    final name = product.product.name;
+    // The stock count is a fact the backend returns; whether customers can
+    // order is still the backend's `isOrderable`, never computed here.
+    final tracked = product.trackStock && product.stockQuantity != null;
+    final outOfStock = tracked && product.stockQuantity == 0;
+    final stock = tracked && !outOfStock
+        ? ProductFormat.quantity(product.saleUnit, product.stockQuantity!)
+        : null;
 
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: AppSpacing.lg,
-          right: AppSpacing.sm,
-          top: AppSpacing.sm,
-          bottom: AppSpacing.sm,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.name,
-                    style: textTheme.bodyMedium?.copyWith(
-                      color: available
-                          ? AppColors.textPrimary
-                          : AppColors.textSecondary,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    ProductFormat.pricePerUnit(
-                      product.saleUnit,
-                      product.priceMillimes,
-                    ),
-                    style: textTheme.labelLarge,
-                  ),
-                  Text(
-                    'Par tranche de ${ProductFormat.quantity(product.saleUnit, product.quantityStep)}',
-                    style: textTheme.bodySmall,
-                  ),
-                  if (!available) ...[
-                    const SizedBox(height: AppSpacing.xs),
-                    // Text + icon: unavailability never relies on color alone.
-                    const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.block_rounded,
-                          size: 16,
-                          color: AppColors.warning,
-                        ),
-                        SizedBox(width: AppSpacing.xs),
-                        Text(
-                          'Indisponible',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.warning,
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: AppSpacing.lg,
+        right: AppSpacing.sm,
+        top: AppSpacing.sm,
+        bottom: AppSpacing.sm,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: InkWell(
+              onTap: onEdit,
+              child: Semantics(
+                button: true,
+                hint: 'Modifier',
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ProductImage(photo: product.product.photo, size: 56),
+                    const SizedBox(width: AppSpacing.md),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: textTheme.bodyMedium?.copyWith(
+                              color: available
+                                  ? AppColors.textPrimary
+                                  : AppColors.textSecondary,
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(height: AppSpacing.xs),
+                          Text(
+                            ProductFormat.pricePerUnit(
+                              product.saleUnit,
+                              product.priceMillimes,
+                            ),
+                            style: textTheme.labelLarge,
+                          ),
+                          Text(
+                            'Par tranche de ${ProductFormat.quantity(product.saleUnit, product.quantityStep)}',
+                            style: textTheme.bodySmall,
+                          ),
+                          if (stock != null)
+                            Text('Stock : $stock', style: textTheme.bodySmall),
+                          if (outOfStock)
+                            const _StatusLabel(
+                              icon: Icons.remove_shopping_cart_outlined,
+                              label: 'Rupture de stock',
+                            )
+                          else if (!available)
+                            const _StatusLabel(
+                              icon: Icons.block_rounded,
+                              label: 'Indisponible',
+                            ),
+                        ],
+                      ),
                     ),
                   ],
-                ],
+                ),
               ),
             ),
-            Semantics(
-              label: 'Disponible : ${product.name}',
-              child: Switch(
-                value: available,
-                onChanged: isToggling ? null : (_) => onToggle(),
-              ),
+          ),
+          Semantics(
+            label: 'Disponible : $name',
+            child: Switch(
+              // The owner's own switch; stock can make a product unorderable
+              // while the switch stays on.
+              value: product.isAvailable,
+              onChanged: isToggling ? null : (_) => onToggle(),
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Text + icon: unavailability never relies on color alone.
+class _StatusLabel extends StatelessWidget {
+  const _StatusLabel({required this.icon, required this.label});
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: AppSpacing.xs),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 16, color: AppColors.warning),
+          const SizedBox(width: AppSpacing.xs),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: AppColors.warning,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -346,46 +389,15 @@ class _EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Ajoutez vos premiers produits : prix, unité de vente et quantités commandables.',
+            'Choisissez les produits que vous vendez dans le catalogue, puis fixez leur prix.',
             style: textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppSpacing.xxl),
-          AppPrimaryButton(label: 'Ajouter un produit', onPressed: onAdd),
-        ],
-      ),
-    );
-  }
-}
-
-class _LoadFailed extends StatelessWidget {
-  const _LoadFailed({required this.onRetry});
-
-  final VoidCallback onRetry;
-
-  @override
-  Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
-    return Padding(
-      padding: const EdgeInsets.all(AppSpacing.pagePadding),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            'Impossible de charger le catalogue.',
-            style: textTheme.titleMedium,
-            textAlign: TextAlign.center,
+          AppPrimaryButton(
+            label: 'Ajouter depuis le catalogue',
+            onPressed: onAdd,
           ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            'Vérifiez votre connexion, puis réessayez.',
-            style: textTheme.bodySmall,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: AppSpacing.xxl),
-          AppPrimaryButton(label: 'Réessayer', onPressed: onRetry),
         ],
       ),
     );

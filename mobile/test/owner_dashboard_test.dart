@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:grocery_mobile/data/models/product.dart';
 import 'package:grocery_mobile/data/models/store.dart';
+import 'package:grocery_mobile/data/models/store_product.dart';
 
 import 'fakes.dart';
 
@@ -17,9 +17,8 @@ const _openStore = Store(
 Future<void> _pumpShell(
   WidgetTester tester, {
   Store store = closedStore,
-  List<String> categories = const [],
-  List<Product> Function()? products,
-  bool categoriesFail = false,
+  List<StoreProduct> Function()? products,
+  bool productsFail = false,
 }) async {
   tester.view.physicalSize = const Size(800, 2600);
   tester.view.devicePixelRatio = 1;
@@ -29,10 +28,11 @@ Future<void> _pumpShell(
     tester,
     testOwner,
     storeRepository: (api) => FakeStoreRepository(api, store: store),
-    categoryRepository: (api) =>
-        FakeCategoryRepository(api, names: categories, fails: categoriesFail),
-    productRepository: (api) =>
-        FakeProductRepository(api, products: products?.call() ?? []),
+    storeProductsRepository: (api) => FakeStoreProductsRepository(
+      api,
+      products: products?.call() ?? [],
+      fails: productsFail,
+    ),
   );
 }
 
@@ -71,10 +71,11 @@ void main() {
       expect(find.text('Bonjour, Karim'), findsOneWidget);
       expect(find.text('Magasin fermé'), findsOneWidget);
       expect(find.text('Menzah Market'), findsOneWidget);
-      expect(find.text('Démarrer votre magasin · 0/3'), findsOneWidget);
-      expect(find.text('Créer une catégorie'), findsOneWidget);
-      expect(find.text('Ajouter un produit'), findsOneWidget);
+      expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
+      expect(find.text('Ajouter des produits'), findsOneWidget);
       expect(find.text('Ouvrir le magasin'), findsOneWidget);
+      // Categories belong to the global catalog now: nothing to create.
+      expect(find.text('Créer une catégorie'), findsNothing);
     });
 
     testWidgets('has no analytics, charts or fake numbers', (tester) async {
@@ -87,20 +88,16 @@ void main() {
     testWidgets('counts progress and only lists what is left to do', (
       tester,
     ) async {
-      await _pumpShell(
-        tester,
-        categories: ['Légumes'],
-        products: () => [fakeTomatoes(categoryId: 1)],
-      );
+      await _pumpShell(tester, products: () => [fakeTomatoes()]);
 
-      expect(find.text('Démarrer votre magasin · 2/3'), findsOneWidget);
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
       // Done steps are listed without their hint; the open step keeps it.
-      expect(find.text('Pour organiser vos produits.'), findsNothing);
+      expect(find.text('Prix, unité de vente et quantités.'), findsNothing);
       expect(
         find.text('Vos clients pourront alors commander.'),
         findsOneWidget,
       );
-      expect(find.byIcon(Icons.check_circle_rounded), findsNWidgets(2));
+      expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
     });
 
     testWidgets('the checklist disappears once setup is complete', (
@@ -109,8 +106,7 @@ void main() {
       await _pumpShell(
         tester,
         store: _openStore,
-        categories: ['Légumes'],
-        products: () => [fakeTomatoes(categoryId: 1)],
+        products: () => [fakeTomatoes()],
       );
 
       expect(find.textContaining('Démarrer votre magasin'), findsNothing);
@@ -120,27 +116,25 @@ void main() {
     testWidgets('archived products do not count as a product', (tester) async {
       await _pumpShell(
         tester,
-        categories: ['Légumes'],
-        products: () => [
-          Product(
-            id: 1,
-            name: 'Ancien',
-            saleUnit: fakeEggs().saleUnit,
-            priceMillimes: 100,
-            minQuantity: 1,
-            quantityStep: 1,
-            isAvailable: true,
-            isArchived: true,
-          ),
-        ],
+        products: () => [fakeStoreProduct(isArchived: true)],
       );
-      expect(find.text('Démarrer votre magasin · 1/3'), findsOneWidget);
+      expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
+    });
+
+    testWidgets('a product the owner switched off still counts as added', (
+      tester,
+    ) async {
+      await _pumpShell(
+        tester,
+        products: () => [fakeTomatoes(isAvailable: false)],
+      );
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
     });
 
     testWidgets('each open step leads to the right place', (tester) async {
       await _pumpShell(tester);
 
-      await tester.tap(find.text('Ajouter un produit'));
+      await tester.tap(find.text('Ajouter des produits'));
       await tester.pumpAndSettle();
       expect(find.text('Aucun produit'), findsOneWidget); // Catalogue tab
 
@@ -148,22 +142,13 @@ void main() {
       await tester.tap(find.text('Ouvrir le magasin'));
       await tester.pumpAndSettle();
       expect(find.byType(Switch), findsOneWidget); // Magasin tab
-
-      await _openTab(tester, 'Accueil');
-      await tester.tap(find.text('Créer une catégorie'));
-      await tester.pumpAndSettle();
-      expect(find.text('Aucune catégorie'), findsOneWidget); // category manager
     });
 
     testWidgets('updates when the owner finishes the steps elsewhere', (
       tester,
     ) async {
-      await _pumpShell(
-        tester,
-        categories: ['Légumes'],
-        products: () => [fakeTomatoes(categoryId: 1)],
-      );
-      expect(find.text('Démarrer votre magasin · 2/3'), findsOneWidget);
+      await _pumpShell(tester, products: () => [fakeTomatoes()]);
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
 
       await _openTab(tester, 'Magasin');
       await tester.tap(find.byType(Switch));
@@ -174,30 +159,10 @@ void main() {
       expect(find.text('Magasin ouvert'), findsWidgets);
     });
 
-    testWidgets('picks up a category created in the catalogue', (tester) async {
-      await _pumpShell(tester);
-      expect(find.text('Démarrer votre magasin · 0/3'), findsOneWidget);
-
-      await tester.tap(find.text('Créer une catégorie'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Ajouter une catégorie').last);
-      await tester.pumpAndSettle();
-      await tester.enterText(
-        find.widgetWithText(TextFormField, 'Nom de la catégorie'),
-        'Fruits',
-      );
-      await tester.tap(find.text('Ajouter'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byTooltip('Retour'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Démarrer votre magasin · 1/3'), findsOneWidget);
-    });
-
     testWidgets('says so, instead of a wrong checklist, when it cannot load', (
       tester,
     ) async {
-      await _pumpShell(tester, categoriesFail: true);
+      await _pumpShell(tester, productsFail: true);
 
       expect(
         find.textContaining('Impossible de charger la configuration'),

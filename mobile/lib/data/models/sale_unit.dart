@@ -3,14 +3,33 @@
 /// The price is for ONE sale unit (1 piece / 1 kg / 1 L). Quantities are
 /// integers in the unit's *base*: pieces, grams, millilitres.
 enum SaleUnit {
-  piece(baseFactor: 1, granularity: 1, cap: 1000, defaultStep: 1),
-  kg(baseFactor: 1000, granularity: 10, cap: 100000, defaultStep: 100),
-  l(baseFactor: 1000, granularity: 10, cap: 100000, defaultStep: 100);
+  piece(
+    baseFactor: 1,
+    granularity: 1,
+    cap: 1000,
+    stockCap: 100000,
+    defaultStep: 1,
+  ),
+  kg(
+    baseFactor: 1000,
+    granularity: 10,
+    cap: 100000,
+    stockCap: 10000000,
+    defaultStep: 100,
+  ),
+  l(
+    baseFactor: 1000,
+    granularity: 10,
+    cap: 100000,
+    stockCap: 10000000,
+    defaultStep: 100,
+  );
 
   const SaleUnit({
     required this.baseFactor,
     required this.granularity,
     required this.cap,
+    required this.stockCap,
     required this.defaultStep,
   });
 
@@ -22,6 +41,9 @@ enum SaleUnit {
 
   /// Largest accepted min / step / max, in base units.
   final int cap;
+
+  /// Largest stock a store can declare, in base units.
+  final int stockCap;
   final int defaultStep;
 
   static SaleUnit fromJson(String value) => switch (value) {

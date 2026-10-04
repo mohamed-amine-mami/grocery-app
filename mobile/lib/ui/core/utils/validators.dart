@@ -83,22 +83,6 @@ abstract final class AppValidators {
   static String? storeName(String? value) =>
       required(value, message: 'Le nom du magasin est requis.');
 
-  static const categoryNameMaxLength = 50;
-
-  static String? categoryName(String? value) {
-    final requiredError = required(
-      value,
-      message: 'Le nom de la catégorie est requis.',
-    );
-    if (requiredError != null) {
-      return requiredError;
-    }
-    if (value!.trim().length > categoryNameMaxLength) {
-      return 'Le nom ne doit pas dépasser $categoryNameMaxLength caractères.';
-    }
-    return null;
-  }
-
   /// Optional photo link: empty is fine; otherwise an http(s) URL.
   static String? optionalPhotoUrl(String? value) {
     final text = value?.trim() ?? '';

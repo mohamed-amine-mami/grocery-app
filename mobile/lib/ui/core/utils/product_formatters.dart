@@ -15,6 +15,13 @@ abstract final class ProductFormat {
         SaleUnit.l => 'L',
       }}';
 
+  /// How a product is sold, as a short label: `Au kilo`, `À la pièce`.
+  static String unitLabel(SaleUnit unit) => switch (unit) {
+    SaleUnit.piece => 'À la pièce',
+    SaleUnit.kg => 'Au kilo',
+    SaleUnit.l => 'Au litre',
+  };
+
   /// Label of the price field, adapted to the unit.
   static String priceFieldLabel(SaleUnit unit) => switch (unit) {
     SaleUnit.piece => 'Prix à la pièce (DT)',

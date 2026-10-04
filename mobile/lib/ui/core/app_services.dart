@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../../data/repositories/category_repository.dart';
-import '../../data/repositories/product_repository.dart';
+import '../../data/repositories/catalog_repository.dart';
+import '../../data/repositories/store_products_repository.dart';
 import '../../data/repositories/store_repository.dart';
 
 /// Exposes stateless service/repository instances that don't need reactive
@@ -9,15 +9,15 @@ import '../../data/repositories/store_repository.dart';
 class AppServices extends InheritedWidget {
   const AppServices({
     required this.storeRepository,
-    required this.categoryRepository,
-    required this.productRepository,
+    required this.catalogRepository,
+    required this.storeProductsRepository,
     required super.child,
     super.key,
   });
 
   final StoreRepository storeRepository;
-  final CategoryRepository categoryRepository;
-  final ProductRepository productRepository;
+  final CatalogRepository catalogRepository;
+  final StoreProductsRepository storeProductsRepository;
 
   static AppServices of(BuildContext context) {
     final services = context.dependOnInheritedWidgetOfExactType<AppServices>();

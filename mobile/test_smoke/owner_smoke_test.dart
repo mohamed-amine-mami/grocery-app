@@ -5,16 +5,19 @@
 // throwaway backend — see "Smoke test" in docs/owner-domain.md:
 //
 //   flutter test test_smoke --dart-define=API_BASE_URL=http://localhost:3001
-import 'dart:convert';
+//
+// The backend's database must hold the global catalog (`npm run catalog:import`
+// in `backend/`, pointed at the same database): owners add products from it.
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:http/http.dart' as http;
 
 import 'package:grocery_mobile/data/repositories/auth_repository.dart';
-import 'package:grocery_mobile/data/repositories/category_repository.dart';
-import 'package:grocery_mobile/data/repositories/product_repository.dart';
+import 'package:grocery_mobile/data/models/sale_unit.dart';
+import 'package:grocery_mobile/data/models/store_product.dart';
+import 'package:grocery_mobile/data/repositories/catalog_repository.dart';
+import 'package:grocery_mobile/data/repositories/store_products_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_repository.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
 import 'package:grocery_mobile/data/services/token_storage.dart';
@@ -55,8 +58,8 @@ Future<void> _launchApp(WidgetTester tester) async {
         apiClient: api,
       ),
       storeRepository: StoreRepository(api),
-      categoryRepository: CategoryRepository(api),
-      productRepository: ProductRepository(api),
+      catalogRepository: CatalogRepository(api),
+      storeProductsRepository: StoreProductsRepository(api),
     ),
   );
   await _settle(tester);
@@ -156,13 +159,29 @@ Future<void> _passSplash(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Future<List<dynamic>> _apiProducts(String status) async {
-  final response = await http.get(
-    Uri.parse('$_baseUrl/owner/products?status=$status'),
-    headers: {'Authorization': 'Bearer ${_tokens.token}'},
+/// The data layer on its own, over real HTTP, as the signed-in owner.
+({CatalogRepository catalog, StoreProductsRepository storeProducts}) _repos() {
+  final api = ApiClient(baseUrl: _baseUrl)..setAuthToken(_tokens.token);
+  return (
+    catalog: CatalogRepository(api),
+    storeProducts: StoreProductsRepository(api),
   );
-  return jsonDecode(response.body) as List<dynamic>;
 }
+
+/// Runs [action] over real I/O and returns what it threw (or null). Capturing
+/// it inside `runAsync` keeps the failure out of the test zone's uncaught-error
+/// handler, so it can be asserted on.
+Future<Object?> _thrownBy(
+  WidgetTester tester,
+  Future<Object?> Function() action,
+) => tester.runAsync<Object?>(() async {
+  try {
+    await action();
+    return null;
+  } catch (error) {
+    return error;
+  }
+});
 
 void main() {
   setUpAll(() {
@@ -171,7 +190,7 @@ void main() {
   });
 
   testWidgets(
-    'Owner lifecycle: register → store → catalogue → restart → logout',
+    'Owner lifecycle: register → store → catalog → store products → restart → logout',
     (tester) async {
       tester.view.physicalSize = const Size(800, 2600);
       tester.view.devicePixelRatio = 1;
@@ -225,7 +244,7 @@ void main() {
         find.text('Magasin fermé'),
         findsOneWidget,
       ); // new stores start closed
-      expect(find.text('Démarrer votre magasin · 0/3'), findsOneWidget);
+      expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
       expect(_nav('Commandes'), findsNothing);
       expect(find.byType(NavigationDestination), findsNWidgets(3));
 
@@ -238,104 +257,422 @@ void main() {
       await _openTab(tester, 'Accueil');
       expect(find.text('Épicerie Smoke Bio'), findsOneWidget);
 
-      // ── 5. Create a category ──────────────────────────────────────────
+      // ── 5. The catalogue starts empty — and owners cannot create categories
       await _openTab(tester, 'Catalogue');
       expect(find.text('Aucun produit'), findsOneWidget);
-      await _tap(tester, find.byTooltip('Gérer les catégories'));
-      expect(find.text('Aucune catégorie'), findsOneWidget);
-      await _tap(tester, find.text('Ajouter une catégorie'));
-      await _type(tester, 'Nom de la catégorie', 'Fruits et légumes');
-      await _tap(tester, find.text('Ajouter'));
-      await _waitFor(tester, find.text('Fruits et légumes'));
+      expect(find.byTooltip('Gérer les catégories'), findsNothing);
+      expect(find.byType(FloatingActionButton), findsNothing);
 
-      // A duplicate (any case) is refused, in French, and the dialog stays.
-      await _tap(tester, find.text('Ajouter une catégorie'));
-      await _type(tester, 'Nom de la catégorie', 'FRUITS ET LÉGUMES');
-      await _tap(tester, find.text('Ajouter'));
-      await _waitFor(
+      // ── 6. Browse the global catalog through the data layer ───────────
+      final repos = _repos();
+      final categories = (await tester.runAsync(repos.catalog.categories))!;
+      expect(categories, isNotEmpty);
+      final vegetables = categories.firstWhere((c) => c.slug == 'legumes');
+      expect(vegetables.name, 'Légumes');
+      expect(vegetables.productCount, greaterThan(0));
+
+      final picker = (await tester.runAsync(repos.catalog.products))!;
+      final tomatoItem = picker.firstWhere((i) => i.product.slug == 'tomate');
+      expect(tomatoItem.inMyStore, isFalse);
+      expect(tomatoItem.storeProductId, isNull);
+      expect(tomatoItem.product.defaultSaleUnit, SaleUnit.kg);
+      expect(tomatoItem.product.allowedSaleUnits, [
+        SaleUnit.kg,
+        SaleUnit.piece,
+      ]);
+      expect(tomatoItem.product.category.name, 'Légumes');
+
+      // ── 7. Add Tomate to the store: the catalog's rules, the store's price
+      var tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.create(
+          NewStoreProduct(
+            productId: tomatoItem.product.id,
+            priceMillimes: 1800,
+          ),
+        ),
+      ))!;
+      expect(tomatoes.product.slug, 'tomate');
+      expect(tomatoes.saleUnit, SaleUnit.kg);
+      expect(tomatoes.priceMillimes, 1800);
+      expect(tomatoes.minQuantity, 500);
+      expect(tomatoes.quantityStep, 100);
+      expect(tomatoes.maxQuantity, 10000);
+      expect(tomatoes.trackStock, isFalse);
+      expect(tomatoes.stockQuantity, isNull);
+      expect(tomatoes.isOrderable, isTrue);
+
+      // A duplicate is a 409; the picker now says the store has it.
+      final duplicate = await _thrownBy(
         tester,
-        find.text('Une catégorie avec ce nom existe déjà.'),
+        () => repos.storeProducts.create(
+          NewStoreProduct(productId: tomatoItem.product.id, priceMillimes: 1),
+        ),
       );
-      await _tap(tester, find.text('Annuler'));
+      expect(duplicate, isA<ApiException>());
+      expect((duplicate! as ApiException).statusCode, 409);
+      final afterAdd = (await tester.runAsync(repos.catalog.products))!;
+      final flagged = afterAdd.firstWhere((i) => i.product.slug == 'tomate');
+      expect(flagged.inMyStore, isTrue);
+      expect(flagged.storeProductId, tomatoes.id);
 
-      // ── 6. Rename the category ────────────────────────────────────────
-      await _tap(tester, find.byTooltip('Renommer « Fruits et légumes »'));
-      await _type(tester, 'Nom de la catégorie', 'Fruits & légumes');
-      await _tap(tester, find.text('Enregistrer'));
-      await _waitFor(tester, find.text('Fruits & légumes'));
+      // ── 8. The owner's switch, independent of stock ───────────────────
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.setAvailability(
+          tomatoes.id,
+          isAvailable: false,
+        ),
+      ))!;
+      expect(tomatoes.isOrderable, isFalse);
+      expect(tomatoes.unavailabilityReason, UnavailabilityReason.ownerDisabled);
+      tomatoes = (await tester.runAsync(
+        () =>
+            repos.storeProducts.setAvailability(tomatoes.id, isAvailable: true),
+      ))!;
+      expect(tomatoes.isOrderable, isTrue);
+
+      // ── 9. Stock: track, reach zero, stale count refused, restock ─────
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.update(
+          tomatoes.id,
+          const StoreProductUpdate(
+            stock: StockChange(
+              trackStock: true,
+              stockQuantity: 5000,
+              expectedStockQuantity: null,
+            ),
+          ),
+        ),
+      ))!;
+      expect(tomatoes.trackStock, isTrue);
+      expect(tomatoes.stockQuantity, 5000);
+      expect(tomatoes.isOrderable, isTrue);
+
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.update(
+          tomatoes.id,
+          const StoreProductUpdate(
+            stock: StockChange(stockQuantity: 0, expectedStockQuantity: 5000),
+          ),
+        ),
+      ))!;
+      expect(tomatoes.stockQuantity, 0);
+      expect(tomatoes.isAvailable, isTrue); // the owner never switched it off
+      expect(tomatoes.isOrderable, isFalse);
+      expect(tomatoes.unavailabilityReason, UnavailabilityReason.outOfStock);
+
+      // The UI shows it unavailable on its own, with the switch still on.
+      await _launchApp(tester);
+      await _waitFor(tester, find.byType(NavigationBar));
+      await _openTab(tester, 'Catalogue');
+      await _waitFor(tester, find.text('Tomate'));
+      expect(find.text('Légumes · 1'), findsOneWidget);
+      expect(find.text('Rupture de stock'), findsOneWidget);
+      expect(tester.widget<Switch>(find.byType(Switch)).value, isTrue);
+
+      // A count made from a stale screen is refused, and says what is there now.
+      final stale = await _thrownBy(
+        tester,
+        () => repos.storeProducts.update(
+          tomatoes.id,
+          const StoreProductUpdate(
+            priceMillimes: 9999, // must not be applied either
+            stock: StockChange(
+              stockQuantity: 9000,
+              expectedStockQuantity: 5000,
+            ),
+          ),
+        ),
+      );
+      expect(stale, isA<StockChangedException>());
+      expect((stale! as StockChangedException).currentStockQuantity, 0);
+      expect(
+        (await tester.runAsync(() => repos.storeProducts.get(tomatoes.id)))!
+            .priceMillimes,
+        1800,
+      );
+
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.update(
+          tomatoes.id,
+          const StoreProductUpdate(
+            stock: StockChange(stockQuantity: 9000, expectedStockQuantity: 0),
+          ),
+        ),
+      ))!;
+      expect(tomatoes.isOrderable, isTrue);
+
+      // ── 10. Sell by the piece instead: restate price and rules ────────
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.update(
+          tomatoes.id,
+          const StoreProductUpdate(
+            saleUnit: SaleUnit.piece,
+            priceMillimes: 700,
+            minQuantity: 1,
+            quantityStep: 1,
+            clearMaxQuantity: true,
+            stock: StockChange(stockQuantity: 30, expectedStockQuantity: 9000),
+          ),
+        ),
+      ))!;
+      expect(tomatoes.saleUnit, SaleUnit.piece);
+      expect(tomatoes.priceMillimes, 700);
+      expect(tomatoes.maxQuantity, isNull);
+      expect(tomatoes.stockQuantity, 30);
+      expect(
+        tomatoes.product.defaultSaleUnit,
+        SaleUnit.kg,
+      ); // identity unchanged
+
+      // ── 11. Archive, then restore ─────────────────────────────────────
+      await tester.runAsync(() => repos.storeProducts.archive(tomatoes.id));
+      final active = (await tester.runAsync(repos.storeProducts.listActive))!;
+      final archived = (await tester.runAsync(
+        () => repos.storeProducts.list(status: StoreProductStatus.archived),
+      ))!;
+      expect(active, isEmpty);
+      expect(archived.map((p) => p.product.slug), ['tomate']);
+      expect(archived.single.isArchived, isTrue);
+      expect(
+        archived.single.unavailabilityReason,
+        UnavailabilityReason.archived,
+      );
+      final archivedItem = (await tester.runAsync(repos.catalog.products))!
+          .firstWhere((i) => i.product.slug == 'tomate');
+      expect(archivedItem.inMyStore, isFalse);
+      expect(archivedItem.storeProductArchived, isTrue);
+
+      await _launchApp(tester);
+      await _waitFor(tester, find.byType(NavigationBar));
+      await _openTab(tester, 'Catalogue');
+      expect(
+        find.text('Aucun produit'),
+        findsOneWidget,
+      ); // archived stays hidden
+
+      tomatoes = (await tester.runAsync(
+        () => repos.storeProducts.restore(tomatoes.id),
+      ))!;
+      expect(tomatoes.isArchived, isFalse);
+      expect(tomatoes.priceMillimes, 700); // exactly as it was left
+      expect(tomatoes.stockQuantity, 30);
+
+      // ── 12. The catalogue and dashboard follow ────────────────────────
+      await _launchApp(tester);
+      await _waitFor(tester, find.byType(NavigationBar));
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
+      await _openTab(tester, 'Catalogue');
+      await _waitFor(tester, find.text('Tomate'));
+      expect(find.text('0,700 DT / pièce'), findsOneWidget);
+      expect(find.text('Par tranche de 1 pièce'), findsOneWidget);
+      expect(find.text('Indisponible'), findsNothing);
+
+      // The owner's switch in the list.
+      await _tap(tester, find.byType(Switch));
+      await _waitFor(tester, find.text('Indisponible'));
+      expect(
+        (await tester.runAsync(() => repos.storeProducts.get(tomatoes.id)))!
+            .isAvailable,
+        isFalse,
+      );
+
+      // ── 13. The catalog picker, over the real catalog ─────────────────
+      await _tap(tester, find.byType(FloatingActionButton));
+      await _waitFor(tester, find.text('Rechercher un produit'));
+      expect(find.text('Ajouter depuis le catalogue'), findsOneWidget);
+      expect(find.text('Ajouté'), findsOneWidget); // Tomate: the store has it
+      expect(find.text('Œufs frais'), findsOneWidget); // not yet in the store
+
+      // Local search: accent- and case-insensitive.
+      await tester.enterText(find.byType(TextField), 'OEUF');
+      await _settle(tester);
+      expect(find.text('Œufs frais'), findsOneWidget);
+      expect(find.text('Tomate'), findsNothing);
+      await _tap(tester, find.byTooltip('Effacer la recherche'));
+
+      // Category filter.
+      await _tap(tester, find.widgetWithText(ChoiceChip, 'Légumes'));
+      expect(find.text('Tomate'), findsOneWidget);
+      expect(find.text('Œufs frais'), findsNothing);
+
+      // ── 14. Quick-add: a price is enough ──────────────────────────────
+      await _tap(tester, find.text('Poivron'));
+      expect(find.text('Ajouter à mon magasin'), findsOneWidget);
+      expect(find.text('Légumes · Au kilo'), findsWidgets); // read-only info
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Prix au kilo (DT)'),
+        '3,2',
+      );
+      await tester.pump();
+      await _tap(tester, find.text('Ajouter à mon magasin'));
+      await _waitFor(tester, find.text('Poivron ajouté à votre magasin.'));
+      expect(find.text('Ajouter à mon magasin'), findsNothing); // sheet closed
+      expect(find.text('Ajouté'), findsNWidgets(2)); // Tomate + Poivron
+
+      // The picker stays open, and an added product cannot be added again.
+      await _tap(tester, find.text('Poivron'));
+      expect(find.text('Ajouter à mon magasin'), findsNothing);
+
+      // ── 15. Quick-add with tracked stock at zero ──
+      await _tap(
+        tester,
+        find.widgetWithText(ChoiceChip, 'Tous'),
+      ); // lift the filter────────────────────
+      await _tap(tester, find.text('Œufs frais'));
+      await _tap(tester, find.text('Quantités, stock et disponibilité'));
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Prix à la pièce (DT)'),
+        '0,35',
+      );
+      await tester.pump();
+      await _tap(
+        tester,
+        find.widgetWithText(SwitchListTile, 'Suivre le stock'),
+      );
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Stock actuel (pièces)'),
+        '0',
+      );
+      await tester.pump();
+      expect(find.textContaining('Stock à 0'), findsOneWidget);
+      await _tap(tester, find.text('Ajouter à mon magasin'));
+      await _waitFor(tester, find.text('Œufs frais ajouté à votre magasin.'));
+      expect(find.text('Ajouté'), findsNWidgets(3));
+
+      // What the backend now holds — and what it derived itself.
+      final held = (await tester.runAsync(repos.storeProducts.listActive))!;
+      expect(held.map((p) => p.product.slug).toSet(), {
+        'tomate',
+        'poivron',
+        'oeufs',
+      });
+      final peppers = held.firstWhere((p) => p.product.slug == 'poivron');
+      expect(peppers.priceMillimes, 3200);
+      expect(peppers.saleUnit, SaleUnit.kg);
+      expect(peppers.minQuantity, 500); // the catalog's defaults
+      expect(peppers.quantityStep, 100);
+      expect(peppers.trackStock, isFalse);
+      expect(peppers.isOrderable, isTrue);
+      final eggs = held.firstWhere((p) => p.product.slug == 'oeufs');
+      expect(eggs.saleUnit, SaleUnit.piece);
+      expect(eggs.priceMillimes, 350);
+      expect(eggs.trackStock, isTrue);
+      expect(eggs.stockQuantity, 0);
+      expect(eggs.isAvailable, isTrue); // the app never switched it off
+      expect(eggs.isOrderable, isFalse); // the backend did
+      expect(eggs.unavailabilityReason, UnavailabilityReason.outOfStock);
+
+      // Back in the catalogue, the new products are listed.
       await tester.tap(find.byTooltip('Retour'));
       await _settle(tester);
-
-      // ── 7. Product sold by PIECE: 1, 2, 3 ─────────────────────────────
-      await _waitFor(tester, find.text('Ajouter un produit'));
-      await _tap(tester, find.text('Ajouter un produit'));
-      expect(find.text('1, 2, 3 pièces…'), findsOneWidget);
-      await _type(tester, 'Nom du produit', 'Œufs');
-      await _type(tester, 'Prix à la pièce (DT)', '0,350');
-      await tester.tap(find.byType(DropdownButtonFormField<int?>));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Fruits & légumes').last);
-      await tester.pumpAndSettle();
-      await _tap(tester, find.text('Ajouter le produit'));
-      await _waitFor(tester, find.text('0,350 DT / pièce'));
-      expect(find.text('Par tranche de 1 pièce'), findsOneWidget);
-
-      // ── 8. Product sold by KG: 500 g, 1 kg, 1,5 kg ────────────────────
-      await _tap(tester, find.byType(FloatingActionButton));
-      await _tap(tester, find.text('Au kilo'));
-      expect(find.text('100 g, 200 g, 300 g…'), findsOneWidget);
-      await _tap(tester, find.widgetWithText(ChoiceChip, '500 g'));
-      expect(find.text('500 g, 1 kg, 1,5 kg…'), findsOneWidget);
-      await _type(tester, 'Nom du produit', 'Tomates');
-      await _type(tester, 'Prix au kilo (DT)', '1,8');
-      expect(find.text('500 g = 0,900 DT · 1,800 DT / kg'), findsOneWidget);
-      await _tap(tester, find.text('Ajouter le produit'));
-      await _waitFor(tester, find.text('1,800 DT / kg'));
-      expect(find.text('Par tranche de 500 g'), findsOneWidget);
-      // Products sit under their category; the tomatoes have none.
-      expect(find.text('Fruits & légumes · 1'), findsOneWidget);
-      expect(find.text('Sans catégorie · 1'), findsOneWidget);
-
-      // ── 9. Toggle a product unavailable ───────────────────────────────
-      expect(find.text('Indisponible'), findsNothing);
-      final tomatoSwitch = find.descendant(
-        of: find
-            .ancestor(of: find.text('Tomates'), matching: find.byType(InkWell))
-            .first,
-        matching: find.byType(Switch),
-      );
-      await _tap(tester, tomatoSwitch);
-      await _waitFor(tester, find.text('Indisponible'));
-      expect(find.text('Tomates'), findsOneWidget); // unavailable ≠ removed
-
-      // ── 10. Edit a product ────────────────────────────────────────────
-      await _tap(tester, find.text('Tomates'));
-      expect(find.text('Modifier le produit'), findsOneWidget);
-      await _type(tester, 'Prix au kilo (DT)', '2');
-      expect(find.text('500 g = 1,000 DT · 2,000 DT / kg'), findsOneWidget);
-      await _tap(tester, find.text('Enregistrer'));
-      await _waitFor(tester, find.text('2,000 DT / kg'));
+      await _waitFor(tester, find.text('Poivron'));
+      expect(find.text('Légumes · 2'), findsOneWidget);
+      expect(find.text('Produits laitiers · 1'), findsOneWidget);
+      expect(find.text('Œufs frais'), findsOneWidget);
       expect(
         find.text('Indisponible'),
         findsOneWidget,
-      ); // edit kept availability
+      ); // Tomate (switched off)
+      expect(find.text('Rupture de stock'), findsOneWidget); // Œufs frais
 
-      // ── 11. Archive a product ─────────────────────────────────────────
-      await _tap(tester, find.text('Tomates'));
-      await _tap(tester, find.text('Supprimer du catalogue'));
-      await _tap(tester, find.text('Supprimer'));
-      await _waitFor(tester, find.text('Produit supprimé du catalogue.'));
-      expect(find.text('Tomates'), findsNothing);
-      expect(find.text('Œufs'), findsOneWidget);
-      // Archived, not deleted: hidden from the active catalogue, kept in the DB.
-      final active = await tester.runAsync(() => _apiProducts('active'));
-      final archived = await tester.runAsync(() => _apiProducts('archived'));
-      expect(active!.map((p) => (p as Map)['name']), ['Œufs']);
-      expect(archived!.map((p) => (p as Map)['name']), ['Tomates']);
+      // ── 16. The store-product editor, against the real backend ────────
+      // Restock the eggs: the backend makes them orderable again.
+      await _tap(tester, find.text('Œufs frais'));
+      expect(find.text('Rupture de stock'), findsOneWidget);
+      expect(find.text('Catalogue — lecture seule'), findsOneWidget);
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Modifier le stock (pièces)'),
+        '24',
+      );
+      await tester.pump();
+      await _tap(tester, find.text('Enregistrer'));
+      await _waitFor(tester, find.text('Modifications enregistrées.'));
+      expect(find.text('Rupture de stock'), findsNothing); // eggs restocked
+      expect(find.text('Indisponible'), findsOneWidget); // Tomate: switched off
 
-      // ── Dashboard follows: category + product done, store still closed ─
+      // Sell the peppers by the piece: new price and rules, no maximum.
+      await _tap(tester, find.text('Poivron'));
+      await _tap(tester, find.text('À la pièce'));
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Prix à la pièce (DT)'),
+        '0,6',
+      );
+      await tester.pump();
+      await _tap(tester, find.text('Enregistrer'));
+      await _waitFor(tester, find.text('Modifications enregistrées.'));
+
+      var held16 = (await tester.runAsync(repos.storeProducts.listActive))!;
+      final eggs16 = held16.firstWhere((p) => p.product.slug == 'oeufs');
+      expect(eggs16.stockQuantity, 24);
+      expect(eggs16.isOrderable, isTrue); // derived by the backend
+      expect(eggs16.isAvailable, isTrue);
+      final peppers16 = held16.firstWhere((p) => p.product.slug == 'poivron');
+      expect(peppers16.saleUnit, SaleUnit.piece);
+      expect(peppers16.priceMillimes, 600);
+      expect(peppers16.minQuantity, 1);
+      expect(peppers16.quantityStep, 1);
+      expect(peppers16.maxQuantity, isNull);
+
+      // An order (here: another client) changes the stock behind the screen.
+      await _tap(tester, find.text('Œufs frais'));
+      await tester.enterText(
+        find.widgetWithText(TextField, 'Modifier le stock (pièces)'),
+        '30',
+      );
+      await tester.pump();
+      await tester.runAsync(
+        () => repos.storeProducts.update(
+          eggs16.id,
+          const StoreProductUpdate(
+            stock: StockChange(expectedStockQuantity: 24, stockQuantity: 20),
+          ),
+        ),
+      );
+      await _tap(tester, find.text('Enregistrer'));
+      expect(
+        find.textContaining('il est maintenant de 20 pièces'),
+        findsOneWidget,
+      );
+      expect(find.text('Enregistrer'), findsOneWidget); // still editing
+      await _tap(tester, find.text('Enregistrer')); // checked against 20 now
+      await _waitFor(tester, find.text('Modifications enregistrées.'));
+      held16 = (await tester.runAsync(repos.storeProducts.listActive))!;
+      expect(
+        held16.firstWhere((p) => p.product.slug == 'oeufs').stockQuantity,
+        30,
+      );
+
+      // Archive the peppers, then restore that same store product.
+      await _tap(tester, find.text('Poivron'));
+      await _tap(tester, find.text('Archiver ce produit'));
+      await _tap(tester, find.widgetWithText(TextButton, 'Archiver'));
+      await _waitFor(tester, find.text('Poivron archivé.'));
+      expect(find.text('Poivron'), findsNothing);
+
+      await _tap(tester, find.text('Ajouter depuis le catalogue'));
+      await _waitFor(tester, find.text('Archivé'));
+      await _tap(tester, find.text('Poivron'));
+      expect(find.text('Produit archivé'), findsOneWidget);
+      await _tap(tester, find.text('Restaurer ce produit'));
+      await _waitFor(tester, find.text('Poivron restauré.'));
+      await tester.tap(find.byTooltip('Retour')); // editor → picker
+      await _settle(tester);
+      await tester.tap(find.byTooltip('Retour')); // picker → catalogue
+      await _settle(tester);
+      await _waitFor(tester, find.text('Poivron'));
+
+      final all = (await tester.runAsync(
+        () => repos.storeProducts.list(status: StoreProductStatus.all),
+      ))!;
+      expect(all.length, 3); // restored, not duplicated
+      expect(
+        all.firstWhere((p) => p.product.slug == 'poivron').id,
+        peppers16.id,
+      );
+      expect(all.every((p) => !p.isArchived), isTrue);
+
+      // ── Open the store: setup complete ────────────────────────────────
       await _openTab(tester, 'Accueil');
-      expect(find.text('Démarrer votre magasin · 2/3'), findsOneWidget);
       await _tap(tester, find.text('Ouvrir le magasin'));
       expect(find.byType(Switch), findsOneWidget); // Magasin tab
       await _tap(tester, find.byType(Switch));
@@ -351,9 +688,8 @@ void main() {
       expect(find.text('Connexion'), findsNothing);
       expect(find.text('Magasin ouvert'), findsOneWidget);
       await _openTab(tester, 'Catalogue');
-      await _waitFor(tester, find.text('Œufs'));
-      expect(find.text('Tomates'), findsNothing); // archived stays hidden
-      expect(find.text('Fruits & légumes · 1'), findsOneWidget);
+      await _waitFor(tester, find.text('Tomate'));
+      expect(find.text('Légumes · 2'), findsOneWidget);
 
       // ── 14. Logout ────────────────────────────────────────────────────
       await _openTab(tester, 'Magasin');

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'data/repositories/auth_repository.dart';
-import 'data/repositories/category_repository.dart';
-import 'data/repositories/product_repository.dart';
+import 'data/repositories/catalog_repository.dart';
+import 'data/repositories/store_products_repository.dart';
 import 'data/repositories/store_repository.dart';
 import 'data/services/api_client.dart';
 import 'data/services/token_storage.dart';
@@ -24,8 +24,8 @@ void main() {
     GroceryApp(
       authViewModel: authViewModel,
       storeRepository: storeRepository,
-      categoryRepository: CategoryRepository(apiClient),
-      productRepository: ProductRepository(apiClient),
+      catalogRepository: CatalogRepository(apiClient),
+      storeProductsRepository: StoreProductsRepository(apiClient),
     ),
   );
 }

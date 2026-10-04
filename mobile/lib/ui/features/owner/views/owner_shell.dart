@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../data/models/store.dart';
 import '../../../core/app_services.dart';
 import '../../catalog/views/catalog_view.dart';
-import '../../catalog/views/categories_view.dart';
 import '../../store/view_models/store_edit_view_model.dart';
 import '../../store/views/store_manage_view.dart';
 import '../view_models/owner_dashboard_view_model.dart';
@@ -43,8 +42,7 @@ class _OwnerShellState extends State<OwnerShell> {
         initialStore: widget.store,
       );
       _dashboardViewModel = OwnerDashboardViewModel(
-        categoryRepository: services.categoryRepository,
-        productRepository: services.productRepository,
+        storeProductsRepository: services.storeProductsRepository,
       )..refresh();
     }
   }
@@ -64,14 +62,6 @@ class _OwnerShellState extends State<OwnerShell> {
     }
   }
 
-  Future<void> _openCategories() async {
-    await Navigator.of(context)
-        .push<void>(MaterialPageRoute(builder: (_) => const CategoriesView()));
-    if (mounted) {
-      await _dashboardViewModel!.refresh();
-    }
-  }
-
   /// Each tab gets its own [ScaffoldMessenger] so its snackbars are shown by
   /// the tab's own Scaffold — which lifts that tab's floating button above
   /// them. With the single app-wide messenger they would be drawn by the
@@ -82,7 +72,6 @@ class _OwnerShellState extends State<OwnerShell> {
     OwnerTab.home => OwnerHomeView(
       storeViewModel: _storeViewModel!,
       dashboardViewModel: _dashboardViewModel!,
-      onOpenCategories: _openCategories,
       onOpenCatalog: () => _select(OwnerTab.catalog),
       onOpenStore: () => _select(OwnerTab.store),
     ),

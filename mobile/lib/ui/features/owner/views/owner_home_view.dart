@@ -14,7 +14,6 @@ class OwnerHomeView extends StatelessWidget {
   const OwnerHomeView({
     required this.storeViewModel,
     required this.dashboardViewModel,
-    required this.onOpenCategories,
     required this.onOpenCatalog,
     required this.onOpenStore,
     super.key,
@@ -22,7 +21,6 @@ class OwnerHomeView extends StatelessWidget {
 
   final StoreEditViewModel storeViewModel;
   final OwnerDashboardViewModel dashboardViewModel;
-  final VoidCallback onOpenCategories;
   final VoidCallback onOpenCatalog;
   final VoidCallback onOpenStore;
 
@@ -41,13 +39,7 @@ class OwnerHomeView extends StatelessWidget {
             final dashboard = dashboardViewModel;
             final steps = [
               _Step(
-                title: 'Créer une catégorie',
-                hint: 'Pour organiser vos produits.',
-                isDone: dashboard.hasCategory,
-                onTap: onOpenCategories,
-              ),
-              _Step(
-                title: 'Ajouter un produit',
+                title: 'Ajouter des produits',
                 hint: 'Prix, unité de vente et quantités.',
                 isDone: dashboard.hasProduct,
                 onTap: onOpenCatalog,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:grocery_mobile/data/repositories/auth_repository.dart';
-import 'package:grocery_mobile/data/repositories/category_repository.dart';
-import 'package:grocery_mobile/data/repositories/product_repository.dart';
+import 'package:grocery_mobile/data/repositories/catalog_repository.dart';
+import 'package:grocery_mobile/data/repositories/store_products_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_repository.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
 import 'package:grocery_mobile/data/services/token_storage.dart';
@@ -49,8 +49,8 @@ void main() {
       GroceryApp(
         authViewModel: _buildAuthViewModel(apiClient),
         storeRepository: StoreRepository(apiClient),
-        categoryRepository: CategoryRepository(apiClient),
-        productRepository: ProductRepository(apiClient),
+        catalogRepository: CatalogRepository(apiClient),
+        storeProductsRepository: StoreProductsRepository(apiClient),
       ),
     );
     await _pumpToSplash(tester);
@@ -77,8 +77,8 @@ void main() {
       GroceryApp(
         authViewModel: _buildAuthViewModel(apiClient),
         storeRepository: StoreRepository(apiClient),
-        categoryRepository: CategoryRepository(apiClient),
-        productRepository: ProductRepository(apiClient),
+        catalogRepository: CatalogRepository(apiClient),
+        storeProductsRepository: StoreProductsRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -98,8 +98,8 @@ void main() {
       GroceryApp(
         authViewModel: _buildAuthViewModel(apiClient),
         storeRepository: StoreRepository(apiClient),
-        categoryRepository: CategoryRepository(apiClient),
-        productRepository: ProductRepository(apiClient),
+        catalogRepository: CatalogRepository(apiClient),
+        storeProductsRepository: StoreProductsRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -120,8 +120,8 @@ void main() {
       GroceryApp(
         authViewModel: _buildAuthViewModel(apiClient),
         storeRepository: StoreRepository(apiClient),
-        categoryRepository: CategoryRepository(apiClient),
-        productRepository: ProductRepository(apiClient),
+        catalogRepository: CatalogRepository(apiClient),
+        storeProductsRepository: StoreProductsRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -149,8 +149,8 @@ void main() {
       GroceryApp(
         authViewModel: _buildAuthViewModel(apiClient),
         storeRepository: StoreRepository(apiClient),
-        categoryRepository: CategoryRepository(apiClient),
-        productRepository: ProductRepository(apiClient),
+        catalogRepository: CatalogRepository(apiClient),
+        storeProductsRepository: StoreProductsRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);

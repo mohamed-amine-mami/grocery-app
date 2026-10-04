@@ -4,27 +4,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'fakes.dart';
 
 late FakeStoreRepository _stores;
-late FakeCategoryRepository _categories;
 
-Future<void> _pumpOwnerShell(
-  WidgetTester tester, {
-  List<String> categoryNames = const [],
-}) async {
+Future<void> _pumpOwnerShell(WidgetTester tester) async {
   await pumpAppSignedInAs(
     tester,
     testOwner,
     storeRepository: (api) =>
         _stores = FakeStoreRepository(api, store: closedStore),
-    categoryRepository: (api) =>
-        _categories = FakeCategoryRepository(api, names: categoryNames),
   );
-}
-
-/// Categories are managed from the Catalogue tab's app bar.
-Future<void> _openCategories(WidgetTester tester) async {
-  await _openTab(tester, 'Catalogue');
-  await tester.tap(find.byTooltip('Gérer les catégories'));
-  await tester.pumpAndSettle();
 }
 
 Future<void> _openTab(WidgetTester tester, String label) async {
@@ -52,126 +39,6 @@ void main() {
       }
       expect(find.text('Commandes'), findsNothing);
       expect(find.text('Bonjour, Karim'), findsOneWidget);
-    });
-  });
-
-  group('catégories', () {
-    testWidgets('shows a clean empty state with an add action', (tester) async {
-      await _pumpOwnerShell(tester);
-      await _openCategories(tester);
-
-      expect(find.text('Aucune catégorie'), findsOneWidget);
-      expect(find.text('Ajouter une catégorie'), findsOneWidget);
-    });
-
-    testWidgets('lists categories sorted by name', (tester) async {
-      await _pumpOwnerShell(tester, categoryNames: ['Boissons', 'Épicerie']);
-      await _openCategories(tester);
-
-      expect(find.text('Aucune catégorie'), findsNothing);
-      expect(find.text('Boissons'), findsOneWidget);
-      expect(find.text('Épicerie'), findsOneWidget);
-    });
-
-    testWidgets('adds a category from the empty state', (tester) async {
-      await _pumpOwnerShell(tester);
-      await _openCategories(tester);
-
-      await tester.tap(find.text('Ajouter une catégorie'));
-      await tester.pumpAndSettle();
-      await tester.enterText(
-        find.widgetWithText(TextFormField, 'Nom de la catégorie'),
-        '  Produits laitiers ',
-      );
-      await tester.tap(find.text('Ajouter'));
-      await tester.pumpAndSettle();
-
-      expect(_categories.names, ['Produits laitiers']);
-      expect(find.text('Produits laitiers'), findsOneWidget);
-      expect(find.text('Aucune catégorie'), findsNothing);
-    });
-
-    testWidgets('validates the name before calling the backend', (
-      tester,
-    ) async {
-      await _pumpOwnerShell(tester);
-      await _openCategories(tester);
-
-      await tester.tap(find.text('Ajouter une catégorie'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Ajouter'));
-      await tester.pumpAndSettle();
-      expect(find.text('Le nom de la catégorie est requis.'), findsOneWidget);
-
-      await tester.enterText(
-        find.widgetWithText(TextFormField, 'Nom de la catégorie'),
-        'x' * 51,
-      );
-      await tester.tap(find.text('Ajouter'));
-      await tester.pumpAndSettle();
-      expect(
-        find.text('Le nom ne doit pas dépasser 50 caractères.'),
-        findsOneWidget,
-      );
-      expect(_categories.names, isEmpty);
-    });
-
-    testWidgets('keeps the dialog open and explains a duplicate name', (
-      tester,
-    ) async {
-      await _pumpOwnerShell(tester, categoryNames: ['Boissons']);
-      await _openCategories(tester);
-
-      await tester.tap(find.text('Ajouter une catégorie'));
-      await tester.pumpAndSettle();
-      await tester.enterText(
-        find.widgetWithText(TextFormField, 'Nom de la catégorie'),
-        'boissons',
-      );
-      await tester.tap(find.text('Ajouter'));
-      await tester.pumpAndSettle();
-
-      expect(
-        find.text('Une catégorie avec ce nom existe déjà.'),
-        findsOneWidget,
-      );
-      expect(find.text('Nouvelle catégorie'), findsOneWidget);
-      expect(_categories.names, ['Boissons']);
-    });
-
-    testWidgets('renames a category', (tester) async {
-      await _pumpOwnerShell(tester, categoryNames: ['Boissons']);
-      await _openCategories(tester);
-
-      await tester.tap(find.byTooltip('Renommer « Boissons »'));
-      await tester.pumpAndSettle();
-      final field = find.widgetWithText(TextFormField, 'Nom de la catégorie');
-      expect(tester.widget<TextFormField>(field).controller!.text, 'Boissons');
-      await tester.enterText(field, 'Jus et sodas');
-      await tester.tap(find.text('Enregistrer'));
-      await tester.pumpAndSettle();
-
-      expect(_categories.names, ['Jus et sodas']);
-      expect(find.text('Jus et sodas'), findsOneWidget);
-    });
-
-    testWidgets('deletes only after confirmation', (tester) async {
-      await _pumpOwnerShell(tester, categoryNames: ['Boissons']);
-      await _openCategories(tester);
-
-      await tester.tap(find.byTooltip('Supprimer « Boissons »'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Annuler'));
-      await tester.pumpAndSettle();
-      expect(_categories.names, ['Boissons']);
-
-      await tester.tap(find.byTooltip('Supprimer « Boissons »'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Supprimer'));
-      await tester.pumpAndSettle();
-
-      expect(_categories.names, isEmpty);
-      expect(find.text('Aucune catégorie'), findsOneWidget);
     });
   });
 

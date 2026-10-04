@@ -170,4 +170,28 @@ void main() {
       expect(preview(SaleUnit.kg, 1000, 500, 500), '');
     });
   });
+
+  group('ProductFormat.unitLabel', () {
+    test('says how a product is sold, in French', () {
+      expect(ProductFormat.unitLabel(SaleUnit.piece), 'À la pièce');
+      expect(ProductFormat.unitLabel(SaleUnit.kg), 'Au kilo');
+      expect(ProductFormat.unitLabel(SaleUnit.l), 'Au litre');
+    });
+  });
+
+  group('SaleUnit limits (same as the backend)', () {
+    test('quantity and stock ceilings per unit', () {
+      expect(SaleUnit.piece.cap, 1000);
+      expect(SaleUnit.piece.stockCap, 100000);
+      expect(SaleUnit.kg.cap, 100000);
+      expect(SaleUnit.kg.stockCap, 10000000);
+      expect(SaleUnit.l.stockCap, 10000000);
+    });
+
+    test('weights and volumes are counted by 10, pieces singly', () {
+      expect(SaleUnit.piece.granularity, 1);
+      expect(SaleUnit.kg.granularity, 10);
+      expect(SaleUnit.l.granularity, 10);
+    });
+  });
 }

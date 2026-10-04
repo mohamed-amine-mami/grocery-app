@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../../data/repositories/category_repository.dart';
-import '../../../../data/repositories/product_repository.dart';
+import '../../../../data/repositories/store_products_repository.dart';
 
 enum DashboardStatus { loading, ready, failed }
 
@@ -9,25 +8,17 @@ enum DashboardStatus { loading, ready, failed }
 /// enough to drive the setup checklist; order counters ("à confirmer",
 /// "prêtes à retirer") will be loaded here too once orders exist.
 class OwnerDashboardViewModel extends ChangeNotifier {
-  OwnerDashboardViewModel({
-    required this._categoryRepository,
-    required this._productRepository,
-  });
+  OwnerDashboardViewModel({required this._storeProductsRepository});
 
-  final CategoryRepository _categoryRepository;
-  final ProductRepository _productRepository;
+  final StoreProductsRepository _storeProductsRepository;
 
   DashboardStatus _status = DashboardStatus.loading;
   DashboardStatus get status => _status;
 
-  int _categoryCount = 0;
-  int get categoryCount => _categoryCount;
-
-  /// Active (non-archived) products only.
+  /// Active (non-archived) store products only.
   int _productCount = 0;
   int get productCount => _productCount;
 
-  bool get hasCategory => _categoryCount > 0;
   bool get hasProduct => _productCount > 0;
 
   /// Reloads the counts. Keeps showing the previous ones while refreshing so
@@ -39,12 +30,7 @@ class OwnerDashboardViewModel extends ChangeNotifier {
       notifyListeners();
     }
     try {
-      final (categories, products) = await (
-        _categoryRepository.list(),
-        _productRepository.listActive(),
-      ).wait;
-      _categoryCount = categories.length;
-      _productCount = products.length;
+      _productCount = (await _storeProductsRepository.listActive()).length;
       _status = DashboardStatus.ready;
     } catch (_) {
       // Keep stale-but-valid numbers if we already had some.
