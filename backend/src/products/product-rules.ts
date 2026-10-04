@@ -1,13 +1,18 @@
 import { SaleUnit } from './sale-unit.enum.js';
 
 /**
- * Pure product domain rules — no framework, no database — so the same logic
- * can back the catalog now and order items later.
+ * Pure domain rules for catalog products and store products — no framework,
+ * no database — so the same logic backs the catalog, the store's offerings and,
+ * later, order items.
  *
  * Model: `priceMillimes` is the price of **one sale unit** (1 piece / 1 kg /
  * 1 L). A quantity is an integer in the unit's base (pieces / grams / mL).
  * The orderable quantities are `minQuantity`, `minQuantity + quantityStep`, …
  * up to `maxQuantity`; `min` and `max` are multiples of `quantityStep`.
+ *
+ * The same rules apply at two levels: a global catalog product carries default
+ * rules, and a store's offering of it (its "store product") carries the rules
+ * the store actually sells with. Stock belongs to the store product only.
  */
 
 interface UnitRules {
@@ -17,6 +22,8 @@ interface UnitRules {
   granularity: number;
   /** Largest value accepted for min, step or max — a sanity ceiling. */
   cap: number;
+  /** Largest stock a store can declare, in base units — a sanity ceiling. */
+  stockCap: number;
   defaultStep: number;
 }
 
@@ -25,18 +32,21 @@ export const UNIT_RULES: Record<SaleUnit, UnitRules> = {
     baseFactor: 1,
     granularity: 1,
     cap: 1_000,
+    stockCap: 100_000,
     defaultStep: 1,
   },
   [SaleUnit.KG]: {
     baseFactor: 1000,
     granularity: 10,
     cap: 100_000,
+    stockCap: 10_000_000,
     defaultStep: 100,
   },
   [SaleUnit.L]: {
     baseFactor: 1000,
     granularity: 10,
     cap: 100_000,
+    stockCap: 10_000_000,
     defaultStep: 100,
   },
 };
@@ -108,6 +118,138 @@ export function quantityRuleErrors(rules: QuantityRules): string[] {
     errors.push('maxQuantity must be a multiple of quantityStep');
   }
   return errors;
+}
+
+/**
+ * The units a store may sell a catalog product in: the product's own default
+ * unit, or `PIECE`. A product is never sold in an unrelated unit (bananas are
+ * not sold by the litre), and a product that is already counted in pieces
+ * (a 1 L bottle of milk) can only be sold in pieces.
+ */
+export function allowedSaleUnits(defaultSaleUnit: SaleUnit): SaleUnit[] {
+  return defaultSaleUnit === SaleUnit.PIECE
+    ? [SaleUnit.PIECE]
+    : [defaultSaleUnit, SaleUnit.PIECE];
+}
+
+export function saleUnitErrors(
+  defaultSaleUnit: SaleUnit,
+  saleUnit: SaleUnit,
+): string[] {
+  const allowed = allowedSaleUnits(defaultSaleUnit);
+  return allowed.includes(saleUnit)
+    ? []
+    : [`saleUnit must be one of ${allowed.join(', ')} for this product`];
+}
+
+export interface CatalogDefaults {
+  defaultSaleUnit: SaleUnit;
+  defaultMinQuantity: number;
+  defaultQuantityStep: number;
+  defaultMaxQuantity: number | null;
+}
+
+/**
+ * The rules a store product starts with. In the product's default unit they
+ * are the catalog defaults; in another unit (bananas by the piece) the catalog
+ * numbers are meaningless — 100 would be pieces, not grams — so that unit's own
+ * defaults apply instead.
+ */
+export function storeProductDefaults(
+  product: CatalogDefaults,
+  saleUnit: SaleUnit = product.defaultSaleUnit,
+): QuantityRules {
+  if (saleUnit === product.defaultSaleUnit) {
+    return {
+      saleUnit,
+      minQuantity: product.defaultMinQuantity,
+      quantityStep: product.defaultQuantityStep,
+      maxQuantity: product.defaultMaxQuantity,
+    };
+  }
+  return withQuantityDefaults({ saleUnit });
+}
+
+/**
+ * Stock is only declared while it is tracked: `trackStock` and `stockQuantity`
+ * go together (the database enforces the same pairing). The quantity is in the
+ * sale unit's base — pieces / grams / mL — with the same granularity as orders.
+ */
+export function stockErrors(input: {
+  saleUnit: SaleUnit;
+  trackStock: boolean;
+  stockQuantity: number | null;
+}): string[] {
+  const { saleUnit, trackStock, stockQuantity } = input;
+  if (!trackStock) {
+    return stockQuantity === null
+      ? []
+      : ['stockQuantity must be empty when stock is not tracked'];
+  }
+  if (stockQuantity === null) {
+    return ['stockQuantity is required when stock is tracked'];
+  }
+  const { granularity, stockCap } = UNIT_RULES[saleUnit];
+  const baseName = { PIECE: 'pieces', KG: 'grams', L: 'millilitres' }[saleUnit];
+  if (!Number.isInteger(stockQuantity) || stockQuantity < 0) {
+    return [`stockQuantity must be a non-negative integer (in ${baseName})`];
+  }
+  if (stockQuantity > stockCap) {
+    return [`stockQuantity must be at most ${stockCap} ${baseName}`];
+  }
+  if (stockQuantity % granularity !== 0) {
+    return [`stockQuantity must be a multiple of ${granularity} ${baseName}`];
+  }
+  return [];
+}
+
+export type UnavailabilityReason =
+  /** The store archived this offering. */
+  | 'ARCHIVED'
+  /** The owner switched it off (`isAvailable = false`). */
+  | 'OWNER_DISABLED'
+  /** The global product or its category was archived in the catalog. */
+  | 'CATALOG_ARCHIVED'
+  /** Tracked stock is zero. */
+  | 'OUT_OF_STOCK'
+  /** Tracked stock is positive but below the minimum order. */
+  | 'STOCK_BELOW_MINIMUM';
+
+export interface OrderabilityInput {
+  /** The offering itself is not archived. */
+  offeringIsActive: boolean;
+  isAvailable: boolean;
+  productIsActive: boolean;
+  categoryIsActive: boolean;
+  trackStock: boolean;
+  stockQuantity: number | null;
+  minQuantity: number;
+}
+
+/**
+ * Why customers cannot order a store product right now, or `null` when they
+ * can. Derived on every read — never stored — so it cannot drift from its
+ * inputs. Having stock is not enough: stock below the minimum order cannot
+ * satisfy any valid quantity.
+ */
+export function unavailabilityReason(
+  input: OrderabilityInput,
+): UnavailabilityReason | null {
+  if (!input.offeringIsActive) return 'ARCHIVED';
+  if (!input.isAvailable) return 'OWNER_DISABLED';
+  if (!input.productIsActive || !input.categoryIsActive) {
+    return 'CATALOG_ARCHIVED';
+  }
+  if (input.trackStock) {
+    const stock = input.stockQuantity ?? 0;
+    if (stock <= 0) return 'OUT_OF_STOCK';
+    if (stock < input.minQuantity) return 'STOCK_BELOW_MINIMUM';
+  }
+  return null;
+}
+
+export function isOrderable(input: OrderabilityInput): boolean {
+  return unavailabilityReason(input) === null;
 }
 
 /**

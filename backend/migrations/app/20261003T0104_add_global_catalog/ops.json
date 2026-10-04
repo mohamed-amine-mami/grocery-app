@@ -1,0 +1,566 @@
+[
+  {
+    "id": "table.Category",
+    "label": "Create table \"Category\"",
+    "summary": "Creates table \"Category\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Category"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Category\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Category\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Category\"",
+        "sql": "CREATE TABLE \"public\".\"Category\" (\n  \"archivedAt\" timestamptz,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"description\" text,\n  \"id\" SERIAL NOT NULL,\n  \"name\" text NOT NULL,\n  \"photo\" text,\n  \"slug\" text NOT NULL,\n  \"updatedAt\" timestamptz NOT NULL,\n  PRIMARY KEY (\"id\"),\n  CONSTRAINT \"category_name_not_blank_8e77c20d\" CHECK (length(btrim(\"name\")) > 0),\n  CONSTRAINT \"category_slug_format_a1584675\" CHECK (\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$')\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Category\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Category\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.Product",
+    "label": "Create table \"Product\"",
+    "summary": "Creates table \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Product\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Product\"",
+        "sql": "CREATE TABLE \"public\".\"Product\" (\n  \"archivedAt\" timestamptz,\n  \"categoryId\" int4 NOT NULL,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"defaultMaxQuantity\" int4,\n  \"defaultMinQuantity\" int4 NOT NULL,\n  \"defaultQuantityStep\" int4 NOT NULL,\n  \"defaultSaleUnit\" text NOT NULL,\n  \"description\" text,\n  \"id\" SERIAL NOT NULL,\n  \"name\" text NOT NULL,\n  \"photo\" text,\n  \"slug\" text NOT NULL,\n  \"updatedAt\" timestamptz NOT NULL,\n  PRIMARY KEY (\"id\"),\n  CONSTRAINT \"Product_defaultSaleUnit_check_8107ba95\" CHECK (\"defaultSaleUnit\" IN ('PIECE', 'KG', 'L')),\n  CONSTRAINT \"product_default_max_aligned_to_step_1d898355\" CHECK (\"defaultMaxQuantity\" IS NULL OR \"defaultMaxQuantity\" % NULLIF(\"defaultQuantityStep\", 0) = 0),\n  CONSTRAINT \"product_default_max_not_below_min_39cab239\" CHECK (\"defaultMaxQuantity\" IS NULL OR \"defaultMaxQuantity\" >= \"defaultMinQuantity\"),\n  CONSTRAINT \"product_default_min_aligned_to_step_b0b13ee5\" CHECK (\"defaultMinQuantity\" % NULLIF(\"defaultQuantityStep\", 0) = 0),\n  CONSTRAINT \"product_default_min_positive_c6cf8f9b\" CHECK (\"defaultMinQuantity\" > 0),\n  CONSTRAINT \"product_default_step_positive_88ee7a51\" CHECK (\"defaultQuantityStep\" > 0),\n  CONSTRAINT \"product_name_not_blank_8e77c20d\" CHECK (length(btrim(\"name\")) > 0),\n  CONSTRAINT \"product_slug_format_a1584675\" CHECK (\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$')\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Product\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.StoreProduct",
+    "label": "Create table \"StoreProduct\"",
+    "summary": "Creates table \"StoreProduct\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"StoreProduct\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"StoreProduct\"",
+        "sql": "CREATE TABLE \"public\".\"StoreProduct\" (\n  \"archivedAt\" timestamptz,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"isAvailable\" bool DEFAULT true NOT NULL,\n  \"maxQuantity\" int4,\n  \"minQuantity\" int4 NOT NULL,\n  \"priceMillimes\" int4 NOT NULL,\n  \"productId\" int4 NOT NULL,\n  \"quantityStep\" int4 NOT NULL,\n  \"saleUnit\" text NOT NULL,\n  \"stockQuantity\" int4,\n  \"storeId\" int4 NOT NULL,\n  \"trackStock\" bool DEFAULT false NOT NULL,\n  \"updatedAt\" timestamptz NOT NULL,\n  PRIMARY KEY (\"id\"),\n  CONSTRAINT \"StoreProduct_saleUnit_check_e4ec9d4d\" CHECK (\"saleUnit\" IN ('PIECE', 'KG', 'L')),\n  CONSTRAINT \"store_product_max_aligned_to_step_7a1e96ae\" CHECK (\"maxQuantity\" IS NULL OR \"maxQuantity\" % NULLIF(\"quantityStep\", 0) = 0),\n  CONSTRAINT \"store_product_max_not_below_min_d677fabe\" CHECK (\"maxQuantity\" IS NULL OR \"maxQuantity\" >= \"minQuantity\"),\n  CONSTRAINT \"store_product_min_aligned_to_step_6feb37a8\" CHECK (\"minQuantity\" % NULLIF(\"quantityStep\", 0) = 0),\n  CONSTRAINT \"store_product_min_positive_b981200f\" CHECK (\"minQuantity\" > 0),\n  CONSTRAINT \"store_product_price_positive_a55c5a5a\" CHECK (\"priceMillimes\" > 0),\n  CONSTRAINT \"store_product_step_positive_904d0517\" CHECK (\"quantityStep\" > 0),\n  CONSTRAINT \"store_product_stock_not_negative_4df0751e\" CHECK (\"stockQuantity\" IS NULL OR \"stockQuantity\" >= 0),\n  CONSTRAINT \"store_product_stock_tracking_pairing_108fadc4\" CHECK (\"trackStock\" = (\"stockQuantity\" IS NOT NULL))\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"StoreProduct\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.Category.Category_slug_key",
+    "label": "Add unique constraint on \"Category\" (slug)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "Category_slug_key",
+        "table": "Category"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"Category_slug_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Category_slug_key",
+          "public",
+          "\"public\".\"Category\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"Category_slug_key\"",
+        "sql": "ALTER TABLE \"public\".\"Category\" ADD CONSTRAINT \"Category_slug_key\" UNIQUE (\"slug\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"Category_slug_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Category_slug_key",
+          "public",
+          "\"public\".\"Category\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.Product.Product_slug_key",
+    "label": "Add unique constraint on \"Product\" (slug)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "Product_slug_key",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"Product_slug_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_slug_key",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"Product_slug_key\"",
+        "sql": "ALTER TABLE \"public\".\"Product\" ADD CONSTRAINT \"Product_slug_key\" UNIQUE (\"slug\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"Product_slug_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_slug_key",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.StoreProduct.StoreProduct_storeId_productId_key",
+    "label": "Add unique constraint on \"StoreProduct\" (storeId, productId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "StoreProduct_storeId_productId_key",
+        "table": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"StoreProduct_storeId_productId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_storeId_productId_key",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"StoreProduct_storeId_productId_key\"",
+        "sql": "ALTER TABLE \"public\".\"StoreProduct\" ADD CONSTRAINT \"StoreProduct_storeId_productId_key\" UNIQUE (\"storeId\", \"productId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"StoreProduct_storeId_productId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_storeId_productId_key",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Category.category_active_name_unique_5e7c3ad3",
+    "label": "Create index \"category_active_name_unique_5e7c3ad3\" on \"Category\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "category_active_name_unique_5e7c3ad3",
+        "table": "Category"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"category_active_name_unique_5e7c3ad3\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"category_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"category_active_name_unique_5e7c3ad3\"",
+        "sql": "CREATE UNIQUE INDEX \"category_active_name_unique_5e7c3ad3\" ON \"public\".\"Category\" (lower(\"name\")) WHERE ((\"archivedAt\" IS NULL))",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"category_active_name_unique_5e7c3ad3\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"category_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Product.Product_categoryId_idx_15c304f2",
+    "label": "Create index \"Product_categoryId_idx_15c304f2\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Product_categoryId_idx_15c304f2",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Product_categoryId_idx_15c304f2\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product_categoryId_idx_15c304f2\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Product_categoryId_idx_15c304f2\"",
+        "sql": "CREATE INDEX \"Product_categoryId_idx_15c304f2\" ON \"public\".\"Product\" (\"categoryId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Product_categoryId_idx_15c304f2\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product_categoryId_idx_15c304f2\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Product.product_active_name_unique_5e7c3ad3",
+    "label": "Create index \"product_active_name_unique_5e7c3ad3\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "product_active_name_unique_5e7c3ad3",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"product_active_name_unique_5e7c3ad3\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"product_active_name_unique_5e7c3ad3\"",
+        "sql": "CREATE UNIQUE INDEX \"product_active_name_unique_5e7c3ad3\" ON \"public\".\"Product\" (lower(\"name\")) WHERE ((\"archivedAt\" IS NULL))",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"product_active_name_unique_5e7c3ad3\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.StoreProduct.StoreProduct_productId_idx_5858600a",
+    "label": "Create index \"StoreProduct_productId_idx_5858600a\" on \"StoreProduct\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "StoreProduct_productId_idx_5858600a",
+        "table": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"StoreProduct_productId_idx_5858600a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct_productId_idx_5858600a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"StoreProduct_productId_idx_5858600a\"",
+        "sql": "CREATE INDEX \"StoreProduct_productId_idx_5858600a\" ON \"public\".\"StoreProduct\" (\"productId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"StoreProduct_productId_idx_5858600a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct_productId_idx_5858600a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.StoreProduct.StoreProduct_storeId_idx_c545737d",
+    "label": "Create index \"StoreProduct_storeId_idx_c545737d\" on \"StoreProduct\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "StoreProduct_storeId_idx_c545737d",
+        "table": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"StoreProduct_storeId_idx_c545737d\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct_storeId_idx_c545737d\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"StoreProduct_storeId_idx_c545737d\"",
+        "sql": "CREATE INDEX \"StoreProduct_storeId_idx_c545737d\" ON \"public\".\"StoreProduct\" (\"storeId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"StoreProduct_storeId_idx_c545737d\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"StoreProduct_storeId_idx_c545737d\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Product.Product_categoryId_fkey",
+    "label": "Add foreign key \"Product_categoryId_fkey\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Product_categoryId_fkey",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Product_categoryId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_categoryId_fkey",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Product_categoryId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Product\"\nADD CONSTRAINT \"Product_categoryId_fkey\"\nFOREIGN KEY (\"categoryId\")\nREFERENCES \"public\".\"Category\" (\"id\")\nON DELETE RESTRICT"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Product_categoryId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_categoryId_fkey",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.StoreProduct.StoreProduct_storeId_fkey",
+    "label": "Add foreign key \"StoreProduct_storeId_fkey\" on \"StoreProduct\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "StoreProduct_storeId_fkey",
+        "table": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"StoreProduct_storeId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_storeId_fkey",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"StoreProduct_storeId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"StoreProduct\"\nADD CONSTRAINT \"StoreProduct_storeId_fkey\"\nFOREIGN KEY (\"storeId\")\nREFERENCES \"public\".\"Store\" (\"id\")\nON DELETE RESTRICT"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"StoreProduct_storeId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_storeId_fkey",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.StoreProduct.StoreProduct_productId_fkey",
+    "label": "Add foreign key \"StoreProduct_productId_fkey\" on \"StoreProduct\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "StoreProduct_productId_fkey",
+        "table": "StoreProduct"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"StoreProduct_productId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_productId_fkey",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"StoreProduct_productId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"StoreProduct\"\nADD CONSTRAINT \"StoreProduct_productId_fkey\"\nFOREIGN KEY (\"productId\")\nREFERENCES \"public\".\"Product\" (\"id\")\nON DELETE RESTRICT"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"StoreProduct_productId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "StoreProduct_productId_fkey",
+          "public",
+          "\"public\".\"StoreProduct\""
+        ]
+      }
+    ]
+  }
+]

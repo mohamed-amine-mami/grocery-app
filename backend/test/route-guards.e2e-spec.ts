@@ -20,23 +20,22 @@ const PUBLIC_ROUTES = [
 
 /** Every route the API is expected to expose. Adding one must be a conscious edit here. */
 const EXPECTED_ROUTES = [
-  'DELETE /owner/categories/{id}',
-  'DELETE /owner/products/{id}',
+  'DELETE /owner/store-products/{id}',
   'GET /auth/me',
   'GET /health',
-  'GET /owner/categories',
-  'GET /owner/products',
-  'GET /owner/products/{id}',
+  'GET /owner/catalog/categories',
+  'GET /owner/catalog/products',
   'GET /owner/store',
-  'PATCH /owner/categories/{id}',
-  'PATCH /owner/products/{id}',
-  'PATCH /owner/products/{id}/availability',
+  'GET /owner/store-products',
+  'GET /owner/store-products/{id}',
   'PATCH /owner/store',
+  'PATCH /owner/store-products/{id}',
+  'PATCH /owner/store-products/{id}/availability',
   'POST /auth/login',
   'POST /auth/register',
-  'POST /owner/categories',
-  'POST /owner/products',
   'POST /owner/store',
+  'POST /owner/store-products',
+  'POST /owner/store-products/{id}/restore',
 ];
 
 let routes: { method: string; path: string; label: string }[] = [];
@@ -86,6 +85,37 @@ describe('the route table', () => {
     expect(routes.some((route) => /^\/(users|stores)\b/.test(route.path))).toBe(
       false,
     );
+  });
+});
+
+describe('the global catalog has no write route', () => {
+  it('exposes only GET under /owner/catalog', () => {
+    const catalogRoutes = routes.filter((route) =>
+      route.path.startsWith('/owner/catalog'),
+    );
+    expect(catalogRoutes.length).toBeGreaterThan(0);
+    expect(catalogRoutes.map((route) => route.method)).toEqual(
+      catalogRoutes.map(() => 'get'),
+    );
+  });
+
+  it('has no route that reaches the catalog tables or the removed per-store catalog', () => {
+    const labels = routes.map((route) => route.label);
+    expect(
+      labels.filter((label) => /\/owner\/(categories|products)/.test(label)),
+    ).toEqual([]);
+  });
+
+  it('allows writes only on the store, the store products and auth', () => {
+    const writers = routes
+      .filter((route) => route.method !== 'get')
+      .map((route) => route.path.split('/').slice(0, 3).join('/'));
+    expect([...new Set(writers)].sort()).toEqual([
+      '/auth/login',
+      '/auth/register',
+      '/owner/store',
+      '/owner/store-products',
+    ]);
   });
 });
 

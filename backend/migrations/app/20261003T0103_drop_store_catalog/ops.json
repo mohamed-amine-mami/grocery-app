@@ -1,0 +1,102 @@
+[
+  {
+    "id": "guard.allowCatalogReset",
+    "label": "Require explicit opt-in before dropping the per-store catalog",
+    "operationClass": "data",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "refuse to drop the per-store catalog unless grocery.allow_catalog_reset=yes is set on the connection",
+        "sql": "SELECT coalesce(current_setting('grocery.allow_catalog_reset', true), '') = 'yes' AS \"result\""
+      }
+    ],
+    "execute": [
+      {
+        "description": "opt-in confirmed",
+        "sql": "SELECT 1"
+      }
+    ],
+    "postcheck": []
+  },
+  {
+    "id": "dropTable.Product",
+    "label": "Drop table \"Product\"",
+    "operationClass": "destructive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Product\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "drop table \"Product\"",
+        "sql": "DROP TABLE \"public\".\"Product\""
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Product\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dropTable.Category",
+    "label": "Drop table \"Category\"",
+    "operationClass": "destructive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Category"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Category\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Category\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "drop table \"Category\"",
+        "sql": "DROP TABLE \"public\".\"Category\""
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Category\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Category\""
+        ]
+      }
+    ]
+  }
+]

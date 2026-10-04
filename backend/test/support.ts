@@ -45,22 +45,15 @@ export async function stopApp(): Promise<void> {
   for (const id of createdUserIds) {
     const store = await db.orm.public.Store.first({ ownerId: id });
     if (store) {
-      // `delete()` removes one row per call, so walk the store's rows — products
-      // first (they reference categories and the store), then categories.
-      const products = await db.orm.public.Product.where({
+      // `delete()` removes one row per call, so walk the store's offerings first
+      // (they reference the store). Global catalog rows are shared and never
+      // removed here — a suite that creates any removes them itself.
+      const offerings = await db.orm.public.StoreProduct.where({
         storeId: store.id,
       }).all();
-      for (const product of products) {
-        await db.orm.public.Product.select('id')
-          .where({ id: product.id })
-          .delete();
-      }
-      const categories = await db.orm.public.Category.where({
-        storeId: store.id,
-      }).all();
-      for (const category of categories) {
-        await db.orm.public.Category.select('id')
-          .where({ id: category.id })
+      for (const offering of offerings) {
+        await db.orm.public.StoreProduct.select('id')
+          .where({ id: offering.id })
           .delete();
       }
     }

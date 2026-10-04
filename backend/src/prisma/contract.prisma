@@ -5,7 +5,7 @@ enum UserRole {
   CLIENT
 }
 
-/// How a product is priced. Quantities are integers in the unit's base:
+/// How a product is sold. Quantities are integers in the unit's base:
 /// PIECE = pieces, KG = grams, L = millilitres.
 enum SaleUnit {
   PIECE
@@ -43,44 +43,84 @@ model Store {
   @@check(expression: "(latitude IS NULL) = (longitude IS NULL)", name: "store_coordinates_together")
 }
 
+/// Global catalog category — curated through the catalog import, never by owners.
 model Category {
-  id        Int      @id @default(autoincrement())
-  storeId   Int
-  store     Store    @relation(fields: [storeId], references: [id])
-  name      String
-  createdAt TimestamptzString @default(now())
-  updatedAt temporal.updatedAtString()
+  id          Int               @id @default(autoincrement())
+  /// Stable technical identifier used by the importer and automation; never reused.
+  slug        String            @unique
+  name        String
+  description String?
+  photo       String?
+  archivedAt  TimestamptzString?
+  createdAt   TimestamptzString @default(now())
+  updatedAt   temporal.updatedAtString()
 
-  @@index(expression: "\"storeId\", lower(\"name\")", unique: true, name: "category_store_name_unique")
+  // Names are unique among *active* categories; archived ones free the name.
+  @@index(expression: "lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL)", name: "category_active_name_unique")
+  @@check(expression: "length(btrim(\"name\")) > 0", name: "category_name_not_blank")
+  @@check(expression: "\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$'", name: "category_slug_format")
 }
 
+/// Global catalog product: the canonical identity. Carries *defaults* only —
+/// price, availability, stock and the rules a store actually sells with live on
+/// StoreProduct.
 model Product {
-  id            Int      @id @default(autoincrement())
+  id                  Int               @id @default(autoincrement())
+  /// Stable technical identifier; renaming a product keeps its slug.
+  slug                String            @unique
+  categoryId          Int
+  category            Category          @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  name                String
+  description         String?
+  photo               String?
+  defaultSaleUnit     SaleUnit
+  defaultMinQuantity  Int
+  defaultQuantityStep Int
+  defaultMaxQuantity  Int?
+  archivedAt          TimestamptzString?
+  createdAt           TimestamptzString @default(now())
+  updatedAt           temporal.updatedAtString()
+
+  @@index(expression: "lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL)", name: "product_active_name_unique")
+  @@index([categoryId])
+  @@check(expression: "length(btrim(\"name\")) > 0", name: "product_name_not_blank")
+  @@check(expression: "\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$'", name: "product_slug_format")
+  @@check(expression: "\"defaultMinQuantity\" > 0", name: "product_default_min_positive")
+  @@check(expression: "\"defaultQuantityStep\" > 0", name: "product_default_step_positive")
+  @@check(expression: "\"defaultMinQuantity\" % NULLIF(\"defaultQuantityStep\", 0) = 0", name: "product_default_min_aligned_to_step")
+  @@check(expression: "\"defaultMaxQuantity\" IS NULL OR \"defaultMaxQuantity\" >= \"defaultMinQuantity\"", name: "product_default_max_not_below_min")
+  @@check(expression: "\"defaultMaxQuantity\" IS NULL OR \"defaultMaxQuantity\" % NULLIF(\"defaultQuantityStep\", 0) = 0", name: "product_default_max_aligned_to_step")
+}
+
+/// How one store sells one catalog product. The only place store-specific
+/// commercial configuration lives. Rows are archived, never deleted: both
+/// foreign keys are Restrict, so history (and future order items) can rely on them.
+model StoreProduct {
+  id            Int               @id @default(autoincrement())
   storeId       Int
-  store         Store    @relation(fields: [storeId], references: [id])
-  categoryId    Int?
-  category      Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
-  name          String
-  description   String?
-  photo         String?
+  store         Store             @relation(fields: [storeId], references: [id], onDelete: Restrict)
+  productId     Int
+  product       Product           @relation(fields: [productId], references: [id], onDelete: Restrict)
   saleUnit      SaleUnit
   priceMillimes Int
   minQuantity   Int
   quantityStep  Int
   maxQuantity   Int?
-  isAvailable   Boolean  @default(true)
+  /// Stock is optional per store product; when tracked it is in base units.
+  trackStock    Boolean           @default(false)
+  stockQuantity Int?
+  isAvailable   Boolean           @default(true)
   archivedAt    TimestamptzString?
   createdAt     TimestamptzString @default(now())
   updatedAt     temporal.updatedAtString()
 
-  // Names are unique among a store's *active* products; archived ones free the name.
-  @@index(expression: "\"storeId\", lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL)", name: "product_store_active_name_unique")
-  @@index([storeId, categoryId])
-  @@check(expression: "length(btrim(\"name\")) > 0", name: "product_name_not_blank")
-  @@check(expression: "\"priceMillimes\" > 0", name: "product_price_positive")
-  @@check(expression: "\"minQuantity\" > 0", name: "product_min_quantity_positive")
-  @@check(expression: "\"quantityStep\" > 0", name: "product_quantity_step_positive")
-  @@check(expression: "\"minQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "product_min_aligned_to_step")
-  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" >= \"minQuantity\"", name: "product_max_not_below_min")
-  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "product_max_aligned_to_step")
+  @@unique([storeId, productId])
+  @@check(expression: "\"priceMillimes\" > 0", name: "store_product_price_positive")
+  @@check(expression: "\"minQuantity\" > 0", name: "store_product_min_positive")
+  @@check(expression: "\"quantityStep\" > 0", name: "store_product_step_positive")
+  @@check(expression: "\"minQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "store_product_min_aligned_to_step")
+  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" >= \"minQuantity\"", name: "store_product_max_not_below_min")
+  @@check(expression: "\"maxQuantity\" IS NULL OR \"maxQuantity\" % NULLIF(\"quantityStep\", 0) = 0", name: "store_product_max_aligned_to_step")
+  @@check(expression: "\"stockQuantity\" IS NULL OR \"stockQuantity\" >= 0", name: "store_product_stock_not_negative")
+  @@check(expression: "\"trackStock\" = (\"stockQuantity\" IS NOT NULL)", name: "store_product_stock_tracking_pairing")
 }

@@ -1,0 +1,338 @@
+{
+  "categories": [
+    {
+      "slug": "fruits",
+      "name": "Fruits",
+      "products": [
+        {
+          "slug": "pomme",
+          "name": "Pomme",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "banane",
+          "name": "Banane",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "orange",
+          "name": "Orange",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "citron",
+          "name": "Citron",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "fraise",
+          "name": "Fraise",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "raisin",
+          "name": "Raisin",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        }
+      ]
+    },
+    {
+      "slug": "legumes",
+      "name": "Légumes",
+      "products": [
+        {
+          "slug": "tomate",
+          "name": "Tomate",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "pomme-de-terre",
+          "name": "Pomme de terre",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 1000,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 20000
+        },
+        {
+          "slug": "oignon",
+          "name": "Oignon",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "carotte",
+          "name": "Carotte",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "courgette",
+          "name": "Courgette",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 10000
+        },
+        {
+          "slug": "poivron",
+          "name": "Poivron",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "concombre",
+          "name": "Concombre",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "laitue",
+          "name": "Laitue",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "persil",
+          "name": "Persil (botte)",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        }
+      ]
+    },
+    {
+      "slug": "produits-laitiers",
+      "name": "Produits laitiers",
+      "products": [
+        {
+          "slug": "lait-entier-1l",
+          "name": "Lait entier 1 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 24
+        },
+        {
+          "slug": "lait-demi-ecreme-1l",
+          "name": "Lait demi-écrémé 1 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 24
+        },
+        {
+          "slug": "yaourt-nature",
+          "name": "Yaourt nature (pot)",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 48
+        },
+        {
+          "slug": "beurre-250g",
+          "name": "Beurre 250 g",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "fromage-emmental",
+          "name": "Fromage emmental",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 100,
+          "defaultQuantityStep": 50,
+          "defaultMaxQuantity": 2000
+        },
+        {
+          "slug": "oeufs",
+          "name": "Œufs frais",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 120
+        }
+      ]
+    },
+    {
+      "slug": "boulangerie",
+      "name": "Boulangerie",
+      "products": [
+        {
+          "slug": "baguette",
+          "name": "Baguette",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "pain-complet",
+          "name": "Pain complet",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "croissant",
+          "name": "Croissant",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 24
+        }
+      ]
+    },
+    {
+      "slug": "viandes-poissons",
+      "name": "Viandes et poissons",
+      "products": [
+        {
+          "slug": "escalope-de-poulet",
+          "name": "Escalope de poulet",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 250,
+          "defaultQuantityStep": 250,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "viande-hachee-boeuf",
+          "name": "Viande hachée de bœuf",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 250,
+          "defaultQuantityStep": 250,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "poulet-entier",
+          "name": "Poulet entier",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 1000,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "daurade",
+          "name": "Daurade",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 500,
+          "defaultQuantityStep": 100,
+          "defaultMaxQuantity": 5000
+        }
+      ]
+    },
+    {
+      "slug": "epicerie",
+      "name": "Épicerie",
+      "products": [
+        {
+          "slug": "riz-1kg",
+          "name": "Riz 1 kg",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "spaghetti-500g",
+          "name": "Spaghetti 500 g",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "couscous-1kg",
+          "name": "Couscous 1 kg",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "huile-d-olive-1l",
+          "name": "Huile d'olive 1 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 12
+        },
+        {
+          "slug": "sucre-1kg",
+          "name": "Sucre 1 kg",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "farine-1kg",
+          "name": "Farine 1 kg",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "harissa-170g",
+          "name": "Harissa 170 g",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 20
+        },
+        {
+          "slug": "thon-boite",
+          "name": "Thon à l'huile (boîte)",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 24
+        },
+        {
+          "slug": "dattes",
+          "name": "Dattes",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 250,
+          "defaultQuantityStep": 50,
+          "defaultMaxQuantity": 5000
+        },
+        {
+          "slug": "olives-vertes",
+          "name": "Olives vertes",
+          "defaultSaleUnit": "KG",
+          "defaultMinQuantity": 250,
+          "defaultQuantityStep": 50,
+          "defaultMaxQuantity": 5000
+        }
+      ]
+    },
+    {
+      "slug": "boissons",
+      "name": "Boissons",
+      "products": [
+        {
+          "slug": "eau-minerale-1-5l",
+          "name": "Eau minérale 1,5 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 24
+        },
+        {
+          "slug": "eau-minerale-0-5l",
+          "name": "Eau minérale 0,5 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 48
+        },
+        {
+          "slug": "jus-d-orange-1l",
+          "name": "Jus d'orange 1 L",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 12
+        },
+        {
+          "slug": "cafe-moulu-250g",
+          "name": "Café moulu 250 g",
+          "defaultSaleUnit": "PIECE",
+          "defaultMaxQuantity": 12
+        }
+      ]
+    }
+  ]
+}

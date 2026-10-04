@@ -5,8 +5,8 @@ import { AppService } from './app.service.js';
 import { UsersModule } from './users/users.module.js';
 import { StoresModule } from './stores/stores.module.js';
 import { AuthModule } from './auth/auth.module.js';
-import { CategoriesModule } from './categories/categories.module.js';
-import { ProductsModule } from './products/products.module.js';
+import { CatalogModule } from './catalog/catalog.module.js';
+import { StoreProductsModule } from './store-products/store-products.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -22,8 +22,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     UsersModule,
     StoresModule,
     AuthModule,
-    CategoriesModule,
-    ProductsModule,
+    CatalogModule,
+    StoreProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
