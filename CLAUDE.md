@@ -1,50 +1,38 @@
-# Grocery Pickup App
+# GrocerGo — pickup-only grocery app
 
-Engineering/portfolio project: a **pickup-only** grocery ordering app. No delivery flow exists or is planned.
+Portfolio project. Pickup only: no delivery. `backend/` NestJS (ESM) + Prisma 8 (`@prisma/orm-postgres`) + PostgreSQL · `mobile/` Flutter · `infrastructure/` docker-compose (Postgres) · `docs/`. No root package manager: run each app from its own directory.
+Docs: `docs/owner-domain.md` (owner workflow and API surface) · `docs/design.md` (UI/UX source of truth — read it before any Flutter UI work).
 
-* `backend/` — NestJS (TypeScript, ESM), Prisma 8 (`@prisma/orm-postgres`), PostgreSQL
-* `mobile/` — Flutter/Dart
-* `infrastructure/` — docker-compose (Postgres for local dev)
-* `docs/` — architecture notes, API contracts, decisions (put detail here, not in this file). Owner domain rules: `docs/owner-domain.md`; UI/UX: `docs/design.md`
+## Conventions
+- UI text is French; API error messages are English (Flutter maps status/`code` to French). The only stable error `code` so far is `STOCK_CHANGED` (409).
+- Money = integer millimes (1800 = 1,800 DT). Quantities = integer base units (pieces / grams / mL). No floats for money or quantities.
+- Owner routes: `JwtAuthGuard` + `RolesGuard` + `@Roles(OWNER)`. The owner comes from the JWT, never the body or URL; scope by `storeId`.
+- Controllers thin, logic in services, DTOs with class-validator. Every endpoint is documented in Swagger and matches real behavior. After an API change, check the OpenAPI document (the route-guards e2e builds it) and the e2e tests before touching Flutter.
+- Flutter: data/logic out of widgets; reuse the theme and shared widgets; no new design tokens.
 
-No root-level package manager — each app is built/run from its own directory.
+## Architecture (decided; schema in `backend/src/prisma/contract.prisma`)
+Category → Product (global catalog) → StoreProduct (a store's offering) → Store.
+- Global Category/Product carry no store, price, stock or availability. Owners cannot write them; only the importer does. A `slug` is a permanent identity: renaming keeps the slug. The importer never touches StoreProduct.
+- StoreProduct owns price, sale unit, quantity rules, stock, owner availability and archive state. Archive, never delete.
+- Customer availability is derived, never stored. `isOrderable` / `unavailabilityReason`, and the unit and stock validation, live in `backend/src/products/product-rules.ts` — that file is the rule; don't restate it.
+- Stock edits send `expectedStockQuantity`. Orders (not built) must decrement stock atomically at placement, inside one `db.transaction`.
+- Not started — don't build unless asked: orders, cart, customer UI, WhatsApp/n8n/LLM, payments, notifications, deployment.
 
-## Current phase
+## Commands and environment
+- Postgres: Docker Desktop running (`open -a Docker`), then `docker compose up -d` in `infrastructure/`. Test DB `grocery_db_test` (= dev `DATABASE_URL` + `_test`).
+- Backend (`backend/`): `npm run lint | test | test:e2e | build | format`. E2E refuses any non-`_test` DB. Never hand-edit the generated `contract.d.ts` / `contract.json`: run `npm run contract:emit`.
+- Catalog: `npm run catalog:import` (use `-- --dry-run` first). Source: `backend/seed/catalog.json`.
+- Migrations: edit the contract → `contract:emit` → `npx prisma migration plan --name <slug>` (add `--from <migration-dir>` when the `db` ref is stale; `migrations/app/refs/db.json` currently is) → `npx prisma db migrate --db "<url>"`, on the dev AND the test DB. A hand-edited `migration.ts` must be re-emitted with `node migrations/app/<dir>/migration.ts`. Destructive migrations carry an opt-in guard: only the user applies them; never run one on your own.
+- Flutter (`mobile/`): `flutter analyze && flutter test`. Smoke test (`test_smoke/`, not part of `flutter test`): run `catalog:import` against the test DB, start the backend with `DATABASE_URL=<…>_test PORT=3001 node dist/main`, then `flutter test test_smoke --dart-define=API_BASE_URL=http://localhost:3001`. Empty the test DB afterwards.
 
-Early development. Authentication (phone + password, JWT, roles) and the **Owner V1** (store, categories, products, dashboard) are built — see `docs/owner-domain.md`; orders and the customer side are next. The backend and database foundation come first; Flutter is wired up feature-by-feature only after the corresponding API exists and works.
-
-Per-feature loop: implement in NestJS → document in Swagger → test via Swagger UI → fix → connect Flutter → verify end-to-end → move on.
-
-**Do not build ahead of what's asked.** Leave these until explicitly requested, even though a `User` model with a `role` already exists in the Prisma schema:
-
-WhatsApp integration, n8n workflows, LLM/AI parsing, payments, notifications, deployment setup.
-
-## Backend (`backend/`)
-
-* Package manager: npm. Module system: ESM (`"type": "module"`) — use `import`/`export`, not `require`.
-* ORM: **Prisma 8** (`@prisma/orm-postgres`, still pre-1.0) — not TypeORM. Schema lives at `backend/src/prisma/contract.prisma`; run `npm run contract:emit` after editing it.
-* Lint: `npm run lint` (oxlint, not eslint). Format: `npm run format` (prettier — single quotes, trailing commas).
-* Tests: `npm run test` (vitest, not jest). E2E: `npm run test:e2e` — runs against a separate `*_test` database and refuses the dev one (setup in `docs/owner-domain.md`).
-* Migrations: `backend/migrations/` (Prisma 8 `migration plan` + `db migrate`); commit them with the contract change. Workflow in `docs/owner-domain.md`.
-* Authorization: owner routes use `JwtAuthGuard` + `RolesGuard` + `@Roles(...)`. Identify the owner from the JWT, never from the request body or URL; scope catalog/order data by `storeId`.
-* Keep controllers thin; business logic in services; validate input via DTOs (class-validator).
-* Every endpoint must be documented in Swagger and reflect real behavior — no documenting unbuilt functionality. Verify endpoints through Swagger UI, not just by reading the code.
-* After changing an API contract, re-check the Swagger schema and manually test the affected endpoints before connecting or updating Flutter.
-* Don't add a DB column, relation, or index without a concrete current requirement.
-* Do not manually edit generated Prisma/client files; change the Prisma contract/schema and use the project's defined generation commands.
-
-## Mobile (`mobile/`)
-
-* Standard `flutter analyze` / `flutter test` — config in `analysis_options.yaml` (flutter_lints defaults, unmodified). `mobile/test_smoke/` holds an end-to-end owner smoke test against a real backend (how to run it: `docs/owner-domain.md`).
-* Keep API/data logic out of widgets. No hardcoded data once a screen is wired to a real endpoint.
-* Before adding new screens, reuse the existing theme/design-system foundations (colors, typography, spacing, shared components) rather than redesigning per screen.
+## Gotchas
+- `tsc --noEmit` reports old TS2883 errors in migration/config files — not regressions. `nest build` is the real check.
+- `backend/test/route-guards.e2e-spec.ts` pins the exact route set: adding a route means editing it.
+- E2E suites share one database: seed tagged catalog rows with `test/catalog-helpers.ts`, delete store products before products, and never assume the global tables are empty.
+- zsh on macOS: no `echo =====`; use `pipestatus`, not `PIPESTATUS`. The iOS simulator types with an AZERTY mapping: use letters identical on both layouts in passwords.
 
 ## Working style
-
-* Read the relevant existing code before changing it; make focused edits, don't touch unrelated files.
-* No new dependencies, abstractions, or unrequested features without a concrete need.
-* State important/irreversible architectural decisions before making them.
-* Verify claims: run the tests/lint/Swagger check you're relying on rather than asserting it works.
-* Use installed skills (`nestjs-expert`, `design-system`, `accessibility-review`, `n8n-*` skills, Context7 for library docs) when they fit the task; don't invoke unrelated ones.
-* Never commit secrets or `.env` files. Keep commits scoped to one feature/fix.
-
+- Phase by phase: do exactly what the prompt asks, then stop and report; never start the next phase. Read the relevant code first; make focused edits; no new dependencies, abstractions, columns or features without a concrete need.
+- State irreversible or architectural decisions before making them. Never commit secrets or `.env`. Keep commits scoped to one feature or fix.
+- Verify by running the tests/lint/build. Report honestly: what ran, what failed, what was not run or could not be verified, and anything changed beyond the ask. Keep reports short: results, deviations, open decisions.
+- Use the installed skills (`nestjs-expert`, `design-system`, `accessibility-review`, `n8n-*`, Context7 for library docs) only when they fit the task.

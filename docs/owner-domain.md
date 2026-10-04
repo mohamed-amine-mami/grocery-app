@@ -1,255 +1,90 @@
-# Owner Domain — Source of Truth
+# Owner Domain
 
-Owner-side architecture of GrocerGo (pickup-only; **no delivery, ever**). This file describes what is **built**, the **rules that must not be broken**, what is **postponed**, and what is **still undecided**. It is kept equal to the code: if they disagree, fix one of them in the same change. UI/UX lives in `design.md`; engineering conventions in `CLAUDE.md`.
+The owner side of GrocerGo (pickup only, no delivery): what is built, the rules that matter, what is postponed. Rules that live in code are referenced, not restated. UI/UX: `design.md`. Conventions and commands: `CLAUDE.md`.
 
-## 1. Domain in one page
+## 1. Model
 
 ```
-User (role = OWNER) 1 ──── 1 Store ──┬── * Category
-                                     └── * Product ──(optional)──> Category
+User (role OWNER) 1─1 Store ─* StoreProduct ─> Product ─> Category
 ```
 
-- **No `Owner` entity.** An owner is a `User` with `role = OWNER`.
-- **V1: one owner → exactly one store** (`Store.ownerId` is `UNIQUE`).
-- **Every catalog/order table belongs to the store through `storeId`** — never to the owner, never to a category. (That is what keeps a later move to multi-store cheap: drop the unique constraint and make the "current store" explicit.) Multi-store is deliberately **not** architected now.
-- **Nothing in the API lets a client name an owner or a store.** The owner is the JWT's `sub`; the store is looked up from it.
+- **Category and Product are global.** They are curated in `backend/seed/catalog.json` and loaded with `npm run catalog:import`; owners cannot create or edit them.
+- A **StoreProduct** is one store's offering of one product: `UNIQUE(storeId, productId)`, archived rather than deleted.
+- No Owner entity: an owner is a `User` with role OWNER. V1: one owner = one store (`Store.ownerId` unique); one account = one role.
+- The owner is the JWT `sub`; the store is resolved from it and every store query is filtered by `storeId`. Another store's id is a 404.
 
 ## 2. Users and authentication
 
-- Accounts are created only through `POST /auth/register` (`role` = `OWNER` or `CLIENT`) and read through `GET /auth/me`. The users module has **no HTTP routes**.
-- `User.phoneNumber` is **required and unique** (NOT NULL in the database) — it is the login identifier.
-- Phone numbers: optional leading `+`, then 8–15 digits. Spaces, dots, dashes and parentheses are stripped before validation and storage (`98 999 240` ≡ `98999240`), on register and login alike, mirroring the Flutter form validator.
-- JWT: 7 days, payload `{ sub, role }` only. Roles come from the token.
+- `POST /auth/register`, `POST /auth/login`, `GET /auth/me`. Login is by phone (required, unique; optional `+`, then 8–15 digits; spaces, dots, dashes and parentheses are stripped). JWT: 7 days, `{ sub, role }`.
+- Every `/owner/*` route uses `JwtAuthGuard` + `RolesGuard` + `@Roles(OWNER)` (401 without a valid token, 403 for a CLIENT). Public: `/health`, register, login. `backend/test/route-guards.e2e-spec.ts` pins the route table.
+- Payloads with `ownerId`, `storeId`, `archivedAt` or any global product field are rejected (400, global `ValidationPipe`).
 
-## 3. Authorization model
+## 3. Store
 
-| Rule | Enforced by |
+Name (≤100), address (≤200), description (≤1000), photo (http(s) URL, no upload), latitude/longitude (both or neither), `isOpen` (default `false`).
+
+- `GET /owner/store`: the store, or **404** (= owner without a store). `POST`: create (409 if one exists). `PATCH`: partial update, including `isOpen`.
+- `isOpen` is a manual switch (no opening hours) and **is not enforced yet**: when orders exist the backend must reject orders for a closed store.
+
+## 4. Owner workflow: catalog → store product
+
+```
+Catalogue → "Ajouter depuis le catalogue" → product picker → Quick Add → StoreProduct created → Catalogue refreshed
+```
+
+Owners never create or manage global Categories or Products, and there is no Admin UI: the global catalog is managed only by the importer (`backend/seed/catalog.json`, `npm run catalog:import`). Global Product data (name, category, description, image, default unit and rules) is read-only to the owner. Everything store-specific belongs to the **StoreProduct**: price, sale unit, quantity rules, stock, the owner's availability switch and the archive state.
+
+| Route | Purpose |
 |---|---|
-| Every `/owner/*` route needs a valid JWT **and** `role = OWNER` (401 without a token or with a forged one, 403 for a CLIENT) | `JwtAuthGuard` + `RolesGuard` + `@Roles(OWNER)` on each owner controller |
-| A route with `@Roles` missing is denied, not open | `RolesGuard` |
-| The owner is the JWT `sub`; the store is resolved from it; every query is filtered by that `storeId`. Another store's id is a **404**, indistinguishable from a missing one | `StoresService.findByOwner` + scoped queries in the categories/products services |
-| `ownerId`, `storeId`, `archivedAt`, `isOpen` (on create), `isAvailable` (on edit) are rejected in payloads (400) | global `ValidationPipe` (`whitelist` + `forbidNonWhitelisted`), shared through `app.setup.ts` |
-| A referenced category must belong to the same store (400) | `ProductsService.assertCategoryInStore` |
-| Archived products cannot be edited or toggled (409) | `ProductsService` |
-| One store per owner (409) | DB unique constraint, mapped in `StoresService` |
+| `GET /owner/catalog/categories` | Active categories with product counts (not used by a screen today) |
+| `GET /owner/catalog/products[?categoryId]` | Picker list; each product has `inMyStore`, `storeProductId`, `storeProductArchived` |
+| `GET` / `POST /owner/store-products` | List (`status`, `categoryId`) / add (409 if the store has it, archived included) |
+| `GET` / `PATCH` / `DELETE /owner/store-products/:id` | Read / edit price, unit, rules, stock / archive |
+| `PATCH /owner/store-products/:id/availability` | The owner's on/off switch |
+| `POST /owner/store-products/:id/restore` | Restore an archived one |
 
-The old generic `/users` and `/stores` CRUD was **removed** (it was unauthenticated and could change roles, passwords and other owners' stores). When customers need to browse stores, add a dedicated read-only endpoint — do not resurrect generic CRUD.
+- **Rules** (units, quantity granularity, stock validation, the derived `isOrderable` and `unavailabilityReason`, `lineTotalMillimes`) are defined in `backend/src/products/product-rules.ts`. Dart mirrors the unit rules and validation, tested on the same cases.
+- **Orderability.** The backend's `isOrderable` / `unavailabilityReason` (`ARCHIVED`, `OWNER_DISABLED`, `CATALOG_ARCHIVED`, `OUT_OF_STOCK`, `STOCK_BELOW_MINIMUM`) is the only source of truth for what customers can order. Flutter displays it and never computes it, and never changes the owner's `isAvailable` because of stock.
+- **Stock** belongs to the StoreProduct. Editing `trackStock` or `stockQuantity` requires `expectedStockQuantity` (`null` if untracked); if the stock changed meanwhile the response is 409 `STOCK_CHANGED` with `currentStockQuantity`, and nothing is applied. With tracking on and a stock of 0 the backend makes the product unorderable (`OUT_OF_STOCK`) while the owner's switch is untouched; with tracking off, stock plays no part.
+- **Importer** (`npm run catalog:import`, `--dry-run` first). It validates the whole file before writing, matches Categories and Products by `slug` (a changed name updates the same row), applies everything in one transaction, and is idempotent. A catalog entry is archived only when the file flags it `"archived": true` (leaving it out does nothing); the report warns about the active store products an archive affects. It only writes Category and Product, never StoreProduct.
+- **Stock edits** go through `PATCH /owner/store-products/:id` (there is no separate stock route); only the owner can change a StoreProduct's stock.
+- **Archive, never delete.** An archived StoreProduct, or one whose product or category the catalog archived, is unorderable and kept. Restoring reactivates the same StoreProduct (same id, same configuration); it never creates another, and the add flow is blocked for a product the store already has (409).
 
-**Regression net:** `backend/test/route-guards.e2e-spec.ts` reads the real route table from the Swagger document and asserts that (a) the set of routes is exactly the expected list, (b) every non-public route is 401 without/with a bad token, (c) every `/owner/*` route is 403 for a CLIENT, (d) no route takes an owner/store id. Adding a route requires a conscious edit of that list.
+## 5. Flutter owner experience
 
-Public routes: `GET /health`, `POST /auth/register`, `POST /auth/login`.
-
-## 4. Store
-
-| Field | Required | Notes |
-|---|---|---|
-| `id`, `ownerId` | ✓ | `ownerId` unique, FK → `User` |
-| `name` | ✓ | trimmed, non-empty, ≤ 100 |
-| `address` | ✓ | readable pickup address, trimmed, non-empty, ≤ 200 |
-| `description` | — | ≤ 1000 |
-| `photo` | — | an `http(s)` URL string, ≤ 2048 (**no upload exists**; localhost allowed for dev) |
-| `latitude`, `longitude` | — | **both set or both null** — enforced in the DTO (create), the service (update) and a DB `CHECK` (`store_coordinates_together`) |
-| `isOpen` | ✓ | default `false` — **new stores start closed**; only `PATCH` can open one |
-| `createdAt`, `updatedAt` | ✓ | |
-
-**Meaning of `isOpen`:** `false` = the store is currently not accepting orders. It is a manual switch only — no opening hours. It is stored and shown but **not enforced yet** because orders do not exist; when order creation is built, the **backend** must reject orders for a closed store.
-
-| Route | Behavior |
-|---|---|
-| `GET /owner/store` | The caller's store, or **`404`** when they have none — this is how the app learns "owner without a store". |
-| `POST /owner/store` | Create. `409` if one exists. Never accepts `ownerId` or `isOpen`. |
-| `PATCH /owner/store` | Partial update incl. `isOpen`. `latitude`/`longitude` must be sent together; `null` for both clears the location; `null` for `name`/`address` is a 400. Empty body is a no-op. `404` without a store. |
-
-## 5. Category
-
-A store-owned grouping for products.
-
-| Field | Required | Notes |
-|---|---|---|
-| `id`, `storeId` | ✓ | `storeId` FK → `Store` (`Restrict`), set by the backend |
-| `name` | ✓ | trimmed, 1–50 characters |
-| `createdAt`, `updatedAt` | ✓ | |
-
-- **Unique per store, ignoring letter case:** unique index on `("storeId", lower("name"))` → `409`. Two different stores may share a name.
-- Listed alphabetically; no manual ordering in V1.
-
-| Route | Behavior |
-|---|---|
-| `GET /owner/categories` | The store's categories, sorted by name. |
-| `POST /owner/categories` | `{ name }` → `201`; `400` invalid, `409` duplicate. |
-| `PATCH /owner/categories/:id` | `{ name }` (rename); `404` not in this store, `409` duplicate. |
-| `DELETE /owner/categories/:id` | `204`; `404` not in this store; **`409` while any non-archived product uses it**. |
-
-**Deletion rule:** active products block deletion; **archived products never do** — `Product.categoryId` is `ON DELETE SET NULL`, so they simply lose their category. The 409 check and the delete are not one transaction: a product created in between would become uncategorized rather than lost (acceptable for a single-owner store).
-
-## 6. Product
-
-A product belongs **directly to a store** (`storeId`). Its category is optional.
-
-| Field | Required | Notes |
-|---|---|---|
-| `id`, `storeId` | ✓ | `storeId` FK → `Store` (`Restrict`), from the JWT |
-| `categoryId` | — | FK → `Category`, `ON DELETE SET NULL`; must be a category of the same store. `null` = "Sans catégorie" |
-| `name` | ✓ | trimmed, non-blank, ≤ 100; unique among the store's **active** products, ignoring case (409); archiving frees the name |
-| `description` | — | ≤ 1000 |
-| `photo` | — | `http(s)` URL string, ≤ 2048 — same URL-string abstraction as store and user photos, **no upload** |
-| `saleUnit` | ✓ | enum `PIECE`, `KG`, `L` (text + CHECK) |
-| `priceMillimes` | ✓ | integer 1…10 000 000 — price of **one sale unit** |
-| `minQuantity`, `quantityStep` | ✓ | integers in base units |
-| `maxQuantity` | — | integer in base units |
-| `isAvailable` | ✓ | default `true` |
-| `archivedAt` | — | set ⇒ archived |
-| `createdAt`, `updatedAt` | ✓ | |
-
-### 6.1 Unit and quantity model
-
-- **Units are an enum, not a table.** `PIECE`, `KG`, `L` say *how the price is expressed*. There is no `G`/`ML`, and no bottle/pack/box/dozen: packaging goes in the product name ("Lait 1 L", "Œufs ×6") or a future packaging label.
-- **`priceMillimes` is the price of ONE sale unit** (1 piece / 1 kg / 1 L). TND, 3 decimals: `1800` = 1,800 DT. No floats anywhere.
-- **Quantities are integers in the unit's base:** `PIECE` → pieces, `KG` → grams, `L` → millilitres. The UI displays `g`/`kg` and `mL`/`L` according to the value (`500` → "500 g", `1500` → "1,5 kg").
-- **Orderable quantities:** `min`, `min + step`, `min + 2·step`, … up to `max`; `min` and `max` are multiples of `step`.
-
-| Product | Unit | Price | min / step / max | Customer can order |
-|---|---|---|---|---|
-| Tomates | `KG` | 1800 | 500 / 500 / 10000 | 500 g, 1 kg, 1,5 kg… |
-| Fromage | `KG` | 28000 | 100 / 100 / — | 100 g, 200 g, 300 g… |
-| Œufs | `PIECE` | 350 | 1 / 1 / — | 1, 2, 3 pièces… |
-| Lait 1 L | `PIECE` | 1350 | 1 / 1 / — | 1, 2, 3 pièces… |
-
-**Validation** lives in `backend/src/products/product-rules.ts` (pure, framework-free). The database repeats the numeric invariants as CHECK constraints (positive price/min/step, `min % step = 0`, `max % step = 0`, `max ≥ min`).
-
-- `min`, `step`, `max` are positive integers; `min % step = 0`; `max % step = 0`; `max ≥ min`.
-- **Unit-dependent:** `KG`/`L` quantities must be multiples of **10** (g/mL) — this catches the classic mix-up of typing `1` for one kilo, which would be 1 gram. `PIECE` accepts single pieces. Ceilings: 1 000 pieces, 100 000 g, 100 000 mL.
-- Defaults when omitted: step = 1 (`PIECE`) or 100 (`KG`/`L`); `min` = one step.
-
-**Changing `saleUnit` never silently reinterprets old values:** the `PATCH` must also send `priceMillimes`, `minQuantity`, `quantityStep` (and `maxQuantity` when one is set); the merged result is then fully re-validated.
-
-### 6.2 Line total (for the future `OrderItem`)
-
-`lineTotalMillimes(unit, priceMillimes, quantity) = round_half_up(priceMillimes × quantity / baseFactor)`, `baseFactor` = 1 for `PIECE`, 1000 for `KG`/`L`. Integer arithmetic only — BigInt on the backend, Dart `int` in Flutter — and both implementations are tested against the same cases: `1800 × 500 g → 900`, `28000 × 300 g → 8400`, `350 × 12 → 4200`. Orders must compute the total **once** at order time and snapshot it.
-
-### 6.3 Availability vs archive
-
-- `isAvailable = false` — "out of stock today". The product stays in the catalog, flagged "Indisponible". Never delete a product for this.
-- `DELETE` **archives** (`archivedAt = now`). Rows are never hard-deleted (history). Archived products are hidden from the active catalog and cannot be edited or toggled (409). Archiving is idempotent. There is no restore in V1.
-
-### 6.4 API
-
-| Route | Behavior |
-|---|---|
-| `GET /owner/products?categoryId=&status=active\|archived\|all` | Default `active`; sorted by name. |
-| `POST /owner/products` | `201`. `400` invalid fields / quantity rules / foreign category; `409` duplicate active name. |
-| `GET /owner/products/:id` | One product, archived or not. |
-| `PATCH /owner/products/:id` | Partial. `null` clears `description`, `photo`, `categoryId`, `maxQuantity`; other fields reject `null`. `409` if archived or duplicate name. |
-| `PATCH /owner/products/:id/availability` | `{ isAvailable }`. `409` if archived. |
-| `DELETE /owner/products/:id` | `204`, archives. |
-
-## 7. Flutter owner experience
-
-### 7.1 Routing and session lifecycle
-
-`SplashGate` (app start) restores the session; `AuthenticatedHome` is the single post-auth entry point (login, registration, session restore):
+**Routing.** `SplashGate` restores the session; `AuthenticatedHome` is the single post-auth entry.
 
 | State | Result |
 |---|---|
 | No stored token | Splash → Connexion |
-| Token rejected by `GET /auth/me` (401, or 404 for a deleted user) | Token discarded → Splash → Connexion |
-| Token stored but backend unreachable (offline / 5xx) | **Session kept**; "Impossible de joindre le serveur" with **Réessayer** |
-| `CLIENT` | `HomeView` (customer side, placeholder) |
-| `OWNER` | `OwnerGate` → `GET /owner/store`: store → `OwnerShell`; none (404) → `StoreCreateView`; request failed → retry screen (never falls through to owner screens) |
-| Owner registration | Whole auth stack dropped → `AuthenticatedHome` (new owner → store creation; no way "back" to the signup screens while signed in) |
-| Logout (Magasin tab, store-creation app bar, retry screen) | Straight to Connexion; token cleared |
+| Token rejected by `GET /auth/me` (401, or 404 for a deleted user) | Token discarded → Connexion |
+| Token stored, backend unreachable (offline / 5xx) | **Session kept**; retry screen |
+| `CLIENT` | `HomeView` (customer placeholder) |
+| `OWNER` | `OwnerGate` → `GET /owner/store`: store → `OwnerShell`; 404 → `StoreCreateView`; failure → retry screen |
+| Logout | Straight to Connexion, token cleared |
 
-Snackbars are owned by their screen (`ScaffoldMessenger` per owner tab and for the category screen) so they are dismissed with it and never cover another screen's floating button.
+**Shell.** Tabs **Accueil · Catalogue · Magasin**. The enum `OwnerTab` also declares `orders`, which stays out of the list until orders exist, so there is no dead tab.
 
-### 7.2 Owner shell
+- **Accueil:** greeting, store card, and a setup checklist (*Ajouter des produits · Ouvrir le magasin*) until complete.
+- **Magasin:** open/closed switch, store details form, sign out.
+- **Catalogue:** the store's active StoreProducts, grouped by their global Category, with category filter chips. Each row shows the product image (placeholder when none), name, price per sale unit, step, and stock when tracked (`Stock : 20 kg`, or **Rupture de stock** when the count is 0). A product that is not orderable per the backend shows "Indisponible" (icon + text). The row's switch is the owner's availability toggle and works without opening the editor; tapping the row opens the editor. Archived products are not listed. The empty state and the "Ajouter depuis le catalogue" button open the picker; the list reloads when the picker closes.
+- **Picker** (`CatalogPickerView`): the whole global catalog, read-only, loaded once; search (accent-insensitive) and category filters run locally. Rows already in the store read "Ajouté" and are not selectable. A product to add opens **Quick Add**. A product the store archived reads "Archivé" and opens the editor, where it can be restored; it can never be added a second time.
+- **Quick Add** (bottom sheet): shows the product read-only (image, name, category, default unit and rules). The owner types a price; unit, minimum, step, maximum, stock tracking, initial stock and availability are prefilled from the catalog defaults and tucked under one collapsible section. On success the picker row becomes "Ajouté" and the owner can keep adding. A 409/404 (already added elsewhere, or gone from the catalog) reloads the picker and says what is true now.
+- **StoreProduct editor** (full page): a read-only "Catalogue — lecture seule" card, the backend-derived status (available · désactivé par vous · rupture de stock · stock insuffisant · archivé · retiré du catalogue, each with icon and explanation), then the editable "Votre magasin" form: price, sale unit (a selector only when the product allows two units: its default or piece), minimum / step / optional maximum (blank = no maximum, sent as `null`), stock tracking with the current stock, and the availability switch. Quick Add and the editor share one form and its validation. Changing the unit resets the rules and requires a new price (and stock). Save sends only what changed; a stock conflict keeps the owner's input and offers the current stock. "Archiver ce produit" asks for confirmation and archives; an archived product opens read-only with "Restaurer ce produit".
 
-Bottom `NavigationBar`: **Accueil · Catalogue · Magasin**. The enum `OwnerTab` also declares `orders` ("Commandes"), but it is not in the list of available tabs — the owner never sees a dead tab; adding orders later is one list entry plus one page. No customer-side navigation exists in the owner shell.
+## 6. Scope
 
-| Tab | Content |
-|---|---|
-| **Accueil** | Greeting; store card (open/closed with icon + text, name, address); **setup checklist** while incomplete; pull-to-refresh. |
-| **Catalogue** | Active products grouped by category (+ "Sans catégorie"), category filter chips (when categories exist), a switch on each row, unavailable rows labelled "Indisponible" (icon + text), "Ajouter un produit", "Gérer les catégories" in the app bar, pull-to-refresh, empty / loading / error states. |
-| **Magasin** | Open/closed switch (saves immediately), store details form + **Enregistrer**, sign out. |
+- **Built:** auth and roles, store, global catalog + importer, store products with stock, owner shell, dashboard, and the Owner catalog (Catalogue, picker, Quick Add, StoreProduct editor, archive and restore).
+- **Next:** orders.
+- **Decided for orders (not built):** lifecycle `PENDING → CONFIRMED → READY_FOR_PICKUP → COMPLETED`, `PENDING`/`CONFIRMED → CANCELLED`, `READY_FOR_PICKUP → NO_SHOW` (set manually, never automatic), no `PREPARING`; a customer may cancel only while `PENDING`; `requestedPickupAt` is an advisory time, not a slot; stock is decremented at placement and restored on `CANCELLED`, `NO_SHOW` or a removed line, not on `COMPLETED`; items snapshot name, unit and price.
+- **Not planned:** delivery, online payment, loyalty, promotions, analytics.
 
-**Dashboard (V1, deliberately minimal):** store state + checklist *Créer une catégorie · Ajouter un produit · Ouvrir le magasin*. Steps are read from the backend (≥ 1 category, ≥ 1 **active** product, `isOpen`). The checklist disappears when all three are done; if the owner later closes the store it returns with only "Ouvrir le magasin" open. Open steps are tappable (to the category screen, the Catalogue tab, the Magasin tab). Refreshes when the Accueil tab is opened. Order counters will be added as another section of the same list (marked in `owner_home_view.dart`). No charts, revenue, fake numbers or shortcut grid.
+## 7. Known limitations
 
-### 7.3 Catalogue and product editor
+- Owner sign-up is open. Photos are URL strings (no upload); the owner app shows catalog images, with a placeholder when there is none. A JWT expiring while the app is open is not handled centrally (the app-start check is).
+- No login rate limiting; Swagger (`/api`) is public — fine locally, revisit before deployment.
+- `app.module.ts` still registers `ObserveModule` with placeholder credentials (scaffold; logs a harmless telemetry 401).
 
-- Category screen: list, add / rename (one shared dialog — the only field is the name), delete with confirmation; server errors (duplicate name) stay inside the dialog.
-- **Product editor** (one screen for create and edit): sale unit first (À la pièce / Au kilo / Au litre) → the price label adapts; "Par tranche de" chips per unit; minimum and optional maximum are steppers that move by the step, so values stay aligned by construction; a live preview **generated from the settings** ("Le client pourra commander : 500 g, 1 kg, 1,5 kg…" / "1, 2, 3 pièces…") plus the exact price of the minimum quantity. Changing the unit resets quantities to that unit's defaults. Edit mode adds "Supprimer du catalogue" (confirmation, then archives).
-- Prices are typed in dinars (`1,8` or `1.800`) and parsed to millimes without floating point.
-- Client-side validation mirrors the backend limits (text length, http(s) photo link) with French messages.
+## 8. Open decisions
 
-## 8. Database
-
-- Migrations live in `backend/migrations/` (Prisma 8 formal path: `migration plan` → `db migrate`): `baseline` (schema that existed before migrations were tracked), `owner_store_foundation`, `add_category`, `add_product`.
-- `owner_store_foundation` **backfilled** rows that predate it: stores without an address got `Adresse à renseigner`; users without a phone got `inconnu-<id>` (they could never log in by phone). Only local dev data existed.
-- Workflow: edit `contract.prisma` → `npm run contract:emit` → `npx prisma migration plan --name <slug>` → fill any data-transform placeholders → `node migrations/app/<dir>/migration.ts` → `npx prisma db migrate --db "$DATABASE_URL"`.
-- `contract.d.ts`/`contract.json` are generated; do not hand-edit (Prettier will flag `contract.d.ts` — that is expected).
-
-## 9. Testing
-
-| Suite | Command | What it covers |
-|---|---|---|
-| Backend unit | `cd backend && npm run test` | DTO validation, `RolesGuard`, product rules + line totals |
-| Backend e2e | `cd backend && npm run test:e2e` | HTTP + real Postgres: auth, roles, store/category/product behavior, isolation, constraints, the route-table regression net |
-| Flutter | `cd mobile && flutter test` | Widget + unit tests with fake repositories: routing, session lifecycle, dashboard, catalogue, editor, formatters |
-| Owner smoke | see below | The real app UI against a real backend, whole lifecycle |
-
-The e2e suite writes real rows, so it runs against a **separate database** (`<DATABASE_URL db name>_test`, or `TEST_DATABASE_URL`) and refuses to start otherwise. One-time setup (dev Postgres container):
-
-```bash
-docker exec infrastructure-postgres-1 psql -U grocery_user -d postgres -c 'CREATE DATABASE grocery_db_test'
-cd backend && npx prisma db migrate --db "<DATABASE_URL>_test"
-```
-
-Re-run the `db migrate` whenever new migrations are added.
-
-**Owner smoke test** (`mobile/test_smoke/owner_smoke_test.dart`, not part of `flutter test`): registers an owner, creates/edits the store, creates/renames a category, creates a piece and a kg product, toggles availability, edits and archives a product, checks the dashboard checklist, restarts the app (new app instance over the stored session) at each routing state, logs out and restarts once more. Run it against a throwaway backend on the test database:
-
-```bash
-cd backend && npm run build
-DATABASE_URL="<DATABASE_URL>_test" PORT=3001 node dist/main &      # test DB, never the dev one
-cd ../mobile && flutter test test_smoke --dart-define=API_BASE_URL=http://localhost:3001
-```
-
-## 10. V1 scope
-
-**MUST HAVE (Owner V1) — built**
-Owner authentication and security · store management · categories · products · units and quantity rules · product availability · archiving · owner shell · dashboard/setup state.
-
-**LATER — not built**
-Orders (and enforcing `isOpen`) · opening hours · push notifications / new-order awareness · real weight / final price · packaging labels · inventory/stock counts · multi-store · staff accounts · image upload · restoring archived products · manual category/product ordering · WhatsApp / n8n / LLM automation.
-
-**DO NOT BUILD**
-Delivery · online payment · loyalty · promotions · analytics/charts · suppliers · accounting.
-
-## 11. Known limitations and issues
-
-- Owner self-registration is open; there is no approval step. One phone number = one account = one role.
-- Photos (store, user, product) are URL strings; there is no upload or storage. Product photos are not displayed anywhere yet.
-- `isOpen` is not enforced (no orders yet). No opening hours.
-- Product names are unique among active products per store; archived products cannot be restored or edited.
-- `isAvailable` is a manual flag, not inventory.
-- A JWT that expires (7 days) **while the app is in use** is not handled centrally: calls start failing and the owner must restart or log out (the check at app start is handled).
-- No rate limiting on login; the Swagger UI (`/api`) is served publicly. Both are fine for local development and must be revisited before any deployment.
-- `app.module.ts` still registers `ObserveModule` with placeholder credentials (scaffold); it logs a harmless telemetry 401 at start. It is unrelated to the product and should be removed or configured.
-- Client-facing user `photo` on registration is not URL-validated (only store/product photos are).
-- No automated test drives a real device/keyboard; keyboard behavior was checked on the iOS simulator only.
-
-## 12. Unresolved business decisions
-
-These gate the phases after this one; nothing built so far depends on them.
-
-1. Currency and minor unit — TND with millimes is **assumed and implemented**; confirm it.
-2. Weighed items: "estimated total, settled at the counter" vs recording the real weight. (The line-total rule computes the *estimated* total from the ordered quantity.)
-3. Pickup timing: pickup windows? No-show deadline after READY?
-4. Out-of-stock during preparation: cancel the whole order, or adjust a line?
-5. Can a customer cancel, and until which status?
-6. New-order awareness without push notifications (in-app refresh only in V1?).
-7. Opening hours: manual toggle only, or also free-text hours?
-8. Store contact number: owner's phone/WhatsApp, or a store-level number?
-9. Image upload: keep URL strings, or add `image_picker` + storage (local disk vs S3-compatible)? Also whether to add an optional `packagingLabel` to products.
-10. Owner sign-up: open or approved.
-11. One person as both owner and customer.
-12. Order lifecycle vs `design.md` (`Preparing`, `Uncollected`): the review proposed dropping `PREPARING` and naming the terminal state `NO_SHOW`; `design.md` is unchanged until decided.
+Weighed items: estimated vs real weight · pickup-time bounds (30 min minimum, 48 h maximum proposed) · out-of-stock handling (removing a line is leading, unconfirmed) · store contact number · `NO_SHOW → COMPLETED` and `READY_FOR_PICKUP → CANCELLED` · an `OrderEvent` audit table · new-order awareness without push · opening hours · image upload · owner sign-up approval · one person as owner and customer · `design.md` still shows `Preparing` and `Uncollected`.
