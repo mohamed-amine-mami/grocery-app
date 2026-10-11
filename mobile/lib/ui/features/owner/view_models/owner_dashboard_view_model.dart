@@ -21,17 +21,30 @@ class OwnerDashboardViewModel extends ChangeNotifier {
 
   bool get hasProduct => _productCount > 0;
 
+  /// Active offerings customers can order right now: the backend's own
+  /// `isOrderable` verdict on each one (owner switch, stock and catalogue
+  /// combined), never recomputed here.
+  int _orderableCount = 0;
+  int get orderableCount => _orderableCount;
+
+  bool get hasOrderable => _orderableCount > 0;
+
   /// Reloads the counts. Keeps showing the previous ones while refreshing so
   /// the dashboard doesn't flicker when the owner comes back to the tab.
-  Future<void> refresh() async {
+  /// Returns whether the counts are now known to be up to date.
+  Future<bool> refresh() async {
     final isFirstLoad = _status != DashboardStatus.ready;
     if (isFirstLoad) {
       _status = DashboardStatus.loading;
       notifyListeners();
     }
     try {
-      _productCount = (await _storeProductsRepository.listActive()).length;
+      final products = await _storeProductsRepository.listActive();
+      _productCount = products.length;
+      _orderableCount = products.where((p) => p.isOrderable).length;
       _status = DashboardStatus.ready;
+      notifyListeners();
+      return true;
     } catch (_) {
       // Keep stale-but-valid numbers if we already had some.
       if (isFirstLoad) {
@@ -39,5 +52,6 @@ class OwnerDashboardViewModel extends ChangeNotifier {
       }
     }
     notifyListeners();
+    return false;
   }
 }

@@ -12,14 +12,12 @@ class StoreFormControllers {
     : name = TextEditingController(text: store?.name),
       address = TextEditingController(text: store?.address),
       description = TextEditingController(text: store?.description),
-      photo = TextEditingController(text: store?.photo),
       latitude = TextEditingController(text: store?.latitude?.toString()),
       longitude = TextEditingController(text: store?.longitude?.toString());
 
   final TextEditingController name;
   final TextEditingController address;
   final TextEditingController description;
-  final TextEditingController photo;
   final TextEditingController latitude;
   final TextEditingController longitude;
 
@@ -36,7 +34,6 @@ class StoreFormControllers {
     name.dispose();
     address.dispose();
     description.dispose();
-    photo.dispose();
     latitude.dispose();
     longitude.dispose();
   }
@@ -97,18 +94,6 @@ class StoreFormFields extends StatelessWidget {
             hintText: 'Optionnel',
             alignLabelWithHint: true,
           ),
-        ),
-        const SizedBox(height: AppSpacing.lg),
-        TextFormField(
-          controller: controllers.photo,
-          textInputAction: TextInputAction.next,
-          keyboardType: TextInputType.url,
-          inputFormatters: [LengthLimitingTextInputFormatter(AppLimits.url)],
-          decoration: const InputDecoration(
-            labelText: 'Photo du magasin',
-            hintText: 'Lien de la photo (optionnel)',
-          ),
-          validator: AppValidators.optionalPhotoUrl,
         ),
         const SizedBox(height: AppSpacing.xxl),
         Text('Localisation', style: textTheme.titleMedium),

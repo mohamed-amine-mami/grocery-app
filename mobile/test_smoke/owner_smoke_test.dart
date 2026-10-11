@@ -17,6 +17,9 @@ import 'package:grocery_mobile/data/repositories/auth_repository.dart';
 import 'package:grocery_mobile/data/models/sale_unit.dart';
 import 'package:grocery_mobile/data/models/store_product.dart';
 import 'package:grocery_mobile/data/repositories/catalog_repository.dart';
+import 'package:grocery_mobile/data/repositories/customer_orders_repository.dart';
+import 'package:grocery_mobile/data/repositories/customer_stores_repository.dart';
+import 'package:grocery_mobile/data/repositories/orders_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_products_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_repository.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
@@ -60,6 +63,9 @@ Future<void> _launchApp(WidgetTester tester) async {
       storeRepository: StoreRepository(api),
       catalogRepository: CatalogRepository(api),
       storeProductsRepository: StoreProductsRepository(api),
+      ordersRepository: OrdersRepository(api),
+      customerStoresRepository: CustomerStoresRepository(api),
+      customerOrdersRepository: CustomerOrdersRepository(api),
     ),
   );
   await _settle(tester);
@@ -134,6 +140,13 @@ Future<void> _tap(WidgetTester tester, Finder finder) async {
   }
   await tester.ensureVisible(finder.first);
   await tester.tap(finder.first);
+  await _settle(tester);
+}
+
+/// Types into the picker's search and waits out the debounce and the request.
+Future<void> _pickerSearch(WidgetTester tester, String text) async {
+  await tester.enterText(find.byType(TextField), text);
+  await tester.pump(const Duration(milliseconds: 400));
   await _settle(tester);
 }
 
@@ -245,8 +258,8 @@ void main() {
         findsOneWidget,
       ); // new stores start closed
       expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
-      expect(_nav('Commandes'), findsNothing);
-      expect(find.byType(NavigationDestination), findsNWidgets(3));
+      expect(_nav('Commandes'), findsOneWidget);
+      expect(find.byType(NavigationDestination), findsNWidgets(4));
 
       // ── 4. Edit the store ─────────────────────────────────────────────
       await _openTab(tester, 'Magasin');
@@ -480,22 +493,27 @@ void main() {
       await _tap(tester, find.byType(FloatingActionButton));
       await _waitFor(tester, find.text('Rechercher un produit'));
       expect(find.text('Ajouter depuis le catalogue'), findsOneWidget);
+      // The picker pages the catalog (40 a time) and searches it on the
+      // server: look each product up.
+      await _pickerSearch(tester, 'tomate');
       expect(find.text('Ajouté'), findsOneWidget); // Tomate: the store has it
-      expect(find.text('Œufs frais'), findsOneWidget); // not yet in the store
 
-      // Local search: accent- and case-insensitive.
-      await tester.enterText(find.byType(TextField), 'OEUF');
-      await _settle(tester);
-      expect(find.text('Œufs frais'), findsOneWidget);
+      // Search is accent- and case-insensitive.
+      await _pickerSearch(tester, 'OEUF');
+      expect(find.text('Œufs frais'), findsOneWidget); // not yet in the store
       expect(find.text('Tomate'), findsNothing);
       await _tap(tester, find.byTooltip('Effacer la recherche'));
 
-      // Category filter.
+      // Category filter, combined with the search.
       await _tap(tester, find.widgetWithText(ChoiceChip, 'Légumes'));
+      await _pickerSearch(tester, 'tomate');
       expect(find.text('Tomate'), findsOneWidget);
-      expect(find.text('Œufs frais'), findsNothing);
+      await _pickerSearch(tester, 'oeuf');
+      expect(find.text('Œufs frais'), findsNothing); // not a vegetable
+      expect(find.text('Aucun produit trouvé'), findsOneWidget);
 
       // ── 14. Quick-add: a price is enough ──────────────────────────────
+      await _pickerSearch(tester, 'poivron');
       await _tap(tester, find.text('Poivron'));
       expect(find.text('Ajouter à mon magasin'), findsOneWidget);
       expect(find.text('Légumes · Au kilo'), findsWidgets); // read-only info
@@ -507,17 +525,15 @@ void main() {
       await _tap(tester, find.text('Ajouter à mon magasin'));
       await _waitFor(tester, find.text('Poivron ajouté à votre magasin.'));
       expect(find.text('Ajouter à mon magasin'), findsNothing); // sheet closed
-      expect(find.text('Ajouté'), findsNWidgets(2)); // Tomate + Poivron
+      expect(find.text('Ajouté'), findsOneWidget); // Poivron
 
       // The picker stays open, and an added product cannot be added again.
       await _tap(tester, find.text('Poivron'));
       expect(find.text('Ajouter à mon magasin'), findsNothing);
 
-      // ── 15. Quick-add with tracked stock at zero ──
-      await _tap(
-        tester,
-        find.widgetWithText(ChoiceChip, 'Tous'),
-      ); // lift the filter────────────────────
+      // ── 15. Quick-add with tracked stock at zero ─────────────────────
+      await _tap(tester, find.widgetWithText(ChoiceChip, 'Tous'));
+      await _pickerSearch(tester, 'oeuf');
       await _tap(tester, find.text('Œufs frais'));
       await _tap(tester, find.text('Quantités, stock et disponibilité'));
       await tester.enterText(
@@ -537,7 +553,7 @@ void main() {
       expect(find.textContaining('Stock à 0'), findsOneWidget);
       await _tap(tester, find.text('Ajouter à mon magasin'));
       await _waitFor(tester, find.text('Œufs frais ajouté à votre magasin.'));
-      expect(find.text('Ajouté'), findsNWidgets(3));
+      expect(find.text('Ajouté'), findsOneWidget); // Œufs frais
 
       // What the backend now holds — and what it derived itself.
       final held = (await tester.runAsync(repos.storeProducts.listActive))!;
@@ -650,6 +666,8 @@ void main() {
       expect(find.text('Poivron'), findsNothing);
 
       await _tap(tester, find.text('Ajouter depuis le catalogue'));
+      await _waitFor(tester, find.text('Rechercher un produit'));
+      await _pickerSearch(tester, 'poivron');
       await _waitFor(tester, find.text('Archivé'));
       await _tap(tester, find.text('Poivron'));
       expect(find.text('Produit archivé'), findsOneWidget);

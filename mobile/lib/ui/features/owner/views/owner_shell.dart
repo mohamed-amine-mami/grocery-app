@@ -3,21 +3,25 @@ import 'package:flutter/material.dart';
 import '../../../../data/models/store.dart';
 import '../../../core/app_services.dart';
 import '../../catalog/views/catalog_view.dart';
+import '../../orders/views/owner_orders_view.dart';
 import '../../store/view_models/store_edit_view_model.dart';
 import '../../store/views/store_manage_view.dart';
 import '../view_models/owner_dashboard_view_model.dart';
 import 'owner_home_view.dart';
 
-/// The owner's areas. `orders` is declared so the navigation is designed for
-/// it, but it is not in [_availableTabs] until orders are built — the owner
-/// never sees a dead tab.
+/// The owner's areas, in navigation order.
 enum OwnerTab { home, orders, catalog, store }
 
-const _availableTabs = [OwnerTab.home, OwnerTab.catalog, OwnerTab.store];
+const _availableTabs = [
+  OwnerTab.home,
+  OwnerTab.orders,
+  OwnerTab.catalog,
+  OwnerTab.store,
+];
 
 /// The owner's main navigation once they have a store: **Accueil ·
-/// Catalogue · Magasin** (Commandes joins when orders exist). Owners only ever
-/// see these — there is no customer-side navigation here.
+/// Commandes · Catalogue · Magasin**. Owners only ever see these — there is no
+/// customer-side navigation here.
 class OwnerShell extends StatefulWidget {
   const OwnerShell({required this.store, super.key});
 
@@ -76,8 +80,12 @@ class _OwnerShellState extends State<OwnerShell> {
       onOpenStore: () => _select(OwnerTab.store),
     ),
     OwnerTab.catalog => const CatalogView(),
-    OwnerTab.store => StoreManageView(viewModel: _storeViewModel!),
-    OwnerTab.orders => const SizedBox.shrink(), // not built yet
+    OwnerTab.store => StoreManageView(
+      viewModel: _storeViewModel!,
+      dashboardViewModel: _dashboardViewModel,
+    ),
+    // Polling runs only while this tab is the visible one.
+    OwnerTab.orders => OwnerOrdersView(isActive: _tab == OwnerTab.orders),
   };
 
   static (String, IconData) _destination(OwnerTab tab) => switch (tab) {

@@ -26,6 +26,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>L’application utilise l’appareil photo pour prendre votre photo de profil ou la photo de votre magasin.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>L’application accède à vos photos pour choisir votre photo de profil ou la photo de votre magasin.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsLocalNetworking</key>

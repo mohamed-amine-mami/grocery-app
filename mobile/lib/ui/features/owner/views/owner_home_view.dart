@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../auth/view_models/auth_scope.dart';
+import '../../auth/views/profile_photo.dart';
 import '../../store/view_models/store_edit_view_model.dart';
 import '../view_models/owner_dashboard_view_model.dart';
 
@@ -41,7 +42,15 @@ class OwnerHomeView extends StatelessWidget {
               _Step(
                 title: 'Ajouter des produits',
                 hint: 'Prix, unité de vente et quantités.',
-                isDone: dashboard.hasProduct,
+                // Done as soon as one product can be ordered: no minimum.
+                isDone: dashboard.hasOrderable,
+                status: dashboard.hasOrderable ? null : 'À compléter',
+                detail: dashboard.hasProduct
+                    ? _inventory(
+                        dashboard.productCount,
+                        dashboard.orderableCount,
+                      )
+                    : null,
                 onTap: onOpenCatalog,
               ),
               _Step(
@@ -60,9 +69,17 @@ class OwnerHomeView extends StatelessWidget {
                 padding: const EdgeInsets.all(AppSpacing.pagePadding),
                 children: [
                   const SizedBox(height: AppSpacing.sm),
-                  Text(
-                    'Bonjour, ${user?.name ?? ''}',
-                    style: textTheme.headlineSmall,
+                  Row(
+                    children: [
+                      const ProfilePhoto(size: 64),
+                      const SizedBox(width: AppSpacing.lg),
+                      Expanded(
+                        child: Text(
+                          'Bonjour, ${user?.name ?? ''}',
+                          style: textTheme.headlineSmall,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   _StoreStatusCard(
@@ -88,6 +105,15 @@ class OwnerHomeView extends StatelessWidget {
       ),
     );
   }
+}
+
+/// "3 produits · 2 disponibles à la commande" — facts, not a target.
+String _inventory(int total, int orderable) {
+  final products = '$total produit${total > 1 ? 's' : ''}';
+  final available = orderable == 0
+      ? 'aucun disponible à la commande'
+      : '$orderable disponible${orderable > 1 ? 's' : ''} à la commande';
+  return '$products · $available';
 }
 
 class _StoreStatusCard extends StatelessWidget {
@@ -151,11 +177,19 @@ class _Step {
     required this.hint,
     required this.isDone,
     required this.onTap,
+    this.status,
+    this.detail,
   });
 
   final String title;
   final String hint;
   final bool isDone;
+
+  /// A short state word for a step that is not done (text, not just colour).
+  final String? status;
+
+  /// Facts about the step, shown whether or not it is done.
+  final String? detail;
   final VoidCallback onTap;
 }
 
@@ -203,7 +237,9 @@ class _StepRow extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Semantics(
-      label: '${step.title}, ${step.isDone ? 'terminé' : 'à faire'}',
+      label:
+          '${step.title}, ${step.isDone ? 'terminé' : (step.status ?? 'à faire')}'
+          '${step.detail == null ? '' : ', ${step.detail}'}',
       button: !step.isDone,
       excludeSemantics: true,
       child: InkWell(
@@ -237,9 +273,23 @@ class _StepRow extends StatelessWidget {
                             : AppColors.textPrimary,
                       ),
                     ),
-                    if (!step.isDone) ...[
+                    if (step.detail != null) ...[
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(step.detail!, style: textTheme.bodySmall),
+                    ],
+                    if (!step.isDone && step.detail == null) ...[
                       const SizedBox(height: AppSpacing.xs),
                       Text(step.hint, style: textTheme.bodySmall),
+                    ],
+                    if (!step.isDone && step.status != null) ...[
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(
+                        step.status!,
+                        style: textTheme.labelSmall?.copyWith(
+                          color: AppColors.warning,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ],
                   ],
                 ),

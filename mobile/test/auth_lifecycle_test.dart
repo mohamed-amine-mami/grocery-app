@@ -114,18 +114,31 @@ void main() {
       expect(find.text('Connexion'), findsOneWidget);
     });
 
-    testWidgets('a restored client lands on the client home, not the owner '
+    testWidgets('a restored client lands on the customer shell, not the owner '
         'shell', (tester) async {
       await pumpAppSignedInAs(
         tester,
         testClient,
         storeRepository: FakeStoreRepository.new,
       );
+      // The customer shell, with no owner areas.
       expect(
-        find.textContaining('Vous êtes connecté en tant que client'),
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text('Magasins'),
+        ),
         findsOneWidget,
       );
-      expect(find.byType(NavigationBar), findsNothing);
+      for (final owner in ['Accueil', 'Catalogue', 'Magasin']) {
+        expect(
+          find.descendant(
+            of: find.byType(NavigationBar),
+            matching: find.text(owner),
+          ),
+          findsNothing,
+          reason: owner,
+        );
+      }
     });
   });
 

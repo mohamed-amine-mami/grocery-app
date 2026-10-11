@@ -1,3 +1,4 @@
+import 'brand.dart';
 import 'catalog_category.dart';
 import 'sale_unit.dart';
 
@@ -17,6 +18,7 @@ class CatalogProduct {
     required this.defaultQuantityStep,
     this.description,
     this.photo,
+    this.brand,
     this.defaultMaxQuantity,
     this.isActive = true,
   });
@@ -31,6 +33,10 @@ class CatalogProduct {
       name: json['name'] as String,
       description: json['description'] as String?,
       photo: json['photo'] as String?,
+      // `null` (or absent) for a product without a brand.
+      brand: json['brand'] == null
+          ? null
+          : Brand.fromJson(json['brand'] as Map<String, dynamic>),
       category: CategoryRef.fromJson(json['category'] as Map<String, dynamic>),
       defaultSaleUnit: SaleUnit.fromJson(json['defaultSaleUnit'] as String),
       allowedSaleUnits: [
@@ -53,6 +59,9 @@ class CatalogProduct {
 
   /// An image URL.
   final String? photo;
+
+  /// `null` when the product has no brand. Catalog identity: display only.
+  final Brand? brand;
   final CategoryRef category;
 
   /// The unit the catalog suggests (a store may also sell it by the piece).
@@ -99,4 +108,32 @@ class CatalogItem {
 
   /// The store has an archived row for it: restore it instead of adding.
   final bool storeProductArchived;
+}
+
+/// One page of the owner's catalog picker (`GET /owner/catalog/browse`).
+class CatalogPage {
+  const CatalogPage({
+    required this.items,
+    required this.total,
+    required this.nextCursor,
+  });
+
+  factory CatalogPage.fromJson(Map<String, dynamic> json) {
+    return CatalogPage(
+      items: [
+        for (final item in json['items'] as List<dynamic>)
+          CatalogItem.fromJson(item as Map<String, dynamic>),
+      ],
+      total: json['total'] as int,
+      nextCursor: json['nextCursor'] as String?,
+    );
+  }
+
+  final List<CatalogItem> items;
+
+  /// Matches over every page (not just this one).
+  final int total;
+
+  /// Pass it back to get the following page; `null` on the last page.
+  final String? nextCursor;
 }

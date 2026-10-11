@@ -46,7 +46,7 @@ void main() {
     expect(find.text('Créer votre magasin'), findsNothing);
   });
 
-  testWidgets('client never asks for a store and lands on the client home', (
+  testWidgets('client never asks for a store and lands on the customer shell', (
     tester,
   ) async {
     await pumpAppSignedInAs(
@@ -55,11 +55,18 @@ void main() {
       storeRepository: (api) => FakeStoreRepository(api, fails: true),
     );
 
-    expect(
-      find.textContaining('Vous êtes connecté en tant que client'),
-      findsOneWidget,
-    );
-    expect(find.byType(NavigationBar), findsNothing);
+    // The customer shell: Magasins · Panier · Commandes · Profil.
+    expect(find.byType(NavigationBar), findsOneWidget);
+    for (final label in ['Magasins', 'Panier', 'Commandes', 'Profil']) {
+      expect(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text(label),
+        ),
+        findsOneWidget,
+        reason: label,
+      );
+    }
     expect(find.text('Créer votre magasin'), findsNothing);
     expect(find.text('Impossible de charger votre magasin.'), findsNothing);
   });

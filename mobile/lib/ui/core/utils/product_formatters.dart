@@ -9,11 +9,14 @@ abstract final class ProductFormat {
 
   /// `1800`, kg → `1,800 DT / kg`.
   static String pricePerUnit(SaleUnit unit, int millimes) =>
-      '${price(millimes)} / ${switch (unit) {
-        SaleUnit.piece => 'pièce',
-        SaleUnit.kg => 'kg',
-        SaleUnit.l => 'L',
-      }}';
+      '${price(millimes)} / ${perUnit(unit)}';
+
+  /// The unit as it follows a price: `pièce`, `kg`, `L`.
+  static String perUnit(SaleUnit unit) => switch (unit) {
+    SaleUnit.piece => 'pièce',
+    SaleUnit.kg => 'kg',
+    SaleUnit.l => 'L',
+  };
 
   /// How a product is sold, as a short label: `Au kilo`, `À la pièce`.
   static String unitLabel(SaleUnit unit) => switch (unit) {

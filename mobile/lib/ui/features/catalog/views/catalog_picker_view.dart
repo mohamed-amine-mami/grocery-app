@@ -6,6 +6,7 @@ import '../../../core/app_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/utils/product_formatters.dart';
 import '../../../core/widgets/app_load_failed.dart';
+import '../../../core/widgets/product_image.dart';
 import '../view_models/catalog_picker_view_model.dart';
 import 'quick_add_sheet.dart';
 import 'store_product_editor_view.dart';
@@ -76,8 +77,9 @@ class _CatalogPickerViewState extends State<CatalogPickerView> {
     if (!mounted) {
       return;
     }
-    // Restoring (or anything else) there changes this row: reload it.
-    await viewModel.refresh();
+    // Restoring (or anything else) there changes this row: bring it up to date
+    // without reloading the pages the owner has scrolled through.
+    await viewModel.syncItem(item.product.id);
     if (message != null && mounted) {
       _say(message);
     }
@@ -96,12 +98,12 @@ class _CatalogPickerViewState extends State<CatalogPickerView> {
       _say('${item.product.name} ajouté à votre magasin.');
       return;
     }
-    // The store or the catalog changed under the owner: reload, then say which.
-    await viewModel.refresh();
+    // The store or the catalog changed under the owner: look at this product
+    // again, then say which.
+    final current = await viewModel.syncItem(item.product.id);
     if (!mounted) {
       return;
     }
-    final current = viewModel.itemFor(item.product.id);
     _say(
       current == null
           ? 'Ce produit n’est plus disponible dans le catalogue.'
@@ -122,23 +124,30 @@ class _CatalogPickerViewState extends State<CatalogPickerView> {
           listenable: _viewModel!,
           builder: (context, _) {
             final viewModel = _viewModel!;
-            return switch (viewModel.status) {
-              CatalogPickerStatus.loading => const Center(
-                child: CircularProgressIndicator(color: AppColors.primary),
-              ),
-              CatalogPickerStatus.failed => AppLoadFailed(
-                title: 'Impossible de charger le catalogue.',
-                onRetry: viewModel.load,
-              ),
-              CatalogPickerStatus.ready when viewModel.items.isEmpty =>
-                const _EmptyCatalog(),
-              CatalogPickerStatus.ready => _Browser(
-                viewModel: viewModel,
-                searchController: _searchController,
-                onClearFilters: _clearFilters,
-                onSelect: _select,
-              ),
-            };
+            if (!viewModel.hasLoadedOnce) {
+              // Nothing loaded yet: the whole screen is the spinner or the
+              // retry. Afterwards the search stays and the list reloads.
+              return switch (viewModel.status) {
+                CatalogPickerStatus.failed => AppLoadFailed(
+                  title: 'Impossible de charger le catalogue.',
+                  onRetry: viewModel.load,
+                ),
+                _ => const Center(
+                  child: CircularProgressIndicator(color: AppColors.primary),
+                ),
+              };
+            }
+            if (viewModel.status == CatalogPickerStatus.ready &&
+                viewModel.total == 0 &&
+                !viewModel.hasActiveFilters) {
+              return const _EmptyCatalog();
+            }
+            return _Browser(
+              viewModel: viewModel,
+              searchController: _searchController,
+              onClearFilters: _clearFilters,
+              onSelect: _select,
+            );
           },
         ),
       ),
@@ -162,7 +171,8 @@ class _Browser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final visible = viewModel.visibleItems;
+    final ready = viewModel.status == CatalogPickerStatus.ready;
+    final total = viewModel.total;
 
     return Column(
       children: [
@@ -191,7 +201,7 @@ class _Browser extends StatelessWidget {
                       icon: const Icon(Icons.close_rounded),
                       onPressed: () {
                         searchController.clear();
-                        viewModel.setQuery('');
+                        viewModel.clearSearch();
                       },
                     ),
             ),
@@ -208,44 +218,128 @@ class _Browser extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              '${visible.length} produit${visible.length > 1 ? 's' : ''}',
+              ready ? '$total produit${total > 1 ? 's' : ''}' : ' ',
               style: textTheme.labelSmall,
             ),
           ),
         ),
         Expanded(
-          child: visible.isEmpty
-              ? _NoResults(onClear: onClearFilters)
-              : RefreshIndicator(
-                  onRefresh: viewModel.refresh,
-                  child: ListView(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.pagePadding,
-                      AppSpacing.xs,
-                      AppSpacing.pagePadding,
-                      AppSpacing.xxl,
-                    ),
-                    children: [
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          children: [
-                            for (final (index, item) in visible.indexed) ...[
-                              if (index > 0) const Divider(height: 1),
-                              _ProductRow(
-                                item: item,
-                                onSelect: () => onSelect(item),
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+          child: switch (viewModel.status) {
+            CatalogPickerStatus.loading => const Center(
+              child: CircularProgressIndicator(color: AppColors.primary),
+            ),
+            CatalogPickerStatus.failed => AppLoadFailed(
+              title: 'Impossible de charger les produits.',
+              onRetry: viewModel.load,
+            ),
+            CatalogPickerStatus.ready when viewModel.items.isEmpty =>
+              _NoResults(onClear: onClearFilters),
+            CatalogPickerStatus.ready => _ProductList(
+              viewModel: viewModel,
+              onSelect: onSelect,
+            ),
+          },
         ),
       ],
+    );
+  }
+}
+
+/// The loaded products, built lazily as they scroll into view; the next page
+/// is requested when the end of the loaded rows comes near.
+class _ProductList extends StatelessWidget {
+  const _ProductList({required this.viewModel, required this.onSelect});
+
+  /// How many rows before the end the next page is requested.
+  static const _prefetchDistance = 8;
+
+  final CatalogPickerViewModel viewModel;
+  final ValueChanged<CatalogItem> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final items = viewModel.items;
+    final hasFooter =
+        viewModel.isLoadingMore ||
+        viewModel.loadMoreFailed ||
+        viewModel.hasMore;
+
+    return RefreshIndicator(
+      onRefresh: viewModel.refresh,
+      child: ListView.builder(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.pagePadding,
+          AppSpacing.xs,
+          AppSpacing.pagePadding,
+          AppSpacing.xxl,
+        ),
+        itemCount: items.length + (hasFooter ? 1 : 0),
+        itemBuilder: (context, index) {
+          if (index >= items.length) {
+            return _ListFooter(viewModel: viewModel);
+          }
+          if (index >= items.length - _prefetchDistance &&
+              viewModel.hasMore &&
+              !viewModel.isLoadingMore &&
+              !viewModel.loadMoreFailed) {
+            // Not during the build: the view model notifies.
+            WidgetsBinding.instance.addPostFrameCallback(
+              (_) => viewModel.loadMore(),
+            );
+          }
+          final item = items[index];
+          return Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+            child: Card(
+              margin: EdgeInsets.zero,
+              clipBehavior: Clip.antiAlias,
+              child: _ProductRow(item: item, onSelect: () => onSelect(item)),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _ListFooter extends StatelessWidget {
+  const _ListFooter({required this.viewModel});
+
+  final CatalogPickerViewModel viewModel;
+
+  @override
+  Widget build(BuildContext context) {
+    if (viewModel.loadMoreFailed) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+        child: Column(
+          children: [
+            Text(
+              'Impossible de charger la suite.',
+              style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
+            ),
+            TextButton(
+              onPressed: viewModel.loadMore,
+              child: const Text('Réessayer'),
+            ),
+          ],
+        ),
+      );
+    }
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: AppSpacing.lg),
+      child: Center(
+        child: SizedBox(
+          width: 24,
+          height: 24,
+          child: CircularProgressIndicator(
+            strokeWidth: 2,
+            color: AppColors.primary,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -285,11 +379,22 @@ class _CategoryChips extends StatelessWidget {
 /// "Ajouté" (icon + text, never color alone) and cannot be added again; one the
 /// store archived says "Archivé" and opens its editor to restore it — it is
 /// never added a second time.
+///
+/// A small picture leads the row: in a catalog of thousands, near-identical
+/// pack names are told apart by sight. It is the same [ProductImage] as
+/// everywhere (neutral placeholder without a photo, while loading, or on
+/// error), decoded at its own size, and only for the rows that are built.
 class _ProductRow extends StatelessWidget {
   const _ProductRow({required this.item, required this.onSelect});
 
   final CatalogItem item;
   final VoidCallback onSelect;
+
+  /// Smaller than the store catalogue's 56: these rows have fewer lines.
+  static const _thumbnailSize = 48.0;
+
+  /// Above this text scale the row keeps its width for the name.
+  static const _thumbnailMaxTextScale = 1.3;
 
   @override
   Widget build(BuildContext context) {
@@ -298,15 +403,21 @@ class _ProductRow extends StatelessWidget {
     final added = item.inMyStore;
     final archived = item.storeProductArchived;
     final blocked = added;
+    final title = product.brand == null
+        ? product.name
+        : '${product.name}, ${product.brand!.name}';
+    final showThumbnail =
+        MediaQuery.textScalerOf(context).scale(16) / 16 <=
+        _thumbnailMaxTextScale;
 
     return Semantics(
       button: !blocked,
       enabled: !blocked,
       label: added
-          ? '${product.name}, déjà ajouté'
+          ? '$title, déjà ajouté'
           : archived
-          ? '${product.name}, archivé dans votre magasin, ouvrir pour restaurer'
-          : 'Ajouter ${product.name}',
+          ? '$title, archivé dans votre magasin, ouvrir pour restaurer'
+          : 'Ajouter $title',
       excludeSemantics: true,
       child: InkWell(
         onTap: blocked ? null : onSelect,
@@ -319,6 +430,12 @@ class _ProductRow extends StatelessWidget {
             ),
             child: Row(
               children: [
+                // Inside the row's own semantics (which hide their children):
+                // the row is announced by name, not as "an image".
+                if (showThumbnail) ...[
+                  ProductImage(photo: product.photo, size: _thumbnailSize),
+                  const SizedBox(width: AppSpacing.md),
+                ],
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -331,6 +448,8 @@ class _ProductRow extends StatelessWidget {
                               : AppColors.textPrimary,
                         ),
                       ),
+                      if (product.brand != null)
+                        Text(product.brand!.name, style: textTheme.labelSmall),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         '${product.category.name} · ${ProductFormat.unitLabel(product.defaultSaleUnit)}',

@@ -57,7 +57,6 @@ class _StoreCreateViewState extends State<StoreCreateView> {
       name: _controllers.name.text.trim(),
       address: _controllers.address.text.trim(),
       description: _controllers.description.text.trim(),
-      photo: _controllers.photo.text.trim(),
       latitude: _controllers.latitudeValue,
       longitude: _controllers.longitudeValue,
     );
@@ -113,6 +112,11 @@ class _StoreCreateViewState extends State<StoreCreateView> {
                   const SizedBox(height: AppSpacing.lg),
                 ],
                 StoreFormFields(controllers: _controllers, onSubmit: _submit),
+                const SizedBox(height: AppSpacing.lg),
+                Text(
+                  'Vous pourrez ajouter une photo de votre magasin une fois celui-ci créé.',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const SizedBox(height: AppSpacing.xxl),
                 AppPrimaryButton(
                   label: 'Créer mon magasin',

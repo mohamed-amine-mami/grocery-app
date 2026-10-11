@@ -46,19 +46,18 @@ Future<void> _openTab(WidgetTester tester, String label) async {
 
 void main() {
   group('navigation', () {
-    testWidgets('shows only owner areas; Commandes stays hidden until orders '
-        'exist', (tester) async {
+    testWidgets('shows only owner areas: Accueil, Commandes, Catalogue, '
+        'Magasin', (tester) async {
       await _pumpShell(tester);
 
-      for (final label in ['Accueil', 'Catalogue', 'Magasin']) {
+      for (final label in ['Accueil', 'Commandes', 'Catalogue', 'Magasin']) {
         expect(_navLabel(label), findsOneWidget);
       }
-      expect(_navLabel('Commandes'), findsNothing);
       // No customer-side navigation, ever.
       for (final label in ['Recherche', 'Panier', 'Profil', 'Catégories']) {
         expect(_navLabel(label), findsNothing);
       }
-      expect(find.byType(NavigationDestination), findsNWidgets(3));
+      expect(find.byType(NavigationDestination), findsNWidgets(4));
     });
   });
 
@@ -82,7 +81,9 @@ void main() {
       await _pumpShell(tester);
       expect(find.textContaining('DT'), findsNothing);
       expect(find.textContaining('Chiffre'), findsNothing);
-      expect(find.textContaining('Commandes'), findsNothing);
+      // The only "Commandes" on the dashboard is the navigation tab.
+      expect(find.textContaining('Commandes'), findsOneWidget);
+      expect(_navLabel('Commandes'), findsOneWidget);
     });
 
     testWidgets('counts progress and only lists what is left to do', (
@@ -121,14 +122,20 @@ void main() {
       expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
     });
 
-    testWidgets('a product the owner switched off still counts as added', (
+    testWidgets('a product the owner switched off is added but not orderable', (
       tester,
     ) async {
       await _pumpShell(
         tester,
         products: () => [fakeTomatoes(isAvailable: false)],
       );
-      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
+      // Nothing can be ordered yet: the step is still to do, with the facts.
+      expect(find.text('Démarrer votre magasin · 0/2'), findsOneWidget);
+      expect(
+        find.text('1 produit · aucun disponible à la commande'),
+        findsOneWidget,
+      );
+      expect(find.text('À compléter'), findsOneWidget);
     });
 
     testWidgets('each open step leads to the right place', (tester) async {
@@ -173,6 +180,76 @@ void main() {
         find.text('Magasin fermé'),
         findsOneWidget,
       ); // store info still shown
+    });
+  });
+
+  group('inventory facts in the checklist', () {
+    testWidgets('no product: the original hint, "À compléter", no counts', (
+      tester,
+    ) async {
+      await _pumpShell(tester);
+      expect(find.text('À compléter'), findsOneWidget);
+      expect(find.text('Prix, unité de vente et quantités.'), findsOneWidget);
+      expect(find.textContaining('produit ·'), findsNothing);
+      expect(find.textContaining('produits ·'), findsNothing);
+    });
+
+    testWidgets('one orderable product is enough: step done, no "À compléter"', (
+      tester,
+    ) async {
+      await _pumpShell(tester, products: () => [fakeTomatoes()]);
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
+      expect(
+        find.text('1 produit · 1 disponible à la commande'),
+        findsOneWidget,
+      );
+      expect(find.text('À compléter'), findsNothing);
+      // One is not described as too few.
+      expect(find.textContaining('insuffisant'), findsNothing);
+      expect(find.textContaining('minimum'), findsNothing);
+    });
+
+    testWidgets('several products: total and orderable are told apart', (
+      tester,
+    ) async {
+      await _pumpShell(
+        tester,
+        products: () => [
+          fakeTomatoes(),
+          fakeStoreProduct(id: 2),
+          fakeTomatoes(isAvailable: false),
+        ],
+      );
+      expect(
+        find.text('3 produits · 2 disponibles à la commande'),
+        findsOneWidget,
+      );
+      expect(find.text('Démarrer votre magasin · 1/2'), findsOneWidget);
+    });
+
+    testWidgets('stock at zero is not orderable, whatever the owner switch', (
+      tester,
+    ) async {
+      await _pumpShell(
+        tester,
+        products: () => [fakeTomatoes(trackStock: true, stockQuantity: 0)],
+      );
+      expect(
+        find.text('1 produit · aucun disponible à la commande'),
+        findsOneWidget,
+      );
+      expect(find.text('À compléter'), findsOneWidget);
+    });
+
+    testWidgets('stays readable at 1.6× text', (tester) async {
+      tester.platformDispatcher.textScaleFactorTestValue = 1.6;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      await _pumpShell(
+        tester,
+        products: () => [fakeTomatoes(isAvailable: false)],
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.text('À compléter'), findsOneWidget);
     });
   });
 }

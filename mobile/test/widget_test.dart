@@ -3,6 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:grocery_mobile/data/repositories/auth_repository.dart';
 import 'package:grocery_mobile/data/repositories/catalog_repository.dart';
+import 'package:grocery_mobile/data/repositories/customer_orders_repository.dart';
+import 'package:grocery_mobile/data/repositories/customer_stores_repository.dart';
+import 'package:grocery_mobile/data/repositories/orders_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_products_repository.dart';
 import 'package:grocery_mobile/data/repositories/store_repository.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
@@ -51,6 +54,9 @@ void main() {
         storeRepository: StoreRepository(apiClient),
         catalogRepository: CatalogRepository(apiClient),
         storeProductsRepository: StoreProductsRepository(apiClient),
+        ordersRepository: OrdersRepository(apiClient),
+        customerStoresRepository: CustomerStoresRepository(apiClient),
+        customerOrdersRepository: CustomerOrdersRepository(apiClient),
       ),
     );
     await _pumpToSplash(tester);
@@ -79,6 +85,9 @@ void main() {
         storeRepository: StoreRepository(apiClient),
         catalogRepository: CatalogRepository(apiClient),
         storeProductsRepository: StoreProductsRepository(apiClient),
+        ordersRepository: OrdersRepository(apiClient),
+        customerStoresRepository: CustomerStoresRepository(apiClient),
+        customerOrdersRepository: CustomerOrdersRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -100,6 +109,9 @@ void main() {
         storeRepository: StoreRepository(apiClient),
         catalogRepository: CatalogRepository(apiClient),
         storeProductsRepository: StoreProductsRepository(apiClient),
+        ordersRepository: OrdersRepository(apiClient),
+        customerStoresRepository: CustomerStoresRepository(apiClient),
+        customerOrdersRepository: CustomerOrdersRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -122,6 +134,9 @@ void main() {
         storeRepository: StoreRepository(apiClient),
         catalogRepository: CatalogRepository(apiClient),
         storeProductsRepository: StoreProductsRepository(apiClient),
+        ordersRepository: OrdersRepository(apiClient),
+        customerStoresRepository: CustomerStoresRepository(apiClient),
+        customerOrdersRepository: CustomerOrdersRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);
@@ -137,7 +152,9 @@ void main() {
     expect(find.text('Numéro de téléphone'), findsOneWidget);
     expect(find.text('Numéro WhatsApp'), findsOneWidget);
     expect(find.text('Mot de passe'), findsOneWidget);
-    expect(find.text('Photo de profil'), findsOneWidget);
+    // The photo is added after sign-up, from the profile: no link field here.
+    expect(find.text('Photo de profil'), findsNothing);
+    expect(find.textContaining('Lien de la photo'), findsNothing);
     expect(find.text('Créer mon compte'), findsOneWidget);
   });
 
@@ -151,6 +168,9 @@ void main() {
         storeRepository: StoreRepository(apiClient),
         catalogRepository: CatalogRepository(apiClient),
         storeProductsRepository: StoreProductsRepository(apiClient),
+        ordersRepository: OrdersRepository(apiClient),
+        customerStoresRepository: CustomerStoresRepository(apiClient),
+        customerOrdersRepository: CustomerOrdersRepository(apiClient),
       ),
     );
     await _pumpPastSplash(tester);

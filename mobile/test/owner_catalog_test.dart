@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:grocery_mobile/data/models/brand.dart';
 import 'package:grocery_mobile/data/models/catalog_product.dart';
 import 'package:grocery_mobile/data/models/store_product.dart';
 
@@ -322,6 +323,34 @@ void main() {
       expect(find.text('2,500 DT / kg'), findsOneWidget);
       expect(find.text('Aucun produit'), findsNothing);
       expect(_products.names, ['Pomme']);
+    });
+  });
+
+  group('brand', () {
+    testWidgets('is shown under the name, only for branded products', (
+      tester,
+    ) async {
+      await _pumpCatalog(
+        tester,
+        products: () => [
+          fakeStoreProduct(
+            id: 1,
+            product: fakeCatalogProduct(
+              id: 1,
+              name: 'Yaourt nature',
+              brand: const Brand(
+                id: 1,
+                slug: 'delice-danone',
+                name: 'DÉLICE DANONE',
+              ),
+            ),
+          ),
+          fakeTomatoes(id: 2),
+        ],
+      );
+
+      expect(find.text('DÉLICE DANONE'), findsOneWidget);
+      expect(find.text('Tomate'), findsOneWidget);
     });
   });
 }

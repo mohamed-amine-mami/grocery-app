@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'data/repositories/auth_repository.dart';
 import 'data/repositories/catalog_repository.dart';
+import 'data/repositories/customer_orders_repository.dart';
+import 'data/repositories/customer_stores_repository.dart';
+import 'data/repositories/orders_repository.dart';
 import 'data/repositories/store_products_repository.dart';
 import 'data/repositories/store_repository.dart';
 import 'data/services/api_client.dart';
@@ -26,6 +29,9 @@ void main() {
       storeRepository: storeRepository,
       catalogRepository: CatalogRepository(apiClient),
       storeProductsRepository: StoreProductsRepository(apiClient),
+      ordersRepository: OrdersRepository(apiClient),
+      customerStoresRepository: CustomerStoresRepository(apiClient),
+      customerOrdersRepository: CustomerOrdersRepository(apiClient),
     ),
   );
 }

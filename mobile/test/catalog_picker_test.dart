@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:grocery_mobile/data/models/brand.dart';
 import 'package:grocery_mobile/data/models/catalog_product.dart';
 import 'package:grocery_mobile/data/models/sale_unit.dart';
 import 'package:grocery_mobile/data/models/store_product.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
 import 'package:grocery_mobile/ui/core/app_services.dart';
 import 'package:grocery_mobile/ui/core/theme/app_theme.dart';
+import 'package:grocery_mobile/ui/core/widgets/product_image.dart';
 import 'package:grocery_mobile/ui/features/catalog/views/catalog_picker_view.dart';
 
 import 'fakes.dart';
@@ -31,8 +33,9 @@ Future<FakeStoreProductsRepository> _openPicker(
   FakeCatalogRepository catalog, {
   bool settle = true,
   List<StoreProduct> existing = const [],
+  double height = 2600,
 }) async {
-  tester.view.physicalSize = const Size(800, 2600);
+  tester.view.physicalSize = Size(800, height);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
 
@@ -48,6 +51,9 @@ Future<FakeStoreProductsRepository> _openPicker(
       storeRepository: FakeStoreRepository(api, store: closedStore),
       catalogRepository: catalog,
       storeProductsRepository: storeProducts,
+      ordersRepository: FakeOrdersRepository(api),
+      customerStoresRepository: FakeCustomerStoresRepository(api),
+      customerOrdersRepository: FakeCustomerOrdersRepository(api),
       child: MaterialApp(
         theme: buildAppTheme(),
         home: Builder(
@@ -78,8 +84,10 @@ Future<FakeStoreProductsRepository> _openPicker(
 
 Finder get _search => find.byType(TextField);
 
+/// Types [text] and waits out the search debounce and the request.
 Future<void> _type(WidgetTester tester, String text) async {
   await tester.enterText(_search, text);
+  await tester.pump(const Duration(milliseconds: 400));
   await tester.pumpAndSettle();
 }
 
@@ -122,19 +130,34 @@ void main() {
       expect(find.text('Pomme'), findsOneWidget);
     });
 
-    testWidgets(
-      'fetches the catalog once — searching and filtering are local',
-      (tester) async {
-        final catalog = _catalog();
-        await _openPicker(tester, catalog);
+    testWidgets('fetches one page, not the whole catalog', (tester) async {
+      final catalog = _catalog();
+      await _openPicker(tester, catalog);
 
-        await _type(tester, 'pom');
-        await _chip(tester, 'Légumes');
-        await _chip(tester, 'Tous');
+      expect(catalog.browseCalls, hasLength(1));
+      expect(catalog.browseCalls.single.limit, 40);
+      expect(catalog.browseCalls.single.cursor, isNull);
+    });
 
-        expect(catalog.productsCalls, 1);
-      },
-    );
+    testWidgets('searching and filtering ask the backend, once each', (
+      tester,
+    ) async {
+      final catalog = _catalog();
+      await _openPicker(tester, catalog);
+
+      await _type(tester, 'pom');
+      expect(catalog.browseCalls, hasLength(2));
+      expect(catalog.browseCalls.last.query, 'pom');
+
+      await _chip(tester, 'Légumes');
+      expect(catalog.browseCalls, hasLength(3));
+      expect(catalog.browseCalls.last.categoryId, fakeVegetables.id);
+      expect(catalog.browseCalls.last.query, 'pom');
+
+      await _chip(tester, 'Tous');
+      expect(catalog.browseCalls, hasLength(4));
+      expect(catalog.browseCalls.last.categoryId, isNull);
+    });
   });
 
   group('the list', () {
@@ -158,7 +181,7 @@ void main() {
     });
   });
 
-  group('search (local)', () {
+  group('search', () {
     testWidgets('narrows the list as you type', (tester) async {
       await _openPicker(tester, _catalog());
 
@@ -233,7 +256,7 @@ void main() {
     });
   });
 
-  group('category filtering (local)', () {
+  group('category filtering', () {
     testWidgets('offers "Tous" and only the categories that have products', (
       tester,
     ) async {
@@ -692,8 +715,9 @@ void main() {
         find.text('Ce produit est déjà dans votre magasin.'),
         findsOneWidget,
       );
-      expect(find.text('Ajouté'), findsNWidgets(2)); // refreshed: Tomate too
-      expect(catalog.productsCalls, 2);
+      expect(find.text('Ajouté'), findsNWidgets(2)); // that row is in line
+      // Only that product was looked at again: the list was not reloaded.
+      expect(catalog.productsCalls, 1);
     });
 
     testWidgets('a product archived in the store is reported as such', (
@@ -769,6 +793,368 @@ void main() {
 
       expect(find.text('Ajouter à mon magasin'), findsNothing);
       expect(find.text('Ajouté'), findsNWidgets(2));
+    });
+  });
+
+  group('brand', () {
+    const danone = Brand(id: 1, slug: 'delice-danone', name: 'DÉLICE DANONE');
+    const sodeen = Brand(id: 2, slug: 'sodeen', name: 'Sodeen');
+    final items = [
+      fakeCatalogItem(id: 1, name: 'Yaourt nature', brand: danone),
+      fakeCatalogItem(id: 2, name: 'Yaourt nature', brand: sodeen),
+      fakeCatalogItem(id: 3, name: 'Tomate'),
+    ];
+
+    testWidgets('shows the brand under the name, and nothing for brandless', (
+      tester,
+    ) async {
+      await _openPicker(tester, _catalog(items: items));
+
+      expect(find.text('DÉLICE DANONE'), findsOneWidget);
+      expect(find.text('Sodeen'), findsOneWidget);
+      // Only the two branded rows have a brand line: the Tomate row has the
+      // name and the category line, no third text.
+      expect(
+        find.descendant(
+          of: find
+              .ancestor(of: find.text('Tomate'), matching: find.byType(Column))
+              .first,
+          matching: find.byType(Text),
+        ),
+        findsNWidgets(2),
+      );
+    });
+
+    testWidgets('same name, different brands: the rows can be told apart', (
+      tester,
+    ) async {
+      await _openPicker(tester, _catalog(items: items));
+      expect(find.text('Yaourt nature'), findsNWidgets(2));
+
+      await _type(tester, 'sodeen');
+      expect(find.text('Yaourt nature'), findsOneWidget);
+      expect(find.text('Sodeen'), findsOneWidget);
+      expect(find.text('DÉLICE DANONE'), findsNothing);
+    });
+  });
+
+  group('a large catalog', () {
+    List<CatalogItem> big(int count) => [
+      for (var i = 1; i <= count; i++)
+        fakeCatalogItem(id: i, name: 'Produit ${i.toString().padLeft(5, '0')}'),
+    ];
+
+    testWidgets('builds only the rows near the screen, not thousands', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(5700));
+      await _openPicker(tester, catalog, height: 900);
+
+      expect(find.text('5700 produits'), findsOneWidget); // the match count
+      final rows = tester.widgetList(find.byType(Card)).length;
+      expect(rows, greaterThan(0));
+      expect(rows, lessThan(40)); // a screenful (+ cache), of 5,700
+      expect(catalog.browseCalls.first.limit, 40);
+    });
+
+    testWidgets('scrolling loads the next page, without repeating a row', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      expect(catalog.browseCalls, hasLength(1));
+      expect(find.text('Produit 00041'), findsNothing);
+
+      await tester.dragUntilVisible(
+        find.text('Produit 00045'),
+        find.byType(ListView),
+        const Offset(0, -400),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Produit 00045'), findsOneWidget);
+      expect(catalog.browseCalls.length, greaterThanOrEqualTo(2));
+      expect(catalog.browseCalls[1].cursor, '40');
+      expect(catalog.browseCalls[1].limit, 40);
+      final cursors = catalog.browseCalls.map((c) => c.cursor).toList();
+      expect(cursors.toSet(), hasLength(cursors.length)); // never asked twice
+    });
+
+    testWidgets('shows a spinner at the end while the next page loads', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(120));
+      final gate = Completer<void>();
+      catalog.onBrowse = (call) async {
+        if (call.cursor != null) {
+          await gate.future;
+        }
+      };
+      await _openPicker(tester, catalog, height: 900);
+
+      await tester.dragUntilVisible(
+        find.byType(CircularProgressIndicator),
+        find.byType(ListView),
+        const Offset(0, -400),
+      );
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+      gate.complete();
+      await tester.pumpAndSettle();
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+    });
+
+    testWidgets('a failed page says so and "Réessayer" fetches it again', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      catalog.fails = true;
+
+      await tester.dragUntilVisible(
+        find.text('Impossible de charger la suite.'),
+        find.byType(ListView),
+        const Offset(0, -400),
+      );
+      expect(find.text('Impossible de charger la suite.'), findsOneWidget);
+      expect(find.text('Produit 00001'), findsNothing); // scrolled away
+      // The rows already loaded are still there, and so is the search.
+      expect(_search, findsOneWidget);
+
+      catalog.fails = false;
+      await tester.tap(find.text('Réessayer'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Impossible de charger la suite.'), findsNothing);
+    });
+
+    testWidgets('typing a search starts again from the first page', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      await tester.dragUntilVisible(
+        find.text('Produit 00045'),
+        find.byType(ListView),
+        const Offset(0, -400),
+      );
+
+      await _type(tester, 'Produit 0009');
+
+      expect(catalog.browseCalls.last.cursor, isNull);
+      expect(catalog.browseCalls.last.query, 'Produit 0009');
+      expect(find.text('11 produits'), findsOneWidget); // 00009, 00090..00099
+      expect(find.text('Produit 00090'), findsOneWidget);
+      expect(find.text('Produit 00045'), findsNothing);
+    });
+
+    testWidgets('keeps the search field while a search is loading', (
+      tester,
+    ) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      final gate = Completer<void>();
+      catalog.gate = gate;
+
+      await tester.enterText(_search, 'Produit 0001');
+      await tester.pump(const Duration(milliseconds: 400));
+      await tester.pump();
+
+      expect(_search, findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+      gate.complete();
+      await tester.pumpAndSettle();
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(find.text('Produit 00010'), findsOneWidget);
+    });
+
+    testWidgets('a failed search shows an error with a retry, and the field '
+        'stays', (tester) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      catalog.fails = true;
+
+      await _type(tester, 'Produit 0001');
+
+      expect(find.text('Impossible de charger les produits.'), findsOneWidget);
+      expect(_search, findsOneWidget);
+
+      catalog.fails = false;
+      await tester.tap(find.text('Réessayer'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Impossible de charger les produits.'), findsNothing);
+      expect(find.text('Produit 00010'), findsOneWidget);
+    });
+
+    testWidgets('pull to refresh reloads the first page', (tester) async {
+      final catalog = _catalog(items: big(120));
+      await _openPicker(tester, catalog, height: 900);
+      final calls = catalog.browseCalls.length;
+
+      await tester.fling(find.byType(ListView), const Offset(0, 400), 1000);
+      await tester.pumpAndSettle();
+
+      expect(catalog.browseCalls.length, greaterThan(calls));
+      expect(find.text('Produit 00001'), findsOneWidget);
+    });
+  });
+
+  group('thumbnails', () {
+    const photo = 'https://res.example/f_auto,q_auto/v1/pomme.jpg';
+    final items = [
+      fakeCatalogItem(id: 1, name: 'Pomme', photo: photo),
+      fakeCatalogItem(id: 2, name: 'Tomate', category: fakeVegetables),
+      fakeCatalogItem(id: 3, name: 'Banane', photo: photo, inMyStore: true),
+      fakeCatalogItem(
+        id: 4,
+        name: 'Yaourt nature',
+        storeProductArchived: true,
+        category: fakeDairy,
+        unit: SaleUnit.piece,
+      ),
+    ];
+
+    Finder row(String name) => find
+        .ancestor(of: find.text(name), matching: find.byType(Card))
+        .first;
+
+    testWidgets('each row leads with its product’s own picture, small', (
+      tester,
+    ) async {
+      await _openPicker(tester, _catalog(items: items));
+
+      final images = tester.widgetList<ProductImage>(find.byType(ProductImage));
+      expect(images.map((i) => i.photo), [photo, null, photo, null]);
+      expect(images.every((i) => i.size == 48), isTrue);
+
+      // At the start of the row, before the name, centred on the row.
+      for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature']) {
+        final image = tester.getRect(
+          find.descendant(of: row(name), matching: find.byType(ProductImage)),
+        );
+        final card = tester.getRect(row(name));
+        expect(image.right, lessThan(tester.getTopLeft(find.text(name)).dx));
+        expect(image.center.dy, closeTo(card.center.dy, 1), reason: name);
+        // The status stays at the end of the row.
+        expect(card.right - image.right, greaterThan(card.width / 2));
+      }
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('no photo, or one that fails to load, is the placeholder', (
+      tester,
+    ) async {
+      await _openPicker(tester, _catalog(items: items));
+      // Two have no photo; the other two cannot be fetched in a test.
+      expect(find.byIcon(Icons.shopping_basket_rounded), findsNWidgets(4));
+      expect(find.text('Pomme'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the row is read by name and state, not as a picture', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await _openPicker(tester, _catalog(items: items));
+
+      expect(find.bySemanticsLabel('Image du produit'), findsNothing);
+      expect(find.bySemanticsLabel('Ajouter Pomme'), findsOneWidget);
+      expect(find.bySemanticsLabel('Banane, déjà ajouté'), findsOneWidget);
+      expect(
+        find.bySemanticsLabel(
+          'Yaourt nature, archivé dans votre magasin, ouvrir pour restaurer',
+        ),
+        findsOneWidget,
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('the picture is part of the row’s tap target, nothing more', (
+      tester,
+    ) async {
+      await _openPicker(tester, _catalog(items: items));
+
+      // Tapping the picture of a product to add opens its quick-add sheet…
+      await tester.tap(
+        find.descendant(of: row('Pomme'), matching: find.byType(ProductImage)),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Ajouter à mon magasin'), findsOneWidget);
+      await tester.tapAt(const Offset(5, 5)); // dismiss the sheet
+      await tester.pumpAndSettle();
+
+      // …and the picture of one already in the store does nothing, like its row.
+      await tester.tap(
+        find.descendant(of: row('Banane'), matching: find.byType(ProductImage)),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Ajouter à mon magasin'), findsNothing);
+    });
+
+    testWidgets('search, order and selection are as before', (tester) async {
+      await _openPicker(tester, _catalog(items: items));
+      expect(
+        [
+          for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature'])
+            tester.getTopLeft(find.text(name)).dy,
+        ],
+        orderedEquals([
+          for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature'])
+            tester.getTopLeft(find.text(name)).dy,
+        ]..sort()),
+      );
+
+      await _type(tester, 'tomate');
+      expect(find.text('Tomate'), findsOneWidget);
+      expect(find.text('Pomme'), findsNothing);
+      expect(find.byType(ProductImage), findsOneWidget);
+      await _quickAdd(tester, 'Tomate', '3');
+      expect(find.text('Ajouté'), findsOneWidget);
+    });
+
+    testWidgets('only the rows near the screen build a picture', (
+      tester,
+    ) async {
+      final catalog = _catalog(
+        items: [
+          for (var i = 1; i <= 5700; i++)
+            fakeCatalogItem(
+              id: i,
+              name: 'Produit ${i.toString().padLeft(5, '0')}',
+              photo: 'https://res.example/p/$i.jpg',
+            ),
+        ],
+      );
+      await _openPicker(tester, catalog, height: 900);
+
+      final built = find.byType(ProductImage).evaluate().length;
+      expect(built, greaterThan(0));
+      expect(built, lessThan(40)); // a screenful (+ cache) of 5,700
+      // …and each is decoded at its slot's size, not at the source's.
+      expect(
+        tester
+            .widgetList<ProductImage>(find.byType(ProductImage))
+            .every((i) => i.size == 48),
+        isTrue,
+      );
+    });
+
+    testWidgets('at 1.3× text the pictures stay; at 2× they give the name its '
+        'width', (tester) async {
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      await _openPicker(tester, _catalog(items: items));
+      expect(find.byType(ProductImage), findsNWidgets(4));
+      expect(tester.takeException(), isNull);
+
+      tester.platformDispatcher.textScaleFactorTestValue = 2;
+      await tester.pumpAndSettle();
+      expect(find.byType(ProductImage), findsNothing);
+      expect(find.text('Pomme'), findsOneWidget);
+      expect(find.text('Ajouté'), findsOneWidget);
+      expect(tester.takeException(), isNull);
     });
   });
 }

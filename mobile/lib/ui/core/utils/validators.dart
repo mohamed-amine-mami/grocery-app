@@ -5,7 +5,6 @@ abstract final class AppLimits {
   static const name = 100;
   static const address = 200;
   static const description = 1000;
-  static const url = 2048;
 }
 
 abstract final class AppValidators {
@@ -82,22 +81,6 @@ abstract final class AppValidators {
 
   static String? storeName(String? value) =>
       required(value, message: 'Le nom du magasin est requis.');
-
-  /// Optional photo link: empty is fine; otherwise an http(s) URL.
-  static String? optionalPhotoUrl(String? value) {
-    final text = value?.trim() ?? '';
-    if (text.isEmpty) {
-      return null;
-    }
-    final uri = Uri.tryParse(text);
-    final isHttp =
-        uri != null &&
-        (uri.scheme == 'http' || uri.scheme == 'https') &&
-        uri.host.isNotEmpty;
-    return isHttp
-        ? null
-        : 'Lien invalide (il doit commencer par http:// ou https://).';
-  }
 
   static String? storeAddress(String? value) =>
       required(value, message: "L'adresse du magasin est requise.");

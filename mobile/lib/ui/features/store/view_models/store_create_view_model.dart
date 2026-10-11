@@ -18,7 +18,6 @@ class StoreCreateViewModel extends ChangeNotifier {
     required String name,
     required String address,
     String? description,
-    String? photo,
     double? latitude,
     double? longitude,
   }) async {
@@ -29,7 +28,6 @@ class StoreCreateViewModel extends ChangeNotifier {
         name: name,
         address: address,
         description: description,
-        photo: photo,
         latitude: latitude,
         longitude: longitude,
       );

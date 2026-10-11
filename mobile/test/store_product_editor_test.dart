@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:grocery_mobile/data/models/brand.dart';
 import 'package:grocery_mobile/data/models/catalog_product.dart';
 import 'package:grocery_mobile/data/models/sale_unit.dart';
 import 'package:grocery_mobile/data/models/store_product.dart';
@@ -60,6 +61,9 @@ Future<_Opened> _openEditor(WidgetTester tester, StoreProduct product) async {
       storeRepository: FakeStoreRepository(api, store: closedStore),
       catalogRepository: FakeCatalogRepository(api),
       storeProductsRepository: _store,
+      ordersRepository: FakeOrdersRepository(api),
+      customerStoresRepository: FakeCustomerStoresRepository(api),
+      customerOrdersRepository: FakeCustomerOrdersRepository(api),
       child: MaterialApp(
         theme: buildAppTheme(),
         home: Builder(
@@ -859,6 +863,31 @@ void main() {
 
       expect(find.text('1,800 DT / kg'), findsOneWidget);
       expect(_store.updateCalls, 0);
+    });
+  });
+
+  group('brand', () {
+    const danone = Brand(id: 1, slug: 'delice-danone', name: 'DÉLICE DANONE');
+
+    testWidgets('is displayed with the catalog product but not editable', (
+      tester,
+    ) async {
+      await _openEditor(
+        tester,
+        fakeStoreProduct(
+          product: fakeCatalogProduct(name: 'Yaourt nature', brand: danone),
+        ),
+      );
+
+      expect(find.text('DÉLICE DANONE'), findsOneWidget);
+      expect(find.widgetWithText(TextField, 'DÉLICE DANONE'), findsNothing);
+      expect(find.textContaining('Marque'), findsNothing);
+    });
+
+    testWidgets('a brandless product shows only its name', (tester) async {
+      await _openEditor(tester, _tomatoes());
+      expect(find.text('Tomate'), findsOneWidget);
+      expect(find.text('DÉLICE DANONE'), findsNothing);
     });
   });
 }

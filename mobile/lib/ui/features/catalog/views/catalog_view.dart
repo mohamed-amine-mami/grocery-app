@@ -284,6 +284,11 @@ class _ProductRow extends StatelessWidget {
                                   : AppColors.textSecondary,
                             ),
                           ),
+                          if (product.product.brand != null)
+                            Text(
+                              product.product.brand!.name,
+                              style: textTheme.labelSmall,
+                            ),
                           const SizedBox(height: AppSpacing.xs),
                           Text(
                             ProductFormat.pricePerUnit(

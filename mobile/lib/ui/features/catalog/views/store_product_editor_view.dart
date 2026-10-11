@@ -386,6 +386,8 @@ class _CatalogCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(product.name, style: textTheme.titleMedium),
+                      if (product.brand != null)
+                        Text(product.brand!.name, style: textTheme.labelMedium),
                       const SizedBox(height: AppSpacing.xs),
                       Text(product.category.name, style: textTheme.bodySmall),
                     ],

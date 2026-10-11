@@ -67,6 +67,19 @@ void main() {
       expect(ProductFormat.pricePerUnit(SaleUnit.l, 2400), '2,400 DT / L');
     });
 
+    test('the unit alone, as it follows a price', () {
+      expect(ProductFormat.perUnit(SaleUnit.piece), 'pièce');
+      expect(ProductFormat.perUnit(SaleUnit.kg), 'kg');
+      expect(ProductFormat.perUnit(SaleUnit.l), 'L');
+      // It is what pricePerUnit appends.
+      for (final unit in SaleUnit.values) {
+        expect(
+          ProductFormat.pricePerUnit(unit, 1800),
+          '1,800 DT / ${ProductFormat.perUnit(unit)}',
+        );
+      }
+    });
+
     test('the price label adapts to the unit', () {
       expect(ProductFormat.priceFieldLabel(SaleUnit.kg), 'Prix au kilo (DT)');
       expect(ProductFormat.priceFieldLabel(SaleUnit.l), 'Prix au litre (DT)');

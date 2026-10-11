@@ -24,7 +24,9 @@ Map<String, dynamic> _catalogProductJson({
   List<String> allowed = const ['KG', 'PIECE'],
   int? max = 10000,
   bool? isActive,
+  Map<String, dynamic>? brand,
 }) => {
+  'brand': brand,
   'id': 12,
   'slug': 'banane',
   'name': 'Banane',
@@ -137,6 +139,37 @@ void main() {
       expect(product.defaultQuantityStep, 100);
       expect(product.defaultMaxQuantity, 10000);
       expect(product.isActive, isTrue);
+    });
+
+    test('parses the brand, and keeps the other fields', () {
+      final product = CatalogProduct.fromJson(
+        _catalogProductJson(
+          brand: {'id': 4, 'slug': 'delice-danone', 'name': 'DÉLICE DANONE'},
+        ),
+      );
+
+      expect(product.brand?.id, 4);
+      expect(product.brand?.slug, 'delice-danone');
+      expect(product.brand?.name, 'DÉLICE DANONE');
+      expect(product.name, 'Banane');
+      expect(product.category.name, 'Fruits');
+      expect(product.photo, 'https://cdn.example.com/banane.jpg');
+    });
+
+    test('a brandless product has a null brand (null or absent)', () {
+      expect(CatalogProduct.fromJson(_catalogProductJson()).brand, isNull);
+      final json = _catalogProductJson()..remove('brand');
+      expect(CatalogProduct.fromJson(json).brand, isNull);
+    });
+
+    test('a store product carries its catalog product\'s brand', () {
+      final json = _storeProductJson();
+      (json['product'] as Map<String, dynamic>)['brand'] = {
+        'id': 4,
+        'slug': 'delice-danone',
+        'name': 'DÉLICE DANONE',
+      };
+      expect(StoreProduct.fromJson(json).product.brand?.name, 'DÉLICE DANONE');
     });
 
     test('a piece-counted product can only be sold in pieces', () {

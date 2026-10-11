@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:grocery_mobile/data/models/brand.dart';
 import 'package:grocery_mobile/data/models/catalog_product.dart';
 import 'package:grocery_mobile/data/models/sale_unit.dart';
 import 'package:grocery_mobile/data/models/store_product.dart';
@@ -65,6 +66,9 @@ Future<_Opened> _openSheet(
       storeRepository: FakeStoreRepository(api, store: closedStore),
       catalogRepository: FakeCatalogRepository(api),
       storeProductsRepository: repository,
+      ordersRepository: FakeOrdersRepository(api),
+      customerStoresRepository: FakeCustomerStoresRepository(api),
+      customerOrdersRepository: FakeCustomerOrdersRepository(api),
       child: MaterialApp(
         theme: buildAppTheme(),
         home: Builder(
@@ -719,6 +723,28 @@ void main() {
       await _type(tester, _priceField, '1,9');
 
       expect(find.textContaining('Impossible d’ajouter'), findsNothing);
+    });
+  });
+
+  group('brand', () {
+    const danone = Brand(id: 1, slug: 'delice-danone', name: 'DÉLICE DANONE');
+
+    testWidgets('is shown with the catalog product, read-only', (tester) async {
+      await _openSheet(
+        tester,
+        _repository(),
+        product: fakeCatalogProduct(name: 'Yaourt nature', brand: danone),
+      );
+
+      expect(find.text('DÉLICE DANONE'), findsOneWidget);
+      expect(find.widgetWithText(TextField, 'DÉLICE DANONE'), findsNothing);
+      expect(find.textContaining('Marque'), findsNothing);
+    });
+
+    testWidgets('a brandless product shows no brand line', (tester) async {
+      await _openSheet(tester, _repository());
+      expect(find.text('DÉLICE DANONE'), findsNothing);
+      expect(find.text('Tomate'), findsOneWidget);
     });
   });
 }

@@ -1,6 +1,9 @@
 import 'dart:convert';
 
+import 'dart:async';
+
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart' show MediaType;
 
 /// Thrown when the backend responds with a non-2xx status code.
 ///
@@ -46,16 +49,23 @@ class NetworkException implements Exception {
 /// attaches the bearer token when one is set, and turns non-2xx responses
 /// into [ApiException].
 class ApiClient {
-  ApiClient({http.Client? httpClient, String? baseUrl})
-    : _httpClient = httpClient ?? http.Client(),
-      baseUrl = baseUrl ?? defaultBaseUrl;
+  ApiClient({
+    http.Client? httpClient,
+    String? baseUrl,
+    this.uploadTimeout = defaultUploadTimeout,
+  }) : _httpClient = httpClient ?? http.Client(),
+       baseUrl = baseUrl ?? defaultBaseUrl;
 
   /// The backend has no path prefix — routes live at the root
   /// (`/auth/login`, `/stores`, ...); only Swagger's own UI is under `/api`.
   static const defaultBaseUrl = 'http://localhost:3000';
 
+  /// How long a file upload may take, request and response together.
+  static const defaultUploadTimeout = Duration(seconds: 30);
+
   final http.Client _httpClient;
   final String baseUrl;
+  final Duration uploadTimeout;
 
   String? _authToken;
 
@@ -64,9 +74,13 @@ class ApiClient {
     _authToken = token;
   }
 
+  Map<String, String> get _authHeaders => {
+    if (_authToken != null) 'Authorization': 'Bearer $_authToken',
+  };
+
   Map<String, String> get _headers => {
     'Content-Type': 'application/json',
-    if (_authToken != null) 'Authorization': 'Bearer $_authToken',
+    ..._authHeaders,
   };
 
   Future<dynamic> get(String path) => _send('GET', path);
@@ -78,6 +92,40 @@ class ApiClient {
       _send('PATCH', path, body: body);
 
   Future<dynamic> delete(String path) => _send('DELETE', path);
+
+  /// `PUT` with one file as `multipart/form-data` — what the photo endpoints
+  /// take. Sends the same bearer token, answers with the same decoded JSON,
+  /// and fails the same way ([ApiException] / [NetworkException]); a request
+  /// still running after [uploadTimeout] is a [NetworkException].
+  Future<dynamic> putMultipart(
+    String path, {
+    required String field,
+    required List<int> bytes,
+    required String filename,
+    required String contentType,
+  }) async {
+    final request = http.MultipartRequest('PUT', Uri.parse('$baseUrl$path'))
+      ..headers.addAll(_authHeaders)
+      ..files.add(
+        http.MultipartFile.fromBytes(
+          field,
+          bytes,
+          filename: filename,
+          contentType: MediaType.parse(contentType),
+        ),
+      );
+
+    http.Response response;
+    try {
+      response = await _httpClient
+          .send(request)
+          .then(http.Response.fromStream)
+          .timeout(uploadTimeout);
+    } catch (error) {
+      throw NetworkException(error);
+    }
+    return _decode(response);
+  }
 
   Future<dynamic> _send(
     String method,
@@ -110,6 +158,11 @@ class ApiClient {
       throw NetworkException(error);
     }
 
+    return _decode(response);
+  }
+
+  /// The success body decoded, or the failure as an [ApiException].
+  dynamic _decode(http.Response response) {
     final dynamic decoded = response.body.isEmpty
         ? null
         : jsonDecode(response.body);

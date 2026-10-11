@@ -33,7 +33,6 @@ class _RegisterFormState extends State<RegisterForm> {
   final _phoneController = TextEditingController();
   final _whatsappController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _photoController = TextEditingController();
 
   String? _errorMessage;
 
@@ -44,7 +43,6 @@ class _RegisterFormState extends State<RegisterForm> {
     _phoneController.dispose();
     _whatsappController.dispose();
     _passwordController.dispose();
-    _photoController.dispose();
     super.dispose();
   }
 
@@ -62,7 +60,6 @@ class _RegisterFormState extends State<RegisterForm> {
       phoneNumber: _phoneController.text.trim(),
       role: widget.role,
       whatsappNumber: _whatsappController.text.trim(),
-      photo: _photoController.text.trim(),
     );
 
     if (!mounted) {
@@ -132,17 +129,6 @@ class _RegisterFormState extends State<RegisterForm> {
               controller: _passwordController,
               label: 'Mot de passe',
               validator: AppValidators.password,
-              textInputAction: TextInputAction.next,
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            TextFormField(
-              controller: _photoController,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.url,
-              decoration: const InputDecoration(
-                labelText: 'Photo de profil',
-                hintText: 'Lien de la photo (optionnel)',
-              ),
               onFieldSubmitted: (_) => _submit(),
             ),
             const SizedBox(height: AppSpacing.xxl),

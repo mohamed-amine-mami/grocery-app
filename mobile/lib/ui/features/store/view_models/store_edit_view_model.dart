@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../../../../data/models/store.dart';
 import '../../../../data/repositories/store_repository.dart';
 import '../../../../data/services/api_client.dart';
+import '../../../../data/services/image_picker_service.dart';
 
 /// The owner's store once it exists: holds the current [store] and the two
 /// ways to change it — saving details and the open/closed switch. Commands
@@ -28,7 +29,6 @@ class StoreEditViewModel extends ChangeNotifier {
     required String name,
     required String address,
     String? description,
-    String? photo,
     double? latitude,
     double? longitude,
   }) async {
@@ -39,7 +39,6 @@ class StoreEditViewModel extends ChangeNotifier {
         name: name,
         address: address,
         description: description,
-        photo: photo,
         latitude: latitude,
         longitude: longitude,
       );
@@ -52,6 +51,39 @@ class StoreEditViewModel extends ChangeNotifier {
       _isSaving = false;
       notifyListeners();
     }
+  }
+
+  /// Sets or replaces the store photo and shows it. Throws what the
+  /// repository throws.
+  Future<void> setPhoto(PickedImage image) async {
+    updateStore(await _storeRepository.setPhoto(image));
+  }
+
+  /// Removes the store photo. When the backend answers 503 the photo is
+  /// cleared all the same (only deleting the stored file failed), so it asks
+  /// what is true now before reporting a failure.
+  Future<void> removePhoto() async {
+    Store store;
+    try {
+      store = await _storeRepository.removePhoto();
+    } on ApiException catch (error) {
+      if (error.statusCode != 503) {
+        rethrow;
+      }
+      final current = await _storeRepository.getMine();
+      if (current == null || current.photo != null) {
+        rethrow;
+      }
+      store = current;
+    }
+    updateStore(store);
+  }
+
+  /// Takes the store as the backend now has it (after a photo was set or
+  /// removed).
+  void updateStore(Store store) {
+    _store = store;
+    notifyListeners();
   }
 
   Future<String?> setOpen({required bool isOpen}) async {

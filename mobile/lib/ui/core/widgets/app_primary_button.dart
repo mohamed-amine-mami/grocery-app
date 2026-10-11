@@ -8,11 +8,16 @@ class AppPrimaryButton extends StatelessWidget {
     required this.onPressed,
     super.key,
     this.isLoading = false,
+    this.trailing,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final bool isLoading;
+
+  /// Text shown at the end of the button (an amount), beside [label]. The
+  /// label gives way to it — wrapping onto a second line — at large text.
+  final String? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,15 @@ class AppPrimaryButton extends StatelessWidget {
                 color: Colors.white,
               ),
             )
-          : Text(label),
+          : trailing == null
+          ? Text(label)
+          : Row(
+              children: [
+                Expanded(child: Text(label, maxLines: 2)),
+                const SizedBox(width: 12),
+                Text(trailing!),
+              ],
+            ),
     );
   }
 }

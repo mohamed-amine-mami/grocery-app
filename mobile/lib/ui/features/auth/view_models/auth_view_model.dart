@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../../../../data/models/auth_response.dart';
 import '../../../../data/models/user.dart';
 import '../../../../data/repositories/auth_repository.dart';
+import '../../../../data/services/image_picker_service.dart';
 import '../../../../data/services/api_client.dart';
 import '../../../../data/services/token_storage.dart';
 
@@ -108,7 +109,6 @@ class AuthViewModel extends ChangeNotifier {
     required String phoneNumber,
     required UserRole role,
     String? whatsappNumber,
-    String? photo,
   }) async {
     return _runAuthOperation(
       () => _authRepository.register(
@@ -118,12 +118,45 @@ class AuthViewModel extends ChangeNotifier {
         phoneNumber: phoneNumber,
         role: role,
         whatsappNumber: whatsappNumber,
-        photo: photo,
       ),
       onApiError: (error) => error.statusCode == 409
           ? 'Un compte existe déjà avec cet e-mail ou ce numéro de téléphone.'
           : 'Impossible de créer le compte. Vérifiez les informations saisies.',
     );
+  }
+
+  /// Sets or replaces the signed-in user's photo and shows it. Throws what
+  /// the repository throws.
+  Future<void> setPhoto(PickedImage image) async {
+    updateCurrentUser(await _authRepository.setPhoto(image));
+  }
+
+  /// Removes the signed-in user's photo. When the backend answers 503 the
+  /// photo is cleared all the same (only deleting the stored file failed), so
+  /// it asks what is true now before reporting a failure.
+  Future<void> removePhoto() async {
+    User user;
+    try {
+      user = await _authRepository.removePhoto();
+    } on ApiException catch (error) {
+      if (error.statusCode != 503) {
+        rethrow;
+      }
+      user = await _authRepository.me();
+      if (user.photo != null) {
+        rethrow;
+      }
+    }
+    updateCurrentUser(user);
+  }
+
+  /// Takes the user as the backend now has it (after a photo was set or
+  /// removed), so every screen showing the signed-in user follows.
+  void updateCurrentUser(User user) {
+    if (_status == AuthStatus.authenticated) {
+      _currentUser = user;
+      notifyListeners();
+    }
   }
 
   Future<void> logout() async {
