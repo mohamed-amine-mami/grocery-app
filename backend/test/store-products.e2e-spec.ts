@@ -4,6 +4,7 @@ import { warmPool } from './order-test-helpers.js';
 import {
   archiveCategory,
   archiveProduct,
+  brandProduct,
   removeCatalog,
   seedCatalog,
 } from './catalog-helpers.js';
@@ -119,6 +120,7 @@ describe('POST /owner/store-products', () => {
       name: `Banane ${tag}`,
       description: 'Jaune et sucrée',
       photo: 'https://cdn.example.com/banane.jpg',
+      brand: null,
       defaultSaleUnit: 'KG',
       allowedSaleUnits: ['KG', 'PIECE'],
       defaultMinQuantity: 100,
@@ -1172,3 +1174,60 @@ describe('the catalog changing under a store product', () => {
 async function stopOwnerOffering(id: number) {
   await db.orm.public.StoreProduct.select('id').where({ id }).delete();
 }
+
+describe('the catalog product’s brand', () => {
+  it('is shown on create, read, list and edit — as id, slug and name only', async () => {
+    const owner = await freshOwner();
+    const brand = await brandProduct(
+      tag,
+      catalog.productId('yaourt'),
+      'heinz',
+      `Heinz ${tag}`,
+    );
+    const expected = {
+      id: brand.id,
+      slug: `${tag}-heinz`,
+      name: `Heinz ${tag}`,
+    };
+
+    const created = await added(owner, 'yaourt');
+    expect(created.product.brand).toEqual(expected);
+
+    const one = await request(http())
+      .get(`${API}/${created.id}`)
+      .set(auth(owner))
+      .expect(200);
+    expect(one.body.product.brand).toEqual(expected);
+
+    const list = await request(http()).get(API).set(auth(owner)).expect(200);
+    expect(list.body[0].product.brand).toEqual(expected);
+
+    const edited = await request(http())
+      .patch(`${API}/${created.id}`)
+      .set(auth(owner))
+      .send({ priceMillimes: 5000 })
+      .expect(200);
+    expect(edited.body.product.brand).toEqual(expected);
+    expect(edited.body.priceMillimes).toBe(5000);
+  });
+
+  it('is null for a brandless product', async () => {
+    const owner = await freshOwner();
+    const body = await added(owner, 'banane');
+    expect(body.product.brand).toBeNull();
+    const list = await request(http()).get(API).set(auth(owner)).expect(200);
+    expect(list.body[0].product.brand).toBeNull();
+  });
+
+  it('is read-only here: an owner cannot send a brand', async () => {
+    const owner = await freshOwner();
+    await add(owner, 'banane', { brandId: 1 }).expect(400);
+    await add(owner, 'banane', { brand: 'Heinz' }).expect(400);
+    const created = await added(owner, 'banane');
+    await request(http())
+      .patch(`${API}/${created.id}`)
+      .set(auth(owner))
+      .send({ brandId: 1 })
+      .expect(400);
+  });
+});

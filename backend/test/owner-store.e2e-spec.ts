@@ -397,3 +397,120 @@ describe('database constraints (defence in depth)', () => {
     ).rejects.toMatchObject({ sqlState: '23505' });
   });
 });
+
+describe('photo columns (contract preparation)', () => {
+  const photo = 'https://res.cloudinary.example/stores/1/photo.jpg';
+
+  it('no client can supply a photo or a photo reference', async () => {
+    const photoPayload = { photo };
+    const referencePayload = { photoPublicId: 'stores/1/photo' };
+    const owner = await register('OWNER');
+    for (const extra of [photoPayload, referencePayload]) {
+      await request(http())
+        .post('/owner/store')
+        .set(auth(owner))
+        .send({ ...validStore, ...extra })
+        .expect(400);
+      await request(http())
+        .post('/auth/register')
+        .send({
+          name: 'Photo Client',
+          email: `photo-${Date.now()}@example.com`,
+          password: 'changeme123',
+          phoneNumber: '+21699999999',
+          role: 'CLIENT',
+          ...extra,
+        })
+        .expect(400);
+    }
+    expect(await db.orm.public.Store.first({ ownerId: owner.id })).toBeNull();
+  });
+
+  it('PATCH /owner/store rejects a photo and leaves the store alone', async () => {
+    const { owner, store } = await registerOwnerWithStore();
+    await request(http())
+      .patch('/owner/store')
+      .set(auth(owner))
+      .send({ photo })
+      .expect(400);
+    await request(http())
+      .patch('/owner/store')
+      .set(auth(owner))
+      .send({ photoPublicId: 'stores/1/photo' })
+      .expect(400);
+    const row = await db.orm.public.Store.first({ id: store.id });
+    expect(row).toMatchObject({ photo: null, photoPublicId: null });
+  });
+
+  it('a stored photo is still returned, and its reference never is', async () => {
+    const { owner, store } = await registerOwnerWithStore();
+    await db.orm.public.Store.where({ id: store.id }).update({
+      photo,
+      photoPublicId: 'stores/1/photo',
+    });
+    await db.orm.public.User.where({ id: owner.id }).update({
+      photo: 'https://res.cloudinary.example/users/1/me.jpg',
+      photoPublicId: 'users/1/me',
+    });
+
+    const mine = await request(http())
+      .get('/owner/store')
+      .set(auth(owner))
+      .expect(200);
+    expect(mine.body.photo).toBe(photo);
+    expect(mine.body).not.toHaveProperty('photoPublicId');
+
+    const patched = await request(http())
+      .patch('/owner/store')
+      .set(auth(owner))
+      .send({ name: 'Renamed' })
+      .expect(200);
+    expect(patched.body.photo).toBe(photo);
+    expect(patched.body).not.toHaveProperty('photoPublicId');
+
+    const me = await request(http())
+      .get('/auth/me')
+      .set(auth(owner))
+      .expect(200);
+    expect(me.body.photo).toBe('https://res.cloudinary.example/users/1/me.jpg');
+    expect(me.body).not.toHaveProperty('photoPublicId');
+
+    const login = await request(http())
+      .post('/auth/login')
+      .send({ phoneNumber: owner.phoneNumber, password: 'changeme123' })
+      .expect(200);
+    expect(login.body.user.photo).toBe(
+      'https://res.cloudinary.example/users/1/me.jpg',
+    );
+    expect(login.body.user).not.toHaveProperty('photoPublicId');
+
+    const customer = await register('CLIENT');
+    const stores = await request(http())
+      .get('/stores')
+      .set(auth(customer))
+      .expect(200);
+    const listed = stores.body.find((s: { id: number }) => s.id === store.id);
+    expect(listed.photo).toBe(photo);
+    expect(listed).not.toHaveProperty('photoPublicId');
+  });
+
+  it('the database refuses a photo reference without a photo (store and user)', async () => {
+    const { owner, store } = await registerOwnerWithStore();
+    await expect(
+      db.orm.public.Store.where({ id: store.id }).update({
+        photoPublicId: 'stores/1/photo',
+      }),
+    ).rejects.toMatchObject({ sqlState: '23514' });
+    await expect(
+      db.orm.public.User.where({ id: owner.id }).update({
+        photoPublicId: 'users/1/me',
+      }),
+    ).rejects.toMatchObject({ sqlState: '23514' });
+    // A photo without a reference (an existing plain URL) stays valid.
+    await db.orm.public.Store.where({ id: store.id }).update({ photo });
+    expect(await db.orm.public.Store.first({ id: store.id })).toMatchObject({
+      photo,
+      photoPublicId: null,
+    });
+  });
+});

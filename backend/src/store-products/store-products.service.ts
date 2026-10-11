@@ -66,7 +66,7 @@ export class StoreProductsService {
   private offerings(storeId: number) {
     return db.orm.public.StoreProduct.where({ storeId }).include(
       'product',
-      (product) => product.include('category'),
+      (product) => product.include('category').include('brand'),
     );
   }
 
@@ -75,7 +75,9 @@ export class StoreProductsService {
     id: number,
   ): Promise<OfferingWithCatalog> {
     const row = await db.orm.public.StoreProduct.where({ id, storeId })
-      .include('product', (product) => product.include('category'))
+      .include('product', (product) =>
+        product.include('category').include('brand'),
+      )
       .first();
     if (!row) {
       throw new NotFoundException(`Store product ${id} not found`);
@@ -101,8 +103,14 @@ export class StoreProductsService {
           filters.categoryId === undefined ||
           row.product?.category?.id === filters.categoryId,
       )
-      .sort((a, b) =>
-        (a.product?.name ?? '').localeCompare(b.product?.name ?? '', 'fr'),
+      .sort(
+        (a, b) =>
+          (a.product?.name ?? '').localeCompare(b.product?.name ?? '', 'fr') ||
+          (a.product?.brand?.name ?? '').localeCompare(
+            b.product?.brand?.name ?? '',
+            'fr',
+          ) ||
+          a.id - b.id,
       )
       .map(toStoreProductEntity);
   }

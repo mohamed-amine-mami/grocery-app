@@ -1,0 +1,4957 @@
+{
+ "note": "Brand registry with every source spelling that was folded into it, and look-alike brands that were NOT merged (for review).",
+ "brands": [
+  {
+   "slug": "abida",
+   "name": "Abida",
+   "sourceSpellings": {
+    "ABIDA": 1
+   }
+  },
+  {
+   "slug": "activia",
+   "name": "Activia",
+   "sourceSpellings": {
+    "ACTIVIA": 1
+   }
+  },
+  {
+   "slug": "addiwen",
+   "name": "Addiwen",
+   "sourceSpellings": {
+    "ADDIWEN": 3
+   }
+  },
+  {
+   "slug": "adoro-moulin-d-or",
+   "name": "Adoro Moulin d'Or",
+   "sourceSpellings": {
+    "ADORO MOULIN D'OR": 2
+   }
+  },
+  {
+   "slug": "agri-didon",
+   "name": "Agri Didon",
+   "sourceSpellings": {
+    "AGRI DIDON": 7
+   }
+  },
+  {
+   "slug": "aljazia",
+   "name": "Aljazia",
+   "sourceSpellings": {
+    "EL JAZIA": 1,
+    "AL JAZIA": 8
+   }
+  },
+  {
+   "slug": "al-jazira",
+   "name": "Al Jazira",
+   "sourceSpellings": {
+    "AL JAZIRA": 51
+   }
+  },
+  {
+   "slug": "al-marai",
+   "name": "Al Marai",
+   "sourceSpellings": {
+    "AL MARAI": 3
+   }
+  },
+  {
+   "slug": "al-maretti",
+   "name": "Al Maretti",
+   "sourceSpellings": {
+    "AL MARETTI": 6
+   }
+  },
+  {
+   "slug": "alpenliebe",
+   "name": "Alpenliebe",
+   "sourceSpellings": {
+    "ALPENLIEBE": 1
+   }
+  },
+  {
+   "slug": "al-rayan",
+   "name": "Al Rayan",
+   "sourceSpellings": {
+    "AL RAYAN": 8
+   }
+  },
+  {
+   "slug": "al-shifa",
+   "name": "Al Shifa",
+   "sourceSpellings": {
+    "AL SHIFA": 3
+   }
+  },
+  {
+   "slug": "alya",
+   "name": "Alya",
+   "sourceSpellings": {
+    "ALYA": 1
+   }
+  },
+  {
+   "slug": "alyssa",
+   "name": "Alyssa",
+   "sourceSpellings": {
+    "ALYSSA": 3
+   }
+  },
+  {
+   "slug": "amada",
+   "name": "Amada",
+   "sourceSpellings": {
+    "AMADA": 5
+   }
+  },
+  {
+   "slug": "amigo",
+   "name": "Amigo",
+   "sourceSpellings": {
+    "AMIGO": 2
+   }
+  },
+  {
+   "slug": "amous",
+   "name": "Amous",
+   "sourceSpellings": {
+    "AMOUS": 1
+   }
+  },
+  {
+   "slug": "antipasti",
+   "name": "Antipasti",
+   "sourceSpellings": {
+    "ANTIPASTI": 4
+   }
+  },
+  {
+   "slug": "apla",
+   "name": "Apla",
+   "sourceSpellings": {
+    "APLA": 4
+   }
+  },
+  {
+   "slug": "aqualine",
+   "name": "Aqualine",
+   "sourceSpellings": {
+    "AQUALINE": 1
+   }
+  },
+  {
+   "slug": "arbia",
+   "name": "Arbia",
+   "sourceSpellings": {
+    "ARBIA": 2
+   }
+  },
+  {
+   "slug": "arines",
+   "name": "Arines",
+   "sourceSpellings": {
+    "ARINES": 12
+   }
+  },
+  {
+   "slug": "aris",
+   "name": "Aris",
+   "sourceSpellings": {
+    "ARIS": 10
+   }
+  },
+  {
+   "slug": "aura-maestro",
+   "name": "Aura Maestro",
+   "sourceSpellings": {
+    "AURA MAESTRO": 2
+   }
+  },
+  {
+   "slug": "ayecue",
+   "name": "Ayecue",
+   "sourceSpellings": {
+    "AYECUE": 9
+   }
+  },
+  {
+   "slug": "baby-said",
+   "name": "Baby Said",
+   "sourceSpellings": {
+    "BABY SAID": 1
+   }
+  },
+  {
+   "slug": "bargou",
+   "name": "Bargou",
+   "sourceSpellings": {
+    "BARGOU": 1
+   }
+  },
+  {
+   "slug": "barilla",
+   "name": "Barilla",
+   "sourceSpellings": {
+    "BARILLA": 1
+   }
+  },
+  {
+   "slug": "bastides",
+   "name": "Bastides",
+   "sourceSpellings": {
+    "BASTIDES": 8
+   }
+  },
+  {
+   "slug": "bb-go",
+   "name": "Bb Go",
+   "sourceSpellings": {
+    "BB GO": 4
+   }
+  },
+  {
+   "slug": "bebeto",
+   "name": "Bebeto",
+   "sourceSpellings": {
+    "BEBETO": 1
+   }
+  },
+  {
+   "slug": "beit-el-mouna",
+   "name": "Beit El Mouna",
+   "sourceSpellings": {
+    "BEIT EL MOUNA": 1
+   }
+  },
+  {
+   "slug": "bellini",
+   "name": "Bellini",
+   "sourceSpellings": {
+    "BELLINI": 6
+   }
+  },
+  {
+   "slug": "ben-gaied-hassine",
+   "name": "Ben Gaied Hassine",
+   "sourceSpellings": {
+    "BEN GAIED HASSINE": 3
+   }
+  },
+  {
+   "slug": "ben-yedder",
+   "name": "Ben Yedder",
+   "sourceSpellings": {
+    "BEN YEDDER": 6
+   }
+  },
+  {
+   "slug": "best-brands",
+   "name": "Best Brands",
+   "sourceSpellings": {
+    "BEST BRANDS": 1
+   }
+  },
+  {
+   "slug": "best-healthy",
+   "name": "Best Healthy",
+   "sourceSpellings": {
+    "BEST HEALTHY": 6
+   }
+  },
+  {
+   "slug": "beya",
+   "name": "Beya",
+   "sourceSpellings": {
+    "BEYA": 2
+   }
+  },
+  {
+   "slug": "beyti",
+   "name": "Beyti",
+   "sourceSpellings": {
+    "BEYTI": 9
+   }
+  },
+  {
+   "slug": "b-gaied-hassine",
+   "name": "B Gaied Hassine",
+   "sourceSpellings": {
+    "B GAIED HASSINE": 12
+   }
+  },
+  {
+   "slug": "bien-fait",
+   "name": "Bien Fait",
+   "sourceSpellings": {
+    "BIEN FAIT": 4
+   }
+  },
+  {
+   "slug": "bienki",
+   "name": "Bienki",
+   "sourceSpellings": {
+    "BIENKI": 2
+   }
+  },
+  {
+   "slug": "bifa",
+   "name": "Bifa",
+   "sourceSpellings": {
+    "Bifa": 1
+   }
+  },
+  {
+   "slug": "binto",
+   "name": "Binto",
+   "sourceSpellings": {
+    "BINTO": 1
+   }
+  },
+  {
+   "slug": "biskart",
+   "name": "Biskart",
+   "sourceSpellings": {
+    "BISKART": 3
+   }
+  },
+  {
+   "slug": "bk-food",
+   "name": "Bk Food",
+   "sourceSpellings": {
+    "BK FOOD": 1
+   }
+  },
+  {
+   "slug": "blue-n-fresh",
+   "name": "Blue'n'fresh",
+   "sourceSpellings": {
+    "BLUE'N'FRESH": 10,
+    "BLUE'N FRESH": 1
+   }
+  },
+  {
+   "slug": "boga",
+   "name": "Boga",
+   "sourceSpellings": {
+    "BOGA": 12
+   }
+  },
+  {
+   "slug": "bolerio",
+   "name": "Bolerio",
+   "sourceSpellings": {
+    "BOLERIO": 17,
+    "BOLÉRIO": 3
+   }
+  },
+  {
+   "slug": "bondin",
+   "name": "Bondin",
+   "sourceSpellings": {
+    "BONDIN": 21
+   }
+  },
+  {
+   "slug": "bonduelle",
+   "name": "Bonduelle",
+   "sourceSpellings": {
+    "BONDUELLE": 5
+   }
+  },
+  {
+   "slug": "bonel",
+   "name": "Bonel",
+   "sourceSpellings": {
+    "Bonel": 1
+   }
+  },
+  {
+   "slug": "bonna",
+   "name": "Bonna",
+   "sourceSpellings": {
+    "BONNA": 25
+   }
+  },
+  {
+   "slug": "bonne-maman",
+   "name": "Bonne Maman",
+   "sourceSpellings": {
+    "BONNE MAMAN": 4
+   }
+  },
+  {
+   "slug": "boqueria",
+   "name": "Boqueria",
+   "sourceSpellings": {
+    "BOQUERIA": 2
+   }
+  },
+  {
+   "slug": "boule-d-or",
+   "name": "Boule d'Or",
+   "sourceSpellings": {
+    "BOULE D'OR": 6
+   }
+  },
+  {
+   "slug": "brava",
+   "name": "Brava",
+   "sourceSpellings": {
+    "BRAVA": 10,
+    "Brava": 1
+   }
+  },
+  {
+   "slug": "break",
+   "name": "Break",
+   "sourceSpellings": {
+    "BREAK": 5
+   }
+  },
+  {
+   "slug": "break-kids",
+   "name": "Break Kids",
+   "sourceSpellings": {
+    "BREAK KIDS": 3
+   }
+  },
+  {
+   "slug": "brigitta",
+   "name": "Brigitta",
+   "sourceSpellings": {
+    "BRIGITTA": 1
+   }
+  },
+  {
+   "slug": "brikador",
+   "name": "Brikador",
+   "sourceSpellings": {
+    "BRIKADOR": 4
+   }
+  },
+  {
+   "slug": "brown-sugre",
+   "name": "Brown Sugre",
+   "sourceSpellings": {
+    "BROWN SUGRE": 2
+   }
+  },
+  {
+   "slug": "bugles",
+   "name": "Bugles",
+   "sourceSpellings": {
+    "BUGLES": 10
+   }
+  },
+  {
+   "slug": "bugles-chips-up",
+   "name": "Bugles/chips Up",
+   "sourceSpellings": {
+    "BUGLES/CHIPS UP": 4
+   }
+  },
+  {
+   "slug": "bull-d-or",
+   "name": "Bull d'Or",
+   "sourceSpellings": {
+    "BULL D'OR": 1
+   }
+  },
+  {
+   "slug": "butter-nutty",
+   "name": "Butter Nutty",
+   "sourceSpellings": {
+    "BUTTER NUTTY": 3
+   }
+  },
+  {
+   "slug": "bvm",
+   "name": "Bvm",
+   "sourceSpellings": {
+    "BVM": 1
+   }
+  },
+  {
+   "slug": "caffitaly",
+   "name": "Caffitaly",
+   "sourceSpellings": {
+    "CAFFITALY": 15
+   }
+  },
+  {
+   "slug": "calnort",
+   "name": "Calnort",
+   "sourceSpellings": {
+    "CALNORT": 15
+   }
+  },
+  {
+   "slug": "campi",
+   "name": "Campi",
+   "sourceSpellings": {
+    "CAMPI": 3
+   }
+  },
+  {
+   "slug": "campi-plus",
+   "name": "Campi Plus",
+   "sourceSpellings": {
+    "CAMPI PLUS": 7
+   }
+  },
+  {
+   "slug": "canderel",
+   "name": "Canderel",
+   "sourceSpellings": {
+    "CANDEREL": 1
+   }
+  },
+  {
+   "slug": "candy-papillon",
+   "name": "Candy Papillon",
+   "sourceSpellings": {
+    "CANDY PAPILLON": 1
+   }
+  },
+  {
+   "slug": "candy-pop",
+   "name": "Candy Pop",
+   "sourceSpellings": {
+    "CANDY POP": 1
+   }
+  },
+  {
+   "slug": "cap-blanc",
+   "name": "Cap Blanc",
+   "sourceSpellings": {
+    "CAP BLANC": 2
+   }
+  },
+  {
+   "slug": "caprice-des-dieux",
+   "name": "Caprice des Dieux",
+   "sourceSpellings": {
+    "CAPRICE DES DIEUX": 1
+   }
+  },
+  {
+   "slug": "captain-sindbad",
+   "name": "Captain Sindbad",
+   "sourceSpellings": {
+    "CAPTAIN SINDBAD": 15
+   }
+  },
+  {
+   "slug": "cap-vert",
+   "name": "Cap Vert",
+   "sourceSpellings": {
+    "CAP VERT": 1
+   }
+  },
+  {
+   "slug": "caramello-papillon",
+   "name": "Caramello Papillon",
+   "sourceSpellings": {
+    "CARAMELLO PAPILLON": 4
+   }
+  },
+  {
+   "slug": "carte-noire",
+   "name": "Carte Noire",
+   "sourceSpellings": {
+    "CARTE NOIRE": 1
+   }
+  },
+  {
+   "slug": "carthage",
+   "name": "Carthage",
+   "sourceSpellings": {
+    "CARTHAGE": 11
+   }
+  },
+  {
+   "slug": "carthaginoises",
+   "name": "Carthaginoises",
+   "sourceSpellings": {
+    "CARTHAGINOISES": 7
+   }
+  },
+  {
+   "slug": "cebon",
+   "name": "Cebon",
+   "sourceSpellings": {
+    "Cebon": 1
+   }
+  },
+  {
+   "slug": "celestia",
+   "name": "Celestia",
+   "sourceSpellings": {
+    "CELESTIA": 8
+   }
+  },
+  {
+   "slug": "ceratonia",
+   "name": "Ceratonia",
+   "sourceSpellings": {
+    "CERATONIA": 3
+   }
+  },
+  {
+   "slug": "cerealis",
+   "name": "Cerealis",
+   "sourceSpellings": {
+    "CEREALIS": 8,
+    "CÉRÉALIS": 5
+   }
+  },
+  {
+   "slug": "chaal",
+   "name": "Chaal",
+   "sourceSpellings": {
+    "CHAAL": 9
+   }
+  },
+  {
+   "slug": "chahia",
+   "name": "Chahia",
+   "sourceSpellings": {
+    "CHAHIA": 48
+   }
+  },
+  {
+   "slug": "chahia-tayba",
+   "name": "Chahia Tayba",
+   "sourceSpellings": {
+    "CHAHIA TAYBA": 10
+   }
+  },
+  {
+   "slug": "chaieb",
+   "name": "Chaieb",
+   "sourceSpellings": {
+    "CHAIEB": 9
+   }
+  },
+  {
+   "slug": "chams",
+   "name": "Chams",
+   "sourceSpellings": {
+    "CHAMS": 6
+   }
+  },
+  {
+   "slug": "cheesy",
+   "name": "Cheesy",
+   "sourceSpellings": {
+    "CHEESY": 1
+   }
+  },
+  {
+   "slug": "cheetos",
+   "name": "Cheetos",
+   "sourceSpellings": {
+    "CHEETOS": 3
+   }
+  },
+  {
+   "slug": "chef-safi",
+   "name": "Chef Safi",
+   "sourceSpellings": {
+    "CHEF SAFI": 1
+   }
+  },
+  {
+   "slug": "chips-up",
+   "name": "Chips'up",
+   "sourceSpellings": {
+    "CHIPS'UP": 15
+   }
+  },
+  {
+   "slug": "chocapic",
+   "name": "Chocapic",
+   "sourceSpellings": {
+    "CHOCAPIC": 2
+   }
+  },
+  {
+   "slug": "chocoline",
+   "name": "Chocoline",
+   "sourceSpellings": {
+    "CHOCOLINE": 3
+   }
+  },
+  {
+   "slug": "chocomies",
+   "name": "Chocomies",
+   "sourceSpellings": {
+    "CHOCOMIES": 1
+   }
+  },
+  {
+   "slug": "chocool",
+   "name": "Chocool",
+   "sourceSpellings": {
+    "CHOCOOL": 1
+   }
+  },
+  {
+   "slug": "chocoping",
+   "name": "Chocoping",
+   "sourceSpellings": {
+    "CHOCOPING": 6
+   }
+  },
+  {
+   "slug": "chocotom",
+   "name": "Chocotom",
+   "sourceSpellings": {
+    "CHOCOTOM": 5
+   }
+  },
+  {
+   "slug": "chocotoon",
+   "name": "Chocotoon",
+   "sourceSpellings": {
+    "CHOCOTOON": 1
+   }
+  },
+  {
+   "slug": "chupa-chups",
+   "name": "Chupa Chups",
+   "sourceSpellings": {
+    "CHUPA CHUPS": 12
+   }
+  },
+  {
+   "slug": "ciambelle",
+   "name": "Ciambelle",
+   "sourceSpellings": {
+    "CIAMBELLE": 4
+   }
+  },
+  {
+   "slug": "club",
+   "name": "Club",
+   "sourceSpellings": {
+    "CLUB": 5
+   }
+  },
+  {
+   "slug": "coca-cola",
+   "name": "Coca-Cola",
+   "sourceSpellings": {
+    "COCA COLA": 9,
+    "Coca-Cola": 1
+   }
+  },
+  {
+   "slug": "coeur-de-lion",
+   "name": "Cœur de Lion",
+   "sourceSpellings": {
+    "CŒUR DE LION": 1
+   }
+  },
+  {
+   "slug": "cold-alex",
+   "name": "Cold Alex",
+   "sourceSpellings": {
+    "COLD ALEX": 4
+   }
+  },
+  {
+   "slug": "comocap",
+   "name": "Comocap",
+   "sourceSpellings": {
+    "COMOCAP": 1
+   }
+  },
+  {
+   "slug": "cool-ice",
+   "name": "Cool Ice",
+   "sourceSpellings": {
+    "COOL ICE": 2
+   }
+  },
+  {
+   "slug": "cotusal",
+   "name": "Cotusal",
+   "sourceSpellings": {
+    "COTUSAL": 2
+   }
+  },
+  {
+   "slug": "covinor",
+   "name": "Covinor",
+   "sourceSpellings": {
+    "COVINOR": 7
+   }
+  },
+  {
+   "slug": "cracker-s",
+   "name": "Cracker's",
+   "sourceSpellings": {
+    "CRACKER'S": 1
+   }
+  },
+  {
+   "slug": "cracocarte",
+   "name": "Cracocarte",
+   "sourceSpellings": {
+    "CRACOCARTE": 7
+   }
+  },
+  {
+   "slug": "crako",
+   "name": "Crako",
+   "sourceSpellings": {
+    "CRAKO": 2
+   }
+  },
+  {
+   "slug": "crispo",
+   "name": "Crispo",
+   "sourceSpellings": {
+    "CRISPO": 3
+   }
+  },
+  {
+   "slug": "crispy",
+   "name": "Crispy",
+   "sourceSpellings": {
+    "CRISPY": 1
+   }
+  },
+  {
+   "slug": "cristal",
+   "name": "Cristal",
+   "sourceSpellings": {
+    "CRISTAL": 4
+   }
+  },
+  {
+   "slug": "cristaline",
+   "name": "Cristaline",
+   "sourceSpellings": {
+    "CRISTALINE": 1,
+    "Cristaline": 1
+   }
+  },
+  {
+   "slug": "crokidos",
+   "name": "Crokidos",
+   "sourceSpellings": {
+    "CROKIDOS": 6
+   }
+  },
+  {
+   "slug": "croustina",
+   "name": "Croustina",
+   "sourceSpellings": {
+    "CROUSTINA": 15
+   }
+  },
+  {
+   "slug": "crunchies",
+   "name": "Crunchies",
+   "sourceSpellings": {
+    "CRUNCHIES": 2
+   }
+  },
+  {
+   "slug": "crunchy",
+   "name": "Crunchy",
+   "sourceSpellings": {
+    "CRUNCHY": 3
+   }
+  },
+  {
+   "slug": "daddy-s-chips",
+   "name": "Daddy's Chips",
+   "sourceSpellings": {
+    "DADDY'S CHIPS": 11
+   }
+  },
+  {
+   "slug": "daily",
+   "name": "Daily",
+   "sourceSpellings": {
+    "DAILY": 6
+   }
+  },
+  {
+   "slug": "daily-n",
+   "name": "Daily'n",
+   "sourceSpellings": {
+    "DAILY'N": 27
+   }
+  },
+  {
+   "slug": "dana",
+   "name": "Dana",
+   "sourceSpellings": {
+    "DANA": 11
+   }
+  },
+  {
+   "slug": "danao",
+   "name": "Danao",
+   "sourceSpellings": {
+    "DANAO": 6
+   }
+  },
+  {
+   "slug": "danette",
+   "name": "Danette",
+   "sourceSpellings": {
+    "DANETTE": 12
+   }
+  },
+  {
+   "slug": "danino",
+   "name": "Danino",
+   "sourceSpellings": {
+    "DANINO": 2
+   }
+  },
+  {
+   "slug": "danone",
+   "name": "Danone",
+   "sourceSpellings": {
+    "Danone": 7
+   }
+  },
+  {
+   "slug": "danup",
+   "name": "Danup",
+   "sourceSpellings": {
+    "DANUP": 10
+   }
+  },
+  {
+   "slug": "darna",
+   "name": "Darna",
+   "sourceSpellings": {
+    "DARNA": 1
+   }
+  },
+  {
+   "slug": "darta",
+   "name": "Darta",
+   "sourceSpellings": {
+    "DARTA": 4
+   }
+  },
+  {
+   "slug": "dattes-d-or",
+   "name": "Dattes d'Or",
+   "sourceSpellings": {
+    "DATTES D'OR": 2
+   }
+  },
+  {
+   "slug": "d-aucy",
+   "name": "d'Aucy",
+   "sourceSpellings": {
+    "D'AUCY": 17,
+    "DAUCY": 1
+   }
+  },
+  {
+   "slug": "dclic",
+   "name": "Dclic",
+   "sourceSpellings": {
+    "DCLIC": 2,
+    "D-CLIC": 1
+   }
+  },
+  {
+   "slug": "dcroc",
+   "name": "Dcroc",
+   "sourceSpellings": {
+    "DCROC": 3
+   }
+  },
+  {
+   "slug": "delicatesse",
+   "name": "Delicatesse",
+   "sourceSpellings": {
+    "DELICATESSE": 1
+   }
+  },
+  {
+   "slug": "delice",
+   "name": "Délice",
+   "sourceSpellings": {
+    "DELICE": 86,
+    "DELICE DANONE": 32,
+    "DÉLICE": 3,
+    "DÉLICE DANONE": 9,
+    "délice": 9,
+    "Délice": 7
+   }
+  },
+  {
+   "slug": "delice-deli-o",
+   "name": "Delice Deli'o",
+   "sourceSpellings": {
+    "DELICE DELI'O": 6
+   }
+  },
+  {
+   "slug": "delices-de-la-mer",
+   "name": "Delices de la Mer",
+   "sourceSpellings": {
+    "DELICES DE LA MER": 6
+   }
+  },
+  {
+   "slug": "delice-vegetal",
+   "name": "Délice Végétal",
+   "sourceSpellings": {
+    "Délice Végétal": 1
+   }
+  },
+  {
+   "slug": "delicio",
+   "name": "Delicio",
+   "sourceSpellings": {
+    "DELICIO": 4
+   }
+  },
+  {
+   "slug": "delisso",
+   "name": "Delisso",
+   "sourceSpellings": {
+    "DELISSO": 8
+   }
+  },
+  {
+   "slug": "deli-sun",
+   "name": "Deli Sun",
+   "sourceSpellings": {
+    "DELI SUN": 5
+   }
+  },
+  {
+   "slug": "demi-sel",
+   "name": "Demi Sel",
+   "sourceSpellings": {
+    "DEMI SEL": 1
+   }
+  },
+  {
+   "slug": "deroni",
+   "name": "Deroni",
+   "sourceSpellings": {
+    "DERONI": 18
+   }
+  },
+  {
+   "slug": "dez-y",
+   "name": "Dez'y",
+   "sourceSpellings": {
+    "DEZ'Y": 3
+   }
+  },
+  {
+   "slug": "dhawaka",
+   "name": "Dhawaka",
+   "sourceSpellings": {
+    "DHAWAKA": 18
+   }
+  },
+  {
+   "slug": "diari",
+   "name": "Diari",
+   "sourceSpellings": {
+    "DIARI": 16
+   }
+  },
+  {
+   "slug": "dick",
+   "name": "Dick",
+   "sourceSpellings": {
+    "DICK": 1
+   }
+  },
+  {
+   "slug": "dicky-dicky",
+   "name": "Dicky Dicky",
+   "sourceSpellings": {
+    "DICKY DICKY": 1
+   }
+  },
+  {
+   "slug": "dija",
+   "name": "Dija",
+   "sourceSpellings": {
+    "DIJA": 1
+   }
+  },
+  {
+   "slug": "dijona",
+   "name": "Dijona",
+   "sourceSpellings": {
+    "DIJONA": 4
+   }
+  },
+  {
+   "slug": "dima",
+   "name": "Dima",
+   "sourceSpellings": {
+    "DIMA": 1
+   }
+  },
+  {
+   "slug": "diva",
+   "name": "Diva",
+   "sourceSpellings": {
+    "DIVA": 7
+   }
+  },
+  {
+   "slug": "divella",
+   "name": "Divella",
+   "sourceSpellings": {
+    "DIVELLA": 12
+   }
+  },
+  {
+   "slug": "dogadan",
+   "name": "Dogadan",
+   "sourceSpellings": {
+    "DOGADAN": 5
+   }
+  },
+  {
+   "slug": "dolce",
+   "name": "Dolce",
+   "sourceSpellings": {
+    "DOLCE": 2
+   }
+  },
+  {
+   "slug": "dolce-banana",
+   "name": "Dolce Banana",
+   "sourceSpellings": {
+    "DOLCE BANANA": 4
+   }
+  },
+  {
+   "slug": "dolce-coffee",
+   "name": "Dolce Coffee",
+   "sourceSpellings": {
+    "DOLCE COFFEE": 2
+   }
+  },
+  {
+   "slug": "dolce-vitalait",
+   "name": "Dolce Vitalait",
+   "sourceSpellings": {
+    "DOLCE VITALAIT": 5
+   }
+  },
+  {
+   "slug": "dorella",
+   "name": "Dorella",
+   "sourceSpellings": {
+    "DORELLA": 15
+   }
+  },
+  {
+   "slug": "dorette",
+   "name": "Dorette",
+   "sourceSpellings": {
+    "DORETTE": 1
+   }
+  },
+  {
+   "slug": "doritos",
+   "name": "Doritos",
+   "sourceSpellings": {
+    "DORITOS": 3
+   }
+  },
+  {
+   "slug": "dorra",
+   "name": "Dorra",
+   "sourceSpellings": {
+    "DORRA": 4
+   }
+  },
+  {
+   "slug": "dr-oetker",
+   "name": "Dr. Oetker",
+   "sourceSpellings": {
+    "DR.OETKER": 5,
+    "Dr. Oetker": 3
+   }
+  },
+  {
+   "slug": "duo",
+   "name": "Duo",
+   "sourceSpellings": {
+    "DUO": 5
+   }
+  },
+  {
+   "slug": "durra",
+   "name": "Durra",
+   "sourceSpellings": {
+    "DURRA": 19
+   }
+  },
+  {
+   "slug": "eclair",
+   "name": "Eclair",
+   "sourceSpellings": {
+    "ECLAIR": 2
+   }
+  },
+  {
+   "slug": "eden",
+   "name": "Eden",
+   "sourceSpellings": {
+    "EDEN": 7
+   }
+  },
+  {
+   "slug": "eden-foods",
+   "name": "Eden Foods",
+   "sourceSpellings": {
+    "EDEN FOODS": 1
+   }
+  },
+  {
+   "slug": "el-abed",
+   "name": "El Abed",
+   "sourceSpellings": {
+    "EL ABED": 5
+   }
+  },
+  {
+   "slug": "el-badr",
+   "name": "El Badr",
+   "sourceSpellings": {
+    "EL BADR": 7
+   }
+  },
+  {
+   "slug": "el-behi",
+   "name": "El Behi",
+   "sourceSpellings": {
+    "EL BEHI": 2
+   }
+  },
+  {
+   "slug": "el-dorra",
+   "name": "El Dorra",
+   "sourceSpellings": {
+    "EL DORRA": 3
+   }
+  },
+  {
+   "slug": "elixir",
+   "name": "Elixir",
+   "sourceSpellings": {
+    "elixir": 1
+   }
+  },
+  {
+   "slug": "el-jawhara",
+   "name": "El Jawhara",
+   "sourceSpellings": {
+    "EL JAWHARA": 6
+   }
+  },
+  {
+   "slug": "ellouze",
+   "name": "Ellouze",
+   "sourceSpellings": {
+    "ELLOUZE": 4
+   }
+  },
+  {
+   "slug": "el-manar",
+   "name": "El Manar",
+   "sourceSpellings": {
+    "EL MANAR": 55,
+    "El Manar": 1
+   }
+  },
+  {
+   "slug": "el-mazraa",
+   "name": "El Mazraa",
+   "sourceSpellings": {
+    "EL MAZRAA": 57
+   }
+  },
+  {
+   "slug": "el-mizan",
+   "name": "El Mizan",
+   "sourceSpellings": {
+    "EL MIZAN": 4
+   }
+  },
+  {
+   "slug": "el-rayen",
+   "name": "El Rayen",
+   "sourceSpellings": {
+    "EL RAYEN": 3
+   }
+  },
+  {
+   "slug": "emco",
+   "name": "Emco",
+   "sourceSpellings": {
+    "EMCO": 20
+   }
+  },
+  {
+   "slug": "emma",
+   "name": "Emma",
+   "sourceSpellings": {
+    "EMMA": 4
+   }
+  },
+  {
+   "slug": "emporium",
+   "name": "Emporium",
+   "sourceSpellings": {
+    "EMPORIUM": 6
+   }
+  },
+  {
+   "slug": "entremont",
+   "name": "Entremont",
+   "sourceSpellings": {
+    "ENTREMONT": 1
+   }
+  },
+  {
+   "slug": "epices-et-saveurs",
+   "name": "Epices et Saveurs",
+   "sourceSpellings": {
+    "EPICES ET SAVEURS": 1
+   }
+  },
+  {
+   "slug": "eskimo",
+   "name": "Eskimo",
+   "sourceSpellings": {
+    "ESKIMO": 2
+   }
+  },
+  {
+   "slug": "essaada",
+   "name": "Essaada",
+   "sourceSpellings": {
+    "ESSAADA": 1
+   }
+  },
+  {
+   "slug": "eternity",
+   "name": "Eternity",
+   "sourceSpellings": {
+    "ETERNITY": 6
+   }
+  },
+  {
+   "slug": "eurochamp",
+   "name": "Eurochamp",
+   "sourceSpellings": {
+    "EUROCHAMP": 1
+   }
+  },
+  {
+   "slug": "eventail",
+   "name": "Eventail",
+   "sourceSpellings": {
+    "EVENTAIL": 1
+   }
+  },
+  {
+   "slug": "exotic-food",
+   "name": "Exotic Food",
+   "sourceSpellings": {
+    "EXOTIC FOOD": 8
+   }
+  },
+  {
+   "slug": "exquise",
+   "name": "Exquise",
+   "sourceSpellings": {
+    "EXQUISE": 6
+   }
+  },
+  {
+   "slug": "extasio-ola",
+   "name": "Extasio Ola",
+   "sourceSpellings": {
+    "EXTASIO OLA": 5
+   }
+  },
+  {
+   "slug": "fakam",
+   "name": "Fakam",
+   "sourceSpellings": {
+    "FAKAM": 18
+   }
+  },
+  {
+   "slug": "falfoul",
+   "name": "Falfoul",
+   "sourceSpellings": {
+    "FALFOUL": 2
+   }
+  },
+  {
+   "slug": "fandicosta",
+   "name": "Fandicosta",
+   "sourceSpellings": {
+    "FANDICOSTA": 1
+   }
+  },
+  {
+   "slug": "fanta",
+   "name": "Fanta",
+   "sourceSpellings": {
+    "FANTA": 13
+   }
+  },
+  {
+   "slug": "farah",
+   "name": "Farah",
+   "sourceSpellings": {
+    "FARAH": 8
+   }
+  },
+  {
+   "slug": "fidji",
+   "name": "Fidji",
+   "sourceSpellings": {
+    "FIDJI": 5
+   }
+  },
+  {
+   "slug": "filifolly-bigbabol",
+   "name": "Filifolly Bigbabol",
+   "sourceSpellings": {
+    "FILIFOLLY BIGBABOL": 3
+   }
+  },
+  {
+   "slug": "finger-rolls",
+   "name": "Finger Rolls",
+   "sourceSpellings": {
+    "FINGER ROLLS": 1
+   }
+  },
+  {
+   "slug": "finger-snax",
+   "name": "Finger Snax",
+   "sourceSpellings": {
+    "FINGER SNAX": 3
+   }
+  },
+  {
+   "slug": "fiore",
+   "name": "Fiore",
+   "sourceSpellings": {
+    "FIORE": 3
+   }
+  },
+  {
+   "slug": "flifla",
+   "name": "Flifla",
+   "sourceSpellings": {
+    "FLIFLA": 11
+   }
+  },
+  {
+   "slug": "flight",
+   "name": "Flight",
+   "sourceSpellings": {
+    "FLIGHT": 5
+   }
+  },
+  {
+   "slug": "florida",
+   "name": "Florida",
+   "sourceSpellings": {
+    "FLORIDA": 2
+   }
+  },
+  {
+   "slug": "florident",
+   "name": "Florident",
+   "sourceSpellings": {
+    "FLORIDENT": 6
+   }
+  },
+  {
+   "slug": "fnar",
+   "name": "Fnar",
+   "sourceSpellings": {
+    "FNAR": 8
+   }
+  },
+  {
+   "slug": "fol-epi",
+   "name": "Fol Epi",
+   "sourceSpellings": {
+    "FOL EPI": 2
+   }
+  },
+  {
+   "slug": "folo",
+   "name": "Folo",
+   "sourceSpellings": {
+    "FOLO": 1
+   }
+  },
+  {
+   "slug": "fondou",
+   "name": "Fondou",
+   "sourceSpellings": {
+    "FONDOU": 1
+   }
+  },
+  {
+   "slug": "fornetto",
+   "name": "Fornetto",
+   "sourceSpellings": {
+    "FORNETTO": 7
+   }
+  },
+  {
+   "slug": "fort-de-kelibia",
+   "name": "Fort de kelibia",
+   "sourceSpellings": {
+    "Fort de kelibia": 1
+   }
+  },
+  {
+   "slug": "fourat",
+   "name": "Fourat",
+   "sourceSpellings": {
+    "FOURAT": 1,
+    "Fourat": 1
+   }
+  },
+  {
+   "slug": "fraidoux",
+   "name": "Fraidoux",
+   "sourceSpellings": {
+    "FRAIDOUX": 4
+   }
+  },
+  {
+   "slug": "fresh-agri",
+   "name": "Fresh Agri",
+   "sourceSpellings": {
+    "FRESH AGRI": 1
+   }
+  },
+  {
+   "slug": "fries-day",
+   "name": "Fries Day",
+   "sourceSpellings": {
+    "FRIES DAY": 8
+   }
+  },
+  {
+   "slug": "friga",
+   "name": "Friga",
+   "sourceSpellings": {
+    "FRIGA": 4
+   }
+  },
+  {
+   "slug": "frit-ss",
+   "name": "Frit'ss",
+   "sourceSpellings": {
+    "FRIT'SS": 3
+   }
+  },
+  {
+   "slug": "frollini",
+   "name": "Frollini",
+   "sourceSpellings": {
+    "FROLLINI": 6
+   }
+  },
+  {
+   "slug": "fromy",
+   "name": "Fromy",
+   "sourceSpellings": {
+    "FROMY": 15
+   }
+  },
+  {
+   "slug": "fromy-plus",
+   "name": "Fromy Plus",
+   "sourceSpellings": {
+    "FROMY PLUS": 4
+   }
+  },
+  {
+   "slug": "fruito",
+   "name": "Fruito",
+   "sourceSpellings": {
+    "FRUITO": 7
+   }
+  },
+  {
+   "slug": "fruit-tella",
+   "name": "Fruit-Tella",
+   "sourceSpellings": {
+    "FRUIT-TELLA": 2
+   }
+  },
+  {
+   "slug": "fruzzy",
+   "name": "Fruzzy",
+   "sourceSpellings": {
+    "FRUZZY": 4
+   }
+  },
+  {
+   "slug": "furketta",
+   "name": "Furketta",
+   "sourceSpellings": {
+    "FURKETTA": 5,
+    "FURKITTA": 3
+   }
+  },
+  {
+   "slug": "gamra",
+   "name": "Gamra",
+   "sourceSpellings": {
+    "GAMRA": 7
+   }
+  },
+  {
+   "slug": "garci",
+   "name": "Garci",
+   "sourceSpellings": {
+    "GARCI": 2,
+    "Garci": 1
+   }
+  },
+  {
+   "slug": "gaucho",
+   "name": "Gaucho",
+   "sourceSpellings": {
+    "GAUCHO": 4
+   }
+  },
+  {
+   "slug": "gaufy",
+   "name": "Gaufy",
+   "sourceSpellings": {
+    "GAUFY": 3
+   }
+  },
+  {
+   "slug": "gazelle",
+   "name": "Gazelle",
+   "sourceSpellings": {
+    "GAZELLE": 1
+   }
+  },
+  {
+   "slug": "ghanja",
+   "name": "Ghanja",
+   "sourceSpellings": {
+    "GHANJA": 1
+   }
+  },
+  {
+   "slug": "ghazela",
+   "name": "Ghazela",
+   "sourceSpellings": {
+    "GHAZELA": 6
+   }
+  },
+  {
+   "slug": "ghosto",
+   "name": "Ghosto",
+   "sourceSpellings": {
+    "GHOSTO": 1
+   }
+  },
+  {
+   "slug": "gias",
+   "name": "Gias",
+   "sourceSpellings": {
+    "GIAS": 1,
+    "Gias": 1
+   }
+  },
+  {
+   "slug": "gil-ice",
+   "name": "Gil Ice",
+   "sourceSpellings": {
+    "GIL ICE": 16
+   }
+  },
+  {
+   "slug": "go",
+   "name": "Go!",
+   "sourceSpellings": {
+    "GO!": 3
+   }
+  },
+  {
+   "slug": "golden",
+   "name": "Golden",
+   "sourceSpellings": {
+    "GOLDEN": 7
+   }
+  },
+  {
+   "slug": "golden-chips",
+   "name": "Golden Chips",
+   "sourceSpellings": {
+    "GOLDEN CHIPS": 5
+   }
+  },
+  {
+   "slug": "golden-coffee",
+   "name": "Golden Coffee",
+   "sourceSpellings": {
+    "GOLDEN COFFEE": 27
+   }
+  },
+  {
+   "slug": "golden-river",
+   "name": "Golden River",
+   "sourceSpellings": {
+    "GOLDEN RIVER": 3
+   }
+  },
+  {
+   "slug": "golden-sweets",
+   "name": "Golden Sweets",
+   "sourceSpellings": {
+    "GOLDEN SWEETS": 1
+   }
+  },
+  {
+   "slug": "golden-twister",
+   "name": "Golden Twister",
+   "sourceSpellings": {
+    "GOLDEN TWISTER": 5
+   }
+  },
+  {
+   "slug": "goldina",
+   "name": "Goldina",
+   "sourceSpellings": {
+    "GOLDINA": 12
+   }
+  },
+  {
+   "slug": "goldina-plus",
+   "name": "Goldina Plus",
+   "sourceSpellings": {
+    "GOLDINA PLUS": 2
+   }
+  },
+  {
+   "slug": "go-on",
+   "name": "Go On",
+   "sourceSpellings": {
+    "GO ON": 8
+   }
+  },
+  {
+   "slug": "go-on-whey",
+   "name": "Go On Whey",
+   "sourceSpellings": {
+    "GO ON WHEY": 3
+   }
+  },
+  {
+   "slug": "goutela",
+   "name": "Goutela",
+   "sourceSpellings": {
+    "GOUTELA": 3
+   }
+  },
+  {
+   "slug": "goutinel",
+   "name": "Goutinel",
+   "sourceSpellings": {
+    "GOUTINEL": 9,
+    "GOÛTINEL": 1
+   }
+  },
+  {
+   "slug": "grain-d-or",
+   "name": "Grain d'or",
+   "sourceSpellings": {
+    "GRAIN D'OR": 18,
+    "GRAIN DOR": 3,
+    "Grain d'or": 1
+   }
+  },
+  {
+   "slug": "grand-mere",
+   "name": "Grand Mere",
+   "sourceSpellings": {
+    "GRAND MERE": 2
+   }
+  },
+  {
+   "slug": "grano",
+   "name": "Grano",
+   "sourceSpellings": {
+    "GRANO": 3
+   }
+  },
+  {
+   "slug": "granoro",
+   "name": "Granoro",
+   "sourceSpellings": {
+    "GRANORO": 1
+   }
+  },
+  {
+   "slug": "grecos",
+   "name": "Grecos",
+   "sourceSpellings": {
+    "GRECOS": 3
+   }
+  },
+  {
+   "slug": "greens",
+   "name": "Greens",
+   "sourceSpellings": {
+    "GREENS": 4
+   }
+  },
+  {
+   "slug": "grissini-cerealis",
+   "name": "Grissini Cerealis",
+   "sourceSpellings": {
+    "GRISSINI CEREALIS": 3
+   }
+  },
+  {
+   "slug": "gusto",
+   "name": "Gusto",
+   "sourceSpellings": {
+    "GUSTO": 21
+   }
+  },
+  {
+   "slug": "hahne",
+   "name": "Hahne",
+   "sourceSpellings": {
+    "HAHNE": 4
+   }
+  },
+  {
+   "slug": "halwani",
+   "name": "Halwani",
+   "sourceSpellings": {
+    "HALWANI": 5
+   }
+  },
+  {
+   "slug": "hannibal",
+   "name": "Hannibal",
+   "sourceSpellings": {
+    "HANNIBAL": 2
+   }
+  },
+  {
+   "slug": "happy",
+   "name": "Happy",
+   "sourceSpellings": {
+    "HAPPY": 1
+   }
+  },
+  {
+   "slug": "happy-full",
+   "name": "Happy Full",
+   "sourceSpellings": {
+    "HAPPY FULL": 21
+   }
+  },
+  {
+   "slug": "happy-s",
+   "name": "Happy's",
+   "sourceSpellings": {
+    "HAPPY'S": 10
+   }
+  },
+  {
+   "slug": "haribo",
+   "name": "Haribo",
+   "sourceSpellings": {
+    "HARIBO": 13
+   }
+  },
+  {
+   "slug": "hayet",
+   "name": "Hayet",
+   "sourceSpellings": {
+    "Hayet": 3
+   }
+  },
+  {
+   "slug": "hazem",
+   "name": "Hazem",
+   "sourceSpellings": {
+    "HAZEM": 35
+   }
+  },
+  {
+   "slug": "headlight",
+   "name": "Headlight",
+   "sourceSpellings": {
+    "HEADLIGHT": 1
+   }
+  },
+  {
+   "slug": "himoka",
+   "name": "Himoka",
+   "sourceSpellings": {
+    "HIMOKA": 2
+   }
+  },
+  {
+   "slug": "hollandia",
+   "name": "Hollandia",
+   "sourceSpellings": {
+    "HOLLANDIA": 1
+   }
+  },
+  {
+   "slug": "honey-la",
+   "name": "Honey la",
+   "sourceSpellings": {
+    "HONEY LA": 1
+   }
+  },
+  {
+   "slug": "hrayer-chebba",
+   "name": "Hrayer Chebba",
+   "sourceSpellings": {
+    "HRAYER CHEBBA": 1
+   }
+  },
+  {
+   "slug": "ice-vegas",
+   "name": "Ice Vegas",
+   "sourceSpellings": {
+    "ICE VEGAS": 14
+   }
+  },
+  {
+   "slug": "igloo",
+   "name": "Igloo",
+   "sourceSpellings": {
+    "IGLOO": 5
+   }
+  },
+  {
+   "slug": "imperial",
+   "name": "Imperial",
+   "sourceSpellings": {
+    "IMPERIAL": 11
+   }
+  },
+  {
+   "slug": "indomie",
+   "name": "Indomie",
+   "sourceSpellings": {
+    "INDOMIE": 12
+   }
+  },
+  {
+   "slug": "iroise",
+   "name": "Iroise",
+   "sourceSpellings": {
+    "IROISE": 8
+   }
+  },
+  {
+   "slug": "izikwizi",
+   "name": "Izikwizi",
+   "sourceSpellings": {
+    "IZIKWIZI": 4,
+    "IZI KWIZI": 1
+   }
+  },
+  {
+   "slug": "jadida",
+   "name": "Jadida",
+   "sourceSpellings": {
+    "JADIDA": 28,
+    "jadida": 4
+   }
+  },
+  {
+   "slug": "jamiia",
+   "name": "Jamiia",
+   "sourceSpellings": {
+    "JAMIIA": 3
+   }
+  },
+  {
+   "slug": "jannet",
+   "name": "Jannet",
+   "sourceSpellings": {
+    "jannet": 1
+   }
+  },
+  {
+   "slug": "jawhara",
+   "name": "Jawhara",
+   "sourceSpellings": {
+    "JAWHARA": 55
+   }
+  },
+  {
+   "slug": "jean-caby",
+   "name": "Jean Caby",
+   "sourceSpellings": {
+    "JEAN CABY": 1
+   }
+  },
+  {
+   "slug": "jektiss",
+   "name": "Jektiss",
+   "sourceSpellings": {
+    "JEKTISS": 1
+   }
+  },
+  {
+   "slug": "jellino",
+   "name": "Jellino",
+   "sourceSpellings": {
+    "JELLINO": 6
+   }
+  },
+  {
+   "slug": "jellino-mini-papillon",
+   "name": "Jellino Mini Papillon",
+   "sourceSpellings": {
+    "JELLINO MINI PAPILLON": 1
+   }
+  },
+  {
+   "slug": "jellino-papillon",
+   "name": "Jellino Papillon",
+   "sourceSpellings": {
+    "JELLINO PAPILLON": 8
+   }
+  },
+  {
+   "slug": "jockey",
+   "name": "Jockey",
+   "sourceSpellings": {
+    "JOCKEY": 2
+   }
+  },
+  {
+   "slug": "joos",
+   "name": "Joos",
+   "sourceSpellings": {
+    "JOOS": 5
+   }
+  },
+  {
+   "slug": "josef",
+   "name": "Josef",
+   "sourceSpellings": {
+    "JOSEF": 14
+   }
+  },
+  {
+   "slug": "jouda",
+   "name": "Jouda",
+   "sourceSpellings": {
+    "JOUDA": 30,
+    "Jouda": 1
+   }
+  },
+  {
+   "slug": "jouto",
+   "name": "Jouto",
+   "sourceSpellings": {
+    "JOUTO": 5
+   }
+  },
+  {
+   "slug": "jovial",
+   "name": "Jovial",
+   "sourceSpellings": {
+    "JOVIAL": 1
+   }
+  },
+  {
+   "slug": "joy-s",
+   "name": "Joy's",
+   "sourceSpellings": {
+    "JOY'S": 3
+   }
+  },
+  {
+   "slug": "jugo-kids",
+   "name": "Jugo Kids",
+   "sourceSpellings": {
+    "JUGO KIDS": 1
+   }
+  },
+  {
+   "slug": "junior-said",
+   "name": "Junior Said",
+   "sourceSpellings": {
+    "JUNIOR SAID": 3
+   }
+  },
+  {
+   "slug": "kaiser",
+   "name": "Kaiser",
+   "sourceSpellings": {
+    "KAISER": 26,
+    "Kaiser": 1
+   }
+  },
+  {
+   "slug": "kartago",
+   "name": "Kartago",
+   "sourceSpellings": {
+    "KARTAGO": 13
+   }
+  },
+  {
+   "slug": "kellogg-s",
+   "name": "Kellogg's",
+   "sourceSpellings": {
+    "KELLOGG'S": 6
+   }
+  },
+  {
+   "slug": "kent",
+   "name": "Kent",
+   "sourceSpellings": {
+    "KENT": 26
+   }
+  },
+  {
+   "slug": "kif",
+   "name": "Kif",
+   "sourceSpellings": {
+    "KIF": 3,
+    "Kif": 1
+   }
+  },
+  {
+   "slug": "kinder",
+   "name": "Kinder",
+   "sourceSpellings": {
+    "KINDER": 5
+   }
+  },
+  {
+   "slug": "kitkat",
+   "name": "Kitkat",
+   "sourceSpellings": {
+    "KITKAT": 8
+   }
+  },
+  {
+   "slug": "kiwi",
+   "name": "Kiwi",
+   "sourceSpellings": {
+    "KIWI": 1
+   }
+  },
+  {
+   "slug": "koll-youm",
+   "name": "Koll Youm",
+   "sourceSpellings": {
+    "Koll Youm": 8
+   },
+   "ownership": "unverified (observed MG-exclusive)"
+  },
+  {
+   "slug": "kool",
+   "name": "Kool",
+   "sourceSpellings": {
+    "KOOL": 2
+   }
+  },
+  {
+   "slug": "kross",
+   "name": "Kross",
+   "sourceSpellings": {
+    "KROSS": 4
+   }
+  },
+  {
+   "slug": "kuhne",
+   "name": "Kühne",
+   "sourceSpellings": {
+    "KÜHNE": 6,
+    "KUHNE": 5
+   }
+  },
+  {
+   "slug": "kyufi",
+   "name": "Kyufi",
+   "sourceSpellings": {
+    "KYUFI": 12
+   }
+  },
+  {
+   "slug": "l-abeille",
+   "name": "L'Abeille",
+   "sourceSpellings": {
+    "L'ABEILLE": 5
+   }
+  },
+  {
+   "slug": "la-cave-a-fromage",
+   "name": "La Cave a Fromage",
+   "sourceSpellings": {
+    "LA CAVE A FROMAGE": 3
+   }
+  },
+  {
+   "slug": "la-couronne-d-or",
+   "name": "La Couronne D’or",
+   "sourceSpellings": {
+    "LA COURONNE D’OR": 4,
+    "LA COURONNE D'OR": 1
+   }
+  },
+  {
+   "slug": "lactalis",
+   "name": "Lactalis",
+   "sourceSpellings": {
+    "Lactalis": 2
+   }
+  },
+  {
+   "slug": "la-feuille-verte",
+   "name": "La Feuille Verte",
+   "sourceSpellings": {
+    "LA FEUILLE VERTE": 3
+   }
+  },
+  {
+   "slug": "la-fruitiere",
+   "name": "La Fruitiere",
+   "sourceSpellings": {
+    "LA FRUITIERE": 12,
+    "LA FRUITIÈRE": 3
+   }
+  },
+  {
+   "slug": "la-gazelle",
+   "name": "La Gazelle",
+   "sourceSpellings": {
+    "LA GAZELLE": 27
+   }
+  },
+  {
+   "slug": "lago",
+   "name": "Lago",
+   "sourceSpellings": {
+    "LAGO": 9
+   }
+  },
+  {
+   "slug": "la-goulette",
+   "name": "La Goulette",
+   "sourceSpellings": {
+    "LA GOULETTE": 15
+   }
+  },
+  {
+   "slug": "lahneya",
+   "name": "Lahneya",
+   "sourceSpellings": {
+    "LAHNEYA": 7
+   }
+  },
+  {
+   "slug": "l-aigle",
+   "name": "L'Aigle",
+   "sourceSpellings": {
+    "L'AIGLE": 1
+   }
+  },
+  {
+   "slug": "lambara",
+   "name": "Lambara",
+   "sourceSpellings": {
+    "LAMBARA": 3
+   }
+  },
+  {
+   "slug": "land-or",
+   "name": "Land'Or",
+   "sourceSpellings": {
+    "LANDOR": 2,
+    "LAND'OR": 6
+   }
+  },
+  {
+   "slug": "la-patissiere",
+   "name": "La Pâtissiere",
+   "sourceSpellings": {
+    "LA PÂTISSIERE": 20
+   }
+  },
+  {
+   "slug": "la-rose-blanche",
+   "name": "La Rose Blanche",
+   "sourceSpellings": {
+    "LA ROSE BLANCHE": 69
+   }
+  },
+  {
+   "slug": "lavazza",
+   "name": "Lavazza",
+   "sourceSpellings": {
+    "LAVAZZA": 4
+   }
+  },
+  {
+   "slug": "lay-s",
+   "name": "Lay's",
+   "sourceSpellings": {
+    "LAY'S": 10
+   }
+  },
+  {
+   "slug": "lbm",
+   "name": "LBM",
+   "sourceSpellings": {
+    "LBM": 68
+   }
+  },
+  {
+   "slug": "lebanese-factory",
+   "name": "Lebanese Factory",
+   "sourceSpellings": {
+    "LEBANESE FACTORY": 17
+   }
+  },
+  {
+   "slug": "lebhour",
+   "name": "Lebhour",
+   "sourceSpellings": {
+    "LEBHOUR": 13
+   }
+  },
+  {
+   "slug": "le-boulanger",
+   "name": "Le Boulanger",
+   "sourceSpellings": {
+    "LE BOULANGER": 24,
+    "Le Boulanger": 1
+   }
+  },
+  {
+   "slug": "le-cuistot",
+   "name": "Le Cuistot",
+   "sourceSpellings": {
+    "LE CUISTOT": 2
+   }
+  },
+  {
+   "slug": "ledoux",
+   "name": "Ledoux",
+   "sourceSpellings": {
+    "LEDOUX": 2
+   }
+  },
+  {
+   "slug": "le-flamant",
+   "name": "Le Flamant",
+   "sourceSpellings": {
+    "LE FLAMANT": 1
+   }
+  },
+  {
+   "slug": "le-glacon",
+   "name": "Le Glacon",
+   "sourceSpellings": {
+    "LE GLACON": 2
+   }
+  },
+  {
+   "slug": "le-grand-bleu",
+   "name": "Le Grand Bleu",
+   "sourceSpellings": {
+    "LE GRAND BLEU": 1
+   }
+  },
+  {
+   "slug": "le-lion",
+   "name": "Le Lion",
+   "sourceSpellings": {
+    "LE LION": 13
+   }
+  },
+  {
+   "slug": "lellethom",
+   "name": "Lellethom",
+   "sourceSpellings": {
+    "LELLETHOM": 21
+   }
+  },
+  {
+   "slug": "le-moulin",
+   "name": "Le Moulin",
+   "sourceSpellings": {
+    "LE MOULIN": 31
+   }
+  },
+  {
+   "slug": "le-patissier",
+   "name": "Le Patissier",
+   "sourceSpellings": {
+    "LE PATISSIER": 18,
+    "LE PÂTISSIER": 3
+   }
+  },
+  {
+   "slug": "le-petit-berbere",
+   "name": "Le Petit Berbere",
+   "sourceSpellings": {
+    "LE PETIT BERBERE": 1
+   }
+  },
+  {
+   "slug": "le-petit-paris",
+   "name": "Le Petit Paris",
+   "sourceSpellings": {
+    "LE PETIT PARIS": 25,
+    "PETIT PARIS": 3
+   }
+  },
+  {
+   "slug": "l-epi-d-or",
+   "name": "L'Epi d'Or",
+   "sourceSpellings": {
+    "L'EPI D'OR": 67
+   }
+  },
+  {
+   "slug": "leroux",
+   "name": "Leroux",
+   "sourceSpellings": {
+    "LEROUX": 1
+   }
+  },
+  {
+   "slug": "lesieur",
+   "name": "Lesieur",
+   "sourceSpellings": {
+    "LESIEUR": 6
+   }
+  },
+  {
+   "slug": "les-jardins-d-emma",
+   "name": "Les Jardins d'Emma",
+   "sourceSpellings": {
+    "JARDIN D'EMMA": 4,
+    "JARDINS D'EMMA": 3
+   }
+  },
+  {
+   "slug": "le-tigre",
+   "name": "Le Tigre",
+   "sourceSpellings": {
+    "LE TIGRE": 2
+   }
+  },
+  {
+   "slug": "liloo",
+   "name": "Liloo",
+   "sourceSpellings": {
+    "LILOO": 3
+   }
+  },
+  {
+   "slug": "lingot",
+   "name": "Lingot",
+   "sourceSpellings": {
+    "LINGOT": 12
+   }
+  },
+  {
+   "slug": "lion",
+   "name": "Lion",
+   "sourceSpellings": {
+    "LION": 1
+   }
+  },
+  {
+   "slug": "lipton",
+   "name": "Lipton",
+   "sourceSpellings": {
+    "LIPTON": 3
+   }
+  },
+  {
+   "slug": "london-dairy",
+   "name": "London Dairy",
+   "sourceSpellings": {
+    "LONDON DAIRY": 19
+   }
+  },
+  {
+   "slug": "loopi",
+   "name": "Loopi",
+   "sourceSpellings": {
+    "LOOPI": 1
+   }
+  },
+  {
+   "slug": "l-or",
+   "name": "L'Or",
+   "sourceSpellings": {
+    "L'OR": 11
+   }
+  },
+  {
+   "slug": "lorenz",
+   "name": "Lorenz",
+   "sourceSpellings": {
+    "LORENZ": 9
+   }
+  },
+  {
+   "slug": "los-grunos",
+   "name": "Los Grunos",
+   "sourceSpellings": {
+    "LOS GRUNOS": 2
+   }
+  },
+  {
+   "slug": "lotus",
+   "name": "Lotus",
+   "sourceSpellings": {
+    "LOTUS": 1
+   }
+  },
+  {
+   "slug": "lovege",
+   "name": "Lovege",
+   "sourceSpellings": {
+    "LOVEGE": 3,
+    "LOVEGO": 2
+   }
+  },
+  {
+   "slug": "lu",
+   "name": "Lu",
+   "sourceSpellings": {
+    "LU": 1
+   }
+  },
+  {
+   "slug": "lune-de-miel",
+   "name": "Lune de Miel",
+   "sourceSpellings": {
+    "LUNE DE MIEL": 6
+   }
+  },
+  {
+   "slug": "lutece",
+   "name": "Lutece",
+   "sourceSpellings": {
+    "LUTECE": 1
+   }
+  },
+  {
+   "slug": "lutosa",
+   "name": "Lutosa",
+   "sourceSpellings": {
+    "LUTOSA": 3
+   }
+  },
+  {
+   "slug": "mad",
+   "name": "Mad",
+   "sourceSpellings": {
+    "MAD": 36
+   }
+  },
+  {
+   "slug": "madame-loik-paysan-breton",
+   "name": "Madame Loïk Paysan Breton",
+   "sourceSpellings": {
+    "MADAME LOÏK PAYSAN BRETON": 2
+   }
+  },
+  {
+   "slug": "mad-cheers",
+   "name": "Mad Cheers",
+   "sourceSpellings": {
+    "MAD CHEERS": 1
+   }
+  },
+  {
+   "slug": "mad-signature",
+   "name": "Mad Signature",
+   "sourceSpellings": {
+    "MAD SIGNATURE": 3
+   }
+  },
+  {
+   "slug": "mad-sweets",
+   "name": "Mad Sweets",
+   "sourceSpellings": {
+    "MAD SWEETS": 4
+   }
+  },
+  {
+   "slug": "maestrella",
+   "name": "Maestrella",
+   "sourceSpellings": {
+    "MAESTRELLA": 1
+   }
+  },
+  {
+   "slug": "maestro",
+   "name": "Maestro",
+   "sourceSpellings": {
+    "MAESTRO": 25,
+    "Maestro": 4
+   }
+  },
+  {
+   "slug": "magma",
+   "name": "Magma",
+   "sourceSpellings": {
+    "MAGMA": 7
+   }
+  },
+  {
+   "slug": "magnum",
+   "name": "Magnum",
+   "sourceSpellings": {
+    "MAGNUM": 6
+   }
+  },
+  {
+   "slug": "mahboul",
+   "name": "Mahboul",
+   "sourceSpellings": {
+    "MAHBOUL": 37
+   }
+  },
+  {
+   "slug": "mahjoub",
+   "name": "Mahjoub",
+   "sourceSpellings": {
+    "MAHJOUB": 3
+   }
+  },
+  {
+   "slug": "majeste",
+   "name": "Majeste",
+   "sourceSpellings": {
+    "MAJESTE": 36
+   }
+  },
+  {
+   "slug": "major",
+   "name": "Major",
+   "sourceSpellings": {
+    "MAJOR": 5
+   }
+  },
+  {
+   "slug": "mama-mia",
+   "name": "Mama Mia",
+   "sourceSpellings": {
+    "MAMA MIA": 22,
+    "MAMAMIA": 1,
+    "Mama Mia": 1
+   }
+  },
+  {
+   "slug": "mami",
+   "name": "Mami",
+   "sourceSpellings": {
+    "MAMI": 42
+   }
+  },
+  {
+   "slug": "mami-garden",
+   "name": "Mami Garden",
+   "sourceSpellings": {
+    "MAMI GARDEN": 21
+   }
+  },
+  {
+   "slug": "maneken",
+   "name": "Maneken",
+   "sourceSpellings": {
+    "MANEKEN": 2
+   }
+  },
+  {
+   "slug": "marasca-jazira",
+   "name": "Marasca Jazira",
+   "sourceSpellings": {
+    "MARASCA JAZIRA": 3
+   }
+  },
+  {
+   "slug": "mario",
+   "name": "Mario",
+   "sourceSpellings": {
+    "MARIO": 2
+   }
+  },
+  {
+   "slug": "marshmallow",
+   "name": "Marshmallow",
+   "sourceSpellings": {
+    "MARSHMALLOW": 3
+   }
+  },
+  {
+   "slug": "marwa",
+   "name": "Marwa",
+   "sourceSpellings": {
+    "MARWA": 2,
+    "Marwa": 2
+   }
+  },
+  {
+   "slug": "max-golden",
+   "name": "Max Golden",
+   "sourceSpellings": {
+    "MAX GOLDEN": 3
+   }
+  },
+  {
+   "slug": "maxon",
+   "name": "Maxon",
+   "sourceSpellings": {
+    "MAXON": 3
+   }
+  },
+  {
+   "slug": "maxwell-house",
+   "name": "Maxwell House",
+   "sourceSpellings": {
+    "MAXWELL HOUSE": 5
+   }
+  },
+  {
+   "slug": "maxxx",
+   "name": "Maxxx",
+   "sourceSpellings": {
+    "MAXXX": 15
+   }
+  },
+  {
+   "slug": "mayoka",
+   "name": "Mayoka",
+   "sourceSpellings": {
+    "MAYOKA": 2
+   }
+  },
+  {
+   "slug": "mayor",
+   "name": "Mayor",
+   "sourceSpellings": {
+    "MAYOR": 3
+   }
+  },
+  {
+   "slug": "may-tunisia",
+   "name": "May Tunisia",
+   "sourceSpellings": {
+    "MAY TUNISIA": 1
+   }
+  },
+  {
+   "slug": "mc-cain",
+   "name": "Mc Cain",
+   "sourceSpellings": {
+    "MC CAIN": 3
+   }
+  },
+  {
+   "slug": "melina",
+   "name": "Melina",
+   "sourceSpellings": {
+    "MELINA": 1,
+    "melina": 1
+   }
+  },
+  {
+   "slug": "melita",
+   "name": "Melita",
+   "sourceSpellings": {
+    "MELITA": 4
+   }
+  },
+  {
+   "slug": "melliti",
+   "name": "Melliti",
+   "sourceSpellings": {
+    "MELLITI": 2,
+    "Melliti": 1
+   }
+  },
+  {
+   "slug": "mentos",
+   "name": "Mentos",
+   "sourceSpellings": {
+    "MENTOS": 22
+   }
+  },
+  {
+   "slug": "merci-chef",
+   "name": "Merci Chef",
+   "sourceSpellings": {
+    "MERCI CHEF": 1
+   }
+  },
+  {
+   "slug": "mere-lalie",
+   "name": "Mere Lalie",
+   "sourceSpellings": {
+    "MERE LALIE": 6
+   }
+  },
+  {
+   "slug": "meriah",
+   "name": "Meriah",
+   "sourceSpellings": {
+    "MERIAH": 7
+   }
+  },
+  {
+   "slug": "mero",
+   "name": "Mero",
+   "sourceSpellings": {
+    "MERO": 1
+   }
+  },
+  {
+   "slug": "merry-chips",
+   "name": "Merry Chips",
+   "sourceSpellings": {
+    "MERRY CHIPS": 7
+   }
+  },
+  {
+   "slug": "mg-j-aime",
+   "name": "MG J'aime",
+   "sourceSpellings": {
+    "MG J'aime": 34
+   },
+   "ownership": "verified MG private label"
+  },
+  {
+   "slug": "milka",
+   "name": "Milka",
+   "sourceSpellings": {
+    "MILKA": 7
+   }
+  },
+  {
+   "slug": "milkana",
+   "name": "Milkana",
+   "sourceSpellings": {
+    "MILKANA": 2
+   }
+  },
+  {
+   "slug": "milkana-delice",
+   "name": "Milkana Delice",
+   "sourceSpellings": {
+    "MILKANA DELICE": 6
+   }
+  },
+  {
+   "slug": "mille-recettes",
+   "name": "Mille Recettes",
+   "sourceSpellings": {
+    "Mille Recettes": 6
+   }
+  },
+  {
+   "slug": "mima",
+   "name": "Mima",
+   "sourceSpellings": {
+    "MIMA": 9
+   }
+  },
+  {
+   "slug": "mini-tuc",
+   "name": "Mini Tuc",
+   "sourceSpellings": {
+    "MINI TUC": 1
+   }
+  },
+  {
+   "slug": "mira",
+   "name": "Mira",
+   "sourceSpellings": {
+    "MIRA": 2,
+    "mira": 1,
+    "Mira": 1
+   }
+  },
+  {
+   "slug": "mliha",
+   "name": "Mliha",
+   "sourceSpellings": {
+    "MLIHA": 39
+   }
+  },
+  {
+   "slug": "moka",
+   "name": "Moka",
+   "sourceSpellings": {
+    "MOKA": 6
+   }
+  },
+  {
+   "slug": "momento",
+   "name": "Momento",
+   "sourceSpellings": {
+    "MOMENTO": 3,
+    "Momento": 1
+   }
+  },
+  {
+   "slug": "monimpex",
+   "name": "Monimpex",
+   "sourceSpellings": {
+    "MONIMPEX": 4
+   }
+  },
+  {
+   "slug": "monin",
+   "name": "Monin",
+   "sourceSpellings": {
+    "MONIN": 1
+   }
+  },
+  {
+   "slug": "mont-regal",
+   "name": "Mont Regal",
+   "sourceSpellings": {
+    "MONT REGAL": 9
+   }
+  },
+  {
+   "slug": "moringa",
+   "name": "Moringa",
+   "sourceSpellings": {
+    "MORINGA": 3
+   }
+  },
+  {
+   "slug": "moulin-d-or",
+   "name": "Moulin d'Or",
+   "sourceSpellings": {
+    "MOULIN D'OR": 51,
+    "MOULIN DOR": 1,
+    "MOULIN D OR": 4,
+    "moulin d'Or": 1
+   }
+  },
+  {
+   "slug": "mourouj-abeille",
+   "name": "Mourouj Abeille",
+   "sourceSpellings": {
+    "MOUROUJ ABEILLE": 22
+   }
+  },
+  {
+   "slug": "n-1",
+   "name": "N°1",
+   "sourceSpellings": {
+    "N°1": 2
+   }
+  },
+  {
+   "slug": "natilait",
+   "name": "Natilait",
+   "sourceSpellings": {
+    "NATILAIT": 51,
+    "Natilait": 2,
+    "natilait": 1
+   }
+  },
+  {
+   "slug": "natulyn",
+   "name": "Natulyn",
+   "sourceSpellings": {
+    "NATULYN": 5
+   }
+  },
+  {
+   "slug": "naturel",
+   "name": "Naturel",
+   "sourceSpellings": {
+    "NATUREL": 40
+   }
+  },
+  {
+   "slug": "navarra",
+   "name": "Navarra",
+   "sourceSpellings": {
+    "NAVARRA": 1
+   }
+  },
+  {
+   "slug": "neblia",
+   "name": "Neblia",
+   "sourceSpellings": {
+    "NEBLIA": 3,
+    "NABLIA": 2
+   }
+  },
+  {
+   "slug": "nejma",
+   "name": "Nejma",
+   "sourceSpellings": {
+    "NEJMA": 3
+   }
+  },
+  {
+   "slug": "nescafe",
+   "name": "Nescafe",
+   "sourceSpellings": {
+    "NESCAFE": 7
+   }
+  },
+  {
+   "slug": "nesquik",
+   "name": "Nesquik",
+   "sourceSpellings": {
+    "NESQUIK": 2
+   }
+  },
+  {
+   "slug": "nestle",
+   "name": "Nestlé",
+   "sourceSpellings": {
+    "NESTLE": 4,
+    "NESTLÉ": 1,
+    "Nestlé": 1
+   }
+  },
+  {
+   "slug": "new-food",
+   "name": "New Food",
+   "sourceSpellings": {
+    "NEW FOOD": 2
+   }
+  },
+  {
+   "slug": "nfe",
+   "name": "Nfe",
+   "sourceSpellings": {
+    "NFE": 32
+   }
+  },
+  {
+   "slug": "nour",
+   "name": "Nour",
+   "sourceSpellings": {
+    "NOUR": 3
+   }
+  },
+  {
+   "slug": "nouty",
+   "name": "Nouty",
+   "sourceSpellings": {
+    "NOUTY": 4
+   }
+  },
+  {
+   "slug": "novafresh",
+   "name": "Novafresh",
+   "sourceSpellings": {
+    "NOVAFRESH": 1
+   }
+  },
+  {
+   "slug": "nutella",
+   "name": "Nutella",
+   "sourceSpellings": {
+    "NUTELLA": 3
+   }
+  },
+  {
+   "slug": "ocean-fresh",
+   "name": "Ocean Fresh",
+   "sourceSpellings": {
+    "OCEAN FRESH": 1
+   }
+  },
+  {
+   "slug": "oct",
+   "name": "Oct",
+   "sourceSpellings": {
+    "OCT": 3
+   }
+  },
+  {
+   "slug": "odyssee",
+   "name": "Odyssee",
+   "sourceSpellings": {
+    "ODYSSEE": 10
+   }
+  },
+  {
+   "slug": "oh",
+   "name": "OH",
+   "sourceSpellings": {
+    "OH": 10,
+    "Oh!": 1
+   }
+  },
+  {
+   "slug": "oikos",
+   "name": "Oikos",
+   "sourceSpellings": {
+    "OIKOS": 4
+   }
+  },
+  {
+   "slug": "old-amsterdam",
+   "name": "Old Amsterdam",
+   "sourceSpellings": {
+    "OLD AMSTERDAM": 2
+   }
+  },
+  {
+   "slug": "oleo-nour",
+   "name": "Oleo Nour",
+   "sourceSpellings": {
+    "OLEO NOUR": 3
+   }
+  },
+  {
+   "slug": "olina",
+   "name": "Olina",
+   "sourceSpellings": {
+    "FRIDEAL OLINA": 2,
+    "OLINA": 7
+   }
+  },
+  {
+   "slug": "omima",
+   "name": "Omima",
+   "sourceSpellings": {
+    "OMIMA": 11
+   }
+  },
+  {
+   "slug": "o-ppa",
+   "name": "O'ppa",
+   "sourceSpellings": {
+    "O'PPA": 3,
+    "OPPA": 1
+   }
+  },
+  {
+   "slug": "orangina",
+   "name": "Orangina",
+   "sourceSpellings": {
+    "ORANGINA": 7
+   }
+  },
+  {
+   "slug": "oreo",
+   "name": "Oreo",
+   "sourceSpellings": {
+    "OREO": 1
+   }
+  },
+  {
+   "slug": "original",
+   "name": "Original",
+   "sourceSpellings": {
+    "ORIGINAL": 3
+   }
+  },
+  {
+   "slug": "oripasta",
+   "name": "Oripasta",
+   "sourceSpellings": {
+    "ORIPASTA": 7
+   }
+  },
+  {
+   "slug": "orto",
+   "name": "Orto",
+   "sourceSpellings": {
+    "ORTO": 10
+   }
+  },
+  {
+   "slug": "orzo",
+   "name": "Orzo",
+   "sourceSpellings": {
+    "ORZO": 1
+   }
+  },
+  {
+   "slug": "oubour-land",
+   "name": "Oubour Land",
+   "sourceSpellings": {
+    "OUBOUR LAND": 9
+   }
+  },
+  {
+   "slug": "ovita-el-mazraa",
+   "name": "Ovita El Mazraa",
+   "sourceSpellings": {
+    "OVITA EL MAZRAA": 1
+   }
+  },
+  {
+   "slug": "ovolina",
+   "name": "Ovolina",
+   "sourceSpellings": {
+    "OVOLINA": 12
+   }
+  },
+  {
+   "slug": "oxo",
+   "name": "Oxo",
+   "sourceSpellings": {
+    "OXO": 1
+   }
+  },
+  {
+   "slug": "palma",
+   "name": "Palma",
+   "sourceSpellings": {
+    "Palma": 1
+   }
+  },
+  {
+   "slug": "palm-d-or",
+   "name": "Palm d'Or",
+   "sourceSpellings": {
+    "PALM D'OR": 7
+   }
+  },
+  {
+   "slug": "paname",
+   "name": "Paname",
+   "sourceSpellings": {
+    "PANAME": 8
+   }
+  },
+  {
+   "slug": "panzani",
+   "name": "Panzani",
+   "sourceSpellings": {
+    "PANZANI": 4
+   }
+  },
+  {
+   "slug": "papillon",
+   "name": "Papillon",
+   "sourceSpellings": {
+    "PAPILLON": 50
+   }
+  },
+  {
+   "slug": "papmallow",
+   "name": "Papmallow",
+   "sourceSpellings": {
+    "PAPMALLOW": 4
+   }
+  },
+  {
+   "slug": "paratha",
+   "name": "Paratha",
+   "sourceSpellings": {
+    "PARATHA": 2
+   }
+  },
+  {
+   "slug": "party",
+   "name": "Party",
+   "sourceSpellings": {
+    "PARTY": 3
+   }
+  },
+  {
+   "slug": "party-lago",
+   "name": "Party Lago",
+   "sourceSpellings": {
+    "PARTY LAGO": 5
+   }
+  },
+  {
+   "slug": "passion",
+   "name": "Passion",
+   "sourceSpellings": {
+    "PASSION": 8
+   }
+  },
+  {
+   "slug": "pastacosi",
+   "name": "Pastacosi",
+   "sourceSpellings": {
+    "PASTACOSI": 8
+   }
+  },
+  {
+   "slug": "pasta-fina",
+   "name": "Pasta Fina",
+   "sourceSpellings": {
+    "PASTA FINA": 7
+   }
+  },
+  {
+   "slug": "paysan-breton",
+   "name": "Paysan Breton",
+   "sourceSpellings": {
+    "PAYSAN BRETON": 11
+   }
+  },
+  {
+   "slug": "petit-moulin",
+   "name": "Petit Moulin",
+   "sourceSpellings": {
+    "PETIT MOULIN": 1
+   }
+  },
+  {
+   "slug": "philippe-dessaux",
+   "name": "Philippe Dessaux",
+   "sourceSpellings": {
+    "PHILIPPE DESSAUX": 12
+   }
+  },
+  {
+   "slug": "pingpong",
+   "name": "Pingpong",
+   "sourceSpellings": {
+    "PINGPONG": 1
+   }
+  },
+  {
+   "slug": "pinguin",
+   "name": "Pinguin",
+   "sourceSpellings": {
+    "PINGUIN": 7
+   }
+  },
+  {
+   "slug": "plaisir",
+   "name": "Plaisir",
+   "sourceSpellings": {
+    "PLAISIR": 7
+   }
+  },
+  {
+   "slug": "plaisir-y-ab",
+   "name": "Plaisir Y'ab",
+   "sourceSpellings": {
+    "PLAISIR Y'AB": 1
+   }
+  },
+  {
+   "slug": "poker",
+   "name": "Poker",
+   "sourceSpellings": {
+    "POKER": 7
+   }
+  },
+  {
+   "slug": "poker-lago",
+   "name": "Poker Lago",
+   "sourceSpellings": {
+    "POKER LAGO": 2
+   }
+  },
+  {
+   "slug": "pot-d-or",
+   "name": "Pot d'Or",
+   "sourceSpellings": {
+    "POT D'OR": 10
+   }
+  },
+  {
+   "slug": "power-horse",
+   "name": "Power Horse",
+   "sourceSpellings": {
+    "POWER HORSE": 4
+   }
+  },
+  {
+   "slug": "president",
+   "name": "President",
+   "sourceSpellings": {
+    "PRESIDENT": 34,
+    "PRÉSIDENT": 12,
+    "President": 1
+   }
+  },
+  {
+   "slug": "primaqua",
+   "name": "Primaqua",
+   "sourceSpellings": {
+    "PRIMAQUA": 3
+   }
+  },
+  {
+   "slug": "primo-lingot",
+   "name": "Primo Lingot",
+   "sourceSpellings": {
+    "PRIMO LINGOT": 2
+   }
+  },
+  {
+   "slug": "prince",
+   "name": "Prince",
+   "sourceSpellings": {
+    "PRINCE": 8
+   }
+  },
+  {
+   "slug": "pringles",
+   "name": "Pringles",
+   "sourceSpellings": {
+    "PRINGLES": 4
+   }
+  },
+  {
+   "slug": "pristine",
+   "name": "Pristine",
+   "sourceSpellings": {
+    "PRISTINE": 3
+   }
+  },
+  {
+   "slug": "p-tit-pops",
+   "name": "P'tit Pops",
+   "sourceSpellings": {
+    "P'TIT POPS": 1
+   }
+  },
+  {
+   "slug": "p-tit-top",
+   "name": "P'tit Top",
+   "sourceSpellings": {
+    "P'TIT TOP": 3
+   }
+  },
+  {
+   "slug": "punch",
+   "name": "Punch",
+   "sourceSpellings": {
+    "PUNCH": 22
+   }
+  },
+  {
+   "slug": "quintessences",
+   "name": "Quintessences",
+   "sourceSpellings": {
+    "QUINTESSENCES": 3
+   }
+  },
+  {
+   "slug": "randa",
+   "name": "Randa",
+   "sourceSpellings": {
+    "RANDA": 59
+   }
+  },
+  {
+   "slug": "raoua",
+   "name": "Raoua",
+   "sourceSpellings": {
+    "RAOUA": 10,
+    "RAOUA CHANI": 1
+   }
+  },
+  {
+   "slug": "rayen",
+   "name": "Rayen",
+   "sourceSpellings": {
+    "RAYEN": 11
+   }
+  },
+  {
+   "slug": "rayes-labhar",
+   "name": "Rayes Labhar",
+   "sourceSpellings": {
+    "RAYES LABHAR": 4
+   }
+  },
+  {
+   "slug": "reaktor",
+   "name": "Reaktor",
+   "sourceSpellings": {
+    "REAKTOR": 4
+   }
+  },
+  {
+   "slug": "redbull",
+   "name": "Redbull",
+   "sourceSpellings": {
+    "REDBULL": 1,
+    "RED BULL": 1
+   }
+  },
+  {
+   "slug": "reflets-de-tunisie",
+   "name": "Reflets de Tunisie",
+   "sourceSpellings": {
+    "REFLETS DE TUNISIE": 5,
+    "REFLET": 2
+   }
+  },
+  {
+   "slug": "reflexx",
+   "name": "Reflexx",
+   "sourceSpellings": {
+    "REFLEXX": 2
+   }
+  },
+  {
+   "slug": "reine-des-graines",
+   "name": "Reine des Graines",
+   "sourceSpellings": {
+    "REINE DES GRAINES": 1
+   }
+  },
+  {
+   "slug": "remia",
+   "name": "Remia",
+   "sourceSpellings": {
+    "REMIA": 29
+   }
+  },
+  {
+   "slug": "ricore",
+   "name": "Ricore",
+   "sourceSpellings": {
+    "RICORE": 2
+   }
+  },
+  {
+   "slug": "rim",
+   "name": "Rim",
+   "sourceSpellings": {
+    "RIM": 1
+   }
+  },
+  {
+   "slug": "rima",
+   "name": "Rima",
+   "sourceSpellings": {
+    "RIMA": 60
+   }
+  },
+  {
+   "slug": "rimy",
+   "name": "Rimy",
+   "sourceSpellings": {
+    "RIMY": 2
+   }
+  },
+  {
+   "slug": "ringo",
+   "name": "Ringo",
+   "sourceSpellings": {
+    "RINGO": 1
+   }
+  },
+  {
+   "slug": "ritter-sport",
+   "name": "Ritter Sport",
+   "sourceSpellings": {
+    "RITTER SPORT": 12
+   }
+  },
+  {
+   "slug": "riviere-d-or",
+   "name": "Riviere d'Or",
+   "sourceSpellings": {
+    "RIVIERE D'OR": 4
+   }
+  },
+  {
+   "slug": "rocky",
+   "name": "Rocky",
+   "sourceSpellings": {
+    "ROCKY": 1
+   }
+  },
+  {
+   "slug": "roll-break-lago",
+   "name": "Roll Break Lago",
+   "sourceSpellings": {
+    "ROLL BREAK LAGO": 4
+   }
+  },
+  {
+   "slug": "roll-lago",
+   "name": "Roll Lago",
+   "sourceSpellings": {
+    "ROLL LAGO": 2
+   }
+  },
+  {
+   "slug": "romeo",
+   "name": "Romeo",
+   "sourceSpellings": {
+    "ROMEO": 1
+   }
+  },
+  {
+   "slug": "rondele-president",
+   "name": "Rondele President",
+   "sourceSpellings": {
+    "RONDELE PRESIDENT": 1
+   }
+  },
+  {
+   "slug": "royal",
+   "name": "Royal",
+   "sourceSpellings": {
+    "ROYAL": 1
+   }
+  },
+  {
+   "slug": "royaume-des-abeilles",
+   "name": "Royaume des Abeilles",
+   "sourceSpellings": {
+    "ROYAUMES DES ABEILLES": 1,
+    "ROYAUME DES ABEILLES": 8
+   }
+  },
+  {
+   "slug": "rozy",
+   "name": "Rozy",
+   "sourceSpellings": {
+    "ROZY": 10
+   }
+  },
+  {
+   "slug": "ruspina",
+   "name": "Ruspina",
+   "sourceSpellings": {
+    "RUSPINA": 25
+   }
+  },
+  {
+   "slug": "sablito",
+   "name": "Sablito",
+   "sourceSpellings": {
+    "SABLITO": 5
+   }
+  },
+  {
+   "slug": "sabra",
+   "name": "Sabra",
+   "sourceSpellings": {
+    "SABRA": 14
+   }
+  },
+  {
+   "slug": "sabrine",
+   "name": "Sabrine",
+   "sourceSpellings": {
+    "SABRINE": 1,
+    "Sabrine": 1
+   }
+  },
+  {
+   "slug": "sadia",
+   "name": "Sadia",
+   "sourceSpellings": {
+    "SADIA": 4
+   }
+  },
+  {
+   "slug": "safaa",
+   "name": "Safaa",
+   "sourceSpellings": {
+    "SAFAA": 1
+   }
+  },
+  {
+   "slug": "safi",
+   "name": "Safi",
+   "sourceSpellings": {
+    "SAFI": 19
+   }
+  },
+  {
+   "slug": "safia",
+   "name": "Safia",
+   "sourceSpellings": {
+    "SAFIA": 2,
+    "Safia": 3
+   }
+  },
+  {
+   "slug": "safir",
+   "name": "Safir",
+   "sourceSpellings": {
+    "SAFIR": 10
+   }
+  },
+  {
+   "slug": "said",
+   "name": "Said",
+   "sourceSpellings": {
+    "SAID": 31
+   }
+  },
+  {
+   "slug": "saida",
+   "name": "Saïda",
+   "sourceSpellings": {
+    "SAIDA": 42,
+    "Saïda": 7,
+    "SAÏDA": 1
+   }
+  },
+  {
+   "slug": "saint-louis",
+   "name": "Saint Louis",
+   "sourceSpellings": {
+    "SAINT LOUIS": 2
+   }
+  },
+  {
+   "slug": "saint-moret",
+   "name": "Saint Moret",
+   "sourceSpellings": {
+    "SAINT MORET": 1
+   }
+  },
+  {
+   "slug": "salamdor",
+   "name": "Salamdor",
+   "sourceSpellings": {
+    "SALAMDOR": 8
+   }
+  },
+  {
+   "slug": "salim",
+   "name": "Salim",
+   "sourceSpellings": {
+    "SALIM": 6
+   }
+  },
+  {
+   "slug": "samsador",
+   "name": "Samsador",
+   "sourceSpellings": {
+    "SAMSADOR": 2
+   }
+  },
+  {
+   "slug": "sanabel-carthage",
+   "name": "Sanabel Carthage",
+   "sourceSpellings": {
+    "SANABEL CARTHAGE": 48,
+    "Sanabel Carthage": 1
+   }
+  },
+  {
+   "slug": "san-giovanni",
+   "name": "San Giovanni",
+   "sourceSpellings": {
+    "SAN GIOVANNI": 11
+   }
+  },
+  {
+   "slug": "sansel",
+   "name": "Sansel",
+   "sourceSpellings": {
+    "SANSEL": 1
+   }
+  },
+  {
+   "slug": "sante",
+   "name": "Sante",
+   "sourceSpellings": {
+    "SANTE": 40
+   }
+  },
+  {
+   "slug": "santiveri",
+   "name": "Santiveri",
+   "sourceSpellings": {
+    "Santiveri": 1
+   }
+  },
+  {
+   "slug": "saphir",
+   "name": "Saphir",
+   "sourceSpellings": {
+    "SAPHIR": 2
+   }
+  },
+  {
+   "slug": "saveurs",
+   "name": "Saveurs",
+   "sourceSpellings": {
+    "SAVEURS": 10
+   }
+  },
+  {
+   "slug": "savoureuse",
+   "name": "Savoureuse",
+   "sourceSpellings": {
+    "SAVOUREUSE": 1
+   }
+  },
+  {
+   "slug": "schweppes",
+   "name": "Schweppes",
+   "sourceSpellings": {
+    "SCHWEPPES": 8
+   }
+  },
+  {
+   "slug": "sds",
+   "name": "Sds",
+   "sourceSpellings": {
+    "SDS": 4
+   }
+  },
+  {
+   "slug": "selja",
+   "name": "Selja",
+   "sourceSpellings": {
+    "SELJA": 6
+   }
+  },
+  {
+   "slug": "seniatna",
+   "name": "Seniatna",
+   "sourceSpellings": {
+    "SENIETNA": 6,
+    "SENIATNA": 2
+   }
+  },
+  {
+   "slug": "shark",
+   "name": "Shark",
+   "sourceSpellings": {
+    "SHARK": 3
+   }
+  },
+  {
+   "slug": "shehrazed",
+   "name": "Shehrazed",
+   "sourceSpellings": {
+    "SHEHRAZED": 50
+   }
+  },
+  {
+   "slug": "sicam",
+   "name": "Sicam",
+   "sourceSpellings": {
+    "SICAM": 33,
+    "Sicam": 2
+   }
+  },
+  {
+   "slug": "sidi-bousaid",
+   "name": "Sidi Bousaid",
+   "sourceSpellings": {
+    "SIDI BOUSAID": 6
+   }
+  },
+  {
+   "slug": "sidi-daoud",
+   "name": "Sidi Daoud",
+   "sourceSpellings": {
+    "SIDI DAOUD": 3
+   }
+  },
+  {
+   "slug": "sidi-el-bahri",
+   "name": "Sidi El Bahri",
+   "sourceSpellings": {
+    "SIDI EL BAHRI": 2,
+    "SIDI ELBAHRI": 1
+   }
+  },
+  {
+   "slug": "sidi-jabeur",
+   "name": "Sidi Jabeur",
+   "sourceSpellings": {
+    "SIDI JABEUR": 3
+   }
+  },
+  {
+   "slug": "slv",
+   "name": "Slv",
+   "sourceSpellings": {
+    "SLV": 2
+   }
+  },
+  {
+   "slug": "smart-chef",
+   "name": "Smart Chef",
+   "sourceSpellings": {
+    "SMART CHEF": 86
+   }
+  },
+  {
+   "slug": "smile",
+   "name": "Smile",
+   "sourceSpellings": {
+    "SMILE": 3
+   }
+  },
+  {
+   "slug": "sobiscotte",
+   "name": "Sobiscotte",
+   "sourceSpellings": {
+    "SOBISCOTTE": 8
+   }
+  },
+  {
+   "slug": "sodea",
+   "name": "Sodea",
+   "sourceSpellings": {
+    "SODEA": 4
+   }
+  },
+  {
+   "slug": "soignon",
+   "name": "Soignon",
+   "sourceSpellings": {
+    "SOIGNON": 1
+   }
+  },
+  {
+   "slug": "solen",
+   "name": "Solen",
+   "sourceSpellings": {
+    "SOLEN": 12
+   }
+  },
+  {
+   "slug": "solia",
+   "name": "Solia",
+   "sourceSpellings": {
+    "SOLIA": 13
+   }
+  },
+  {
+   "slug": "soprac",
+   "name": "Soprac",
+   "sourceSpellings": {
+    "SOPRAC": 2
+   }
+  },
+  {
+   "slug": "souani",
+   "name": "Souani",
+   "sourceSpellings": {
+    "SOUANI": 19,
+    "VIEUX CALIFE SOUANI": 1,
+    "CALIFE SOUANI": 1,
+    "NATIONAL SOUANI": 1
+   }
+  },
+  {
+   "slug": "spichoco",
+   "name": "Spichoco",
+   "sourceSpellings": {
+    "SPICHOCO": 2
+   }
+  },
+  {
+   "slug": "spiga",
+   "name": "Spiga",
+   "sourceSpellings": {
+    "SPIGA": 41
+   }
+  },
+  {
+   "slug": "spinuts",
+   "name": "Spinuts",
+   "sourceSpellings": {
+    "SPINUTS": 2,
+    "SPINUT'S": 1
+   }
+  },
+  {
+   "slug": "spipa",
+   "name": "Spipa",
+   "sourceSpellings": {
+    "SPIPA": 19
+   }
+  },
+  {
+   "slug": "sprite",
+   "name": "Sprite",
+   "sourceSpellings": {
+    "SPRITE": 3
+   }
+  },
+  {
+   "slug": "starsky",
+   "name": "Starsky",
+   "sourceSpellings": {
+    "STARSKY": 2
+   }
+  },
+  {
+   "slug": "start",
+   "name": "Start",
+   "sourceSpellings": {
+    "START": 1
+   }
+  },
+  {
+   "slug": "stella",
+   "name": "Stella",
+   "sourceSpellings": {
+    "STELLA": 6
+   }
+  },
+  {
+   "slug": "sterilgarda",
+   "name": "Sterilgarda",
+   "sourceSpellings": {
+    "STERILGARDA": 2
+   }
+  },
+  {
+   "slug": "stevia",
+   "name": "Stevia",
+   "sourceSpellings": {
+    "STEVIA": 1
+   }
+  },
+  {
+   "slug": "sticap",
+   "name": "Sticap",
+   "sourceSpellings": {
+    "STICAP": 13,
+    "Sticap": 1
+   }
+  },
+  {
+   "slug": "stifen",
+   "name": "Stifen",
+   "sourceSpellings": {
+    "STIFEN": 1
+   }
+  },
+  {
+   "slug": "stil",
+   "name": "Stil",
+   "sourceSpellings": {
+    "STIL": 15
+   }
+  },
+  {
+   "slug": "st-louis",
+   "name": "St Louis",
+   "sourceSpellings": {
+    "ST LOUIS": 1
+   }
+  },
+  {
+   "slug": "street-and-co",
+   "name": "Street And Co",
+   "sourceSpellings": {
+    "STREET AND CO": 1
+   }
+  },
+  {
+   "slug": "street-co",
+   "name": "Street &Co",
+   "sourceSpellings": {
+    "STREET & CO": 2,
+    "Street &Co": 1,
+    "Street & Co.": 1
+   }
+  },
+  {
+   "slug": "sucrem",
+   "name": "Sucrem",
+   "sourceSpellings": {
+    "SUCREM": 1
+   }
+  },
+  {
+   "slug": "sultan",
+   "name": "Sultan",
+   "sourceSpellings": {
+    "SULTAN": 14
+   }
+  },
+  {
+   "slug": "sun",
+   "name": "Sun",
+   "sourceSpellings": {
+    "SUN": 1
+   }
+  },
+  {
+   "slug": "sun-top",
+   "name": "Sun Top",
+   "sourceSpellings": {
+    "SUN TOP": 3
+   }
+  },
+  {
+   "slug": "sweet-pastry",
+   "name": "Sweet Pastry",
+   "sourceSpellings": {
+    "SWEET PASTRY": 1
+   }
+  },
+  {
+   "slug": "sweety",
+   "name": "Sweety",
+   "sourceSpellings": {
+    "SWEETY": 2
+   }
+  },
+  {
+   "slug": "swing",
+   "name": "Swing",
+   "sourceSpellings": {
+    "SWING": 1
+   }
+  },
+  {
+   "slug": "tacia",
+   "name": "Tacia",
+   "sourceSpellings": {
+    "TACIA": 4
+   }
+  },
+  {
+   "slug": "takis",
+   "name": "Takis",
+   "sourceSpellings": {
+    "TAKIS": 6
+   }
+  },
+  {
+   "slug": "tanit-le-jardin",
+   "name": "Tanit le Jardin",
+   "sourceSpellings": {
+    "TANIT LE JARDIN": 25,
+    "TANIT": 2
+   }
+  },
+  {
+   "slug": "taralli",
+   "name": "Taralli",
+   "sourceSpellings": {
+    "TARALLI": 10
+   }
+  },
+  {
+   "slug": "tarti-frais-delice",
+   "name": "Tarti Frais Delice",
+   "sourceSpellings": {
+    "TARTI FRAIS DELICE": 2
+   }
+  },
+  {
+   "slug": "tarti-fro",
+   "name": "Tarti Fro",
+   "sourceSpellings": {
+    "TARTI FRO": 7,
+    "TARTI'FRO": 1
+   }
+  },
+  {
+   "slug": "tazart",
+   "name": "Tazart",
+   "sourceSpellings": {
+    "TAZART": 4
+   }
+  },
+  {
+   "slug": "tej",
+   "name": "TEJ",
+   "sourceSpellings": {
+    "TEJ": 2
+   }
+  },
+  {
+   "slug": "terraine",
+   "name": "Terraine",
+   "sourceSpellings": {
+    "TERRAINE": 5
+   }
+  },
+  {
+   "slug": "terre-d-aquitaine",
+   "name": "Terre d'Aquitaine",
+   "sourceSpellings": {
+    "TERRE D'AQUITAINE": 2
+   }
+  },
+  {
+   "slug": "terroir-amazigh",
+   "name": "Terroir Amazigh",
+   "sourceSpellings": {
+    "TERROIR AMAZIGH": 1
+   }
+  },
+  {
+   "slug": "terroir-de-lansarine",
+   "name": "Terroir de Lansarine",
+   "sourceSpellings": {
+    "TERROIR DE LANSARINE": 1
+   }
+  },
+  {
+   "slug": "terroliva",
+   "name": "Terroliva",
+   "sourceSpellings": {
+    "TERROLIVA": 1
+   }
+  },
+  {
+   "slug": "thai-pride",
+   "name": "Thai Pride",
+   "sourceSpellings": {
+    "THAI PRIDE": 6
+   }
+  },
+  {
+   "slug": "the-lebanese-factory",
+   "name": "The Lebanese Factory",
+   "sourceSpellings": {
+    "THE LEBANESE FACTORY": 1
+   }
+  },
+  {
+   "slug": "thyna",
+   "name": "Thyna",
+   "sourceSpellings": {
+    "THYNA": 2
+   }
+  },
+  {
+   "slug": "tiba",
+   "name": "Tiba",
+   "sourceSpellings": {
+    "Tiba": 1
+   }
+  },
+  {
+   "slug": "tic-tac",
+   "name": "Tic Tac",
+   "sourceSpellings": {
+    "TIC TAC": 2
+   }
+  },
+  {
+   "slug": "tiffany",
+   "name": "Tiffany",
+   "sourceSpellings": {
+    "TIFANNY": 2,
+    "TIFFANNY": 2
+   }
+  },
+  {
+   "slug": "tigato",
+   "name": "Tigato",
+   "sourceSpellings": {
+    "TIGATO": 3
+   }
+  },
+  {
+   "slug": "tiger",
+   "name": "Tiger",
+   "sourceSpellings": {
+    "TIGER": 1
+   }
+  },
+  {
+   "slug": "tijen",
+   "name": "Tijen",
+   "sourceSpellings": {
+    "TIJEN": 2,
+    "TIJEN WATER": 1
+   }
+  },
+  {
+   "slug": "tino",
+   "name": "Tino",
+   "sourceSpellings": {
+    "TINO": 2
+   }
+  },
+  {
+   "slug": "tip-top",
+   "name": "Tip Top",
+   "sourceSpellings": {
+    "TIP TOP": 3
+   }
+  },
+  {
+   "slug": "tom",
+   "name": "Tom",
+   "sourceSpellings": {
+    "TOM": 14,
+    "Tom": 1
+   }
+  },
+  {
+   "slug": "tomito",
+   "name": "Tomito",
+   "sourceSpellings": {
+    "TOMITO": 1
+   }
+  },
+  {
+   "slug": "tortillas",
+   "name": "Tortillas",
+   "sourceSpellings": {
+    "TORTILLAS": 3
+   }
+  },
+  {
+   "slug": "tous-les-jours",
+   "name": "Tous les Jours",
+   "sourceSpellings": {
+    "TOUS LES JOURS": 55
+   },
+   "ownership": "unverified"
+  },
+  {
+   "slug": "tresor-del-rio",
+   "name": "Tresor Del Rio",
+   "sourceSpellings": {
+    "TRESOR DEL RIO": 6
+   }
+  },
+  {
+   "slug": "trio-d-or",
+   "name": "Trio d'Or",
+   "sourceSpellings": {
+    "TRIO D'OR": 5
+   }
+  },
+  {
+   "slug": "tris-said",
+   "name": "Tris Saïd",
+   "sourceSpellings": {
+    "TRIS SAÏD": 3
+   }
+  },
+  {
+   "slug": "trombetta",
+   "name": "Trombetta",
+   "sourceSpellings": {
+    "TROMBETTA": 4
+   }
+  },
+  {
+   "slug": "tropico",
+   "name": "Tropico",
+   "sourceSpellings": {
+    "TROPICO": 7,
+    "Tropico": 1
+   }
+  },
+  {
+   "slug": "tuc",
+   "name": "Tuc",
+   "sourceSpellings": {
+    "TUC": 3
+   }
+  },
+  {
+   "slug": "tucal",
+   "name": "Tucal",
+   "sourceSpellings": {
+    "TUCAL": 1
+   }
+  },
+  {
+   "slug": "tungo",
+   "name": "Tungo",
+   "sourceSpellings": {
+    "TUNGO": 1
+   }
+  },
+  {
+   "slug": "tunifood",
+   "name": "Tunifood",
+   "sourceSpellings": {
+    "TUNIFOOD": 8
+   }
+  },
+  {
+   "slug": "twinz",
+   "name": "Twinz",
+   "sourceSpellings": {
+    "TWINZ": 4
+   }
+  },
+  {
+   "slug": "twist",
+   "name": "Twist",
+   "sourceSpellings": {
+    "TWIST": 21
+   }
+  },
+  {
+   "slug": "tymbark",
+   "name": "Tymbark",
+   "sourceSpellings": {
+    "TYMBARK": 10
+   }
+  },
+  {
+   "slug": "typik",
+   "name": "Typik",
+   "sourceSpellings": {
+    "TYPIK": 25
+   }
+  },
+  {
+   "slug": "up-biskart",
+   "name": "Up Biskart",
+   "sourceSpellings": {
+    "UP BISKART": 1
+   }
+  },
+  {
+   "slug": "vague",
+   "name": "Vague",
+   "sourceSpellings": {
+    "VAGUE": 4
+   }
+  },
+  {
+   "slug": "valentino",
+   "name": "Valentino",
+   "sourceSpellings": {
+    "VALENTINO": 3
+   }
+  },
+  {
+   "slug": "vanoise",
+   "name": "Vanoise",
+   "sourceSpellings": {
+    "VANOISE": 114,
+    "vanoise": 1,
+    "Vanoise": 2
+   }
+  },
+  {
+   "slug": "varvello",
+   "name": "Varvello",
+   "sourceSpellings": {
+    "VARVELLO": 3
+   }
+  },
+  {
+   "slug": "vele-marine",
+   "name": "Vele Marine",
+   "sourceSpellings": {
+    "VELE MARINE": 1
+   }
+  },
+  {
+   "slug": "verano",
+   "name": "Verano",
+   "sourceSpellings": {
+    "VERANO": 2
+   }
+  },
+  {
+   "slug": "vipa",
+   "name": "Vipa",
+   "sourceSpellings": {
+    "VIPA": 20
+   }
+  },
+  {
+   "slug": "virto",
+   "name": "Virto",
+   "sourceSpellings": {
+    "VIRTO": 1
+   }
+  },
+  {
+   "slug": "vita-fibres",
+   "name": "Vita Fibres",
+   "sourceSpellings": {
+    "VITA FIBRES": 1
+   }
+  },
+  {
+   "slug": "vitalait",
+   "name": "Vitalait",
+   "sourceSpellings": {
+    "VITALAIT": 41,
+    "Vitalait": 9
+   }
+  },
+  {
+   "slug": "vitalio",
+   "name": "Vitalio",
+   "sourceSpellings": {
+    "VITALIO": 1
+   }
+  },
+  {
+   "slug": "vitup",
+   "name": "Vitup",
+   "sourceSpellings": {
+    "VITUP": 5
+   }
+  },
+  {
+   "slug": "vitupti",
+   "name": "Vitupti",
+   "sourceSpellings": {
+    "VITUPTI": 2
+   }
+  },
+  {
+   "slug": "viva",
+   "name": "Viva",
+   "sourceSpellings": {
+    "VIVA": 23
+   }
+  },
+  {
+   "slug": "vivian",
+   "name": "Vivian",
+   "sourceSpellings": {
+    "Vivian": 1
+   }
+  },
+  {
+   "slug": "warda",
+   "name": "Warda",
+   "sourceSpellings": {
+    "WARDA": 2
+   }
+  },
+  {
+   "slug": "waves-mad",
+   "name": "Waves Mad",
+   "sourceSpellings": {
+    "WAVES MAD": 2
+   }
+  },
+  {
+   "slug": "waw",
+   "name": "Waw",
+   "sourceSpellings": {
+    "WAW": 5
+   }
+  },
+  {
+   "slug": "weepo",
+   "name": "Weepo",
+   "sourceSpellings": {
+    "WEEPO": 2
+   }
+  },
+  {
+   "slug": "weepop-s",
+   "name": "Weepop's",
+   "sourceSpellings": {
+    "WEEPOP'S": 6,
+    "WEEPOPS": 5
+   }
+  },
+  {
+   "slug": "xplose",
+   "name": "Xplose",
+   "sourceSpellings": {
+    "XPLOSE": 5,
+    "X-PLOSE": 1
+   }
+  },
+  {
+   "slug": "yab",
+   "name": "YAB",
+   "sourceSpellings": {
+    "YAB": 26
+   }
+  },
+  {
+   "slug": "yanis",
+   "name": "Yanis",
+   "sourceSpellings": {
+    "YANIS": 2
+   }
+  },
+  {
+   "slug": "yoli",
+   "name": "Yoli",
+   "sourceSpellings": {
+    "YOLI": 85
+   }
+  },
+  {
+   "slug": "yumy",
+   "name": "Yumy",
+   "sourceSpellings": {
+    "YUMY": 1
+   }
+  },
+  {
+   "slug": "zahret-janoub",
+   "name": "Zahret Janoub",
+   "sourceSpellings": {
+    "ZAHRET JANOUB": 1
+   }
+  },
+  {
+   "slug": "zanetti",
+   "name": "Zanetti",
+   "sourceSpellings": {
+    "ZANETTI": 3
+   }
+  },
+  {
+   "slug": "zemnia",
+   "name": "Zemnia",
+   "sourceSpellings": {
+    "ZEMNIA": 1
+   }
+  },
+  {
+   "slug": "zgolli",
+   "name": "Zgolli",
+   "sourceSpellings": {
+    "ZGOLLI": 14
+   }
+  },
+  {
+   "slug": "zina",
+   "name": "Zina",
+   "sourceSpellings": {
+    "ZINA": 9
+   }
+  },
+  {
+   "slug": "zrir",
+   "name": "Zrir",
+   "sourceSpellings": {
+    "ZRIR": 1
+   }
+  }
+ ],
+ "lookAlikesNotMerged": [
+  {
+   "a": "Adoro Moulin d'Or",
+   "b": "Moulin d'Or"
+  },
+  {
+   "a": "Aljazia",
+   "b": "Al Jazira"
+  },
+  {
+   "a": "Aura Maestro",
+   "b": "Maestro"
+  },
+  {
+   "a": "Biskart",
+   "b": "Up Biskart"
+  },
+  {
+   "a": "Break",
+   "b": "Break Kids"
+  },
+  {
+   "a": "Break",
+   "b": "Roll Break Lago"
+  },
+  {
+   "a": "Bugles",
+   "b": "Bugles/chips Up"
+  },
+  {
+   "a": "Bugles/chips Up",
+   "b": "Chips'up"
+  },
+  {
+   "a": "Campi",
+   "b": "Campi Plus"
+  },
+  {
+   "a": "Candy Papillon",
+   "b": "Papillon"
+  },
+  {
+   "a": "Caramello Papillon",
+   "b": "Papillon"
+  },
+  {
+   "a": "Carthage",
+   "b": "Sanabel Carthage"
+  },
+  {
+   "a": "Cerealis",
+   "b": "Grissini Cerealis"
+  },
+  {
+   "a": "Chahia",
+   "b": "Chahia Tayba"
+  },
+  {
+   "a": "Crispo",
+   "b": "Crispy"
+  },
+  {
+   "a": "Cristal",
+   "b": "Cristaline"
+  },
+  {
+   "a": "Daily",
+   "b": "Daily'n"
+  },
+  {
+   "a": "Darna",
+   "b": "Darta"
+  },
+  {
+   "a": "Délice",
+   "b": "Delice Deli'o"
+  },
+  {
+   "a": "Délice",
+   "b": "Delices de la Mer"
+  },
+  {
+   "a": "Délice",
+   "b": "Délice Végétal"
+  },
+  {
+   "a": "Délice",
+   "b": "Milkana Delice"
+  },
+  {
+   "a": "Délice",
+   "b": "Tarti Frais Delice"
+  },
+  {
+   "a": "Dolce",
+   "b": "Dolce Banana"
+  },
+  {
+   "a": "Dolce",
+   "b": "Dolce Coffee"
+  },
+  {
+   "a": "Dolce",
+   "b": "Dolce Vitalait"
+  },
+  {
+   "a": "Dolce Vitalait",
+   "b": "Vitalait"
+  },
+  {
+   "a": "Dorra",
+   "b": "Durra"
+  },
+  {
+   "a": "Dorra",
+   "b": "El Dorra"
+  },
+  {
+   "a": "El Jawhara",
+   "b": "Jawhara"
+  },
+  {
+   "a": "El Mazraa",
+   "b": "Ovita El Mazraa"
+  },
+  {
+   "a": "El Rayen",
+   "b": "Rayen"
+  },
+  {
+   "a": "Epices et Saveurs",
+   "b": "Saveurs"
+  },
+  {
+   "a": "Fromy",
+   "b": "Fromy Plus"
+  },
+  {
+   "a": "Gazelle",
+   "b": "La Gazelle"
+  },
+  {
+   "a": "Golden",
+   "b": "Golden Chips"
+  },
+  {
+   "a": "Golden",
+   "b": "Golden Coffee"
+  },
+  {
+   "a": "Golden",
+   "b": "Golden River"
+  },
+  {
+   "a": "Golden",
+   "b": "Golden Sweets"
+  },
+  {
+   "a": "Golden",
+   "b": "Golden Twister"
+  },
+  {
+   "a": "Golden",
+   "b": "Max Golden"
+  },
+  {
+   "a": "Golden Twister",
+   "b": "Twist"
+  },
+  {
+   "a": "Goldina",
+   "b": "Goldina Plus"
+  },
+  {
+   "a": "Grano",
+   "b": "Granoro"
+  },
+  {
+   "a": "Happy",
+   "b": "Happy Full"
+  },
+  {
+   "a": "Happy",
+   "b": "Happy's"
+  },
+  {
+   "a": "Jellino",
+   "b": "Jellino Mini Papillon"
+  },
+  {
+   "a": "Jellino",
+   "b": "Jellino Papillon"
+  },
+  {
+   "a": "Jellino Mini Papillon",
+   "b": "Papillon"
+  },
+  {
+   "a": "Jellino Papillon",
+   "b": "Papillon"
+  },
+  {
+   "a": "Lebanese Factory",
+   "b": "The Lebanese Factory"
+  },
+  {
+   "a": "Ledoux",
+   "b": "Leroux"
+  },
+  {
+   "a": "Lingot",
+   "b": "Primo Lingot"
+  },
+  {
+   "a": "Madame Loïk Paysan Breton",
+   "b": "Paysan Breton"
+  },
+  {
+   "a": "Major",
+   "b": "Mayor"
+  },
+  {
+   "a": "Melina",
+   "b": "Melita"
+  },
+  {
+   "a": "Milka",
+   "b": "Milkana"
+  },
+  {
+   "a": "Milka",
+   "b": "Milkana Delice"
+  },
+  {
+   "a": "Milkana",
+   "b": "Milkana Delice"
+  },
+  {
+   "a": "Olina",
+   "b": "Ovolina"
+  },
+  {
+   "a": "Party",
+   "b": "Party Lago"
+  },
+  {
+   "a": "Plaisir",
+   "b": "Plaisir Y'ab"
+  },
+  {
+   "a": "Poker",
+   "b": "Poker Lago"
+  },
+  {
+   "a": "President",
+   "b": "Rondele President"
+  },
+  {
+   "a": "Sadia",
+   "b": "Safia"
+  },
+  {
+   "a": "Safaa",
+   "b": "Safia"
+  },
+  {
+   "a": "Safia",
+   "b": "Safir"
+  },
+  {
+   "a": "Spiga",
+   "b": "Spipa"
+  },
+  {
+   "a": "Vitup",
+   "b": "Vitupti"
+  },
+  {
+   "a": "Weepo",
+   "b": "Weepop's"
+  }
+ ]
+}

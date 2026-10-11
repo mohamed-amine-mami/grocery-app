@@ -3,6 +3,8 @@ import { Test } from '@nestjs/testing';
 import request from 'supertest';
 import { AppModule } from '../src/app.module.js';
 import { setupApp } from '../src/app.setup.js';
+import { ImageStorageService } from '../src/images/image-storage.service.js';
+import { InMemoryImageStorage } from '../src/images/in-memory-image-storage.js';
 import { db } from '../src/prisma/db.js';
 
 /** Shared helpers for the e2e suites. They go through the real HTTP endpoints. */
@@ -20,6 +22,9 @@ export const validStore = {
 };
 
 let app: INestApplication;
+
+/** The storage the running app uses; reset by `startApp`. */
+export let imageStorage: InMemoryImageStorage;
 let accountCounter = 0;
 const createdUserIds: number[] = [];
 
@@ -32,9 +37,14 @@ export async function startApp(): Promise<void> {
   // The e2e suites write real rows — never let them run against the dev database.
   expect(new URL(process.env['DATABASE_URL']!).pathname).toMatch(/_test$/);
 
+  // Image storage is always the in-memory fake: no suite may reach Cloudinary.
+  imageStorage = new InMemoryImageStorage();
   const moduleFixture = await Test.createTestingModule({
     imports: [AppModule],
-  }).compile();
+  })
+    .overrideProvider(ImageStorageService)
+    .useValue(imageStorage)
+    .compile();
   app = moduleFixture.createNestApplication();
   setupApp(app);
   // Listen once, on one port, for the whole suite. Left unbound, supertest

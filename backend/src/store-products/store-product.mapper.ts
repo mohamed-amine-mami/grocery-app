@@ -37,6 +37,8 @@ export interface OfferingWithCatalog {
       name: string;
       archivedAt: string | null;
     } | null;
+    /** Absent when the caller did not load it (the order service does not need it). */
+    brand?: { id: number; slug: string; name: string } | null;
   } | null;
 }
 
@@ -85,6 +87,13 @@ export function toStoreProductEntity(
       name: product.name,
       description: product.description,
       photo: product.photo,
+      brand: product.brand
+        ? {
+            id: product.brand.id,
+            slug: product.brand.slug,
+            name: product.brand.name,
+          }
+        : null,
       defaultSaleUnit: product.defaultSaleUnit,
       allowedSaleUnits: allowedSaleUnits(product.defaultSaleUnit),
       defaultMinQuantity: product.defaultMinQuantity,

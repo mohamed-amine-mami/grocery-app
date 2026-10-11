@@ -22,6 +22,11 @@ function stored(
   offerings: ExistingOffering[] = [],
 ): ExistingCatalog {
   let productId = 100;
+  const brands = catalog.brands.map((brand, index) => ({
+    id: index + 500,
+    slug: brand.slug,
+    name: brand.name,
+  }));
   const categories = catalog.categories.map((category, index) => ({
     id: index + 1,
     slug: category.slug,
@@ -35,6 +40,7 @@ function stored(
       id: (productId += 1),
       slug: product.slug,
       categoryId: index + 1,
+      brandId: brands.find((b) => b.slug === product.brandSlug)?.id ?? null,
       name: product.name,
       description: product.description,
       photo: product.photo,
@@ -45,10 +51,15 @@ function stored(
       archivedAt: product.archived ? EARLIER : null,
     })),
   );
-  return { categories, products, offerings };
+  return { brands, categories, products, offerings };
 }
 
-const empty: ExistingCatalog = { categories: [], products: [], offerings: [] };
+const empty: ExistingCatalog = {
+  brands: [],
+  categories: [],
+  products: [],
+  offerings: [],
+};
 
 describe('planCatalog', () => {
   it('creates everything when the database is empty', () => {
@@ -181,6 +192,7 @@ describe('planCatalog', () => {
         id: 999,
         slug: 'old-banane',
         categoryId: 1,
+        brandId: null,
         name: 'Nouvelle Banane',
         description: null,
         photo: null,
@@ -206,6 +218,7 @@ describe('planCatalog', () => {
         id: 999,
         slug: 'old-banane',
         categoryId: 1,
+        brandId: null,
         name: 'Nouvelle Banane',
         description: null,
         photo: null,
@@ -300,5 +313,199 @@ describe('planCatalog', () => {
       ]);
       expect(plan.products.map((p) => p.slug)).not.toContain('yaourt');
     });
+  });
+});
+
+describe('planCatalog brands', () => {
+  const ketchupCatalog = () => {
+    const input = fixtureCatalog();
+    input.brands = [
+      { slug: 'heinz', name: 'Heinz' },
+      { slug: 'amora', name: 'Amora' },
+    ];
+    input.categories[1]!.products.push(
+      {
+        slug: 'ketchup-heinz',
+        name: 'Ketchup',
+        brandSlug: 'heinz',
+        defaultSaleUnit: 'PIECE',
+      },
+      {
+        slug: 'ketchup-amora',
+        name: 'Ketchup',
+        brandSlug: 'amora',
+        defaultSaleUnit: 'PIECE',
+      },
+      { slug: 'ketchup', name: 'Ketchup', defaultSaleUnit: 'PIECE' },
+    );
+    return input;
+  };
+
+  it('creates the brands and carries each product’s brand', () => {
+    const plan = planCatalog(parse(ketchupCatalog()), empty, NOW);
+
+    expect(plan.errors).toEqual([]);
+    expect(plan.brandCounts).toEqual({
+      created: 2,
+      updated: 0,
+      unchanged: 0,
+      archived: 0,
+    });
+    expect(plan.brands).toEqual([
+      { kind: 'create', slug: 'heinz', create: { name: 'Heinz' } },
+      { kind: 'create', slug: 'amora', create: { name: 'Amora' } },
+    ]);
+    const brandOf = (slug: string) =>
+      plan.products.find((p) => p.slug === slug)!.brandSlug;
+    expect(brandOf('ketchup-heinz')).toBe('heinz');
+    expect(brandOf('ketchup-amora')).toBe('amora');
+    expect(brandOf('ketchup')).toBeNull();
+    expect(brandOf('banane')).toBeNull();
+  });
+
+  it('plans nothing when the database already matches (idempotent)', () => {
+    const catalog = parse(ketchupCatalog());
+    const plan = planCatalog(catalog, stored(catalog), NOW);
+
+    expect(plan.errors).toEqual([]);
+    expect(plan.brandCounts).toEqual({
+      created: 0,
+      updated: 0,
+      unchanged: 2,
+      archived: 0,
+    });
+    expect(plan.productCounts).toMatchObject({ created: 0, updated: 0 });
+    expect(plan.products.every((p) => p.kind === 'unchanged')).toBe(true);
+  });
+
+  it('renames a brand under the same slug', () => {
+    const existing = stored(parse(ketchupCatalog()));
+    const renamed = ketchupCatalog();
+    renamed.brands![0]!.name = 'Heinz France';
+
+    const plan = planCatalog(parse(renamed), existing, NOW);
+
+    expect(plan.brands.find((b) => b.slug === 'heinz')).toMatchObject({
+      kind: 'update',
+      changes: { name: 'Heinz France' },
+    });
+    expect(plan.brandCounts).toMatchObject({ updated: 1, unchanged: 1 });
+    expect(plan.productCounts).toMatchObject({ updated: 0 });
+  });
+
+  it('gives an existing product a brand, takes it away, or changes it', () => {
+    const existing = stored(parse(ketchupCatalog()));
+    const changed = ketchupCatalog();
+    const [heinz, amora, plain] = changed.categories[1]!.products.slice(-3) as [
+      Record<string, unknown>,
+      Record<string, unknown>,
+      Record<string, unknown>,
+    ];
+    delete heinz['brandSlug']; // loses its brand (still unique: names differ below)
+    heinz['name'] = 'Ketchup nature';
+    amora['brandSlug'] = 'heinz'; // another brand
+    plain['brandSlug'] = 'amora'; // gains one
+
+    const plan = planCatalog(parse(changed), existing, NOW);
+    const changes = (slug: string) =>
+      plan.products.find((p) => p.slug === slug)!.changes;
+
+    expect(plan.errors).toEqual([]);
+    expect(changes('ketchup-heinz')).toEqual({
+      name: 'Ketchup nature',
+      brandSlug: null,
+    });
+    expect(changes('ketchup-amora')).toEqual({ brandSlug: 'heinz' });
+    expect(changes('ketchup')).toEqual({ brandSlug: 'amora' });
+  });
+
+  describe('name collisions', () => {
+    it('allows the same name under different brands and brandless', () => {
+      const plan = planCatalog(parse(ketchupCatalog()), empty, NOW);
+      expect(plan.errors).toEqual([]);
+    });
+
+    it('rejects a branded name held by a stored row the file does not list', () => {
+      const existing = stored(parse(fixtureCatalog()));
+      existing.brands.push({ id: 900, slug: 'heinz', name: 'Heinz' });
+      existing.products.push({
+        id: 999,
+        slug: 'old-ketchup',
+        categoryId: 1,
+        brandId: 900,
+        name: 'Ketchup',
+        description: null,
+        photo: null,
+        defaultSaleUnit: SaleUnit.PIECE,
+        defaultMinQuantity: 1,
+        defaultQuantityStep: 1,
+        defaultMaxQuantity: null,
+        archivedAt: null,
+      });
+      const input = fixtureCatalog();
+      input.brands = [{ slug: 'heinz', name: 'Heinz' }];
+      input.categories[0]!.products.push({
+        slug: 'ketchup-heinz',
+        name: 'ketchup',
+        brandSlug: 'heinz',
+        defaultSaleUnit: 'PIECE',
+      });
+
+      const plan = planCatalog(parse(input), existing, NOW);
+
+      expect(plan.errors).toEqual([
+        'Product name "ketchup" (brand "heinz") would be used by both "old-ketchup" and "ketchup-heinz"',
+      ]);
+    });
+
+    it('does not clash a branded stored row with a brandless entry of the same name', () => {
+      const existing = stored(parse(fixtureCatalog()));
+      existing.brands.push({ id: 900, slug: 'heinz', name: 'Heinz' });
+      existing.products.push({
+        id: 999,
+        slug: 'old-ketchup',
+        categoryId: 1,
+        brandId: 900,
+        name: 'Ketchup',
+        description: null,
+        photo: null,
+        defaultSaleUnit: SaleUnit.PIECE,
+        defaultMinQuantity: 1,
+        defaultQuantityStep: 1,
+        defaultMaxQuantity: null,
+        archivedAt: null,
+      });
+      const input = fixtureCatalog();
+      input.categories[0]!.products.push({
+        slug: 'ketchup',
+        name: 'Ketchup',
+        defaultSaleUnit: 'PIECE',
+      });
+
+      expect(planCatalog(parse(input), existing, NOW).errors).toEqual([]);
+    });
+
+    it('rejects a brand name already held by a stored brand the file does not list', () => {
+      const existing = stored(parse(fixtureCatalog()));
+      existing.brands.push({ id: 900, slug: 'old-heinz', name: 'Heinz' });
+      const input = fixtureCatalog();
+      input.brands = [{ slug: 'heinz', name: 'HEINZ' }];
+
+      expect(planCatalog(parse(input), existing, NOW).errors).toEqual([
+        'Brand name "HEINZ" would be used by both "old-heinz" and "heinz"',
+      ]);
+    });
+  });
+
+  it('mentions brands the file leaves out, without touching them', () => {
+    const existing = stored(parse(fixtureCatalog()));
+    existing.brands.push({ id: 900, slug: 'old-heinz', name: 'Old Heinz' });
+
+    const plan = planCatalog(parse(fixtureCatalog()), existing, NOW);
+
+    expect(plan.warnings).toContain(
+      '1 catalog brand(s) are not in the file and were left unchanged: old-heinz',
+    );
+    expect(plan.brands).toEqual([]);
   });
 });

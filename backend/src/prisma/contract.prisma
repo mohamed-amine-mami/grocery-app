@@ -39,9 +39,13 @@ model User {
   phoneNumber    String   @unique
   whatsappNumber String?
   photo          String?
+  /// Cloudinary public id of the managed photo; never exposed by the API.
+  photoPublicId  String?
   role           UserRole @default(CLIENT)
   createdAt      TimestamptzString @default(now())
   updatedAt      temporal.updatedAtString()
+
+  @@check(expression: "\"photoPublicId\" IS NULL OR \"photo\" IS NOT NULL", name: "user_photo_public_id_needs_photo")
 }
 
 model Store {
@@ -49,6 +53,8 @@ model Store {
   name        String
   description String?
   photo       String?
+  /// Cloudinary public id of the managed photo; never exposed by the API.
+  photoPublicId String?
   address     String
   latitude    Float?
   longitude   Float?
@@ -59,6 +65,7 @@ model Store {
   updatedAt   temporal.updatedAtString()
 
   @@check(expression: "(latitude IS NULL) = (longitude IS NULL)", name: "store_coordinates_together")
+  @@check(expression: "\"photoPublicId\" IS NULL OR \"photo\" IS NOT NULL", name: "store_photo_public_id_needs_photo")
 }
 
 /// Global catalog category — curated through the catalog import, never by owners.
@@ -79,6 +86,21 @@ model Category {
   @@check(expression: "\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$'", name: "category_slug_format")
 }
 
+/// Global catalog brand — a small reference entity, curated through the catalog
+/// import, never by owners. Optional on a product; never archived in V1.
+model Brand {
+  id        Int               @id @default(autoincrement())
+  /// Stable technical identifier used by the importer; never reused.
+  slug      String            @unique
+  name      String
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  @@index(expression: "lower(\"name\")", unique: true, name: "brand_name_unique")
+  @@check(expression: "length(btrim(\"name\")) > 0", name: "brand_name_not_blank")
+  @@check(expression: "\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$'", name: "brand_slug_format")
+}
+
 /// Global catalog product: the canonical identity. Carries *defaults* only —
 /// price, availability, stock and the rules a store actually sells with live on
 /// StoreProduct.
@@ -88,6 +110,9 @@ model Product {
   slug                String            @unique
   categoryId          Int
   category            Category          @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  /// Optional: plenty of products have no brand.
+  brandId             Int?
+  brand               Brand?            @relation(fields: [brandId], references: [id], onDelete: Restrict)
   name                String
   description         String?
   photo               String?
@@ -99,8 +124,13 @@ model Product {
   createdAt           TimestamptzString @default(now())
   updatedAt           temporal.updatedAtString()
 
-  @@index(expression: "lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL)", name: "product_active_name_unique")
+  // Active names are unique per brand: the same name under two brands is two products,
+  // and a brandless name is unique among the brandless ones (NULL never compares equal,
+  // so it needs its own index).
+  @@index(expression: "lower(\"name\"), \"brandId\"", unique: true, where: "(\"archivedAt\" IS NULL AND \"brandId\" IS NOT NULL)", name: "product_active_name_brand_unique")
+  @@index(expression: "lower(\"name\")", unique: true, where: "(\"archivedAt\" IS NULL AND \"brandId\" IS NULL)", name: "product_active_name_brandless_unique")
   @@index([categoryId])
+  @@index([brandId])
   @@check(expression: "length(btrim(\"name\")) > 0", name: "product_name_not_blank")
   @@check(expression: "\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$'", name: "product_slug_format")
   @@check(expression: "\"defaultMinQuantity\" > 0", name: "product_default_min_positive")

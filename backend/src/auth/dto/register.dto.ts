@@ -53,11 +53,6 @@ export class RegisterDto {
   })
   whatsappNumber?: string;
 
-  @ApiPropertyOptional({ example: 'https://cdn.example.com/users/1/photo.jpg' })
-  @IsOptional()
-  @IsString()
-  photo?: string;
-
   @ApiProperty({ enum: UserRole, description: 'The role to register as.' })
   @IsEnum(UserRole)
   role!: UserRole;

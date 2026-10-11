@@ -54,6 +54,7 @@ describe('toStoreProductEntity', () => {
     expect(Object.keys(entity.product).sort()).toEqual(
       [
         'allowedSaleUnits',
+        'brand',
         'defaultMaxQuantity',
         'defaultMinQuantity',
         'defaultQuantityStep',
@@ -119,5 +120,31 @@ describe('toStoreProductEntity', () => {
     expect(() => toStoreProductEntity(offering({ product: null }))).toThrow(
       'has no catalog product/category',
     );
+  });
+});
+
+describe('toStoreProductEntity brand', () => {
+  it('is null for a brandless product — also when the caller did not load it', () => {
+    expect(toStoreProductEntity(offering()).product.brand).toBeNull();
+  });
+
+  it('shows only the brand’s id, slug and name', () => {
+    const base = offering();
+    const entity = toStoreProductEntity({
+      ...base,
+      product: {
+        ...base.product!,
+        brand: { id: 4, slug: 'heinz', name: 'Heinz', createdAt: 'x' } as {
+          id: number;
+          slug: string;
+          name: string;
+        },
+      },
+    });
+    expect(entity.product.brand).toEqual({
+      id: 4,
+      slug: 'heinz',
+      name: 'Heinz',
+    });
   });
 });

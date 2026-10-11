@@ -1,0 +1,3153 @@
+{
+ "descriptorMergesApplied": [
+  {
+   "brand": "Délice",
+   "kept": "Boisson au jus poire 20 cl",
+   "mergedAway": "Jus poire 20 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Délice",
+   "kept": "Boisson au jus mangue 20 cl",
+   "mergedAway": "Jus mangue 20 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Viva",
+   "kept": "Boisson gazeuse citron 24 cl",
+   "mergedAway": "Boisson gazeuse canette citron 24 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Viva",
+   "kept": "Boisson gazeuse cidre 24 cl",
+   "mergedAway": "Boisson gazeuse canette cidre 24 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Viva",
+   "kept": "Boisson gazeuse pomme 24 cl",
+   "mergedAway": "Boisson gazeuse canette pomme 24 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Viva",
+   "kept": "Boisson gazeuse pêche 24 cl",
+   "mergedAway": "Boisson gazeuse canette pêche 24 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Raoua",
+   "kept": "Boisson gazeuse chani 24 cl",
+   "mergedAway": "Boisson gazeuse canette chani 24 cl",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Natilait",
+   "kept": "Boisson lactée pêche-Abricot 160 g",
+   "mergedAway": "Boisson lactée au jus de pêche abricot 160 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Le Petit Paris",
+   "kept": "Tomate concassée 400 g",
+   "mergedAway": "Tomates concassées 400 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "El Manar",
+   "kept": "Filets de thon A' l'huile d'olive et au tomates séchées 200 g",
+   "mergedAway": "Filet de thon à l'huile d'olive et à la tomate séchée 200 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Le Patissier",
+   "kept": "Madeleine 200 g",
+   "mergedAway": "Madeleines 200 g",
+   "sources": [
+    "geant",
+    "aziza",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Mahboul",
+   "kept": "Chips barbecue The box 42 g",
+   "mergedAway": "Chips the box barbacue 42 g",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Mahboul",
+   "kept": "Chips hot and spicy The box 42 g",
+   "mergedAway": "Chips the box hot spicy 42 g",
+   "sources": [
+    "geant",
+    "aziza",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Mahboul",
+   "kept": "Chips hot and spicy The box 125 g",
+   "mergedAway": "Chips the box hot et spicy 125 g",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Marwa",
+   "kept": "Eau minérale 0,5 L",
+   "mergedAway": "Eau minérale naturelle 0,5 L",
+   "sources": [
+    "geant",
+    "off"
+   ]
+  },
+  {
+   "brand": "Sabrine",
+   "kept": "Eau minérale 1,5 L",
+   "mergedAway": "Eau minérale naturelle 1,5 L",
+   "sources": [
+    "geant",
+    "off"
+   ]
+  },
+  {
+   "brand": "Eden",
+   "kept": "Vinaigre naturel de cidre 500 ml",
+   "mergedAway": "Vinaigre de cidre 500 ml",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Ritter Sport",
+   "kept": "Chocolat blanc noisette 100 g",
+   "mergedAway": "Chocolat blanc aux noisettes 100 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Calnort",
+   "kept": "Bouillons poulet 8 × 10 g",
+   "mergedAway": "Bouillon de poulet 8 × 10 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Calnort",
+   "kept": "Bouillons bœuf 8 × 10 g",
+   "mergedAway": "Bouillon de bœuf 8 × 10 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Calnort",
+   "kept": "Bouillons poisson 8 × 10 g",
+   "mergedAway": "Bouillon de poisson 8 × 10 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Hahne",
+   "kept": "Flocon d'avoine feuille large 500 g",
+   "mergedAway": "Flocons d'avoine feuilles larges 500 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Hahne",
+   "kept": "Flocon d'avoine petite feuille 500 g",
+   "mergedAway": "Flocons d'avoine petites feuilles 500 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Hazem",
+   "kept": "Loukoum noisette 250 g",
+   "mergedAway": "Loukoum goût noisettes 250 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Lingot",
+   "kept": "Gaufrettes fraise 100 g",
+   "mergedAway": "Gaufrettes fraises 100 g",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Saïda",
+   "kept": "Gaufrettes chocolat noir 100 g",
+   "mergedAway": "Gaufrette au chocolat noir 100 g",
+   "sources": [
+    "geant",
+    "aziza"
+   ]
+  },
+  {
+   "brand": "Délice",
+   "kept": "Eau minérale 1,5 L",
+   "mergedAway": "Eau minérale naturelle 1,5 L",
+   "sources": [
+    "geant",
+    "off"
+   ]
+  },
+  {
+   "brand": "Tarti Fro",
+   "kept": "Préparation alimentaire fondue 24 portions",
+   "mergedAway": "Préparation alimentaire fondu 24 portions",
+   "sources": [
+    "geant",
+    "carrefour"
+   ]
+  },
+  {
+   "brand": "Kif",
+   "kept": "Smile ( biscuit Chocolat ) 190 g",
+   "mergedAway": "Biscuits Smile chocolat 190 g",
+   "sources": [
+    "off",
+    "carrefour"
+   ]
+  }
+ ],
+ "sameBrandSameSizeSimilarWording": [
+  {
+   "brand": "Moulin d'Or",
+   "a": "Pain de mie complet 21 tranches",
+   "aSlug": "pain-de-mie-complet-21-tranches-moulin-d-or",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Pain de mie nature 21 tranches",
+   "bSlug": "pain-de-mie-nature-21-tranches-moulin-d-or",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Mama Mia",
+   "a": "Pain de mie complet 14 tranches",
+   "aSlug": "pain-de-mie-complet-14-tranches-mama-mia",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Pain de mie nature 14 tranches",
+   "bSlug": "pain-de-mie-nature-14-tranches-mama-mia",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Mama Mia",
+   "a": "Pain de mie nature 14 tranches",
+   "aSlug": "pain-de-mie-nature-14-tranches-mama-mia",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Pain de mie naturel 14 tranches",
+   "bSlug": "pain-de-mie-naturel-14-tranches-mama-mia",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Maestro",
+   "a": "Chocolat noir 90 g",
+   "aSlug": "chocolat-noir-90-g-maestro",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Chocolat Noir Extra Fin aux Noisettes 90 g",
+   "bSlug": "chocolat-noir-extra-fin-aux-noisettes-90-g-maestro",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.57,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Maestro",
+   "a": "Chocolat noir extra fin 90 g",
+   "aSlug": "chocolat-noir-extra-fin-90-g-maestro",
+   "aSources": [
+    "geant",
+    "off"
+   ],
+   "b": "Chocolat Noir Extra Fin aux Noisettes 90 g",
+   "bSlug": "chocolat-noir-extra-fin-aux-noisettes-90-g-maestro",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.86,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Xplose",
+   "a": "Barre biscuitée chocolat 3 × 35 g",
+   "aSlug": "barre-biscuitee-chocolat-3-35-g-xplose",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Barre de chocolat caramel et biscuit 3 × 35 g",
+   "bSlug": "barre-de-chocolat-caramel-et-biscuit-3-35-g-xplose",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Sante",
+   "a": "Barre de céréales chocolat banane 40 g",
+   "aSlug": "barre-de-cereales-chocolat-banane-40-g-sante",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Barre de céréales sans sucre crunchy - Banane/Chocolat 40 g",
+   "bSlug": "barre-de-cereales-sans-sucre-crunchy-banane-chocolat-40-g-sante",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.75,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Sante",
+   "a": "Biscuits au riz et au sel de l'Himalaya 110 g",
+   "aSlug": "biscuits-au-riz-et-au-sel-de-l-himalaya-110-g-sante",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Galettes de riz sans gluten au sel himalaya 110 g",
+   "bSlug": "galettes-de-riz-sans-gluten-au-sel-himalaya-110-g-sante",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Saïda",
+   "a": "Gaufrette chocolat 100 g",
+   "aSlug": "gaufrette-chocolat-100-g-saida",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Gaufrette croustina chocolat 100 g",
+   "bSlug": "gaufrette-croustina-chocolat-100-g-saida",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Daily'n",
+   "a": "Cake Grand Mère marbré 700 g",
+   "aSlug": "cake-grand-mere-marbre-700-g-daily-n",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Cake marbré 700 g",
+   "bSlug": "cake-marbre-700-g-daily-n",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Daily'n",
+   "a": "Cake marbré slice DAYLIN 40 g",
+   "aSlug": "cake-marbre-slice-daylin-40-g-daily-n",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Slice Marbré 40 g",
+   "bSlug": "slice-marbre-40-g-daily-n",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Daily'n",
+   "a": "Muffin au chocolat 60 g",
+   "aSlug": "muffin-au-chocolat-60-g-daily-n",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Croissant chocolat 60 g",
+   "bSlug": "croissant-chocolat-60-g-daily-n",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes caramel 100 g",
+   "aSlug": "gaufrettes-caramel-100-g-lingot",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Gaufrettes chocolat 100 g",
+   "bSlug": "gaufrettes-chocolat-100-g-lingot",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes caramel 100 g",
+   "aSlug": "gaufrettes-caramel-100-g-lingot",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Gaufrettes noisettes 100 g",
+   "bSlug": "gaufrettes-noisettes-100-g-lingot",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes chocolat 100 g",
+   "aSlug": "gaufrettes-chocolat-100-g-lingot",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Gaufrettes chocolat lait 100 g",
+   "bSlug": "gaufrettes-chocolat-lait-100-g-lingot",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes chocolat 100 g",
+   "aSlug": "gaufrettes-chocolat-100-g-lingot",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Gaufrettes fraise 100 g",
+   "bSlug": "gaufrettes-fraise-100-g-lingot",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes chocolat 100 g",
+   "aSlug": "gaufrettes-chocolat-100-g-lingot",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Gaufrettes lait 100 g",
+   "bSlug": "gaufrettes-lait-100-g-lingot",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes chocolat lait 100 g",
+   "aSlug": "gaufrettes-chocolat-lait-100-g-lingot",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Gaufrettes crème au lait 100 g",
+   "bSlug": "gaufrettes-creme-au-lait-100-g-lingot",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes crème au lait 100 g",
+   "aSlug": "gaufrettes-creme-au-lait-100-g-lingot",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Gaufrettes lait 100 g",
+   "bSlug": "gaufrettes-lait-100-g-lingot",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes fraise 100 g",
+   "aSlug": "gaufrettes-fraise-100-g-lingot",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Gaufrettes noisettes 100 g",
+   "bSlug": "gaufrettes-noisettes-100-g-lingot",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lingot",
+   "a": "Gaufrettes lait 100 g",
+   "aSlug": "gaufrettes-lait-100-g-lingot",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Gaufrettes noisettes 100 g",
+   "bSlug": "gaufrettes-noisettes-100-g-lingot",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Diva",
+   "a": "Boisson au jus ananas 1 L",
+   "aSlug": "boisson-au-jus-ananas-1-l-diva",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Boisson au jus orange 1 L",
+   "bSlug": "boisson-au-jus-orange-1-l-diva",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Diva",
+   "a": "Boisson au jus ananas 1 L",
+   "aSlug": "boisson-au-jus-ananas-1-l-diva",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Boisson au jus pomme 1 L",
+   "bSlug": "boisson-au-jus-pomme-1-l-diva",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Diva",
+   "a": "Boisson au jus multifruits 1 L",
+   "aSlug": "boisson-au-jus-multifruits-1-l-diva",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Boisson au jus orange 1 L",
+   "bSlug": "boisson-au-jus-orange-1-l-diva",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Diva",
+   "a": "Boisson au jus multifruits 1 L",
+   "aSlug": "boisson-au-jus-multifruits-1-l-diva",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Boisson au jus pomme 1 L",
+   "bSlug": "boisson-au-jus-pomme-1-l-diva",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Wake Up 420 g",
+   "aSlug": "wake-up-420-g-delice",
+   "aSources": [
+    "off"
+   ],
+   "b": "Boisson lactée vanille Wake up 420 g",
+   "bSlug": "boisson-lactee-vanille-wake-up-420-g-delice",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.57,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Lait demi-écrémé UHT 1 L",
+   "aSlug": "lait-demi-ecreme-uht-1-l-delice",
+   "aSources": [
+    "off"
+   ],
+   "b": "Lait UHT 1/2 écrémé 1 L",
+   "bSlug": "lait-uht-1-2-ecreme-1-l-delice",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Lait demi-écrémé UHT 1 L",
+   "aSlug": "lait-demi-ecreme-uht-1-l-delice",
+   "aSources": [
+    "off"
+   ],
+   "b": "Lait UHT demi écrémé sans lactose 1 L",
+   "bSlug": "lait-uht-demi-ecreme-sans-lactose-1-l-delice",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.83,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Lait sans lactose 1 L",
+   "aSlug": "lait-sans-lactose-1-l-delice",
+   "aSources": [
+    "off"
+   ],
+   "b": "Lait UHT demi écrémé sans lactose 1 L",
+   "bSlug": "lait-uht-demi-ecreme-sans-lactose-1-l-delice",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé à l’abricot 100 g",
+   "bSlug": "yaourt-aromatise-a-l-abricot-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé à la fraise 100 g",
+   "bSlug": "yaourt-aromatise-a-la-fraise-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé à la noix de coco 100 g",
+   "bSlug": "yaourt-aromatise-a-la-noix-de-coco-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé à la pomme et à la vanille 100 g",
+   "bSlug": "yaourt-aromatise-a-la-pomme-et-a-la-vanille-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé à la vanille 100 g",
+   "bSlug": "yaourt-aromatise-a-la-vanille-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé aux fruits des bois 100 g",
+   "bSlug": "yaourt-aromatise-aux-fruits-des-bois-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-delice",
+   "aSources": [
+    "carrefour",
+    "aziza"
+   ],
+   "b": "Yaourt aromatisé aux fruits exotiques 100 g",
+   "bSlug": "yaourt-aromatise-aux-fruits-exotiques-100-g-delice",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Délice",
+   "a": "Yaourt brassé banane 100 g",
+   "aSlug": "yaourt-brasse-banane-100-g-delice",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Yaourt brassé Mamzouj 100 g",
+   "bSlug": "yaourt-brasse-mamzouj-100-g-delice",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Aris",
+   "a": "Boisson au jus ananas 250 ml",
+   "aSlug": "boisson-au-jus-ananas-250-ml-aris",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Boisson au jus mangue 250 ml",
+   "bSlug": "boisson-au-jus-mangue-250-ml-aris",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Aris",
+   "a": "Boisson au jus mangue 250 ml",
+   "aSlug": "boisson-au-jus-mangue-250-ml-aris",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Boisson au jus orange 250 ml",
+   "bSlug": "boisson-au-jus-orange-250-ml-aris",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "OH",
+   "a": "Boisson au jus berries 25 cl",
+   "aSlug": "boisson-au-jus-berries-25-cl-oh",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Boisson au jus de poire 25 cl",
+   "bSlug": "boisson-au-jus-de-poire-25-cl-oh",
+   "bSources": [
+    "aziza",
+    "off"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "OH",
+   "a": "Boisson au jus de poire 25 cl",
+   "aSlug": "boisson-au-jus-de-poire-25-cl-oh",
+   "aSources": [
+    "aziza",
+    "off"
+   ],
+   "b": "Boisson au jus mangue 25 cl",
+   "bSlug": "boisson-au-jus-mangue-25-cl-oh",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Tropico",
+   "a": "Boisson au jus cocktail de fruits 1 L",
+   "aSlug": "boisson-au-jus-cocktail-de-fruits-1-l-tropico",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Boisson cocktail 1 L",
+   "bSlug": "boisson-cocktail-1-l-tropico",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "TEJ",
+   "a": "Boisson concentré 1 L",
+   "aSlug": "boisson-concentre-1-l-tej",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Boisson concentré citron Amande 1 L",
+   "bSlug": "boisson-concentre-citron-amande-1-l-tej",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Hazem",
+   "a": "Boisson concentrée au goût de citron amande 1 L",
+   "aSlug": "boisson-concentree-au-gout-de-citron-amande-1-l-hazem",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Boisson concentrée citron 1 L",
+   "bSlug": "boisson-concentree-citron-1-l-hazem",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Redbull",
+   "a": "Boisson énergétique 25 cl",
+   "aSlug": "boisson-energetique-25-cl-redbull",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Boisson énergétique Red Bull 25 cl",
+   "bSlug": "boisson-energetique-red-bull-25-cl-redbull",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Power Horse",
+   "a": "Boisson énergétique 25 cl",
+   "aSlug": "boisson-energetique-25-cl-power-horse",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Boisson énergétique Power Horse 25 cl",
+   "bSlug": "boisson-energetique-power-horse-25-cl",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Coca-Cola",
+   "a": "Coca cola 1,5 L",
+   "aSlug": "coca-cola-1-5-l",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Coca Cola Original taste 1,5 L",
+   "bSlug": "coca-cola-original-taste-1-5-l",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Brava",
+   "a": "Café soluble chicorée 200 g",
+   "aSlug": "cafe-soluble-chicoree-200-g-brava",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Café soluble classic 200 g",
+   "bSlug": "cafe-soluble-classic-200-g-brava",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Brava",
+   "a": "Café soluble chicorée 200 g",
+   "aSlug": "cafe-soluble-chicoree-200-g-brava",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Chicorée café 200 g",
+   "bSlug": "chicoree-cafe-200-g-brava",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Brava",
+   "a": "Chicorée café 100 g",
+   "aSlug": "chicoree-cafe-100-g-brava",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Chicorée Cafe Brava 100 g",
+   "bSlug": "chicoree-cafe-brava-100-g",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Garci",
+   "a": "Eau minérale 1 L",
+   "aSlug": "eau-minerale-1-l-garci",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle Gazeifiée 1 L",
+   "bSlug": "eau-minerale-naturelle-gazeifiee-1-l-garci",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Le Boulanger",
+   "a": "Pain de mie brioché 400 g",
+   "aSlug": "pain-de-mie-brioche-400-g-le-boulanger",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Pain de mie Multicéréales 400 g",
+   "bSlug": "pain-de-mie-multicereales-400-g-le-boulanger",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Fornetto",
+   "a": "Pâte brisée étalée 250 g",
+   "aSlug": "pate-brisee-etalee-250-g-fornetto",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Pâte feuilletée étalée 250 g",
+   "bSlug": "pate-feuilletee-etalee-250-g-fornetto",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Le Petit Paris",
+   "a": "Concentré de tomate 400 g",
+   "aSlug": "concentre-de-tomate-400-g-le-petit-paris",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Tomate pelées 400 g",
+   "bSlug": "tomate-pelees-400-g-le-petit-paris",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Le Petit Paris",
+   "a": "Tomate concassée 400 g",
+   "aSlug": "tomate-concassee-400-g-le-petit-paris",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Tomate pelées 400 g",
+   "bSlug": "tomate-pelees-400-g-le-petit-paris",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Le Petit Paris",
+   "a": "Confiture de fraise 270 g",
+   "aSlug": "confiture-de-fraise-270-g-le-petit-paris",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Confiture figue 270 g",
+   "bSlug": "confiture-figue-270-g-le-petit-paris",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ritter Sport",
+   "a": "Chocolat au lait 100 g",
+   "aSlug": "chocolat-au-lait-100-g-ritter-sport",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Chocolat aux amandes 100 g",
+   "bSlug": "chocolat-aux-amandes-100-g-ritter-sport",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ritter Sport",
+   "a": "Chocolat aux amandes 100 g",
+   "aSlug": "chocolat-aux-amandes-100-g-ritter-sport",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Chocolat marzipan 100 g",
+   "bSlug": "chocolat-marzipan-100-g-ritter-sport",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ritter Sport",
+   "a": "Chocolat aux amandes 100 g",
+   "aSlug": "chocolat-aux-amandes-100-g-ritter-sport",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Chocolat menthe 100 g",
+   "bSlug": "chocolat-menthe-100-g-ritter-sport",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ritter Sport",
+   "a": "Chocolat aux amandes 100 g",
+   "aSlug": "chocolat-aux-amandes-100-g-ritter-sport",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Chocolat praliné 100 g",
+   "bSlug": "chocolat-praline-100-g-ritter-sport",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Mon dessert chocolat 100 g",
+   "aSlug": "mon-dessert-chocolat-100-g-natilait",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert chocolat 100 g",
+   "bSlug": "creme-dessert-chocolat-100-g-natilait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Mon dessert dessert noisette 100 g",
+   "aSlug": "mon-dessert-dessert-noisette-100-g-natilait",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert noisette 100 g",
+   "bSlug": "creme-dessert-noisette-100-g-natilait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Mon dessert vanille 100 g",
+   "aSlug": "mon-dessert-vanille-100-g-natilait",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert vanille 100 g",
+   "bSlug": "creme-dessert-vanille-100-g-natilait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Yaourt à boire fraise 160 g",
+   "aSlug": "yaourt-a-boire-fraise-160-g-natilait",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Yaourt à boire Natiyo 160 g",
+   "bSlug": "yaourt-a-boire-natiyo-160-g-natilait",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-natilait",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Yaourt aromatisé fruits des bois 100 g",
+   "bSlug": "yaourt-aromatise-fruits-des-bois-100-g-natilait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-natilait",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Yaourt aromatisé fruits exotiques 100 g",
+   "bSlug": "yaourt-aromatise-fruits-exotiques-100-g-natilait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-natilait",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Yaourt Nature 100 g",
+   "bSlug": "yaourt-nature-100-g-natilait",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "L'Epi d'Or",
+   "a": "Couscous moyen 1 kg",
+   "aSlug": "couscous-moyen-1-kg-l-epi-d-or",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Couscous moyen prêt en 2 minutes 1 kg",
+   "bSlug": "couscous-moyen-pret-en-2-minutes-1-kg-l-epi-d-or",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.57,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "L'Epi d'Or",
+   "a": "Farine pâtissière 1 kg",
+   "aSlug": "farine-patissiere-1-kg-l-epi-d-or",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Farine Pâtissière L'épi d'or 1 kg",
+   "bSlug": "farine-patissiere-l-epi-d-or-1-kg",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jouda",
+   "a": "Concentré de tomates 4 × 400 g",
+   "aSlug": "concentre-de-tomates-4-400-g-jouda",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Lot de 4 boites de double concentré de tomates 4 × 400 g",
+   "bSlug": "lot-de-4-boites-de-double-concentre-de-tomates-4-400-g-jouda",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Sicam",
+   "a": "Harissa 135 g",
+   "aSlug": "harissa-135-g-sicam",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Harissa du Cap Bon 135 g",
+   "bSlug": "harissa-du-cap-bon-135-g-sicam",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Filet de thon à l'huile d'olive et au thym 200 g",
+   "aSlug": "filet-de-thon-a-l-huile-d-olive-et-au-thym-200-g-el-manar",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Filet de thon à l'huile d'olive et citron 200 g",
+   "bSlug": "filet-de-thon-a-l-huile-d-olive-et-citron-200-g-el-manar",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.75,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Filet de thon à l'huile d'olive et au thym 200 g",
+   "aSlug": "filet-de-thon-a-l-huile-d-olive-et-au-thym-200-g-el-manar",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Filet de thon huile d'olive Premium-Extra vierge 200 g",
+   "bSlug": "filet-de-thon-huile-d-olive-premium-extra-vierge-200-g-el-manar",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Filet de thon à l'huile d'olive et au thym 200 g",
+   "aSlug": "filet-de-thon-a-l-huile-d-olive-et-au-thym-200-g-el-manar",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Filets de thon huile d'olive 200 g",
+   "bSlug": "filets-de-thon-huile-d-olive-200-g-el-manar",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Lot de 3 boites de thon entier à l'huile de tournesol 3 × 160 g",
+   "aSlug": "lot-de-3-boites-de-thon-entier-a-l-huile-de-tournesol-3-160-g-el-manar",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Thon entier huile d'olive 3 × 160 g",
+   "bSlug": "thon-entier-huile-d-olive-3-160-g-el-manar",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Thon entier frais huile d'olive 160 g",
+   "aSlug": "thon-entier-frais-huile-d-olive-160-g-el-manar",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Thon Entier à l'huile végétale 160 g",
+   "bSlug": "thon-entier-a-l-huile-vegetale-160-g-el-manar",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Thon entier huile d'olive 160 g",
+   "aSlug": "thon-entier-huile-d-olive-160-g-el-manar",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Thon Entier à l'huile végétale 160 g",
+   "bSlug": "thon-entier-a-l-huile-vegetale-160-g-el-manar",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.71,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "El Manar",
+   "a": "Thon entier huile de tournesol 160 g",
+   "aSlug": "thon-entier-huile-de-tournesol-160-g-el-manar",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Thon Entier à l'huile végétale 160 g",
+   "bSlug": "thon-entier-a-l-huile-vegetale-160-g-el-manar",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.71,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jadida",
+   "a": "Sauce algérienne 270 ml",
+   "aSlug": "sauce-algerienne-270-ml-jadida",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Sauce aux poivres 270 ml",
+   "bSlug": "sauce-aux-poivres-270-ml-jadida",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jadida",
+   "a": "Sauce algérienne 270 ml",
+   "aSlug": "sauce-algerienne-270-ml-jadida",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Sauce tartare 270 ml",
+   "bSlug": "sauce-tartare-270-ml-jadida",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jadida",
+   "a": "Sauce algérienne 270 ml",
+   "aSlug": "sauce-algerienne-270-ml-jadida",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Sauce tunisienne 270 ml",
+   "bSlug": "sauce-tunisienne-270-ml-jadida",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jadida",
+   "a": "Margarine 400 g",
+   "aSlug": "margarine-400-g-jadida",
+   "aSources": [
+    "off"
+   ],
+   "b": "Margarine omega 3 400 g",
+   "bSlug": "margarine-omega-3-400-g-jadida",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Jadida",
+   "a": "Margarine pasteurisée 200 g",
+   "aSlug": "margarine-pasteurisee-200-g-jadida",
+   "aSources": [
+    "off",
+    "geant"
+   ],
+   "b": "Margarine allégée 200 g",
+   "bSlug": "margarine-allegee-200-g-jadida",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Bonna",
+   "a": "Moutarde 260 ml",
+   "aSlug": "moutarde-260-ml-bonna",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Moutarde à l'ancienne 260 ml",
+   "bSlug": "moutarde-a-l-ancienne-260-ml-bonna",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.75,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "La Goulette",
+   "a": "Lot de 3 boites de thon entier à l'huile d'olive 3 × 160 g",
+   "aSlug": "lot-de-3-boites-de-thon-entier-a-l-huile-d-olive-3-160-g-la-goulette",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Thon entier huile végétale 3 × 160 g",
+   "bSlug": "thon-entier-huile-vegetale-3-160-g-la-goulette",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Rozy",
+   "a": "Riz basmati 1 kg",
+   "aSlug": "riz-basmati-1-kg-rozy",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Riz étuvé 1 kg",
+   "bSlug": "riz-etuve-1-kg-rozy",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Rozy",
+   "a": "Riz étuvé 1 kg",
+   "aSlug": "riz-etuve-1-kg-rozy",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Riz golden 1 kg",
+   "bSlug": "riz-golden-1-kg-rozy",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Rozy",
+   "a": "Riz étuvé 1 kg",
+   "aSlug": "riz-etuve-1-kg-rozy",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Riz jasmin 1 kg",
+   "bSlug": "riz-jasmin-1-kg-rozy",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Rozy",
+   "a": "Riz étuvé 1 kg",
+   "aSlug": "riz-etuve-1-kg-rozy",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Riz rond 1 kg",
+   "bSlug": "riz-rond-1-kg-rozy",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Souani",
+   "a": "Fromage camembert Tomme de Tebourba 280 g",
+   "aSlug": "fromage-camembert-tomme-de-tebourba-280-g-souani",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Tomme de TEBOURBA 280 g",
+   "bSlug": "tomme-de-tebourba-280-g-souani",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "President",
+   "a": "Fromage blanc fondu 8 portions",
+   "aSlug": "fromage-blanc-fondu-8-portions-president",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage fondu 8 portions",
+   "bSlug": "fromage-fondu-8-portions-president",
+   "bSources": [
+    "geant",
+    "carrefour"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage 100% mozzarella 250 g",
+   "aSlug": "fromage-100-mozzarella-250-g-majeste",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Mozzarella 250 g",
+   "bSlug": "mozzarella-250-g-majeste",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage à la mozzarella rapé 100 g",
+   "aSlug": "fromage-a-la-mozzarella-rape-100-g-majeste",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Fromage râpé chees 100 g",
+   "bSlug": "fromage-rape-chees-100-g-majeste",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage gruyère rapé 100 g",
+   "aSlug": "fromage-gruyere-rape-100-g-majeste",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Fromage râpé chees 100 g",
+   "bSlug": "fromage-rape-chees-100-g-majeste",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage rapé 4 Fromages Rap'cheez 500 g",
+   "aSlug": "fromage-rape-4-fromages-rap-cheez-500-g-majeste",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Râpé 4 fromages 500 g",
+   "bSlug": "rape-4-fromages-500-g-majeste",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.62,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Beurre 200 g",
+   "aSlug": "beurre-200-g-vitalait",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Beurre extra fin 200 g",
+   "bSlug": "beurre-extra-fin-200-g-vitalait",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Lait demi- écrémé UHT 1 L",
+   "aSlug": "lait-demi-ecreme-uht-1-l-vitalait",
+   "aSources": [
+    "off"
+   ],
+   "b": "Lait UHT écrémé 1 L",
+   "bSlug": "lait-uht-ecreme-1-l-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Le yaourt aromatisé vanille 100 g",
+   "aSlug": "le-yaourt-aromatise-vanille-100-g-vitalait",
+   "aSources": [
+    "off"
+   ],
+   "b": "Yaourt aromatisé 100 g",
+   "bSlug": "yaourt-aromatise-100-g-vitalait",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Le yaourt aromatisé vanille 100 g",
+   "aSlug": "le-yaourt-aromatise-vanille-100-g-vitalait",
+   "aSources": [
+    "off"
+   ],
+   "b": "Yaourt brassé vanille 100 g",
+   "bSlug": "yaourt-brasse-vanille-100-g-vitalait",
+   "bSources": [
+    "geant",
+    "aziza",
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Vitalait Yaourt Nature 100 g",
+   "aSlug": "vitalait-yaourt-nature-100-g",
+   "aSources": [
+    "off"
+   ],
+   "b": "Yaourt nature light 100 g",
+   "bSlug": "yaourt-nature-light-100-g-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-vitalait",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Yaourt aromatisé fraise 100 g",
+   "bSlug": "yaourt-aromatise-fraise-100-g-vitalait",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt aromatisé 100 g",
+   "aSlug": "yaourt-aromatise-100-g-vitalait",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Yaourt aromatisé fruits exotiques 100 g",
+   "bSlug": "yaourt-aromatise-fruits-exotiques-100-g-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt aromatisé fraise 100 g",
+   "aSlug": "yaourt-aromatise-fraise-100-g-vitalait",
+   "aSources": [
+    "off"
+   ],
+   "b": "Yaourt brassé fraise 100 g",
+   "bSlug": "yaourt-brasse-fraise-100-g-vitalait",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt brassé 70 g",
+   "aSlug": "yaourt-brasse-70-g-vitalait",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Yaourt brassé biscuit/vanille 70 g",
+   "bSlug": "yaourt-brasse-biscuit-vanille-70-g-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt brassé 70 g",
+   "aSlug": "yaourt-brasse-70-g-vitalait",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Yaourt brassé pistache 70 g",
+   "bSlug": "yaourt-brasse-pistache-70-g-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Vitalait",
+   "a": "Yaourt brassé 70 g",
+   "aSlug": "yaourt-brasse-70-g-vitalait",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Yaourt brassé vanille 70 g",
+   "bSlug": "yaourt-brasse-vanille-70-g-vitalait",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.8,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales au cacao 300 g",
+   "aSlug": "cereales-au-cacao-300-g-grain-d-or",
+   "aSources": [
+    "aziza",
+    "geant"
+   ],
+   "b": "Céréales biscuit 300 g",
+   "bSlug": "cereales-biscuit-300-g-grain-d-or",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales au cacao 300 g",
+   "aSlug": "cereales-au-cacao-300-g-grain-d-or",
+   "aSources": [
+    "aziza",
+    "geant"
+   ],
+   "b": "Céréales blé 300 g",
+   "bSlug": "cereales-ble-300-g-grain-d-or",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales au miel 300 g",
+   "aSlug": "cereales-au-miel-300-g-grain-d-or",
+   "aSources": [
+    "aziza",
+    "geant"
+   ],
+   "b": "Céréales biscuit 300 g",
+   "bSlug": "cereales-biscuit-300-g-grain-d-or",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales au miel 300 g",
+   "aSlug": "cereales-au-miel-300-g-grain-d-or",
+   "aSources": [
+    "aziza",
+    "geant"
+   ],
+   "b": "Céréales blé 300 g",
+   "bSlug": "cereales-ble-300-g-grain-d-or",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales biscuit 300 g",
+   "aSlug": "cereales-biscuit-300-g-grain-d-or",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Céréales nature 300 g",
+   "bSlug": "cereales-nature-300-g-grain-d-or",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Grain d'or",
+   "a": "Céréales blé 300 g",
+   "aSlug": "cereales-ble-300-g-grain-d-or",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Céréales nature 300 g",
+   "bSlug": "cereales-nature-300-g-grain-d-or",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Lune de Miel",
+   "a": "Miel 340 g",
+   "aSlug": "miel-340-g-lune-de-miel",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Miel doux 340 g",
+   "bSlug": "miel-doux-340-g-lune-de-miel",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.75,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "YAB",
+   "a": "Crème dessert chocolat liégeois 12 cl",
+   "aSlug": "creme-dessert-chocolat-liegeois-12-cl-yab",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Liégeois chocolat 12 cl",
+   "bSlug": "liegeois-chocolat-12-cl-yab",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "YAB",
+   "a": "Yaourt brassé aux fruits jaunes et aux céréales 100 g",
+   "aSlug": "yaourt-brasse-aux-fruits-jaunes-et-aux-cereales-100-g-yab",
+   "aSources": [
+    "carrefour",
+    "geant"
+   ],
+   "b": "Yaourt brassé mix fruits rouge et céréales 100 g",
+   "bSlug": "yaourt-brasse-mix-fruits-rouge-et-cereales-100-g-yab",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert au zgougou 95 g",
+   "aSlug": "creme-dessert-au-zgougou-95-g-danette",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert chocolat 95 g",
+   "bSlug": "creme-dessert-chocolat-95-g-danette",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert au zgougou 95 g",
+   "aSlug": "creme-dessert-au-zgougou-95-g-danette",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert praliné 95 g",
+   "bSlug": "creme-dessert-praline-95-g-danette",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert au zgougou 95 g",
+   "aSlug": "creme-dessert-au-zgougou-95-g-danette",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert vanille 95 g",
+   "bSlug": "creme-dessert-vanille-95-g-danette",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert chocolat 95 g",
+   "aSlug": "creme-dessert-chocolat-95-g-danette",
+   "aSources": [
+    "geant",
+    "aziza"
+   ],
+   "b": "Crème dessert flan 95 g",
+   "bSlug": "creme-dessert-flan-95-g-danette",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert flan 95 g",
+   "aSlug": "creme-dessert-flan-95-g-danette",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert praliné 95 g",
+   "bSlug": "creme-dessert-praline-95-g-danette",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Danette",
+   "a": "Crème dessert flan 95 g",
+   "aSlug": "creme-dessert-flan-95-g-danette",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Crème dessert vanille 95 g",
+   "bSlug": "creme-dessert-vanille-95-g-danette",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Goldina",
+   "a": "Margarine 100 g",
+   "aSlug": "margarine-100-g-goldina",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Margarine tartine et cuisson 100 g",
+   "bSlug": "margarine-tartine-et-cuisson-100-g-goldina",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Goldina",
+   "a": "Margarine 400 g",
+   "aSlug": "margarine-400-g-goldina",
+   "aSources": [
+    "geant",
+    "aziza"
+   ],
+   "b": "Margarine riche en Oméga 3 400 g",
+   "bSlug": "margarine-riche-en-omega-3-400-g-goldina",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Delisso",
+   "a": "Lait aromatisé banane 20 cl",
+   "aSlug": "lait-aromatise-banane-20-cl-delisso",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Lait aromatisé chocolat 20 cl",
+   "bSlug": "lait-aromatise-chocolat-20-cl-delisso",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Delisso",
+   "a": "Lait aromatisé banane 20 cl",
+   "aSlug": "lait-aromatise-banane-20-cl-delisso",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Lait aromatisé fraise 20 cl",
+   "bSlug": "lait-aromatise-fraise-20-cl-delisso",
+   "bSources": [
+    "geant",
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Delisso",
+   "a": "Lait aromatisé chocolat 20 cl",
+   "aSlug": "lait-aromatise-chocolat-20-cl-delisso",
+   "aSources": [
+    "geant",
+    "aziza"
+   ],
+   "b": "Lait aromatisé vanille 20 cl",
+   "bSlug": "lait-aromatise-vanille-20-cl-delisso",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Delisso",
+   "a": "Lait aromatisé fraise 20 cl",
+   "aSlug": "lait-aromatise-fraise-20-cl-delisso",
+   "aSources": [
+    "geant",
+    "aziza"
+   ],
+   "b": "Lait aromatisé vanille 20 cl",
+   "bSlug": "lait-aromatise-vanille-20-cl-delisso",
+   "bSources": [
+    "aziza"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ovolina",
+   "a": "Œufs frais jaune 30 pièces",
+   "aSlug": "oeufs-frais-jaune-30-pieces-ovolina",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Œufs frais jaune-Junior 30 pièces",
+   "bSlug": "oeufs-frais-jaune-junior-30-pieces-ovolina",
+   "bSources": [
+    "carrefour",
+    "geant"
+   ],
+   "similarity": 0.83,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Ovolina",
+   "a": "Œufs frais jaune orange 30 pièces",
+   "aSlug": "oeufs-frais-jaune-orange-30-pieces-ovolina",
+   "aSources": [
+    "geant",
+    "carrefour"
+   ],
+   "b": "Œufs frais jaune-Junior 30 pièces",
+   "bSlug": "oeufs-frais-jaune-junior-30-pieces-ovolina",
+   "bSources": [
+    "carrefour",
+    "geant"
+   ],
+   "similarity": 0.71,
+   "reason": "same brand; same size, similar wording"
+  },
+  {
+   "brand": "Cerealis",
+   "a": "Pop corn sucré 75 g",
+   "aSlug": "pop-corn-sucre-75-g-cerealis",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Pop-corn Sweet 75 g",
+   "bSlug": "pop-corn-sweet-75-g-cerealis",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; same size, similar wording"
+  }
+ ],
+ "sameWordingSizeUnknown": [
+  {
+   "brand": "Bondin",
+   "a": "Capsules de café pur décaféiné",
+   "aSlug": "capsules-de-cafe-pur-decafeine-bondin",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Capsules de café pur raffiné",
+   "bSlug": "capsules-de-cafe-pur-raffine-bondin",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Mira",
+   "a": "Eau de source",
+   "aSlug": "eau-de-source-mira",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau de source naturelle 2 L",
+   "bSlug": "eau-de-source-naturelle-2-l-mira",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Mira",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-mira",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 0,4 L",
+   "bSlug": "eau-minerale-naturelle-0-4-l-mira",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Tijen",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-tijen",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 1 L",
+   "bSlug": "eau-minerale-naturelle-1-l-tijen",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Safia",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-safia",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 0,5 L",
+   "bSlug": "eau-minerale-naturelle-0-5-l-safia",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Safia",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-safia",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 1,5 L",
+   "bSlug": "eau-minerale-naturelle-1-5-l-safia",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Safia",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-safia",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 90 cl",
+   "bSlug": "eau-minerale-naturelle-90-cl-safia",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Marwa",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-marwa",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 1,5 L",
+   "bSlug": "eau-minerale-naturelle-1-5-l-marwa",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Fourat",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-fourat",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 2 L",
+   "bSlug": "eau-minerale-naturelle-2-l-fourat",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Melliti",
+   "a": "Eau minérale",
+   "aSlug": "eau-minerale-melliti",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Eau minérale naturelle 1,5 L",
+   "bSlug": "eau-minerale-naturelle-1-5-l-melliti",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "El Mazraa",
+   "a": "Escalope de dinde pané 700 g",
+   "aSlug": "escalope-de-dinde-pane-700-g-el-mazraa",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Escalope de dinde",
+   "bSlug": "escalope-de-dinde-el-mazraa",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Chahia",
+   "a": "Jambon de poulet",
+   "aSlug": "jambon-de-poulet-chahia",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Jambon de poulet fumé",
+   "bSlug": "jambon-de-poulet-fume-chahia",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Chahia",
+   "a": "Jambon de poulet",
+   "aSlug": "jambon-de-poulet-chahia",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Jambon de poulet fumé 100 g",
+   "bSlug": "jambon-de-poulet-fume-100-g-chahia",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.4,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Natilait",
+   "a": "Lait 1/2 écrémé",
+   "aSlug": "lait-1-2-ecreme-natilait",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Lait demi écrémé 1 L",
+   "bSlug": "lait-demi-ecreme-1-l-natilait",
+   "bSources": [
+    "off"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Sanabel Carthage",
+   "a": "Fell n°2",
+   "aSlug": "fell-n-2-sanabel-carthage",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fell n°2.5 500 g",
+   "bSlug": "fell-n-2-5-500-g-sanabel-carthage",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Sanabel Carthage",
+   "a": "Fell n°2",
+   "aSlug": "fell-n-2-sanabel-carthage",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fell n°2.5 Rigate",
+   "bSlug": "fell-n-2-5-rigate-sanabel-carthage",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Kartago",
+   "a": "Choco pops dattes-Cacao-Noix de coco Energy snacks 250 g",
+   "aSlug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-250-g-kartago",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Dattes aux noix de coco et cacao Pops",
+   "bSlug": "dattes-aux-noix-de-coco-et-cacao-pops-kartago",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Kartago",
+   "a": "Choco pops dattes-Cacao-Noix de coco Energy snacks 50 g",
+   "aSlug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-50-g-kartago",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Dattes aux noix de coco et cacao Pops",
+   "bSlug": "dattes-aux-noix-de-coco-et-cacao-pops-kartago",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Kartago",
+   "a": "Dattes aux sésames Pops",
+   "aSlug": "dattes-aux-sesames-pops-kartago",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Sésames pops dattes-sésames Energy snacks 250 g",
+   "bSlug": "sesames-pops-dattes-sesames-energy-snacks-250-g-kartago",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.43,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "President",
+   "a": "Fromage râpé à l'emmental",
+   "aSlug": "fromage-rape-a-l-emmental-president",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage râpé à l'emmental 1 kg",
+   "bSlug": "fromage-rape-a-l-emmental-1-kg-president",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "President",
+   "a": "Fromage râpé à l'emmental",
+   "aSlug": "fromage-rape-a-l-emmental-president",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage rapé à l'emmental 340 g",
+   "bSlug": "fromage-rape-a-l-emmental-340-g-president",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage edam",
+   "aSlug": "fromage-edam-majeste",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage edam 80 g",
+   "bSlug": "fromage-edam-80-g-majeste",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.5,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Majeste",
+   "a": "Fromage gruyère rapé 100 g",
+   "aSlug": "fromage-gruyere-rape-100-g-majeste",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Fromage râpé au gruyère 100% lait",
+   "bSlug": "fromage-rape-au-gruyere-100-lait-majeste",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Land'Or",
+   "a": "Fromage au Cheddar",
+   "aSlug": "fromage-au-cheddar-land-or",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage râpé au Cheddar",
+   "bSlug": "fromage-rape-au-cheddar-land-or",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Land'Or",
+   "a": "Fromage au Gruyère",
+   "aSlug": "fromage-au-gruyere-land-or",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage râpé au Gruyère",
+   "bSlug": "fromage-rape-au-gruyere-land-or",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Land'Or",
+   "a": "Fromage mini mozzarella spécial pizza 130 g",
+   "aSlug": "fromage-mini-mozzarella-special-pizza-130-g-land-or",
+   "aSources": [
+    "aziza"
+   ],
+   "b": "Fromage mozzarella",
+   "bSlug": "fromage-mozzarella-land-or",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.29,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Mont Regal",
+   "a": "Fromage fondu râpé à l'emmental",
+   "aSlug": "fromage-fondu-rape-a-l-emmental-mont-regal",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage fondu rapé à l'emmental 450 g",
+   "bSlug": "fromage-fondu-rape-a-l-emmental-450-g-mont-regal",
+   "bSources": [
+    "geant"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Mont Regal",
+   "a": "Fromage fondu râpé à l'emmental",
+   "aSlug": "fromage-fondu-rape-a-l-emmental-mont-regal",
+   "aSources": [
+    "carrefour"
+   ],
+   "b": "Fromage râpé fondu à la Mozzarella",
+   "bSlug": "fromage-rape-fondu-a-la-mozzarella-mont-regal",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.6,
+   "reason": "same brand; size unknown on one side"
+  },
+  {
+   "brand": "Mont Regal",
+   "a": "Fromage fondu rapé à la mozzarella 1 kg",
+   "aSlug": "fromage-fondu-rape-a-la-mozzarella-1-kg-mont-regal",
+   "aSources": [
+    "geant"
+   ],
+   "b": "Fromage râpé fondu à la Mozzarella",
+   "bSlug": "fromage-rape-fondu-a-la-mozzarella-mont-regal",
+   "bSources": [
+    "carrefour"
+   ],
+   "similarity": 0.67,
+   "reason": "same brand; size unknown on one side"
+  }
+ ],
+ "sameSourceCollisions": [
+  {
+   "src": "geant",
+   "sid": "109876",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille plastique 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L Grenadine"
+  },
+  {
+   "src": "geant",
+   "sid": "117147",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille plastique 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L Orgeat"
+  },
+  {
+   "src": "geant",
+   "sid": "117148",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille plastique 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L pistache"
+  },
+  {
+   "src": "geant",
+   "sid": "138385",
+   "srcName": "Tomate cerise",
+   "name": "Tomate cerise 250 g",
+   "brand": null,
+   "srcDesc": "250GR"
+  },
+  {
+   "src": "geant",
+   "sid": "148253",
+   "srcName": "Tortillas de farine co...",
+   "name": "Tortillas de farine complète 360 g",
+   "brand": "Deli Sun",
+   "srcDesc": "360GR"
+  },
+  {
+   "src": "geant",
+   "sid": "150270",
+   "srcName": "Thé noir soluble",
+   "name": "Thé noir soluble bergamote avec sucre 10 sachets",
+   "brand": "Kyufi",
+   "srcDesc": "10 Sachets Bergamotte-Avec sucre"
+  },
+  {
+   "src": "geant",
+   "sid": "152399",
+   "srcName": "Thé vert soluble",
+   "name": "Thé vert soluble citron sans sucre 10 sachets",
+   "brand": "Kyufi",
+   "srcDesc": "10 Sachets Citron-Sans sucre"
+  },
+  {
+   "src": "geant",
+   "sid": "160997",
+   "srcName": "Beurre",
+   "name": "Beurre cacahuette chocolat 200 g",
+   "brand": "Vipa",
+   "srcDesc": "200GR Cacahuette chocolat"
+  },
+  {
+   "src": "geant",
+   "sid": "23970",
+   "srcName": "Pain de campagne en Bo...",
+   "name": "Pain de campagne en Boule 800g",
+   "brand": null,
+   "srcDesc": "La pièce"
+  },
+  {
+   "src": "geant",
+   "sid": "23977",
+   "srcName": "Pain de campagne 400g",
+   "name": "Pain de campagne 400g",
+   "brand": null,
+   "srcDesc": "La pièce"
+  },
+  {
+   "src": "geant",
+   "sid": "24489",
+   "srcName": "Eau minérale",
+   "name": "Eau minérale",
+   "brand": "Safia",
+   "srcDesc": ""
+  },
+  {
+   "src": "geant",
+   "sid": "25371",
+   "srcName": "Chocolat fourré",
+   "name": "Chocolat fourré noisette 20 pièces",
+   "brand": "Passion",
+   "srcDesc": "20 pièces Noisette"
+  },
+  {
+   "src": "geant",
+   "sid": "25449",
+   "srcName": "Café pur aroma",
+   "name": "Café pur aroma 250 g",
+   "brand": "Bondin",
+   "srcDesc": "250GR"
+  },
+  {
+   "src": "geant",
+   "sid": "25711",
+   "srcName": "Chips",
+   "name": "Chips paprika 75 g",
+   "brand": "Mad",
+   "srcDesc": "75GR Paprika"
+  },
+  {
+   "src": "geant",
+   "sid": "25930",
+   "srcName": "Farine patissière",
+   "name": "Farine patissière 1 kg",
+   "brand": "Randa",
+   "srcDesc": "1KG"
+  },
+  {
+   "src": "geant",
+   "sid": "26040",
+   "srcName": "Biscotte sans sel",
+   "name": "Biscotte sans sel 240 g",
+   "brand": "Iroise",
+   "srcDesc": "240GR"
+  },
+  {
+   "src": "geant",
+   "sid": "26110",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge bio 750 ml",
+   "brand": "Tresor Del Rio",
+   "srcDesc": "750ML"
+  },
+  {
+   "src": "geant",
+   "sid": "26230",
+   "srcName": "Chamia",
+   "name": "Chamia nature 2 kg",
+   "brand": "Le Moulin",
+   "srcDesc": "2KG Nature"
+  },
+  {
+   "src": "geant",
+   "sid": "26258",
+   "srcName": "Chamia",
+   "name": "Chamia en boîte métal 350 g",
+   "brand": "Papillon",
+   "srcDesc": "350GR Pistache"
+  },
+  {
+   "src": "geant",
+   "sid": "26272",
+   "srcName": "Chamia",
+   "name": "Chamia en boîte métal 350 g",
+   "brand": "Papillon",
+   "srcDesc": "350GR Fruits secs"
+  },
+  {
+   "src": "geant",
+   "sid": "26281",
+   "srcName": "Chamia",
+   "name": "Chamia pistache 2 kg",
+   "brand": "Le Moulin",
+   "srcDesc": "2KG Pistache"
+  },
+  {
+   "src": "geant",
+   "sid": "26605",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge 500 ml",
+   "brand": "Ruspina",
+   "srcDesc": "500ML"
+  },
+  {
+   "src": "geant",
+   "sid": "27269",
+   "srcName": "Crevettes décortiquées...",
+   "name": "Crevettes décortiquées surgelées 500 g",
+   "brand": "Fakam",
+   "srcDesc": "500GR"
+  },
+  {
+   "src": "geant",
+   "sid": "28676",
+   "srcName": "Batonnet",
+   "name": "Batonnet 110 ml",
+   "brand": "London Dairy",
+   "srcDesc": "110ML"
+  },
+  {
+   "src": "geant",
+   "sid": "28677",
+   "srcName": "Batonnet",
+   "name": "Batonnet 110 ml",
+   "brand": "London Dairy",
+   "srcDesc": "110ML"
+  },
+  {
+   "src": "geant",
+   "sid": "28768",
+   "srcName": "Biscotte sans sel",
+   "name": "Biscotte sans sel multicéréales 240 g",
+   "brand": "Iroise",
+   "srcDesc": "240GR Multicéréales"
+  },
+  {
+   "src": "geant",
+   "sid": "28964",
+   "srcName": "Café soluble",
+   "name": "Café soluble 50 g",
+   "brand": "Golden Coffee",
+   "srcDesc": "50GR"
+  },
+  {
+   "src": "geant",
+   "sid": "29253",
+   "srcName": "Chamia",
+   "name": "Chamia en barquette 350 g",
+   "brand": "Papillon",
+   "srcDesc": "350GR Fruits secs"
+  },
+  {
+   "src": "geant",
+   "sid": "30651",
+   "srcName": "Boisson concentrée",
+   "name": "Boisson concentrée citron 1 L",
+   "brand": "Hazem",
+   "srcDesc": "1L Citron"
+  },
+  {
+   "src": "geant",
+   "sid": "30920",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille verre 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L Menthe"
+  },
+  {
+   "src": "geant",
+   "sid": "30921",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille verre 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L Grenadine"
+  },
+  {
+   "src": "geant",
+   "sid": "30922",
+   "srcName": "Sirop",
+   "name": "Sirop bouteille verre 1 L",
+   "brand": "Jawhara",
+   "srcDesc": "1L Pistache"
+  },
+  {
+   "src": "geant",
+   "sid": "30947",
+   "srcName": "Vinaigre",
+   "name": "Vinaigre cidre 250 ml",
+   "brand": "Al Jazira",
+   "srcDesc": "250ML Cidre"
+  },
+  {
+   "src": "geant",
+   "sid": "31325",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge 500 ml",
+   "brand": "Ruspina",
+   "srcDesc": "500ML"
+  },
+  {
+   "src": "geant",
+   "sid": "31326",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge 250 ml",
+   "brand": "Ruspina",
+   "srcDesc": "250ML"
+  },
+  {
+   "src": "geant",
+   "sid": "32947",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge bio 500 ml",
+   "brand": "Tresor Del Rio",
+   "srcDesc": "500ML"
+  },
+  {
+   "src": "geant",
+   "sid": "32948",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge bio 250 ml",
+   "brand": "Tresor Del Rio",
+   "srcDesc": "250ML"
+  },
+  {
+   "src": "geant",
+   "sid": "33401",
+   "srcName": "Biscotte",
+   "name": "Biscotte sans sel/Sans sucre 240 g",
+   "brand": "Sobiscotte",
+   "srcDesc": "240GR Sans sel/Sans sucre"
+  },
+  {
+   "src": "geant",
+   "sid": "33810",
+   "srcName": "Boulettes de carthage",
+   "name": "Boulettes de carthage",
+   "brand": null,
+   "srcDesc": "Conditionné par 250g"
+  },
+  {
+   "src": "geant",
+   "sid": "33837",
+   "srcName": "Biscotte",
+   "name": "Biscotte au flocon d'avoine 240 g",
+   "brand": "Sobiscotte",
+   "srcDesc": "240GR Au flocon d'avoine"
+  },
+  {
+   "src": "geant",
+   "sid": "33883",
+   "srcName": "Chamia",
+   "name": "Chamia fruits secs 2 kg",
+   "brand": "Shehrazed",
+   "srcDesc": "2KG Fruits secs"
+  },
+  {
+   "src": "geant",
+   "sid": "35494",
+   "srcName": "Vinaigre",
+   "name": "Vinaigre alcool 500 ml",
+   "brand": "Ruspina",
+   "srcDesc": "500ML Alcool"
+  },
+  {
+   "src": "geant",
+   "sid": "37331",
+   "srcName": "Biscotte sans sel",
+   "name": "Biscotte sans sel 350 g",
+   "brand": "Imperial",
+   "srcDesc": "350GR"
+  },
+  {
+   "src": "geant",
+   "sid": "37339",
+   "srcName": "Biscotte sans sel",
+   "name": "Biscotte sans sel 240 g",
+   "brand": "Iroise",
+   "srcDesc": "240GR"
+  },
+  {
+   "src": "geant",
+   "sid": "48026",
+   "srcName": "Chamia",
+   "name": "Chamia en barquette 350 g",
+   "brand": "Papillon",
+   "srcDesc": "350GR Amande"
+  },
+  {
+   "src": "geant",
+   "sid": "65969",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge bio mild 1 L",
+   "brand": "Lahneya",
+   "srcDesc": "1L Mild"
+  },
+  {
+   "src": "geant",
+   "sid": "71194",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge bio robust 1 L",
+   "brand": "Lahneya",
+   "srcDesc": "1L Robust"
+  },
+  {
+   "src": "geant",
+   "sid": "75846",
+   "srcName": "Huile d'olive extra vi...",
+   "name": "Huile d'olive extra vierge 800 ml",
+   "brand": "Al Jazira",
+   "srcDesc": "800ML"
+  },
+  {
+   "src": "geant",
+   "sid": "76200",
+   "srcName": "Camembert palet fou",
+   "name": "Camembert palet fou 220 g",
+   "brand": "La Cave a Fromage",
+   "srcDesc": "220GR"
+  },
+  {
+   "src": "geant",
+   "sid": "80058",
+   "srcName": "Crème dessert",
+   "name": "Crème dessert noisette 100 g",
+   "brand": "Natilait",
+   "srcDesc": "100GR Noisette"
+  },
+  {
+   "src": "geant",
+   "sid": "88319",
+   "srcName": "Boisson gazeuse",
+   "name": "Boisson gazeuse orange 1,5 L",
+   "brand": "Punch",
+   "srcDesc": "1.5L Orange"
+  },
+  {
+   "src": "off",
+   "sid": "6194043001668",
+   "srcName": "Lait demi écrémé UHT",
+   "name": "Lait demi écrémé UHT 1 L",
+   "brand": "Délice",
+   "srcDesc": "1 L"
+  },
+  {
+   "src": "mg",
+   "sid": "371",
+   "srcName": "Café chicoré soluble 200G mg j'aime",
+   "name": "Café chicorée soluble 200 g",
+   "brand": "MG J'aime",
+   "srcDesc": ""
+  },
+  {
+   "src": "mg",
+   "sid": "422",
+   "srcName": "Chicoré café soluble 50G MG J'AIME",
+   "name": "Chicorée café soluble 50 g",
+   "brand": "MG J'aime",
+   "srcDesc": ""
+  },
+  {
+   "src": "mg",
+   "sid": "423",
+   "srcName": "Chamia amandes 350G KOLL YOUM",
+   "name": "Chamia aux amandes 350 g",
+   "brand": "Koll Youm",
+   "srcDesc": ""
+  }
+ ]
+}

@@ -33,7 +33,9 @@ export class CustomerCatalogService {
     if (!store) throw new NotFoundException(`Store ${storeId} not found`);
 
     const rows = (await db.orm.public.StoreProduct.where({ storeId })
-      .include('product', (product) => product.include('category'))
+      .include('product', (product) =>
+        product.include('category').include('brand'),
+      )
       .all()) as OfferingRow[];
 
     return rows

@@ -1,0 +1,1695 @@
+{
+ "note": "Records that were read from a source but are NOT in catalog.v2.json, with the reason. Géant records in out-of-scope sub-categories are counted, not listed.",
+ "excludedRecords": [
+  {
+   "source": "geant",
+   "sourceId": "159282",
+   "name": "Boisson au jus",
+   "brand": "JOOS",
+   "reason": "alcoholic beverage (out of scope)"
+  },
+  {
+   "source": "geant",
+   "sourceId": "59869",
+   "name": "Miel",
+   "brand": "AL SHIFA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "500GR Tout fleur 125GR GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "130363",
+   "name": "Céréales de blé",
+   "brand": "GRAIN D'OR",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "900GR Cacao +140GR GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "146463",
+   "name": "Céréales de blé",
+   "brand": "GRAIN D'OR",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "600GR Miel 140GR GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "35905",
+   "name": "Céréales de blé",
+   "brand": "GRAIN D'OR",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "600GR Cacao 140GR GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "23210",
+   "name": "Filet de 3 cakes+chips gratuit",
+   "brand": "BOLERIO/STARSKY",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": ""
+  },
+  {
+   "source": "geant",
+   "sourceId": "122541",
+   "name": "Levure chimique",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "5x10GR +1 GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "109838",
+   "name": "Sucre vanille",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "5x8 GR Avec 1 GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "142817",
+   "name": "Pâte zgougou filtré",
+   "brand": "EL RAYEN",
+   "reason": "non-food item inside a food sub-category"
+  },
+  {
+   "source": "geant",
+   "sourceId": "88318",
+   "name": "Levure chimique",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "10 Sachets dont 2 GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "27968",
+   "name": "Sucre vanille",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "10 Sachets dont 2 GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "39575",
+   "name": "Crème pâtissière",
+   "brand": "SMART CHEF",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "3 vanille +1 Amande GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "122728",
+   "name": "Crème dessert",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x81GR Vanille 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "159588",
+   "name": "Préparation mousse au chocolat",
+   "brand": "VANOISE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x120GR 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "104720",
+   "name": "Lot fromage",
+   "brand": "MAJESTE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "3x80GR Sicilien affiné +Edam +Gouda"
+  },
+  {
+   "source": "geant",
+   "sourceId": "89168",
+   "name": "Chorizo",
+   "brand": "MLIHA",
+   "reason": "pork-family charcuterie whose species (pork vs beef/turkey) cannot be established from the source",
+   "url": "https://www.geantdrive.tn/tunis-city/volaille/89168-chorizo.html"
+  },
+  {
+   "source": "geant",
+   "sourceId": "139025",
+   "name": "Salami pepperoni",
+   "brand": "CHAHIA",
+   "reason": "pork-family charcuterie whose species (pork vs beef/turkey) cannot be established from the source",
+   "url": "https://www.geantdrive.tn/tunis-city/volaille/139025-salami-pepperoni.html"
+  },
+  {
+   "source": "geant",
+   "sourceId": "35958",
+   "name": "Chorizo",
+   "brand": "MLIHA",
+   "reason": "pork-family charcuterie whose species (pork vs beef/turkey) cannot be established from the source",
+   "url": "https://www.geantdrive.tn/tunis-city/volaille/35958-chorizo.html"
+  },
+  {
+   "source": "geant",
+   "sourceId": "33442",
+   "name": "Salami pepperoni",
+   "brand": "EL MAZRAA",
+   "reason": "pork-family charcuterie whose species (pork vs beef/turkey) cannot be established from the source",
+   "url": "https://www.geantdrive.tn/tunis-city/volaille/33442-salami-pepperoni.html"
+  },
+  {
+   "source": "geant",
+   "sourceId": "79287",
+   "name": "Chicorée soluble",
+   "brand": "BRAVA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "250GR+50GR GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "145532",
+   "name": "Lot: Thon entier",
+   "brand": "LEBHOUR",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "3x160GR Huile de tournesol"
+  },
+  {
+   "source": "geant",
+   "sourceId": "69228",
+   "name": "Préparation falafel aux moules",
+   "brand": "DURRA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "350GR Dont 50g GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "94585",
+   "name": "Champignons pieds et morceaux",
+   "brand": "AYECUE",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "355GR Dont 10% GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "113010",
+   "name": "Chicorée dosettes",
+   "brand": "BRAVA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "25 Schet Avec 3 sachets gratuits"
+  },
+  {
+   "source": "geant",
+   "sourceId": "47705",
+   "name": "Filtre à café",
+   "brand": "MELITA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "40 Pièces+5 GRATUITS N°4 Classic"
+  },
+  {
+   "source": "geant",
+   "sourceId": "120247",
+   "name": "Lot de 2: Chips",
+   "brand": "DADDY'S CHIPS",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "149086",
+   "name": "Haricots rouges",
+   "brand": "DURRA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "400GR +75GR GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "115120",
+   "name": "Chips",
+   "brand": "GOLDEN TWISTER",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Barbecue 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "96081",
+   "name": "Chips",
+   "brand": "GOLDEN TWISTER",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Fromage 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "115116",
+   "name": "Chips",
+   "brand": "GOLDEN TWISTER",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Paprika 50% sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "25715",
+   "name": "Chips",
+   "brand": "CHIPS'UP",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "120GR+20% gratuit Piquant"
+  },
+  {
+   "source": "geant",
+   "sourceId": "25718",
+   "name": "Chips",
+   "brand": "CHIPS'UP",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "120GR+20% gratuit Sel"
+  },
+  {
+   "source": "geant",
+   "sourceId": "120666",
+   "name": "Chips",
+   "brand": "CHIPS'UP",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "120GR Avec 20% GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "58442",
+   "name": "Lot: Chips",
+   "brand": "CHIPS UP+FINGER SNAX",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "140GR Piquant"
+  },
+  {
+   "source": "geant",
+   "sourceId": "71321",
+   "name": "Lot: Chips",
+   "brand": "CHIPS UP+FINGER SNAX",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "140GR Fromage"
+  },
+  {
+   "source": "geant",
+   "sourceId": "58441",
+   "name": "Lot: Chips",
+   "brand": "CHIPS UP+FINGER SNAX",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "140GR Sel"
+  },
+  {
+   "source": "geant",
+   "sourceId": "58443",
+   "name": "Lot: Chips",
+   "brand": "CHIPS UP+FINGER SNAX",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "140GR Paprika"
+  },
+  {
+   "source": "geant",
+   "sourceId": "87490",
+   "name": "Lot chips",
+   "brand": "GOLDEN",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Sel"
+  },
+  {
+   "source": "geant",
+   "sourceId": "87491",
+   "name": "Lot chips",
+   "brand": "GOLDEN",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Fromage"
+  },
+  {
+   "source": "geant",
+   "sourceId": "74087",
+   "name": "Lot chips",
+   "brand": "GOLDEN",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Paprika"
+  },
+  {
+   "source": "geant",
+   "sourceId": "87492",
+   "name": "Lot chips",
+   "brand": "GOLDEN",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x70GR Barbecue"
+  },
+  {
+   "source": "geant",
+   "sourceId": "139223",
+   "name": "Chips",
+   "brand": "DADDY'S CHIPS",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "70GR +Chips 30GR GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "158548",
+   "name": "Chips",
+   "brand": "DADDY'S CHIPS",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "3 Pièces Dont 1 GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "67580",
+   "name": "Chips panachés",
+   "brand": "MAXXX",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x75GR -50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "72765",
+   "name": "Bâtonnets",
+   "brand": "GRISSINI",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x160GR Son de blé -50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "72766",
+   "name": "Bâtonnets",
+   "brand": "GRISSINI",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x160GR Sel -50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "72764",
+   "name": "Bâtonnets",
+   "brand": "GRISSINI",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x160GR Fromage-Tomate -50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "71317",
+   "name": "Lot de 2: Snacks",
+   "brand": "GOLDEN CROKIDO'S",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x50GR Paprika 50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "64870",
+   "name": "Lot de 2: Snacks",
+   "brand": "GOLDEN CROKIDO'S",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x50GR Fromage 50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "66586",
+   "name": "Lot de 2: Snacks",
+   "brand": "GOLDEN CROKIDO'S",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "2x50GR Oignon 50% Sur 2ème"
+  },
+  {
+   "source": "geant",
+   "sourceId": "161020",
+   "name": "Chips",
+   "brand": "DADDY'S CHIPS",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "70GR Smoke et grill +Chips 30GR GRATUIT"
+  },
+  {
+   "source": "geant",
+   "sourceId": "135913",
+   "name": "Harissa",
+   "brand": "JOUDA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "135GR +30GR GRATUITS"
+  },
+  {
+   "source": "geant",
+   "sourceId": "161785",
+   "name": "Hrouss",
+   "brand": "NEBLIA",
+   "reason": "promotional bundle or offer text in the product record",
+   "desc": "135GR +30GR GRATUITS"
+  },
+  {
+   "source": "aziza",
+   "sourceId": "100822411",
+   "name": "Hrouss",
+   "brand": "NEBLIA",
+   "reason": "name cannot be verified or classified from the source alone"
+  },
+  {
+   "source": "aziza",
+   "sourceId": "100712231",
+   "name": "Ptichat",
+   "brand": "MLIHA",
+   "reason": "name cannot be verified or classified from the source alone"
+  },
+  {
+   "source": "aziza",
+   "sourceId": "100930931",
+   "name": "Drôo moulu",
+   "brand": "DR OETKER",
+   "reason": "name cannot be verified or classified from the source alone"
+  },
+  {
+   "source": "aziza",
+   "sourceId": "",
+   "name": "Lot de 3 double concentré de tomate + harissa",
+   "brand": "ZINA",
+   "reason": "promotional bundle of different products"
+  },
+  {
+   "source": "aziza",
+   "sourceId": "",
+   "name": "Lot de 2 barquettes de glace aux différents parfums",
+   "brand": "ESKIMO",
+   "reason": "promotional bundle of assorted flavours"
+  },
+  {
+   "source": "mg",
+   "sourceId": "376",
+   "name": "Pèse  Personne BG318R PRESTIGIA",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/accueil/376-pèse-personne-bg318r-prestigia.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "374",
+   "name": "Lingettes  bébé 100 LID mg j'aime",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/promotion/374-lingettes-bébé-100-lid-mg-j-aime.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "352",
+   "name": "Papier  Aluminium 20 M KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/promotion/352-papier-aluminium-16-m-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "359",
+   "name": "Lessive machine liquide  3L existe en plusieurs formules  KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/promotion/359-lessive-machine-liquide-3l-existe-en-plusieurs-formules-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "297",
+   "name": "Lot de 4 ustensiles de cuisine Koll Youm",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/297-lot-de-4-ustensiles-de-cuisine-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "321",
+   "name": "FAITOUT 22CM + CV KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/321-faitout-22cm-cv-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "322",
+   "name": "LOT 6 GOBELETS 200ML PP KOLLYOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/322-lot-6-gobelets-200ml-pp-kollyoum.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "323",
+   "name": "POELE 24 CM KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/323-poele-24-cm-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "324",
+   "name": "Service à eau  7 PCS EN PP KOLLYOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/324-service-à-eau-7-pcs-en-pp-kollyoum.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "320",
+   "name": "LUNCH BOX+2 COUVERTS KOLLYOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/320-lunch-box2-couverts-kollyoum.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "334",
+   "name": "Pèse cuisine garantie 1 an  PRESTIGIA",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/334-pèse-cuisine-garantie-1-an-prestigia.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "335",
+   "name": "Plateau Ovale 45X32 CM KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/335-plateau-ovale-45x32-cm-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "360",
+   "name": "Serviettes de table 2PLI  45 pièces 30*30 Kollyoum",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/360-serviette-50cmx-80-cm-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "339",
+   "name": "Essuie tout  MAX ROLL KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/339-essuie-tout-max-roll-koll-youm.html"
+  },
+  {
+   "source": "mg",
+   "sourceId": "338",
+   "name": "Distributeur  2P 100 KOLL YOUM",
+   "brand": "",
+   "reason": "non-food merchandise (kitchenware, cleaning, hygiene, appliances)",
+   "url": "https://mg.tn/cuisine/338-distributeur-2p-100-koll-youm.html"
+  },
+  {
+   "source": "carrefour",
+   "sourceId": "5901583412004",
+   "name": "Café soluble aggloméré",
+   "brand": "CARREFOUR",
+   "reason": "Carrefour-branded product (excluded by decision)",
+   "url": "https://www.carrefour.tn/cafe-soluble-agglomere-5901583412004.html"
+  },
+  {
+   "source": "carrefour",
+   "sourceId": "5901583412042",
+   "name": "Café soluble lyophilisé",
+   "brand": "CARREFOUR",
+   "reason": "Carrefour-branded product (excluded by decision)",
+   "url": "https://www.carrefour.tn/cafe-soluble-lyophilise-5901583412042.html"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194001800111",
+   "name": "Safia",
+   "brand": "Safia",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003800317",
+   "name": "Le Nature",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191513502052",
+   "name": "fraidoux",
+   "brand": "Président",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804223",
+   "name": "Oikos",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191416500384",
+   "name": "Healthy cookies",
+   "brand": "CAMPI plus",
+   "reason": "no French product name",
+   "lang": "en"
+  },
+  {
+   "source": "off",
+   "sourceId": "0121201800111",
+   "name": "",
+   "brand": "Safia",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194008515520",
+   "name": "Start",
+   "brand": "saïda",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191416500391",
+   "name": "",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191466400030",
+   "name": "Eau de source naturelle",
+   "brand": "DENYA",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194043002863",
+   "name": "Lait D’amande",
+   "brand": "Délice",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194001800807",
+   "name": "Eau Minérale",
+   "brand": "Cristaline",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191442501287",
+   "name": "Maxipro",
+   "brand": "Natilait",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191428900103",
+   "name": "Mira",
+   "brand": "Mira",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804810",
+   "name": "Muesli",
+   "brand": "Blendy",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194000521017",
+   "name": "Chocotom",
+   "brand": "L'Appetissante",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "61945326",
+   "name": "Danette chocolat",
+   "brand": "Danone",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194008516046",
+   "name": "TUC",
+   "brand": "Tuc",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191577600046",
+   "name": "Eau",
+   "brand": "Dima",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191507250600",
+   "name": "Grecos",
+   "brand": "vitalait",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194002510064",
+   "name": "Fourré",
+   "brand": "Kif",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005413041",
+   "name": "Poudre Instantannée Chocoline Saïd",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804421",
+   "name": "Blendy",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804278",
+   "name": "Blendy",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194002510071",
+   "name": "Binto",
+   "brand": "Kif",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194043001460",
+   "name": "Delisso",
+   "brand": "Délice",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191585701346",
+   "name": "Tarti frais",
+   "brand": "Delice",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191513502045",
+   "name": "Fraidoux Président (120G)",
+   "brand": "President",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191307400243",
+   "name": "minceur sans sucre",
+   "brand": "LBM",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191307402643",
+   "name": "Prouta | buiscuit protéine cacaoté et flocon d'avoine",
+   "brand": "LBM",
+   "reason": "no French product name",
+   "lang": "en"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804902",
+   "name": "YoPRO",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191508400622",
+   "name": "Sidi ali thon",
+   "brand": "Sidi Ali",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191585701643",
+   "name": "tartare",
+   "brand": "Savencia",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804599",
+   "name": "DANAO",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "61942769",
+   "name": "Liégeois",
+   "brand": "Vitalait",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194021111426",
+   "name": "Browniz",
+   "brand": "Moulin d'Or",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "5194200800111",
+   "name": "",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804087",
+   "name": "dun'up",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804100",
+   "name": "Danup",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191307402605",
+   "name": "Lbm",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005448074",
+   "name": "Bubbles Noir",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194008556219",
+   "name": "LOOPI",
+   "brand": "SAÏDA",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194043001286",
+   "name": "Délisso",
+   "brand": "Délice",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005660407",
+   "name": "eau",
+   "brand": "primaqua",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191402900129",
+   "name": "Goldina",
+   "brand": "GIAS",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194043401024",
+   "name": "Spaghetti 2",
+   "brand": "Warda",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194021189999",
+   "name": "Pain de Mie Complet",
+   "brand": "Moulin d'Or",
+   "reason": "quantity not parseable",
+   "quantity": "21 P"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191499000061",
+   "name": "",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191327600609",
+   "name": "",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191442501263",
+   "name": "Misto",
+   "brand": "Natilait",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194002560137",
+   "name": "Fourré",
+   "brand": "Kif",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "84165787",
+   "name": "",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191513502151",
+   "name": "Frommage carré",
+   "brand": "President",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194051100247",
+   "name": "8",
+   "brand": "OCT",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194002560014",
+   "name": "Star",
+   "brand": "Kif",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191427600295",
+   "name": "Pain de mie complet",
+   "brand": "Mama Mia",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191499000177",
+   "name": "pain de mie",
+   "brand": "The Lebanese factory",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003804896",
+   "name": "Yopro",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "3017620425035",
+   "name": "Nutella",
+   "brand": "Nutella",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "5449000226662",
+   "name": "Coca-Cola",
+   "brand": "Coca-Cola",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191497100039",
+   "name": "",
+   "brand": "Beya",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191499000047",
+   "name": "Pain libanais",
+   "brand": "",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194008555250",
+   "name": "Loopi",
+   "brand": "Saïda",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194002011035",
+   "name": "TCM",
+   "brand": "TCM",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194021178924",
+   "name": "pain de mie aux céréales",
+   "brand": "Moulin D'or",
+   "reason": "quantity unit inconsistent with the product type (data error)",
+   "quantity": "10"
+  },
+  {
+   "source": "off",
+   "sourceId": "61945340",
+   "name": "Danette",
+   "brand": "Danone",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194017507547",
+   "name": "GO MINTS",
+   "brand": "Le Moulin",
+   "reason": "no French product name",
+   "lang": "en"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005660445",
+   "name": "Eau minérale naturelle",
+   "brand": "RIM",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005401901",
+   "name": "Chocolat Crispo Nuts",
+   "brand": "Maestro",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194005485000",
+   "name": "X-plose Triple Choc",
+   "brand": "Saïda",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194003803882",
+   "name": "Danup",
+   "brand": "Danone",
+   "reason": "Open Food Facts record incomplete (needs name, brand, quantity and a front photo)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6191585702404",
+   "name": "St Moret",
+   "brand": "St Moret",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  },
+  {
+   "source": "off",
+   "sourceId": "6194001800319",
+   "name": "Melliti",
+   "brand": "Melliti",
+   "reason": "product name not descriptive (brand or product-line name only)"
+  }
+ ],
+ "sameSourceCollisions": {
+  "note": "Same brand + same size + same wording as another record of the same source but a different record id. Not provably the same product, and the importer needs unique names, so only the first one was kept.",
+  "records": [
+   {
+    "src": "geant",
+    "sid": "109876",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille plastique 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L Grenadine"
+   },
+   {
+    "src": "geant",
+    "sid": "117147",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille plastique 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L Orgeat"
+   },
+   {
+    "src": "geant",
+    "sid": "117148",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille plastique 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L pistache"
+   },
+   {
+    "src": "geant",
+    "sid": "138385",
+    "srcName": "Tomate cerise",
+    "name": "Tomate cerise 250 g",
+    "brand": null,
+    "srcDesc": "250GR"
+   },
+   {
+    "src": "geant",
+    "sid": "148253",
+    "srcName": "Tortillas de farine co...",
+    "name": "Tortillas de farine complète 360 g",
+    "brand": "Deli Sun",
+    "srcDesc": "360GR"
+   },
+   {
+    "src": "geant",
+    "sid": "150270",
+    "srcName": "Thé noir soluble",
+    "name": "Thé noir soluble bergamote avec sucre 10 sachets",
+    "brand": "Kyufi",
+    "srcDesc": "10 Sachets Bergamotte-Avec sucre"
+   },
+   {
+    "src": "geant",
+    "sid": "152399",
+    "srcName": "Thé vert soluble",
+    "name": "Thé vert soluble citron sans sucre 10 sachets",
+    "brand": "Kyufi",
+    "srcDesc": "10 Sachets Citron-Sans sucre"
+   },
+   {
+    "src": "geant",
+    "sid": "160997",
+    "srcName": "Beurre",
+    "name": "Beurre cacahuette chocolat 200 g",
+    "brand": "Vipa",
+    "srcDesc": "200GR Cacahuette chocolat"
+   },
+   {
+    "src": "geant",
+    "sid": "23970",
+    "srcName": "Pain de campagne en Bo...",
+    "name": "Pain de campagne en Boule 800g",
+    "brand": null,
+    "srcDesc": "La pièce"
+   },
+   {
+    "src": "geant",
+    "sid": "23977",
+    "srcName": "Pain de campagne 400g",
+    "name": "Pain de campagne 400g",
+    "brand": null,
+    "srcDesc": "La pièce"
+   },
+   {
+    "src": "geant",
+    "sid": "24489",
+    "srcName": "Eau minérale",
+    "name": "Eau minérale",
+    "brand": "Safia",
+    "srcDesc": ""
+   },
+   {
+    "src": "geant",
+    "sid": "25371",
+    "srcName": "Chocolat fourré",
+    "name": "Chocolat fourré noisette 20 pièces",
+    "brand": "Passion",
+    "srcDesc": "20 pièces Noisette"
+   },
+   {
+    "src": "geant",
+    "sid": "25449",
+    "srcName": "Café pur aroma",
+    "name": "Café pur aroma 250 g",
+    "brand": "Bondin",
+    "srcDesc": "250GR"
+   },
+   {
+    "src": "geant",
+    "sid": "25711",
+    "srcName": "Chips",
+    "name": "Chips paprika 75 g",
+    "brand": "Mad",
+    "srcDesc": "75GR Paprika"
+   },
+   {
+    "src": "geant",
+    "sid": "25930",
+    "srcName": "Farine patissière",
+    "name": "Farine patissière 1 kg",
+    "brand": "Randa",
+    "srcDesc": "1KG"
+   },
+   {
+    "src": "geant",
+    "sid": "26040",
+    "srcName": "Biscotte sans sel",
+    "name": "Biscotte sans sel 240 g",
+    "brand": "Iroise",
+    "srcDesc": "240GR"
+   },
+   {
+    "src": "geant",
+    "sid": "26110",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge bio 750 ml",
+    "brand": "Tresor Del Rio",
+    "srcDesc": "750ML"
+   },
+   {
+    "src": "geant",
+    "sid": "26230",
+    "srcName": "Chamia",
+    "name": "Chamia nature 2 kg",
+    "brand": "Le Moulin",
+    "srcDesc": "2KG Nature"
+   },
+   {
+    "src": "geant",
+    "sid": "26258",
+    "srcName": "Chamia",
+    "name": "Chamia en boîte métal 350 g",
+    "brand": "Papillon",
+    "srcDesc": "350GR Pistache"
+   },
+   {
+    "src": "geant",
+    "sid": "26272",
+    "srcName": "Chamia",
+    "name": "Chamia en boîte métal 350 g",
+    "brand": "Papillon",
+    "srcDesc": "350GR Fruits secs"
+   },
+   {
+    "src": "geant",
+    "sid": "26281",
+    "srcName": "Chamia",
+    "name": "Chamia pistache 2 kg",
+    "brand": "Le Moulin",
+    "srcDesc": "2KG Pistache"
+   },
+   {
+    "src": "geant",
+    "sid": "26605",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge 500 ml",
+    "brand": "Ruspina",
+    "srcDesc": "500ML"
+   },
+   {
+    "src": "geant",
+    "sid": "27269",
+    "srcName": "Crevettes décortiquées...",
+    "name": "Crevettes décortiquées surgelées 500 g",
+    "brand": "Fakam",
+    "srcDesc": "500GR"
+   },
+   {
+    "src": "geant",
+    "sid": "28676",
+    "srcName": "Batonnet",
+    "name": "Batonnet 110 ml",
+    "brand": "London Dairy",
+    "srcDesc": "110ML"
+   },
+   {
+    "src": "geant",
+    "sid": "28677",
+    "srcName": "Batonnet",
+    "name": "Batonnet 110 ml",
+    "brand": "London Dairy",
+    "srcDesc": "110ML"
+   },
+   {
+    "src": "geant",
+    "sid": "28768",
+    "srcName": "Biscotte sans sel",
+    "name": "Biscotte sans sel multicéréales 240 g",
+    "brand": "Iroise",
+    "srcDesc": "240GR Multicéréales"
+   },
+   {
+    "src": "geant",
+    "sid": "28964",
+    "srcName": "Café soluble",
+    "name": "Café soluble 50 g",
+    "brand": "Golden Coffee",
+    "srcDesc": "50GR"
+   },
+   {
+    "src": "geant",
+    "sid": "29253",
+    "srcName": "Chamia",
+    "name": "Chamia en barquette 350 g",
+    "brand": "Papillon",
+    "srcDesc": "350GR Fruits secs"
+   },
+   {
+    "src": "geant",
+    "sid": "30651",
+    "srcName": "Boisson concentrée",
+    "name": "Boisson concentrée citron 1 L",
+    "brand": "Hazem",
+    "srcDesc": "1L Citron"
+   },
+   {
+    "src": "geant",
+    "sid": "30920",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille verre 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L Menthe"
+   },
+   {
+    "src": "geant",
+    "sid": "30921",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille verre 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L Grenadine"
+   },
+   {
+    "src": "geant",
+    "sid": "30922",
+    "srcName": "Sirop",
+    "name": "Sirop bouteille verre 1 L",
+    "brand": "Jawhara",
+    "srcDesc": "1L Pistache"
+   },
+   {
+    "src": "geant",
+    "sid": "30947",
+    "srcName": "Vinaigre",
+    "name": "Vinaigre cidre 250 ml",
+    "brand": "Al Jazira",
+    "srcDesc": "250ML Cidre"
+   },
+   {
+    "src": "geant",
+    "sid": "31325",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge 500 ml",
+    "brand": "Ruspina",
+    "srcDesc": "500ML"
+   },
+   {
+    "src": "geant",
+    "sid": "31326",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge 250 ml",
+    "brand": "Ruspina",
+    "srcDesc": "250ML"
+   },
+   {
+    "src": "geant",
+    "sid": "32947",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge bio 500 ml",
+    "brand": "Tresor Del Rio",
+    "srcDesc": "500ML"
+   },
+   {
+    "src": "geant",
+    "sid": "32948",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge bio 250 ml",
+    "brand": "Tresor Del Rio",
+    "srcDesc": "250ML"
+   },
+   {
+    "src": "geant",
+    "sid": "33401",
+    "srcName": "Biscotte",
+    "name": "Biscotte sans sel/Sans sucre 240 g",
+    "brand": "Sobiscotte",
+    "srcDesc": "240GR Sans sel/Sans sucre"
+   },
+   {
+    "src": "geant",
+    "sid": "33810",
+    "srcName": "Boulettes de carthage",
+    "name": "Boulettes de carthage",
+    "brand": null,
+    "srcDesc": "Conditionné par 250g"
+   },
+   {
+    "src": "geant",
+    "sid": "33837",
+    "srcName": "Biscotte",
+    "name": "Biscotte au flocon d'avoine 240 g",
+    "brand": "Sobiscotte",
+    "srcDesc": "240GR Au flocon d'avoine"
+   },
+   {
+    "src": "geant",
+    "sid": "33883",
+    "srcName": "Chamia",
+    "name": "Chamia fruits secs 2 kg",
+    "brand": "Shehrazed",
+    "srcDesc": "2KG Fruits secs"
+   },
+   {
+    "src": "geant",
+    "sid": "35494",
+    "srcName": "Vinaigre",
+    "name": "Vinaigre alcool 500 ml",
+    "brand": "Ruspina",
+    "srcDesc": "500ML Alcool"
+   },
+   {
+    "src": "geant",
+    "sid": "37331",
+    "srcName": "Biscotte sans sel",
+    "name": "Biscotte sans sel 350 g",
+    "brand": "Imperial",
+    "srcDesc": "350GR"
+   },
+   {
+    "src": "geant",
+    "sid": "37339",
+    "srcName": "Biscotte sans sel",
+    "name": "Biscotte sans sel 240 g",
+    "brand": "Iroise",
+    "srcDesc": "240GR"
+   },
+   {
+    "src": "geant",
+    "sid": "48026",
+    "srcName": "Chamia",
+    "name": "Chamia en barquette 350 g",
+    "brand": "Papillon",
+    "srcDesc": "350GR Amande"
+   },
+   {
+    "src": "geant",
+    "sid": "65969",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge bio mild 1 L",
+    "brand": "Lahneya",
+    "srcDesc": "1L Mild"
+   },
+   {
+    "src": "geant",
+    "sid": "71194",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge bio robust 1 L",
+    "brand": "Lahneya",
+    "srcDesc": "1L Robust"
+   },
+   {
+    "src": "geant",
+    "sid": "75846",
+    "srcName": "Huile d'olive extra vi...",
+    "name": "Huile d'olive extra vierge 800 ml",
+    "brand": "Al Jazira",
+    "srcDesc": "800ML"
+   },
+   {
+    "src": "geant",
+    "sid": "76200",
+    "srcName": "Camembert palet fou",
+    "name": "Camembert palet fou 220 g",
+    "brand": "La Cave a Fromage",
+    "srcDesc": "220GR"
+   },
+   {
+    "src": "geant",
+    "sid": "80058",
+    "srcName": "Crème dessert",
+    "name": "Crème dessert noisette 100 g",
+    "brand": "Natilait",
+    "srcDesc": "100GR Noisette"
+   },
+   {
+    "src": "geant",
+    "sid": "88319",
+    "srcName": "Boisson gazeuse",
+    "name": "Boisson gazeuse orange 1,5 L",
+    "brand": "Punch",
+    "srcDesc": "1.5L Orange"
+   },
+   {
+    "src": "off",
+    "sid": "6194043001668",
+    "srcName": "Lait demi écrémé UHT",
+    "name": "Lait demi écrémé UHT 1 L",
+    "brand": "Délice",
+    "srcDesc": "1 L"
+   },
+   {
+    "src": "mg",
+    "sid": "371",
+    "srcName": "Café chicoré soluble 200G mg j'aime",
+    "name": "Café chicorée soluble 200 g",
+    "brand": "MG J'aime",
+    "srcDesc": ""
+   },
+   {
+    "src": "mg",
+    "sid": "422",
+    "srcName": "Chicoré café soluble 50G MG J'AIME",
+    "name": "Chicorée café soluble 50 g",
+    "brand": "MG J'aime",
+    "srcDesc": ""
+   },
+   {
+    "src": "mg",
+    "sid": "423",
+    "srcName": "Chamia amandes 350G KOLL YOUM",
+    "name": "Chamia aux amandes 350 g",
+    "brand": "Koll Youm",
+    "srcDesc": ""
+   }
+  ]
+ },
+ "nameCollisionsWithExistingOrOtherProducts": [
+  {
+   "name": "Pain complet",
+   "brand": null,
+   "sources": [
+    [
+     "geant",
+     "23749"
+    ]
+   ]
+  },
+  {
+   "name": "Farine 1 kg",
+   "brand": null,
+   "sources": [
+    [
+     "carrefour",
+     "6191519400017"
+    ]
+   ]
+  },
+  {
+   "name": "Epinard",
+   "brand": null,
+   "sources": [
+    [
+     "geant",
+     "86889"
+    ]
+   ]
+  },
+  {
+   "name": "Pot au feu",
+   "brand": null,
+   "sources": [
+    [
+     "geant",
+     "41540"
+    ]
+   ]
+  }
+ ],
+ "geantOutOfScopeSubcategories": {
+  "total": 2809,
+  "bySubcategory": {
+   "eaux-de-toilette": 198,
+   "accessoires-informatiques": 190,
+   "shampooings": 161,
+   "accessoires-cheveux": 159,
+   "savons": 153,
+   "brillants-et-rouges-a-levres": 148,
+   "apres-shampooings": 140,
+   "deodorants": 127,
+   "fonds-de-teint-compacte": 111,
+   "cremes-et-laits-hydratants": 108,
+   "lotions-capillaires": 103,
+   "colorations": 89,
+   "dentifrices": 78,
+   "accessoires-et-objets-connectes": 76,
+   "rasage-homme": 75,
+   "gels-et-cremes-de-douche": 65,
+   "anticernes-et-correcteurs": 60,
+   "brosses-a-dents": 59,
+   "hygiene-intime-et-periodique": 56,
+   "epilation-et-rasage-femme": 53,
+   "tv-led-et-homes-cinemas": 48,
+   "smartphones-et-telephones-fixes": 46,
+   "fixations": 39,
+   "gels-nettoyants": 38,
+   "soin-des-ongles": 36,
+   "demaquillants": 32,
+   "fards-a-paupieres": 32,
+   "crayons-et-eye-liner": 32,
+   "produits-antibacteriens-et-masques": 28,
+   "eaux-de-cologne": 27,
+   "accessoires": 24,
+   "ordinateurs-et-imprimantes": 17,
+   "supports-tv-et-accessoires": 16,
+   "cremes-soin": 16,
+   "mascaras": 16,
+   "boissons-et-grignotages": 16,
+   "cremes-de-jour": 14,
+   "gels-gommage": 14,
+   "audio-et-video": 13,
+   "soins-des-levres": 11,
+   "trousses-de-toilette": 11,
+   "cremes-anti-rides": 11,
+   "cotons-tiges": 9,
+   "gaming": 8,
+   "disques-a-demaquiller": 8,
+   "masques": 8,
+   "cremes-de-nuit": 7,
+   "hygiene-sexuelle": 7,
+   "installation-livraison-et-entretien": 5,
+   "tablettes": 5,
+   "cotons-predecoupes": 2,
+   "bains-de-bouche": 2,
+   "?": 1,
+   "cures-dents": 1
+  }
+ },
+ "geantReviewedAndExcluded": {
+  "boissons-et-grignotages": "dietary supplements / powders (not grocery staples)",
+  "tablettes": "ambiguous (electronic tablets)"
+ },
+ "carrefourSizelessExcluded": [
+  {
+   "sid": "6191307401240",
+   "name": "Biscuit P'tit matin spéculoos",
+   "brand": "LBM",
+   "pageDescription": "Biscuit P'tit matin spéculoos",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Biscuit speculoos P'tit matin 95 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/biscuit-p-tit-matin-speculoos-6191307401240.html"
+  },
+  {
+   "sid": "6191503207554",
+   "name": "Crème dessert Plaisir zgougou",
+   "brand": "YAB",
+   "pageDescription": "Crème Plaisir zgougou YAB",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Crème dessert zgougou Plaisir 100 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/creme-dessert-plaisir-zgougou-6191503207554.html"
+  },
+  {
+   "sid": "6194001510096",
+   "name": "Sirop de menthe",
+   "brand": "Hazem",
+   "pageDescription": "hazem",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Sirop menthe 1 L\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/sirop-de-menthe-6194001510096.html"
+  },
+  {
+   "sid": "6194003800317",
+   "name": "Yaourt nature",
+   "brand": "Délice",
+   "pageDescription": "Yaourt Le Nature",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Yaourt nature 12 × 110 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/yaourt-nature-6194003800317.html"
+  }
+ ]
+}

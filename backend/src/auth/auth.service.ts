@@ -28,7 +28,11 @@ export class AuthService {
     if (!user || !(await comparePassword(dto.password, user.password))) {
       throw new UnauthorizedException('Invalid phone number or password');
     }
-    const { password: _password, ...publicUser } = user;
+    const {
+      password: _password,
+      photoPublicId: _photoPublicId,
+      ...publicUser
+    } = user;
     return this.buildAuthResponse(publicUser);
   }
 

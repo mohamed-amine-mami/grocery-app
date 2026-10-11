@@ -18,9 +18,16 @@ import { SaleUnit } from '../products/sale-unit.enum.js';
  * matches on them, so a changed name never means a new entry.
  */
 
+export interface CatalogBrand {
+  slug: string;
+  name: string;
+}
+
 export interface CatalogProduct {
   slug: string;
   name: string;
+  /** The slug of a brand in the file's `brands` list; `null` for a brandless product. */
+  brandSlug: string | null;
   description: string | null;
   photo: string | null;
   defaultSaleUnit: SaleUnit;
@@ -40,6 +47,7 @@ export interface CatalogCategory {
 }
 
 export interface Catalog {
+  brands: CatalogBrand[];
   categories: CatalogCategory[];
 }
 
@@ -54,9 +62,11 @@ const CATEGORY_KEYS = [
   'archived',
   'products',
 ];
+const BRAND_KEYS = ['slug', 'name'];
 const PRODUCT_KEYS = [
   'slug',
   'name',
+  'brandSlug',
   'description',
   'photo',
   'defaultSaleUnit',
@@ -67,6 +77,8 @@ const PRODUCT_KEYS = [
 ];
 /** Keys people reach for to point a product at a category — the nesting already does that. */
 const CATEGORY_REFERENCE_KEYS = ['category', 'categoryId', 'categorySlug'];
+/** Keys people reach for to point a product at a brand — it is `brandSlug`. */
+const BRAND_REFERENCE_KEYS = ['brand', 'brandId'];
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -94,6 +106,11 @@ export function parseCatalog(input: unknown): ParsedCatalog {
         fail(
           path,
           `unknown field "${key}" — a product belongs to the category it is nested under`,
+        );
+      } else if (isProduct && BRAND_REFERENCE_KEYS.includes(key)) {
+        fail(
+          path,
+          `unknown field "${key}" — point a product at its brand with "brandSlug"`,
         );
       } else {
         fail(path, `unknown field "${key}"`);
@@ -159,6 +176,22 @@ export function parseCatalog(input: unknown): ParsedCatalog {
     return value;
   };
 
+  const readBrandSlug = (path: string, value: unknown): string | null => {
+    if (value === undefined || value === null) return null;
+    if (
+      typeof value !== 'string' ||
+      value.length > SLUG_MAX_LENGTH ||
+      !SLUG_PATTERN.test(value)
+    ) {
+      fail(
+        `${path}.brandSlug`,
+        'must be the slug of a brand in "brands" (lowercase letters and digits separated by single hyphens), or null',
+      );
+      return null;
+    }
+    return value;
+  };
+
   const readArchived = (path: string, value: unknown): boolean => {
     if (value === undefined) return false;
     if (typeof value !== 'boolean') {
@@ -191,6 +224,7 @@ export function parseCatalog(input: unknown): ParsedCatalog {
 
     const slug = readSlug(path, value['slug']);
     const name = readName(path, value['name']);
+    const brandSlug = readBrandSlug(path, value['brandSlug']);
     const description = readDescription(path, value['description']);
     const photo = readPhoto(path, value['photo']);
     const archived = readArchived(path, value['archived']);
@@ -252,6 +286,7 @@ export function parseCatalog(input: unknown): ParsedCatalog {
     return {
       slug,
       name,
+      brandSlug,
       description,
       photo,
       defaultSaleUnit: rules.saleUnit,
@@ -260,6 +295,19 @@ export function parseCatalog(input: unknown): ParsedCatalog {
       defaultMaxQuantity: rules.maxQuantity,
       archived,
     };
+  };
+
+  const readBrand = (path: string, value: unknown): CatalogBrand | null => {
+    if (!isRecord(value)) {
+      fail(path, 'must be an object');
+      return null;
+    }
+    const before = errors.length;
+    rejectUnknownKeys(path, value, BRAND_KEYS);
+    const slug = readSlug(path, value['slug']);
+    const name = readName(path, value['name']);
+    if (errors.length > before || slug === null || name === null) return null;
+    return { slug, name };
   };
 
   const readCategory = (
@@ -299,7 +347,22 @@ export function parseCatalog(input: unknown): ParsedCatalog {
       errors: ['catalog: must be an object with a "categories" list'],
     };
   }
-  rejectUnknownKeys('catalog', input, ['categories']);
+  rejectUnknownKeys('catalog', input, ['brands', 'categories']);
+
+  // `brands` is optional: a catalog without brands is still valid.
+  const rawBrands = input['brands'];
+  const brands: CatalogBrand[] = [];
+  if (rawBrands !== undefined) {
+    if (!Array.isArray(rawBrands)) {
+      fail('catalog.brands', 'must be a list (it may be empty)');
+    } else {
+      rawBrands.forEach((raw, index) => {
+        const brand = readBrand(`brands[${index}]`, raw);
+        if (brand) brands.push(brand);
+      });
+    }
+  }
+
   const rawCategories = input['categories'];
   const categories: CatalogCategory[] = [];
   if (!Array.isArray(rawCategories)) {
@@ -312,15 +375,41 @@ export function parseCatalog(input: unknown): ParsedCatalog {
   }
 
   if (errors.length === 0) {
-    checkUniqueness(categories, errors);
+    checkUniqueness(brands, categories, errors);
   }
   return errors.length > 0
     ? { catalog: null, errors }
-    : { catalog: { categories }, errors };
+    : { catalog: { brands, categories }, errors };
 }
 
 /** Slugs are unique across the file; active names are unique too (the database enforces both). */
-function checkUniqueness(categories: CatalogCategory[], errors: string[]) {
+function checkUniqueness(
+  brands: CatalogBrand[],
+  categories: CatalogCategory[],
+  errors: string[],
+) {
+  const brandSlugs = new Map<string, string>();
+  const brandNames = new Map<string, string>();
+  brands.forEach((brand, bi) => {
+    const path = `brands[${bi}]`;
+    const seenSlug = brandSlugs.get(brand.slug);
+    if (seenSlug) {
+      errors.push(
+        `${path}.slug: "${brand.slug}" is already used by ${seenSlug}`,
+      );
+    }
+    brandSlugs.set(brand.slug, path);
+    // Brands are never archived, so every brand name counts.
+    const key = brand.name.toLowerCase();
+    const seenName = brandNames.get(key);
+    if (seenName) {
+      errors.push(
+        `${path}.name: "${brand.name}" is already used by brand ${seenName}`,
+      );
+    }
+    brandNames.set(key, path);
+  });
+
   const categorySlugs = new Map<string, string>();
   const productSlugs = new Map<string, string>();
   const categoryNames = new Map<string, string>();
@@ -357,12 +446,23 @@ function checkUniqueness(categories: CatalogCategory[], errors: string[]) {
       }
       productSlugs.set(product.slug, path);
 
+      if (product.brandSlug !== null && !brandSlugs.has(product.brandSlug)) {
+        errors.push(
+          `${path}.brandSlug: unknown brand "${product.brandSlug}" — add it to "brands"`,
+        );
+      }
+
+      // Active names are unique per brand (a brandless name among the brandless).
       if (!product.archived) {
-        const key = product.name.toLowerCase();
+        const key = `${product.name.toLowerCase()}\u0000${product.brandSlug ?? ''}`;
         const seen = productNames.get(key);
         if (seen) {
+          const brand =
+            product.brandSlug === null
+              ? ''
+              : ` of brand "${product.brandSlug}"`;
           errors.push(
-            `${path}.name: "${product.name}" is already used by active product ${seen}`,
+            `${path}.name: "${product.name}"${brand} is already used by active product ${seen}`,
           );
         }
         productNames.set(key, path);

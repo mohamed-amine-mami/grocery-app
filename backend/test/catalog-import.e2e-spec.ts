@@ -1,4 +1,4 @@
-import { importCatalog } from '../src/catalog/catalog-import.js';
+import { formatReport, importCatalog } from '../src/catalog/catalog-import.js';
 import { db } from '../src/prisma/db.js';
 import { fixtureCatalog } from './catalog-fixture.js';
 import { registerOwnerWithStore, startApp, stopApp } from './support.js';
@@ -13,6 +13,9 @@ const tag = `e2e${Date.now()}`;
 const offeringIds: number[] = [];
 
 const catalogRows = async () => ({
+  brands: (await db.orm.public.Brand.all()).filter((b) =>
+    b.slug.startsWith(tag),
+  ),
   categories: (await db.orm.public.Category.all()).filter((c) =>
     c.slug.startsWith(tag),
   ),
@@ -35,9 +38,12 @@ afterAll(async () => {
   for (const id of offeringIds) {
     await db.orm.public.StoreProduct.select('id').where({ id }).delete();
   }
-  const { products, categories } = await catalogRows();
+  const { products, brands, categories } = await catalogRows();
   for (const { id } of products) {
     await db.orm.public.Product.select('id').where({ id }).delete();
+  }
+  for (const { id } of brands) {
+    await db.orm.public.Brand.select('id').where({ id }).delete();
   }
   for (const { id } of categories) {
     await db.orm.public.Category.select('id').where({ id }).delete();
@@ -55,9 +61,10 @@ beforeEach(() => {
   fixture = fixtureCatalog(testTag);
 });
 const own = async () => {
-  const { categories, products } = await catalogRows();
+  const { brands, categories, products } = await catalogRows();
   // The trailing hyphen keeps `...t1-` from also matching `...t10-`.
   return {
+    brands: brands.filter((b) => b.slug.startsWith(`${testTag}-`)),
     categories: categories.filter((c) => c.slug.startsWith(`${testTag}-`)),
     products: products.filter((p) => p.slug.startsWith(`${testTag}-`)),
   };
@@ -356,5 +363,267 @@ describe('transaction', () => {
     expect(after.categories.map((c) => c.slug)).not.toContain(
       `${testTag}-epicerie`,
     );
+  });
+});
+
+describe('brands', () => {
+  /** The fixture plus two brands and three "Ketchup" products (Heinz, Amora, none). */
+  const withKetchups = () => {
+    fixture.brands = [
+      { slug: `${testTag}-heinz`, name: `Heinz ${testTag}` },
+      { slug: `${testTag}-amora`, name: `Amora ${testTag}` },
+    ];
+    fixture.categories[1]!.products.push(
+      {
+        slug: `${testTag}-ketchup-heinz`,
+        name: `Ketchup ${testTag}`,
+        brandSlug: `${testTag}-heinz`,
+        defaultSaleUnit: 'PIECE',
+      },
+      {
+        slug: `${testTag}-ketchup-amora`,
+        name: `Ketchup ${testTag}`,
+        brandSlug: `${testTag}-amora`,
+        defaultSaleUnit: 'PIECE',
+      },
+      {
+        slug: `${testTag}-ketchup`,
+        name: `Ketchup ${testTag}`,
+        defaultSaleUnit: 'PIECE',
+      },
+    );
+    return fixture;
+  };
+  const brandOf = async (value: string) => {
+    const product = await bySlug(value);
+    if (product?.brandId == null) return null;
+    return (await db.orm.public.Brand.first({ id: product.brandId }))?.slug;
+  };
+
+  it('creates the brands and resolves each product’s brand from its slug', async () => {
+    const report = await run(withKetchups());
+
+    expect(report.errors).toEqual([]);
+    expect(report.brands).toEqual({
+      created: 2,
+      updated: 0,
+      unchanged: 0,
+      archived: 0,
+    });
+    expect(report.products).toMatchObject({ created: 6 });
+    expect((await own()).brands.map((b) => b.name).sort()).toEqual([
+      `Amora ${testTag}`,
+      `Heinz ${testTag}`,
+    ]);
+    expect(await brandOf('ketchup-heinz')).toBe(`${testTag}-heinz`);
+    expect(await brandOf('ketchup-amora')).toBe(`${testTag}-amora`);
+    expect(await brandOf('ketchup')).toBeNull();
+    expect(await brandOf('banane')).toBeNull();
+  });
+
+  it('is idempotent: importing twice creates no duplicate brand or product', async () => {
+    await run(withKetchups());
+    const before = await own();
+
+    const again = await run(fixture);
+
+    expect(again.errors).toEqual([]);
+    expect(again.brands).toEqual({
+      created: 0,
+      updated: 0,
+      unchanged: 2,
+      archived: 0,
+    });
+    expect(again.products).toMatchObject({ created: 0, updated: 0 });
+    const after = await own();
+    expect(after.brands).toEqual(before.brands);
+    expect(after.products).toEqual(before.products);
+  });
+
+  it('adds a brand to a product that already exists without changing its identity', async () => {
+    await run(fixture);
+    const before = await bySlug('banane');
+
+    fixture.brands = [
+      { slug: `${testTag}-del-monte`, name: `Del Monte ${testTag}` },
+    ];
+    fixture.categories[0]!.products[0]!['brandSlug'] = `${testTag}-del-monte`;
+    const report = await run(fixture);
+
+    expect(report.errors).toEqual([]);
+    expect(report.brands).toMatchObject({ created: 1 });
+    expect(report.products).toMatchObject({ created: 0, updated: 1 });
+    const after = await bySlug('banane');
+    expect(after).toMatchObject({ id: before!.id, slug: before!.slug });
+    expect(after!.name).toBe(before!.name);
+    expect(await brandOf('banane')).toBe(`${testTag}-del-monte`);
+    expect((await own()).products).toHaveLength(3);
+  });
+
+  it('changes a brand, removes it, and renames a brand under the same slug', async () => {
+    await run(withKetchups());
+
+    const changed = structuredClone(fixture);
+    changed.brands![0]!.name = `Heinz France ${testTag}`;
+    const products = changed.categories[1]!.products;
+    const heinz = products.find(
+      (p) => p['slug'] === `${testTag}-ketchup-heinz`,
+    )!;
+    const plain = products.find((p) => p['slug'] === `${testTag}-ketchup`)!;
+    heinz['name'] = `Ketchup nature ${testTag}`; // keeps the name unique once brandless
+    delete heinz['brandSlug'];
+    plain['brandSlug'] = `${testTag}-amora`;
+    plain['name'] = `Ketchup bio ${testTag}`;
+
+    const report = await run(changed);
+
+    expect(report.errors).toEqual([]);
+    expect(report.brands).toMatchObject({
+      created: 0,
+      updated: 1,
+      unchanged: 1,
+    });
+    expect(await brandOf('ketchup-heinz')).toBeNull();
+    expect(await brandOf('ketchup')).toBe(`${testTag}-amora`);
+    expect(
+      (await db.orm.public.Brand.first({ slug: `${testTag}-heinz` }))?.name,
+    ).toBe(`Heinz France ${testTag}`);
+  });
+
+  it('never touches the store products when a brand changes', async () => {
+    await run(withKetchups());
+    const product = await bySlug('ketchup');
+    const offering = await db.orm.public.StoreProduct.create({
+      storeId,
+      productId: product!.id,
+      saleUnit: 'PIECE',
+      priceMillimes: 3200,
+      minQuantity: 2,
+      quantityStep: 1,
+      maxQuantity: 12,
+      trackStock: true,
+      stockQuantity: 7,
+      isAvailable: false,
+      archivedAt: null,
+    });
+    offeringIds.push(offering.id);
+
+    const changed = structuredClone(fixture);
+    changed.categories[1]!.products.find(
+      (p) => p['slug'] === `${testTag}-ketchup`,
+    )!['brandSlug'] = `${testTag}-heinz`;
+    changed.categories[1]!.products.find(
+      (p) => p['slug'] === `${testTag}-ketchup`,
+    )!['name'] = `Ketchup maison ${testTag}`;
+    expect((await run(changed)).errors).toEqual([]);
+
+    const after = await db.orm.public.StoreProduct.first({ id: offering.id });
+    expect(after).toMatchObject({
+      priceMillimes: 3200,
+      minQuantity: 2,
+      maxQuantity: 12,
+      trackStock: true,
+      stockQuantity: 7,
+      isAvailable: false,
+    });
+  });
+
+  describe('invalid files write nothing', () => {
+    const nothingWritten = async () => {
+      const after = await own();
+      expect(after.brands).toEqual([]);
+      expect(after.products).toEqual([]);
+    };
+
+    it('an unknown brand reference', async () => {
+      fixture.categories[0]!.products[0]!['brandSlug'] = `${testTag}-inconnue`;
+      fixture.brands = [{ slug: `${testTag}-heinz`, name: `Heinz ${testTag}` }];
+      const report = await run(fixture);
+      expect(report.errors).toEqual([expect.stringContaining('unknown brand')]);
+      await nothingWritten();
+    });
+
+    it('a duplicate brand slug', async () => {
+      fixture.brands = [
+        { slug: `${testTag}-heinz`, name: `Heinz ${testTag}` },
+        { slug: `${testTag}-heinz`, name: `Amora ${testTag}` },
+      ];
+      const report = await run(fixture);
+      expect(report.errors).toEqual([expect.stringContaining('already used')]);
+      await nothingWritten();
+    });
+
+    it('a duplicate brand name in another case', async () => {
+      fixture.brands = [
+        { slug: `${testTag}-heinz`, name: `Heinz ${testTag}` },
+        { slug: `${testTag}-heinz-2`, name: `HEINZ ${testTag}` },
+      ];
+      const report = await run(fixture);
+      expect(report.errors).toEqual([expect.stringContaining('already used')]);
+      await nothingWritten();
+    });
+
+    it('an invalid brand slug', async () => {
+      fixture.brands = [{ slug: 'Heinz Co', name: `Heinz ${testTag}` }];
+      const report = await run(fixture);
+      expect(report.errors).toEqual([
+        expect.stringContaining('must be lowercase'),
+      ]);
+      await nothingWritten();
+    });
+
+    it('the same active name twice under one brand, or twice brandless', async () => {
+      withKetchups();
+      fixture.categories[1]!.products.push({
+        slug: `${testTag}-ketchup-heinz-2`,
+        name: `Ketchup ${testTag}`,
+        brandSlug: `${testTag}-heinz`,
+        defaultSaleUnit: 'PIECE',
+      });
+      expect((await run(fixture)).errors).toEqual([
+        expect.stringContaining('of brand'),
+      ]);
+      await nothingWritten();
+    });
+  });
+
+  it('rolls the brands back too when a write fails part-way', async () => {
+    await run(fixture);
+    const before = await own();
+
+    // A new brand is written first; two products swapping names then fails.
+    fixture.brands = [{ slug: `${testTag}-heinz`, name: `Heinz ${testTag}` }];
+    const [fruits, dairy] = fixture.categories;
+    const banana = fruits!.products[0]!;
+    const milk = dairy!.products[0]!;
+    [banana['name'], milk['name']] = [milk['name'], banana['name']];
+
+    const report = await run(fixture);
+
+    expect(report.errors).toEqual([
+      expect.stringContaining('Nothing was written'),
+    ]);
+    const after = await own();
+    expect(after.brands).toEqual(before.brands);
+    expect(after.products).toEqual(before.products);
+  });
+
+  it('shows the brands in a dry run and writes none', async () => {
+    withKetchups();
+    const dry = await run(fixture, true);
+
+    expect(dry.errors).toEqual([]);
+    expect(dry.brands).toMatchObject({ created: 2 });
+    expect(dry.products).toMatchObject({ created: 6 });
+    expect((await own()).brands).toEqual([]);
+    const text = formatReport(dry, { database: 'test', file: 'catalog.json' });
+    expect(text).toContain('Brands:     created 2, updated 0, unchanged 0');
+    expect(text).toContain('DRY RUN');
+
+    await run(fixture);
+    const again = await run(fixture, true);
+    expect(
+      formatReport(again, { database: 'test', file: 'catalog.json' }),
+    ).toContain('Brands:     created 0, updated 0, unchanged 2');
   });
 });

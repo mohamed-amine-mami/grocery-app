@@ -4,6 +4,7 @@
  * share one database cannot collide; with no tag the names are plain.
  */
 export interface FixtureCatalog {
+  brands?: { slug: string; name: string }[];
   categories: {
     slug: string;
     name: string;

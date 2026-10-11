@@ -1,0 +1,457 @@
+{
+ "geant:121878": {
+  "qual": "mangue",
+  "core": null,
+  "group": 0,
+  "legendN": 1,
+  "name": "Boisson au jus 1 L"
+ },
+ "geant:121880": {
+  "qual": "cactus",
+  "core": null,
+  "group": 0,
+  "legendN": 2,
+  "name": "Boisson au jus 1 L"
+ },
+ "geant:121881": {
+  "qual": "fruit de la passion",
+  "core": null,
+  "group": 0,
+  "legendN": 3,
+  "name": "Boisson au jus 1 L"
+ },
+ "geant:121882": {
+  "qual": "litchi",
+  "core": null,
+  "group": 0,
+  "legendN": 4,
+  "name": "Boisson au jus 1 L"
+ },
+ "geant:134999": {
+  "qual": "en boîte métal",
+  "core": null,
+  "group": 1,
+  "legendN": 5,
+  "name": "Chamia aux amandes 185 g"
+ },
+ "geant:135872": {
+  "qual": "en barquette",
+  "core": null,
+  "group": 1,
+  "legendN": 6,
+  "name": "Chamia aux amandes 185 g"
+ },
+ "geant:133496": {
+  "qual": "mangue en brique",
+  "core": null,
+  "group": 3,
+  "legendN": 9,
+  "name": "Nectar mangue 1 L"
+ },
+ "geant:146470": {
+  "qual": "mangue en bouteille de verre",
+  "core": null,
+  "group": 3,
+  "legendN": 10,
+  "name": "Nectar mangue 1 L"
+ },
+ "geant:148251": {
+  "qual": "nature",
+  "core": null,
+  "group": 4,
+  "legendN": 11,
+  "name": "Tortillas de farine 360 g"
+ },
+ "geant:148252": {
+  "qual": "complète",
+  "core": null,
+  "group": 4,
+  "legendN": 12,
+  "name": "Tortillas de farine 360 g"
+ },
+ "geant:150269": {
+  "qual": "bergamote sans sucre",
+  "core": "Thé noir soluble",
+  "group": 5,
+  "legendN": 13,
+  "name": "Thé noir soluble bergamotte-Avec sucre 10 sachets"
+ },
+ "geant:150270": {
+  "qual": "bergamote avec sucre",
+  "core": "Thé noir soluble",
+  "group": 5,
+  "legendN": 14,
+  "name": "Thé noir soluble bergamotte-Avec sucre 10 sachets"
+ },
+ "geant:150268": {
+  "qual": "citron avec sucre",
+  "core": "Thé vert soluble",
+  "group": 6,
+  "legendN": 15,
+  "name": "Thé vert soluble citron-Sans sucre 10 sachets"
+ },
+ "geant:152399": {
+  "qual": "citron sans sucre",
+  "core": "Thé vert soluble",
+  "group": 6,
+  "legendN": 16,
+  "name": "Thé vert soluble citron-Sans sucre 10 sachets"
+ },
+ "geant:156946": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 7,
+  "legendN": 17,
+  "name": "Vinaigre de citron 50 cl"
+ },
+ "geant:156993": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 7,
+  "legendN": 18,
+  "name": "Vinaigre de citron 50 cl"
+ },
+ "geant:133500": {
+  "qual": "raisin en brique",
+  "core": null,
+  "group": 9,
+  "legendN": 21,
+  "name": "Nectar raisin 1 L"
+ },
+ "geant:161034": {
+  "qual": "raisin en bouteille de verre",
+  "core": null,
+  "group": 9,
+  "legendN": 22,
+  "name": "Nectar raisin 1 L"
+ },
+ "geant:133497": {
+  "qual": "pomme en brique",
+  "core": null,
+  "group": 10,
+  "legendN": 23,
+  "name": "Nectar pomme 1 L"
+ },
+ "geant:161037": {
+  "qual": "pomme en bouteille de verre",
+  "core": null,
+  "group": 10,
+  "legendN": 24,
+  "name": "Nectar pomme 1 L"
+ },
+ "geant:161042": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 11,
+  "legendN": 25,
+  "name": "Vinaigre de cidre 50 cl"
+ },
+ "geant:161043": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 11,
+  "legendN": 26,
+  "name": "Vinaigre de cidre 50 cl"
+ },
+ "geant:156992": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 12,
+  "legendN": 27,
+  "name": "Vinaigre à l'ail 50 cl"
+ },
+ "geant:161044": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 12,
+  "legendN": 28,
+  "name": "Vinaigre à l'ail 50 cl"
+ },
+ "geant:113234": {
+  "qual": "édition Superman vanille-chocolat",
+  "core": null,
+  "group": 13,
+  "legendN": 29,
+  "name": "Super cake chocolat vanille 40 g"
+ },
+ "geant:164587": {
+  "qual": "édition Batman chocolat-vanille",
+  "core": null,
+  "group": 13,
+  "legendN": 30,
+  "name": "Super cake chocolat vanille 40 g"
+ },
+ "geant:23205": {
+  "qual": "orange",
+  "core": null,
+  "group": 14,
+  "legendN": 31,
+  "name": "Crumble 65 g"
+ },
+ "geant:23206": {
+  "qual": "pistache",
+  "core": null,
+  "group": 14,
+  "legendN": 32,
+  "name": "Crumble 65 g"
+ },
+ "geant:23212": {
+  "qual": "banane",
+  "core": null,
+  "group": 14,
+  "legendN": 33,
+  "name": "Crumble 65 g"
+ },
+ "geant:23208": {
+  "qual": "abricot",
+  "core": null,
+  "group": 15,
+  "legendN": 34,
+  "name": "Crostatini 65 g"
+ },
+ "geant:23209": {
+  "qual": "pomme",
+  "core": null,
+  "group": 15,
+  "legendN": 35,
+  "name": "Crostatini 65 g"
+ },
+ "geant:23214": {
+  "qual": "fraise",
+  "core": null,
+  "group": 15,
+  "legendN": 36,
+  "name": "Crostatini 65 g"
+ },
+ "geant:23211": {
+  "qual": "glaçage blanc",
+  "core": null,
+  "group": 16,
+  "legendN": 37,
+  "name": "Baked donuts 50 g"
+ },
+ "geant:23213": {
+  "qual": "glaçage chocolat",
+  "core": null,
+  "group": 16,
+  "legendN": 38,
+  "name": "Baked donuts 50 g"
+ },
+ "geant:23225": {
+  "qual": "orange",
+  "core": null,
+  "group": 17,
+  "legendN": 39,
+  "name": "Cake maxibon 220 g"
+ },
+ "geant:23226": {
+  "qual": "chocolat-vanille",
+  "core": null,
+  "group": 17,
+  "legendN": 40,
+  "name": "Cake maxibon 220 g"
+ },
+ "geant:23227": {
+  "qual": "citron vert",
+  "core": null,
+  "group": 17,
+  "legendN": 41,
+  "name": "Cake maxibon 220 g"
+ },
+ "geant:117147": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 21,
+  "legendN": 48,
+  "name": "Sirop orgeat 1 L"
+ },
+ "geant:24608": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 21,
+  "legendN": 49,
+  "name": "Sirop orgeat 1 L"
+ },
+ "geant:161028": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 30,
+  "legendN": 67,
+  "name": "Huile d'olive extra vierge 500 ml"
+ },
+ "geant:26590": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 30,
+  "legendN": 68,
+  "name": "Huile d'olive extra vierge 500 ml"
+ },
+ "geant:28886": {
+  "qual": "boîte métal",
+  "core": null,
+  "group": 36,
+  "legendN": 80,
+  "name": "Café soluble 50 g"
+ },
+ "geant:28953": {
+  "qual": "sachet recharge",
+  "core": null,
+  "group": 36,
+  "legendN": 81,
+  "name": "Café soluble 50 g"
+ },
+ "geant:28885": {
+  "qual": "boîte métal",
+  "core": null,
+  "group": 37,
+  "legendN": 82,
+  "name": "Café soluble 100 g"
+ },
+ "geant:28956": {
+  "qual": "sachet recharge",
+  "core": null,
+  "group": 37,
+  "legendN": 83,
+  "name": "Café soluble 100 g"
+ },
+ "geant:28996": {
+  "qual": "au lait",
+  "core": null,
+  "group": 39,
+  "legendN": 86,
+  "name": "Gaufrette chocolat 33 g"
+ },
+ "geant:29077": {
+  "qual": "au chocolat",
+  "core": null,
+  "group": 39,
+  "legendN": 87,
+  "name": "Gaufrette chocolat 33 g"
+ },
+ "geant:26258": {
+  "qual": "en boîte métal",
+  "core": null,
+  "group": 40,
+  "legendN": 88,
+  "name": "Chamia pistache 350 g"
+ },
+ "geant:29252": {
+  "qual": "en barquette",
+  "core": null,
+  "group": 40,
+  "legendN": 89,
+  "name": "Chamia pistache 350 g"
+ },
+ "geant:26272": {
+  "qual": "en boîte métal",
+  "core": null,
+  "group": 41,
+  "legendN": 90,
+  "name": "Chamia fruits secs 350 g"
+ },
+ "geant:29253": {
+  "qual": "en barquette",
+  "core": null,
+  "group": 41,
+  "legendN": 91,
+  "name": "Chamia fruits secs 350 g"
+ },
+ "geant:109875": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 43,
+  "legendN": 94,
+  "name": "Sirop menthe 1 L"
+ },
+ "geant:30920": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 43,
+  "legendN": 95,
+  "name": "Sirop menthe 1 L"
+ },
+ "geant:109876": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 44,
+  "legendN": 96,
+  "name": "Sirop grenadine 1 L"
+ },
+ "geant:30921": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 44,
+  "legendN": 97,
+  "name": "Sirop grenadine 1 L"
+ },
+ "geant:117148": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 45,
+  "legendN": 98,
+  "name": "Sirop pistache 1 L"
+ },
+ "geant:30922": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 45,
+  "legendN": 99,
+  "name": "Sirop pistache 1 L"
+ },
+ "geant:29222": {
+  "qual": "bouteille verre",
+  "core": null,
+  "group": 56,
+  "legendN": 119,
+  "name": "Huile d'olive extra vierge 1 L"
+ },
+ "geant:41190": {
+  "qual": "bouteille plastique",
+  "core": null,
+  "group": 56,
+  "legendN": 120,
+  "name": "Huile d'olive extra vierge 1 L"
+ },
+ "geant:26237": {
+  "qual": "en boîte métal",
+  "core": null,
+  "group": 57,
+  "legendN": 121,
+  "name": "Chamia amande 350 g"
+ },
+ "geant:48026": {
+  "qual": "en barquette",
+  "core": null,
+  "group": 57,
+  "legendN": 122,
+  "name": "Chamia amande 350 g"
+ },
+ "geant:68259": {
+  "qual": "fraise",
+  "core": null,
+  "group": 59,
+  "legendN": 125,
+  "name": "Confiture 340 g"
+ },
+ "geant:68260": {
+  "qual": "figue",
+  "core": null,
+  "group": 59,
+  "legendN": 126,
+  "name": "Confiture 340 g"
+ },
+ "geant:25226": {
+  "qual": "flacon souple",
+  "core": null,
+  "group": 63,
+  "legendN": 133,
+  "name": "Mayonnaise 500 ml"
+ },
+ "geant:80040": {
+  "qual": "bocal",
+  "core": null,
+  "group": 63,
+  "legendN": 134,
+  "name": "Mayonnaise 500 ml"
+ }
+}

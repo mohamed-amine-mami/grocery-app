@@ -20,10 +20,17 @@ export interface ExistingCategory {
   archivedAt: string | null;
 }
 
+export interface ExistingBrand {
+  id: number;
+  slug: string;
+  name: string;
+}
+
 export interface ExistingProduct {
   id: number;
   slug: string;
   categoryId: number;
+  brandId: number | null;
   name: string;
   description: string | null;
   photo: string | null;
@@ -42,12 +49,17 @@ export interface ExistingOffering {
 }
 
 export interface ExistingCatalog {
+  brands: ExistingBrand[];
   categories: ExistingCategory[];
   products: ExistingProduct[];
   offerings: ExistingOffering[];
 }
 
 export type ActionKind = 'create' | 'update' | 'archive' | 'unchanged';
+
+export interface BrandColumns {
+  name: string;
+}
 
 export interface CategoryColumns {
   name: string;
@@ -68,6 +80,15 @@ export interface ProductColumns {
 }
 
 /** A create carries every column; an update or archive only the ones that change. */
+/** Brands are never archived: only create, update or unchanged. */
+export interface BrandAction {
+  kind: Exclude<ActionKind, 'archive'>;
+  slug: string;
+  id?: number;
+  create?: BrandColumns;
+  changes?: Partial<BrandColumns>;
+}
+
 export interface CategoryAction {
   kind: ActionKind;
   slug: string;
@@ -82,9 +103,17 @@ export interface ProductAction {
   id?: number;
   /** The category the product ends up in (the one it is nested under). */
   categorySlug: string;
+  /** The brand the product ends up with, or `null` for none. */
+  brandSlug: string | null;
   create?: ProductColumns;
-  /** `categorySlug` is set here only when an existing product moves category. */
-  changes?: Partial<ProductColumns> & { categorySlug?: string };
+  /**
+   * `categorySlug` is set here only when an existing product moves category;
+   * `brandSlug` only when its brand changes (`null` = the brand is removed).
+   */
+  changes?: Partial<ProductColumns> & {
+    categorySlug?: string;
+    brandSlug?: string | null;
+  };
 }
 
 export interface Counts {
@@ -95,8 +124,10 @@ export interface Counts {
 }
 
 export interface CatalogPlan {
+  brands: BrandAction[];
   categories: CategoryAction[];
   products: ProductAction[];
+  brandCounts: Counts;
   categoryCounts: Counts;
   productCounts: Counts;
   warnings: string[];
@@ -161,12 +192,31 @@ export function planCatalog(
   existing: ExistingCatalog,
   now: string,
 ): CatalogPlan {
+  const brandBySlug = new Map(existing.brands.map((b) => [b.slug, b]));
+  const brandById = new Map(existing.brands.map((b) => [b.id, b]));
   const categoryBySlug = new Map(existing.categories.map((c) => [c.slug, c]));
   const categoryById = new Map(existing.categories.map((c) => [c.id, c]));
   const productBySlug = new Map(existing.products.map((p) => [p.slug, p]));
 
+  const brands: BrandAction[] = [];
   const categories: CategoryAction[] = [];
   const products: ProductAction[] = [];
+
+  for (const brand of catalog.brands) {
+    const row = brandBySlug.get(brand.slug);
+    const values = { name: brand.name };
+    if (!row) {
+      brands.push({ kind: 'create', slug: brand.slug, create: values });
+    } else {
+      const changes = changedColumns<BrandColumns>(row, values);
+      brands.push({
+        kind: Object.keys(changes).length > 0 ? 'update' : 'unchanged',
+        slug: brand.slug,
+        id: row.id,
+        changes,
+      });
+    }
+  }
 
   for (const category of catalog.categories) {
     const row = categoryBySlug.get(category.slug);
@@ -208,6 +258,7 @@ export function planCatalog(
           kind: 'create',
           slug: product.slug,
           categorySlug: category.slug,
+          brandSlug: product.brandSlug,
           create: {
             ...productValues,
             archivedAt: product.archived ? now : null,
@@ -215,10 +266,19 @@ export function planCatalog(
         });
         continue;
       }
-      const changes: Partial<ProductColumns> & { categorySlug?: string } =
-        changedColumns<ProductColumns>(productRow, productValues);
+      const changes: ProductAction['changes'] = changedColumns<ProductColumns>(
+        productRow,
+        productValues,
+      );
       if (categoryById.get(productRow.categoryId)?.slug !== category.slug) {
         changes.categorySlug = category.slug; // moved; resolved to an id when written
+      }
+      const currentBrandSlug =
+        productRow.brandId === null
+          ? null
+          : (brandById.get(productRow.brandId)?.slug ?? null);
+      if (currentBrandSlug !== product.brandSlug) {
+        changes.brandSlug = product.brandSlug; // resolved to an id when written
       }
       const kind = withArchiveState(
         changes,
@@ -231,6 +291,7 @@ export function planCatalog(
         slug: product.slug,
         id: productRow.id,
         categorySlug: category.slug,
+        brandSlug: product.brandSlug,
         changes,
       });
     }
@@ -243,8 +304,10 @@ export function planCatalog(
       : planWarnings(catalog, existing, categories, products);
 
   return {
+    brands,
     categories,
     products,
+    brandCounts: tally(brands),
     categoryCounts: tally(categories),
     productCounts: tally(products),
     warnings,
@@ -259,38 +322,68 @@ export function planCatalog(
 function nameCollisions(catalog: Catalog, existing: ExistingCatalog): string[] {
   const errors: string[] = [];
 
+  // `scope` narrows what a name must be unique within: a product's brand
+  // (the same name under two brands is two products), none for the rest.
   const check = (
     label: string,
-    inFile: { slug: string; name: string; archived: boolean }[],
-    stored: { slug: string; name: string; archivedAt: string | null }[],
+    inFile: {
+      slug: string;
+      name: string;
+      archived: boolean;
+      scope?: string | null;
+    }[],
+    stored: {
+      slug: string;
+      name: string;
+      archivedAt: string | null;
+      scope?: string | null;
+    }[],
   ) => {
     const fileSlugs = new Set(inFile.map((entry) => entry.slug));
     const holders = new Map<string, string>();
-    const claim = (name: string, slug: string) => {
-      const key = name.toLowerCase();
+    const claim = (name: string, slug: string, scope: string | null = null) => {
+      const key = `${name.toLowerCase()}\u0000${scope ?? ''}`;
       const holder = holders.get(key);
       if (holder !== undefined && holder !== slug) {
+        const where = scope === null ? '' : ` (brand "${scope}")`;
         errors.push(
-          `${label} name "${name}" would be used by both "${holder}" and "${slug}"`,
+          `${label} name "${name}"${where} would be used by both "${holder}" and "${slug}"`,
         );
       }
       holders.set(key, slug);
     };
     for (const row of stored) {
       if (!fileSlugs.has(row.slug) && row.archivedAt === null) {
-        claim(row.name, row.slug);
+        claim(row.name, row.slug, row.scope);
       }
     }
     for (const entry of inFile) {
-      if (!entry.archived) claim(entry.name, entry.slug);
+      if (!entry.archived) claim(entry.name, entry.slug, entry.scope);
     }
   };
 
+  const brandSlugOf = new Map(existing.brands.map((b) => [b.id, b.slug]));
+  check(
+    'Brand',
+    catalog.brands.map((brand) => ({ ...brand, archived: false })),
+    existing.brands.map((brand) => ({ ...brand, archivedAt: null })),
+  );
   check('Category', catalog.categories, existing.categories);
   check(
     'Product',
-    catalog.categories.flatMap((category) => category.products),
-    existing.products,
+    catalog.categories.flatMap((category) =>
+      category.products.map((product) => ({
+        ...product,
+        scope: product.brandSlug,
+      })),
+    ),
+    existing.products.map((product) => ({
+      ...product,
+      scope:
+        product.brandId === null
+          ? null
+          : (brandSlugOf.get(product.brandId) ?? null),
+    })),
   );
   return errors;
 }
@@ -353,6 +446,10 @@ function planWarnings(
   const fileProductSlugs = new Set(
     catalog.categories.flatMap((c) => c.products.map((p) => p.slug)),
   );
+  const fileBrandSlugs = new Set(catalog.brands.map((b) => b.slug));
+  const missingBrands = existing.brands
+    .filter((b) => !fileBrandSlugs.has(b.slug))
+    .map((b) => b.slug);
   const fileCategorySlugs = new Set(catalog.categories.map((c) => c.slug));
   const missingProducts = existing.products
     .filter((p) => !fileProductSlugs.has(p.slug))
@@ -360,6 +457,11 @@ function planWarnings(
   const missingCategories = existing.categories
     .filter((c) => !fileCategorySlugs.has(c.slug))
     .map((c) => c.slug);
+  if (missingBrands.length > 0) {
+    warnings.push(
+      `${missingBrands.length} catalog brand(s) are not in the file and were left unchanged: ${listSome(missingBrands)}`,
+    );
+  }
   if (missingProducts.length > 0) {
     warnings.push(
       `${missingProducts.length} catalog product(s) are not in the file and were left unchanged: ${listSome(missingProducts)}`,

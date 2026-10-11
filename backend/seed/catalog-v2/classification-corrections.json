@@ -1,0 +1,476 @@
+[
+ {
+  "slug": "ghrayba-droo-sesame-320-g-alyssa",
+  "name": "Ghrayba droo-Sésame 320 g",
+  "category": "biscuits-gateaux",
+  "rule": "C2 ghrayba is a shortbread biscuit"
+ },
+ {
+  "slug": "ghrayba-hommes-400-g-alyssa",
+  "name": "Ghrayba hommes 400 g",
+  "category": "biscuits-gateaux",
+  "rule": "C2 ghrayba is a shortbread biscuit"
+ },
+ {
+  "slug": "boisson-d-amande-sans-sucre-sans-gluten-1-l-lovege",
+  "name": "Boisson d'amande sans sucre-Sans gluten 1 L",
+  "category": "boissons",
+  "rule": "M10 drink"
+ },
+ {
+  "slug": "boisson-de-soja-calcium-sans-sucre-sans-gluten-1-l-lovege",
+  "name": "Boisson de soja calcium sans sucre-Sans gluten 1 L",
+  "category": "boissons",
+  "rule": "M10 drink"
+ },
+ {
+  "slug": "boisson-vegan-avoine-barista-oat-san-sucre-ajoute-33-cl-lovege",
+  "name": "Boisson vegan avoine barista oat-San sucre ajouté 33 cl",
+  "category": "boissons",
+  "rule": "M10 drink"
+ },
+ {
+  "slug": "boisson-vegan-chocolat-sans-lactos-33-cl-lovege",
+  "name": "Boisson vegan chocolat sans lactos 33 cl",
+  "category": "boissons",
+  "rule": "M10 drink"
+ },
+ {
+  "slug": "boisson-vegan-d-avoine-sans-gluten-sans-sucre-1-l-lovege",
+  "name": "Boisson vegan d'avoine sans gluten-Sans sucre 1 L",
+  "category": "boissons",
+  "rule": "M10 drink"
+ },
+ {
+  "slug": "croissant-58-g-bonel",
+  "name": "Croissant 58 g",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "croissant-chocolat-60-g-daily-n",
+  "name": "Croissant chocolat 60 g",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "croissant-fraise-60-g-daily-n",
+  "name": "Croissant fraise 60 g",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "pain-croustillant-en-fibre-de-ble-150-g-sante",
+  "name": "Pain croustillant en fibre de blé 150 g",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "pain-de-mie-multi-cereales-mama-mia",
+  "name": "Pain de mie multi-céréales",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "pain-de-mie-nature-14-tranches-mama-mia",
+  "name": "Pain de mie nature 14 tranches",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "pain-sans-sel",
+  "name": "Pain sans sel",
+  "category": "boulangerie",
+  "rule": "M9 bread / viennoiserie"
+ },
+ {
+  "slug": "bonbons-fourres-chamia-150-g-papillon",
+  "name": "Bonbons fourrés chamia 150 g",
+  "category": "chocolat-confiserie",
+  "rule": "C1 candy filled with chamia stays confectionery"
+ },
+ {
+  "slug": "hommos-tahina-400-g-mami-garden",
+  "name": "Hommos tahina 400 g",
+  "category": "epicerie",
+  "rule": "C3 tahini is a pantry sesame paste"
+ },
+ {
+  "slug": "houmous-tahina-370-g-durra",
+  "name": "Houmous tahina 370 g",
+  "category": "epicerie",
+  "rule": "C3 tahini is a pantry sesame paste"
+ },
+ {
+  "slug": "pates-noodles-beldi-5-70-g-indomie",
+  "name": "Pâtes noodles beldi 5 × 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-boeuf-5-70-g-indomie",
+  "name": "Pâtes noodles bœuf 5 × 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-boeuf-60-g-indomie",
+  "name": "Pâtes noodles bœuf 60 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-boeuf-75-g-indomie",
+  "name": "Pâtes noodles bœuf 75 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-crevettes-75-g-indomie",
+  "name": "Pâtes noodles crevettes 75 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-curry-60-g-indomie",
+  "name": "Pâtes noodles curry 60 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-de-riz-250-g-mami",
+  "name": "Pâtes noodles de riz 250 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-mi-goreng-80-g-indomie",
+  "name": "Pâtes noodles mi goreng 80 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-poulet-5-70-g-indomie",
+  "name": "Pâtes noodles poulet 5 × 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-poulet-70-g-indomie",
+  "name": "Pâtes noodles poulet 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-saveur-boeuf-70-g-kent",
+  "name": "Pâtes noodles saveur bœuf 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-saveur-curry-70-g-kent",
+  "name": "Pâtes noodles saveur curry 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-saveur-poulet-70-g-kent",
+  "name": "Pâtes noodles saveur poulet 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-saveur-vegetal-70-g-kent",
+  "name": "Pâtes noodles saveur végétal 70 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "pates-noodles-vegetable-75-g-indomie",
+  "name": "Pâtes noodles végétable 75 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "puree-pomme-de-terre-125-g-kent",
+  "name": "Purée pomme de terre 125 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-aux-legumes-53-g-kent",
+  "name": "Soupe aux légumes 53 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-creme-de-champignon-68-g-kent",
+  "name": "Soupe crème de champignon 68 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-de-legumes-51-g-calnort",
+  "name": "Soupe de légumes 51 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-de-poulet-aux-noodels-66-g-kent",
+  "name": "Soupe de poulet aux noodels 66 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-de-poulet-vermicelle-66-g-calnort",
+  "name": "Soupe de poulet vermicelle 66 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-jardiniere-60-g-calnort",
+  "name": "Soupe jardinière 60 g",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-veloutee-lentille-580-ml-typik",
+  "name": "Soupe veloutée lentille 580 ml",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "soupe-veloutee-tomate-580-ml-typik",
+  "name": "Soupe veloutée tomate 580 ml",
+  "category": "epicerie",
+  "rule": "M3 soup / noodles / stock / mash is a pantry item"
+ },
+ {
+  "slug": "tahina-400-g-la-gazelle",
+  "name": "Tahina 400 g",
+  "category": "epicerie",
+  "rule": "C3 tahini is a pantry sesame paste"
+ },
+ {
+  "slug": "tahina-400-g-le-moulin",
+  "name": "Tahina 400 g",
+  "category": "epicerie",
+  "rule": "C3 tahini is a pantry sesame paste"
+ },
+ {
+  "slug": "tahina-semsem-400-g-papillon",
+  "name": "Tahina semsem 400 g",
+  "category": "epicerie",
+  "rule": "C3 tahini is a pantry sesame paste"
+ },
+ {
+  "slug": "fromage-fondu-306-g-street-co",
+  "name": "Fromage fondu 306 g",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-fondu-612-g-street-co",
+  "name": "Fromage Fondu 612 g",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-fondu-president-24-portions-306-g",
+  "name": "Fromage fondu président 24 portions 306 g",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-fondu-president-8-portions-102-g-lactalis",
+  "name": "Fromage Fondu Président 8 portions 102 g",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-whey-pro-proteines-gout-cafe-280-ml-majeste",
+  "name": "Fromage Whey pro protéines goût café 280 ml",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-whey-pro-proteines-gout-framboise-280-ml-majeste",
+  "name": "Fromage Whey pro protéines goût framboise 280 ml",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "fromage-whey-pro-proteines-gout-vanille-280-ml-majeste",
+  "name": "Fromage Whey pro protéines goût vanille 280 ml",
+  "category": "fromages",
+  "rule": "M8 cheese"
+ },
+ {
+  "slug": "citron-eureka-aa",
+  "name": "Citron Eureka AA",
+  "category": "fruits",
+  "rule": "M1 citron is a fruit"
+ },
+ {
+  "slug": "sardine",
+  "name": "Sardine",
+  "category": "poissons-fruits-de-mer",
+  "rule": "M2 sardine is fish"
+ },
+ {
+  "slug": "leben-lait-fermente-420-g-vitalait",
+  "name": "Leben (lait fermenté) 420 g",
+  "category": "produits-laitiers",
+  "rule": "M7 fermented milk"
+ },
+ {
+  "slug": "assida-instantanee-noisette-500-g-b-gaied-hassine",
+  "name": "Assida instantanée noisette 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "assida-instantanee-zgougou-500-g-b-gaied-hassine",
+  "name": "Assida instantanée zgougou 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "assida-instantannee-cacahouetes-500-g-rayen",
+  "name": "Assida instantannée cacahouètes 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "assida-instantannee-pistache-500-g-rayen",
+  "name": "Assida instantannée pistache 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "assida-instantannee-sesame-500-g-rayen",
+  "name": "Assida instantannée sésame 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "assida-zgougou-instantanee-500-g-rayen",
+  "name": "Assida zgougou instantanée 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "bsissa-d-avoine-500-g-agri-didon",
+  "name": "Bsissa d'avoine 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C5 traditional Tunisian specialty (chamia/bsissa/zrir): its own food type, neither confectionery nor a generic breakfast item"
+ },
+ {
+  "slug": "bsissa-de-ble-vanoise-500-g-dr-oetker",
+  "name": "Bsissa de blé Vanoise 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C5 traditional Tunisian specialty (chamia/bsissa/zrir): its own food type, neither confectionery nor a generic breakfast item"
+ },
+ {
+  "slug": "chamia-a-tartiner-nature-350-g-papillon",
+  "name": "Chamia à tartiner nature 350 g",
+  "category": "produits-traditionnels",
+  "rule": "C5 traditional Tunisian specialty (chamia/bsissa/zrir): its own food type, neither confectionery nor a generic breakfast item"
+ },
+ {
+  "slug": "mesfouf-1-kg-diari",
+  "name": "Mesfouf 1 kg",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "mesfouf-aux-raisins-secs-250-g-randa",
+  "name": "Mesfouf aux raisins secs 250 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "mesfouf-express-500-g-diari",
+  "name": "Mesfouf express 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "pate-a-tartiner-base-chamia-nature-200-g-gazelle",
+  "name": "Pâte à tartiner base chamia nature 200 g",
+  "category": "produits-traditionnels",
+  "rule": "C5 traditional Tunisian specialty (chamia/bsissa/zrir): its own food type, neither confectionery nor a generic breakfast item"
+ },
+ {
+  "slug": "pate-zgougou-ben-gaied-hassine-tamisee-500-g",
+  "name": "Pâte Zgougou Ben Gaied Hassine tamisée 500 g",
+  "category": "produits-traditionnels",
+  "rule": "C6 traditional flour / grain / paste preparation"
+ },
+ {
+  "slug": "zrir-recette-tunisienne",
+  "name": "Zrir recette Tunisienne",
+  "category": "produits-traditionnels",
+  "rule": "C5 traditional Tunisian specialty (chamia/bsissa/zrir): its own food type, neither confectionery nor a generic breakfast item"
+ },
+ {
+  "slug": "cereales-coco-pops-chocos-330-g-kellogg-s",
+  "name": "Céréales coco pops chocos 330 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "cereales-coco-pops-chocos-480-g-kellogg-s",
+  "name": "Céréales coco pops chocos 480 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-250-g-kartago",
+  "name": "Choco pops dattes-Cacao-Noix de coco Energy snacks 250 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-50-g-kartago",
+  "name": "Choco pops dattes-Cacao-Noix de coco Energy snacks 50 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "dattes-aux-noix-de-coco-et-cacao-pops-kartago",
+  "name": "Dattes aux noix de coco et cacao Pops",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "dattes-aux-sesames-pops-kartago",
+  "name": "Dattes aux sésames Pops",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "noisettes-pops-dattes-noisettes-energy-snacks-250-g-kartago",
+  "name": "Noisettes pops dattes-Noisettes Energy snacks 250 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "noisettes-pops-dattes-noisettes-energy-snacks-50-g-kartago",
+  "name": "Noisettes pops dattes-Noisettes Energy snacks 50 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "sesames-pops-dattes-sesames-energy-snacks-250-g-kartago",
+  "name": "Sésames pops dattes-sésames Energy snacks 250 g",
+  "category": "snacks-aperitif",
+  "rule": "C4 sesame/date \"pops\" are snack bites"
+ },
+ {
+  "slug": "glace-sandwich-vanille-105-g-gil-ice",
+  "name": "Glace sandwich vanille 105 g",
+  "category": "surgeles",
+  "rule": "M4 ice-cream sandwich"
+ }
+]

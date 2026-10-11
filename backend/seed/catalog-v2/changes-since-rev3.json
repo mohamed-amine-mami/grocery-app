@@ -1,0 +1,274 @@
+{
+ "from_": "rev 3 (5,702 products)",
+ "to": "rev 3.1 (5,685 products)",
+ "summary": {
+  "unchanged": 5668,
+  "mergedGroups": 17,
+  "productsAbsorbed": 34,
+  "renamedKeptProducts": 0,
+  "fieldOnlyChanges": 0,
+  "added": 0,
+  "removedWithoutMerge": 0,
+  "categoryChanges": 0
+ },
+ "merged": [
+  {
+   "slug": "beurre-extra-fin-200-g-vitalait",
+   "name": "Beurre extra fin 200 g",
+   "category": "produits-laitiers",
+   "mergedFrom": [
+    {
+     "slug": "beurre-200-g-vitalait",
+     "name": "Beurre 200 g"
+    },
+    {
+     "slug": "beurre-extra-fin-200-g-vitalait",
+     "name": "Beurre extra fin 200 g"
+    }
+   ]
+  },
+  {
+   "slug": "mon-dessert-chocolat-100-g-natilait",
+   "name": "Mon dessert chocolat 100 g",
+   "category": "chocolat-confiserie",
+   "mergedFrom": [
+    {
+     "slug": "creme-dessert-chocolat-100-g-natilait",
+     "name": "Crème dessert chocolat 100 g"
+    },
+    {
+     "slug": "mon-dessert-chocolat-100-g-natilait",
+     "name": "Mon dessert chocolat 100 g"
+    }
+   ]
+  },
+  {
+   "slug": "creme-dessert-chocolat-liegeois-12-cl-yab",
+   "name": "Crème dessert chocolat liégeois 12 cl",
+   "category": "produits-laitiers",
+   "mergedFrom": [
+    {
+     "slug": "creme-dessert-chocolat-liegeois-12-cl-yab",
+     "name": "Crème dessert chocolat liégeois 12 cl"
+    },
+    {
+     "slug": "liegeois-chocolat-12-cl-yab",
+     "name": "Liégeois chocolat 12 cl"
+    }
+   ]
+  },
+  {
+   "slug": "mon-dessert-vanille-100-g-natilait",
+   "name": "Mon dessert vanille 100 g",
+   "category": "epicerie",
+   "mergedFrom": [
+    {
+     "slug": "creme-dessert-vanille-100-g-natilait",
+     "name": "Crème dessert vanille 100 g"
+    },
+    {
+     "slug": "mon-dessert-vanille-100-g-natilait",
+     "name": "Mon dessert vanille 100 g"
+    }
+   ]
+  },
+  {
+   "slug": "lait-demi-ecreme-uht-1-l-delice",
+   "name": "Lait demi-écrémé UHT 1 L",
+   "category": "produits-laitiers",
+   "mergedFrom": [
+    {
+     "slug": "lait-demi-ecreme-uht-1-l-delice",
+     "name": "Lait demi-écrémé UHT 1 L"
+    },
+    {
+     "slug": "lait-uht-1-2-ecreme-1-l-delice",
+     "name": "Lait UHT 1/2 écrémé 1 L"
+    }
+   ]
+  },
+  {
+   "slug": "margarine-tartine-et-cuisson-100-g-goldina",
+   "name": "Margarine tartine et cuisson 100 g",
+   "category": "produits-laitiers",
+   "mergedFrom": [
+    {
+     "slug": "margarine-100-g-goldina",
+     "name": "Margarine 100 g"
+    },
+    {
+     "slug": "margarine-tartine-et-cuisson-100-g-goldina",
+     "name": "Margarine tartine et cuisson 100 g"
+    }
+   ]
+  },
+  {
+   "slug": "pain-de-mie-nature-14-tranches-mama-mia",
+   "name": "Pain de mie nature 14 tranches",
+   "category": "boulangerie",
+   "mergedFrom": [
+    {
+     "slug": "pain-de-mie-nature-14-tranches-mama-mia",
+     "name": "Pain de mie nature 14 tranches"
+    },
+    {
+     "slug": "pain-de-mie-naturel-14-tranches-mama-mia",
+     "name": "Pain de mie naturel 14 tranches"
+    }
+   ]
+  },
+  {
+   "slug": "farine-patissiere-1-kg-l-epi-d-or",
+   "name": "Farine pâtissière 1 kg",
+   "category": "epicerie",
+   "mergedFrom": [
+    {
+     "slug": "farine-patissiere-1-kg-l-epi-d-or",
+     "name": "Farine pâtissière 1 kg"
+    },
+    {
+     "slug": "farine-patissiere-l-epi-d-or-1-kg",
+     "name": "Farine Pâtissière L'épi d'or 1 kg"
+    }
+   ]
+  },
+  {
+   "slug": "harissa-du-cap-bon-135-g-sicam",
+   "name": "Harissa du Cap Bon 135 g",
+   "category": "epicerie",
+   "mergedFrom": [
+    {
+     "slug": "harissa-135-g-sicam",
+     "name": "Harissa 135 g"
+    },
+    {
+     "slug": "harissa-du-cap-bon-135-g-sicam",
+     "name": "Harissa du Cap Bon 135 g"
+    }
+   ]
+  },
+  {
+   "slug": "boisson-au-jus-cocktail-de-fruits-1-l-tropico",
+   "name": "Boisson au jus cocktail de fruits 1 L",
+   "category": "boissons",
+   "mergedFrom": [
+    {
+     "slug": "boisson-au-jus-cocktail-de-fruits-1-l-tropico",
+     "name": "Boisson au jus cocktail de fruits 1 L"
+    },
+    {
+     "slug": "boisson-cocktail-1-l-tropico",
+     "name": "Boisson cocktail 1 L"
+    }
+   ]
+  },
+  {
+   "slug": "boisson-energetique-25-cl-redbull",
+   "name": "Boisson énergétique 25 cl",
+   "category": "boissons",
+   "mergedFrom": [
+    {
+     "slug": "boisson-energetique-25-cl-redbull",
+     "name": "Boisson énergétique 25 cl"
+    },
+    {
+     "slug": "boisson-energetique-red-bull-25-cl-redbull",
+     "name": "Boisson énergétique Red Bull 25 cl"
+    }
+   ]
+  },
+  {
+   "slug": "fromage-100-mozzarella-250-g-majeste",
+   "name": "Fromage 100% mozzarella 250 g",
+   "category": "fromages",
+   "mergedFrom": [
+    {
+     "slug": "fromage-100-mozzarella-250-g-majeste",
+     "name": "Fromage 100% mozzarella 250 g"
+    },
+    {
+     "slug": "mozzarella-250-g-majeste",
+     "name": "Mozzarella 250 g"
+    }
+   ]
+  },
+  {
+   "slug": "tomme-de-tebourba-280-g-souani",
+   "name": "Tomme de Tebourba 280 g",
+   "category": "fromages",
+   "mergedFrom": [
+    {
+     "slug": "fromage-camembert-tomme-de-tebourba-280-g-souani",
+     "name": "Fromage camembert Tomme de Tebourba 280 g"
+    },
+    {
+     "slug": "tomme-de-tebourba-280-g-souani",
+     "name": "Tomme de TEBOURBA 280 g"
+    }
+   ]
+  },
+  {
+   "slug": "fromage-rape-4-fromages-rap-cheez-500-g-majeste",
+   "name": "Fromage rapé 4 Fromages Rap'cheez 500 g",
+   "category": "fromages",
+   "mergedFrom": [
+    {
+     "slug": "fromage-rape-4-fromages-rap-cheez-500-g-majeste",
+     "name": "Fromage rapé 4 Fromages Rap'cheez 500 g"
+    },
+    {
+     "slug": "rape-4-fromages-500-g-majeste",
+     "name": "Râpé 4 fromages 500 g"
+    }
+   ]
+  },
+  {
+   "slug": "cake-grand-mere-marbre-700-g-daily-n",
+   "name": "Cake Grand Mère marbré 700 g",
+   "category": "biscuits-gateaux",
+   "mergedFrom": [
+    {
+     "slug": "cake-grand-mere-marbre-700-g-daily-n",
+     "name": "Cake Grand Mère marbré 700 g"
+    },
+    {
+     "slug": "cake-marbre-700-g-daily-n",
+     "name": "Cake marbré 700 g"
+    }
+   ]
+  },
+  {
+   "slug": "cake-marbre-slice-40-g-daily-n",
+   "name": "Cake marbré slice 40 g",
+   "category": "biscuits-gateaux",
+   "mergedFrom": [
+    {
+     "slug": "cake-marbre-slice-daylin-40-g-daily-n",
+     "name": "Cake marbré slice DAYLIN 40 g"
+    },
+    {
+     "slug": "slice-marbre-40-g-daily-n",
+     "name": "Slice Marbré 40 g"
+    }
+   ]
+  },
+  {
+   "slug": "pop-corn-sucre-75-g-cerealis",
+   "name": "Pop corn sucré 75 g",
+   "category": "snacks-aperitif",
+   "mergedFrom": [
+    {
+     "slug": "pop-corn-sucre-75-g-cerealis",
+     "name": "Pop corn sucré 75 g"
+    },
+    {
+     "slug": "pop-corn-sweet-75-g-cerealis",
+     "name": "Pop-corn Sweet 75 g"
+    }
+   ]
+  }
+ ],
+ "renamedKept": [],
+ "fieldOnlyChanges": [],
+ "note": "Only the 17 pack-photo-confirmed merges of review round 4. Each merge reduces the product count by one (5,702 - 17 = 5,685). No product was added, no category changed, no brand changed, no existing (42) product touched. One kept product (mon-dessert-vanille-100-g-natilait) gained a photo (its Aziza assortment picture had been rejected; the merged Géant record has the cup photo). The kept side of 5 merges got the more precise pack name; the old slug was never imported."
+}

@@ -23,6 +23,7 @@ const offering = (overrides: Partial<OfferingRow> = {}): OfferingRow => ({
     photo: null,
     archivedAt: null,
     category: { id: 3, name: 'Laitiers', archivedAt: null },
+    brand: null,
   },
   ...overrides,
 });
@@ -37,6 +38,7 @@ describe('toCustomerCatalogItem', () => {
       description: null,
       photo: null,
       category: { id: 3, name: 'Laitiers' },
+      brand: null,
       saleUnit: 'PIECE',
       priceMillimes: 1800,
       minQuantity: 2,
@@ -62,6 +64,7 @@ describe('toCustomerCatalogItem', () => {
                   description: null,
                   photo: null,
                   archivedAt: productArchived ? archived : null,
+                  brand: null,
                   category: {
                     id: 1,
                     name: 'c',
@@ -137,5 +140,53 @@ describe('toCustomerStore', () => {
       isOpen: false,
     });
     expect('ownerId' in store).toBe(false);
+  });
+});
+
+describe('toCustomerCatalogItem brand', () => {
+  it('carries the product’s brand — and only its id, slug and name', () => {
+    const base = offering();
+    const item = toCustomerCatalogItem({
+      ...base,
+      product: {
+        ...base.product!,
+        brand: { id: 4, slug: 'heinz', name: 'Heinz', createdAt: 'x' } as {
+          id: number;
+          slug: string;
+          name: string;
+        },
+      },
+    });
+    expect(item!.brand).toEqual({ id: 4, slug: 'heinz', name: 'Heinz' });
+    expect(item).not.toHaveProperty('stockQuantity');
+  });
+
+  it('is null for a brandless product', () => {
+    expect(toCustomerCatalogItem(offering())!.brand).toBeNull();
+  });
+
+  it('does not change what hides or disables a product', () => {
+    const base = offering();
+    const withBrand = {
+      ...base.product!,
+      brand: { id: 1, slug: 'b', name: 'B' },
+    };
+    expect(
+      toCustomerCatalogItem({
+        ...base,
+        product: { ...withBrand, archivedAt: archived },
+      }),
+    ).toBeNull();
+    expect(
+      toCustomerCatalogItem({
+        ...base,
+        trackStock: true,
+        stockQuantity: 0,
+        product: withBrand,
+      }),
+    ).toMatchObject({
+      isOrderable: false,
+      unavailabilityReason: 'OUT_OF_STOCK',
+    });
   });
 });

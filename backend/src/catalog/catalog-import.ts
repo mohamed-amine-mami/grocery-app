@@ -12,13 +12,14 @@ import {
  * Reads the catalog tables, plans, and — unless it is a dry run — writes the
  * plan in ONE transaction: either the whole file lands or nothing does.
  *
- * Only `Category` and `Product` are ever written. `StoreProduct` is read (for
+ * Only `Brand`, `Category` and `Product` are ever written. `StoreProduct` is read (for
  * warnings) and never touched, so a store's price, unit, stock, availability
  * and quantity rules cannot be affected by what the catalog says.
  */
 
 export interface ImportReport {
   dryRun: boolean;
+  brands: Counts;
   categories: Counts;
   products: Counts;
   warnings: string[];
@@ -34,6 +35,7 @@ const noCounts = (): Counts => ({
 
 const failed = (errors: string[], dryRun: boolean): ImportReport => ({
   dryRun,
+  brands: noCounts(),
   categories: noCounts(),
   products: noCounts(),
   warnings: [],
@@ -44,14 +46,16 @@ const failed = (errors: string[], dryRun: boolean): ImportReport => ({
 type Client = Pick<typeof db, 'orm'>;
 
 async function loadExisting(client: Client): Promise<ExistingCatalog> {
-  const { Category, Product, StoreProduct } = client.orm.public;
+  const { Brand, Category, Product, StoreProduct } = client.orm.public;
   // Sequential on purpose: inside a transaction there is a single connection.
+  const brands = await Brand.all();
   const categories = await Category.all();
   const products = await Product.all();
   const offerings = await StoreProduct.where((row) =>
     row.archivedAt.isNull(),
   ).all();
   return {
+    brands: brands.map((b) => ({ id: b.id, slug: b.slug, name: b.name })),
     categories: categories.map((c) => ({
       id: c.id,
       slug: c.slug,
@@ -64,6 +68,7 @@ async function loadExisting(client: Client): Promise<ExistingCatalog> {
       id: p.id,
       slug: p.slug,
       categoryId: p.categoryId,
+      brandId: p.brandId,
       name: p.name,
       description: p.description,
       photo: p.photo,
@@ -82,7 +87,29 @@ async function loadExisting(client: Client): Promise<ExistingCatalog> {
 }
 
 async function writePlan(client: Client, plan: CatalogPlan): Promise<void> {
-  const { Category, Product } = client.orm.public;
+  const { Brand, Category, Product } = client.orm.public;
+
+  // Brands first: products point at them.
+  const brandIds = new Map<string, number>();
+  for (const action of plan.brands) {
+    if (action.id !== undefined) brandIds.set(action.slug, action.id);
+  }
+  for (const action of plan.brands) {
+    if (action.kind === 'create' && action.create) {
+      const row = await Brand.create({ slug: action.slug, ...action.create });
+      brandIds.set(action.slug, row.id);
+    } else if (action.id !== undefined && action.kind !== 'unchanged') {
+      await Brand.where({ id: action.id }).update(action.changes ?? {});
+    }
+  }
+  const brandIdFor = (slug: string | null): number | null => {
+    if (slug === null) return null;
+    const id = brandIds.get(slug);
+    if (id === undefined) {
+      throw new Error(`Brand "${slug}" has no id — the plan is inconsistent`);
+    }
+    return id;
+  };
 
   const categoryIds = new Map<string, number>();
   for (const action of plan.categories) {
@@ -115,12 +142,13 @@ async function writePlan(client: Client, plan: CatalogPlan): Promise<void> {
   // available to the creates below.
   for (const action of plan.products) {
     if (action.id === undefined || action.kind === 'unchanged') continue;
-    const { categorySlug, ...columns } = action.changes ?? {};
+    const { categorySlug, brandSlug, ...columns } = action.changes ?? {};
     await Product.where({ id: action.id }).update({
       ...columns,
       ...(categorySlug === undefined
         ? {}
         : { categoryId: categoryIdFor(categorySlug) }),
+      ...(brandSlug === undefined ? {} : { brandId: brandIdFor(brandSlug) }),
     });
   }
   for (const action of plan.products) {
@@ -128,6 +156,7 @@ async function writePlan(client: Client, plan: CatalogPlan): Promise<void> {
       await Product.create({
         slug: action.slug,
         categoryId: categoryIdFor(action.categorySlug),
+        brandId: brandIdFor(action.brandSlug),
         ...action.create,
       });
     }
@@ -154,6 +183,7 @@ export async function importCatalog(
 
   const report = (plan: CatalogPlan): ImportReport => ({
     dryRun,
+    brands: plan.brandCounts,
     categories: plan.categoryCounts,
     products: plan.productCounts,
     warnings: plan.warnings,
@@ -179,7 +209,7 @@ export async function importCatalog(
       // E.g. two entries swapping names: valid in the end, but not one write at a time.
       return failed(
         [
-          'A name conflict occurred while writing (for example two products swapping names). Nothing was written — split the rename into two imports.',
+          'A name conflict occurred while writing (for example two products, or two brands, swapping names). Nothing was written — split the rename into two imports.',
         ],
         dryRun,
       );
@@ -201,6 +231,11 @@ export function formatReport(
     '',
   ];
   if (report.errors.length === 0) {
+    // Brands are never archived: there is no "archived" count to show.
+    const b = report.brands;
+    lines.push(
+      `Brands:     created ${b.created}, updated ${b.updated}, unchanged ${b.unchanged}`,
+    );
     lines.push(line('Categories:', report.categories));
     lines.push(line('Products:  ', report.products));
   }

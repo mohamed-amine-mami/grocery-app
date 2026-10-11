@@ -1,8 +1,10 @@
 import request from 'supertest';
 import { db } from '../src/prisma/db.js';
 import {
+  addTaggedProduct,
   archiveCategory,
   archiveProduct,
+  brandProduct,
   removeCatalog,
   seedCatalog,
 } from './catalog-helpers.js';
@@ -45,8 +47,13 @@ afterAll(async () => {
 const openStore = () => openStoreFor((slug) => catalog.productId(slug));
 const browse = (storeId: number | string, as: Account = customer) =>
   request(http()).get(`/stores/${storeId}/products`).set(auth(as));
-const byName = (items: { name: string }[], fragment: string) =>
-  items.find((item) => item.name.includes(fragment));
+const byName = (
+  items: {
+    name: string;
+    brand?: { id: number; slug: string; name: string } | null;
+  }[],
+  fragment: string,
+) => items.find((item) => item.name.includes(fragment));
 
 // ── GET /stores ───────────────────────────────────────────────────────────
 
@@ -125,6 +132,7 @@ describe('GET /stores/:id/products', () => {
         id: catalog.categoryId('fruits'),
         name: `Fruits ${tag}`,
       },
+      brand: null,
       saleUnit: 'KG',
       priceMillimes: 1800,
       minQuantity: 100,
@@ -429,6 +437,7 @@ describe('what a customer never sees', () => {
     for (const item of catalogResponse.body) {
       expect(Object.keys(item).sort()).toEqual(
         [
+          'brand',
           'category',
           'description',
           'id',
@@ -485,5 +494,159 @@ describe('what a customer never sees', () => {
 
     const notFound = await browse(2147483000).expect(404);
     expect(JSON.stringify(notFound.body)).not.toMatch(/stock/i);
+  });
+});
+
+// ── brand ─────────────────────────────────────────────────────────────────
+
+describe('GET /stores/:id/products — brand', () => {
+  it('shows each product’s brand (id, slug and name only), or null', async () => {
+    const store = await openStore();
+    const heinz = await brandProduct(
+      tag,
+      catalog.productId('yaourt'),
+      'heinz',
+      `Heinz ${tag}`,
+    );
+    await store.offer('yaourt');
+    await store.offer('banane');
+
+    const items = (await browse(store.storeId).expect(200)).body;
+
+    expect(byName(items, 'Yaourt')!.brand).toEqual({
+      id: heinz.id,
+      slug: `${tag}-heinz`,
+      name: `Heinz ${tag}`,
+    });
+    expect(byName(items, 'Banane')!.brand).toBeNull();
+    expect(Object.keys(byName(items, 'Yaourt')!.brand!).sort()).toEqual([
+      'id',
+      'name',
+      'slug',
+    ]);
+  });
+
+  it('lists one name under several brands as distinct, orderable products', async () => {
+    const category = catalog.categoryId('laitiers');
+    const heinz = await addTaggedProduct(
+      tag,
+      category,
+      'cust-ketchup-heinz',
+      `Ketchup ${tag}`,
+      'c-heinz',
+    );
+    const amora = await addTaggedProduct(
+      tag,
+      category,
+      'cust-ketchup-amora',
+      `Ketchup ${tag}`,
+      'c-amora',
+    );
+    const plain = await addTaggedProduct(
+      tag,
+      category,
+      'cust-ketchup',
+      `Ketchup ${tag}`,
+      null,
+    );
+    const ids = new Map([
+      ['cust-ketchup-heinz', heinz.id],
+      ['cust-ketchup-amora', amora.id],
+      ['cust-ketchup', plain.id],
+    ]);
+    const store = await openStoreFor(
+      (slug) => ids.get(slug) ?? catalog.productId(slug),
+    );
+    const offered = [
+      await store.offer('cust-ketchup-heinz'),
+      await store.offer('cust-ketchup-amora'),
+      await store.offer('cust-ketchup'),
+    ];
+
+    const items = (await browse(store.storeId).expect(200)).body as {
+      id: number;
+      name: string;
+      brand: { slug: string } | null;
+      isOrderable: boolean;
+    }[];
+
+    const byNumber = (a: number, b: number) => a - b;
+    expect(items.map((i) => i.id).sort(byNumber)).toEqual(
+      [...offered].sort(byNumber),
+    );
+    expect(items.every((i) => i.name === `Ketchup ${tag}`)).toBe(true);
+    expect(items.every((i) => i.isOrderable)).toBe(true);
+    const bySlug = (a: string | null, b: string | null) =>
+      (a ?? '').localeCompare(b ?? '');
+    expect(items.map((i) => i.brand?.slug ?? null).sort(bySlug)).toEqual(
+      [null, `${tag}-c-amora`, `${tag}-c-heinz`].sort(bySlug),
+    );
+  });
+
+  it('keeps hiding archived products and disabling the rest, brand or not', async () => {
+    const store = await openStore();
+    await brandProduct(tag, catalog.productId('yaourt'), 'heinz');
+    await brandProduct(tag, catalog.productId('lait-delice-1l'), 'heinz');
+    const yaourt = await store.offer('yaourt');
+    const lait = await store.offer('lait-delice-1l', {
+      trackStock: true,
+      stockQuantity: 0,
+    });
+
+    await archiveProduct(catalog.productId('yaourt'));
+    try {
+      const items = (await browse(store.storeId).expect(200)).body;
+      expect(items.some((i: { id: number }) => i.id === yaourt)).toBe(false);
+      const milk = items.find((i: { id: number }) => i.id === lait);
+      expect(milk).toMatchObject({
+        isOrderable: false,
+        unavailabilityReason: 'OUT_OF_STOCK',
+        brand: { slug: `${tag}-heinz` },
+      });
+      expect(milk).not.toHaveProperty('stockQuantity');
+      expect(JSON.stringify(items)).not.toContain('stock');
+    } finally {
+      await db.orm.public.Product.where({
+        id: catalog.productId('yaourt'),
+      }).update({ archivedAt: null });
+    }
+  });
+
+  it('documents the brand in the published Swagger schema', async () => {
+    const { DocumentBuilder, SwaggerModule } = await import('@nestjs/swagger');
+    const { Test } = await import('@nestjs/testing');
+    const { AppModule } = await import('../src/app.module.js');
+    const { setupApp } = await import('../src/app.setup.js');
+    const moduleFixture = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
+    const app = moduleFixture.createNestApplication();
+    setupApp(app);
+    await app.init();
+    try {
+      const document = SwaggerModule.createDocument(
+        app,
+        new DocumentBuilder().build(),
+      );
+      const schemas = document.components!.schemas as Record<
+        string,
+        { properties: Record<string, unknown>; required?: string[] }
+      >;
+      expect(
+        Object.keys(schemas['BrandSummaryEntity']!.properties).sort(),
+      ).toEqual(['id', 'name', 'slug']);
+      for (const name of [
+        'CustomerCatalogItemEntity',
+        'CatalogProductEntity',
+        'StoreProductCatalogEntity',
+      ]) {
+        expect(schemas[name]!.properties['brand']).toMatchObject({
+          nullable: true,
+        });
+        expect(schemas[name]!.required).toContain('brand');
+      }
+    } finally {
+      await app.close();
+    }
   });
 });

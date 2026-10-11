@@ -1,0 +1,385 @@
+{
+ "note": "Brands merged in round 3. A pair was merged only when pack photos (or label artwork) of both spellings print the same brand. Nothing else was merged; look-alikes kept apart are listed in brand-review.md.",
+ "merges": [
+  {
+   "canonical": "Furketta",
+   "sourceSpellings": [
+    "Furkitta"
+   ],
+   "evidence": "Packs of both records print the same logo \"Furketta\" (harissa berbère / tradition 190 g appear under both spellings)",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "59360",
+     "rawBrand": "FURKITTA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "59359",
+     "rawBrand": "FURKITTA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "59361",
+     "rawBrand": "FURKITTA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Les Jardins d'Emma",
+   "sourceSpellings": [
+    "Jardin d'Emma",
+    "Jardins d'Emma"
+   ],
+   "evidence": "Cans of both records print \"Les Jardins d'Emma\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "22656",
+     "rawBrand": "JARDIN D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "28741",
+     "rawBrand": "JARDIN D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "22663",
+     "rawBrand": "JARDIN D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "28742",
+     "rawBrand": "JARDIN D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "66223",
+     "rawBrand": "JARDINS D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "98936",
+     "rawBrand": "JARDINS D'EMMA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "79339",
+     "rawBrand": "JARDINS D'EMMA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Le Petit Paris",
+   "sourceSpellings": [
+    "Petit Paris"
+   ],
+   "evidence": "Cans and jars of the \"Petit Paris\" records print \"Le Petit Paris\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "161066",
+     "rawBrand": "PETIT PARIS",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "161067",
+     "rawBrand": "PETIT PARIS",
+     "line": null
+    },
+    {
+     "source": "carrefour",
+     "sourceId": "6194003200988",
+     "rawBrand": "PETIT PARIS",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Olina",
+   "sourceSpellings": [
+    "Frideal Olina"
+   ],
+   "evidence": "Oil bottles of both records print the Olina logo; \"Fridéal\" is the product line on the label",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "33660",
+     "rawBrand": "FRIDEAL OLINA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "38314",
+     "rawBrand": "FRIDEAL OLINA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Lovege",
+   "sourceSpellings": [
+    "Lovego"
+   ],
+   "evidence": "Cartons of both records print \"Lovege\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "86582",
+     "rawBrand": "LOVEGO",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "139918",
+     "rawBrand": "LOVEGO",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Neblia",
+   "sourceSpellings": [
+    "Nablia"
+   ],
+   "evidence": "Cans of both records print \"Neblia\" (harissa / hrous)",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "148792",
+     "rawBrand": "NABLIA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "150247",
+     "rawBrand": "NABLIA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Raoua",
+   "sourceSpellings": [
+    "Raoua Chani"
+   ],
+   "evidence": "Can of \"Raoua Chani\" prints the Raoua logo with \"Chani\" as the flavour; the product name already says \"chani\"",
+   "records": [
+    {
+     "source": "aziza",
+     "sourceId": "100978831",
+     "rawBrand": "RAOUA CHANI",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Reflets de Tunisie",
+   "sourceSpellings": [
+    "Reflet"
+   ],
+   "evidence": "Jars/bags of both records print \"Reflets de Tunisie\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "89368",
+     "rawBrand": "REFLET",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "164585",
+     "rawBrand": "REFLET",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Royaume des Abeilles",
+   "sourceSpellings": [
+    "Royaumes des Abeilles"
+   ],
+   "evidence": "Honey jars of both records carry identical label artwork (label text too small to read; spelling follows the majority form)",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "30083",
+     "rawBrand": "ROYAUMES DES ABEILLES",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Seniatna",
+   "sourceSpellings": [
+    "Senietna"
+   ],
+   "evidence": "Boxes of both records print \"Seniatna\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "48746",
+     "rawBrand": "SENIETNA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "47397",
+     "rawBrand": "SENIETNA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "46356",
+     "rawBrand": "SENIETNA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "46359",
+     "rawBrand": "SENIETNA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "46358",
+     "rawBrand": "SENIETNA",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "46357",
+     "rawBrand": "SENIETNA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Tanit le Jardin",
+   "sourceSpellings": [
+    "Tanit"
+   ],
+   "evidence": "Cans of both records print \"Tanit le Jardin\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "28758",
+     "rawBrand": "TANIT",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "28753",
+     "rawBrand": "TANIT",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Tiffany",
+   "sourceSpellings": [
+    "Tifanny",
+    "Tiffanny"
+   ],
+   "evidence": "Bottles of both spellings print \"Tiffany\"",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "139269",
+     "rawBrand": "TIFANNY",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "135996",
+     "rawBrand": "TIFFANNY",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "135995",
+     "rawBrand": "TIFFANNY",
+     "line": null
+    },
+    {
+     "source": "geant",
+     "sourceId": "139270",
+     "rawBrand": "TIFANNY",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Tijen",
+   "sourceSpellings": [
+    "Tijen Water"
+   ],
+   "evidence": "Bottles of both records carry the identical \"tijen\" label",
+   "records": [
+    {
+     "source": "off",
+     "sourceId": "6191475200010",
+     "rawBrand": "TIJEN WATER",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Aljazia",
+   "sourceSpellings": [
+    "Al Jazia",
+    "El Jazia"
+   ],
+   "evidence": "Tins of both records print the same \"Aljazia\" logo",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "159541",
+     "rawBrand": "EL JAZIA",
+     "line": null
+    }
+   ]
+  },
+  {
+   "canonical": "Souani",
+   "sourceSpellings": [
+    "National Souani",
+    "Calife Souani",
+    "Vieux Calife Souani"
+   ],
+   "evidence": "Packs print the SOUANI mark with the line name (National / Calife / Vieux Calife); the line is moved into the product name",
+   "records": [
+    {
+     "source": "geant",
+     "sourceId": "25804",
+     "rawBrand": "VIEUX CALIFE SOUANI",
+     "line": "Vieux Calife"
+    },
+    {
+     "source": "geant",
+     "sourceId": "25805",
+     "rawBrand": "CALIFE SOUANI",
+     "line": "Calife"
+    },
+    {
+     "source": "geant",
+     "sourceId": "25803",
+     "rawBrand": "NATIONAL SOUANI",
+     "line": "National"
+    }
+   ]
+  }
+ ]
+}

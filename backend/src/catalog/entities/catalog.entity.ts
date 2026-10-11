@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { SaleUnit } from '../../products/sale-unit.enum.js';
+import { BrandSummaryEntity } from './brand.entity.js';
 
 export class CatalogCategoryEntity {
   @ApiProperty() id!: number;
@@ -41,6 +42,12 @@ export class CatalogProductEntity {
   @ApiProperty({ type: CatalogProductCategoryEntity })
   category!: CatalogProductCategoryEntity;
   @ApiProperty({
+    type: BrandSummaryEntity,
+    nullable: true,
+    description: 'The product’s brand, or null when it has none.',
+  })
+  brand!: BrandSummaryEntity | null;
+  @ApiProperty({
     description:
       'The owner’s store currently sells it (an active store product).',
   })
@@ -57,4 +64,21 @@ export class CatalogProductEntity {
       'The store has an archived store product for it: offer "restore" instead of "add".',
   })
   storeProductArchived!: boolean;
+}
+
+export class CatalogProductPageEntity {
+  @ApiProperty({ type: CatalogProductEntity, isArray: true })
+  items!: CatalogProductEntity[];
+  @ApiProperty({
+    description:
+      'How many active products match the search and category filter, over every page.',
+  })
+  total!: number;
+  @ApiProperty({
+    nullable: true,
+    type: String,
+    description:
+      'Pass it as `cursor` to get the next page; null on the last page.',
+  })
+  nextCursor!: string | null;
 }

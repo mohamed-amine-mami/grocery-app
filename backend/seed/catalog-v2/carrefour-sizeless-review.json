@@ -1,0 +1,3731 @@
+{
+ "note": "Every Carrefour record whose CSV row had no pack size, reviewed individually against its own product page on carrefour.tn (the page description gives the pack, e.g. \"Le pot de 70g\", or \"Au poids\"). decision: merged = exact duplicate of a record from another source; retained = distinct product kept; excluded = insufficiently distinguishable from a sized sibling.",
+ "records": [
+  {
+   "sid": "6191307401684",
+   "name": "Biscuits fourrés chocolat noisette kingo",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 120g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 120g') makes it an exact duplicate of geant record \"Biscuits fourrés\"",
+   "url": "https://www.carrefour.tn/biscuits-fourres-chocolat-noisette-kingo-6191307401684.html"
+  },
+  {
+   "sid": "6191507250730",
+   "name": "Yaourt le grand brassé saveur vanille",
+   "brand": "Vitalait",
+   "pageDescription": "Le pot de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 100g') makes it an exact duplicate of geant record \"Yaourt brassé\"",
+   "url": "https://www.carrefour.tn/yaourt-le-grand-brasse-saveur-vanille-6191507250730.html"
+  },
+  {
+   "sid": "6191314600018",
+   "name": "Œufs frais jaune jaune ovolina",
+   "brand": "Ovolina",
+   "pageDescription": "Le plateau de 30 Œufs",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le plateau de 30 Œufs') makes it an exact duplicate of geant record \"Œufs frais jaune\"",
+   "url": "https://www.carrefour.tn/oeufs-frais-jaune-jaune-ovolina-6191314600018.html"
+  },
+  {
+   "sid": "6191564601674",
+   "name": "Riz golden",
+   "brand": "Rozy",
+   "pageDescription": "Le sachet de 1kg",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le sachet de 1kg') makes it an exact duplicate of geant record \"Riz golden\"",
+   "url": "https://www.carrefour.tn/riz-golden-6191564601674.html"
+  },
+  {
+   "sid": "6191314600049",
+   "name": "Œufs jaune orange",
+   "brand": "Ovolina",
+   "pageDescription": "Le plateau de 15 œufs",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le plateau de 15 œufs') makes it an exact duplicate of geant record \"Œufs frais\"",
+   "url": "https://www.carrefour.tn/oeufs-jaune-orange-6191314600049.html"
+  },
+  {
+   "sid": "3800740035440",
+   "name": "Sauce Teryaki",
+   "brand": "Deroni",
+   "pageDescription": "Le bocal de 130ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bocal de 130ml') makes it an exact duplicate of geant record \"Sauce teryaki\"",
+   "url": "https://www.carrefour.tn/sauce-teryaki-3800740035440.html"
+  },
+  {
+   "sid": "6191519402165",
+   "name": "Semoule fine",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 1kg') makes it an exact duplicate of geant record \"Semoule fine\"",
+   "url": "https://www.carrefour.tn/semoule-fine-6191519402165.html"
+  },
+  {
+   "sid": "6191346500010",
+   "name": "Double concentré de tomate",
+   "brand": "Zina",
+   "pageDescription": "La boite de 800g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 800g') makes it an exact duplicate of geant record \"Concentré de tomate\"",
+   "url": "https://www.carrefour.tn/double-concentre-de-tomate-6191346500010.html"
+  },
+  {
+   "sid": "6191325500192",
+   "name": "Boisson au jus ananas",
+   "brand": "Aris",
+   "pageDescription": "La brique de 250 ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La brique de 250 ml') makes it an exact duplicate of geant record \"Boisson au jus\"",
+   "url": "https://www.carrefour.tn/boisson-au-jus-ananas-6191325500192.html"
+  },
+  {
+   "sid": "6191325500499",
+   "name": "Boisson au jus orange",
+   "brand": "Aris",
+   "pageDescription": "La brique de 250 ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La brique de 250 ml') makes it an exact duplicate of geant record \"Boisson au jus\"",
+   "url": "https://www.carrefour.tn/boisson-au-jus-orange-6191325500499.html"
+  },
+  {
+   "sid": "6191442501324",
+   "name": "Boisson lactée au jus de pêche abricot",
+   "brand": "Natilait",
+   "pageDescription": "La bouteille de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 160g') makes it an exact duplicate of geant record \"Boisson lactée\"",
+   "url": "https://www.carrefour.tn/boisson-lactee-danao-au-jus-de-peche-abricot-6191442501324.html"
+  },
+  {
+   "sid": "6191332200030",
+   "name": "Pâte feuilletée",
+   "brand": "Vanoise",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Pâte feuilletée\"",
+   "url": "https://www.carrefour.tn/pate-feuilletee-6191332200030.html"
+  },
+  {
+   "sid": "6191519402141",
+   "name": "Soupe d'orge",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Soupe d'orge\"",
+   "url": "https://www.carrefour.tn/soupe-dorge-6191519402141.html"
+  },
+  {
+   "sid": "6191519402226",
+   "name": "Pâtes millet",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Millet\"",
+   "url": "https://www.carrefour.tn/ptes-millet-6191519402226.html"
+  },
+  {
+   "sid": "6191523805655",
+   "name": "Huile végétale",
+   "brand": "Al Jazira",
+   "pageDescription": "La bouteille de 0.9 L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 0.9 L') makes it an exact duplicate of geant record \"Huile végétale\"",
+   "url": "https://www.carrefour.tn/huile-vegetale-6191523805655.html"
+  },
+  {
+   "sid": "6191523805716",
+   "name": "Huile de maïs",
+   "brand": "Al Jazira",
+   "pageDescription": "La bouteille de 0.9 L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 0.9 L') makes it an exact duplicate of geant record \"Huile de maïs\"",
+   "url": "https://www.carrefour.tn/huile-de-mas-6191523805716.html"
+  },
+  {
+   "sid": "61945760",
+   "name": "Yaourt nature Skyr",
+   "brand": "Délice",
+   "pageDescription": "Le pot de 90g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 90g') makes it an exact duplicate of geant record \"Skyr\"",
+   "url": "https://www.carrefour.tn/yaourt-nature-skyr-61945760.html"
+  },
+  {
+   "sid": "6191315800066",
+   "name": "Thon entier à l'huile végétale",
+   "brand": "Aljazia",
+   "pageDescription": "La boîte de 400g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boîte de 400g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-lhuile-vegetale-6191315800066.html"
+  },
+  {
+   "sid": "6191315800363",
+   "name": "Thon en morceaux à l'huile végétale",
+   "brand": "Sidi El Bahri",
+   "pageDescription": "La boîte de 400g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boîte de 400g') makes it an exact duplicate of geant record \"Thon en morceaux\"",
+   "url": "https://www.carrefour.tn/thon-entier-lhuile-vegetale-6191315800363.html"
+  },
+  {
+   "sid": "6135345000768",
+   "name": "Sauce mayonnaise",
+   "brand": "Lesieur",
+   "pageDescription": "Le pot de 250 g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 250 g') makes it an exact duplicate of geant record \"Mayonnaise\"",
+   "url": "https://www.carrefour.tn/sauce-mayonnaise-6135345000768.html"
+  },
+  {
+   "sid": "6251136052522",
+   "name": "Champignons en tranches",
+   "brand": "Durra",
+   "pageDescription": "La boîte de 184g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boîte de 184g') makes it an exact duplicate of geant record \"Champignons en tranches\"",
+   "url": "https://www.carrefour.tn/champignons-en-tranches-6251136052522.html"
+  },
+  {
+   "sid": "6191347300527",
+   "name": "Cafe turc Moringa",
+   "brand": "Stella",
+   "pageDescription": "Le sachet de 125g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le sachet de 125g') makes it an exact duplicate of geant record \"Café pur turc\"",
+   "url": "https://www.carrefour.tn/cafe-turc-moringa-6191347300527.html"
+  },
+  {
+   "sid": "6194007804977",
+   "name": "Boisson énergétique Dark Power",
+   "brand": "Reaktor",
+   "pageDescription": "La bouteille de 0.4L Performance Energy",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 0.4L Performance Energy') makes it an exact duplicate of geant record \"Boisson énergétique\"",
+   "url": "https://www.carrefour.tn/boisson-energetique-dark-power-6194007804977.html"
+  },
+  {
+   "sid": "6194007804960",
+   "name": "Boisson énergétique Focus Power",
+   "brand": "Reaktor",
+   "pageDescription": "La bouteille de 0.4L Mental Energy",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 0.4L Mental Energy') makes it an exact duplicate of geant record \"Boisson énergétique\"",
+   "url": "https://www.carrefour.tn/boisson-energetique-focus-power-6194007804960.html"
+  },
+  {
+   "sid": "6130336005609",
+   "name": "Chips the Box Hot spicy",
+   "brand": "Mahboul",
+   "pageDescription": "La boite de 42g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 42g') makes it an exact duplicate of geant record \"Chips\"",
+   "url": "https://www.carrefour.tn/chips-the-box-hot-spicy-6130336005609.html"
+  },
+  {
+   "sid": "6191575100500",
+   "name": "Mayonnaise",
+   "brand": "Bonna",
+   "pageDescription": "Le flacon de 270ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le flacon de 270ml') makes it an exact duplicate of geant record \"Mayonnaise\"",
+   "url": "https://www.carrefour.tn/mayonnaise-6191575100500.html"
+  },
+  {
+   "sid": "6191485000075",
+   "name": "Thon entier à l'huile d'olive",
+   "brand": "Lebhour",
+   "pageDescription": "La boite de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 160g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-d-olive-6191485000075.html"
+  },
+  {
+   "sid": "6191485000020",
+   "name": "Thon entier à l'huile de tournesol",
+   "brand": "Lebhour",
+   "pageDescription": "La boite de 400g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 400g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-de-tournesol-6191485000020.html"
+  },
+  {
+   "sid": "6191503207523",
+   "name": "Madeleines",
+   "brand": "Le Patissier",
+   "pageDescription": "Le paquet de 200g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 200g') makes it an exact duplicate of geant record \"Madeleine\"",
+   "url": "https://www.carrefour.tn/madeleines-6191503207523.html"
+  },
+  {
+   "sid": "6191513501123",
+   "name": "Fromage fondu à tartiner La Fondue",
+   "brand": "President",
+   "pageDescription": "La barquette de 150g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La barquette de 150g') makes it an exact duplicate of geant record \"Fromage fondu à tartiner\"",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-tartiner-la-fondue-6191513501123.html"
+  },
+  {
+   "sid": "6191513501017",
+   "name": "Fromage fondu à tartiner",
+   "brand": "President",
+   "pageDescription": "La boite de 8 portions",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 8 portions') makes it an exact duplicate of geant record \"Fromage fondu\"",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-tartiner-6191513501017.html"
+  },
+  {
+   "sid": "6191575101897",
+   "name": "Moutarde à l'ancienne",
+   "brand": "Bonna",
+   "pageDescription": "Le bocal de 260ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bocal de 260ml') makes it an exact duplicate of geant record \"Moutarde à l'ancienne\"",
+   "url": "https://www.carrefour.tn/moutarde-a-l-ancienne-6191575101897.html"
+  },
+  {
+   "sid": "3563490010814",
+   "name": "Moutarde de Dijon",
+   "brand": "Dijona",
+   "pageDescription": "Le bocal de 200g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bocal de 200g') makes it an exact duplicate of geant record \"Moutarde de dijon\"",
+   "url": "https://www.carrefour.tn/moutarde-de-dijon-3563490010814.html"
+  },
+  {
+   "sid": "6191575100463",
+   "name": "Ketchup",
+   "brand": "Bonna",
+   "pageDescription": "Le flacon de 450ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le flacon de 450ml') makes it an exact duplicate of geant record \"Ketchup\"",
+   "url": "https://www.carrefour.tn/ketchup-6191575100463.html"
+  },
+  {
+   "sid": "3335122413771",
+   "name": "Vinaigrette aux fines herbes",
+   "brand": "Covinor",
+   "pageDescription": "La bouteille de 500ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 500ml') makes it an exact duplicate of geant record \"Vinaigrette\"",
+   "url": "https://www.carrefour.tn/vinaigrette-aux-fines-herbes-3335122413771.html"
+  },
+  {
+   "sid": "6191408700099",
+   "name": "Vinaigre de cidre",
+   "brand": "Eden",
+   "pageDescription": "La bouteile de 500ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteile de 500ml') makes it an exact duplicate of geant record \"Vinaigre naturel\"",
+   "url": "https://www.carrefour.tn/vinaigre-de-cidre-6191408700099.html"
+  },
+  {
+   "sid": "6191544100623",
+   "name": "Chocolat barre biscuitée lait & gaufrettes",
+   "brand": "Momento",
+   "pageDescription": "Le lot de 3 paquets de 33g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le lot de 3 paquets de 33g') makes it an exact duplicate of geant record \"Barre biscuitée\"",
+   "url": "https://www.carrefour.tn/chocolat-barre-biscuitee-lait-gaufrettes-6191544100623.html"
+  },
+  {
+   "sid": "6194003310311",
+   "name": "Tagliatelle n°2",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 250g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 250g') makes it an exact duplicate of geant record \"Pâte tagliatelle\"",
+   "url": "https://www.carrefour.tn/tagliatelle-n-2-6194003310311.html"
+  },
+  {
+   "sid": "6194003310274",
+   "name": "Tagliatelle n°1",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 250g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 250g') makes it an exact duplicate of geant record \"Pâte tagliatelle\"",
+   "url": "https://www.carrefour.tn/tagliatelle-n-1-6194003310274.html"
+  },
+  {
+   "sid": "6194025701029",
+   "name": "Fromage camembert Couteaux & Plateaux",
+   "brand": "Souani",
+   "pageDescription": "Le paquet de 150g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 150g') makes it an exact duplicate of geant record \"Camembert\"",
+   "url": "https://www.carrefour.tn/fromage-camembert-couteaux-plateaux-6194025701029.html"
+  },
+  {
+   "sid": "6194025701289",
+   "name": "Fromage camembert Le Petit Campagnard",
+   "brand": "Souani",
+   "pageDescription": "La boite de 125g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 125g') makes it an exact duplicate of geant record \"Camembert\"",
+   "url": "https://www.carrefour.tn/fromage-camembert-le-petit-campagnard-6194025701289.html"
+  },
+  {
+   "sid": "6194025701005",
+   "name": "Fromage camembert National",
+   "brand": "Souani",
+   "pageDescription": "La boite de 250g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 250g') makes it an exact duplicate of geant record \"Camembert\"",
+   "url": "https://www.carrefour.tn/fromage-camembert-national-6194025701005.html"
+  },
+  {
+   "sid": "6194025701012",
+   "name": "Fromage camembert Calife",
+   "brand": "Souani",
+   "pageDescription": "La boite de 250g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 250g') makes it an exact duplicate of geant record \"Camembert\"",
+   "url": "https://www.carrefour.tn/fromage-camembert-calife-6194025701012.html"
+  },
+  {
+   "sid": "8710448569015",
+   "name": "Ketchup aux tomates",
+   "brand": "Remia",
+   "pageDescription": "Le squeezer de 500ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le squeezer de 500ml') makes it an exact duplicate of geant record \"Ketchup\"",
+   "url": "https://www.carrefour.tn/ketchup-aux-tomates-8710448569015.html"
+  },
+  {
+   "sid": "6194003330012",
+   "name": "Couscous fin",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 1Kg",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 1Kg') makes it an exact duplicate of geant record \"Couscous fin\"",
+   "url": "https://www.carrefour.tn/couscous-fin-6194003330012.html"
+  },
+  {
+   "sid": "8412164000734",
+   "name": "Bouillon de poulet",
+   "brand": "Calnort",
+   "pageDescription": "Le paquet de 8 cubes de 10g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 8 cubes de 10g') makes it an exact duplicate of geant record \"Bouillons\"",
+   "url": "https://www.carrefour.tn/bouillon-de-poulet-8412164000734.html"
+  },
+  {
+   "sid": "8412164000727",
+   "name": "Bouillon de bœuf",
+   "brand": "Calnort",
+   "pageDescription": "Le paquet de 8 cubes de 10g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 8 cubes de 10g') makes it an exact duplicate of geant record \"Bouillons\"",
+   "url": "https://www.carrefour.tn/bouillon-de-boeuf-8412164000727.html"
+  },
+  {
+   "sid": "8412164000741",
+   "name": "Bouillon de poisson",
+   "brand": "Calnort",
+   "pageDescription": "Le paquet de 8 cubes de 10g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 8 cubes de 10g') makes it an exact duplicate of geant record \"Bouillons\"",
+   "url": "https://www.carrefour.tn/bouillon-de-poisson-8412164000741.html"
+  },
+  {
+   "sid": "4008569028370",
+   "name": "Flocons d'avoine feuilles larges",
+   "brand": "Hahne",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Flocon d'avoine\"",
+   "url": "https://www.carrefour.tn/flocons-d-avoine-feuilles-larges-4008569028370.html"
+  },
+  {
+   "sid": "4008569028387",
+   "name": "Flocons d'avoine petites feuilles",
+   "brand": "Hahne",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Flocon d'avoine\"",
+   "url": "https://www.carrefour.tn/flocons-d-avoine-petites-feuilles-4008569028387.html"
+  },
+  {
+   "sid": "6191571800954",
+   "name": "Thon entier à l'huile d'olive",
+   "brand": "La Goulette",
+   "pageDescription": "La boite de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 160g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-d-olive-6191571800954.html"
+  },
+  {
+   "sid": "6191534603189",
+   "name": "Huile de tournesol",
+   "brand": "Safi",
+   "pageDescription": "La bouteille de 1.8L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 1.8L') makes it an exact duplicate of geant record \"Huile de tournesol\"",
+   "url": "https://www.carrefour.tn/huile-de-tournesol-6191534603189.html"
+  },
+  {
+   "sid": "6191534602182",
+   "name": "Huile de maïs",
+   "brand": "Safi",
+   "pageDescription": "La bouteille de 1.8L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 1.8L') makes it an exact duplicate of geant record \"Huile de maïs\"",
+   "url": "https://www.carrefour.tn/huile-de-mais-6191534602182.html"
+  },
+  {
+   "sid": "6191534604018",
+   "name": "Huile de friture",
+   "brand": "Frit'ss",
+   "pageDescription": "Le bidon de 5L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bidon de 5L') makes it an exact duplicate of geant record \"Huile de friture\"",
+   "url": "https://www.carrefour.tn/huile-de-friture-6191534604018.html"
+  },
+  {
+   "sid": "6191432201425",
+   "name": "Gaufrettes fraises",
+   "brand": "Lingot",
+   "pageDescription": "Le paquet de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 100g') makes it an exact duplicate of geant record \"Gaufrettes\"",
+   "url": "https://www.carrefour.tn/gaufrettes-fraises-6191432201425.html"
+  },
+  {
+   "sid": "4000417013002",
+   "name": "Chocolat blanc aux noisettes",
+   "brand": "Ritter Sport",
+   "pageDescription": "La tablette de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La tablette de 100g') makes it an exact duplicate of geant record \"Chocolat blanc\"",
+   "url": "https://www.carrefour.tn/chocolat-blanc-aux-noisettes-4000417013002.html"
+  },
+  {
+   "sid": "6191427600295",
+   "name": "Pain de mie complet",
+   "brand": "Mama Mia",
+   "pageDescription": "Le sachet de 14 tranches",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le sachet de 14 tranches') makes it an exact duplicate of geant record \"Pain de mie complet\"",
+   "url": "https://www.carrefour.tn/pain-de-mie-complet-6191427600295.html"
+  },
+  {
+   "sid": "6194001532210",
+   "name": "Loukoum goût noisettes",
+   "brand": "Hazem",
+   "pageDescription": "Le paquet de 250g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 250g') makes it an exact duplicate of geant record \"Loukoum\"",
+   "url": "https://www.carrefour.tn/loukoum-gout-noisettes-6194001532210.html"
+  },
+  {
+   "sid": "4012200384688",
+   "name": "Sauce tartare",
+   "brand": "Kühne",
+   "pageDescription": "Le flacon de 250ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le flacon de 250ml') makes it an exact duplicate of geant record \"Sauce tartare\"",
+   "url": "https://www.carrefour.tn/sauce-tartare-4012200384688.html"
+  },
+  {
+   "sid": "6194003220337",
+   "name": "Tomates concassées",
+   "brand": "Le Petit Paris",
+   "pageDescription": "La boite de 400g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 400g') makes it an exact duplicate of geant record \"Tomate concassée\"",
+   "url": "https://www.carrefour.tn/tomates-concassees-6194003220337.html"
+  },
+  {
+   "sid": "6191436200042",
+   "name": "Préparation alimentaire à la mozzarella Pizzatella",
+   "brand": "Majeste",
+   "pageDescription": "Le sachet de 120g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le sachet de 120g') makes it an exact duplicate of geant record \"Préparation alimentaire à la mozzarella\"",
+   "url": "https://www.carrefour.tn/preparation-alimentaire-a-la-mozzarella-pizzatella-6191436200042.html"
+  },
+  {
+   "sid": "6191402602023",
+   "name": "Boisson au jus tropical",
+   "brand": "La Fruitiere",
+   "pageDescription": "La bouteille de 250ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 250ml') makes it an exact duplicate of geant record \"Boisson au jus\"",
+   "url": "https://www.carrefour.tn/boisson-au-jus-tropical-6191402602023.html"
+  },
+  {
+   "sid": "6191599100562",
+   "name": "Brownies caramel beurre salé",
+   "brand": "Bolerio",
+   "pageDescription": "Le paquet de 60g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 60g') makes it an exact duplicate of geant record \"Brownies\"",
+   "url": "https://www.carrefour.tn/brownies-caramel-beurre-sale-6191599100562.html"
+  },
+  {
+   "sid": "6191402601972",
+   "name": "Harissa Berbere",
+   "brand": "Furketta",
+   "pageDescription": "Le bocal de 190g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bocal de 190g') makes it an exact duplicate of geant record \"Harissa bérbère\"",
+   "url": "https://www.carrefour.tn/harissa-berbere-6191402601972.html"
+  },
+  {
+   "sid": "6191509499090",
+   "name": "Huile végétale",
+   "brand": "Olina",
+   "pageDescription": "La bouteille de 900ml",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 900ml') makes it an exact duplicate of geant record \"Huile végétale\"",
+   "url": "https://www.carrefour.tn/huile-vegetale-6191509499090.html"
+  },
+  {
+   "sid": "6191513504407",
+   "name": "Préparation alimentaire fondu",
+   "brand": "Tarti Fro",
+   "pageDescription": "La boite de 24 portions",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 24 portions') makes it an exact duplicate of geant record \"Préparation alimentaire fondue\"",
+   "url": "https://www.carrefour.tn/preparation-alimentaire-fondu-6191513504407.html"
+  },
+  {
+   "sid": "6194029100804",
+   "name": "Thon en miettes à la harissa",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 85g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 85g') makes it an exact duplicate of geant record \"Thon en miettes\"",
+   "url": "https://www.carrefour.tn/thon-en-miettes-a-la-harissa-6194029100804.html"
+  },
+  {
+   "sid": "6194029101344",
+   "name": "Thon en morceaux à l'huile de tournesol",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 620g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 620g') makes it an exact duplicate of geant record \"Thon en morceaux\"",
+   "url": "https://www.carrefour.tn/thon-en-morceaux-a-l-huile-de-tournesol-6194029101344.html"
+  },
+  {
+   "sid": "6194029100293",
+   "name": "Thon entier à l'huile de tournesol",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 1Kg",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 1Kg') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-de-tournesol-6194029100293.html"
+  },
+  {
+   "sid": "6194029100378",
+   "name": "Thon entier au naturel",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 160g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/thon-entier-au-naturel-6194029100378.html"
+  },
+  {
+   "sid": "6194029101092",
+   "name": "Filet de thon à l'huile d'olive et à la tomate séchée",
+   "brand": "El Manar",
+   "pageDescription": "La bocal de 200g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bocal de 200g') makes it an exact duplicate of geant record \"Filets de thon\"",
+   "url": "https://www.carrefour.tn/filet-de-thon-lhuile-dolive-et-la-tomate-sechee-6194029101092.html"
+  },
+  {
+   "sid": "6191534608030",
+   "name": "Huile de colza",
+   "brand": "Safi",
+   "pageDescription": "La bouteille de 3.8L",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La bouteille de 3.8L') makes it an exact duplicate of geant record \"Huile de colza\"",
+   "url": "https://www.carrefour.tn/huile-de-colza-6191534608030.html"
+  },
+  {
+   "sid": "6191564601087",
+   "name": "Riz rond",
+   "brand": "Rozy",
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 1kg') makes it an exact duplicate of geant record \"Riz rond\"",
+   "url": "https://www.carrefour.tn/riz-rond-6191564601087.html"
+  },
+  {
+   "sid": "6191314600025",
+   "name": "Œufs Ovolina frais jaune orange",
+   "brand": "Ovolina",
+   "pageDescription": "Œufs frais OVOLINA 30 Pièces Jaune orange",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Œufs frais OVOLINA 30 Pièces Jaune orange') makes it an exact duplicate of geant record \"Œufs frais\"",
+   "url": "https://www.carrefour.tn/oeufs-ovolina-frais-jaune-orange-6191314600025.html"
+  },
+  {
+   "sid": "6191309700068",
+   "name": "Sucre de dattes",
+   "brand": "Kartago",
+   "pageDescription": "Le pot de 350g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 350g') makes it an exact duplicate of geant record \"Sucre de dattes\"",
+   "url": "https://www.carrefour.tn/sucre-de-dattes-6191309700068.html"
+  },
+  {
+   "sid": "6191402902901",
+   "name": "Crème à tartiner aux noisettes et au cacao",
+   "brand": "Vanoise",
+   "pageDescription": "Le pot de 1Kg dont 100g gratuit",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 1Kg dont 100g gratuit') makes it an exact duplicate of off record \"Crème à tartiner aux noisettes & au cacao\"",
+   "url": "https://www.carrefour.tn/creme-a-tartiner-aux-noisettes-et-au-cacao-6191402902901.html"
+  },
+  {
+   "sid": "6194002510194",
+   "name": "Biscuits Smile chocolat",
+   "brand": "Kif",
+   "pageDescription": "Le paquet de 190g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 190g') makes it an exact duplicate of off record \"Smile ( biscuit  Chocolat )\"",
+   "url": "https://www.carrefour.tn/biscuits-smile-chocolat-6194002510194.html"
+  },
+  {
+   "sid": "14030566",
+   "name": "Chips Crokido's",
+   "brand": "Golden Chips",
+   "pageDescription": "Le lot de 2 sachets de 70g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 2 sachets de 70g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chips-crokidos-14030566.html"
+  },
+  {
+   "sid": "2000000139296",
+   "name": "Déjeunette cuite",
+   "brand": null,
+   "pageDescription": "Le sachet de 5 déjeunettes de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 5 déjeunettes de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/dejeunette-cuite-2000000139296.html"
+  },
+  {
+   "sid": "2000000139340",
+   "name": "Mini pizza au thon",
+   "brand": null,
+   "pageDescription": "La pizza de 280g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La pizza de 280g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mini-pizza-au-thon-2000000139340.html"
+  },
+  {
+   "sid": "2000000139425",
+   "name": "Boule blanche",
+   "brand": null,
+   "pageDescription": "Le pain de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pain de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boule-blanche-2000000139425.html"
+  },
+  {
+   "sid": "2000000139630",
+   "name": "Tabouna traditionnelle",
+   "brand": null,
+   "pageDescription": "La pièce",
+   "decision": "retained",
+   "reason": "page gives no pack size ('La pièce') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/tabouna-traditionnelle-2000000139630.html"
+  },
+  {
+   "sid": "2000000139920",
+   "name": "Pain complet intégral",
+   "brand": null,
+   "pageDescription": "Le pain de 300g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pain de 300g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pain-complet-integral-2000000139920.html"
+  },
+  {
+   "sid": "2000000140872",
+   "name": "Mille feuille",
+   "brand": null,
+   "pageDescription": "La barquette de 2 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 2 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mille-feuille-2000000140872.html"
+  },
+  {
+   "sid": "2000000141626",
+   "name": "Tarte aux fruits frais",
+   "brand": null,
+   "pageDescription": "Pour 6 à 8 personnes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Pour 6 à 8 personnes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/tarte-aux-fruits-frais-2000000141626.html"
+  },
+  {
+   "sid": "2020200010294",
+   "name": "Poulet rôti",
+   "brand": null,
+   "pageDescription": "Le poulet",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Le poulet') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/poulet-roti-2020200010294.html"
+  },
+  {
+   "sid": "2023230004745",
+   "name": "Tarte grand mère",
+   "brand": null,
+   "pageDescription": "Pour 6 à 8 personnes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Pour 6 à 8 personnes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/tarte-grand-mere-2023230004745.html"
+  },
+  {
+   "sid": "2023230017981",
+   "name": "Croissants nature",
+   "brand": null,
+   "pageDescription": "Le lot de 4 de 70g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 4 de 70g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/croissants-nature-2023230017981.html"
+  },
+  {
+   "sid": "2023230033714",
+   "name": "Gâteu au chocolat",
+   "brand": null,
+   "pageDescription": "",
+   "decision": "retained",
+   "reason": "page gives no pack size ('') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/gateu-au-chocolat-2023230033714.html"
+  },
+  {
+   "sid": "2054540003920",
+   "name": "Mini viennoiserie",
+   "brand": null,
+   "pageDescription": "Le lot de 10",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Le lot de 10') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/mini-viennoiserie-2054540003920.html"
+  },
+  {
+   "sid": "2055550002965",
+   "name": "Gâteaux au chocolat",
+   "brand": null,
+   "pageDescription": "Pour 4 à 6 personnes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Pour 4 à 6 personnes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/gateaux-au-chocolat-2055550002965.html"
+  },
+  {
+   "sid": "2055550003245",
+   "name": "Tarte amandine",
+   "brand": null,
+   "pageDescription": "Pour 6 à 8 personnes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Pour 6 à 8 personnes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/tarte-amandine-2055550003245.html"
+  },
+  {
+   "sid": "2055550004754",
+   "name": "Gâteaux au café",
+   "brand": null,
+   "pageDescription": "La barquette de 2 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 2 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/gateaux-au-cafe-2055550004754.html"
+  },
+  {
+   "sid": "2055550005669",
+   "name": "Choquette à la crème",
+   "brand": null,
+   "pageDescription": "La barquette de 15 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 15 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/choquette-a-la-creme-2055550005669.html"
+  },
+  {
+   "sid": "2058580000567",
+   "name": "Demi poulet rôti",
+   "brand": null,
+   "pageDescription": "Le demi",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Le demi') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/demi-poulet-roti-2058580000567.html"
+  },
+  {
+   "sid": "2400955000000",
+   "name": "Escalope de dinde",
+   "brand": "El Mazraa",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/escalope-de-dinde-2400955000000.html"
+  },
+  {
+   "sid": "2402300000000",
+   "name": "Habra de dinde hachée",
+   "brand": "El Mazraa",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/habra-de-dinde-hachee-2402300000000.html"
+  },
+  {
+   "sid": "2403712000000",
+   "name": "Filet de poulet",
+   "brand": "Chahia",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/filet-de-poulet-2403712000000.html"
+  },
+  {
+   "sid": "25001144",
+   "name": "Yaourt aromatisé",
+   "brand": "Délice",
+   "pageDescription": "Le pot de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 100g') makes it an exact duplicate of aziza record \"Yaourt aromatisé à la banane\"",
+   "url": "https://www.carrefour.tn/yaourt-aromatise-25001144.html"
+  },
+  {
+   "sid": "25001148",
+   "name": "Yaourt à boire Danup",
+   "brand": "Délice",
+   "pageDescription": "La bouteille de 160g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 160g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-boire-danup-25001148.html"
+  },
+  {
+   "sid": "25001168",
+   "name": "Yaourt brassé Ptit'Top",
+   "brand": "YAB",
+   "pageDescription": "Le pot de 70g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 70g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-brasse-ptit-top-25001168.html"
+  },
+  {
+   "sid": "25001576",
+   "name": "Yaourt à boire vit'up",
+   "brand": "Vitalait",
+   "pageDescription": "La bouteille de 160g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 160g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-boire-25001576.html"
+  },
+  {
+   "sid": "25001643",
+   "name": "Yaourt brassé",
+   "brand": "Vitalait",
+   "pageDescription": "Le pot de 70g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 70g') makes it an exact duplicate of geant record \"Yaourt brassé\"",
+   "url": "https://www.carrefour.tn/yaourt-brasse-25001643.html"
+  },
+  {
+   "sid": "25001670",
+   "name": "Yaourt aromatisé",
+   "brand": "Vitalait",
+   "pageDescription": "Le pot de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-aromatise-25001670.html"
+  },
+  {
+   "sid": "25005386",
+   "name": "Pack de yaourts aromatisés",
+   "brand": "Délice",
+   "pageDescription": "Le paquet de 12 pots de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 12 pots de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pack-de-yaourts-aromatises-25005386.html"
+  },
+  {
+   "sid": "25005507",
+   "name": "Yaourt aromatisé",
+   "brand": "Natilait",
+   "pageDescription": "Le pot de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-aromatise-25005507.html"
+  },
+  {
+   "sid": "25005515",
+   "name": "Yaourt à boire Natiyo",
+   "brand": "Natilait",
+   "pageDescription": "La bouteille de 160g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 160g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-a-boire-natiyo-25005515.html"
+  },
+  {
+   "sid": "25005527",
+   "name": "Yaourt brassé",
+   "brand": "Natilait",
+   "pageDescription": "Le pot de 70g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 70g') makes it an exact duplicate of geant record \"Yaourt brassé\"",
+   "url": "https://www.carrefour.tn/yaourt-brasse-25005527.html"
+  },
+  {
+   "sid": "25006673",
+   "name": "Yaourt à la grecque Oikos",
+   "brand": "Délice",
+   "pageDescription": "Le pot de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-la-grecque-oikos-25006673.html"
+  },
+  {
+   "sid": "25006874",
+   "name": "Milkshake Déli Shake",
+   "brand": "Délice",
+   "pageDescription": "La bouteille de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/milkshake-deli-shake-25006874.html"
+  },
+  {
+   "sid": "25007176",
+   "name": "Yaourt brassé Mamzouj",
+   "brand": "Délice",
+   "pageDescription": "Le pot de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-brasse-mamzouj-25007176.html"
+  },
+  {
+   "sid": "25007179",
+   "name": "Yaourt à boire Vitupti",
+   "brand": "Vitalait",
+   "pageDescription": "La bouteille de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-a-boire-vitupti-25007179.html"
+  },
+  {
+   "sid": "25007201",
+   "name": "Yaourt brassé Blendy",
+   "brand": "Délice",
+   "pageDescription": "Le pot de 120g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 120g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-brasse-blendy-25007201.html"
+  },
+  {
+   "sid": "2800345000000",
+   "name": "Harissa Arbi Artisanale – Recette Traditionnelle Fait Maison",
+   "brand": null,
+   "pageDescription": "Vendue au poids",
+   "decision": "retained",
+   "reason": "page says 'Vendue au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/harissa-arbi-artisanale-recette-traditionnelle-fait-maison-2800345000000.html"
+  },
+  {
+   "sid": "2800819000000",
+   "name": "Fromage au Cheddar",
+   "brand": "Land'Or",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-au-cheddar-2800819000000.html"
+  },
+  {
+   "sid": "2800827000000",
+   "name": "Fromage au Gruyère",
+   "brand": "Land'Or",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-au-gruyere-2800827000000.html"
+  },
+  {
+   "sid": "2802044000000",
+   "name": "Fromage fondu râpé à l'emmental",
+   "brand": "Mont Regal",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-fondu-rape-a-l-emmental-2802044000000.html"
+  },
+  {
+   "sid": "2802045000000",
+   "name": "Fromage râpé fondu à la Mozzarella",
+   "brand": "Mont Regal",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-rape-fondu-a-la-mozzarella-2802045000000.html"
+  },
+  {
+   "sid": "2802192000000",
+   "name": "Fromage edam",
+   "brand": "Majeste",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-edam-2802192000000.html"
+  },
+  {
+   "sid": "2802193000000",
+   "name": "Fromage gouda jaune",
+   "brand": "Majeste",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-gouda-jaune-2802193000000.html"
+  },
+  {
+   "sid": "2802194000000",
+   "name": "Fromage mozzarella 100 % lait",
+   "brand": "Majeste",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-mozzarella-100-lait-2802194000000.html"
+  },
+  {
+   "sid": "2802361000000",
+   "name": "Fromage râpé à l'emmental",
+   "brand": "President",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-rape-a-l-emmental-2802361000000.html"
+  },
+  {
+   "sid": "2802369000000",
+   "name": "Fromage Edam",
+   "brand": "Fiore",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-edam-2802369000000.html"
+  },
+  {
+   "sid": "2802485000000",
+   "name": "Fromage mozzarella",
+   "brand": "Land'Or",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-mozzarella-2802485000000.html"
+  },
+  {
+   "sid": "2802486000000",
+   "name": "Fromage râpé au gruyère 100% lait",
+   "brand": "Majeste",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-rape-au-gruyere-100-lait-2802486000000.html"
+  },
+  {
+   "sid": "2802584000000",
+   "name": "Fromage râpé au Cheddar",
+   "brand": "Land'Or",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-rape-au-cheddar-2802584000000.html"
+  },
+  {
+   "sid": "2802897000000",
+   "name": "Jambon de poulet",
+   "brand": "Chahia",
+   "pageDescription": "Au poids 6 tranches pour 100g",
+   "decision": "retained",
+   "reason": "page says 'Au poids 6 tranches pour 100g': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/jambon-de-poulet-2802897000000.html"
+  },
+  {
+   "sid": "2803139000000",
+   "name": "Mix de luxe",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/mix-de-luxe-2803139000000.html"
+  },
+  {
+   "sid": "2809850000000",
+   "name": "Fromage râpé au Gruyère",
+   "brand": "Land'Or",
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-rape-au-gruyere-2809850000000.html"
+  },
+  {
+   "sid": "2822334000000",
+   "name": "Fromage gouda jaune",
+   "brand": null,
+   "pageDescription": "Au Kg",
+   "decision": "retained",
+   "reason": "page says 'Au Kg': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/fromage-gouda-jaune-2822334000000.html"
+  },
+  {
+   "sid": "2822479000000",
+   "name": "Harissa en boule",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/harissa-en-boule-2822479000000.html"
+  },
+  {
+   "sid": "2822735000000",
+   "name": "Raisin sec noir",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/raisin-sec-noir-2822735000000.html"
+  },
+  {
+   "sid": "2823140000000",
+   "name": "Mix Exotique",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/mix-exotique-2823140000000.html"
+  },
+  {
+   "sid": "2823142000000",
+   "name": "Mix Royal",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/mix-royal-2823142000000.html"
+  },
+  {
+   "sid": "2823479000000",
+   "name": "Cake au sorgho",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/cake-au-sorgho-2823479000000.html"
+  },
+  {
+   "sid": "2823680000000",
+   "name": "Flocons d'avoine",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/flocons-d-avoine-2823680000000.html"
+  },
+  {
+   "sid": "2828024000000",
+   "name": "Borghol fin",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/borghol-fin-2828024000000.html"
+  },
+  {
+   "sid": "2853522000000",
+   "name": "Crevettes décortiquées congelées",
+   "brand": null,
+   "pageDescription": "Calibre moyen",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Calibre moyen') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/crevettes-decortiquees-congelees-2853522000000.html"
+  },
+  {
+   "sid": "2853572000000",
+   "name": "Moules décortiquées",
+   "brand": null,
+   "pageDescription": "Le sachet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/moules-decortiquees-2853572000000.html"
+  },
+  {
+   "sid": "2853599000000",
+   "name": "Seiche nettoyée et congelée",
+   "brand": null,
+   "pageDescription": "Au poids",
+   "decision": "retained",
+   "reason": "page says 'Au poids': sold by weight, a distinct loose product",
+   "url": "https://www.carrefour.tn/seiche-nettoyee-et-congelee-2853599000000.html"
+  },
+  {
+   "sid": "3017800119020",
+   "name": "Mais doux",
+   "brand": "d'Aucy",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mais-doux-3017800119020.html"
+  },
+  {
+   "sid": "3017800119051",
+   "name": "Haricots verts très fins",
+   "brand": "d'Aucy",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/haricots-verts-tres-fins-3017800119051.html"
+  },
+  {
+   "sid": "3017800119099",
+   "name": "Macédoine de légumes",
+   "brand": "d'Aucy",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/macedoine-de-legumes-3017800119099.html"
+  },
+  {
+   "sid": "3017800119877",
+   "name": "Petit pois très fins SAVEURS",
+   "brand": "Saveurs",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/petit-pois-tres-fins-saveurs-3017800119877.html"
+  },
+  {
+   "sid": "3017800119891",
+   "name": "Haricots verts très fins",
+   "brand": "Saveurs",
+   "pageDescription": "La boite de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/haricots-verts-tres-fins-3017800119891.html"
+  },
+  {
+   "sid": "3017800119914",
+   "name": "Maïs doux",
+   "brand": "Saveurs",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mais-doux-3017800119914.html"
+  },
+  {
+   "sid": "3033710061983",
+   "name": "Céréales Chocapic",
+   "brand": "Nestlé",
+   "pageDescription": "Le paquet de 375g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 375g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cereales-chocapic-3033710061983.html"
+  },
+  {
+   "sid": "3067140035320",
+   "name": "Café en grains chicorée torréfiée",
+   "brand": "Leroux",
+   "pageDescription": "Le sachet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cafe-en-grains-chicoree-torrefiee-3067140035320.html"
+  },
+  {
+   "sid": "3083680020763",
+   "name": "Lot de 3 boites de maïs doux",
+   "brand": "Bonduelle",
+   "pageDescription": "Les 3 boites de 150g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 3 boites de 150g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lot-de-3-boites-de-mais-doux-3083680020763.html"
+  },
+  {
+   "sid": "3083680021548",
+   "name": "Maïs en grain",
+   "brand": "Bonduelle",
+   "pageDescription": "Le lot de 3 boîtes de 300g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 3 boîtes de 300g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mas-en-grain-3083680021548.html"
+  },
+  {
+   "sid": "3088543405114",
+   "name": "Miel doux",
+   "brand": "Lune de Miel",
+   "pageDescription": "Le bocal de 340g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 340g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/miel-doux-3088543405114.html"
+  },
+  {
+   "sid": "3220033060001",
+   "name": "Sucre roux en cube ti'Plaisir",
+   "brand": "Saint Louis",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sucre-roux-en-cube-ti-plaisir-3220033060001.html"
+  },
+  {
+   "sid": "3220034941194",
+   "name": "Sucre de canne en morceau",
+   "brand": "Saint Louis",
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sucre-de-canne-en-morceau-3220034941194.html"
+  },
+  {
+   "sid": "3236240070306",
+   "name": "Fromage fouetté Madame Loïk nature",
+   "brand": "Paysan Breton",
+   "pageDescription": "Le pot de 150g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 150g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-fouette-madame-loik-nature-3236240070306.html"
+  },
+  {
+   "sid": "3236240070504",
+   "name": "Fromage Le Petit Moulé à l'ail & aux fines herbes",
+   "brand": "Paysan Breton",
+   "pageDescription": "La boite de 150g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 150g') makes it an exact duplicate of geant record \"Petit moule\"",
+   "url": "https://www.carrefour.tn/fromage-le-petit-moule-a-l-ail-aux-fines-herbes-3236240070504.html"
+  },
+  {
+   "sid": "3329750010754",
+   "name": "Édulcorant faible en calories",
+   "brand": "Canderel",
+   "pageDescription": "La boîte de 75g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boîte de 75g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/edulcorant-faible-en-calories-3329750010754.html"
+  },
+  {
+   "sid": "3335121134431",
+   "name": "Moutarde forte de Dijon",
+   "brand": "Covinor",
+   "pageDescription": "Le bocal de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/moutarde-forte-de-dijon-3335121134431.html"
+  },
+  {
+   "sid": "3335122413757",
+   "name": "Sauce salade nature allégée en matière grasse",
+   "brand": "Covinor",
+   "pageDescription": "La bouteille de 500ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 500ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-salade-nature-allegee-en-matiere-grasse-3335122413757.html"
+  },
+  {
+   "sid": "3760078893160",
+   "name": "Sucettes",
+   "brand": "Cracocarte",
+   "pageDescription": "La pièce",
+   "decision": "retained",
+   "reason": "page gives no pack size ('La pièce') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/sucettes-3760078893160.html"
+  },
+  {
+   "sid": "3760078893344",
+   "name": "Sucette ourson",
+   "brand": "Cracocarte",
+   "pageDescription": "La sucette",
+   "decision": "retained",
+   "reason": "page gives no pack size ('La sucette') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/sucette-ourson-3760078893344.html"
+  },
+  {
+   "sid": "3800740035389",
+   "name": "Sauce soja classique",
+   "brand": "Deroni",
+   "pageDescription": "Le bocal de 130ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 130ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-soja-classique-3800740035389.html"
+  },
+  {
+   "sid": "3904505055800",
+   "name": "Choucroute",
+   "brand": "Kühne",
+   "pageDescription": "Le pot de 850ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 850ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/choucroute-3904505055800.html"
+  },
+  {
+   "sid": "4000417023001",
+   "name": "Chocolat aux amandes",
+   "brand": "Ritter Sport",
+   "pageDescription": "Le paquet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-aux-amandes-4000417023001.html"
+  },
+  {
+   "sid": "40084077",
+   "name": "Chocolat maxi au lait",
+   "brand": "Kinder",
+   "pageDescription": "La barre de 21g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 21g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-maxi-au-lait-40084077.html"
+  },
+  {
+   "sid": "4009041100812",
+   "name": "Café soluble chicorée",
+   "brand": "Brava",
+   "pageDescription": "Le bocal de 200g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le bocal de 200g') makes it an exact duplicate of geant record \"Chicorée soluble\"",
+   "url": "https://www.carrefour.tn/cafe-soluble-chicoree-4009041100812.html"
+  },
+  {
+   "sid": "4009041105190",
+   "name": "Chicorée soluble",
+   "brand": "Brava",
+   "pageDescription": "Le bocal de 250g + 50g gratuit",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 250g + 50g gratuit'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chicoree-soluble-4009041105190.html"
+  },
+  {
+   "sid": "4012200160763",
+   "name": "Vinaigre balsamique Dimodena",
+   "brand": "Kühne",
+   "pageDescription": "Le flacon de 250ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le flacon de 250ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/vinaigre-balsamique-dimodena-4012200160763.html"
+  },
+  {
+   "sid": "4018077632006",
+   "name": "Chips monster munch",
+   "brand": "Lorenz",
+   "pageDescription": "Le sachet de 75g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 75g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chips-monster-munch-4018077632006.html"
+  },
+  {
+   "sid": "40804613",
+   "name": "Cornichons fins",
+   "brand": "Kühne",
+   "pageDescription": "Le bocal de 370ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 370ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cornichons-fins-40804613.html"
+  },
+  {
+   "sid": "40804637",
+   "name": "Cocktail cornichons",
+   "brand": "Kühne",
+   "pageDescription": "Le bocal de 212ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 212ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cocktail-cornichons-40804637.html"
+  },
+  {
+   "sid": "5285000396437",
+   "name": "Nouilles instantanées goût bœuf",
+   "brand": "Indomie",
+   "pageDescription": "Le sachet de 70g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 70g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/nouilles-instantanees-gout-boeuf-5285000396437.html"
+  },
+  {
+   "sid": "5352001033354",
+   "name": "Ketchup",
+   "brand": null,
+   "pageDescription": "Le squeezer de 350ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le squeezer de 350ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/ketchup-5352001033354.html"
+  },
+  {
+   "sid": "5352001033361",
+   "name": "Sauce barbecue",
+   "brand": "Kiwi",
+   "pageDescription": "Le squeezer de 350ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le squeezer de 350ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-barbecue-5352001033361.html"
+  },
+  {
+   "sid": "5410376723345",
+   "name": "Pomme frites",
+   "brand": null,
+   "pageDescription": "Le sachet de 450g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 450g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pomme-frites-5410376723345.html"
+  },
+  {
+   "sid": "5411683210849",
+   "name": "Petit poids",
+   "brand": null,
+   "pageDescription": "Le sachet de 450g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 450g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/petit-poids-5411683210849.html"
+  },
+  {
+   "sid": "5411683210924",
+   "name": "Mais doux",
+   "brand": null,
+   "pageDescription": "La boite de 450g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 450g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mais-doux-5411683210924.html"
+  },
+  {
+   "sid": "5411683210955",
+   "name": "Macédoine de légumes",
+   "brand": null,
+   "pageDescription": "Le sachet de 450g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 450g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/macedoine-de-legumes-5411683210955.html"
+  },
+  {
+   "sid": "5449000000439",
+   "name": "COCA COLA",
+   "brand": "Coca-Cola",
+   "pageDescription": "COCA COLA 1.5L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('COCA COLA 1.5L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/coca-cola-5449000000439.html"
+  },
+  {
+   "sid": "5449000052926",
+   "name": "FANTA orange",
+   "brand": "Fanta",
+   "pageDescription": "FANTA orange 1.5L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('FANTA orange 1.5L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fanta-orange-5449000052926.html"
+  },
+  {
+   "sid": "5449000344656",
+   "name": "Schweppes ananas",
+   "brand": "Schweppes",
+   "pageDescription": "La bouteille de 0.9L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 0.9L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/schweppes-ananas-5449000344656.html"
+  },
+  {
+   "sid": "5900617013330",
+   "name": "Biscottes de blé traditionnel croustillant riche en fibre",
+   "brand": "Sante",
+   "pageDescription": "Le paquet de 150g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 150g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscottes-de-ble-traditionnel-croustillant-riche-en-fibre-5900617013330.html"
+  },
+  {
+   "sid": "5900617014658",
+   "name": "Biscuits au riz nature",
+   "brand": "Sante",
+   "pageDescription": "Le paquet de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-au-riz-nature-5900617014658.html"
+  },
+  {
+   "sid": "5900617014665",
+   "name": "Biscuits au riz et au sel de l'Himalaya",
+   "brand": "Sante",
+   "pageDescription": "Le paquet de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-au-riz-et-au-sel-de-l-himalaya-5900617014665.html"
+  },
+  {
+   "sid": "5900617014948",
+   "name": "Flocons de maîs Corn Flakes",
+   "brand": "Sante",
+   "pageDescription": "Flocons de maîs Corn Flakes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Flocons de maîs Corn Flakes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/flocons-de-mais-corn-flakes-5900617014948.html"
+  },
+  {
+   "sid": "5900617015938",
+   "name": "Barre de céréales chocolat banane",
+   "brand": "Sante",
+   "pageDescription": "La barre de 40g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 40g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-cereales-chocolat-banane-5900617015938.html"
+  },
+  {
+   "sid": "5900617015945",
+   "name": "Barre de céréales amande noisette",
+   "brand": "Sante",
+   "pageDescription": "La barre de 35g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 35g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-cereales-amande-noisette-5900617015945.html"
+  },
+  {
+   "sid": "5900617046635",
+   "name": "Barre protéinée pistache Go On",
+   "brand": "Sante",
+   "pageDescription": "La barre de 45g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 45g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-proteinee-pistache-5900617046635.html"
+  },
+  {
+   "sid": "5905187101296",
+   "name": "Chips de pomme de terre x-cut sel",
+   "brand": "Lorenz",
+   "pageDescription": "Le sachet de 85g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 85g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chips-de-pomme-de-terre-x-cut-sel-5905187101296.html"
+  },
+  {
+   "sid": "6072000103832",
+   "name": "Mayonnaise à la truffe noire",
+   "brand": "Delicio",
+   "pageDescription": "Le squeezer de 288ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le squeezer de 288ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mayonnaise-la-truffe-noire-6072000103832.html"
+  },
+  {
+   "sid": "6072000103856",
+   "name": "Mayonnaise piquante Chipolate",
+   "brand": "Delicio",
+   "pageDescription": "Le squeezer de 288ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le squeezer de 288ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mayonnaise-piquante-chipolate-6072000103856.html"
+  },
+  {
+   "sid": "6191304200013",
+   "name": "Crevettes décortiquées",
+   "brand": null,
+   "pageDescription": "Le sachet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/crevettes-decortiquees-6191304200013.html"
+  },
+  {
+   "sid": "6191307400014",
+   "name": "Cookies aux pépites de chocolat noir",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 6 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 6 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cookies-aux-pepites-de-chocolat-noir-6191307400014.html"
+  },
+  {
+   "sid": "6191307400021",
+   "name": "Cookies aux pépites de chocolat blanc",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 6 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 6 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cookies-aux-pepites-de-chocolat-blanc-6191307400021.html"
+  },
+  {
+   "sid": "6191307400038",
+   "name": "Biscuits sablé",
+   "brand": "LBM",
+   "pageDescription": "Le sachet de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-sable-6191307400038.html"
+  },
+  {
+   "sid": "6191307400052",
+   "name": "Biscuits aux amandes L’amandier",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 9 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 9 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-aux-amandes-l-amandier-6191307400052.html"
+  },
+  {
+   "sid": "6191307400960",
+   "name": "Biscuits enrobé de chocolat blanc Tagada LBM",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 140g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 140g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-enrobe-de-chocolat-blanc-tagada-lbm-6191307400960.html"
+  },
+  {
+   "sid": "6191307401233",
+   "name": "Biscuit P'tit Matin pure beurre",
+   "brand": "LBM",
+   "pageDescription": "Biscuit P'tit Matin pure beurre",
+   "decision": "retained",
+   "reason": "page gives no pack size (\"Biscuit P'tit Matin pure beurre\") but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/biscuit-p-tit-matin-pure-beurre-6191307401233.html"
+  },
+  {
+   "sid": "6191307401240",
+   "name": "Biscuit P'tit matin spéculoos",
+   "brand": "LBM",
+   "pageDescription": "Biscuit P'tit matin spéculoos",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Biscuit speculoos P'tit matin 95 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/biscuit-p-tit-matin-speculoos-6191307401240.html"
+  },
+  {
+   "sid": "6191307402100",
+   "name": "Biscuits salés goût fromage",
+   "brand": "Cracker's",
+   "pageDescription": "Le paquet de 115g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 115g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-sales-gout-fromage-6191307402100.html"
+  },
+  {
+   "sid": "6191307402766",
+   "name": "Cookies sans sucre aux pépites de chocolat noir",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 90g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 90g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cookies-sans-sucre-aux-pepites-de-chocolat-noir-6191307402766.html"
+  },
+  {
+   "sid": "6191307402834",
+   "name": "Cookies cacaoté sans sucre aux pépites",
+   "brand": "LBM",
+   "pageDescription": "Le paquet de 90g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 90g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cookies-sans-sucre-aux-cacaoetes-6191307402834.html"
+  },
+  {
+   "sid": "6191309700013",
+   "name": "Dattes aux sésames Pops",
+   "brand": "Kartago",
+   "pageDescription": "Dattes aux sésames Pops",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Dattes aux sésames Pops') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/dattes-aux-sesames-pops-6191309700013.html"
+  },
+  {
+   "sid": "6191309700037",
+   "name": "Dattes aux noix de coco et cacao Pops",
+   "brand": "Kartago",
+   "pageDescription": "Dattes aux noix de coco",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Dattes aux noix de coco') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/dattes-aux-noix-de-coco-et-cacao-pops-6191309700037.html"
+  },
+  {
+   "sid": "6191309700341",
+   "name": "Céréales granola aux 4 graines",
+   "brand": null,
+   "pageDescription": "Le sachet de 300g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 300g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cereales-granola-aux-4-graines-6191309700341.html"
+  },
+  {
+   "sid": "6191314600162",
+   "name": "Œufs frais jaune-Junior",
+   "brand": "Ovolina",
+   "pageDescription": "Calibre moyen Le plateau de 30 Œufs",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Calibre moyen Le plateau de 30 Œufs') makes it an exact duplicate of geant record \"Oeufs frais\"",
+   "url": "https://www.carrefour.tn/oeufs-frais-jaune-junior-6191314600162.html"
+  },
+  {
+   "sid": "6191317200017",
+   "name": "Pâte de noisette",
+   "brand": "Ben Gaied Hassine",
+   "pageDescription": "Le pot de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pate-de-noisette-6191317200017.html"
+  },
+  {
+   "sid": "6191317200031",
+   "name": "Pâte Zgougou Ben Gaied Hassine tamisée",
+   "brand": "Ben Gaied Hassine",
+   "pageDescription": "Le pot de 500gr de pate de zgougou tamisée",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 500gr de pate de zgougou tamisée'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pate-zgougou-ben-gaied-hassine-tamisee-6191317200031.html"
+  },
+  {
+   "sid": "6191317200048",
+   "name": "Pâte de sésames",
+   "brand": "Ben Gaied Hassine",
+   "pageDescription": "Pâte de sésames",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Pâte de sésames') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/pate-de-sesames-6191317200048.html"
+  },
+  {
+   "sid": "6191321300086",
+   "name": "Fromage mozzarelle Boccon",
+   "brand": null,
+   "pageDescription": "Le sachet de 125g net",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 125g net'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-mozzarelle-boccon-6191321300086.html"
+  },
+  {
+   "sid": "6191321300888",
+   "name": "Mascarpone",
+   "brand": "Fiore",
+   "pageDescription": "Le pot de 150g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 150g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mascarpone-6191321300888.html"
+  },
+  {
+   "sid": "6191325500246",
+   "name": "Boisson au jus mangue",
+   "brand": "Aris",
+   "pageDescription": "La brique de 250 ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La brique de 250 ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boisson-au-jus-mangue-6191325500246.html"
+  },
+  {
+   "sid": "6191325501021",
+   "name": "Ice tea ananas",
+   "brand": "Aris",
+   "pageDescription": "La bouteille de 300 ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 300 ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/ice-tea-ananas-6191325501021.html"
+  },
+  {
+   "sid": "6191327600029",
+   "name": "Biscuit sandwich goût chocolat Tino",
+   "brand": "Biskart",
+   "pageDescription": "Le paquet de 64g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 64g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuit-sandwich-gout-chocolat-tino-6191327600029.html"
+  },
+  {
+   "sid": "6191332200023",
+   "name": "Pates feuilletée surgelée",
+   "brand": null,
+   "pageDescription": "La pièce de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La pièce de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pates-feuilletee-surgelee-6191332200023.html"
+  },
+  {
+   "sid": "6191332200061",
+   "name": "Pâte brisée",
+   "brand": null,
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pate-brisee-6191332200061.html"
+  },
+  {
+   "sid": "6191341900020",
+   "name": "Huile de colza Oleo",
+   "brand": "Nour",
+   "pageDescription": "Le bidon de 3L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bidon de 3L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-de-colza-oleo-6191341900020.html"
+  },
+  {
+   "sid": "6191402600388",
+   "name": "Confiture d'abricots",
+   "brand": "La Fruitiere",
+   "pageDescription": "Le pot de 300g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 300g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/confiture-d-abricots-6191402600388.html"
+  },
+  {
+   "sid": "6191402600395",
+   "name": "Confiture d'oranges et mandarines",
+   "brand": "La Fruitiere",
+   "pageDescription": "Le pot de 340g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 340g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/confiture-d-oranges-et-mandarines-6191402600395.html"
+  },
+  {
+   "sid": "6191402601989",
+   "name": "Harissa traditionnelle",
+   "brand": "Furketta",
+   "pageDescription": "Le pôt de 190ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pôt de 190ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/harissa-traditionnelle-6191402601989.html"
+  },
+  {
+   "sid": "6191402801426",
+   "name": "Sucre vanilliné Vanoise",
+   "brand": "Dr. Oetker",
+   "pageDescription": "Les 5 sachets de 8g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 5 sachets de 8g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sucre-vanilline-vanoise-6191402801426.html"
+  },
+  {
+   "sid": "6191402802812",
+   "name": "Amidon de maïs",
+   "brand": "Vanoise",
+   "pageDescription": "Le lot de 2 de 150g -50% sur le 2ème",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 2 de 150g -50% sur le 2ème'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/amidon-de-mas-6191402802812.html"
+  },
+  {
+   "sid": "6191402803192",
+   "name": "Préparation de chocolat chaud banane",
+   "brand": "Dr. Oetker",
+   "pageDescription": "Le paquet de 30g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 30g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-de-chocolat-chaud-banane-6191402803192.html"
+  },
+  {
+   "sid": "6191402803208",
+   "name": "Préparation de chocolat chaud caramel",
+   "brand": "Dr. Oetker",
+   "pageDescription": "Le paquet de 30g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 30g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-de-chocolat-chaud-caramel-6191402803208.html"
+  },
+  {
+   "sid": "6191402805493",
+   "name": "Bsissa de blé Vanoise",
+   "brand": "Dr. Oetker",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/bsissa-de-ble-vanoise-6191402805493.html"
+  },
+  {
+   "sid": "6191402900082",
+   "name": "Margarine tartine et cuisson",
+   "brand": "Goldina",
+   "pageDescription": "Margarine tartine et cuisson La barquette de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Margarine tartine et cuisson La barquette de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/margarine-tartine-et-cuisson-6191402900082.html"
+  },
+  {
+   "sid": "6191402900372",
+   "name": "Matière grasse tartinable",
+   "brand": "Goldina",
+   "pageDescription": "Le pot de 700g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 700g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/matiere-grasse-tartinable-6191402900372.html"
+  },
+  {
+   "sid": "6191402900549",
+   "name": "Crème à tartiner",
+   "brand": "Vanoise",
+   "pageDescription": "Le pot de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-a-tartiner-6191402900549.html"
+  },
+  {
+   "sid": "6191402901270",
+   "name": "Margarines riche en oméga 3",
+   "brand": "Goldina",
+   "pageDescription": "La barquette de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/margarines-riche-en-omega-3-6191402901270.html"
+  },
+  {
+   "sid": "6191402901287",
+   "name": "Margarine riche en Oméga 3",
+   "brand": "Goldina",
+   "pageDescription": "La barquette de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/margarine-riche-en-omega-3-6191402901287.html"
+  },
+  {
+   "sid": "6191402902048",
+   "name": "Boules de céréales enrobées et croustillantes",
+   "brand": "Crispy",
+   "pageDescription": "Le sachet de 30g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 30g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boules-de-cereales-enrobees-et-croustillantes-6191402902048.html"
+  },
+  {
+   "sid": "6191402902932",
+   "name": "Pâtes à tartiner Ma crème au biscuit Spéculos",
+   "brand": "Vanoise",
+   "pageDescription": "Le pot de 340g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 340g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pates-a-tartiner-ma-creme-au-biscuit-speculos-6191402902932.html"
+  },
+  {
+   "sid": "6191402903090",
+   "name": "Crème à tartiner Duo biscuits au cacao & lait Vanoise",
+   "brand": "Vanoise",
+   "pageDescription": "Le pot de 340g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 340g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-a-tartiner-duo-biscuits-au-cacao-lait-vanoise-6191402903090.html"
+  },
+  {
+   "sid": "6191402903762",
+   "name": "Crème sucrée pour garniture de gâteaux",
+   "brand": "Goldina",
+   "pageDescription": "Le pot de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-sucree-pour-garniture-de-gteaux-6191402903762.html"
+  },
+  {
+   "sid": "6191403301512",
+   "name": "Kefta de dinde",
+   "brand": null,
+   "pageDescription": "",
+   "decision": "retained",
+   "reason": "page gives no pack size ('') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/kefta-de-dinde-6191403301512.html"
+  },
+  {
+   "sid": "6191416500377",
+   "name": "Biscuits fourré au chocolat Royal",
+   "brand": "Campi",
+   "pageDescription": "Le paquet de 130g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 130g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-fourre-au-chocolat-royal-6191416500377.html"
+  },
+  {
+   "sid": "6191427600288",
+   "name": "Pain de mie nature",
+   "brand": "Mama Mia",
+   "pageDescription": "Le sachet de 14 tranches",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 14 tranches'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pain-de-mie-nature-6191427600288.html"
+  },
+  {
+   "sid": "6191427600585",
+   "name": "Pain de mie multi-céréales",
+   "brand": "Mama Mia",
+   "pageDescription": "MAMA MIA",
+   "decision": "retained",
+   "reason": "page gives no pack size ('MAMA MIA') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/pain-de-mie-multi-cereales-6191427600585.html"
+  },
+  {
+   "sid": "6191430605027",
+   "name": "Citronnade fraîche",
+   "brand": "Boqueria",
+   "pageDescription": "Citronade Le flacon de 330ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Citronade Le flacon de 330ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/citronnade-fraiche-6191430605027.html"
+  },
+  {
+   "sid": "6191430605041",
+   "name": "Jus de fraise",
+   "brand": "Boqueria",
+   "pageDescription": "Jus de fraise Le flacon de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Jus de fraise Le flacon de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/jus-de-fraise-6191430605041.html"
+  },
+  {
+   "sid": "6191431900039",
+   "name": "Café moulu filtre pur",
+   "brand": null,
+   "pageDescription": "Le paquet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cafe-moulu-filtre-pur-6191431900039.html"
+  },
+  {
+   "sid": "6191431900046",
+   "name": "Café turc pur",
+   "brand": null,
+   "pageDescription": "Le paquet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cafe-turc-pur-6191431900046.html"
+  },
+  {
+   "sid": "6191432201388",
+   "name": "Gaufrettes chocolat",
+   "brand": "Lingot",
+   "pageDescription": "Le paquet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/gaufrettes-chocolat-6191432201388.html"
+  },
+  {
+   "sid": "6191432201395",
+   "name": "Gaufrettes crème au lait",
+   "brand": "Lingot",
+   "pageDescription": "Le paquet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/gaufrettes-creme-au-lait-6191432201395.html"
+  },
+  {
+   "sid": "6191432201418",
+   "name": "Gaufrettes noisettes",
+   "brand": "Lingot",
+   "pageDescription": "Le paquet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/gaufrettes-noisettes-6191432201418.html"
+  },
+  {
+   "sid": "6191436200073",
+   "name": "Fromage râpé chees",
+   "brand": "Majeste",
+   "pageDescription": "Le sachet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-rpe-chees-6191436200073.html"
+  },
+  {
+   "sid": "6191436200677",
+   "name": "Fromage 100% mozzarella",
+   "brand": "Majeste",
+   "pageDescription": "Le sachet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-100-mozzarella-6191436200677.html"
+  },
+  {
+   "sid": "6191436200905",
+   "name": "Râpé 4 fromages",
+   "brand": "Majeste",
+   "pageDescription": "Le sachet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/rape-4-fromages-6191436200905.html"
+  },
+  {
+   "sid": "6191436201025",
+   "name": "Fromage Whey pro protéines goût vanille",
+   "brand": "Majeste",
+   "pageDescription": "Le pot de 280ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 280ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-whey-pro-proteines-gout-vanille-6191436201025.html"
+  },
+  {
+   "sid": "6191436201032",
+   "name": "Fromage Whey pro protéines goût framboise",
+   "brand": "Majeste",
+   "pageDescription": "Le pot de 280ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 280ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-whey-pro-proteines-gout-framboise-6191436201032.html"
+  },
+  {
+   "sid": "6191436201049",
+   "name": "Fromage Whey pro protéines goût café",
+   "brand": "Majeste",
+   "pageDescription": "Le pot de 280ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 280ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-whey-pro-proteines-gout-cafe-6191436201049.html"
+  },
+  {
+   "sid": "6191436201117",
+   "name": "Fromage ricotta",
+   "brand": "Majeste",
+   "pageDescription": "Le pot de 150g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 150g') makes it an exact duplicate of geant record \"Ricotta\"",
+   "url": "https://www.carrefour.tn/fromage-ricotta-6191436201117.html"
+  },
+  {
+   "sid": "6191441100023",
+   "name": "Feuilles de brick",
+   "brand": "Brikador",
+   "pageDescription": "Le sachet de 10 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 10 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/feuilles-de-brick-6191441100023.html"
+  },
+  {
+   "sid": "6191441100054",
+   "name": "Feuilles de brick semoule",
+   "brand": null,
+   "pageDescription": "Le sachet de 10 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 10 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/feuilles-de-brick-semoule-6191441100054.html"
+  },
+  {
+   "sid": "6191441100160",
+   "name": "Feuilles de samsa",
+   "brand": "Samsador",
+   "pageDescription": "Le sachet de 10 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 10 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/feuilles-de-samsa-6191441100160.html"
+  },
+  {
+   "sid": "6191441100269",
+   "name": "Feuilles de crèpe",
+   "brand": null,
+   "pageDescription": "Le lot de 8 crèpes",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Le lot de 8 crèpes') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/feuilles-de-crepe-6191441100269.html"
+  },
+  {
+   "sid": "6191442500167",
+   "name": "Lait fermenté \"Leben\"",
+   "brand": "Natilait",
+   "pageDescription": "La bouteille de 420g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 420g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lait-fermente-leben-6191442500167.html"
+  },
+  {
+   "sid": "6191442500457",
+   "name": "Lait caillé \"raieb\"",
+   "brand": "Natilait",
+   "pageDescription": "La pot de 350g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La pot de 350g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lait-caille-raieb-6191442500457.html"
+  },
+  {
+   "sid": "6191442501263",
+   "name": "Yaourt brassé aux céréales et aux fruits des bois Misto",
+   "brand": "Natilait",
+   "pageDescription": "Le pot de 120g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 120g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-brasse-aux-cereales-et-aux-fruits-des-bois-misto-6191442501263.html"
+  },
+  {
+   "sid": "6191442501270",
+   "name": "Yaourt brassé aux céréales et aux fruits exotiques Misto",
+   "brand": "Natilait",
+   "pageDescription": "Le pot de 120g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 120g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-brasse-aux-cereales-et-aux-fruits-misto-6191442501270.html"
+  },
+  {
+   "sid": "6191442600010",
+   "name": "Lait demi-écrémé U.H.T",
+   "brand": "Natilait",
+   "pageDescription": "Lait U.H.T stérilisé demi écrémé",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Lait U.H.T stérilisé demi écrémé') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/lait-demi-ecreme-u-h-t-6191442600010.html"
+  },
+  {
+   "sid": "6191446700099",
+   "name": "Borghol fin",
+   "brand": "Reine des Graines",
+   "pageDescription": "Le paquet de 750g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 750g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/borghol-fin-6191446700099.html"
+  },
+  {
+   "sid": "6191451000146",
+   "name": "Salade Primavera",
+   "brand": null,
+   "pageDescription": "La barquette 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/salade-primavera-6191451000146.html"
+  },
+  {
+   "sid": "6191454000013",
+   "name": "Champignons pieds & morceaux",
+   "brand": "Tanit le Jardin",
+   "pageDescription": "La boite de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/champignons-pieds-morceaux-6191454000013.html"
+  },
+  {
+   "sid": "6191460400791",
+   "name": "Champignons en tranches",
+   "brand": "Mami Garden",
+   "pageDescription": "La boite de 390g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 390g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/champignons-en-tranches-6191460400791.html"
+  },
+  {
+   "sid": "6191461100317",
+   "name": "Huile d'olive extra vierge",
+   "brand": "Terroliva",
+   "pageDescription": "La bouteille de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-d-olive-extra-vierge-6191461100317.html"
+  },
+  {
+   "sid": "6191462200177",
+   "name": "Barre de céréales Caramel salé",
+   "brand": "Vipa",
+   "pageDescription": "La barre de 27 g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 27 g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-cereales-caramel-sale-6191462200177.html"
+  },
+  {
+   "sid": "6191469700304",
+   "name": "Thé vert instantané menthe",
+   "brand": "Kyufi",
+   "pageDescription": "Paquet de 10 sachet de 75 g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Paquet de 10 sachet de 75 g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/the-vert-instantane-menthe-6191469700304.html"
+  },
+  {
+   "sid": "6191469700540",
+   "name": "Thé noir instantané menthe",
+   "brand": "Kyufi",
+   "pageDescription": "Paquet de 10 sachet de 75 g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Paquet de 10 sachet de 75 g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/the-noir-instantane-menthe-6191469700540.html"
+  },
+  {
+   "sid": "6191469701967",
+   "name": "Thé noir à la bergamote",
+   "brand": "Kyufi",
+   "pageDescription": "Le paquet de 10 sachets",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 10 sachets') makes it an exact duplicate of geant record \"Thé noir soluble\"",
+   "url": "https://www.carrefour.tn/the-noir-la-bergamote-6191469701967.html"
+  },
+  {
+   "sid": "6191469701950",
+   "name": "Thé noir à la bergamote sans sucre",
+   "brand": "Kyufi",
+   "pageDescription": "Le paquet de 10 sachets",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 10 sachets') makes it an exact duplicate of geant record \"Thé noir soluble\"",
+   "url": "https://www.carrefour.tn/the-noir-la-bergamote-sans-sucre-ajoute-6191469701950.html"
+  },
+  {
+   "sid": "6191473400016",
+   "name": "Pâte feuilletée",
+   "brand": null,
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pate-feuilletee-6191473400016.html"
+  },
+  {
+   "sid": "6191473400054",
+   "name": "Pâte brisée étalée",
+   "brand": "Fornetto",
+   "pageDescription": "Le paquet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pte-brisee-etalee-6191473400054.html"
+  },
+  {
+   "sid": "6191477200025",
+   "name": "Muffin bicouleur",
+   "brand": "Daily'n",
+   "pageDescription": "La sachet de 60g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La sachet de 60g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/muffin-bicouleur-6191477200025.html"
+  },
+  {
+   "sid": "6191477200063",
+   "name": "Brownies aux pépites de chocolat",
+   "brand": "Daily'n",
+   "pageDescription": "Le paquet de 60g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 60g') makes it an exact duplicate of geant record \"Brownies\"",
+   "url": "https://www.carrefour.tn/brownies-aux-pepites-de-chocolat-6191477200063.html"
+  },
+  {
+   "sid": "6191477200117",
+   "name": "Cake Grand Mère marbré",
+   "brand": "Daily'n",
+   "pageDescription": "Le sachet de 700g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 700g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cake-grand-mere-marbre-6191477200117.html"
+  },
+  {
+   "sid": "6191477200131",
+   "name": "Tarte fraise",
+   "brand": "Daily'n",
+   "pageDescription": "Le paquet de 85g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 85g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/tarte-fraise-6191477200131.html"
+  },
+  {
+   "sid": "6191477200148",
+   "name": "Tarte d'abricots",
+   "brand": "Daily'n",
+   "pageDescription": "Le paquet de 85g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 85g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/tarte-d-abricots-6191477200148.html"
+  },
+  {
+   "sid": "6191477200223",
+   "name": "Cake marbré slice DAYLIN",
+   "brand": "Daily'n",
+   "pageDescription": "Le sachet de 40g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 40g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cake-marbre-slice-daylin-6191477200223.html"
+  },
+  {
+   "sid": "6191477200278",
+   "name": "Muffin au chocolat",
+   "brand": "Daily'n",
+   "pageDescription": "La sachet de 60g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La sachet de 60g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/muffin-au-chocolat-6191477200278.html"
+  },
+  {
+   "sid": "6191478401667",
+   "name": "Chocolat aux noisettes",
+   "brand": "Verano",
+   "pageDescription": "La tablette de 90g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La tablette de 90g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-aux-noisettes-6191478401667.html"
+  },
+  {
+   "sid": "6191478401674",
+   "name": "Chocolat caramel",
+   "brand": "Verano",
+   "pageDescription": "La tablette de 90g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La tablette de 90g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-caramel-6191478401674.html"
+  },
+  {
+   "sid": "6191485000099",
+   "name": "Thon entier à l'huile d'olive vierge",
+   "brand": "Lebhour",
+   "pageDescription": "La boite de 620g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 620g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-d-olive-vierge-6191485000099.html"
+  },
+  {
+   "sid": "6191485000624",
+   "name": "Thon entier à l'huile végétale CAP BLANC",
+   "brand": "Cap Blanc",
+   "pageDescription": "Thon entier à l'huile végétale cap blanc",
+   "decision": "retained",
+   "reason": "page gives no pack size (\"Thon entier à l'huile végétale cap blanc\") but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-vegetale-cap-blanc-6191485000624.html"
+  },
+  {
+   "sid": "6191485000730",
+   "name": "Thon entier à l'huile végétale",
+   "brand": "Cap Blanc",
+   "pageDescription": "La boite de 620g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 620g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/thon-entier-a-l-huile-vegetale-6191485000730.html"
+  },
+  {
+   "sid": "6191496900517",
+   "name": "Confiture de fruits allégées -30% de sucre",
+   "brand": "Yumy",
+   "pageDescription": "Le pot de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/confiture-de-fruits-allegees-en-sucre-6191496900517.html"
+  },
+  {
+   "sid": "6191498200165",
+   "name": "Barre de céréales raisin et amande",
+   "brand": "Honey la",
+   "pageDescription": "La barre de 30g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barre de 30g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-cereales-raisin-et-amande-6191498200165.html"
+  },
+  {
+   "sid": "6191500320201",
+   "name": "Cake marbré",
+   "brand": "Le Patissier",
+   "pageDescription": "Le sachet de 42g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le sachet de 42g') makes it an exact duplicate of geant record \"Cake marbré en tranche\"",
+   "url": "https://www.carrefour.tn/cake-marbre-6191500320201.html"
+  },
+  {
+   "sid": "6191503200739",
+   "name": "Glace chocolat",
+   "brand": null,
+   "pageDescription": "Le bâtonnet de 60ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bâtonnet de 60ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/glace-chocolat-6191503200739.html"
+  },
+  {
+   "sid": "6191503200746",
+   "name": "Glace chocolat fraise",
+   "brand": null,
+   "pageDescription": "Le bâtonnet de 60ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bâtonnet de 60ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/glace-chocolat-fraise-6191503200746.html"
+  },
+  {
+   "sid": "6191503200760",
+   "name": "Glace chocolat vanille",
+   "brand": null,
+   "pageDescription": "Le bâtonnet de 60ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bâtonnet de 60ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/glace-chocolat-vanille-6191503200760.html"
+  },
+  {
+   "sid": "6191503200784",
+   "name": "Glace familiale fraise Boules d'or",
+   "brand": null,
+   "pageDescription": "Glace familiale fraise",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Glace familiale fraise') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/glace-familiale-fraise-boules-d-or-6191503200784.html"
+  },
+  {
+   "sid": "6191503207554",
+   "name": "Crème dessert Plaisir zgougou",
+   "brand": "YAB",
+   "pageDescription": "Crème Plaisir zgougou YAB",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Crème dessert zgougou Plaisir 100 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/creme-dessert-plaisir-zgougou-6191503207554.html"
+  },
+  {
+   "sid": "6191503208872",
+   "name": "Crème dessert flan caramel",
+   "brand": "YAB",
+   "pageDescription": "Flan caramel Y'AB",
+   "decision": "retained",
+   "reason": "page gives no pack size (\"Flan caramel Y'AB\") but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/creme-dessert-flan-caramel-6191503208872.html"
+  },
+  {
+   "sid": "6191503208889",
+   "name": "Crème dessert chocolat liégeois",
+   "brand": "YAB",
+   "pageDescription": "Le pot de 12cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 12cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-dessert-chocolat-liegeois-6191503208889.html"
+  },
+  {
+   "sid": "6191503210660",
+   "name": "Mousse au chocolat Plaisir",
+   "brand": "YAB",
+   "pageDescription": "Mousse au chocolat Plaisir",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Mousse au chocolat Plaisir') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/mousse-au-chocolat-plaisir-6191503210660.html"
+  },
+  {
+   "sid": "6191503210769",
+   "name": "Mini muffins saveur vanille",
+   "brand": "Le Patissier",
+   "pageDescription": "Le paquet de 300g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 300g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mini-muffins-saveur-vanille-6191503210769.html"
+  },
+  {
+   "sid": "6191503213265",
+   "name": "Yaourt brassé aux fruits jaunes et aux céréales",
+   "brand": "YAB",
+   "pageDescription": "Le pot de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 100g') makes it an exact duplicate of geant record \"Yaourt mix\"",
+   "url": "https://www.carrefour.tn/yaourt-brasse-aux-fruits-jaunes-et-aux-cereales-6191503213265.html"
+  },
+  {
+   "sid": "6191505100419",
+   "name": "Nuggets de poulet",
+   "brand": null,
+   "pageDescription": "Le paquet de 220g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 220g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/nuggets-de-poulet-6191505100419.html"
+  },
+  {
+   "sid": "6191507220214",
+   "name": "Lait demi-écrémé U.H.T",
+   "brand": "Vitalait",
+   "pageDescription": "La brique de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La brique de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lait-demi-ecreme-u-h-t-6191507220214.html"
+  },
+  {
+   "sid": "6191507249383",
+   "name": "Yaourt nature",
+   "brand": "Vitalait",
+   "pageDescription": "Yaourt nature Le pot de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Yaourt nature Le pot de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/yaourt-nature-6191507249383.html"
+  },
+  {
+   "sid": "6191507250471",
+   "name": "Yaourt brassé aux fruits secs",
+   "brand": "Vitalait",
+   "pageDescription": "Le pot de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le pot de 100g') makes it an exact duplicate of geant record \"Yaourt brassé\"",
+   "url": "https://www.carrefour.tn/yaourt-brasse-aux-fruits-secs-6191507250471.html"
+  },
+  {
+   "sid": "6191509410026",
+   "name": "Huile de friture Fridéal",
+   "brand": "Olina",
+   "pageDescription": "La bouteille de 900ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 900ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-de-friture-frideal-6191509410026.html"
+  },
+  {
+   "sid": "6191509450008",
+   "name": "Huile de maïs",
+   "brand": "Olina",
+   "pageDescription": "Le bidon de 5L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bidon de 5L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-de-mais-6191509450008.html"
+  },
+  {
+   "sid": "6191513501215",
+   "name": "Fromage fondu à l'Emmental Mini'",
+   "brand": "President",
+   "pageDescription": "La barquette de 12g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La barquette de 12g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-l-emmental-mini-6191513501215.html"
+  },
+  {
+   "sid": "6191513501222",
+   "name": "Fromage fondu à l'Emmental Maxi'",
+   "brand": "President",
+   "pageDescription": "Le paquet de 40g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 40g') makes it an exact duplicate of geant record \"Fromage fondu maxi\"",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-l-emmental-maxi-6191513501222.html"
+  },
+  {
+   "sid": "6191513501239",
+   "name": "Fromage fondu à l'Emmental Famili'",
+   "brand": "President",
+   "pageDescription": "Le paquet de 150g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 150g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-l-emmental-famili-6191513501239.html"
+  },
+  {
+   "sid": "6191513501246",
+   "name": "Fromage fondu au cheddar",
+   "brand": "President",
+   "pageDescription": "Le sachet de 5 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 5 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-fondu-au-cheddar-6191513501246.html"
+  },
+  {
+   "sid": "6191513501253",
+   "name": "Fromage tranche Burger cheddar",
+   "brand": "President",
+   "pageDescription": "Le sachet de 10 tranches de 15g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 10 tranches de 15g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-tranche-burger-cheddar-6191513501253.html"
+  },
+  {
+   "sid": "6191513501628",
+   "name": "Fromage fondu à tartiner",
+   "brand": "Fromy",
+   "pageDescription": "La boite de 8 portions",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 8 portions'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-fondu-a-tartiner-6191513501628.html"
+  },
+  {
+   "sid": "6191513502014",
+   "name": "Fromage blanc fondu Carré",
+   "brand": "President",
+   "pageDescription": "Le paquet de 6 portions",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 6 portions'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-blanc-fondu-carre-6191513502014.html"
+  },
+  {
+   "sid": "6191513502021",
+   "name": "Fromage blanc fondu",
+   "brand": "President",
+   "pageDescription": "Le paquet de 8 portions",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 8 portions'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-blanc-fondu-6191513502021.html"
+  },
+  {
+   "sid": "6191513502380",
+   "name": "Préparation alimentaire fondante et filante Mozza Fino",
+   "brand": "Fromy",
+   "pageDescription": "Fromage mozzarella Fino La barre de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Fromage mozzarella Fino La barre de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-alimentaire-fondante-et-filante-mozza-fino-6191513502380.html"
+  },
+  {
+   "sid": "6191513502779",
+   "name": "Fromage et biscuits croustillants Goûter",
+   "brand": "President",
+   "pageDescription": "Le paquet de 4 portions",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 4 portions'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-et-biscuits-croustillants-gouter-6191513502779.html"
+  },
+  {
+   "sid": "6191513502946",
+   "name": "Fromage en cubes emmental",
+   "brand": null,
+   "pageDescription": "Le sachet de 100g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 100g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-en-cubes-emmental-6191513502946.html"
+  },
+  {
+   "sid": "6191513503370",
+   "name": "Fromage blanc Le Cuistot",
+   "brand": "President",
+   "pageDescription": "Le paquet de 4 portions de 75g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 4 portions de 75g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-blanc-le-cuistot-6191513503370.html"
+  },
+  {
+   "sid": "6191519400017",
+   "name": "Farine",
+   "brand": null,
+   "pageDescription": "Le paquet de 1Kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1Kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/farine-6191519400017.html"
+  },
+  {
+   "sid": "6191519400185",
+   "name": "Spaghetti n°2",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Huile végétale duo maïs et tournesol",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Huile végétale duo maïs et tournesol') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/spaghetti-n-2-6191519400185.html"
+  },
+  {
+   "sid": "6191519400215",
+   "name": "Spaghetti 2.5",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/spaghetti-2-5-6191519400215.html"
+  },
+  {
+   "sid": "6191519400277",
+   "name": "Nouilles n°1",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/nouilles-n1-6191519400277.html"
+  },
+  {
+   "sid": "6191519400468",
+   "name": "Fell 1.5",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fell-1-5-6191519400468.html"
+  },
+  {
+   "sid": "6191519400482",
+   "name": "Fell n°2",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Huile végétale duo maïs et tournesol",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Huile végétale duo maïs et tournesol') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/fell-n-2-6191519400482.html"
+  },
+  {
+   "sid": "6191519400505",
+   "name": "Fell n°2.5",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fell-n2-5-6191519400505.html"
+  },
+  {
+   "sid": "6191519400543",
+   "name": "Fell n°2.5 Rigate",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Huile végétale duo maïs et tournesol",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Huile végétale duo maïs et tournesol') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/fell-n-2-5-rigate-6191519400543.html"
+  },
+  {
+   "sid": "6191519400741",
+   "name": "Cheveux d'ange",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Pâte cheveux d'ange\"",
+   "url": "https://www.carrefour.tn/cheveux-dange-6191519400741.html"
+  },
+  {
+   "sid": "6191519400802",
+   "name": "Langue d'oiseau",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Le paquet de 500g') makes it an exact duplicate of geant record \"Pâte langue d'oiseau\"",
+   "url": "https://www.carrefour.tn/langue-doiseau-6191519400802.html"
+  },
+  {
+   "sid": "6191519400857",
+   "name": "Mhammas 2",
+   "brand": "Sanabel Carthage",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/mhammas-2-6191519400857.html"
+  },
+  {
+   "sid": "6191520001036",
+   "name": "Filets d'anchois salés à l' huile d'olive",
+   "brand": "Sidi Daoud",
+   "pageDescription": "La boite de 55g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 55g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/filets-d-anchois-sales-a-l-huile-d-olive-6191520001036.html"
+  },
+  {
+   "sid": "6191523800117",
+   "name": "Huile d'olive extra vierge",
+   "brand": "Al Jazira",
+   "pageDescription": "Le bidon de 800g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bidon de 800g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-d-olive-extra-vierge-6191523800117.html"
+  },
+  {
+   "sid": "6191523802975",
+   "name": "Préparation alimentaire d'huile d'olive au citron",
+   "brand": "Al Jazira",
+   "pageDescription": "Le spray de 200ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le spray de 200ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-alimentaire-d-huile-d-olive-au-citron-6191523802975.html"
+  },
+  {
+   "sid": "6191523802999",
+   "name": "Préparation alimentaire d'huile d'olive au piment",
+   "brand": "Al Jazira",
+   "pageDescription": "Le spray de 200ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le spray de 200ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-alimentaire-d-huile-d-olive-au-piment-6191523802999.html"
+  },
+  {
+   "sid": "6191525200250",
+   "name": "ORANGINA jaune",
+   "brand": "Orangina",
+   "pageDescription": "La canette de 24cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La canette de 24cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/orangina-jaune-6191525200250.html"
+  },
+  {
+   "sid": "6191534802254",
+   "name": "PUNCH orange",
+   "brand": "Punch",
+   "pageDescription": "PUNCH orange",
+   "decision": "retained",
+   "reason": "page gives no pack size ('PUNCH orange') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/punch-orange-6191534802254.html"
+  },
+  {
+   "sid": "6191544100500",
+   "name": "Barre de chocolat caramel & biscuit",
+   "brand": "Dclic",
+   "pageDescription": "Les 2 barres de 44g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 2 barres de 44g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-chocolat-caramel-biscuit-6191544100500.html"
+  },
+  {
+   "sid": "6191544100609",
+   "name": "Chocolat enrobés de caramel & biscuits",
+   "brand": "Duo",
+   "pageDescription": "Les 2 barres de 28g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 2 barres de 28g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-enrobes-de-caramel-biscuits-6191544100609.html"
+  },
+  {
+   "sid": "6191544100630",
+   "name": "Chocolat au caramel & biscuit",
+   "brand": "Duo",
+   "pageDescription": "Le lot de 3 paquets de 28g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 3 paquets de 28g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-au-caramel-biscuit-6191544100630.html"
+  },
+  {
+   "sid": "6191544100661",
+   "name": "Barre de chocolat caramel et biscuit",
+   "brand": "Xplose",
+   "pageDescription": "Le lot de 3 paquets de 35g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le lot de 3 paquets de 35g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barre-de-chocolat-caramel-et-biscuit-6191544100661.html"
+  },
+  {
+   "sid": "6191547201174",
+   "name": "Bâtonnets de pain au sel Grissini Torinesi",
+   "brand": "Cerealis",
+   "pageDescription": "Le sachet de 80g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 80g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/batonnets-de-pain-au-sel-grissini-torinesi-6191547201174.html"
+  },
+  {
+   "sid": "6191547201181",
+   "name": "Bâtonnets de pain au fromage et tomate Grissini Torinesi",
+   "brand": "Cerealis",
+   "pageDescription": "Le sachet de 80g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 80g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/batonnets-de-pain-au-fromage-et-tomate-grissini-torinesi-6191547201181.html"
+  },
+  {
+   "sid": "6191547201198",
+   "name": "Bâtonnets de pain au son de blé Grissini Torinesi",
+   "brand": "Cerealis",
+   "pageDescription": "Le sachet de 80g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 80g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/batonnets-de-pain-au-son-de-ble-grissini-torinesi-6191547201198.html"
+  },
+  {
+   "sid": "6191547201280",
+   "name": "Pop corn caramel beurre Candy pop",
+   "brand": "Cerealis",
+   "pageDescription": "Le paquet de 120g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 120g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pop-corn-caramel-beurre-candy-pop-6191547201280.html"
+  },
+  {
+   "sid": "6191547201303",
+   "name": "Pop-corn Sweet",
+   "brand": "Cerealis",
+   "pageDescription": "Le paquet de 75g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 75g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pop-corn-sweet-6191547201303.html"
+  },
+  {
+   "sid": "6191564500076",
+   "name": "Huile de maïs",
+   "brand": "Cristal",
+   "pageDescription": "Le bidon de 5L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bidon de 5L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-de-mais-6191564500076.html"
+  },
+  {
+   "sid": "6191564600011",
+   "name": "Farine pâtissière",
+   "brand": null,
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/farine-ptissiere-6191564600011.html"
+  },
+  {
+   "sid": "6191564601711",
+   "name": "Riz étuvé",
+   "brand": "Rozy",
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/riz-etuve-6191564601711.html"
+  },
+  {
+   "sid": "6191571801159",
+   "name": "Lot de 3 boites de thon entier à l'huile d'olive",
+   "brand": "La Goulette",
+   "pageDescription": "Les 3 boites de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Les 3 boites de 160g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/lot-de-3-boites-de-thon-entier-a-l-huile-d-olive-6191571801159.html"
+  },
+  {
+   "sid": "6191598500219",
+   "name": "Cake familial tout chocolat Valentino",
+   "brand": "Goutinel",
+   "pageDescription": "Le paquet de 385g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 385g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/cake-familial-tout-chocolat-valentino-6191598500219.html"
+  },
+  {
+   "sid": "6191599100012",
+   "name": "Muffins d'abricots",
+   "brand": "Bolerio",
+   "pageDescription": "Le paquet de 55g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 55g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/muffins-d-abricots-6191599100012.html"
+  },
+  {
+   "sid": "6191599100302",
+   "name": "Brownies chocolat",
+   "brand": "Bolerio",
+   "pageDescription": "Le paquet de 60g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 60g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/brownies-chocolat-6191599100302.html"
+  },
+  {
+   "sid": "6194000802703",
+   "name": "Huile de tournesol",
+   "brand": "Jadida",
+   "pageDescription": "Le bidon de 5L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bidon de 5L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/huile-de-tournesol-6194000802703.html"
+  },
+  {
+   "sid": "6194000805193",
+   "name": "Sauce algérienne",
+   "brand": "Jadida",
+   "pageDescription": "La bouteille de 270ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 270ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-algerienne-6194000805193.html"
+  },
+  {
+   "sid": "6194001480078",
+   "name": "Lot de 4 boites de double concentré de tomates",
+   "brand": "Jouda",
+   "pageDescription": "Les 4 boites de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 4 boites de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lot-de-4-boites-de-double-concentre-de-tomates-6194001480078.html"
+  },
+  {
+   "sid": "6194001480405",
+   "name": "Double concentré de tomates",
+   "brand": "Jouda",
+   "pageDescription": "La boite de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/double-concentre-de-tomates-6194001480405.html"
+  },
+  {
+   "sid": "6194001510096",
+   "name": "Sirop de menthe",
+   "brand": "Hazem",
+   "pageDescription": "hazem",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Sirop menthe 1 L\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/sirop-de-menthe-6194001510096.html"
+  },
+  {
+   "sid": "6194001520095",
+   "name": "Sirop au goût de menthe",
+   "brand": "Hazem",
+   "pageDescription": "La bouteille de 98 cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 98 cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sirop-u-gout-de-menthe-6194001520095.html"
+  },
+  {
+   "sid": "6194001520101",
+   "name": "Sirop au goût de grenadine",
+   "brand": "Hazem",
+   "pageDescription": "La bouteille de 98 cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 98 cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sirop-u-gout-de-grenadine-6194001520101.html"
+  },
+  {
+   "sid": "6194001551105",
+   "name": "Boisson concentrée au goût de citron amande",
+   "brand": "Hazem",
+   "pageDescription": "La bouteille de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boisson-concentree-au-gout-de-citron-amande-6194001551105.html"
+  },
+  {
+   "sid": "6194001800111",
+   "name": "Eau minérale SAFIA",
+   "brand": null,
+   "pageDescription": "",
+   "decision": "retained",
+   "reason": "page gives no pack size ('') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/eau-minerale-safia-6194001800111.html"
+  },
+  {
+   "sid": "6194001800302",
+   "name": "Eau minérale MELLITI",
+   "brand": null,
+   "pageDescription": "",
+   "decision": "retained",
+   "reason": "page gives no pack size ('') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/eau-minerale-melliti-6194001800302.html"
+  },
+  {
+   "sid": "6194002510071",
+   "name": "Biscuits Binto enrobés au chocolat",
+   "brand": "Kif",
+   "pageDescription": "Le paquet de 12 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 12 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/biscuits-binto-enrobes-au-chocolat-6194002510071.html"
+  },
+  {
+   "sid": "6194003200643",
+   "name": "Lot de 3 boites de tomates concassées au basilic",
+   "brand": "Le Petit Paris",
+   "pageDescription": "Les 3 boites de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Les 3 boites de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lot-de-3-boites-de-tomates-concassees-au-basilic-6194003200643.html"
+  },
+  {
+   "sid": "6194003200988",
+   "name": "Tomate pelées",
+   "brand": "Le Petit Paris",
+   "pageDescription": "la boite de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('la boite de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/tomate-pelees-6194003200988.html"
+  },
+  {
+   "sid": "6194003310243",
+   "name": "Lasagnes",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "lasagnes traditionnelles de L'Epi d'Or",
+   "decision": "retained",
+   "reason": "page gives no pack size (\"lasagnes traditionnelles de L'Epi d'Or\") but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/lasagnes-6194003310243.html"
+  },
+  {
+   "sid": "6194003320099",
+   "name": "Nouilles n°2",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/nouilles-n-2-6194003320099.html"
+  },
+  {
+   "sid": "6194003330029",
+   "name": "Couscous moyen prêt en 2 minutes",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 1Kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1Kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/couscous-moyen-pret-en-2-minutes-6194003330029.html"
+  },
+  {
+   "sid": "6194003360910",
+   "name": "Semoule fine",
+   "brand": "L'Epi d'Or",
+   "pageDescription": "Le paquet de 1kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 1kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/semoule-fine-6194003360910.html"
+  },
+  {
+   "sid": "6194003600870",
+   "name": "Capsules de café pur raffiné",
+   "brand": "Bondin",
+   "pageDescription": "Capsules de café pur raffiné Capsules de café pur en aluminium",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Capsules de café pur raffiné Capsules de café pur en aluminium') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/capsules-de-cafe-pur-raffine-6194003600870.html"
+  },
+  {
+   "sid": "6194003600887",
+   "name": "Capsules de café pur décaféiné",
+   "brand": "Bondin",
+   "pageDescription": "Capsules de café pur décaféiné 70% arabica - 30% robusta",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Capsules de café pur décaféiné 70% arabica - 30% robusta') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/capsules-de-cafe-pur-decafeine-6194003600887.html"
+  },
+  {
+   "sid": "6194003600894",
+   "name": "Capsules de café 100% arabica colombie",
+   "brand": "Bondin",
+   "pageDescription": "Capsules de café 100% arabica colombie",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Capsules de café 100% arabica colombie') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/capsules-de-cafe-100-arabica-colombie-6194003600894.html"
+  },
+  {
+   "sid": "6194003600900",
+   "name": "Capsules de café pur 100% Arabica intense",
+   "brand": "Bondin",
+   "pageDescription": "Capsules de café pur 100% Arabica intense",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Capsules de café pur 100% Arabica intense') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/capsules-de-cafe-pur-100-arabica-intense-6194003600900.html"
+  },
+  {
+   "sid": "6194003800317",
+   "name": "Yaourt nature",
+   "brand": "Délice",
+   "pageDescription": "Yaourt Le Nature",
+   "decision": "excluded",
+   "reason": "no pack size on the product page and too similar (1.00) to the sized product \"Yaourt nature 12 × 110 g\" [geant] to be told apart",
+   "url": "https://www.carrefour.tn/yaourt-nature-6194003800317.html"
+  },
+  {
+   "sid": "6194003802625",
+   "name": "Pack de yaourts natures",
+   "brand": "Délice",
+   "pageDescription": "Le paquet de 12 pots de 110g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 12 pots de 110g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pack-de-yaourts-natures-6194003802625.html"
+  },
+  {
+   "sid": "6194004008040",
+   "name": "Zrir recette Tunisienne",
+   "brand": "Zrir",
+   "pageDescription": "Zrir recette Tunisienne",
+   "decision": "retained",
+   "reason": "page gives no pack size ('Zrir recette Tunisienne') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/zrir-recette-tunisienne-6194004008040.html"
+  },
+  {
+   "sid": "6194004612605",
+   "name": "Lasagnes",
+   "brand": "Randa",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lasagnes-6194004612605.html"
+  },
+  {
+   "sid": "6194004804161",
+   "name": "Salade méchouia",
+   "brand": "Zgolli",
+   "pageDescription": "La boite de 370g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 370g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/salade-mechouia-6194004804161.html"
+  },
+  {
+   "sid": "6194005448418",
+   "name": "Coffret de chocolat Tesoro",
+   "brand": "Maestro",
+   "pageDescription": "les 18 trésors chocolatés de Maestro",
+   "decision": "retained",
+   "reason": "page gives no pack size ('les 18 trésors chocolatés de Maestro') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/coffret-de-chocolat-tesoro-6194005448418.html"
+  },
+  {
+   "sid": "6194005448449",
+   "name": "Coffret assortiment de chocolats Tesoro",
+   "brand": "Maestro",
+   "pageDescription": "coffret à 12 bouchées chocolat au lait et noir",
+   "decision": "retained",
+   "reason": "page gives no pack size ('coffret à 12 bouchées chocolat au lait et noir') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/coffret-assortiment-de-chocolats-tesoro-6194005448449.html"
+  },
+  {
+   "sid": "6194005448470",
+   "name": "Chocolat Passion lait noisettes",
+   "brand": "Maestro",
+   "pageDescription": "Le coffret de 240g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le coffret de 240g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/chocolat-passion-lait-noisettes-6194005448470.html"
+  },
+  {
+   "sid": "6194006260903",
+   "name": "Salade méchouia",
+   "brand": "Sticap",
+   "pageDescription": "La boite de 135g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 135g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/salade-mechouia-6194006260903.html"
+  },
+  {
+   "sid": "6194006261139",
+   "name": "Pulpe de tomates 100% naturel Tomacoulis",
+   "brand": "Sticap",
+   "pageDescription": "La boite de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pulpe-de-tomates-100-naturel-tomacoulis-6194006261139.html"
+  },
+  {
+   "sid": "6194006261412",
+   "name": "Tomates complet",
+   "brand": "Sticap",
+   "pageDescription": "La boite de 400g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 400g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/tomates-complet-6194006261412.html"
+  },
+  {
+   "sid": "6194011837374",
+   "name": "Spaghetti au blé complet",
+   "brand": "Spiga",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/spaghetti-au-ble-complet-6194011837374.html"
+  },
+  {
+   "sid": "6194011890102",
+   "name": "Farine Diari",
+   "brand": null,
+   "pageDescription": "le paquet de 1kg",
+   "decision": "retained",
+   "reason": "pack size from the product page ('le paquet de 1kg'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/farine-diari-6194011890102.html"
+  },
+  {
+   "sid": "6194019602714",
+   "name": "Boisson non alcoolisée saveur mojito",
+   "brand": "Celestia",
+   "pageDescription": "La canette de 24cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La canette de 24cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boisson-non-alcoolisee-saveur-mojito-6194019602714.html"
+  },
+  {
+   "sid": "6194019602721",
+   "name": "Boisson non alcoolisée saveur citron",
+   "brand": "Celestia",
+   "pageDescription": "La canette de 24cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La canette de 24cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boisson-non-alcoolisee-saveur-citron-6194019602721.html"
+  },
+  {
+   "sid": "6194019602738",
+   "name": "Boisson non alcoolisée à base de malt",
+   "brand": "Celestia",
+   "pageDescription": "La canette de 24cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La canette de 24cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/boisson-non-alcoolisee-a-base-de-malt-6194019602738.html"
+  },
+  {
+   "sid": "6194020400149",
+   "name": "Pain à panini",
+   "brand": "Le Boulanger",
+   "pageDescription": "Le sachet de 5 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 5 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/pain-a-panini-6194020400149.html"
+  },
+  {
+   "sid": "6194021101427",
+   "name": "Brownie intense",
+   "brand": "Moulin d'Or",
+   "pageDescription": "Le paquet de 55g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 55g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/brownie-intense-6194021101427.html"
+  },
+  {
+   "sid": "6194021152023",
+   "name": "Barquettes à garnir rondes",
+   "brand": "Moulin d'Or",
+   "pageDescription": "Le sachet de 12 pièces",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 12 pièces'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/barquettes-a-garnir-rondes-6194021152023.html"
+  },
+  {
+   "sid": "6194025701081",
+   "name": "Fromage camembert Tomme de Tebourba",
+   "brand": "Souani",
+   "pageDescription": "La portion de 280g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La portion de 280g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-camembert-tomme-de-tebourba-6194025701081.html"
+  },
+  {
+   "sid": "6194025701371",
+   "name": "Fromage à raclette",
+   "brand": "Souani",
+   "pageDescription": "La boite de 100g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('La boite de 100g') makes it an exact duplicate of geant record \"Fromage raclette en tranche\"",
+   "url": "https://www.carrefour.tn/fromage-a-raclette-6194025701371.html"
+  },
+  {
+   "sid": "6194029100323",
+   "name": "Sardines de méditerranée à l'huile d'olive vierge",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 125g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 125g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sardines-de-mediterranee-a-l-huile-d-olive-vierge-6194029100323.html"
+  },
+  {
+   "sid": "6194029100330",
+   "name": "Sardines méditerranéenne à la sauce tomate",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 125g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 125g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sardines-mediterraneenne-a-la-sauce-tomate-6194029100330.html"
+  },
+  {
+   "sid": "6194029100453",
+   "name": "Sardines méditerranéenne au citron",
+   "brand": "El Manar",
+   "pageDescription": "La boite de 125g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La boite de 125g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sardines-mediterraneenne-au-citron-6194029100453.html"
+  },
+  {
+   "sid": "6194029100514",
+   "name": "Lot de 3 boites de thon entier à l'huile de tournesol",
+   "brand": "El Manar",
+   "pageDescription": "Les 3 boites de 160g",
+   "decision": "merged",
+   "reason": "pack size from the product page ('Les 3 boites de 160g') makes it an exact duplicate of geant record \"Thon entier\"",
+   "url": "https://www.carrefour.tn/lot-de-3-boites-de-thon-entier-a-l-huile-de-tournesol-6194029100514.html"
+  },
+  {
+   "sid": "6194029101108",
+   "name": "Filet de thon à l'huile d'olive et au thym",
+   "brand": "El Manar",
+   "pageDescription": "La bocal de 200g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bocal de 200g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/filet-de-thon-lhuile-dolive-et-au-thym-6194029101108.html"
+  },
+  {
+   "sid": "6194043001255",
+   "name": "Lait entier U.H.T",
+   "brand": "Délice",
+   "pageDescription": "La brique de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La brique de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lait-entier-u-h-t-6194043001255.html"
+  },
+  {
+   "sid": "6194043001286",
+   "name": "Lait Délisso demi-écrémé U.H.T",
+   "brand": "Délice",
+   "pageDescription": "La brique de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La brique de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lait-delisso-demi-ecreme-u-h-t-6194043001286.html"
+  },
+  {
+   "sid": "6194043001620",
+   "name": "Crème fraîche",
+   "brand": null,
+   "pageDescription": "Le pot de 15cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le pot de 15cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-fraiche-6194043001620.html"
+  },
+  {
+   "sid": "6194043002474",
+   "name": "Crème fraîche légère semi-épaisse à 15% de matière grasse",
+   "brand": null,
+   "pageDescription": "La bouteille de 22 Cl",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 22 Cl'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-fraiche-legere-semi-epaisse-a-15-de-matiere-grasse-6194043002474.html"
+  },
+  {
+   "sid": "6194043402915",
+   "name": "Lasagnes",
+   "brand": "Warda",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lasagnes-6194043402915.html"
+  },
+  {
+   "sid": "6194043403271",
+   "name": "Penne blé complet et avoine Les Intégrales",
+   "brand": "Warda",
+   "pageDescription": "Le paquet de 500g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 500g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/penne-ble-complet-et-avoine-les-integrales-6194043403271.html"
+  },
+  {
+   "sid": "6194049402315",
+   "name": "Fromage crémeux et léger Mon Carré Fraîcheur",
+   "brand": "Land'Or",
+   "pageDescription": "Le paquet de 12 portions",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 12 portions'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/fromage-cremeux-et-leger-mon-carre-fraicheur-6194049402315.html"
+  },
+  {
+   "sid": "6194049404449",
+   "name": "Crème de cuisson",
+   "brand": "Street &Co",
+   "pageDescription": "La bouteille de 1L",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 1L'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/creme-de-cuisson-6194049404449.html"
+  },
+  {
+   "sid": "6194049405002",
+   "name": "Sauce chedar fumée",
+   "brand": "Street &Co",
+   "pageDescription": "Le squeeze de 425g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le squeeze de 425g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-chedar-fumee-6194049405002.html"
+  },
+  {
+   "sid": "61942868",
+   "name": "Préparation de chocolat chaud en poudre",
+   "brand": "Dr. Oetker",
+   "pageDescription": "Le paquet de 40g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 40g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/preparation-de-chocolat-chaud-en-poudre-61942868.html"
+  },
+  {
+   "sid": "6199009003540",
+   "name": "Sauce barbecue",
+   "brand": "N°1",
+   "pageDescription": "La bouteille de 430ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('La bouteille de 430ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/sauce-barbecue-6199009003540.html"
+  },
+  {
+   "sid": "6199009003557",
+   "name": "Ketchup",
+   "brand": "N°1",
+   "pageDescription": "Le flacon de 430ml",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le flacon de 430ml'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/ketchup-6199009003557.html"
+  },
+  {
+   "sid": "6251136009038",
+   "name": "Champignon pieds et morceaux",
+   "brand": "Durra",
+   "pageDescription": "",
+   "decision": "retained",
+   "reason": "page gives no pack size ('') but no sized sibling is close enough to be a duplicate",
+   "url": "https://www.carrefour.tn/champignon-pieds-et-morceaux-6251136009038.html"
+  },
+  {
+   "sid": "8007290324702",
+   "name": "Lasagne sans gluten",
+   "brand": "Granoro",
+   "pageDescription": "Le paquet de 250g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 250g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/lasagne-sans-gluten-8007290324702.html"
+  },
+  {
+   "sid": "8412164000765",
+   "name": "Bouillon de mouton",
+   "brand": "Calnort",
+   "pageDescription": "Le paquet de 8 cubes de 10g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le paquet de 8 cubes de 10g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/bouillon-de-mouton-8412164000765.html"
+  },
+  {
+   "sid": "8691216020627",
+   "name": "Bonbons Gold-bears gummy candy",
+   "brand": "Haribo",
+   "pageDescription": "Le sachet de 80g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 80g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/bonbons-gold-bears-gummy-candy-8691216020627.html"
+  },
+  {
+   "sid": "8691216020689",
+   "name": "Bonbons Worms",
+   "brand": "Haribo",
+   "pageDescription": "Le sachet de 80g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 80g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/bonbons-worms-8691216020689.html"
+  },
+  {
+   "sid": "8710448562030",
+   "name": "Moutarde de Dijon",
+   "brand": "Remia",
+   "pageDescription": "Le bocal de 370g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le bocal de 370g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/moutarde-de-dijon-8710448562030.html"
+  },
+  {
+   "sid": "8901393017045",
+   "name": "Confisserie Sour Belt",
+   "brand": "Chupa Chups",
+   "pageDescription": "Le sachet de 10g",
+   "decision": "retained",
+   "reason": "pack size from the product page ('Le sachet de 10g'); no sized sibling with identical wording",
+   "url": "https://www.carrefour.tn/confisserie-sour-belt-8901393017045.html"
+  }
+ ]
+}

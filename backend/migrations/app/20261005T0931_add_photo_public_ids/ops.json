@@ -1,0 +1,170 @@
+[
+  {
+    "id": "column.public.Store.photoPublicId",
+    "label": "Add column \"photoPublicId\" to \"Store\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "photoPublicId",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"photoPublicId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "photoPublicId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"photoPublicId\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ADD COLUMN \"photoPublicId\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"photoPublicId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Store",
+          "photoPublicId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.User.photoPublicId",
+    "label": "Add column \"photoPublicId\" to \"User\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "photoPublicId",
+        "table": "User"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"photoPublicId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "photoPublicId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"photoPublicId\"",
+        "sql": "ALTER TABLE \"public\".\"User\" ADD COLUMN \"photoPublicId\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"photoPublicId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "photoPublicId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "checkConstraint.Store.store_photo_public_id_needs_photo_88abf07f",
+    "label": "Add check constraint \"store_photo_public_id_needs_photo_88abf07f\" on \"Store\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "checkConstraint",
+        "name": "store_photo_public_id_needs_photo_88abf07f",
+        "table": "Store"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"store_photo_public_id_needs_photo_88abf07f\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "store_photo_public_id_needs_photo_88abf07f",
+          "public",
+          "\"public\".\"Store\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add check constraint \"store_photo_public_id_needs_photo_88abf07f\"",
+        "sql": "ALTER TABLE \"public\".\"Store\" ADD CONSTRAINT \"store_photo_public_id_needs_photo_88abf07f\" CHECK (\"photoPublicId\" IS NULL OR \"photo\" IS NOT NULL)"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"store_photo_public_id_needs_photo_88abf07f\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "store_photo_public_id_needs_photo_88abf07f",
+          "public",
+          "\"public\".\"Store\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "checkConstraint.User.user_photo_public_id_needs_photo_88abf07f",
+    "label": "Add check constraint \"user_photo_public_id_needs_photo_88abf07f\" on \"User\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "checkConstraint",
+        "name": "user_photo_public_id_needs_photo_88abf07f",
+        "table": "User"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"user_photo_public_id_needs_photo_88abf07f\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "user_photo_public_id_needs_photo_88abf07f",
+          "public",
+          "\"public\".\"User\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add check constraint \"user_photo_public_id_needs_photo_88abf07f\"",
+        "sql": "ALTER TABLE \"public\".\"User\" ADD CONSTRAINT \"user_photo_public_id_needs_photo_88abf07f\" CHECK (\"photoPublicId\" IS NULL OR \"photo\" IS NOT NULL)"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"user_photo_public_id_needs_photo_88abf07f\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "user_photo_public_id_needs_photo_88abf07f",
+          "public",
+          "\"public\".\"User\""
+        ]
+      }
+    ]
+  }
+]

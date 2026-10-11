@@ -1,0 +1,2858 @@
+{
+  "sourceRows": 500,
+  "convertedProducts": 500,
+  "excludedProducts": {
+    "count": 0,
+    "items": []
+  },
+  "duplicateProducts": {
+    "count": 0,
+    "items": [],
+    "analysis": {
+      "sameSku": 0,
+      "sameProductUrl": 0,
+      "sameImageUrl": 0,
+      "sameNameAndBrand": 0,
+      "sameGeneratedSlug": 1,
+      "sameNameDifferentBrand": {
+        "groups": 30,
+        "note": "valid: each brand is its own product",
+        "examples": [
+          {
+            "name": "fromage gouda jaune",
+            "skus": [
+              "2822334000000 (no brand)",
+              "2802193000000 (MAJESTE)"
+            ]
+          },
+          {
+            "name": "fromage edam",
+            "skus": [
+              "2802369000000 (FIORE)",
+              "2802192000000 (MAJESTE)"
+            ]
+          },
+          {
+            "name": "fromage fondu à tartiner",
+            "skus": [
+              "6191513501628 (FROMY)",
+              "6191513501017 (PRÉSIDENT)"
+            ]
+          },
+          {
+            "name": "lait demi-écrémé u.h.t",
+            "skus": [
+              "6191442600010 (NATILAIT)",
+              "6191507220214 (VITALAIT)"
+            ]
+          },
+          {
+            "name": "yaourt aromatisé",
+            "skus": [
+              "25001144 (DÉLICE DANONE)",
+              "25001670 (VITALAIT)",
+              "25005507 (NATILAIT)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "brands": {
+    "unique": 142,
+    "brandlessProducts": 119,
+    "merges": [],
+    "possibleVariantsNotMerged": [
+      {
+        "a": "AL JAZIA",
+        "b": "AL JAZIRA",
+        "why": "one letter apart"
+      },
+      {
+        "a": "DÉLICE",
+        "b": "DÉLICE DANONE",
+        "why": "one name contains the other"
+      },
+      {
+        "a": "LE PETIT PARIS",
+        "b": "PETIT PARIS",
+        "why": "one name contains the other"
+      }
+    ],
+    "list": [
+      {
+        "slug": "al-jazia",
+        "name": "AL JAZIA",
+        "products": 1
+      },
+      {
+        "slug": "al-jazira",
+        "name": "AL JAZIRA",
+        "products": 5
+      },
+      {
+        "slug": "aris",
+        "name": "ARIS",
+        "products": 4
+      },
+      {
+        "slug": "ben-gaied-hassine",
+        "name": "BEN GAIED HASSINE",
+        "products": 3
+      },
+      {
+        "slug": "biskart",
+        "name": "BISKART",
+        "products": 1
+      },
+      {
+        "slug": "bolerio",
+        "name": "BOLÉRIO",
+        "products": 3
+      },
+      {
+        "slug": "bondin",
+        "name": "BONDIN",
+        "products": 4
+      },
+      {
+        "slug": "bonduelle",
+        "name": "BONDUELLE",
+        "products": 2
+      },
+      {
+        "slug": "bonna",
+        "name": "BONNA",
+        "products": 4
+      },
+      {
+        "slug": "boqueria",
+        "name": "BOQUERIA",
+        "products": 2
+      },
+      {
+        "slug": "brava",
+        "name": "BRAVA",
+        "products": 2
+      },
+      {
+        "slug": "brikador",
+        "name": "BRIKADOR",
+        "products": 1
+      },
+      {
+        "slug": "calnort",
+        "name": "CALNORT",
+        "products": 4
+      },
+      {
+        "slug": "campi",
+        "name": "CAMPI",
+        "products": 1
+      },
+      {
+        "slug": "canderel",
+        "name": "CANDEREL",
+        "products": 1
+      },
+      {
+        "slug": "cap-blanc",
+        "name": "CAP BLANC",
+        "products": 2
+      },
+      {
+        "slug": "carrefour",
+        "name": "CARREFOUR",
+        "products": 2
+      },
+      {
+        "slug": "celestia",
+        "name": "CELESTIA",
+        "products": 3
+      },
+      {
+        "slug": "cerealis",
+        "name": "CÉRÉALIS",
+        "products": 5
+      },
+      {
+        "slug": "chahia",
+        "name": "CHAHIA",
+        "products": 6
+      },
+      {
+        "slug": "chupa-chups",
+        "name": "CHUPA CHUPS",
+        "products": 1
+      },
+      {
+        "slug": "coca-cola",
+        "name": "COCA COLA",
+        "products": 1
+      },
+      {
+        "slug": "covinor",
+        "name": "COVINOR",
+        "products": 3
+      },
+      {
+        "slug": "crackers",
+        "name": "CRACKER'S",
+        "products": 1
+      },
+      {
+        "slug": "cracocarte",
+        "name": "CRACOCARTE",
+        "products": 2
+      },
+      {
+        "slug": "crispy",
+        "name": "CRISPY",
+        "products": 1
+      },
+      {
+        "slug": "cristal",
+        "name": "CRISTAL",
+        "products": 1
+      },
+      {
+        "slug": "d-clic",
+        "name": "D-CLIC",
+        "products": 1
+      },
+      {
+        "slug": "dailyn",
+        "name": "DAILY'N",
+        "products": 7
+      },
+      {
+        "slug": "daucy",
+        "name": "D'AUCY",
+        "products": 3
+      },
+      {
+        "slug": "delice",
+        "name": "DÉLICE",
+        "products": 3
+      },
+      {
+        "slug": "delice-danone",
+        "name": "DÉLICE DANONE",
+        "products": 9
+      },
+      {
+        "slug": "delicio",
+        "name": "DELICIO",
+        "products": 2
+      },
+      {
+        "slug": "deroni",
+        "name": "DERONI",
+        "products": 2
+      },
+      {
+        "slug": "dick",
+        "name": "DICK",
+        "products": 1
+      },
+      {
+        "slug": "dijona",
+        "name": "DIJONA",
+        "products": 1
+      },
+      {
+        "slug": "dr-oetker",
+        "name": "DR.OETKER",
+        "products": 5
+      },
+      {
+        "slug": "duo",
+        "name": "DUO",
+        "products": 2
+      },
+      {
+        "slug": "durra",
+        "name": "DURRA",
+        "products": 2
+      },
+      {
+        "slug": "eden",
+        "name": "EDEN",
+        "products": 1
+      },
+      {
+        "slug": "el-manar",
+        "name": "EL MANAR",
+        "products": 10
+      },
+      {
+        "slug": "el-mazraa",
+        "name": "EL MAZRAA",
+        "products": 7
+      },
+      {
+        "slug": "fanta",
+        "name": "FANTA",
+        "products": 1
+      },
+      {
+        "slug": "fiore",
+        "name": "FIORE",
+        "products": 2
+      },
+      {
+        "slug": "fondou",
+        "name": "FONDOU",
+        "products": 1
+      },
+      {
+        "slug": "fornetto",
+        "name": "FORNETTO",
+        "products": 1
+      },
+      {
+        "slug": "fresh-agri",
+        "name": "FRESH AGRI",
+        "products": 1
+      },
+      {
+        "slug": "fritss",
+        "name": "FRIT'SS",
+        "products": 1
+      },
+      {
+        "slug": "fromy",
+        "name": "FROMY",
+        "products": 2
+      },
+      {
+        "slug": "furketta",
+        "name": "FURKETTA",
+        "products": 2
+      },
+      {
+        "slug": "golden-chips",
+        "name": "GOLDEN CHIPS",
+        "products": 1
+      },
+      {
+        "slug": "goldina",
+        "name": "GOLDINA",
+        "products": 5
+      },
+      {
+        "slug": "goutinel",
+        "name": "GOÛTINEL",
+        "products": 1
+      },
+      {
+        "slug": "granoro",
+        "name": "GRANORO",
+        "products": 1
+      },
+      {
+        "slug": "hahne",
+        "name": "HAHNE",
+        "products": 2
+      },
+      {
+        "slug": "haribo",
+        "name": "HARIBO",
+        "products": 2
+      },
+      {
+        "slug": "hazem",
+        "name": "HAZEM",
+        "products": 5
+      },
+      {
+        "slug": "honey-la",
+        "name": "HONEY LA",
+        "products": 1
+      },
+      {
+        "slug": "indomie",
+        "name": "INDOMIE",
+        "products": 1
+      },
+      {
+        "slug": "jadida",
+        "name": "JADIDA",
+        "products": 3
+      },
+      {
+        "slug": "jouda",
+        "name": "JOUDA",
+        "products": 2
+      },
+      {
+        "slug": "kaiser",
+        "name": "KAISER",
+        "products": 3
+      },
+      {
+        "slug": "kartago",
+        "name": "KARTAGO",
+        "products": 3
+      },
+      {
+        "slug": "kif",
+        "name": "KIF",
+        "products": 2
+      },
+      {
+        "slug": "kinder",
+        "name": "KINDER",
+        "products": 1
+      },
+      {
+        "slug": "kiwi",
+        "name": "KIWI",
+        "products": 1
+      },
+      {
+        "slug": "kuhne",
+        "name": "KUHNE",
+        "products": 5
+      },
+      {
+        "slug": "kyufi",
+        "name": "KYUFI",
+        "products": 4
+      },
+      {
+        "slug": "la-couronne-dor",
+        "name": "LA COURONNE D'OR",
+        "products": 1
+      },
+      {
+        "slug": "la-fruitiere",
+        "name": "LA FRUITIÈRE",
+        "products": 3
+      },
+      {
+        "slug": "la-goulette",
+        "name": "LA GOULETTE",
+        "products": 2
+      },
+      {
+        "slug": "landor",
+        "name": "LAND'OR",
+        "products": 6
+      },
+      {
+        "slug": "lbm",
+        "name": "LBM",
+        "products": 10
+      },
+      {
+        "slug": "le-boulanger",
+        "name": "LE BOULANGER",
+        "products": 1
+      },
+      {
+        "slug": "le-patissier",
+        "name": "LE PÂTISSIER",
+        "products": 3
+      },
+      {
+        "slug": "le-petit-paris",
+        "name": "LE PETIT PARIS",
+        "products": 2
+      },
+      {
+        "slug": "lebhour",
+        "name": "LEBHOUR",
+        "products": 3
+      },
+      {
+        "slug": "lepi-dor",
+        "name": "L'EPI D'OR",
+        "products": 7
+      },
+      {
+        "slug": "leroux",
+        "name": "LEROUX",
+        "products": 1
+      },
+      {
+        "slug": "lesieur",
+        "name": "LESIEUR",
+        "products": 1
+      },
+      {
+        "slug": "lingot",
+        "name": "LINGOT",
+        "products": 4
+      },
+      {
+        "slug": "lorenz",
+        "name": "LORENZ",
+        "products": 2
+      },
+      {
+        "slug": "lune-de-miel",
+        "name": "LUNE DE MIEL",
+        "products": 1
+      },
+      {
+        "slug": "maestro",
+        "name": "MAESTRO",
+        "products": 3
+      },
+      {
+        "slug": "mahboul",
+        "name": "MAHBOUL",
+        "products": 1
+      },
+      {
+        "slug": "majeste",
+        "name": "MAJESTE",
+        "products": 12
+      },
+      {
+        "slug": "mama-mia",
+        "name": "MAMA MIA",
+        "products": 3
+      },
+      {
+        "slug": "mami-garden",
+        "name": "MAMI GARDEN",
+        "products": 1
+      },
+      {
+        "slug": "mliha",
+        "name": "MLIHA",
+        "products": 2
+      },
+      {
+        "slug": "momento",
+        "name": "MOMENTO",
+        "products": 1
+      },
+      {
+        "slug": "mont-regal",
+        "name": "MONT REGAL",
+        "products": 2
+      },
+      {
+        "slug": "moulin-dor",
+        "name": "MOULIN D'OR",
+        "products": 2
+      },
+      {
+        "slug": "n1",
+        "name": "N°1",
+        "products": 2
+      },
+      {
+        "slug": "natilait",
+        "name": "NATILAIT",
+        "products": 9
+      },
+      {
+        "slug": "nestle",
+        "name": "NESTLÉ",
+        "products": 1
+      },
+      {
+        "slug": "nour",
+        "name": "NOUR",
+        "products": 1
+      },
+      {
+        "slug": "novafresh",
+        "name": "NOVAFRESH",
+        "products": 1
+      },
+      {
+        "slug": "odyssee",
+        "name": "ODYSSEE",
+        "products": 1
+      },
+      {
+        "slug": "olina",
+        "name": "OLINA",
+        "products": 3
+      },
+      {
+        "slug": "orangina",
+        "name": "ORANGINA",
+        "products": 1
+      },
+      {
+        "slug": "ovolina",
+        "name": "OVOLINA",
+        "products": 4
+      },
+      {
+        "slug": "paysan-breton",
+        "name": "PAYSAN BRETON",
+        "products": 2
+      },
+      {
+        "slug": "petit-paris",
+        "name": "PETIT PARIS",
+        "products": 1
+      },
+      {
+        "slug": "power-horse",
+        "name": "POWER HORSE",
+        "products": 1
+      },
+      {
+        "slug": "president",
+        "name": "PRÉSIDENT",
+        "products": 12
+      },
+      {
+        "slug": "punch",
+        "name": "PUNCH",
+        "products": 1
+      },
+      {
+        "slug": "randa",
+        "name": "RANDA",
+        "products": 1
+      },
+      {
+        "slug": "reaktor",
+        "name": "REAKTOR",
+        "products": 2
+      },
+      {
+        "slug": "red-bull",
+        "name": "RED BULL",
+        "products": 1
+      },
+      {
+        "slug": "reine-des-graines",
+        "name": "REINE DES GRAINES",
+        "products": 1
+      },
+      {
+        "slug": "remia",
+        "name": "REMIA",
+        "products": 2
+      },
+      {
+        "slug": "ritter-sport",
+        "name": "RITTER SPORT",
+        "products": 2
+      },
+      {
+        "slug": "rozy",
+        "name": "ROZY",
+        "products": 3
+      },
+      {
+        "slug": "safi",
+        "name": "SAFI",
+        "products": 3
+      },
+      {
+        "slug": "saint-louis",
+        "name": "SAINT LOUIS",
+        "products": 2
+      },
+      {
+        "slug": "samsador",
+        "name": "SAMSADOR",
+        "products": 1
+      },
+      {
+        "slug": "sanabel-carthage",
+        "name": "SANABEL CARTHAGE",
+        "products": 13
+      },
+      {
+        "slug": "sante",
+        "name": "SANTE",
+        "products": 7
+      },
+      {
+        "slug": "saveurs",
+        "name": "SAVEURS",
+        "products": 3
+      },
+      {
+        "slug": "schweppes",
+        "name": "SCHWEPPES",
+        "products": 1
+      },
+      {
+        "slug": "shark",
+        "name": "SHARK",
+        "products": 1
+      },
+      {
+        "slug": "sidi-daoud",
+        "name": "SIDI DAOUD",
+        "products": 1
+      },
+      {
+        "slug": "sidi-elbahri",
+        "name": "SIDI ELBAHRI",
+        "products": 1
+      },
+      {
+        "slug": "souani",
+        "name": "SOUANI",
+        "products": 6
+      },
+      {
+        "slug": "spiga",
+        "name": "SPIGA",
+        "products": 1
+      },
+      {
+        "slug": "stella",
+        "name": "STELLA",
+        "products": 1
+      },
+      {
+        "slug": "sticap",
+        "name": "STICAP",
+        "products": 3
+      },
+      {
+        "slug": "street-co",
+        "name": "STREET & CO",
+        "products": 2
+      },
+      {
+        "slug": "tanit-le-jardin",
+        "name": "TANIT LE JARDIN",
+        "products": 1
+      },
+      {
+        "slug": "tartifro",
+        "name": "TARTI'FRO",
+        "products": 1
+      },
+      {
+        "slug": "terroliva",
+        "name": "TERROLIVA",
+        "products": 1
+      },
+      {
+        "slug": "vanoise",
+        "name": "VANOISE",
+        "products": 6
+      },
+      {
+        "slug": "verano",
+        "name": "VERANO",
+        "products": 2
+      },
+      {
+        "slug": "vipa",
+        "name": "VIPA",
+        "products": 1
+      },
+      {
+        "slug": "vitalait",
+        "name": "VITALAIT",
+        "products": 8
+      },
+      {
+        "slug": "warda",
+        "name": "WARDA",
+        "products": 2
+      },
+      {
+        "slug": "x-plose",
+        "name": "X-PLOSE",
+        "products": 1
+      },
+      {
+        "slug": "yab",
+        "name": "YAB",
+        "products": 6
+      },
+      {
+        "slug": "yumy",
+        "name": "YUMY",
+        "products": 1
+      },
+      {
+        "slug": "zgolli",
+        "name": "ZGOLLI",
+        "products": 1
+      },
+      {
+        "slug": "zina",
+        "name": "ZINA",
+        "products": 1
+      },
+      {
+        "slug": "zrir",
+        "name": "ZRIR",
+        "products": 1
+      }
+    ]
+  },
+  "categories": {
+    "grocerGo": [
+      {
+        "slug": "fruits",
+        "name": "Fruits",
+        "products": 4
+      },
+      {
+        "slug": "legumes",
+        "name": "Légumes",
+        "products": 12
+      },
+      {
+        "slug": "viandes-poissons",
+        "name": "Viandes et poissons",
+        "products": 32
+      },
+      {
+        "slug": "produits-laitiers",
+        "name": "Produits laitiers",
+        "products": 50
+      },
+      {
+        "slug": "boulangerie",
+        "name": "Boulangerie",
+        "products": 16
+      },
+      {
+        "slug": "boissons",
+        "name": "Boissons",
+        "products": 26
+      },
+      {
+        "slug": "fromages",
+        "name": "Fromages",
+        "products": 51
+      },
+      {
+        "slug": "charcuterie-traiteur",
+        "name": "Charcuterie et traiteur",
+        "products": 12
+      },
+      {
+        "slug": "surgeles",
+        "name": "Surgelés",
+        "products": 20
+      },
+      {
+        "slug": "pates-riz-legumes-secs",
+        "name": "Pâtes, riz et légumes secs",
+        "products": 41
+      },
+      {
+        "slug": "conserves",
+        "name": "Conserves et plats cuisinés",
+        "products": 23
+      },
+      {
+        "slug": "thon-sardines",
+        "name": "Thon et sardines",
+        "products": 20
+      },
+      {
+        "slug": "huiles",
+        "name": "Huiles",
+        "products": 16
+      },
+      {
+        "slug": "sauces-condiments",
+        "name": "Sauces et condiments",
+        "products": 38
+      },
+      {
+        "slug": "epices-olives",
+        "name": "Épices et olives",
+        "products": 8
+      },
+      {
+        "slug": "fruits-secs",
+        "name": "Fruits secs",
+        "products": 8
+      },
+      {
+        "slug": "snacks-aperitif",
+        "name": "Snacks et apéritif",
+        "products": 10
+      },
+      {
+        "slug": "biscuits-gateaux",
+        "name": "Biscuits et gâteaux",
+        "products": 41
+      },
+      {
+        "slug": "chocolat-confiserie",
+        "name": "Chocolat et confiserie",
+        "products": 22
+      },
+      {
+        "slug": "petit-dejeuner",
+        "name": "Petit déjeuner",
+        "products": 18
+      },
+      {
+        "slug": "cafe-the",
+        "name": "Café, thés et infusions",
+        "products": 19
+      },
+      {
+        "slug": "sucre-farine",
+        "name": "Sucre, farine et pâtisserie",
+        "products": 13
+      }
+    ],
+    "carrefourPathMapping": [
+      {
+        "carrefourCategory": "Boissons > Boissons Aromatisées et Ice Tea",
+        "grocerGoCategory": "boissons",
+        "products": 1,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Boissons Gazeuses",
+        "grocerGoCategory": "boissons",
+        "products": 5,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Eaux > Eaux Plates",
+        "grocerGoCategory": "boissons",
+        "products": 2,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Énergétiques et Bière Sans Alcool > Bière Sans alcool",
+        "grocerGoCategory": "boissons",
+        "products": 3,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Énergétiques et Bière Sans Alcool > Energétique",
+        "grocerGoCategory": "boissons",
+        "products": 5,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Jus, Sirops et Boissons Végétales > Jus",
+        "grocerGoCategory": "boissons",
+        "products": 4,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Jus, Sirops et Boissons Végétales > Jus Frais",
+        "grocerGoCategory": "boissons",
+        "products": 2,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Boissons > Jus, Sirops et Boissons Végétales > Sirop",
+        "grocerGoCategory": "boissons",
+        "products": 4,
+        "rule": "Boissons"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "cheese-without-subcategory"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Beurre, Crèmes Fraîches et Chantilly > Beurre et Margarine",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Beurre, Crèmes Fraîches et Chantilly > Crèmes Fraîches et Chantilly",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Blancs",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Camembert Brie et Bleu",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Camembert Brie et Bleu > Camembert et Brie",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Gouda, Edam, Gruyère et Emmental",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Gouda, Edam, Gruyère et Emmental > Emmental",
+        "grocerGoCategory": "fromages",
+        "products": 2,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Gouda, Edam, Gruyère et Emmental > Gouda et Edam",
+        "grocerGoCategory": "fromages",
+        "products": 3,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Gouda, Edam, Gruyère et Emmental > Gruyère",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Râpé et Fondant",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Râpé et Fondant > Fromage fondant",
+        "grocerGoCategory": "fromages",
+        "products": 3,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Râpé et Fondant > Fromage râpé",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Triangle Carré et Slices",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Triangle Carré et Slices > Fromage en Slices",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages > Triangle Carré et Slices > Triangle et carré",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages à la coupe > Blanc",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages à la coupe"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages à la coupe > Edam",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages à la coupe"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages à la coupe > Gouda",
+        "grocerGoCategory": "fromages",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers > Fromages à la coupe"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Fromages à la coupe > Gruyère et Emmental",
+        "grocerGoCategory": "fromages",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers > Fromages à la coupe"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Lait > Arômatisé, Fermenté et Concentré",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Lait > Lait demi-écrémé et entier",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Les Œufs",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Aromatisés et aux fruits",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Crèmes desserts, Mousses et Liégeois",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Fromages blancs",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Santé",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 3,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Santé > Yaourts natures",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 1,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Yaourts à boire",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Yaourts Brassés",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Yaourts Brassés > Aromatisés",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 4,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Crèmerie et Produits Laitiers > Yaourts et Fromages blancs > Yaourts Brassés > Aux Céréales et aux Fruits",
+        "grocerGoCategory": "produits-laitiers",
+        "products": 2,
+        "rule": "Crèmerie et Produits Laitiers"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Barquettes à garnir",
+        "grocerGoCategory": "sucre-farine",
+        "products": 1,
+        "rule": "Épicerie Salée > Barquettes à garnir"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Blé et Semoule",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Blé et Semoule"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés",
+        "grocerGoCategory": "conserves",
+        "products": 2,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Champignons",
+        "grocerGoCategory": "conserves",
+        "products": 4,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Condiments",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 2,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés > Condiments"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Conserves légumes",
+        "grocerGoCategory": "conserves",
+        "products": 4,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Maïs",
+        "grocerGoCategory": "conserves",
+        "products": 4,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Plats Cuisinés",
+        "grocerGoCategory": "conserves",
+        "products": 3,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Tomates concassées et pelées",
+        "grocerGoCategory": "conserves",
+        "products": 4,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Conserves et Plats Cuisinés > Tomates doubles concentrées",
+        "grocerGoCategory": "conserves",
+        "products": 4,
+        "rule": "Épicerie Salée > Conserves et Plats Cuisinés"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Huiles > Huile d'Olive",
+        "grocerGoCategory": "huiles",
+        "products": 4,
+        "rule": "Épicerie Salée > Huiles"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Huiles > Huiles de colza",
+        "grocerGoCategory": "huiles",
+        "products": 2,
+        "rule": "Épicerie Salée > Huiles"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Huiles > Huiles de maïs",
+        "grocerGoCategory": "huiles",
+        "products": 4,
+        "rule": "Épicerie Salée > Huiles"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Huiles > Huiles de tournesol",
+        "grocerGoCategory": "huiles",
+        "products": 2,
+        "rule": "Épicerie Salée > Huiles"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Huiles > Huiles Végétales",
+        "grocerGoCategory": "huiles",
+        "products": 4,
+        "rule": "Épicerie Salée > Huiles"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Bouillons",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz > Bouillons"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Couscous et Borghol",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Lasagnes",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Nouilles instantanées",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Pâtes au blé complet",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 2,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Pâtes courtes",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Pâtes longues",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Pâtes pour soupe",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Pâtes Couscous et Riz > Riz",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 3,
+        "rule": "Épicerie Salée > Pâtes Couscous et Riz"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Harissa",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Ketchup",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Mayonnaise",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Moutarde",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Sauces Barbecue",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 2,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Sauces Culinaires",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Sauces et Assaisonnements > Vinaigre et Vinaigrette",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Épicerie Salée > Sauces et Assaisonnements"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Snack et Apéritif > Biscuits Salés",
+        "grocerGoCategory": "snacks-aperitif",
+        "products": 4,
+        "rule": "Épicerie Salée > Snack et Apéritif"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Snack et Apéritif > Chips",
+        "grocerGoCategory": "snacks-aperitif",
+        "products": 4,
+        "rule": "Épicerie Salée > Snack et Apéritif"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Snack et Apéritif > Fruits Secs",
+        "grocerGoCategory": "fruits-secs",
+        "products": 4,
+        "rule": "Épicerie Salée > Snack et Apéritif > Fruits Secs"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Snack et Apéritif > Pop Corn",
+        "grocerGoCategory": "snacks-aperitif",
+        "products": 2,
+        "rule": "Épicerie Salée > Snack et Apéritif"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Filets et boutargue de thon",
+        "grocerGoCategory": "thon-sardines",
+        "products": 2,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Sardines, Maquereaux et Anchois",
+        "grocerGoCategory": "thon-sardines",
+        "products": 4,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Thon à huile d'olive",
+        "grocerGoCategory": "thon-sardines",
+        "products": 4,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Thon à huile végétale",
+        "grocerGoCategory": "thon-sardines",
+        "products": 4,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Thon à l'huile de tournesol",
+        "grocerGoCategory": "thon-sardines",
+        "products": 4,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Salée > Thon et Sardine > Thon au naturel",
+        "grocerGoCategory": "thon-sardines",
+        "products": 2,
+        "rule": "Épicerie Salée > Thon et Sardine"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "sweet-root-cake-bar"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Barres de céréales",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Biscuits au beurre",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 2,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Biscuits au chocolat",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Biscuits Cookies",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Biscuits fourrés et Tartelettes",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Biscuits secs et sablés",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Biscuits > Gaufrettes",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Biscuits"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 1,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats > Barres de chocolat",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats > Bonbons",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats > Coffrets de chococlat",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats > Confiserie",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Bonbons et Chocolats > Tablettes de chocolat",
+        "grocerGoCategory": "chocolat-confiserie",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Bonbons et Chocolats"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Café",
+        "grocerGoCategory": "cafe-the",
+        "products": 3,
+        "rule": "Épicerie Sucrée > Café"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Café > Capsules et Dosettes",
+        "grocerGoCategory": "cafe-the",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Café"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Café > Moulus",
+        "grocerGoCategory": "cafe-the",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Café"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Café > Solubles, Cappuccinos et Chicorées",
+        "grocerGoCategory": "cafe-the",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Café"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Gâteaux Moelleux",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 1,
+        "rule": "Épicerie Sucrée > Gâteaux Moelleux"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Gâteaux Moelleux > Brownies",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Gâteaux Moelleux"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Gâteaux Moelleux > Cakes",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Gâteaux Moelleux"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Gâteaux Moelleux > Madeleines et Muffins",
+        "grocerGoCategory": "biscuits-gateaux",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Gâteaux Moelleux"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Petit Déjeuner",
+        "grocerGoCategory": "petit-dejeuner",
+        "products": 1,
+        "rule": "Épicerie Sucrée > Petit Déjeuner"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Petit Déjeuner > Céréales",
+        "grocerGoCategory": "petit-dejeuner",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Petit Déjeuner"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Petit Déjeuner > Chamia et Pâtes à Tartiner",
+        "grocerGoCategory": "petit-dejeuner",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Petit Déjeuner"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Petit Déjeuner > Confiture et Miel",
+        "grocerGoCategory": "petit-dejeuner",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Petit Déjeuner"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Petit Déjeuner > Pains de Mie et Biscottes",
+        "grocerGoCategory": "petit-dejeuner",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Petit Déjeuner"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie > Farine",
+        "grocerGoCategory": "sucre-farine",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie > Préparation Pâtissière",
+        "grocerGoCategory": "sucre-farine",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie > Sucre",
+        "grocerGoCategory": "sucre-farine",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Sucre, Farine et Préparation Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Épicerie Sucrée > Thés et Infusions",
+        "grocerGoCategory": "cafe-the",
+        "products": 4,
+        "rule": "Épicerie Sucrée > Thés et Infusions"
+      },
+      {
+        "carrefourCategory": "Le marché",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 1,
+        "rule": "Le marché"
+      },
+      {
+        "carrefourCategory": "Le marché > Boucherie > Agneau",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Boucherie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boucherie > Bœuf",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 4,
+        "rule": "Le marché > Boucherie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boucherie > Merguez et brochettes",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Boucherie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie",
+        "grocerGoCategory": "boulangerie",
+        "products": 1,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Croissants et Brioches",
+        "grocerGoCategory": "boulangerie",
+        "products": 2,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Gâteaux",
+        "grocerGoCategory": "boulangerie",
+        "products": 4,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Gâteaux > Gâteaux à partager",
+        "grocerGoCategory": "boulangerie",
+        "products": 2,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Gâteaux > Gâteaux individuels",
+        "grocerGoCategory": "boulangerie",
+        "products": 2,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Pains",
+        "grocerGoCategory": "boulangerie",
+        "products": 4,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Boulangerie et Pâtisserie > Pâtisserie traditionnelle",
+        "grocerGoCategory": "boulangerie",
+        "products": 1,
+        "rule": "Le marché > Boulangerie et Pâtisserie"
+      },
+      {
+        "carrefourCategory": "Le marché > Charcuterie > Jambon, Salami et Saucisse",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 4,
+        "rule": "Le marché > Charcuterie"
+      },
+      {
+        "carrefourCategory": "Le marché > Épices, Olives et Condiments > Condiments",
+        "grocerGoCategory": "sauces-condiments",
+        "products": 4,
+        "rule": "Le marché > Épices, Olives et Condiments > Condiments"
+      },
+      {
+        "carrefourCategory": "Le marché > Épices, Olives et Condiments > Épices et Herbes Fines",
+        "grocerGoCategory": "epices-olives",
+        "products": 4,
+        "rule": "Le marché > Épices, Olives et Condiments"
+      },
+      {
+        "carrefourCategory": "Le marché > Épices, Olives et Condiments > Olives",
+        "grocerGoCategory": "epices-olives",
+        "products": 4,
+        "rule": "Le marché > Épices, Olives et Condiments"
+      },
+      {
+        "carrefourCategory": "Le marché > Fruits de saison",
+        "grocerGoCategory": "fruits",
+        "products": 4,
+        "rule": "Le marché > Fruits de saison"
+      },
+      {
+        "carrefourCategory": "Le marché > Fruits secs et séchés",
+        "grocerGoCategory": "fruits-secs",
+        "products": 4,
+        "rule": "Le marché > Fruits secs et séchés"
+      },
+      {
+        "carrefourCategory": "Le marché > Légumes > Légumes de saison",
+        "grocerGoCategory": "legumes",
+        "products": 4,
+        "rule": "Le marché > Légumes"
+      },
+      {
+        "carrefourCategory": "Le marché > Légumes > Légumes nettoyés emballés",
+        "grocerGoCategory": "legumes",
+        "products": 4,
+        "rule": "Le marché > Légumes"
+      },
+      {
+        "carrefourCategory": "Le marché > Légumes > Légumes secs",
+        "grocerGoCategory": "pates-riz-legumes-secs",
+        "products": 4,
+        "rule": "Le marché > Légumes > Légumes secs"
+      },
+      {
+        "carrefourCategory": "Le marché > Légumes > Salades et Tomates",
+        "grocerGoCategory": "legumes",
+        "products": 4,
+        "rule": "Le marché > Légumes"
+      },
+      {
+        "carrefourCategory": "Le marché > Poissons > Filets, Pavés et séchés",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 2,
+        "rule": "Le marché > Poissons"
+      },
+      {
+        "carrefourCategory": "Le marché > Poissons > Fruits de Mer",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 4,
+        "rule": "Le marché > Poissons"
+      },
+      {
+        "carrefourCategory": "Le marché > Poissons > Poissons entiers",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 4,
+        "rule": "Le marché > Poissons"
+      },
+      {
+        "carrefourCategory": "Le marché > Traiteur > Chaud",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 1,
+        "rule": "Le marché > Traiteur"
+      },
+      {
+        "carrefourCategory": "Le marché > Traiteur > Chaud > Cordons bleus et Nuggets",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 2,
+        "rule": "Le marché > Traiteur"
+      },
+      {
+        "carrefourCategory": "Le marché > Traiteur > Chaud > Pizzas, Quiches et Tartes",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 1,
+        "rule": "Le marché > Traiteur"
+      },
+      {
+        "carrefourCategory": "Le marché > Traiteur > Chaud > Rôtisserie",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 2,
+        "rule": "Le marché > Traiteur"
+      },
+      {
+        "carrefourCategory": "Le marché > Traiteur > Froid > Salades",
+        "grocerGoCategory": "charcuterie-traiteur",
+        "products": 1,
+        "rule": "Le marché > Traiteur"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Dindes",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 3,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Dindes > Escaloppe de dinde",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 2,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 4,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets > Cuisse de poulet",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets > Escalope et Blanc de poulet",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets > Haut de cuisse de poulet",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets > Pilon de poulet",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 1,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Le marché > Volaille > Poulets > Poulets entiers",
+        "grocerGoCategory": "viandes-poissons",
+        "products": 3,
+        "rule": "Le marché > Volaille"
+      },
+      {
+        "carrefourCategory": "Surgelés",
+        "grocerGoCategory": "surgeles",
+        "products": 4,
+        "rule": "Surgelés"
+      },
+      {
+        "carrefourCategory": "Surgelés > Légumes et Fruits",
+        "grocerGoCategory": "surgeles",
+        "products": 4,
+        "rule": "Surgelés"
+      },
+      {
+        "carrefourCategory": "Surgelés > Pâtes Surgelées",
+        "grocerGoCategory": "surgeles",
+        "products": 4,
+        "rule": "Surgelés"
+      },
+      {
+        "carrefourCategory": "Surgelés > Poissons et Fruits de Mer",
+        "grocerGoCategory": "surgeles",
+        "products": 4,
+        "rule": "Surgelés"
+      },
+      {
+        "carrefourCategory": "Surgelés > Viandes surgelées",
+        "grocerGoCategory": "surgeles",
+        "products": 4,
+        "rule": "Surgelés"
+      }
+    ],
+    "overriddenByName": [
+      {
+        "sku": "6191436201117",
+        "name": "Fromage ricotta",
+        "from": "Crèmerie et Produits Laitiers",
+        "to": "fromages",
+        "rule": "cheese-without-subcategory"
+      },
+      {
+        "sku": "6191575101712",
+        "name": "Moutarde 260 ml",
+        "from": "Épicerie Salée > Conserves et Plats Cuisinés > Tomates concassées et pelées",
+        "to": "sauces-condiments",
+        "rule": "misfiled-mustard"
+      },
+      {
+        "sku": "6194000805216",
+        "name": "Sauce à l’ail 230 ml",
+        "from": "Épicerie Salée > Conserves et Plats Cuisinés > Tomates doubles concentrées",
+        "to": "sauces-condiments",
+        "rule": "misfiled-garlic-sauce"
+      },
+      {
+        "sku": "5900617046635",
+        "name": "Barre protéinée pistache Go On",
+        "from": "Épicerie Sucrée",
+        "to": "biscuits-gateaux",
+        "rule": "sweet-root-cake-bar"
+      },
+      {
+        "sku": "8691216020627",
+        "name": "Bonbons Gold-bears gummy candy",
+        "from": "Épicerie Sucrée",
+        "to": "chocolat-confiserie",
+        "rule": "sweet-root-candy"
+      },
+      {
+        "sku": "6191477200223",
+        "name": "Cake marbré slice DAYLIN",
+        "from": "Épicerie Sucrée",
+        "to": "biscuits-gateaux",
+        "rule": "sweet-root-cake-bar"
+      },
+      {
+        "sku": "5900617014948",
+        "name": "Flocons de maîs Corn Flakes",
+        "from": "Épicerie Sucrée",
+        "to": "petit-dejeuner",
+        "rule": "sweet-root-cereal"
+      }
+    ]
+  },
+  "missingBrands": {
+    "count": 119,
+    "note": "a blank Carrefour brand is a brandless product; none was invented"
+  },
+  "missingPhotos": {
+    "count": 0,
+    "skus": []
+  },
+  "invalidPhotos": {
+    "count": 0,
+    "items": []
+  },
+  "validPhotos": 500,
+  "unitClassification": {
+    "totals": {
+      "PIECE": 414,
+      "KG": 86,
+      "L": 0
+    },
+    "rules": [
+      {
+        "rule": "loose-volume",
+        "unit": "L",
+        "confidence": "review",
+        "description": "a liquid sold loose, by name (\"vrac\", \"au litre\")",
+        "products": 0,
+        "examples": []
+      },
+      {
+        "rule": "market-produce",
+        "unit": "KG",
+        "confidence": "high",
+        "description": "fresh fruit, vegetables and salads of the market (weighed)",
+        "products": 16,
+        "examples": [
+          "Ananas",
+          "Citron",
+          "Kiwi",
+          "Mangue",
+          "Basilic"
+        ]
+      },
+      {
+        "rule": "market-packed-vegetables",
+        "unit": "KG",
+        "confidence": "review",
+        "description": "vegetables already in trays or cleaned (weighed or by tray)",
+        "products": 4,
+        "examples": [
+          "Champignon entier",
+          "Champignon slice petit",
+          "Oignon en barquette",
+          "Piments séchés"
+        ]
+      },
+      {
+        "rule": "market-butcher-poultry-fish",
+        "unit": "KG",
+        "confidence": "high",
+        "description": "butcher, poultry and whole fish / seafood (weighed)",
+        "products": 30,
+        "examples": [
+          "Tête d'agneau + 4 pattes",
+          "Beefteck de veau en barquete",
+          "Faux filet de veau",
+          "Jarret sans os",
+          "Pavé de veau"
+        ]
+      },
+      {
+        "rule": "market-smoked-fish",
+        "unit": "KG",
+        "confidence": "review",
+        "description": "smoked or fillet fish, often pre-sliced packs",
+        "products": 2,
+        "examples": [
+          "Saumon fumé de Norvège",
+          "Saumon fumé de Norvège"
+        ]
+      },
+      {
+        "rule": "market-nuts-olives",
+        "unit": "KG",
+        "confidence": "high",
+        "description": "dried fruit, nuts and olives of the market (weighed)",
+        "products": 8,
+        "examples": [
+          "Amandes americaines",
+          "Graines de citrouille éclatées",
+          "Noisettes concassées",
+          "Noix de cajou",
+          "Olives noires"
+        ]
+      },
+      {
+        "rule": "market-spices-condiments",
+        "unit": "KG",
+        "confidence": "review",
+        "description": "spices, herbs and condiments of the market (weighed or by jar)",
+        "products": 8,
+        "examples": [
+          "Citron salé",
+          "Cornichons extra fins",
+          "Câpres",
+          "Variantes",
+          "Graines de sésame doré"
+        ]
+      },
+      {
+        "rule": "market-deli",
+        "unit": "KG",
+        "confidence": "review",
+        "description": "cold cuts of the market (weighed, or pre-packed slices)",
+        "products": 5,
+        "examples": [
+          "Mini salami de dinde dicky dicky",
+          "Jambon de dinde",
+          "Jambon de dinde campagne",
+          "Jambon de poulet",
+          "Salami de bœuf traditionnel"
+        ]
+      },
+      {
+        "rule": "cut-cheese",
+        "unit": "KG",
+        "confidence": "high",
+        "description": "cheese \"à la coupe\": cut to order (weighed)",
+        "products": 10,
+        "examples": [
+          "Fromage mozzarella",
+          "Fromage mozzarella 100 % lait",
+          "Fromage pour pizza cheese",
+          "Ricotta traditionnelle",
+          "Fromage rouge Edam"
+        ]
+      },
+      {
+        "rule": "counter-prepared",
+        "unit": "KG",
+        "confidence": "review",
+        "description": "fresh breaded poultry from the deli counter (weighed or by piece)",
+        "products": 3,
+        "examples": [
+          "Chicken nuggets panés",
+          "Chicken nuggets frais",
+          "Cordon bleu frais"
+        ]
+      },
+      {
+        "rule": "bakery-and-deli-pieces",
+        "unit": "PIECE",
+        "confidence": "high",
+        "description": "bread, pastry, cakes, roast chicken, pizzas, prepared salads (by piece)",
+        "products": 20,
+        "examples": [
+          "Pain à panini",
+          "Croissants nature",
+          "Mini viennoiserie",
+          "Gâteu au chocolat",
+          "Mille feuille"
+        ]
+      },
+      {
+        "rule": "packaged",
+        "unit": "PIECE",
+        "confidence": "high",
+        "description": "everything else is a packaged product counted in units (a 1 L bottle, a 500 g pack, a jar)",
+        "products": 394,
+        "examples": [
+          "Ice tea ananas",
+          "Coca Cola",
+          "FANTA orange",
+          "ORANGINA jaune",
+          "PUNCH orange"
+        ]
+      }
+    ],
+    "needsReview": {
+      "count": 25,
+      "items": [
+        {
+          "sku": "6191507500545",
+          "name": "Mini salami de dinde dicky dicky",
+          "category": "Le marché",
+          "unit": "KG",
+          "rule": "market-deli",
+          "reason": "cold cuts of the market (weighed, or pre-packed slices)"
+        },
+        {
+          "sku": "2800753000000",
+          "name": "Beefteck de veau en barquete",
+          "category": "Le marché > Boucherie > Bœuf",
+          "unit": "KG",
+          "rule": "market-butcher-poultry-fish",
+          "reason": "weighed by category, but the name looks like a closed pack"
+        },
+        {
+          "sku": "2800629000000",
+          "name": "Jambon de dinde",
+          "category": "Le marché > Charcuterie > Jambon, Salami et Saucisse",
+          "unit": "KG",
+          "rule": "market-deli",
+          "reason": "cold cuts of the market (weighed, or pre-packed slices)"
+        },
+        {
+          "sku": "2802802000000",
+          "name": "Jambon de dinde campagne",
+          "category": "Le marché > Charcuterie > Jambon, Salami et Saucisse",
+          "unit": "KG",
+          "rule": "market-deli",
+          "reason": "cold cuts of the market (weighed, or pre-packed slices)"
+        },
+        {
+          "sku": "2802897000000",
+          "name": "Jambon de poulet",
+          "category": "Le marché > Charcuterie > Jambon, Salami et Saucisse",
+          "unit": "KG",
+          "rule": "market-deli",
+          "reason": "cold cuts of the market (weighed, or pre-packed slices)"
+        },
+        {
+          "sku": "2801775000000",
+          "name": "Salami de bœuf traditionnel",
+          "category": "Le marché > Charcuterie > Jambon, Salami et Saucisse",
+          "unit": "KG",
+          "rule": "market-deli",
+          "reason": "cold cuts of the market (weighed, or pre-packed slices)"
+        },
+        {
+          "sku": "2822135000000",
+          "name": "Champignon entier",
+          "category": "Le marché > Légumes > Légumes nettoyés emballés",
+          "unit": "KG",
+          "rule": "market-packed-vegetables",
+          "reason": "vegetables already in trays or cleaned (weighed or by tray)"
+        },
+        {
+          "sku": "2856254000000",
+          "name": "Champignon slice petit",
+          "category": "Le marché > Légumes > Légumes nettoyés emballés",
+          "unit": "KG",
+          "rule": "market-packed-vegetables",
+          "reason": "vegetables already in trays or cleaned (weighed or by tray)"
+        },
+        {
+          "sku": "6191430600244",
+          "name": "Oignon en barquette",
+          "category": "Le marché > Légumes > Légumes nettoyés emballés",
+          "unit": "KG",
+          "rule": "market-packed-vegetables",
+          "reason": "vegetables already in trays or cleaned (weighed or by tray)"
+        },
+        {
+          "sku": "2022220038326",
+          "name": "Piments séchés",
+          "category": "Le marché > Légumes > Légumes nettoyés emballés",
+          "unit": "KG",
+          "rule": "market-packed-vegetables",
+          "reason": "vegetables already in trays or cleaned (weighed or by tray)"
+        },
+        {
+          "sku": "6191444100020",
+          "name": "Saumon fumé de Norvège",
+          "category": "Le marché > Poissons > Filets, Pavés et séchés",
+          "unit": "KG",
+          "rule": "market-smoked-fish",
+          "reason": "smoked or fillet fish, often pre-sliced packs"
+        },
+        {
+          "sku": "6191529200010",
+          "name": "Saumon fumé de Norvège",
+          "category": "Le marché > Poissons > Filets, Pavés et séchés",
+          "unit": "KG",
+          "rule": "market-smoked-fish",
+          "reason": "smoked or fillet fish, often pre-sliced packs"
+        },
+        {
+          "sku": "2800136000000",
+          "name": "Calamars panés",
+          "category": "Le marché > Poissons > Fruits de Mer",
+          "unit": "KG",
+          "rule": "market-butcher-poultry-fish",
+          "reason": "weighed by category, but the name looks like a closed pack"
+        },
+        {
+          "sku": "2801943000000",
+          "name": "Chicken nuggets panés",
+          "category": "Le marché > Traiteur > Chaud",
+          "unit": "KG",
+          "rule": "counter-prepared",
+          "reason": "fresh breaded poultry from the deli counter (weighed or by piece)"
+        },
+        {
+          "sku": "2841573000000",
+          "name": "Chicken nuggets frais",
+          "category": "Le marché > Traiteur > Chaud > Cordons bleus et Nuggets",
+          "unit": "KG",
+          "rule": "counter-prepared",
+          "reason": "fresh breaded poultry from the deli counter (weighed or by piece)"
+        },
+        {
+          "sku": "2841571000000",
+          "name": "Cordon bleu frais",
+          "category": "Le marché > Traiteur > Chaud > Cordons bleus et Nuggets",
+          "unit": "KG",
+          "rule": "counter-prepared",
+          "reason": "fresh breaded poultry from the deli counter (weighed or by piece)"
+        },
+        {
+          "sku": "2403758000000",
+          "name": "Escalope de dinde en barquette",
+          "category": "Le marché > Volaille > Dindes",
+          "unit": "KG",
+          "rule": "market-butcher-poultry-fish",
+          "reason": "weighed by category, but the name looks like a closed pack"
+        },
+        {
+          "sku": "2828658000000",
+          "name": "Citron salé",
+          "category": "Le marché > Épices, Olives et Condiments > Condiments",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2828093000000",
+          "name": "Cornichons extra fins",
+          "category": "Le marché > Épices, Olives et Condiments > Condiments",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2800360000000",
+          "name": "Câpres",
+          "category": "Le marché > Épices, Olives et Condiments > Condiments",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2800356000000",
+          "name": "Variantes",
+          "category": "Le marché > Épices, Olives et Condiments > Condiments",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2800566000000",
+          "name": "Graines de sésame doré",
+          "category": "Le marché > Épices, Olives et Condiments > Épices et Herbes Fines",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2022220031136",
+          "name": "Menthe séchée",
+          "category": "Le marché > Épices, Olives et Condiments > Épices et Herbes Fines",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2811165000000",
+          "name": "Mélange d'épices Ras el hanout",
+          "category": "Le marché > Épices, Olives et Condiments > Épices et Herbes Fines",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        },
+        {
+          "sku": "2022220031143",
+          "name": "Verveine séchée en barquette",
+          "category": "Le marché > Épices, Olives et Condiments > Épices et Herbes Fines",
+          "unit": "KG",
+          "rule": "market-spices-condiments",
+          "reason": "spices, herbs and condiments of the market (weighed or by jar)"
+        }
+      ]
+    }
+  },
+  "unmappedCategories": [],
+  "slugCollisions": {
+    "count": 1,
+    "items": [
+      {
+        "slug": "thon-entier-a-lhuile-vegetale-cap-blanc",
+        "resolved": [
+          {
+            "sku": "6191485000624",
+            "slug": "thon-entier-a-lhuile-vegetale-cap-blanc",
+            "name": "Thon entier à l'huile végétale CAP BLANC",
+            "image": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000624.webp"
+          },
+          {
+            "sku": "6191485000730",
+            "slug": "thon-entier-a-lhuile-vegetale-cap-blanc-2",
+            "name": "Thon entier à l'huile végétale",
+            "image": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000730.webp"
+          }
+        ]
+      }
+    ]
+  },
+  "nameNormalizations": [
+    {
+      "sku": "5449000000439",
+      "from": "COCA COLA",
+      "to": "Coca Cola"
+    }
+  ],
+  "skuToSlug": {
+    "14030566": "chips-crokidos-golden-chips",
+    "25001144": "yaourt-aromatise-delice-danone",
+    "25001148": "yaourt-a-boire-danup-delice-danone",
+    "25001168": "yaourt-brasse-ptittop-yab",
+    "25001576": "yaourt-a-boire-vitup-vitalait",
+    "25001643": "yaourt-brasse-vitalait",
+    "25001670": "yaourt-aromatise-vitalait",
+    "25005386": "pack-de-yaourts-aromatises-delice-danone",
+    "25005507": "yaourt-aromatise-natilait",
+    "25005515": "yaourt-a-boire-natiyo-natilait",
+    "25005527": "yaourt-brasse-natilait",
+    "25006673": "yaourt-a-la-grecque-oikos-delice-danone",
+    "25006874": "milkshake-deli-shake-delice",
+    "25007176": "yaourt-brasse-mamzouj-delice-danone",
+    "25007179": "yaourt-a-boire-vitupti-vitalait",
+    "25007201": "yaourt-brasse-blendy-delice-danone",
+    "40084077": "chocolat-maxi-au-lait-kinder",
+    "40804613": "cornichons-fins-kuhne",
+    "40804637": "cocktail-cornichons-kuhne",
+    "61942868": "preparation-de-chocolat-chaud-en-poudre-dr-oetker",
+    "61945760": "yaourt-nature-skyr-delice-danone",
+    "90162602": "boisson-energetique-red-bull-25cl",
+    "6191325501021": "ice-tea-ananas-aris",
+    "5449000000439": "coca-cola",
+    "5449000052926": "fanta-orange",
+    "6191525200250": "orangina-jaune",
+    "6191534802254": "punch-orange",
+    "5449000344656": "schweppes-ananas",
+    "6194001800302": "eau-minerale-melliti",
+    "6194001800111": "eau-minerale-safia",
+    "6191325500192": "boisson-au-jus-ananas-aris",
+    "6191325500246": "boisson-au-jus-mangue-aris",
+    "6191325500499": "boisson-au-jus-orange-aris",
+    "6191402602023": "boisson-au-jus-tropical-la-fruitiere",
+    "6191430605027": "citronnade-fraiche-boqueria",
+    "6191430605041": "jus-de-fraise-boqueria",
+    "6194001551105": "boisson-concentree-au-gout-de-citron-amande-hazem",
+    "6194001520101": "sirop-au-gout-de-grenadine-hazem",
+    "6194001520095": "sirop-au-gout-de-menthe-hazem",
+    "6194001510096": "sirop-de-menthe-hazem",
+    "6194019602721": "boisson-non-alcoolisee-saveur-citron-celestia",
+    "6194019602714": "boisson-non-alcoolisee-saveur-mojito-celestia",
+    "6194019602738": "boisson-non-alcoolisee-a-base-de-malt-celestia",
+    "6194007804977": "boisson-energetique-dark-power-reaktor",
+    "6194007804960": "boisson-energetique-focus-power-reaktor",
+    "9001372251329": "boisson-energetique-power-horse-25cl",
+    "8851123229494": "boisson-energetique-shark-25cl",
+    "6191436201117": "fromage-ricotta-majeste",
+    "6191402901287": "margarine-riche-en-omega-3-goldina",
+    "6191402900082": "margarine-tartine-et-cuisson-goldina",
+    "6191402901270": "margarines-riche-en-omega-3-goldina",
+    "6191402900372": "matiere-grasse-tartinable-goldina",
+    "6194049404449": "creme-de-cuisson-street-co",
+    "6194043001620": "creme-fraiche",
+    "6194043002474": "creme-fraiche-legere-semi-epaisse-a-15-de-matiere-grasse",
+    "6191402903762": "creme-sucree-pour-garniture-de-gateaux-goldina",
+    "6194049402315": "fromage-cremeux-et-leger-mon-carre-fraicheur-landor",
+    "3236240070504": "fromage-le-petit-moule-a-lail-aux-fines-herbes-paysan-breton",
+    "3236240070306": "fromage-fouette-madame-loik-nature-paysan-breton",
+    "6191321300086": "fromage-mozzarelle-boccon",
+    "6191321300888": "mascarpone-fiore",
+    "6194025701289": "fromage-camembert-le-petit-campagnard-souani",
+    "6194025701012": "fromage-camembert-calife-souani",
+    "6194025701029": "fromage-camembert-couteaux-plateaux-souani",
+    "6194025701005": "fromage-camembert-national-souani",
+    "6194025701081": "fromage-camembert-tomme-de-tebourba-souani",
+    "2822334000000": "fromage-gouda-jaune",
+    "6191513502946": "fromage-en-cubes-emmental",
+    "6191513501215": "fromage-fondu-a-lemmental-mini-president",
+    "2802369000000": "fromage-edam-fiore",
+    "2802192000000": "fromage-edam-majeste",
+    "2802193000000": "fromage-gouda-jaune-majeste",
+    "2800827000000": "fromage-au-gruyere-landor",
+    "6191436200677": "fromage-100-mozzarella-majeste",
+    "6194025701371": "fromage-a-raclette-souani",
+    "6191436200042": "preparation-alimentaire-a-la-mozzarella-pizzatella-majeste",
+    "6191436200905": "rape-4-fromages-majeste",
+    "6191513502779": "fromage-et-biscuits-croustillants-gouter-president",
+    "6191513502380": "preparation-alimentaire-fondante-et-filante-mozza-fino-fromy",
+    "6194049405002": "sauce-chedar-fumee-street-co",
+    "2802044000000": "fromage-fondu-rape-a-lemmental-mont-regal",
+    "2802584000000": "fromage-rape-au-cheddar-landor",
+    "2802486000000": "fromage-rape-au-gruyere-100-lait-majeste",
+    "2802045000000": "fromage-rape-fondu-a-la-mozzarella-mont-regal",
+    "6191513503370": "fromage-blanc-le-cuistot-president",
+    "6191513501628": "fromage-fondu-a-tartiner-fromy",
+    "6191513501123": "fromage-fondu-a-tartiner-la-fondue-president",
+    "6191436200073": "fromage-rape-chees-majeste",
+    "6191513501246": "fromage-fondu-au-cheddar-president",
+    "6191513501239": "fromage-fondu-a-lemmental-famili-president",
+    "6191513501222": "fromage-fondu-a-lemmental-maxi-president",
+    "6191513501253": "fromage-tranche-burger-cheddar-president",
+    "6191513502021": "fromage-blanc-fondu-president",
+    "6191513502014": "fromage-blanc-fondu-carre-president",
+    "6191513501017": "fromage-fondu-a-tartiner-president",
+    "6191513504407": "preparation-alimentaire-fondu-tartifro",
+    "2802485000000": "fromage-mozzarella-landor",
+    "2802194000000": "fromage-mozzarella-100-lait-majeste",
+    "2802091000000": "fromage-pour-pizza-cheese-fondou",
+    "2810000000000": "ricotta-traditionnelle-kaiser",
+    "2851190000000": "fromage-rouge-edam-kaiser",
+    "2800775000000": "formage-jaune-gouda-kaiser",
+    "2800819000000": "fromage-au-cheddar-landor",
+    "2851320000000": "fromage-cheddar-fondu",
+    "2809850000000": "fromage-rape-au-gruyere-landor",
+    "2802361000000": "fromage-rape-a-lemmental-president",
+    "6191442501324": "boisson-lactee-au-jus-de-peche-abricot-natilait",
+    "6191442500457": "lait-caille-raieb-natilait",
+    "6191442500167": "lait-fermente-leben-natilait",
+    "6194043001286": "lait-delisso-demi-ecreme-u-h-t-delice",
+    "6191442600010": "lait-demi-ecreme-u-h-t-natilait",
+    "6191507220214": "lait-demi-ecreme-u-h-t-vitalait",
+    "6194043001255": "lait-entier-u-h-t-delice",
+    "6191314600025": "oeufs-ovolina-frais-jaune-orange",
+    "6191314600018": "oeufs-frais-jaune-jaune-ovolina",
+    "6191314600162": "oeufs-frais-jaune-junior-ovolina",
+    "6191314600049": "oeufs-jaune-orange-ovolina",
+    "6191503207554": "creme-dessert-plaisir-zgougou-yab",
+    "6191503208889": "creme-dessert-chocolat-liegeois-yab",
+    "6191503208872": "creme-dessert-flan-caramel-yab",
+    "6191503210660": "mousse-au-chocolat-plaisir-yab",
+    "6191436201049": "fromage-whey-pro-proteines-gout-cafe-majeste",
+    "6191436201032": "fromage-whey-pro-proteines-gout-framboise-majeste",
+    "6191436201025": "fromage-whey-pro-proteines-gout-vanille-majeste",
+    "6194003802625": "pack-de-yaourts-natures-delice-danone",
+    "6191507249383": "yaourt-nature-vitalait",
+    "6194003800317": "yaourt-nature-delice-danone",
+    "6191442501263": "yaourt-brasse-aux-cereales-et-aux-fruits-des-bois-misto-natilait",
+    "6191442501270": "yaourt-brasse-aux-cereales-et-aux-fruits-exotiques-misto-natilait",
+    "6191507250730": "yaourt-le-grand-brasse-saveur-vanille-vitalait",
+    "6191503213265": "yaourt-brasse-aux-fruits-jaunes-et-aux-cereales-yab",
+    "6191507250471": "yaourt-brasse-aux-fruits-secs-vitalait",
+    "6191507500545": "mini-salami-de-dinde-dicky-dicky-mliha",
+    "2852749000000": "tete-dagneau-4-pattes",
+    "2800753000000": "beefteck-de-veau-en-barquete",
+    "2800735000000": "faux-filet-de-veau",
+    "2800143000000": "jarret-sans-os",
+    "2800741000000": "pave-de-veau",
+    "6191561500147": "merguez",
+    "6194020400149": "pain-a-panini-le-boulanger",
+    "2023230017981": "croissants-nature",
+    "2054540003920": "mini-viennoiserie",
+    "2023230033714": "gateu-au-chocolat",
+    "2000000140872": "mille-feuille",
+    "2000000141626": "tarte-aux-fruits-frais",
+    "2023230004745": "tarte-grand-mere",
+    "2055550005669": "choquette-a-la-creme",
+    "2055550004754": "gateaux-au-cafe",
+    "2055550002965": "gateaux-au-chocolat",
+    "2055550003245": "tarte-amandine",
+    "2000000139425": "boule-blanche",
+    "2000000139296": "dejeunette-cuite",
+    "2000000139920": "pain-complet-integral",
+    "2000000139630": "tabouna-traditionnelle",
+    "6194004008040": "zrir-recette-tunisienne",
+    "2800629000000": "jambon-de-dinde-el-mazraa",
+    "2802802000000": "jambon-de-dinde-campagne-mliha",
+    "2802897000000": "jambon-de-poulet-chahia",
+    "2801775000000": "salami-de-boeuf-traditionnel-chahia",
+    "2022220026217": "ananas",
+    "2800064000000": "citron",
+    "2056560001412": "kiwi",
+    "2056560002457": "mangue",
+    "2822070000000": "amandes-americaines",
+    "2803720000000": "graines-de-citrouille-eclatees",
+    "2821909000000": "noisettes-concassees",
+    "2811188000000": "noix-de-cajou",
+    "2056560002464": "basilic",
+    "2022220020031": "chou-rouge",
+    "2056560002471": "menthe-fraiche",
+    "2022220016522": "persil",
+    "2822135000000": "champignon-entier",
+    "2856254000000": "champignon-slice-petit",
+    "6191430600244": "oignon-en-barquette-fresh-agri",
+    "2022220038326": "piments-seches",
+    "2811185000000": "feves",
+    "2811180000000": "lentilles-decortiquees",
+    "2811181000000": "mais",
+    "2811184000000": "pois-chiche",
+    "2022144800009": "laitue",
+    "2022144900006": "laitue-romaine",
+    "2022144700002": "salade-rouge",
+    "2800224000000": "tomate-ronde",
+    "6191444100020": "saumon-fume-de-norvege-la-couronne-dor",
+    "6191529200010": "saumon-fume-de-norvege-odyssee",
+    "2800136000000": "calamars-panes",
+    "2801028000000": "crevette-calibre-20-30",
+    "2801026000000": "crevettes-moyens-calibres",
+    "2801030000000": "crevettes-rouge",
+    "2800086000000": "maquereau",
+    "2800088000000": "merlan-nazalli",
+    "280009500000": "poisson-mulet",
+    "2800112000000": "sardine",
+    "2801943000000": "chicken-nuggets-panes",
+    "2841573000000": "chicken-nuggets-frais",
+    "2841571000000": "cordon-bleu-frais",
+    "2000000139340": "mini-pizza-au-thon",
+    "2058580000567": "demi-poulet-roti",
+    "2020200010294": "poulet-roti",
+    "6191451000146": "salade-primavera",
+    "2400955000000": "escalope-de-dinde-el-mazraa",
+    "2403758000000": "escalope-de-dinde-en-barquette-chahia",
+    "2824456000000": "habra-de-dinde-chahia",
+    "2824831000000": "escalope-de-dinde",
+    "2841575000000": "habra-de-dinde",
+    "2400975000000": "cuisse-de-poulet-el-mazraa",
+    "2400937000000": "escalope-de-poulet-el-mazraa",
+    "2400938000000": "haut-de-cuisse-el-mazraa",
+    "2400931000000": "poulet-pret-a-cuire-standard-el-mazraa",
+    "2824260000000": "pilons-de-poulet",
+    "2824851000000": "escalope-de-poulet",
+    "2824825000000": "haut-de-cuisse-de-poulet",
+    "2841062000000": "ailes-de-poulet-marinees-a-la-tunisienne",
+    "2403717000000": "poulet-pac-chahia",
+    "2851731000000": "poulet-fermier-dhahabiya-dick",
+    "2824900000000": "poulet-pret-a-cuire",
+    "2828658000000": "citron-sale",
+    "2828093000000": "cornichons-extra-fins",
+    "2800360000000": "capres",
+    "2800356000000": "variantes",
+    "2800354000000": "olives-noires",
+    "2800347000000": "olives-vertes",
+    "2800421000000": "olives-vertes-cassees-pimentees",
+    "2800352000000": "olives-violettes",
+    "2800566000000": "graines-de-sesame-dore",
+    "2022220031136": "menthe-sechee-novafresh",
+    "2811165000000": "melange-depices-ras-el-hanout",
+    "2022220031143": "verveine-sechee-en-barquette",
+    "6191503200739": "glace-chocolat",
+    "6191503200746": "glace-chocolat-fraise",
+    "6191503200760": "glace-chocolat-vanille",
+    "6191503200784": "glace-familiale-fraise-boules-dor",
+    "5411683210955": "macedoine-de-legumes",
+    "5411683210924": "mais-doux",
+    "5411683210849": "petit-poids",
+    "5410376723345": "pomme-frites",
+    "6191304200013": "crevettes-decortiquees",
+    "2853522000000": "crevettes-decortiquees-congelees",
+    "2853572000000": "moules-decortiquees",
+    "2853599000000": "seiche-nettoyee-et-congelee",
+    "6191332200023": "pates-feuilletee-surgelee",
+    "6191332200061": "pate-brisee",
+    "6191332200030": "pate-feuilletee-vanoise",
+    "6191473400016": "pate-feuilletee",
+    "2403712000000": "filet-de-poulet-chahia",
+    "2402300000000": "habra-de-dinde-hachee-el-mazraa",
+    "6191403301512": "kefta-de-dinde",
+    "6191505100419": "nuggets-de-poulet",
+    "6194021152023": "barquettes-a-garnir-rondes-moulin-dor",
+    "6191402805493": "bsissa-de-ble-vanoise-dr-oetker",
+    "6191473400054": "pate-brisee-etalee-fornetto",
+    "6191519402165": "semoule-fine-sanabel-carthage",
+    "6194003360910": "semoule-fine-lepi-dor",
+    "6194006261139": "pulpe-de-tomates-100-naturel-tomacoulis-sticap",
+    "6194006261412": "tomates-complet-sticap",
+    "6251136009038": "champignon-pieds-et-morceaux-durra",
+    "6191460400791": "champignons-en-tranches-mami-garden",
+    "6251136052522": "champignons-en-tranches-durra",
+    "6191454000013": "champignons-pieds-morceaux-tanit-le-jardin",
+    "3017800119051": "haricots-verts-tres-fins-daucy",
+    "3017800119891": "haricots-verts-tres-fins-saveurs",
+    "3017800119099": "macedoine-de-legumes-daucy",
+    "3017800119877": "petit-pois-tres-fins-saveurs",
+    "3083680020763": "lot-de-3-boites-de-mais-doux-bonduelle",
+    "3017800119020": "mais-doux-daucy",
+    "3017800119914": "mais-doux-saveurs",
+    "3083680021548": "mais-en-grain-bonduelle",
+    "3904505055800": "choucroute-kuhne",
+    "6194004804161": "salade-mechouia-zgolli",
+    "6194006260903": "salade-mechouia-sticap",
+    "6194003200643": "lot-de-3-boites-de-tomates-concassees-au-basilic-le-petit-paris",
+    "6191575101712": "moutarde-260-ml-bonna",
+    "6194003200988": "tomate-pelees-petit-paris",
+    "6194003220337": "tomates-concassees-le-petit-paris",
+    "6191346500010": "double-concentre-de-tomate-zina",
+    "6194001480405": "double-concentre-de-tomates-jouda",
+    "6194001480078": "lot-de-4-boites-de-double-concentre-de-tomates-jouda",
+    "6194000805216": "sauce-a-lail-230-ml-jadida",
+    "6191461100317": "huile-dolive-extra-vierge-terroliva",
+    "6191523800117": "huile-dolive-extra-vierge-al-jazira",
+    "6191523802975": "preparation-alimentaire-dhuile-dolive-au-citron-al-jazira",
+    "6191523802999": "preparation-alimentaire-dhuile-dolive-au-piment-al-jazira",
+    "6191534604018": "huile-de-friture-fritss",
+    "6191509410026": "huile-de-friture-frideal-olina",
+    "6191509499090": "huile-vegetale-olina",
+    "6191523805655": "huile-vegetale-al-jazira",
+    "6191534608030": "huile-de-colza-safi",
+    "6191341900020": "huile-de-colza-oleo-nour",
+    "6191509450008": "huile-de-mais-olina",
+    "6191523805716": "huile-de-mais-al-jazira",
+    "6191534602182": "huile-de-mais-safi",
+    "6191564500076": "huile-de-mais-cristal",
+    "6191534603189": "huile-de-tournesol-safi",
+    "6194000802703": "huile-de-tournesol-jadida",
+    "6191441100023": "feuilles-de-brick-brikador",
+    "6191441100269": "feuilles-de-crepe",
+    "6191441100160": "feuilles-de-samsa-samsador",
+    "6191519400802": "langue-doiseau-sanabel-carthage",
+    "8412164000727": "bouillon-de-boeuf-calnort",
+    "8412164000765": "bouillon-de-mouton-calnort",
+    "8412164000741": "bouillon-de-poisson-calnort",
+    "8412164000734": "bouillon-de-poulet-calnort",
+    "2828024000000": "borghol-fin",
+    "6191446700099": "borghol-fin-reine-des-graines",
+    "6194003330012": "couscous-fin-lepi-dor",
+    "6194003330029": "couscous-moyen-pret-en-2-minutes-lepi-dor",
+    "8007290324702": "lasagne-sans-gluten-granoro",
+    "6194003310243": "lasagnes-lepi-dor",
+    "6194004612605": "lasagnes-randa",
+    "6194043402915": "lasagnes-warda",
+    "6191441100054": "feuilles-de-brick-semoule",
+    "5285000396437": "nouilles-instantanees-gout-boeuf-indomie",
+    "6191519400277": "nouilles-n1-sanabel-carthage",
+    "6194003320099": "nouilles-n2-lepi-dor",
+    "6194043403271": "penne-ble-complet-et-avoine-les-integrales-warda",
+    "6194011837374": "spaghetti-au-ble-complet-spiga",
+    "6191519400468": "fell-1-5-sanabel-carthage",
+    "6191519400482": "fell-n2-sanabel-carthage",
+    "6191519400505": "fell-n2-5-sanabel-carthage",
+    "6191519400543": "fell-n2-5-rigate-sanabel-carthage",
+    "6191519400215": "spaghetti-2-5-sanabel-carthage",
+    "6191519400185": "spaghetti-n2-sanabel-carthage",
+    "6194003310274": "tagliatelle-n1-lepi-dor",
+    "6194003310311": "tagliatelle-n2-lepi-dor",
+    "6191519400741": "cheveux-dange-sanabel-carthage",
+    "6191519400857": "mhammas-2-sanabel-carthage",
+    "6191519402226": "pates-millet-sanabel-carthage",
+    "6191519402141": "soupe-dorge-sanabel-carthage",
+    "6191564601674": "riz-golden-rozy",
+    "6191564601087": "riz-rond-rozy",
+    "6191564601711": "riz-etuve-rozy",
+    "2800345000000": "harissa-arbi-artisanale-recette-traditionnelle-fait-maison",
+    "6191402601972": "harissa-berbere-furketta",
+    "2822479000000": "harissa-en-boule",
+    "6191402601989": "harissa-traditionnelle-furketta",
+    "5352001033354": "ketchup",
+    "6191575100463": "ketchup-bonna",
+    "6199009003557": "ketchup-n1",
+    "8710448569015": "ketchup-aux-tomates-remia",
+    "6191575100500": "mayonnaise-bonna",
+    "6072000103856": "mayonnaise-piquante-chipolate-delicio",
+    "6072000103832": "mayonnaise-a-la-truffe-noire-delicio",
+    "6135345000768": "sauce-mayonnaise-lesieur",
+    "3563490010814": "moutarde-de-dijon-dijona",
+    "8710448562030": "moutarde-de-dijon-remia",
+    "3335121134431": "moutarde-forte-de-dijon-covinor",
+    "6191575101897": "moutarde-a-lancienne-bonna",
+    "5352001033361": "sauce-barbecue-kiwi",
+    "6199009003540": "sauce-barbecue-n1",
+    "3800740035440": "sauce-teryaki-deroni",
+    "6194000805193": "sauce-algerienne-jadida",
+    "3800740035389": "sauce-soja-classique-deroni",
+    "4012200384688": "sauce-tartare-kuhne",
+    "3335122413757": "sauce-salade-nature-allegee-en-matiere-grasse-covinor",
+    "4012200160763": "vinaigre-balsamique-dimodena-kuhne",
+    "6191408700099": "vinaigre-de-cidre-eden",
+    "3335122413771": "vinaigrette-aux-fines-herbes-covinor",
+    "6191307402100": "biscuits-sales-gout-fromage-crackers",
+    "6191547201181": "batonnets-de-pain-au-fromage-et-tomate-grissini-torinesi-cerealis",
+    "6191547201174": "batonnets-de-pain-au-sel-grissini-torinesi-cerealis",
+    "6191547201198": "batonnets-de-pain-au-son-de-ble-grissini-torinesi-cerealis",
+    "5905187101296": "chips-de-pomme-de-terre-x-cut-sel-lorenz",
+    "4018077632006": "chips-monster-munch-lorenz",
+    "6130336005609": "chips-the-box-hot-spicy-mahboul",
+    "2823140000000": "mix-exotique",
+    "2823142000000": "mix-royal",
+    "2803139000000": "mix-de-luxe",
+    "2822735000000": "raisin-sec-noir",
+    "6191547201280": "pop-corn-caramel-beurre-candy-pop-cerealis",
+    "6191547201303": "pop-corn-sweet-cerealis",
+    "6194029101108": "filet-de-thon-a-lhuile-dolive-et-au-thym-el-manar",
+    "6194029101092": "filet-de-thon-a-lhuile-dolive-et-a-la-tomate-sechee-el-manar",
+    "6191520001036": "filets-danchois-sales-a-l-huile-dolive-sidi-daoud",
+    "6194029100323": "sardines-de-mediterranee-a-lhuile-dolive-vierge-el-manar",
+    "6194029100453": "sardines-mediterraneenne-au-citron-el-manar",
+    "6194029100330": "sardines-mediterraneenne-a-la-sauce-tomate-el-manar",
+    "6194029100804": "thon-en-miettes-a-la-harissa-el-manar",
+    "6194029100378": "thon-entier-au-naturel-el-manar",
+    "6191571801159": "lot-de-3-boites-de-thon-entier-a-lhuile-dolive-la-goulette",
+    "6191485000075": "thon-entier-a-lhuile-dolive-lebhour",
+    "6191571800954": "thon-entier-a-lhuile-dolive-la-goulette",
+    "6191485000099": "thon-entier-a-lhuile-dolive-vierge-lebhour",
+    "6191315800363": "thon-en-morceaux-a-lhuile-vegetale-sidi-elbahri",
+    "6191315800066": "thon-entier-a-lhuile-vegetale-al-jazia",
+    "6191485000730": "thon-entier-a-lhuile-vegetale-cap-blanc-2",
+    "6191485000624": "thon-entier-a-lhuile-vegetale-cap-blanc",
+    "6194029100514": "lot-de-3-boites-de-thon-entier-a-lhuile-de-tournesol-el-manar",
+    "6194029101344": "thon-en-morceaux-a-lhuile-de-tournesol-el-manar",
+    "6191485000020": "thon-entier-a-lhuile-de-tournesol-lebhour",
+    "6194029100293": "thon-entier-a-lhuile-de-tournesol-el-manar",
+    "5900617046635": "barre-proteinee-pistache-go-on-sante",
+    "8691216020627": "bonbons-gold-bears-gummy-candy-haribo",
+    "6191477200223": "cake-marbre-slice-daylin-dailyn",
+    "5900617014948": "flocons-de-mais-corn-flakes-sante",
+    "6191462200177": "barre-de-cereales-caramel-sale-vipa",
+    "5900617015945": "barre-de-cereales-amande-noisette-sante",
+    "5900617015938": "barre-de-cereales-chocolat-banane-sante",
+    "6191498200165": "barre-de-cereales-raisin-et-amande-honey-la",
+    "6191307400021": "cookies-aux-pepites-de-chocolat-blanc-lbm",
+    "6191307400014": "cookies-aux-pepites-de-chocolat-noir-lbm",
+    "6191307402834": "cookies-cacaote-sans-sucre-aux-pepites-lbm",
+    "6191307402766": "cookies-sans-sucre-aux-pepites-de-chocolat-noir-lbm",
+    "6191307401233": "biscuit-ptit-matin-pure-beurre-lbm",
+    "6191307401240": "biscuit-ptit-matin-speculoos-lbm",
+    "6194002510071": "biscuits-binto-enrobes-au-chocolat-kif",
+    "6194002510194": "biscuits-smile-chocolat-kif",
+    "6191307400960": "biscuits-enrobe-de-chocolat-blanc-tagada-lbm",
+    "6191307401684": "biscuits-fourres-chocolat-noisette-kingo-lbm",
+    "6191327600029": "biscuit-sandwich-gout-chocolat-tino-biskart",
+    "6191416500377": "biscuits-fourre-au-chocolat-royal-campi",
+    "6191477200148": "tarte-dabricots-dailyn",
+    "6191477200131": "tarte-fraise-dailyn",
+    "5900617014665": "biscuits-au-riz-et-au-sel-de-lhimalaya-sante",
+    "5900617014658": "biscuits-au-riz-nature-sante",
+    "6191307400052": "biscuits-aux-amandes-lamandier-lbm",
+    "6191307400038": "biscuits-sable-lbm",
+    "6191432201388": "gaufrettes-chocolat-lingot",
+    "6191432201395": "gaufrettes-creme-au-lait-lingot",
+    "6191432201425": "gaufrettes-fraises-lingot",
+    "6191432201418": "gaufrettes-noisettes-lingot",
+    "6191544100661": "barre-de-chocolat-caramel-et-biscuit-x-plose",
+    "6191544100500": "barre-de-chocolat-caramel-biscuit-d-clic",
+    "6191544100630": "chocolat-au-caramel-biscuit-duo",
+    "6191544100609": "chocolat-enrobes-de-caramel-biscuits-duo",
+    "6191402902048": "boules-de-cereales-enrobees-et-croustillantes-crispy",
+    "6194001532210": "loukoum-gout-noisettes-hazem",
+    "3760078893344": "sucette-ourson-cracocarte",
+    "3760078893160": "sucettes-cracocarte",
+    "6194005448470": "chocolat-passion-lait-noisettes-maestro",
+    "6191544100623": "chocolat-barre-biscuitee-lait-gaufrettes-momento",
+    "6194005448449": "coffret-assortiment-de-chocolats-tesoro-maestro",
+    "6194005448418": "coffret-de-chocolat-tesoro-maestro",
+    "8691216020689": "bonbons-worms-haribo",
+    "8901393017045": "confisserie-sour-belt-chupa-chups",
+    "6191309700037": "dattes-aux-noix-de-coco-et-cacao-pops-kartago",
+    "6191309700013": "dattes-aux-sesames-pops-kartago",
+    "4000417023001": "chocolat-aux-amandes-ritter-sport",
+    "6191478401667": "chocolat-aux-noisettes-verano",
+    "4000417013002": "chocolat-blanc-aux-noisettes-ritter-sport",
+    "6191478401674": "chocolat-caramel-verano",
+    "6191402803192": "preparation-de-chocolat-chaud-banane-dr-oetker",
+    "6191402803208": "preparation-de-chocolat-chaud-caramel-dr-oetker",
+    "6194003600894": "capsules-de-cafe-100-arabica-colombie-bondin",
+    "6194003600900": "capsules-de-cafe-pur-100-arabica-intense-bondin",
+    "6194003600887": "capsules-de-cafe-pur-decafeine-bondin",
+    "6194003600870": "capsules-de-cafe-pur-raffine-bondin",
+    "6191347300527": "cafe-turc-moringa-stella",
+    "3067140035320": "cafe-en-grains-chicoree-torrefiee-leroux",
+    "6191431900039": "cafe-moulu-filtre-pur",
+    "6191431900046": "cafe-turc-pur",
+    "5901583412004": "cafe-soluble-agglomere-carrefour",
+    "4009041100812": "cafe-soluble-chicoree-brava",
+    "5901583412042": "cafe-soluble-lyophilise-carrefour",
+    "4009041105190": "chicoree-soluble-brava",
+    "6191477200025": "muffin-bicouleur-dailyn",
+    "6194021101427": "brownie-intense-moulin-dor",
+    "6191477200063": "brownies-aux-pepites-de-chocolat-dailyn",
+    "6191599100562": "brownies-caramel-beurre-sale-bolerio",
+    "6191599100302": "brownies-chocolat-bolerio",
+    "6191477200117": "cake-grand-mere-marbre-dailyn",
+    "2823479000000": "cake-au-sorgho",
+    "6191598500219": "cake-familial-tout-chocolat-valentino-goutinel",
+    "6191500320201": "cake-marbre-le-patissier",
+    "6191503207523": "madeleines-le-patissier",
+    "6191503210769": "mini-muffins-saveur-vanille-le-patissier",
+    "6191477200278": "muffin-au-chocolat-dailyn",
+    "6191599100012": "muffins-dabricots-bolerio",
+    "6191309700341": "cereales-granola-aux-4-graines",
+    "6191402900549": "creme-a-tartiner-vanoise",
+    "6191402903090": "creme-a-tartiner-duo-biscuits-au-cacao-lait-vanoise",
+    "6191402902901": "creme-a-tartiner-aux-noisettes-et-au-cacao-vanoise",
+    "6191402902932": "pates-a-tartiner-ma-creme-au-biscuit-speculos-vanoise",
+    "6191402600388": "confiture-dabricots-la-fruitiere",
+    "6191402600395": "confiture-doranges-et-mandarines-la-fruitiere",
+    "6191496900517": "confiture-de-fruits-allegees-30-de-sucre-yumy",
+    "3088543405114": "miel-doux-lune-de-miel",
+    "3033710061983": "cereales-chocapic-nestle",
+    "2823680000000": "flocons-davoine",
+    "4008569028370": "flocons-davoine-feuilles-larges-hahne",
+    "4008569028387": "flocons-davoine-petites-feuilles-hahne",
+    "5900617013330": "biscottes-de-ble-traditionnel-croustillant-riche-en-fibre-sante",
+    "6191427600295": "pain-de-mie-complet-mama-mia",
+    "6191427600585": "pain-de-mie-multi-cereales-mama-mia",
+    "6191427600288": "pain-de-mie-nature-mama-mia",
+    "6191402802812": "amidon-de-mais-vanoise",
+    "6191519400017": "farine",
+    "6194011890102": "farine-diari",
+    "6191564600011": "farine-patissiere",
+    "6191317200031": "pate-zgougou-ben-gaied-hassine-tamisee",
+    "6191317200017": "pate-de-noisette-ben-gaied-hassine",
+    "6191317200048": "pate-de-sesames-ben-gaied-hassine",
+    "3329750010754": "edulcorant-faible-en-calories-canderel",
+    "3220034941194": "sucre-de-canne-en-morceau-saint-louis",
+    "6191309700068": "sucre-de-dattes-kartago",
+    "3220033060001": "sucre-roux-en-cube-tiplaisir-saint-louis",
+    "6191402801426": "sucre-vanilline-vanoise-dr-oetker",
+    "6191469700540": "the-noir-instantane-menthe-kyufi",
+    "6191469701967": "the-noir-a-la-bergamote-kyufi",
+    "6191469701950": "the-noir-a-la-bergamote-sans-sucre-kyufi",
+    "6191469700304": "the-vert-instantane-menthe-kyufi"
+  },
+  "overlapWithSeedCatalog": {
+    "note": "same slug as a product of seed/catalog.json: the importer treats it as the same product and would update it",
+    "count": 5,
+    "items": [
+      {
+        "slug": "citron",
+        "changes": [
+          "default quantities 500/100/5000 → unit defaults 100/100/no max",
+          "photo set"
+        ]
+      },
+      {
+        "slug": "laitue",
+        "changes": [
+          "sale unit PIECE → KG",
+          "default quantities 100/100/20 → unit defaults 100/100/no max",
+          "photo set"
+        ]
+      },
+      {
+        "slug": "persil",
+        "changes": [
+          "name \"Persil (botte)\" → \"Persil\"",
+          "sale unit PIECE → KG",
+          "default quantities 100/100/20 → unit defaults 100/100/no max",
+          "photo set"
+        ]
+      },
+      {
+        "slug": "escalope-de-poulet",
+        "changes": [
+          "default quantities 250/250/5000 → unit defaults 100/100/no max",
+          "photo set"
+        ]
+      },
+      {
+        "slug": "olives-vertes",
+        "changes": [
+          "category epicerie → epices-olives",
+          "default quantities 250/50/5000 → unit defaults 100/100/no max",
+          "photo set"
+        ]
+      }
+    ]
+  }
+}

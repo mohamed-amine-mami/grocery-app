@@ -1,8 +1,10 @@
 import request from 'supertest';
 import { db } from '../src/prisma/db.js';
 import {
+  addTaggedProduct,
   archiveCategory,
   archiveProduct,
+  brandProduct,
   removeCatalog,
   seedCatalog,
 } from './catalog-helpers.js';
@@ -131,6 +133,7 @@ describe('GET /owner/catalog/products', () => {
         slug: `${tag}-fruits`,
         name: `Fruits ${tag}`,
       },
+      brand: null,
       inMyStore: false,
       storeProductId: null,
       storeProductArchived: false,
@@ -316,6 +319,99 @@ describe('the global catalog is read-only through the API', () => {
         path,
         status: 404,
       });
+    }
+  });
+});
+
+describe('GET /owner/catalog/products — brand', () => {
+  it('shows a product’s brand (id, slug and name only), and null for a brandless one', async () => {
+    const { owner } = await registerOwnerWithStore();
+    const heinz = await brandProduct(
+      tag,
+      catalog.productId('yaourt'),
+      'heinz',
+      `Heinz ${tag}`,
+    );
+
+    const response = await request(http())
+      .get('/owner/catalog/products')
+      .set(auth(owner))
+      .expect(200);
+
+    const products = mine(response.body);
+    const yaourt = products.find((p) => p.slug === `${tag}-yaourt`)!;
+    const banane = products.find((p) => p.slug === `${tag}-banane`)!;
+    expect(yaourt['brand']).toEqual({
+      id: heinz.id,
+      slug: `${tag}-heinz`,
+      name: `Heinz ${tag}`,
+    });
+    expect(banane['brand']).toBeNull();
+    expect(Object.keys(yaourt['brand'] as object).sort()).toEqual([
+      'id',
+      'name',
+      'slug',
+    ]);
+  });
+
+  it('lists the same product name under different brands as separate rows', async () => {
+    const { owner } = await registerOwnerWithStore();
+    const category = catalog.categoryId('laitiers');
+    await addTaggedProduct(
+      tag,
+      category,
+      'ketchup-heinz',
+      `Ketchup ${tag}`,
+      'k-heinz',
+    );
+    await addTaggedProduct(
+      tag,
+      category,
+      'ketchup-amora',
+      `Ketchup ${tag}`,
+      'k-amora',
+    );
+    await addTaggedProduct(
+      tag,
+      category,
+      'ketchup-plain',
+      `Ketchup ${tag}`,
+      null,
+    );
+
+    const response = await request(http())
+      .get('/owner/catalog/products')
+      .set(auth(owner))
+      .expect(200);
+
+    const ketchups = mine(response.body).filter((p) =>
+      (p['name'] as string).startsWith('Ketchup'),
+    );
+    expect(ketchups).toHaveLength(3);
+    expect(
+      ketchups.map(
+        (p) => (p['brand'] as { slug: string } | null)?.slug ?? null,
+      ),
+    ).toEqual([null, `${tag}-k-amora`, `${tag}-k-heinz`]); // brandless first, then by brand name
+    expect(new Set(ketchups.map((p) => p['slug'])).size).toBe(3);
+  });
+
+  it('does not change who sees what: an archived product stays out', async () => {
+    const { owner } = await registerOwnerWithStore();
+    await brandProduct(tag, catalog.productId('lait-delice-1l'), 'heinz');
+    await archiveProduct(catalog.productId('lait-delice-1l'));
+    try {
+      const response = await request(http())
+        .get('/owner/catalog/products')
+        .set(auth(owner))
+        .expect(200);
+      expect(mine(response.body).map((p) => p.slug)).not.toContain(
+        `${tag}-lait-delice-1l`,
+      );
+    } finally {
+      await db.orm.public.Product.where({
+        id: catalog.productId('lait-delice-1l'),
+      }).update({ archivedAt: null });
     }
   });
 });

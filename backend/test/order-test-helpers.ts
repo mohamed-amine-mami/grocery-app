@@ -100,8 +100,11 @@ export const ordersOf = (customerId: number) =>
   db.orm.public.Order.where({ customerId }).all();
 export const ordersAt = (storeId: number) =>
   db.orm.public.Order.where({ storeId }).all();
-export const eventsOf = (orderId: number) =>
-  db.orm.public.OrderStatusEvent.where({ orderId }).all();
+/** An order's events in the order they happened (ids are assigned as they are written; a bare SELECT has no guaranteed order). */
+export const eventsOf = async (orderId: number) =>
+  (await db.orm.public.OrderStatusEvent.where({ orderId }).all()).sort(
+    (a, b) => a.id - b.id,
+  );
 export const itemsOf = (orderId: number) =>
   db.orm.public.OrderItem.where({ orderId }).all();
 export const orderRow = (orderId: number) =>

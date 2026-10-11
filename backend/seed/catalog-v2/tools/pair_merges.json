@@ -1,0 +1,992 @@
+[
+ {
+  "pair": 1,
+  "a": [
+   "geant:108892"
+  ],
+  "b": [
+   "carrefour:6191307401684"
+  ],
+  "aName": "Biscuits fourrés cacaote-Chocolat-Noisette Kingo 120 g",
+  "bName": "Biscuits fourrés chocolat noisette kingo 120 g",
+  "brand": "LBM",
+  "evidence": "Kingo packs identical"
+ },
+ {
+  "pair": 2,
+  "a": [
+   "carrefour:3236240070504"
+  ],
+  "b": [
+   "geant:70577"
+  ],
+  "aName": "Fromage Le Petit Moulé à l'ail & aux fines herbes 150 g",
+  "bName": "Petit moule ail et fines herbes 150 g",
+  "brand": "Paysan Breton",
+  "evidence": "Le Petit Moulé tubs identical"
+ },
+ {
+  "pair": 4,
+  "a": [
+   "geant:28073"
+  ],
+  "b": [
+   "off:6194005443031"
+  ],
+  "aName": "Chocolat noir extra fin 90 g",
+  "bName": "Sensations - Chocolat Extra Fin Noir 90 g",
+  "brand": "Maestro",
+  "evidence": "both packs are Maestro Sensations Noir"
+ },
+ {
+  "pair": 5,
+  "a": [
+   "carrefour:6191507250471"
+  ],
+  "b": [
+   "geant:53511"
+  ],
+  "aName": "Yaourt brassé aux fruits secs 100 g",
+  "bName": "Yaourt brassé fruits secs et grains 100 g",
+  "brand": "Vitalait",
+  "evidence": "both packs Vitalait brassé aux fruits secs"
+ },
+ {
+  "pair": 6,
+  "a": [
+   "geant:94557"
+  ],
+  "b": [
+   "carrefour:6191314600025"
+  ],
+  "aName": "Œufs frais jaune orange 30 pièces",
+  "bName": "Œufs Ovolina frais jaune orange 30 pièces",
+  "brand": "Ovolina",
+  "evidence": "both packs Ovolina 30 œufs jaune orange"
+ },
+ {
+  "pair": 7,
+  "a": [
+   "geant:32389"
+  ],
+  "b": [
+   "aziza:100443381"
+  ],
+  "aName": "Tranche d'or cacao vanille 42 g",
+  "bName": "Tranche d'or cacao 42 g",
+  "brand": "Moulin d'Or",
+  "evidence": "both packs Tranche d'Or marbré"
+ },
+ {
+  "pair": 8,
+  "a": [
+   "geant:26472"
+  ],
+  "b": [
+   "off:6194043002078"
+  ],
+  "aName": "Crème fraîche semi épaisse 22 cl",
+  "bName": "Crème semi épaisse 22 cl",
+  "brand": "Délice",
+  "evidence": "both bottles Chef crème semi-épaisse"
+ },
+ {
+  "pair": 10,
+  "a": [
+   "carrefour:6191469701950"
+  ],
+  "b": [
+   "geant:150269"
+  ],
+  "aName": "Thé noir à la bergamote sans sucre 10 sachets",
+  "bName": "Thé noir soluble bergamote sans sucre 10 sachets",
+  "brand": "Kyufi",
+  "evidence": "both boxes Kyufi thé noir bergamote"
+ },
+ {
+  "pair": 11,
+  "a": [
+   "geant:25751"
+  ],
+  "b": [
+   "carrefour:6194003310274"
+  ],
+  "aName": "Pâte tagliatelle N°1 250 g",
+  "bName": "Tagliatelle n°1 250 g",
+  "brand": "L'Epi d'Or",
+  "evidence": "both packs L'Epi d'Or tagliatelle n°1"
+ },
+ {
+  "pair": 12,
+  "a": [
+   "geant:25631"
+  ],
+  "b": [
+   "carrefour:6194003310311"
+  ],
+  "aName": "Pâte tagliatelle N°2 250 g",
+  "bName": "Tagliatelle n°2 250 g",
+  "brand": "L'Epi d'Or",
+  "evidence": "both packs L'Epi d'Or tagliatelle n°2"
+ },
+ {
+  "pair": 13,
+  "a": [
+   "carrefour:6191513501222"
+  ],
+  "b": [
+   "geant:25828"
+  ],
+  "aName": "Fromage fondu à l'Emmental Maxi' 40 g",
+  "bName": "Fromage fondu maxi 40 g",
+  "brand": "President",
+  "evidence": "both packs Président Maxi' emmental"
+ },
+ {
+  "pair": 14,
+  "a": [
+   "geant:24314"
+  ],
+  "b": [
+   "carrefour:6191513501123"
+  ],
+  "aName": "Fromage fondu à tartiner 150 g",
+  "bName": "Fromage fondu à tartiner La Fondue 150 g",
+  "brand": "President",
+  "evidence": "both tubs Président La Fondue"
+ },
+ {
+  "pair": 15,
+  "a": [
+   "geant:113469"
+  ],
+  "b": [
+   "carrefour:6191314600018"
+  ],
+  "aName": "Œufs frais jaune 30 pièces",
+  "bName": "Œufs frais jaune jaune ovolina 30 pièces",
+  "brand": "Ovolina",
+  "evidence": "both packs Ovolina 30 œufs jaune (green pack)"
+ },
+ {
+  "pair": 17,
+  "a": [
+   "geant:114628"
+  ],
+  "b": [
+   "carrefour:6191314600049"
+  ],
+  "aName": "Œufs frais jaune orange 15 pièces",
+  "bName": "Œufs jaune orange 15 pièces",
+  "brand": "Ovolina",
+  "evidence": "both packs Ovolina 15 œufs jaune orange"
+ },
+ {
+  "pair": 18,
+  "a": [
+   "carrefour:6191314600162"
+  ],
+  "b": [
+   "geant:126774"
+  ],
+  "aName": "Œufs frais jaune-Junior 30 pièces",
+  "bName": "Oeufs frais junior 30 pièces",
+  "brand": "Ovolina",
+  "evidence": "both packs Ovolina Junior 30"
+ },
+ {
+  "pair": 19,
+  "a": [
+   "off:6194008541109"
+  ],
+  "b": [
+   "aziza:100014861"
+  ],
+  "aName": "Croustina au Lait 100 g",
+  "bName": "Gaufrette croustina lait 100 g",
+  "brand": "Saïda",
+  "evidence": "both packs Saïda Croustina au lait"
+ },
+ {
+  "pair": 21,
+  "a": [
+   "carrefour:6191500320201"
+  ],
+  "b": [
+   "geant:23202"
+  ],
+  "aName": "Cake marbré 42 g",
+  "bName": "Cake marbré en tranche 42 g",
+  "brand": "Le Patissier",
+  "evidence": "both packs TCM cake marbré"
+ },
+ {
+  "pair": 23,
+  "a": [
+   "geant:24292"
+  ],
+  "b": [
+   "off:6194043001620"
+  ],
+  "aName": "Crème fraîche 15 cl",
+  "bName": "Crème fraîche Chef 15 cl",
+  "brand": "Délice",
+  "evidence": "both tubs Chef crème fraîche"
+ },
+ {
+  "pair": 24,
+  "a": [
+   "geant:151498"
+  ],
+  "b": [
+   "carrefour:61945760"
+  ],
+  "aName": "Skyr nature 90 g",
+  "bName": "Yaourt nature Skyr 90 g",
+  "brand": "Délice",
+  "evidence": "both cups Skyr nature"
+ },
+ {
+  "pair": 26,
+  "a": [
+   "carrefour:25001144"
+  ],
+  "b": [
+   "aziza:100017651"
+  ],
+  "aName": "Yaourt aromatisé 100 g",
+  "bName": "Yaourt aromatisé à la banane 100 g",
+  "brand": "Délice",
+  "evidence": "Carrefour size-less \"Yaourt aromatisé\" photo shows the banane pot"
+ },
+ {
+  "pair": 29,
+  "a": [
+   "geant:51313"
+  ],
+  "b": [
+   "aziza:100868121"
+  ],
+  "aName": "Boisson gazeuse 1,5 L",
+  "bName": "Boisson gazeuse tropico 1,5 L",
+  "brand": "Tropico",
+  "evidence": "both bottles Tropico 1,5 L"
+ },
+ {
+  "pair": 30,
+  "a": [
+   "geant:24657"
+  ],
+  "b": [
+   "carrefour:8851123229494"
+  ],
+  "aName": "Boisson énergétique 25 cl",
+  "bName": "Boisson énergétique Shark 25 cl",
+  "brand": "Shark",
+  "evidence": "both cans Shark"
+ },
+ {
+  "pair": 32,
+  "a": [
+   "carrefour:4009041100812"
+  ],
+  "b": [
+   "geant:25471"
+  ],
+  "aName": "Café soluble chicorée 200 g",
+  "bName": "Chicorée soluble 200 g",
+  "brand": "Brava",
+  "evidence": "both jars Brava chicorée café soluble"
+ },
+ {
+  "pair": 34,
+  "a": [
+   "carrefour:25005527"
+  ],
+  "b": [
+   "geant:24894"
+  ],
+  "aName": "Yaourt brassé 70 g",
+  "bName": "Yaourt brassé vanille 70 g",
+  "brand": "Natilait",
+  "evidence": "Carrefour size-less \"Yaourt brassé\" photo shows the vanille pot"
+ },
+ {
+  "pair": 35,
+  "a": [
+   "carrefour:6191519400741"
+  ],
+  "b": [
+   "geant:56686"
+  ],
+  "aName": "Cheveux d'ange 500 g",
+  "bName": "Pâte cheveux d'ange 500 g",
+  "brand": "Sanabel Carthage",
+  "evidence": "both packs Sanabel cheveux d'ange"
+ },
+ {
+  "pair": 36,
+  "a": [
+   "carrefour:6191519400802"
+  ],
+  "b": [
+   "geant:123879"
+  ],
+  "aName": "Langue d'oiseau 500 g",
+  "bName": "Pâte langue d'oiseau 500 g",
+  "brand": "Sanabel Carthage",
+  "evidence": "both packs Sanabel langue d'oiseau"
+ },
+ {
+  "pair": 37,
+  "a": [
+   "geant:26438"
+  ],
+  "b": [
+   "off:6194001480412"
+  ],
+  "aName": "Concentré de tomate 800 g",
+  "bName": "Double concentré de tomate 800 g",
+  "brand": "Jouda",
+  "evidence": "both cans Jouda double concentré 800 g"
+ },
+ {
+  "pair": 38,
+  "a": [
+   "geant:26440"
+  ],
+  "b": [
+   "off:6194006261771"
+  ],
+  "aName": "Concentré de tomate 800 g",
+  "bName": "Double concentré de tomate 800 g",
+  "brand": "Sticap",
+  "evidence": "both cans Sticap double concentré 800 g"
+ },
+ {
+  "pair": 39,
+  "a": [
+   "carrefour:6194025701371"
+  ],
+  "b": [
+   "geant:54656"
+  ],
+  "aName": "Fromage à raclette 100 g",
+  "bName": "Fromage raclette en tranche 100 g",
+  "brand": "Souani",
+  "evidence": "both packs Souani raclette"
+ },
+ {
+  "pair": 41,
+  "a": [
+   "aziza:100020521"
+  ],
+  "b": [
+   "geant:25792"
+  ],
+  "aName": "Fromage carré 12 portions",
+  "bName": "Fromage frais carré 12 portions",
+  "brand": "President",
+  "evidence": "both packs Président Carré 12 portions"
+ },
+ {
+  "pair": 42,
+  "a": [
+   "geant:24319"
+  ],
+  "b": [
+   "carrefour:6191513501017"
+  ],
+  "aName": "Fromage fondu 8 portions",
+  "bName": "Fromage fondu à tartiner 8 portions",
+  "brand": "President",
+  "evidence": "both tubs Président 8 portions"
+ },
+ {
+  "pair": 48,
+  "a": [
+   "aziza:100015201"
+  ],
+  "b": [
+   "geant:26175"
+  ],
+  "aName": "Céréales au cacao 300 g",
+  "bName": "Céréales blé cacao 300 g",
+  "brand": "Grain d'or",
+  "evidence": "both packs Grain d'Or cacao"
+ },
+ {
+  "pair": 49,
+  "a": [
+   "aziza:100015191"
+  ],
+  "b": [
+   "geant:26182"
+  ],
+  "aName": "Céréales au miel 300 g",
+  "bName": "Céréales blé miel 300 g",
+  "brand": "Grain d'or",
+  "evidence": "both packs Grain d'Or miel"
+ },
+ {
+  "pair": 50,
+  "a": [
+   "carrefour:6194029100514"
+  ],
+  "b": [
+   "geant:68461"
+  ],
+  "aName": "Lot de 3 boites de thon entier à l'huile de tournesol 3 × 160 g",
+  "bName": "Thon entier huile de tournesol 3 × 160 g",
+  "brand": "El Manar",
+  "evidence": "both packs El Manar lot de 3 tournesol"
+ },
+ {
+  "pair": 51,
+  "a": [
+   "carrefour:6191571801159"
+  ],
+  "b": [
+   "geant:26351"
+  ],
+  "aName": "Lot de 3 boites de thon entier à l'huile d'olive 3 × 160 g",
+  "bName": "Thon entier huile d'olive 3 × 160 g",
+  "brand": "La Goulette",
+  "evidence": "both packs La Goulette lot de 3 huile d'olive"
+ },
+ {
+  "pair": 53,
+  "a": [
+   "geant:40487"
+  ],
+  "b": [
+   "off:6191519400017"
+  ],
+  "aName": "Farine 1 kg",
+  "bName": "Farine pâtissière 1 kg",
+  "brand": "Sanabel Carthage",
+  "evidence": "both packs Sanabel farine 1 kg"
+ },
+ {
+  "pair": 54,
+  "a": [
+   "off:6194000802383"
+  ],
+  "b": [
+   "geant:25287"
+  ],
+  "aName": "Margarine pasteurisée 200 g",
+  "bName": "Margarine 200 g",
+  "brand": "Jadida",
+  "evidence": "both tubs Jadida margarine 200 g"
+ },
+ {
+  "pair": 55,
+  "a": [
+   "geant:25281"
+  ],
+  "b": [
+   "off:6194000802000"
+  ],
+  "aName": "Margarine 100 g",
+  "bName": "Margarine pasteurisée 100 g",
+  "brand": "Jadida",
+  "evidence": "both tubs Jadida margarine 100 g"
+ },
+ {
+  "pair": 57,
+  "a": [
+   "geant:162496"
+  ],
+  "b": [
+   "aziza:101129191"
+  ],
+  "aName": "Chips sour cream and onion The box 125 g",
+  "bName": "Chips the box cream et onion 125 g",
+  "brand": "Mahboul",
+  "evidence": "both tubes Mahboul The Box sour cream & onion 125 g"
+ },
+ {
+  "pair": 58,
+  "a": [
+   "geant:162490"
+  ],
+  "b": [
+   "aziza:101129131"
+  ],
+  "aName": "Chips sour cream and onion The box 42 g",
+  "bName": "Chips the box cream onion 42 g",
+  "brand": "Mahboul",
+  "evidence": "both cans Mahboul The Box sour cream & onion 42 g"
+ },
+ {
+  "pair": 59,
+  "a": [
+   "geant:161017"
+  ],
+  "b": [
+   "carrefour:6191347300527"
+  ],
+  "aName": "Café pur turc premium moringa 125 g",
+  "bName": "Cafe turc Moringa 125 g",
+  "brand": "Stella",
+  "evidence": "both packs Stella café turc moringa"
+ },
+ {
+  "pair": 62,
+  "a": [
+   "geant:109139",
+   "aziza:100873531"
+  ],
+  "b": [
+   "carrefour:6191507250730"
+  ],
+  "aName": "Yaourt brassé vanille 100 g",
+  "bName": "Yaourt le grand brassé saveur vanille 100 g",
+  "brand": "Vitalait",
+  "evidence": "both pots Vitalait Le Grand Brassé vanille"
+ },
+ {
+  "pair": null,
+  "a": [
+   "carrefour:25001643"
+  ],
+  "b": [
+   "geant:24892"
+  ],
+  "aName": "Yaourt brassé 70 g",
+  "bName": "Yaourt brassé fraise/banane 70 g",
+  "brand": "Vitalait",
+  "evidence": "Carrefour size-less \"Yaourt brassé\" photo shows the fraise-banane pot"
+ },
+ {
+  "pair": "Q1",
+  "a": [
+   "geant:25800"
+  ],
+  "b": [
+   "carrefour:6194025701029"
+  ],
+  "aName": "Camembert couteaux et plateaux 150 g",
+  "bName": "Fromage camembert Couteaux & Plateaux 150 g",
+  "brand": "Souani",
+  "evidence": "both packs Souani Couteaux & Plateaux"
+ },
+ {
+  "pair": "Q2",
+  "a": [
+   "geant:25801"
+  ],
+  "b": [
+   "carrefour:6194025701289"
+  ],
+  "aName": "Camembert le petit campagnard 125 g",
+  "bName": "Fromage camembert Le Petit Campagnard 125 g",
+  "brand": "Souani",
+  "evidence": "both packs Souani Le Petit Campagnard"
+ },
+ {
+  "pair": "Q3",
+  "a": [
+   "carrefour:6191477200063"
+  ],
+  "b": [
+   "geant:32221"
+  ],
+  "aName": "Brownies aux pépites de chocolat 60 g",
+  "bName": "Brownies chocolat 60 g",
+  "brand": "Daily'n",
+  "evidence": "both packs Daily'n Brownie"
+ },
+ {
+  "pair": "Q5",
+  "a": [
+   "carrefour:6191469701967"
+  ],
+  "b": [
+   "carrefour:6191469701950",
+   "geant:150269"
+  ],
+  "aName": "Thé noir à la bergamote 10 sachets",
+  "bName": "Thé noir à la bergamote sans sucre 10 sachets",
+  "brand": "Kyufi",
+  "evidence": "both boxes Kyufi thé noir bergamote"
+ },
+ {
+  "pair": "Q6",
+  "a": [
+   "geant:127122"
+  ],
+  "b": [
+   "carrefour:6191346500010"
+  ],
+  "aName": "Concentré de tomate 800 g",
+  "bName": "Double concentré de tomate 800 g",
+  "brand": "Zina",
+  "evidence": "both cans Zina double concentré 800 g"
+ },
+ {
+  "pair": "Q7",
+  "a": [
+   "geant:25805"
+  ],
+  "b": [
+   "carrefour:6194025701012"
+  ],
+  "aName": "Camembert Calife 250 g",
+  "bName": "Fromage camembert Calife 250 g",
+  "brand": "Souani",
+  "evidence": "both packs Souani Camembert Calife"
+ },
+ {
+  "pair": "Q8",
+  "a": [
+   "geant:25803"
+  ],
+  "b": [
+   "carrefour:6194025701005"
+  ],
+  "aName": "Camembert National 250 g",
+  "bName": "Fromage camembert National 250 g",
+  "brand": "Souani",
+  "evidence": "both packs Souani Camembert National"
+ },
+ {
+  "pair": "Q9",
+  "a": [
+   "geant:25385"
+  ],
+  "b": [
+   "carrefour:6191544100623"
+  ],
+  "aName": "Barre biscuitée chocolat 3 × 33 g",
+  "bName": "Chocolat barre biscuitée lait & gaufrettes 3 × 33 g",
+  "brand": "Momento",
+  "evidence": "both packs Momento"
+ },
+ {
+  "pair": "Q10",
+  "a": [
+   "geant:139265"
+  ],
+  "b": [
+   "carrefour:6191519402226"
+  ],
+  "aName": "Millet 500 g",
+  "bName": "Pâtes millet 500 g",
+  "brand": "Sanabel Carthage",
+  "evidence": "both packs Sanabel millet"
+ },
+ {
+  "pair": "Q12",
+  "a": [
+   "geant:156935"
+  ],
+  "b": [
+   "carrefour:6135345000768"
+  ],
+  "aName": "Mayonnaise 250 g",
+  "bName": "Sauce mayonnaise 250 g",
+  "brand": "Lesieur",
+  "evidence": "both jars Lesieur mayonnaise"
+ },
+ {
+  "pair": "Q13",
+  "a": [
+   "geant:25871"
+  ],
+  "b": [
+   "carrefour:8710448569015"
+  ],
+  "aName": "Ketchup 500 ml",
+  "bName": "Ketchup aux tomates 500 ml",
+  "brand": "Remia",
+  "evidence": "both bottles Remia tomato ketchup"
+ },
+ {
+  "pair": "Q14",
+  "a": [
+   "carrefour:6191436201117"
+  ],
+  "b": [
+   "geant:120773"
+  ],
+  "aName": "Fromage ricotta 150 g",
+  "bName": "Ricotta 150 g",
+  "brand": "Majeste",
+  "evidence": "both tubs Majesté ricotta"
+ },
+ {
+  "pair": "Q16",
+  "a": [
+   "carrefour:6191503213265"
+  ],
+  "b": [
+   "geant:113801"
+  ],
+  "aName": "Yaourt brassé aux fruits jaunes et aux céréales 100 g",
+  "bName": "Yaourt mix aux fruits jaunes et céréales 100 g",
+  "brand": "YAB",
+  "evidence": "both pots YAB Mix"
+ },
+ {
+  "pair": 63,
+  "a": [
+   "carrefour:6191427600288"
+  ],
+  "b": [
+   "geant:28526"
+  ],
+  "aName": "Pain de mie nature 14 tranches",
+  "bName": "Pain de mie naturel 14 tranches",
+  "brand": "Mama Mia",
+  "evidence": "Both packs are the Mama Mia 'Pain de mie Nature' bag, same 14-slice format.",
+  "round": 4,
+  "uncertainIndex": 2
+ },
+ {
+  "pair": 64,
+  "a": [
+   "carrefour:6191477200117"
+  ],
+  "b": [
+   "geant:32308"
+  ],
+  "aName": "Cake Grand Mère marbré 700 g",
+  "bName": "Cake marbré 700 g",
+  "brand": "Daily'n",
+  "evidence": "Both are the Daily'n marbled loaf cake in the same wrapper (chocolate/vanilla marbling, Daily'n band), 700 g; Carrefour calls it 'Grand Mère', Géant 'Cake'.",
+  "round": 4,
+  "uncertainIndex": 9
+ },
+ {
+  "pair": 65,
+  "a": [
+   "carrefour:6191477200223"
+  ],
+  "b": [
+   "geant:32335"
+  ],
+  "aName": "Cake marbré slice DAYLIN 40 g",
+  "bName": "Slice Marbré 40 g",
+  "brand": "Daily'n",
+  "evidence": "Both packs read 'Slice – Recette Grand-Mère – chocolat vanille' (Daily'n 40 g); only the wrapper print generation differs.",
+  "round": 4,
+  "uncertainIndex": 10,
+  "keepName": "Cake marbré slice 40 g"
+ },
+ {
+  "pair": 66,
+  "a": [
+   "off:6194043001019"
+  ],
+  "b": [
+   "geant:24738"
+  ],
+  "aName": "Lait demi-écrémé UHT 1 L",
+  "bName": "Lait UHT 1/2 écrémé 1 L",
+  "brand": "Délice",
+  "evidence": "Carrefour/OFF pack reads 'Demi-écrémé' (Délice UHT 1 L); the Géant record names it '1/2 écrémé' 1 L. The Géant carton art does not show the variant, so the variant rests on the two source names.",
+  "round": 4,
+  "uncertainIndex": 26
+ },
+ {
+  "pair": 67,
+  "a": [
+   "geant:24589"
+  ],
+  "b": [
+   "aziza:100013851"
+  ],
+  "aName": "Boisson au jus cocktail de fruits 1 L",
+  "bName": "Boisson cocktail 1 L",
+  "brand": "Tropico",
+  "evidence": "Both cartons read 'Tropico – cocktail de fruits – multivitamine', 1 L.",
+  "round": 4,
+  "uncertainIndex": 41
+ },
+ {
+  "pair": 68,
+  "a": [
+   "geant:24655"
+  ],
+  "b": [
+   "carrefour:90162602"
+  ],
+  "aName": "Boisson énergétique 25 cl",
+  "bName": "Boisson énergétique Red Bull 25 cl",
+  "brand": "Redbull",
+  "evidence": "Both are the standard Red Bull 25 cl can.",
+  "round": 4,
+  "uncertainIndex": 44
+ },
+ {
+  "pair": 69,
+  "a": [
+   "aziza:100338761"
+  ],
+  "b": [
+   "geant:25001"
+  ],
+  "aName": "Mon dessert chocolat 100 g",
+  "bName": "Crème dessert chocolat 100 g",
+  "brand": "Natilait",
+  "evidence": "Both packs are the Natilait 'mon Dessert' chocolate cup (Géant cup reads 'Dessert Chocolat'), 100 g; Aziza's picture is the same cup in a set.",
+  "round": 4,
+  "uncertainIndex": 73
+ },
+ {
+  "pair": 70,
+  "a": [
+   "aziza:100619571"
+  ],
+  "b": [
+   "geant:51805"
+  ],
+  "aName": "Mon dessert vanille 100 g",
+  "bName": "Crème dessert vanille 100 g",
+  "brand": "Natilait",
+  "evidence": "Géant cup reads 'mon Dessert Vanille' (Natilait, 100 g); Aziza names it 'Mon dessert vanille'.",
+  "round": 4,
+  "uncertainIndex": 75
+ },
+ {
+  "pair": 71,
+  "a": [
+   "geant:25926"
+  ],
+  "b": [
+   "off:6194003350003"
+  ],
+  "aName": "Farine pâtissière 1 kg",
+  "bName": "Farine Pâtissière L'épi d'or 1 kg",
+  "brand": "L'Epi d'Or",
+  "evidence": "Both packs are the L'Epi d'Or 'Farine pâtissière' 1 kg bag.",
+  "round": 4,
+  "uncertainIndex": 84
+ },
+ {
+  "pair": 72,
+  "a": [
+   "geant:28719"
+  ],
+  "b": [
+   "off:6194055500234"
+  ],
+  "aName": "Harissa 135 g",
+  "bName": "Harissa du Cap Bon 135 g",
+  "brand": "Sicam",
+  "evidence": "Both cans read 'SICAM – Harissa du Cap Bon – 135 g'.",
+  "round": 4,
+  "uncertainIndex": 86,
+  "keepName": "Harissa du Cap Bon 135 g"
+ },
+ {
+  "pair": 73,
+  "a": [
+   "carrefour:6194025701081"
+  ],
+  "b": [
+   "geant:29539"
+  ],
+  "aName": "Fromage camembert Tomme de Tebourba 280 g",
+  "bName": "Tomme de TEBOURBA 280 g",
+  "brand": "Souani",
+  "evidence": "Both are the Souani 'Tomme de Tebourba' round (red label, 280 g); 'camembert' in the Carrefour name is not on the pack.",
+  "round": 4,
+  "uncertainIndex": 108,
+  "keepName": "Tomme de Tebourba 280 g"
+ },
+ {
+  "pair": 74,
+  "a": [
+   "carrefour:6191436200677"
+  ],
+  "b": [
+   "geant:74348"
+  ],
+  "aName": "Fromage 100% mozzarella 250 g",
+  "bName": "Mozzarella 250 g",
+  "brand": "Majeste",
+  "evidence": "Both packs are the Majesté 'Fromage Mozzarella' 250 g block.",
+  "round": 4,
+  "uncertainIndex": 112
+ },
+ {
+  "pair": 75,
+  "a": [
+   "geant:95718"
+  ],
+  "b": [
+   "carrefour:6191436200905"
+  ],
+  "aName": "Fromage rapé 4 Fromages Rap'cheez 500 g",
+  "bName": "Râpé 4 fromages 500 g",
+  "brand": "Majeste",
+  "evidence": "Both bags read 'Majesté – Rap'cheez – 4 fromages', 500 g.",
+  "round": 4,
+  "uncertainIndex": 117
+ },
+ {
+  "pair": 76,
+  "a": [
+   "geant:25278"
+  ],
+  "b": [
+   "off:6191507220207"
+  ],
+  "aName": "Beurre 200 g",
+  "bName": "Beurre extra fin 200 g",
+  "brand": "Vitalait",
+  "evidence": "Géant pack, enlarged, reads 'Vitalait – Beurre extra fin – 200 g'; the OFF pack reads 'Vitalait – Beurre extra fin'.",
+  "round": 4,
+  "uncertainIndex": 121,
+  "keepName": "Beurre extra fin 200 g"
+ },
+ {
+  "pair": 77,
+  "a": [
+   "carrefour:6191503208889"
+  ],
+  "b": [
+   "geant:25045"
+  ],
+  "aName": "Crème dessert chocolat liégeois 12 cl",
+  "bName": "Liégeois chocolat 12 cl",
+  "brand": "YAB",
+  "evidence": "Both cups read 'YAB – Plaisir Liégeois – goût chocolat', 12 cl (older vs current print).",
+  "round": 4,
+  "uncertainIndex": 142
+ },
+ {
+  "pair": 78,
+  "a": [
+   "geant:25282"
+  ],
+  "b": [
+   "carrefour:6191402900082"
+  ],
+  "aName": "Margarine 100 g",
+  "bName": "Margarine tartine et cuisson 100 g",
+  "brand": "Goldina",
+  "evidence": "Both tubs read 'Goldina – Tartine & Cuisson – riche en vitamines A et E', 100 g.",
+  "round": 4,
+  "uncertainIndex": 150,
+  "keepName": "Margarine tartine et cuisson 100 g"
+ },
+ {
+  "pair": 79,
+  "a": [
+   "geant:73707"
+  ],
+  "b": [
+   "carrefour:6191547201303"
+  ],
+  "aName": "Pop corn sucré 75 g",
+  "bName": "Pop-corn Sweet 75 g",
+  "brand": "Cerealis",
+  "evidence": "Both bags read 'Céréalis – Sweet Popcorn', 75 g.",
+  "round": 4,
+  "uncertainIndex": 158
+ }
+]

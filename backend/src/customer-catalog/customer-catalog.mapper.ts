@@ -33,6 +33,7 @@ export interface OfferingRow {
     photo: string | null;
     archivedAt: string | null;
     category: { id: number; name: string; archivedAt: string | null } | null;
+    brand: { id: number; slug: string; name: string } | null;
   } | null;
 }
 
@@ -91,6 +92,13 @@ export function toCustomerCatalogItem(
     description: product.description,
     photo: product.photo,
     category: { id: category.id, name: category.name },
+    brand: product.brand
+      ? {
+          id: product.brand.id,
+          slug: product.brand.slug,
+          name: product.brand.name,
+        }
+      : null,
     saleUnit: row.saleUnit,
     priceMillimes: row.priceMillimes,
     minQuantity: row.minQuantity,

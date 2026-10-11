@@ -119,7 +119,7 @@ describe('UpdateStoreDto', () => {
   });
 });
 
-describe('store text limits and photo URL', () => {
+describe('store text limits', () => {
   it('rejects over-long text', async () => {
     expect(
       await propertiesWithErrors(CreateStoreDto, {
@@ -151,24 +151,20 @@ describe('store text limits and photo URL', () => {
     ).toEqual([]);
   });
 
-  it.each(['https://cdn.example.com/s.jpg', 'http://localhost:3000/s.png'])(
-    'accepts the photo URL %s',
-    async (photo) => {
+  it('does not accept a client-supplied photo (set only by the photo upload)', async () => {
+    for (const dtoClass of [CreateStoreDto, UpdateStoreDto]) {
       expect(
-        await propertiesWithErrors(CreateStoreDto, { ...validStore, photo }),
-      ).toEqual([]);
-    },
-  );
-
-  it.each([
-    'not a url',
-    'javascript:alert(1)',
-    'ftp://x.test/a.jpg',
-    'cdn.example.com/s.jpg',
-    'data:image/png;base64,AAAA',
-  ])('rejects the photo %s', async (photo) => {
-    expect(
-      await propertiesWithErrors(CreateStoreDto, { ...validStore, photo }),
-    ).toEqual(['photo']);
+        await propertiesWithErrors(dtoClass, {
+          ...validStore,
+          photo: 'https://cdn.example.com/s.jpg',
+        }),
+      ).toEqual(['photo']);
+      expect(
+        await propertiesWithErrors(dtoClass, {
+          ...validStore,
+          photoPublicId: 'stores/1/photo',
+        }),
+      ).toEqual(['photoPublicId']);
+    }
   });
 });

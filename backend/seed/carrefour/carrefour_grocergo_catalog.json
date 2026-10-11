@@ -1,0 +1,4087 @@
+{
+  "brands": [
+    {
+      "slug": "al-jazia",
+      "name": "AL JAZIA"
+    },
+    {
+      "slug": "al-jazira",
+      "name": "AL JAZIRA"
+    },
+    {
+      "slug": "aris",
+      "name": "ARIS"
+    },
+    {
+      "slug": "ben-gaied-hassine",
+      "name": "BEN GAIED HASSINE"
+    },
+    {
+      "slug": "biskart",
+      "name": "BISKART"
+    },
+    {
+      "slug": "bolerio",
+      "name": "BOLÉRIO"
+    },
+    {
+      "slug": "bondin",
+      "name": "BONDIN"
+    },
+    {
+      "slug": "bonduelle",
+      "name": "BONDUELLE"
+    },
+    {
+      "slug": "bonna",
+      "name": "BONNA"
+    },
+    {
+      "slug": "boqueria",
+      "name": "BOQUERIA"
+    },
+    {
+      "slug": "brava",
+      "name": "BRAVA"
+    },
+    {
+      "slug": "brikador",
+      "name": "BRIKADOR"
+    },
+    {
+      "slug": "calnort",
+      "name": "CALNORT"
+    },
+    {
+      "slug": "campi",
+      "name": "CAMPI"
+    },
+    {
+      "slug": "canderel",
+      "name": "CANDEREL"
+    },
+    {
+      "slug": "cap-blanc",
+      "name": "CAP BLANC"
+    },
+    {
+      "slug": "carrefour",
+      "name": "CARREFOUR"
+    },
+    {
+      "slug": "celestia",
+      "name": "CELESTIA"
+    },
+    {
+      "slug": "cerealis",
+      "name": "CÉRÉALIS"
+    },
+    {
+      "slug": "chahia",
+      "name": "CHAHIA"
+    },
+    {
+      "slug": "chupa-chups",
+      "name": "CHUPA CHUPS"
+    },
+    {
+      "slug": "coca-cola",
+      "name": "COCA COLA"
+    },
+    {
+      "slug": "covinor",
+      "name": "COVINOR"
+    },
+    {
+      "slug": "crackers",
+      "name": "CRACKER'S"
+    },
+    {
+      "slug": "cracocarte",
+      "name": "CRACOCARTE"
+    },
+    {
+      "slug": "crispy",
+      "name": "CRISPY"
+    },
+    {
+      "slug": "cristal",
+      "name": "CRISTAL"
+    },
+    {
+      "slug": "d-clic",
+      "name": "D-CLIC"
+    },
+    {
+      "slug": "dailyn",
+      "name": "DAILY'N"
+    },
+    {
+      "slug": "daucy",
+      "name": "D'AUCY"
+    },
+    {
+      "slug": "delice",
+      "name": "DÉLICE"
+    },
+    {
+      "slug": "delice-danone",
+      "name": "DÉLICE DANONE"
+    },
+    {
+      "slug": "delicio",
+      "name": "DELICIO"
+    },
+    {
+      "slug": "deroni",
+      "name": "DERONI"
+    },
+    {
+      "slug": "dick",
+      "name": "DICK"
+    },
+    {
+      "slug": "dijona",
+      "name": "DIJONA"
+    },
+    {
+      "slug": "dr-oetker",
+      "name": "DR.OETKER"
+    },
+    {
+      "slug": "duo",
+      "name": "DUO"
+    },
+    {
+      "slug": "durra",
+      "name": "DURRA"
+    },
+    {
+      "slug": "eden",
+      "name": "EDEN"
+    },
+    {
+      "slug": "el-manar",
+      "name": "EL MANAR"
+    },
+    {
+      "slug": "el-mazraa",
+      "name": "EL MAZRAA"
+    },
+    {
+      "slug": "fanta",
+      "name": "FANTA"
+    },
+    {
+      "slug": "fiore",
+      "name": "FIORE"
+    },
+    {
+      "slug": "fondou",
+      "name": "FONDOU"
+    },
+    {
+      "slug": "fornetto",
+      "name": "FORNETTO"
+    },
+    {
+      "slug": "fresh-agri",
+      "name": "FRESH AGRI"
+    },
+    {
+      "slug": "fritss",
+      "name": "FRIT'SS"
+    },
+    {
+      "slug": "fromy",
+      "name": "FROMY"
+    },
+    {
+      "slug": "furketta",
+      "name": "FURKETTA"
+    },
+    {
+      "slug": "golden-chips",
+      "name": "GOLDEN CHIPS"
+    },
+    {
+      "slug": "goldina",
+      "name": "GOLDINA"
+    },
+    {
+      "slug": "goutinel",
+      "name": "GOÛTINEL"
+    },
+    {
+      "slug": "granoro",
+      "name": "GRANORO"
+    },
+    {
+      "slug": "hahne",
+      "name": "HAHNE"
+    },
+    {
+      "slug": "haribo",
+      "name": "HARIBO"
+    },
+    {
+      "slug": "hazem",
+      "name": "HAZEM"
+    },
+    {
+      "slug": "honey-la",
+      "name": "HONEY LA"
+    },
+    {
+      "slug": "indomie",
+      "name": "INDOMIE"
+    },
+    {
+      "slug": "jadida",
+      "name": "JADIDA"
+    },
+    {
+      "slug": "jouda",
+      "name": "JOUDA"
+    },
+    {
+      "slug": "kaiser",
+      "name": "KAISER"
+    },
+    {
+      "slug": "kartago",
+      "name": "KARTAGO"
+    },
+    {
+      "slug": "kif",
+      "name": "KIF"
+    },
+    {
+      "slug": "kinder",
+      "name": "KINDER"
+    },
+    {
+      "slug": "kiwi",
+      "name": "KIWI"
+    },
+    {
+      "slug": "kuhne",
+      "name": "KUHNE"
+    },
+    {
+      "slug": "kyufi",
+      "name": "KYUFI"
+    },
+    {
+      "slug": "la-couronne-dor",
+      "name": "LA COURONNE D'OR"
+    },
+    {
+      "slug": "la-fruitiere",
+      "name": "LA FRUITIÈRE"
+    },
+    {
+      "slug": "la-goulette",
+      "name": "LA GOULETTE"
+    },
+    {
+      "slug": "landor",
+      "name": "LAND'OR"
+    },
+    {
+      "slug": "lbm",
+      "name": "LBM"
+    },
+    {
+      "slug": "le-boulanger",
+      "name": "LE BOULANGER"
+    },
+    {
+      "slug": "le-patissier",
+      "name": "LE PÂTISSIER"
+    },
+    {
+      "slug": "le-petit-paris",
+      "name": "LE PETIT PARIS"
+    },
+    {
+      "slug": "lebhour",
+      "name": "LEBHOUR"
+    },
+    {
+      "slug": "lepi-dor",
+      "name": "L'EPI D'OR"
+    },
+    {
+      "slug": "leroux",
+      "name": "LEROUX"
+    },
+    {
+      "slug": "lesieur",
+      "name": "LESIEUR"
+    },
+    {
+      "slug": "lingot",
+      "name": "LINGOT"
+    },
+    {
+      "slug": "lorenz",
+      "name": "LORENZ"
+    },
+    {
+      "slug": "lune-de-miel",
+      "name": "LUNE DE MIEL"
+    },
+    {
+      "slug": "maestro",
+      "name": "MAESTRO"
+    },
+    {
+      "slug": "mahboul",
+      "name": "MAHBOUL"
+    },
+    {
+      "slug": "majeste",
+      "name": "MAJESTE"
+    },
+    {
+      "slug": "mama-mia",
+      "name": "MAMA MIA"
+    },
+    {
+      "slug": "mami-garden",
+      "name": "MAMI GARDEN"
+    },
+    {
+      "slug": "mliha",
+      "name": "MLIHA"
+    },
+    {
+      "slug": "momento",
+      "name": "MOMENTO"
+    },
+    {
+      "slug": "mont-regal",
+      "name": "MONT REGAL"
+    },
+    {
+      "slug": "moulin-dor",
+      "name": "MOULIN D'OR"
+    },
+    {
+      "slug": "n1",
+      "name": "N°1"
+    },
+    {
+      "slug": "natilait",
+      "name": "NATILAIT"
+    },
+    {
+      "slug": "nestle",
+      "name": "NESTLÉ"
+    },
+    {
+      "slug": "nour",
+      "name": "NOUR"
+    },
+    {
+      "slug": "novafresh",
+      "name": "NOVAFRESH"
+    },
+    {
+      "slug": "odyssee",
+      "name": "ODYSSEE"
+    },
+    {
+      "slug": "olina",
+      "name": "OLINA"
+    },
+    {
+      "slug": "orangina",
+      "name": "ORANGINA"
+    },
+    {
+      "slug": "ovolina",
+      "name": "OVOLINA"
+    },
+    {
+      "slug": "paysan-breton",
+      "name": "PAYSAN BRETON"
+    },
+    {
+      "slug": "petit-paris",
+      "name": "PETIT PARIS"
+    },
+    {
+      "slug": "power-horse",
+      "name": "POWER HORSE"
+    },
+    {
+      "slug": "president",
+      "name": "PRÉSIDENT"
+    },
+    {
+      "slug": "punch",
+      "name": "PUNCH"
+    },
+    {
+      "slug": "randa",
+      "name": "RANDA"
+    },
+    {
+      "slug": "reaktor",
+      "name": "REAKTOR"
+    },
+    {
+      "slug": "red-bull",
+      "name": "RED BULL"
+    },
+    {
+      "slug": "reine-des-graines",
+      "name": "REINE DES GRAINES"
+    },
+    {
+      "slug": "remia",
+      "name": "REMIA"
+    },
+    {
+      "slug": "ritter-sport",
+      "name": "RITTER SPORT"
+    },
+    {
+      "slug": "rozy",
+      "name": "ROZY"
+    },
+    {
+      "slug": "safi",
+      "name": "SAFI"
+    },
+    {
+      "slug": "saint-louis",
+      "name": "SAINT LOUIS"
+    },
+    {
+      "slug": "samsador",
+      "name": "SAMSADOR"
+    },
+    {
+      "slug": "sanabel-carthage",
+      "name": "SANABEL CARTHAGE"
+    },
+    {
+      "slug": "sante",
+      "name": "SANTE"
+    },
+    {
+      "slug": "saveurs",
+      "name": "SAVEURS"
+    },
+    {
+      "slug": "schweppes",
+      "name": "SCHWEPPES"
+    },
+    {
+      "slug": "shark",
+      "name": "SHARK"
+    },
+    {
+      "slug": "sidi-daoud",
+      "name": "SIDI DAOUD"
+    },
+    {
+      "slug": "sidi-elbahri",
+      "name": "SIDI ELBAHRI"
+    },
+    {
+      "slug": "souani",
+      "name": "SOUANI"
+    },
+    {
+      "slug": "spiga",
+      "name": "SPIGA"
+    },
+    {
+      "slug": "stella",
+      "name": "STELLA"
+    },
+    {
+      "slug": "sticap",
+      "name": "STICAP"
+    },
+    {
+      "slug": "street-co",
+      "name": "STREET & CO"
+    },
+    {
+      "slug": "tanit-le-jardin",
+      "name": "TANIT LE JARDIN"
+    },
+    {
+      "slug": "tartifro",
+      "name": "TARTI'FRO"
+    },
+    {
+      "slug": "terroliva",
+      "name": "TERROLIVA"
+    },
+    {
+      "slug": "vanoise",
+      "name": "VANOISE"
+    },
+    {
+      "slug": "verano",
+      "name": "VERANO"
+    },
+    {
+      "slug": "vipa",
+      "name": "VIPA"
+    },
+    {
+      "slug": "vitalait",
+      "name": "VITALAIT"
+    },
+    {
+      "slug": "warda",
+      "name": "WARDA"
+    },
+    {
+      "slug": "x-plose",
+      "name": "X-PLOSE"
+    },
+    {
+      "slug": "yab",
+      "name": "YAB"
+    },
+    {
+      "slug": "yumy",
+      "name": "YUMY"
+    },
+    {
+      "slug": "zgolli",
+      "name": "ZGOLLI"
+    },
+    {
+      "slug": "zina",
+      "name": "ZINA"
+    },
+    {
+      "slug": "zrir",
+      "name": "ZRIR"
+    }
+  ],
+  "categories": [
+    {
+      "slug": "fruits",
+      "name": "Fruits",
+      "products": [
+        {
+          "slug": "ananas",
+          "name": "Ananas",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220026217.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "citron",
+          "name": "Citron",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800064000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "kiwi",
+          "name": "Kiwi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2056560001412-1_1_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "mangue",
+          "name": "Mangue",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2056560002457-1.webp",
+          "defaultSaleUnit": "KG"
+        }
+      ]
+    },
+    {
+      "slug": "legumes",
+      "name": "Légumes",
+      "products": [
+        {
+          "slug": "basilic",
+          "name": "Basilic",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/6/56000246.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "champignon-entier",
+          "name": "Champignon entier",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2822135000000_1_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "champignon-slice-petit",
+          "name": "Champignon slice petit",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2856254000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "chou-rouge",
+          "name": "Chou rouge",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220020031-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "laitue",
+          "name": "Laitue",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022144800009-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "laitue-romaine",
+          "name": "Laitue Romaine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/s/a/salade.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "menthe-fraiche",
+          "name": "Menthe fraiche",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191430603320-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "oignon-en-barquette-fresh-agri",
+          "name": "Oignon en barquette",
+          "brandSlug": "fresh-agri",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191430600244-1_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "persil",
+          "name": "Persil",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220016522-1_2.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "piments-seches",
+          "name": "Piments séchés",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220038326-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "salade-rouge",
+          "name": "Salade rouge",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022144700002.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "tomate-ronde",
+          "name": "Tomate ronde",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/t/o/tomate_ronde_2800224000000.webp",
+          "defaultSaleUnit": "KG"
+        }
+      ]
+    },
+    {
+      "slug": "viandes-poissons",
+      "name": "Viandes et poissons",
+      "products": [
+        {
+          "slug": "ailes-de-poulet-marinees-a-la-tunisienne",
+          "name": "Ailes de poulet marinées à la tunisienne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2841062000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "beefteck-de-veau-en-barquete",
+          "name": "Beefteck de veau en barquete",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800753000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "calamars-panes",
+          "name": "Calamars panés",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/c/a/calamar_pann_.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "crevette-calibre-20-30",
+          "name": "Crevette calibre 20 - 30",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2801028000000_1_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "crevettes-moyens-calibres",
+          "name": "Crevettes moyens calibres",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2801026000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "crevettes-rouge",
+          "name": "Crevettes rouge",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2801030000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "cuisse-de-poulet-el-mazraa",
+          "name": "Cuisse de poulet",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2400975000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "escalope-de-dinde",
+          "name": "Escalope de dinde",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2824831000000__1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "escalope-de-dinde-el-mazraa",
+          "name": "Escalope de dinde",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/e/s/escalope.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "escalope-de-dinde-en-barquette-chahia",
+          "name": "Escalope de dinde en barquette",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2403758000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "escalope-de-poulet",
+          "name": "Escalope de poulet",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2824851000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "escalope-de-poulet-el-mazraa",
+          "name": "Escalope de poulet",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2400937000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "faux-filet-de-veau",
+          "name": "Faux filet de veau",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800735000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "habra-de-dinde",
+          "name": "Habra de dinde",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2841575000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "habra-de-dinde-chahia",
+          "name": "Habra de dinde",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/h/a/habra-de-dinde.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "haut-de-cuisse-de-poulet",
+          "name": "Haut de cuisse de poulet",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/h/c/hcp.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "haut-de-cuisse-el-mazraa",
+          "name": "Haut de cuisse",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/h/c/hcp2.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "jarret-sans-os",
+          "name": "Jarret sans os",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800143000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "maquereau",
+          "name": "Maquereau",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800086000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "merguez",
+          "name": "Merguez",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191561500147_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "merlan-nazalli",
+          "name": "Merlan - Nazalli",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800088000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "pave-de-veau",
+          "name": "Pavé de veau",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800741000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "pilons-de-poulet",
+          "name": "Pilons de poulet",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2824260000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poisson-mulet",
+          "name": "Poisson Mulet",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/m/u/mulet.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poulet-fermier-dhahabiya-dick",
+          "name": "Poulet fermier dhahabiya",
+          "brandSlug": "dick",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2851731000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poulet-pac-chahia",
+          "name": "Poulet Pac",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2403717000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poulet-pret-a-cuire",
+          "name": "Poulet prêt à cuire",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2824900000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poulet-pret-a-cuire-standard-el-mazraa",
+          "name": "Poulet prêt à cuire standard",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2400931000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "sardine",
+          "name": "Sardine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800112000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "saumon-fume-de-norvege-la-couronne-dor",
+          "name": "Saumon fumé de Norvège",
+          "brandSlug": "la-couronne-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191444100020-1_4.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "saumon-fume-de-norvege-odyssee",
+          "name": "Saumon fumé de Norvège",
+          "brandSlug": "odyssee",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/s/a/saumon-100g.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "tete-dagneau-4-pattes",
+          "name": "Tête d'agneau + 4 pattes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2852749000000_1.webp",
+          "defaultSaleUnit": "KG"
+        }
+      ]
+    },
+    {
+      "slug": "produits-laitiers",
+      "name": "Produits laitiers",
+      "products": [
+        {
+          "slug": "boisson-lactee-au-jus-de-peche-abricot-natilait",
+          "name": "Boisson lactée au jus de pêche abricot",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442501324_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-de-cuisson-street-co",
+          "name": "Crème de cuisson",
+          "brandSlug": "street-co",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194049404449.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-dessert-chocolat-liegeois-yab",
+          "name": "Crème dessert chocolat liégeois",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503208889.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-dessert-flan-caramel-yab",
+          "name": "Crème dessert flan caramel",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503208872.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-dessert-plaisir-zgougou-yab",
+          "name": "Crème dessert Plaisir zgougou",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503207554_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-fraiche",
+          "name": "Crème fraîche",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043001620-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-fraiche-legere-semi-epaisse-a-15-de-matiere-grasse",
+          "name": "Crème fraîche légère semi-épaisse à 15% de matière grasse",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043002474_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-sucree-pour-garniture-de-gateaux-goldina",
+          "name": "Crème sucrée pour garniture de gâteaux",
+          "brandSlug": "goldina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402903762.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-whey-pro-proteines-gout-cafe-majeste",
+          "name": "Fromage Whey pro protéines goût café",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436201049_1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-whey-pro-proteines-gout-framboise-majeste",
+          "name": "Fromage Whey pro protéines goût framboise",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436201032_1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-whey-pro-proteines-gout-vanille-majeste",
+          "name": "Fromage Whey pro protéines goût vanille",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436201025_2_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-caille-raieb-natilait",
+          "name": "Lait caillé \"raieb\"",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442500457.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-delisso-demi-ecreme-u-h-t-delice",
+          "name": "Lait Délisso demi-écrémé U.H.T",
+          "brandSlug": "delice",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043001286_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-demi-ecreme-u-h-t-natilait",
+          "name": "Lait demi-écrémé U.H.T",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442600010-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-demi-ecreme-u-h-t-vitalait",
+          "name": "Lait demi-écrémé U.H.T",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507220214.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-entier-u-h-t-delice",
+          "name": "Lait entier U.H.T",
+          "brandSlug": "delice",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043001255-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lait-fermente-leben-natilait",
+          "name": "Lait fermenté \"Leben\"",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442500167-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "margarine-riche-en-omega-3-goldina",
+          "name": "Margarine riche en Oméga 3",
+          "brandSlug": "goldina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402901287-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "margarine-tartine-et-cuisson-goldina",
+          "name": "Margarine tartine et cuisson",
+          "brandSlug": "goldina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402900082-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "margarines-riche-en-omega-3-goldina",
+          "name": "Margarines riche en oméga 3",
+          "brandSlug": "goldina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402901270-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "matiere-grasse-tartinable-goldina",
+          "name": "Matière grasse tartinable",
+          "brandSlug": "goldina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402900372_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "milkshake-deli-shake-delice",
+          "name": "Milkshake Déli Shake",
+          "brandSlug": "delice",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043002108_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mousse-au-chocolat-plaisir-yab",
+          "name": "Mousse au chocolat Plaisir",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503210660_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "oeufs-frais-jaune-jaune-ovolina",
+          "name": "Œufs frais jaune jaune ovolina",
+          "brandSlug": "ovolina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191314600018.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "oeufs-frais-jaune-junior-ovolina",
+          "name": "Œufs frais jaune-Junior",
+          "brandSlug": "ovolina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191314600162.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "oeufs-jaune-orange-ovolina",
+          "name": "Œufs jaune orange",
+          "brandSlug": "ovolina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191314600049_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "oeufs-ovolina-frais-jaune-orange",
+          "name": "Œufs Ovolina frais jaune orange",
+          "brandSlug": "ovolina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/o/v/ovolina.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pack-de-yaourts-aromatises-delice-danone",
+          "name": "Pack de yaourts aromatisés",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003802885-1_1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pack-de-yaourts-natures-delice-danone",
+          "name": "Pack de yaourts natures",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/m/p/mpk-nature.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-a-boire-danup-delice-danone",
+          "name": "Yaourt à boire Danup",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003803882-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-a-boire-natiyo-natilait",
+          "name": "Yaourt à boire Natiyo",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442500105_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-a-boire-vitup-vitalait",
+          "name": "Yaourt à boire vit'up",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/5/25007176.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-a-boire-vitupti-vitalait",
+          "name": "Yaourt à boire Vitupti",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/5/25007179.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-a-la-grecque-oikos-delice-danone",
+          "name": "Yaourt à la grecque Oikos",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003803813-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-aromatise-delice-danone",
+          "name": "Yaourt aromatisé",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003800126-1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-aromatise-natilait",
+          "name": "Yaourt aromatisé",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442501102_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-aromatise-vitalait",
+          "name": "Yaourt aromatisé",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507249444_1_.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-aux-cereales-et-aux-fruits-des-bois-misto-natilait",
+          "name": "Yaourt brassé aux céréales et aux fruits des bois Misto",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/m/i/misto.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-aux-cereales-et-aux-fruits-exotiques-misto-natilait",
+          "name": "Yaourt brassé aux céréales et aux fruits exotiques Misto",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/y/t/yts.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-aux-fruits-jaunes-et-aux-cereales-yab",
+          "name": "Yaourt brassé aux fruits jaunes et aux céréales",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503213265_.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-aux-fruits-secs-vitalait",
+          "name": "Yaourt brassé aux fruits secs",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507250471.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-blendy-delice-danone",
+          "name": "Yaourt brassé Blendy",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003804285_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-mamzouj-delice-danone",
+          "name": "Yaourt brassé Mamzouj",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/m/a/mam.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-natilait",
+          "name": "Yaourt brassé",
+          "brandSlug": "natilait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191442500082.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-ptittop-yab",
+          "name": "Yaourt brassé Ptit'Top",
+          "brandSlug": "yab",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503208711_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-brasse-vitalait",
+          "name": "Yaourt brassé",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507249871_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-le-grand-brasse-saveur-vanille-vitalait",
+          "name": "Yaourt le grand brassé saveur vanille",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507250730.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-nature-delice-danone",
+          "name": "Yaourt nature",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003800317-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-nature-skyr-delice-danone",
+          "name": "Yaourt nature Skyr",
+          "brandSlug": "delice-danone",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/61945760.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "yaourt-nature-vitalait",
+          "name": "Yaourt nature",
+          "brandSlug": "vitalait",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507249383.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "boulangerie",
+      "name": "Boulangerie",
+      "products": [
+        {
+          "slug": "boule-blanche",
+          "name": "Boule blanche",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000139425-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "choquette-a-la-creme",
+          "name": "Choquette à la crème",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2055550005669.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "croissants-nature",
+          "name": "Croissants nature",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2023230017981.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "dejeunette-cuite",
+          "name": "Déjeunette cuite",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000139296-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gateaux-au-cafe",
+          "name": "Gâteaux au café",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2055550004754.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gateaux-au-chocolat",
+          "name": "Gâteaux au chocolat",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2055550002965.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gateu-au-chocolat",
+          "name": "Gâteu au chocolat",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2023230033714_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mille-feuille",
+          "name": "Mille feuille",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000140872.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mini-viennoiserie",
+          "name": "Mini viennoiserie",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2054540003920.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pain-a-panini-le-boulanger",
+          "name": "Pain à panini",
+          "brandSlug": "le-boulanger",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194020400149.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pain-complet-integral",
+          "name": "Pain complet intégral",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000139920-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tabouna-traditionnelle",
+          "name": "Tabouna traditionnelle",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000139630-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tarte-amandine",
+          "name": "Tarte amandine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2055550003245_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tarte-aux-fruits-frais",
+          "name": "Tarte aux fruits frais",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000141626.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tarte-grand-mere",
+          "name": "Tarte grand mère",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2023230004745.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "zrir-recette-tunisienne",
+          "name": "Zrir recette Tunisienne",
+          "brandSlug": "zrir",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194004008040-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "boissons",
+      "name": "Boissons",
+      "products": [
+        {
+          "slug": "boisson-au-jus-ananas-aris",
+          "name": "Boisson au jus ananas",
+          "brandSlug": "aris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191325500192.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-au-jus-mangue-aris",
+          "name": "Boisson au jus mangue",
+          "brandSlug": "aris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191325500246.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-au-jus-orange-aris",
+          "name": "Boisson au jus orange",
+          "brandSlug": "aris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191325500499.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-au-jus-tropical-la-fruitiere",
+          "name": "Boisson au jus tropical",
+          "brandSlug": "la-fruitiere",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402602023-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-concentree-au-gout-de-citron-amande-hazem",
+          "name": "Boisson concentrée au goût de citron amande",
+          "brandSlug": "hazem",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001551105_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-energetique-dark-power-reaktor",
+          "name": "Boisson énergétique Dark Power",
+          "brandSlug": "reaktor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/0/2/0202.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-energetique-focus-power-reaktor",
+          "name": "Boisson énergétique Focus Power",
+          "brandSlug": "reaktor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/0/2/02030.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-energetique-power-horse-25cl",
+          "name": "Boisson énergétique Power Horse 25cl",
+          "brandSlug": "power-horse",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/9/0/9001372251329-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-energetique-red-bull-25cl",
+          "name": "Boisson énergétique Red Bull 25cl",
+          "brandSlug": "red-bull",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/9/0/90162602-1_8.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-energetique-shark-25cl",
+          "name": "Boisson énergétique Shark 25cl",
+          "brandSlug": "shark",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/8/8851123229494-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-non-alcoolisee-a-base-de-malt-celestia",
+          "name": "Boisson non alcoolisée à base de malt",
+          "brandSlug": "celestia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/6/56532.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-non-alcoolisee-saveur-citron-celestia",
+          "name": "Boisson non alcoolisée saveur citron",
+          "brandSlug": "celestia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/5/8548962.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boisson-non-alcoolisee-saveur-mojito-celestia",
+          "name": "Boisson non alcoolisée saveur mojito",
+          "brandSlug": "celestia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/545854.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "citronnade-fraiche-boqueria",
+          "name": "Citronnade fraîche",
+          "brandSlug": "boqueria",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191430605027.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "coca-cola",
+          "name": "Coca Cola",
+          "brandSlug": "coca-cola",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/s/a/sans-titre-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "eau-minerale-melliti",
+          "name": "Eau minérale MELLITI",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001800302-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "eau-minerale-safia",
+          "name": "Eau minérale SAFIA",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001800111_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fanta-orange",
+          "name": "FANTA orange",
+          "brandSlug": "fanta",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5449000052926-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ice-tea-ananas-aris",
+          "name": "Ice tea ananas",
+          "brandSlug": "aris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191325501021.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "jus-de-fraise-boqueria",
+          "name": "Jus de fraise",
+          "brandSlug": "boqueria",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191430605041-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "orangina-jaune",
+          "name": "ORANGINA jaune",
+          "brandSlug": "orangina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191525200250.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "punch-orange",
+          "name": "PUNCH orange",
+          "brandSlug": "punch",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191534802254-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "schweppes-ananas",
+          "name": "Schweppes ananas",
+          "brandSlug": "schweppes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5449000344656_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sirop-au-gout-de-grenadine-hazem",
+          "name": "Sirop au goût de grenadine",
+          "brandSlug": "hazem",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001520101.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sirop-au-gout-de-menthe-hazem",
+          "name": "Sirop au goût de menthe",
+          "brandSlug": "hazem",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001520095.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sirop-de-menthe-hazem",
+          "name": "Sirop de menthe",
+          "brandSlug": "hazem",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001510096-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "fromages",
+      "name": "Fromages",
+      "products": [
+        {
+          "slug": "formage-jaune-gouda-kaiser",
+          "name": "Formage jaune Gouda",
+          "brandSlug": "kaiser",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800775000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-100-mozzarella-majeste",
+          "name": "Fromage 100% mozzarella",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436200677_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-a-raclette-souani",
+          "name": "Fromage à raclette",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701371.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-au-cheddar-landor",
+          "name": "Fromage au Cheddar",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800819000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-au-gruyere-landor",
+          "name": "Fromage au Gruyère",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800827000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-blanc-fondu-carre-president",
+          "name": "Fromage blanc fondu Carré",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513502014-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-blanc-fondu-president",
+          "name": "Fromage blanc fondu",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513502021-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-blanc-le-cuistot-president",
+          "name": "Fromage blanc Le Cuistot",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513503370-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-camembert-calife-souani",
+          "name": "Fromage camembert Calife",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701012-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-camembert-couteaux-plateaux-souani",
+          "name": "Fromage camembert Couteaux & Plateaux",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701029_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-camembert-le-petit-campagnard-souani",
+          "name": "Fromage camembert Le Petit Campagnard",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701289.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-camembert-national-souani",
+          "name": "Fromage camembert National",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701005-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-camembert-tomme-de-tebourba-souani",
+          "name": "Fromage camembert Tomme de Tebourba",
+          "brandSlug": "souani",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194025701081-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-cheddar-fondu",
+          "name": "Fromage cheddar fondu",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2851320000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-cremeux-et-leger-mon-carre-fraicheur-landor",
+          "name": "Fromage crémeux et léger Mon Carré Fraîcheur",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194049402315.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-edam-fiore",
+          "name": "Fromage Edam",
+          "brandSlug": "fiore",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/g/e/gemini_generated_image_ck06ulck06ulck06.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-edam-majeste",
+          "name": "Fromage edam",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802192000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-en-cubes-emmental",
+          "name": "Fromage en cubes emmental",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513502946.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-et-biscuits-croustillants-gouter-president",
+          "name": "Fromage et biscuits croustillants Goûter",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513502779-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-lemmental-famili-president",
+          "name": "Fromage fondu à l'Emmental Famili'",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501239-1_2_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-lemmental-maxi-president",
+          "name": "Fromage fondu à l'Emmental Maxi'",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501222-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-lemmental-mini-president",
+          "name": "Fromage fondu à l'Emmental Mini'",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501215-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-tartiner-fromy",
+          "name": "Fromage fondu à tartiner",
+          "brandSlug": "fromy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501628.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-tartiner-la-fondue-president",
+          "name": "Fromage fondu à tartiner La Fondue",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501123-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-a-tartiner-president",
+          "name": "Fromage fondu à tartiner",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501017-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-au-cheddar-president",
+          "name": "Fromage fondu au cheddar",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501246-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fondu-rape-a-lemmental-mont-regal",
+          "name": "Fromage fondu râpé à l'emmental",
+          "brandSlug": "mont-regal",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802044000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-fouette-madame-loik-nature-paysan-breton",
+          "name": "Fromage fouetté Madame Loïk nature",
+          "brandSlug": "paysan-breton",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/2/3236240070306-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-gouda-jaune",
+          "name": "Fromage gouda jaune",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2822334000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-gouda-jaune-majeste",
+          "name": "Fromage gouda jaune",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802193000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-le-petit-moule-a-lail-aux-fines-herbes-paysan-breton",
+          "name": "Fromage Le Petit Moulé à l'ail & aux fines herbes",
+          "brandSlug": "paysan-breton",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/2/3236240070504-1_1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-mozzarella-100-lait-majeste",
+          "name": "Fromage mozzarella 100 % lait",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802194000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-mozzarella-landor",
+          "name": "Fromage mozzarella",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802485000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-mozzarelle-boccon",
+          "name": "Fromage mozzarelle Boccon",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191321300086.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-pour-pizza-cheese-fondou",
+          "name": "Fromage pour pizza cheese",
+          "brandSlug": "fondou",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802091000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-rape-a-lemmental-president",
+          "name": "Fromage râpé à l'emmental",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802361000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-rape-au-cheddar-landor",
+          "name": "Fromage râpé au Cheddar",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802584000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-rape-au-gruyere-100-lait-majeste",
+          "name": "Fromage râpé au gruyère 100% lait",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802486000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-rape-au-gruyere-landor",
+          "name": "Fromage râpé au Gruyère",
+          "brandSlug": "landor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2809850000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-rape-chees-majeste",
+          "name": "Fromage râpé chees",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436200073.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-rape-fondu-a-la-mozzarella-mont-regal",
+          "name": "Fromage râpé fondu à la Mozzarella",
+          "brandSlug": "mont-regal",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/2/222222222.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-ricotta-majeste",
+          "name": "Fromage ricotta",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436201117.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fromage-rouge-edam-kaiser",
+          "name": "Fromage rouge Edam",
+          "brandSlug": "kaiser",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2851190000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "fromage-tranche-burger-cheddar-president",
+          "name": "Fromage tranche Burger cheddar",
+          "brandSlug": "president",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513501253.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mascarpone-fiore",
+          "name": "Mascarpone",
+          "brandSlug": "fiore",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191321300888.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-alimentaire-a-la-mozzarella-pizzatella-majeste",
+          "name": "Préparation alimentaire à la mozzarella Pizzatella",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436200042.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-alimentaire-fondante-et-filante-mozza-fino-fromy",
+          "name": "Préparation alimentaire fondante et filante Mozza Fino",
+          "brandSlug": "fromy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513502380-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-alimentaire-fondu-tartifro",
+          "name": "Préparation alimentaire fondu",
+          "brandSlug": "tartifro",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191513504407.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "rape-4-fromages-majeste",
+          "name": "Râpé 4 fromages",
+          "brandSlug": "majeste",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191436200905_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ricotta-traditionnelle-kaiser",
+          "name": "Ricotta traditionnelle",
+          "brandSlug": "kaiser",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2810000000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "sauce-chedar-fumee-street-co",
+          "name": "Sauce chedar fumée",
+          "brandSlug": "street-co",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194049405002.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "charcuterie-traiteur",
+      "name": "Charcuterie et traiteur",
+      "products": [
+        {
+          "slug": "chicken-nuggets-frais",
+          "name": "Chicken nuggets frais",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/i/m/img_5162.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "chicken-nuggets-panes",
+          "name": "Chicken nuggets panés",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2801943000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "cordon-bleu-frais",
+          "name": "Cordon bleu frais",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2841571000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "demi-poulet-roti",
+          "name": "Demi poulet rôti",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2058580000567_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "jambon-de-dinde-campagne-mliha",
+          "name": "Jambon de dinde campagne",
+          "brandSlug": "mliha",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802802000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "jambon-de-dinde-el-mazraa",
+          "name": "Jambon de dinde",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800629000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "jambon-de-poulet-chahia",
+          "name": "Jambon de poulet",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2802897000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "mini-pizza-au-thon",
+          "name": "Mini pizza au thon",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2000000139340.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mini-salami-de-dinde-dicky-dicky-mliha",
+          "name": "Mini salami de dinde dicky dicky",
+          "brandSlug": "mliha",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191507500545.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "poulet-roti",
+          "name": "Poulet rôti",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2020200010294.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "salade-primavera",
+          "name": "Salade Primavera",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191451000146-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "salami-de-boeuf-traditionnel-chahia",
+          "name": "Salami de bœuf traditionnel",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2801775000000.webp",
+          "defaultSaleUnit": "KG"
+        }
+      ]
+    },
+    {
+      "slug": "surgeles",
+      "name": "Surgelés",
+      "products": [
+        {
+          "slug": "crevettes-decortiquees",
+          "name": "Crevettes décortiquées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191304200013_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "crevettes-decortiquees-congelees",
+          "name": "Crevettes décortiquées congelées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800432000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "filet-de-poulet-chahia",
+          "name": "Filet de poulet",
+          "brandSlug": "chahia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2403712000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "glace-chocolat",
+          "name": "Glace chocolat",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503200739_2_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "glace-chocolat-fraise",
+          "name": "Glace chocolat fraise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503200746_2_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "glace-chocolat-vanille",
+          "name": "Glace chocolat vanille",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503200760_2_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "glace-familiale-fraise-boules-dor",
+          "name": "Glace familiale fraise Boules d'or",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503200784.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "habra-de-dinde-hachee-el-mazraa",
+          "name": "Habra de dinde hachée",
+          "brandSlug": "el-mazraa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/4/2402300000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "kefta-de-dinde",
+          "name": "Kefta de dinde",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191403301512.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "macedoine-de-legumes",
+          "name": "Macédoine de légumes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5411683210955-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mais-doux",
+          "name": "Mais doux",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5411683210924.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moules-decortiquees",
+          "name": "Moules décortiquées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2853572000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "nuggets-de-poulet",
+          "name": "Nuggets de poulet",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191505100419-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-brisee",
+          "name": "Pâte brisée",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191332200061_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-feuilletee",
+          "name": "Pâte feuilletée",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191473400016-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-feuilletee-vanoise",
+          "name": "Pâte feuilletée",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191332200030.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pates-feuilletee-surgelee",
+          "name": "Pates feuilletée surgelée",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/p/a/pat.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "petit-poids",
+          "name": "Petit poids",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5411683210849_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pomme-frites",
+          "name": "Pomme frites",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/4/5410376723345_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "seiche-nettoyee-et-congelee",
+          "name": "Seiche nettoyée et congelée",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2853599000000.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "pates-riz-legumes-secs",
+      "name": "Pâtes, riz et légumes secs",
+      "products": [
+        {
+          "slug": "borghol-fin",
+          "name": "Borghol fin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2828024000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "borghol-fin-reine-des-graines",
+          "name": "Borghol fin",
+          "brandSlug": "reine-des-graines",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191446700099-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bsissa-de-ble-vanoise-dr-oetker",
+          "name": "Bsissa de blé Vanoise",
+          "brandSlug": "dr-oetker",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402805493.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cheveux-dange-sanabel-carthage",
+          "name": "Cheveux d'ange",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400741.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "couscous-fin-lepi-dor",
+          "name": "Couscous fin",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003330012.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "couscous-moyen-pret-en-2-minutes-lepi-dor",
+          "name": "Couscous moyen prêt en 2 minutes",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003330029-1_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fell-1-5-sanabel-carthage",
+          "name": "Fell 1.5",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400468_2_.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fell-n2-5-rigate-sanabel-carthage",
+          "name": "Fell n°2.5 Rigate",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400543-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fell-n2-5-sanabel-carthage",
+          "name": "Fell n°2.5",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400505.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "fell-n2-sanabel-carthage",
+          "name": "Fell n°2",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400482-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "feuilles-de-brick-brikador",
+          "name": "Feuilles de brick",
+          "brandSlug": "brikador",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191441100023.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "feuilles-de-brick-semoule",
+          "name": "Feuilles de brick semoule",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/s/e/semoule.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "feuilles-de-crepe",
+          "name": "Feuilles de crèpe",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191441100269_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "feuilles-de-samsa-samsador",
+          "name": "Feuilles de samsa",
+          "brandSlug": "samsador",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191441100160_1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "feves",
+          "name": "Fèves",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2811185000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "langue-doiseau-sanabel-carthage",
+          "name": "Langue d'oiseau",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400802_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lasagne-sans-gluten-granoro",
+          "name": "Lasagne sans gluten",
+          "brandSlug": "granoro",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/0/8007290324702_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lasagnes-lepi-dor",
+          "name": "Lasagnes",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003310243-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lasagnes-randa",
+          "name": "Lasagnes",
+          "brandSlug": "randa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194004612605-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lasagnes-warda",
+          "name": "Lasagnes",
+          "brandSlug": "warda",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043402915-1_4.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lentilles-decortiquees",
+          "name": "Lentilles décortiquées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2811180000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "mais",
+          "name": "Maïs",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/1/2/12_1_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "mhammas-2-sanabel-carthage",
+          "name": "Mhammas 2",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400857.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "nouilles-instantanees-gout-boeuf-indomie",
+          "name": "Nouilles instantanées goût bœuf",
+          "brandSlug": "indomie",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/2/5285000396437-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "nouilles-n1-sanabel-carthage",
+          "name": "Nouilles n°1",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400277.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "nouilles-n2-lepi-dor",
+          "name": "Nouilles n°2",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003320099-1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-brisee-etalee-fornetto",
+          "name": "Pâte brisée étalée",
+          "brandSlug": "fornetto",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/i/m/images-removebg-preview_1_.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pates-millet-sanabel-carthage",
+          "name": "Pâtes millet",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519402226.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "penne-ble-complet-et-avoine-les-integrales-warda",
+          "name": "Penne blé complet et avoine Les Intégrales",
+          "brandSlug": "warda",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194043403271-1_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pois-chiche",
+          "name": "Pois chiche",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2811184000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "riz-etuve-rozy",
+          "name": "Riz étuvé",
+          "brandSlug": "rozy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/r/i/riz.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "riz-golden-rozy",
+          "name": "Riz golden",
+          "brandSlug": "rozy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191564601674.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "riz-rond-rozy",
+          "name": "Riz rond",
+          "brandSlug": "rozy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191564601087_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "semoule-fine-lepi-dor",
+          "name": "Semoule fine",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003360910.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "semoule-fine-sanabel-carthage",
+          "name": "Semoule fine",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519402165.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "soupe-dorge-sanabel-carthage",
+          "name": "Soupe d'orge",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519402141.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "spaghetti-2-5-sanabel-carthage",
+          "name": "Spaghetti 2.5",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400215.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "spaghetti-au-ble-complet-spiga",
+          "name": "Spaghetti au blé complet",
+          "brandSlug": "spiga",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194011837374-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "spaghetti-n2-sanabel-carthage",
+          "name": "Spaghetti n°2",
+          "brandSlug": "sanabel-carthage",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400185-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tagliatelle-n1-lepi-dor",
+          "name": "Tagliatelle n°1",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003310274_0.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tagliatelle-n2-lepi-dor",
+          "name": "Tagliatelle n°2",
+          "brandSlug": "lepi-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003310311.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "conserves",
+      "name": "Conserves et plats cuisinés",
+      "products": [
+        {
+          "slug": "champignon-pieds-et-morceaux-durra",
+          "name": "Champignon pieds et morceaux",
+          "brandSlug": "durra",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/2/6251136009038_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "champignons-en-tranches-durra",
+          "name": "Champignons en tranches",
+          "brandSlug": "durra",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/d/u/durra.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "champignons-en-tranches-mami-garden",
+          "name": "Champignons en tranches",
+          "brandSlug": "mami-garden",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191460400791.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "champignons-pieds-morceaux-tanit-le-jardin",
+          "name": "Champignons pieds & morceaux",
+          "brandSlug": "tanit-le-jardin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191454000013_-2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "choucroute-kuhne",
+          "name": "Choucroute",
+          "brandSlug": "kuhne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/9/3904505055800-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "double-concentre-de-tomate-zina",
+          "name": "Double concentré de tomate",
+          "brandSlug": "zina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/z/i/zina-1kg.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "double-concentre-de-tomates-jouda",
+          "name": "Double concentré de tomates",
+          "brandSlug": "jouda",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001480405_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "haricots-verts-tres-fins-daucy",
+          "name": "Haricots verts très fins",
+          "brandSlug": "daucy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119051-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "haricots-verts-tres-fins-saveurs",
+          "name": "Haricots verts très fins",
+          "brandSlug": "saveurs",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119891-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lot-de-3-boites-de-mais-doux-bonduelle",
+          "name": "Lot de 3 boites de maïs doux",
+          "brandSlug": "bonduelle",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3083680020763_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lot-de-3-boites-de-tomates-concassees-au-basilic-le-petit-paris",
+          "name": "Lot de 3 boites de tomates concassées au basilic",
+          "brandSlug": "le-petit-paris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003220429-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lot-de-4-boites-de-double-concentre-de-tomates-jouda",
+          "name": "Lot de 4 boites de double concentré de tomates",
+          "brandSlug": "jouda",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001480078-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "macedoine-de-legumes-daucy",
+          "name": "Macédoine de légumes",
+          "brandSlug": "daucy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119099-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mais-doux-daucy",
+          "name": "Mais doux",
+          "brandSlug": "daucy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119020.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mais-doux-saveurs",
+          "name": "Maïs doux",
+          "brandSlug": "saveurs",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119914-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mais-en-grain-bonduelle",
+          "name": "Maïs en grain",
+          "brandSlug": "bonduelle",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3083680021548.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "petit-pois-tres-fins-saveurs",
+          "name": "Petit pois très fins SAVEURS",
+          "brandSlug": "saveurs",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3017800119877.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pulpe-de-tomates-100-naturel-tomacoulis-sticap",
+          "name": "Pulpe de tomates 100% naturel Tomacoulis",
+          "brandSlug": "sticap",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194006261139-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "salade-mechouia-sticap",
+          "name": "Salade méchouia",
+          "brandSlug": "sticap",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194006260903-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "salade-mechouia-zgolli",
+          "name": "Salade méchouia",
+          "brandSlug": "zgolli",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194004804161-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tomate-pelees-petit-paris",
+          "name": "Tomate pelées",
+          "brandSlug": "petit-paris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003200988.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tomates-complet-sticap",
+          "name": "Tomates complet",
+          "brandSlug": "sticap",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194006261412-1_4.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tomates-concassees-le-petit-paris",
+          "name": "Tomates concassées",
+          "brandSlug": "le-petit-paris",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003220337-1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "thon-sardines",
+      "name": "Thon et sardines",
+      "products": [
+        {
+          "slug": "filet-de-thon-a-lhuile-dolive-et-a-la-tomate-sechee-el-manar",
+          "name": "Filet de thon à l'huile d'olive et à la tomate séchée",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029101092.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "filet-de-thon-a-lhuile-dolive-et-au-thym-el-manar",
+          "name": "Filet de thon à l'huile d'olive et au thym",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029101108.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "filets-danchois-sales-a-l-huile-dolive-sidi-daoud",
+          "name": "Filets d'anchois salés à l' huile d'olive",
+          "brandSlug": "sidi-daoud",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191520001036-1_4.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lot-de-3-boites-de-thon-entier-a-lhuile-de-tournesol-el-manar",
+          "name": "Lot de 3 boites de thon entier à l'huile de tournesol",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100514-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "lot-de-3-boites-de-thon-entier-a-lhuile-dolive-la-goulette",
+          "name": "Lot de 3 boites de thon entier à l'huile d'olive",
+          "brandSlug": "la-goulette",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191571801159.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sardines-de-mediterranee-a-lhuile-dolive-vierge-el-manar",
+          "name": "Sardines de méditerranée à l'huile d'olive vierge",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100323-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sardines-mediterraneenne-a-la-sauce-tomate-el-manar",
+          "name": "Sardines méditerranéenne à la sauce tomate",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100330-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sardines-mediterraneenne-au-citron-el-manar",
+          "name": "Sardines méditerranéenne au citron",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100453-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-en-miettes-a-la-harissa-el-manar",
+          "name": "Thon en miettes à la harissa",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100804-1_4.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-en-morceaux-a-lhuile-de-tournesol-el-manar",
+          "name": "Thon en morceaux à l'huile de tournesol",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029101344.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-en-morceaux-a-lhuile-vegetale-sidi-elbahri",
+          "name": "Thon en morceaux à l'huile végétale",
+          "brandSlug": "sidi-elbahri",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/p/r/pro15.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-de-tournesol-el-manar",
+          "name": "Thon entier à l'huile de tournesol",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100293-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-de-tournesol-lebhour",
+          "name": "Thon entier à l'huile de tournesol",
+          "brandSlug": "lebhour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000020-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-dolive-la-goulette",
+          "name": "Thon entier à l'huile d'olive",
+          "brandSlug": "la-goulette",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191571800954.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-dolive-lebhour",
+          "name": "Thon entier à l'huile d'olive",
+          "brandSlug": "lebhour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000075-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-dolive-vierge-lebhour",
+          "name": "Thon entier à l'huile d'olive vierge",
+          "brandSlug": "lebhour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000099-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-vegetale-al-jazia",
+          "name": "Thon entier à l'huile végétale",
+          "brandSlug": "al-jazia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191315800066.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-vegetale-cap-blanc",
+          "name": "Thon entier à l'huile végétale CAP BLANC",
+          "brandSlug": "cap-blanc",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000624.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-a-lhuile-vegetale-cap-blanc-2",
+          "name": "Thon entier à l'huile végétale",
+          "brandSlug": "cap-blanc",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191485000730.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "thon-entier-au-naturel-el-manar",
+          "name": "Thon entier au naturel",
+          "brandSlug": "el-manar",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194029100378-1_5.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "huiles",
+      "name": "Huiles",
+      "products": [
+        {
+          "slug": "huile-de-colza-oleo-nour",
+          "name": "Huile de colza Oleo",
+          "brandSlug": "nour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191341900020_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-colza-safi",
+          "name": "Huile de colza",
+          "brandSlug": "safi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191534608030.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-friture-frideal-olina",
+          "name": "Huile de friture Fridéal",
+          "brandSlug": "olina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191509410026-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-friture-fritss",
+          "name": "Huile de friture",
+          "brandSlug": "fritss",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191534604018_-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-mais-al-jazira",
+          "name": "Huile de maïs",
+          "brandSlug": "al-jazira",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191523805716.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-mais-cristal",
+          "name": "Huile de maïs",
+          "brandSlug": "cristal",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191564500076-1_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-mais-olina",
+          "name": "Huile de maïs",
+          "brandSlug": "olina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191509450008.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-mais-safi",
+          "name": "Huile de maïs",
+          "brandSlug": "safi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191534602182-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-tournesol-jadida",
+          "name": "Huile de tournesol",
+          "brandSlug": "jadida",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194000802703-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-de-tournesol-safi",
+          "name": "Huile de tournesol",
+          "brandSlug": "safi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191534603189_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-dolive-extra-vierge-al-jazira",
+          "name": "Huile d'olive extra vierge",
+          "brandSlug": "al-jazira",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191523800117-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-dolive-extra-vierge-terroliva",
+          "name": "Huile d'olive extra vierge",
+          "brandSlug": "terroliva",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191461100317-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-vegetale-al-jazira",
+          "name": "Huile végétale",
+          "brandSlug": "al-jazira",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191523805655_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "huile-vegetale-olina",
+          "name": "Huile végétale",
+          "brandSlug": "olina",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191509499090.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-alimentaire-dhuile-dolive-au-citron-al-jazira",
+          "name": "Préparation alimentaire d'huile d'olive au citron",
+          "brandSlug": "al-jazira",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191523802975-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-alimentaire-dhuile-dolive-au-piment-al-jazira",
+          "name": "Préparation alimentaire d'huile d'olive au piment",
+          "brandSlug": "al-jazira",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191523802999-1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "sauces-condiments",
+      "name": "Sauces et condiments",
+      "products": [
+        {
+          "slug": "bouillon-de-boeuf-calnort",
+          "name": "Bouillon de bœuf",
+          "brandSlug": "calnort",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/4/8412164000727-1_3.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bouillon-de-mouton-calnort",
+          "name": "Bouillon de mouton",
+          "brandSlug": "calnort",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/4/8412164000765-1_3_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bouillon-de-poisson-calnort",
+          "name": "Bouillon de poisson",
+          "brandSlug": "calnort",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/4/8412164000741-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bouillon-de-poulet-calnort",
+          "name": "Bouillon de poulet",
+          "brandSlug": "calnort",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/4/8412164000734-1_4.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "capres",
+          "name": "Câpres",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800360000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "citron-sale",
+          "name": "Citron salé",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2828658000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "cocktail-cornichons-kuhne",
+          "name": "Cocktail cornichons",
+          "brandSlug": "kuhne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/40804637_.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cornichons-extra-fins",
+          "name": "Cornichons extra fins",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2828093000000_3.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "cornichons-fins-kuhne",
+          "name": "Cornichons fins",
+          "brandSlug": "kuhne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/40804613-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "harissa-arbi-artisanale-recette-traditionnelle-fait-maison",
+          "name": "Harissa Arbi Artisanale – Recette Traditionnelle Fait Maison",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800345000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "harissa-berbere-furketta",
+          "name": "Harissa Berbere",
+          "brandSlug": "furketta",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402601972.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "harissa-en-boule",
+          "name": "Harissa en boule",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2822479000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "harissa-traditionnelle-furketta",
+          "name": "Harissa traditionnelle",
+          "brandSlug": "furketta",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402601989_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ketchup",
+          "name": "Ketchup",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/3/5352001033354.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ketchup-aux-tomates-remia",
+          "name": "Ketchup aux tomates",
+          "brandSlug": "remia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/7/8710448569015.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ketchup-bonna",
+          "name": "Ketchup",
+          "brandSlug": "bonna",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191575100463-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "ketchup-n1",
+          "name": "Ketchup",
+          "brandSlug": "n1",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6199009003557.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mayonnaise-a-la-truffe-noire-delicio",
+          "name": "Mayonnaise à la truffe noire",
+          "brandSlug": "delicio",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/0/6072000103832_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mayonnaise-bonna",
+          "name": "Mayonnaise",
+          "brandSlug": "bonna",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191575100500-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mayonnaise-piquante-chipolate-delicio",
+          "name": "Mayonnaise piquante Chipolate",
+          "brandSlug": "delicio",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/0/6072000103856_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moutarde-260-ml-bonna",
+          "name": "Moutarde 260 ml",
+          "brandSlug": "bonna",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191575101712.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moutarde-a-lancienne-bonna",
+          "name": "Moutarde à l'ancienne",
+          "brandSlug": "bonna",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191575101897-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moutarde-de-dijon-dijona",
+          "name": "Moutarde de Dijon",
+          "brandSlug": "dijona",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/5/3563490010814-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moutarde-de-dijon-remia",
+          "name": "Moutarde de Dijon",
+          "brandSlug": "remia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/7/8710448562030-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "moutarde-forte-de-dijon-covinor",
+          "name": "Moutarde forte de Dijon",
+          "brandSlug": "covinor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/3/3335121134431-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-a-lail-230-ml-jadida",
+          "name": "Sauce à l’ail 230 ml",
+          "brandSlug": "jadida",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194000805216.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-algerienne-jadida",
+          "name": "Sauce algérienne",
+          "brandSlug": "jadida",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194000805193.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-barbecue-kiwi",
+          "name": "Sauce barbecue",
+          "brandSlug": "kiwi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/3/5352001033361_1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-barbecue-n1",
+          "name": "Sauce barbecue",
+          "brandSlug": "n1",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6199009003540.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-mayonnaise-lesieur",
+          "name": "Sauce mayonnaise",
+          "brandSlug": "lesieur",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6135345000768-.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-salade-nature-allegee-en-matiere-grasse-covinor",
+          "name": "Sauce salade nature allégée en matière grasse",
+          "brandSlug": "covinor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/3/3335122413757-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-soja-classique-deroni",
+          "name": "Sauce soja classique",
+          "brandSlug": "deroni",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/8/3800740035389.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-tartare-kuhne",
+          "name": "Sauce tartare",
+          "brandSlug": "kuhne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4012200384688-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sauce-teryaki-deroni",
+          "name": "Sauce Teryaki",
+          "brandSlug": "deroni",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/8/3800740035440.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "variantes",
+          "name": "Variantes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800356000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "vinaigre-balsamique-dimodena-kuhne",
+          "name": "Vinaigre balsamique Dimodena",
+          "brandSlug": "kuhne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4012200160763-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "vinaigre-de-cidre-eden",
+          "name": "Vinaigre de cidre",
+          "brandSlug": "eden",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191408700099_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "vinaigrette-aux-fines-herbes-covinor",
+          "name": "Vinaigrette aux fines herbes",
+          "brandSlug": "covinor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/3/3335122413771-1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "epices-olives",
+      "name": "Épices et olives",
+      "products": [
+        {
+          "slug": "graines-de-sesame-dore",
+          "name": "Graines de sésame doré",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800566000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "melange-depices-ras-el-hanout",
+          "name": "Mélange d'épices Ras el hanout",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2811165000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "menthe-sechee-novafresh",
+          "name": "Menthe séchée",
+          "brandSlug": "novafresh",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220031136-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "olives-noires",
+          "name": "Olives noires",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800354000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "olives-vertes",
+          "name": "Olives vertes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800347000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "olives-vertes-cassees-pimentees",
+          "name": "Olives vertes cassées pimentées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800421000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "olives-violettes",
+          "name": "Olives violettes",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2800352000000_1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "verveine-sechee-en-barquette",
+          "name": "Verveine séchée en barquette",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/0/2022220031143.webp",
+          "defaultSaleUnit": "KG"
+        }
+      ]
+    },
+    {
+      "slug": "fruits-secs",
+      "name": "Fruits secs",
+      "products": [
+        {
+          "slug": "amandes-americaines",
+          "name": "Amandes americaines",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2822070000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "graines-de-citrouille-eclatees",
+          "name": "Graines de citrouille éclatées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2803720000000.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "mix-de-luxe",
+          "name": "Mix de luxe",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2803139000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mix-exotique",
+          "name": "Mix Exotique",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2823140000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mix-royal",
+          "name": "Mix Royal",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2823142000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "noisettes-concassees",
+          "name": "Noisettes concassées",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2821909000000_1_.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "noix-de-cajou",
+          "name": "Noix de cajou",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2811188000000-1.webp",
+          "defaultSaleUnit": "KG"
+        },
+        {
+          "slug": "raisin-sec-noir",
+          "name": "Raisin sec noir",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2822735000000.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "snacks-aperitif",
+      "name": "Snacks et apéritif",
+      "products": [
+        {
+          "slug": "batonnets-de-pain-au-fromage-et-tomate-grissini-torinesi-cerealis",
+          "name": "Bâtonnets de pain au fromage et tomate Grissini Torinesi",
+          "brandSlug": "cerealis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191547201181-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "batonnets-de-pain-au-sel-grissini-torinesi-cerealis",
+          "name": "Bâtonnets de pain au sel Grissini Torinesi",
+          "brandSlug": "cerealis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191547201174-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "batonnets-de-pain-au-son-de-ble-grissini-torinesi-cerealis",
+          "name": "Bâtonnets de pain au son de blé Grissini Torinesi",
+          "brandSlug": "cerealis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191547201198-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-sales-gout-fromage-crackers",
+          "name": "Biscuits salés goût fromage",
+          "brandSlug": "crackers",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307402100_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chips-crokidos-golden-chips",
+          "name": "Chips Crokido's",
+          "brandSlug": "golden-chips",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194017101332_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chips-de-pomme-de-terre-x-cut-sel-lorenz",
+          "name": "Chips de pomme de terre x-cut sel",
+          "brandSlug": "lorenz",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5905187101296-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chips-monster-munch-lorenz",
+          "name": "Chips monster munch",
+          "brandSlug": "lorenz",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4018077632006-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chips-the-box-hot-spicy-mahboul",
+          "name": "Chips the Box Hot spicy",
+          "brandSlug": "mahboul",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6130336005609.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pop-corn-caramel-beurre-candy-pop-cerealis",
+          "name": "Pop corn caramel beurre Candy pop",
+          "brandSlug": "cerealis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191547201280.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pop-corn-sweet-cerealis",
+          "name": "Pop-corn Sweet",
+          "brandSlug": "cerealis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191547201303.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "biscuits-gateaux",
+      "name": "Biscuits et gâteaux",
+      "products": [
+        {
+          "slug": "barre-de-cereales-amande-noisette-sante",
+          "name": "Barre de céréales amande noisette",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617015945.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barre-de-cereales-caramel-sale-vipa",
+          "name": "Barre de céréales Caramel salé",
+          "brandSlug": "vipa",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191462200177.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barre-de-cereales-chocolat-banane-sante",
+          "name": "Barre de céréales chocolat banane",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617015938.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barre-de-cereales-raisin-et-amande-honey-la",
+          "name": "Barre de céréales raisin et amande",
+          "brandSlug": "honey-la",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191498200165.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barre-proteinee-pistache-go-on-sante",
+          "name": "Barre protéinée pistache Go On",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617046635_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuit-ptit-matin-pure-beurre-lbm",
+          "name": "Biscuit P'tit Matin pure beurre",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307401233_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuit-ptit-matin-speculoos-lbm",
+          "name": "Biscuit P'tit matin spéculoos",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307401240.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuit-sandwich-gout-chocolat-tino-biskart",
+          "name": "Biscuit sandwich goût chocolat Tino",
+          "brandSlug": "biskart",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191327600029.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-au-riz-et-au-sel-de-lhimalaya-sante",
+          "name": "Biscuits au riz et au sel de l'Himalaya",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617014665.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-au-riz-nature-sante",
+          "name": "Biscuits au riz nature",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617014658.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-aux-amandes-lamandier-lbm",
+          "name": "Biscuits aux amandes L’amandier",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307400052-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-binto-enrobes-au-chocolat-kif",
+          "name": "Biscuits Binto enrobés au chocolat",
+          "brandSlug": "kif",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194002510071-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-enrobe-de-chocolat-blanc-tagada-lbm",
+          "name": "Biscuits enrobé de chocolat blanc Tagada LBM",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307400960.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-fourre-au-chocolat-royal-campi",
+          "name": "Biscuits fourré au chocolat Royal",
+          "brandSlug": "campi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191416500377-removebg-preview.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-fourres-chocolat-noisette-kingo-lbm",
+          "name": "Biscuits fourrés chocolat noisette kingo",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307401684.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-sable-lbm",
+          "name": "Biscuits sablé",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307400038.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "biscuits-smile-chocolat-kif",
+          "name": "Biscuits Smile chocolat",
+          "brandSlug": "kif",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194002510194-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "brownie-intense-moulin-dor",
+          "name": "Brownie intense",
+          "brandSlug": "moulin-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194021101427-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "brownies-aux-pepites-de-chocolat-dailyn",
+          "name": "Brownies aux pépites de chocolat",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200063-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "brownies-caramel-beurre-sale-bolerio",
+          "name": "Brownies caramel beurre salé",
+          "brandSlug": "bolerio",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191599100562.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "brownies-chocolat-bolerio",
+          "name": "Brownies chocolat",
+          "brandSlug": "bolerio",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191599100302-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cake-au-sorgho",
+          "name": "Cake au sorgho",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2823479000000.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cake-familial-tout-chocolat-valentino-goutinel",
+          "name": "Cake familial tout chocolat Valentino",
+          "brandSlug": "goutinel",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191598500219.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cake-grand-mere-marbre-dailyn",
+          "name": "Cake Grand Mère marbré",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200117-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cake-marbre-le-patissier",
+          "name": "Cake marbré",
+          "brandSlug": "le-patissier",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191500320201.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cake-marbre-slice-daylin-dailyn",
+          "name": "Cake marbré slice DAYLIN",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200223.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cookies-aux-pepites-de-chocolat-blanc-lbm",
+          "name": "Cookies aux pépites de chocolat blanc",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307400021.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cookies-aux-pepites-de-chocolat-noir-lbm",
+          "name": "Cookies aux pépites de chocolat noir",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307400014.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cookies-cacaote-sans-sucre-aux-pepites-lbm",
+          "name": "Cookies cacaoté sans sucre aux pépites",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307402834.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cookies-sans-sucre-aux-pepites-de-chocolat-noir-lbm",
+          "name": "Cookies sans sucre aux pépites de chocolat noir",
+          "brandSlug": "lbm",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191307402766.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gaufrettes-chocolat-lingot",
+          "name": "Gaufrettes chocolat",
+          "brandSlug": "lingot",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191432201388.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gaufrettes-creme-au-lait-lingot",
+          "name": "Gaufrettes crème au lait",
+          "brandSlug": "lingot",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191432201395.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gaufrettes-fraises-lingot",
+          "name": "Gaufrettes fraises",
+          "brandSlug": "lingot",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191432201425.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "gaufrettes-noisettes-lingot",
+          "name": "Gaufrettes noisettes",
+          "brandSlug": "lingot",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191432201418_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "madeleines-le-patissier",
+          "name": "Madeleines",
+          "brandSlug": "le-patissier",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503207523-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "mini-muffins-saveur-vanille-le-patissier",
+          "name": "Mini muffins saveur vanille",
+          "brandSlug": "le-patissier",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191503210769-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "muffin-au-chocolat-dailyn",
+          "name": "Muffin au chocolat",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200278.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "muffin-bicouleur-dailyn",
+          "name": "Muffin bicouleur",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200025.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "muffins-dabricots-bolerio",
+          "name": "Muffins d'abricots",
+          "brandSlug": "bolerio",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191599100012-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tarte-dabricots-dailyn",
+          "name": "Tarte d'abricots",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200148-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "tarte-fraise-dailyn",
+          "name": "Tarte fraise",
+          "brandSlug": "dailyn",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191477200131-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "chocolat-confiserie",
+      "name": "Chocolat et confiserie",
+      "products": [
+        {
+          "slug": "barre-de-chocolat-caramel-biscuit-d-clic",
+          "name": "Barre de chocolat caramel & biscuit",
+          "brandSlug": "d-clic",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191544100500-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barre-de-chocolat-caramel-et-biscuit-x-plose",
+          "name": "Barre de chocolat caramel et biscuit",
+          "brandSlug": "x-plose",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191544100661_-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bonbons-gold-bears-gummy-candy-haribo",
+          "name": "Bonbons Gold-bears gummy candy",
+          "brandSlug": "haribo",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/6/8691216020627-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "bonbons-worms-haribo",
+          "name": "Bonbons Worms",
+          "brandSlug": "haribo",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/6/8691216020689-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "boules-de-cereales-enrobees-et-croustillantes-crispy",
+          "name": "Boules de céréales enrobées et croustillantes",
+          "brandSlug": "crispy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402902048-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-au-caramel-biscuit-duo",
+          "name": "Chocolat au caramel & biscuit",
+          "brandSlug": "duo",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191544100630_-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-aux-amandes-ritter-sport",
+          "name": "Chocolat aux amandes",
+          "brandSlug": "ritter-sport",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4000417023001.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-aux-noisettes-verano",
+          "name": "Chocolat aux noisettes",
+          "brandSlug": "verano",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191596300125-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-barre-biscuitee-lait-gaufrettes-momento",
+          "name": "Chocolat barre biscuitée lait & gaufrettes",
+          "brandSlug": "momento",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191544100623_-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-blanc-aux-noisettes-ritter-sport",
+          "name": "Chocolat blanc aux noisettes",
+          "brandSlug": "ritter-sport",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4000417013002-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-caramel-verano",
+          "name": "Chocolat caramel",
+          "brandSlug": "verano",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191596300170-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-enrobes-de-caramel-biscuits-duo",
+          "name": "Chocolat enrobés de caramel & biscuits",
+          "brandSlug": "duo",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191544100609-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-maxi-au-lait-kinder",
+          "name": "Chocolat maxi au lait",
+          "brandSlug": "kinder",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/40084077-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chocolat-passion-lait-noisettes-maestro",
+          "name": "Chocolat Passion lait noisettes",
+          "brandSlug": "maestro",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194005448470_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "coffret-assortiment-de-chocolats-tesoro-maestro",
+          "name": "Coffret assortiment de chocolats Tesoro",
+          "brandSlug": "maestro",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194005448449_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "coffret-de-chocolat-tesoro-maestro",
+          "name": "Coffret de chocolat Tesoro",
+          "brandSlug": "maestro",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194005448418_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "confisserie-sour-belt-chupa-chups",
+          "name": "Confisserie Sour Belt",
+          "brandSlug": "chupa-chups",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/8/9/8901393017045.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "dattes-aux-noix-de-coco-et-cacao-pops-kartago",
+          "name": "Dattes aux noix de coco et cacao Pops",
+          "brandSlug": "kartago",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191309700037.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "dattes-aux-sesames-pops-kartago",
+          "name": "Dattes aux sésames Pops",
+          "brandSlug": "kartago",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191309700013.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "loukoum-gout-noisettes-hazem",
+          "name": "Loukoum goût noisettes",
+          "brandSlug": "hazem",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194001532210-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucette-ourson-cracocarte",
+          "name": "Sucette ourson",
+          "brandSlug": "cracocarte",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/7/3760078893344-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucettes-cracocarte",
+          "name": "Sucettes",
+          "brandSlug": "cracocarte",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/7/3760078893160.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "petit-dejeuner",
+      "name": "Petit déjeuner",
+      "products": [
+        {
+          "slug": "biscottes-de-ble-traditionnel-croustillant-riche-en-fibre-sante",
+          "name": "Biscottes de blé traditionnel croustillant riche en fibre",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617013330.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cereales-chocapic-nestle",
+          "name": "Céréales Chocapic",
+          "brandSlug": "nestle",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3033710061983-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cereales-granola-aux-4-graines",
+          "name": "Céréales granola aux 4 graines",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191309700341_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "confiture-dabricots-la-fruitiere",
+          "name": "Confiture d'abricots",
+          "brandSlug": "la-fruitiere",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402600388-1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "confiture-de-fruits-allegees-30-de-sucre-yumy",
+          "name": "Confiture de fruits allégées -30% de sucre",
+          "brandSlug": "yumy",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191496900517_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "confiture-doranges-et-mandarines-la-fruitiere",
+          "name": "Confiture d'oranges et mandarines",
+          "brandSlug": "la-fruitiere",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402600395-1_1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-a-tartiner-aux-noisettes-et-au-cacao-vanoise",
+          "name": "Crème à tartiner aux noisettes et au cacao",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/p/a/pat1kg_100g.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-a-tartiner-duo-biscuits-au-cacao-lait-vanoise",
+          "name": "Crème à tartiner Duo biscuits au cacao & lait Vanoise",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402903090_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "creme-a-tartiner-vanoise",
+          "name": "Crème à tartiner",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402900549_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "flocons-davoine",
+          "name": "Flocons d'avoine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/2/8/2823680000000_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "flocons-davoine-feuilles-larges-hahne",
+          "name": "Flocons d'avoine feuilles larges",
+          "brandSlug": "hahne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4008569028370-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "flocons-davoine-petites-feuilles-hahne",
+          "name": "Flocons d'avoine petites feuilles",
+          "brandSlug": "hahne",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4008569028387-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "flocons-de-mais-corn-flakes-sante",
+          "name": "Flocons de maîs Corn Flakes",
+          "brandSlug": "sante",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5900617014948.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "miel-doux-lune-de-miel",
+          "name": "Miel doux",
+          "brandSlug": "lune-de-miel",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3088543405114.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pain-de-mie-complet-mama-mia",
+          "name": "Pain de mie complet",
+          "brandSlug": "mama-mia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191427600295-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pain-de-mie-multi-cereales-mama-mia",
+          "name": "Pain de mie multi-céréales",
+          "brandSlug": "mama-mia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191427600585-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pain-de-mie-nature-mama-mia",
+          "name": "Pain de mie nature",
+          "brandSlug": "mama-mia",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191427600288.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pates-a-tartiner-ma-creme-au-biscuit-speculos-vanoise",
+          "name": "Pâtes à tartiner Ma crème au biscuit Spéculos",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402902932-1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "cafe-the",
+      "name": "Café, thés et infusions",
+      "products": [
+        {
+          "slug": "cafe-en-grains-chicoree-torrefiee-leroux",
+          "name": "Café en grains chicorée torréfiée",
+          "brandSlug": "leroux",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/0/3067140035320-1_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-moulu-filtre-pur",
+          "name": "Café moulu filtre pur",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191431900039.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-soluble-agglomere-carrefour",
+          "name": "Café soluble aggloméré",
+          "brandSlug": "carrefour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5901583412004.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-soluble-chicoree-brava",
+          "name": "Café soluble chicorée",
+          "brandSlug": "brava",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4009041100812_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-soluble-lyophilise-carrefour",
+          "name": "Café soluble lyophilisé",
+          "brandSlug": "carrefour",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/5/9/5901583412042.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-turc-moringa-stella",
+          "name": "Cafe turc Moringa",
+          "brandSlug": "stella",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191347300527_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "cafe-turc-pur",
+          "name": "Café turc pur",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191431900046.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "capsules-de-cafe-100-arabica-colombie-bondin",
+          "name": "Capsules de café 100% arabica colombie",
+          "brandSlug": "bondin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003600894-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "capsules-de-cafe-pur-100-arabica-intense-bondin",
+          "name": "Capsules de café pur 100% Arabica intense",
+          "brandSlug": "bondin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003600900-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "capsules-de-cafe-pur-decafeine-bondin",
+          "name": "Capsules de café pur décaféiné",
+          "brandSlug": "bondin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003600887_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "capsules-de-cafe-pur-raffine-bondin",
+          "name": "Capsules de café pur raffiné",
+          "brandSlug": "bondin",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194003600870-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "chicoree-soluble-brava",
+          "name": "Chicorée soluble",
+          "brandSlug": "brava",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/4/0/4009041105190.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-de-chocolat-chaud-banane-dr-oetker",
+          "name": "Préparation de chocolat chaud banane",
+          "brandSlug": "dr-oetker",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402803192-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-de-chocolat-chaud-caramel-dr-oetker",
+          "name": "Préparation de chocolat chaud caramel",
+          "brandSlug": "dr-oetker",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402803208_-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "preparation-de-chocolat-chaud-en-poudre-dr-oetker",
+          "name": "Préparation de chocolat chaud en poudre",
+          "brandSlug": "dr-oetker",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/61942868-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "the-noir-a-la-bergamote-kyufi",
+          "name": "Thé noir à la bergamote",
+          "brandSlug": "kyufi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191469701967_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "the-noir-a-la-bergamote-sans-sucre-kyufi",
+          "name": "Thé noir à la bergamote sans sucre",
+          "brandSlug": "kyufi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191469701950.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "the-noir-instantane-menthe-kyufi",
+          "name": "Thé noir instantané menthe",
+          "brandSlug": "kyufi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191469700540.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "the-vert-instantane-menthe-kyufi",
+          "name": "Thé vert instantané menthe",
+          "brandSlug": "kyufi",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191469700304.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    },
+    {
+      "slug": "sucre-farine",
+      "name": "Sucre, farine et pâtisserie",
+      "products": [
+        {
+          "slug": "amidon-de-mais-vanoise",
+          "name": "Amidon de maïs",
+          "brandSlug": "vanoise",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402802812.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "barquettes-a-garnir-rondes-moulin-dor",
+          "name": "Barquettes à garnir rondes",
+          "brandSlug": "moulin-dor",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6194021152023-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "edulcorant-faible-en-calories-canderel",
+          "name": "Édulcorant faible en calories",
+          "brandSlug": "canderel",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/3/3329757000154-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "farine",
+          "name": "Farine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191519400017-1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "farine-diari",
+          "name": "Farine Diari",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/f/a/farine-1kg-carre_0.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "farine-patissiere",
+          "name": "Farine pâtissière",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191564600011.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-de-noisette-ben-gaied-hassine",
+          "name": "Pâte de noisette",
+          "brandSlug": "ben-gaied-hassine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191317200017-2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-de-sesames-ben-gaied-hassine",
+          "name": "Pâte de sésames",
+          "brandSlug": "ben-gaied-hassine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191317200048.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "pate-zgougou-ben-gaied-hassine-tamisee",
+          "name": "Pâte Zgougou Ben Gaied Hassine tamisée",
+          "brandSlug": "ben-gaied-hassine",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191317200031.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucre-de-canne-en-morceau-saint-louis",
+          "name": "Sucre de canne en morceau",
+          "brandSlug": "saint-louis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/2/3220034941194_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucre-de-dattes-kartago",
+          "name": "Sucre de dattes",
+          "brandSlug": "kartago",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191309700068_2.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucre-roux-en-cube-tiplaisir-saint-louis",
+          "name": "Sucre roux en cube ti'Plaisir",
+          "brandSlug": "saint-louis",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/3/2/3220033060001-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        },
+        {
+          "slug": "sucre-vanilline-vanoise-dr-oetker",
+          "name": "Sucre vanilliné Vanoise",
+          "brandSlug": "dr-oetker",
+          "photo": "https://back.carrefour.tn/media/catalog/product/cache/717533d0b1f9b51c7b2a4a186f3847c5/6/1/6191402801426-1_1.webp",
+          "defaultSaleUnit": "PIECE"
+        }
+      ]
+    }
+  ]
+}

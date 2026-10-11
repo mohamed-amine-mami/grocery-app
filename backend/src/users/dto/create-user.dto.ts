@@ -38,11 +38,6 @@ export class CreateUserDto {
   @IsString()
   whatsappNumber?: string;
 
-  @ApiPropertyOptional({ example: 'https://cdn.example.com/users/1/photo.jpg' })
-  @IsOptional()
-  @IsString()
-  photo?: string;
-
   @ApiPropertyOptional({ enum: UserRole, default: UserRole.CLIENT })
   @IsOptional()
   @IsEnum(UserRole)

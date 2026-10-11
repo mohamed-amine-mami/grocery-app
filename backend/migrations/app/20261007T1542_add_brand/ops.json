@@ -1,0 +1,362 @@
+[
+  {
+    "id": "dropIndex.Product.product_active_name_unique_5e7c3ad3",
+    "label": "Drop index \"product_active_name_unique_5e7c3ad3\"",
+    "operationClass": "destructive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "product_active_name_unique_5e7c3ad3",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"product_active_name_unique_5e7c3ad3\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "drop index \"product_active_name_unique_5e7c3ad3\"",
+        "sql": "DROP INDEX \"public\".\"product_active_name_unique_5e7c3ad3\"",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"product_active_name_unique_5e7c3ad3\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_unique_5e7c3ad3\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.Brand",
+    "label": "Create table \"Brand\"",
+    "summary": "Creates table \"Brand\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Brand"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Brand\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Brand\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Brand\"",
+        "sql": "CREATE TABLE \"public\".\"Brand\" (\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"name\" text NOT NULL,\n  \"slug\" text NOT NULL,\n  \"updatedAt\" timestamptz NOT NULL,\n  PRIMARY KEY (\"id\"),\n  CONSTRAINT \"brand_name_not_blank_8e77c20d\" CHECK (length(btrim(\"name\")) > 0),\n  CONSTRAINT \"brand_slug_format_a1584675\" CHECK (\"slug\" ~ '^[a-z0-9]+(-[a-z0-9]+)*$')\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Brand\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Brand\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.Product.brandId",
+    "label": "Add column \"brandId\" to \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "brandId",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"brandId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Product",
+          "brandId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"brandId\"",
+        "sql": "ALTER TABLE \"public\".\"Product\" ADD COLUMN \"brandId\" int4"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"brandId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "Product",
+          "brandId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.Brand.Brand_slug_key",
+    "label": "Add unique constraint on \"Brand\" (slug)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "Brand_slug_key",
+        "table": "Brand"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"Brand_slug_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Brand_slug_key",
+          "public",
+          "\"public\".\"Brand\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"Brand_slug_key\"",
+        "sql": "ALTER TABLE \"public\".\"Brand\" ADD CONSTRAINT \"Brand_slug_key\" UNIQUE (\"slug\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"Brand_slug_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Brand_slug_key",
+          "public",
+          "\"public\".\"Brand\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Brand.brand_name_unique_79c07e41",
+    "label": "Create index \"brand_name_unique_79c07e41\" on \"Brand\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "brand_name_unique_79c07e41",
+        "table": "Brand"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"brand_name_unique_79c07e41\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"brand_name_unique_79c07e41\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"brand_name_unique_79c07e41\"",
+        "sql": "CREATE UNIQUE INDEX \"brand_name_unique_79c07e41\" ON \"public\".\"Brand\" (lower(\"name\"))",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"brand_name_unique_79c07e41\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"brand_name_unique_79c07e41\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Product.Product_brandId_idx_02e95397",
+    "label": "Create index \"Product_brandId_idx_02e95397\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Product_brandId_idx_02e95397",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Product_brandId_idx_02e95397\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product_brandId_idx_02e95397\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Product_brandId_idx_02e95397\"",
+        "sql": "CREATE INDEX \"Product_brandId_idx_02e95397\" ON \"public\".\"Product\" (\"brandId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Product_brandId_idx_02e95397\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Product_brandId_idx_02e95397\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Product.product_active_name_brand_unique_d7de78c7",
+    "label": "Create index \"product_active_name_brand_unique_d7de78c7\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "product_active_name_brand_unique_d7de78c7",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"product_active_name_brand_unique_d7de78c7\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_brand_unique_d7de78c7\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"product_active_name_brand_unique_d7de78c7\"",
+        "sql": "CREATE UNIQUE INDEX \"product_active_name_brand_unique_d7de78c7\" ON \"public\".\"Product\" (lower(\"name\"), \"brandId\") WHERE ((\"archivedAt\" IS NULL AND \"brandId\" IS NOT NULL))",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"product_active_name_brand_unique_d7de78c7\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_brand_unique_d7de78c7\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Product.product_active_name_brandless_unique_c9016a84",
+    "label": "Create index \"product_active_name_brandless_unique_c9016a84\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "product_active_name_brandless_unique_c9016a84",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"product_active_name_brandless_unique_c9016a84\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_brandless_unique_c9016a84\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"product_active_name_brandless_unique_c9016a84\"",
+        "sql": "CREATE UNIQUE INDEX \"product_active_name_brandless_unique_c9016a84\" ON \"public\".\"Product\" (lower(\"name\")) WHERE ((\"archivedAt\" IS NULL AND \"brandId\" IS NULL))",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"product_active_name_brandless_unique_c9016a84\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"product_active_name_brandless_unique_c9016a84\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Product.Product_brandId_fkey",
+    "label": "Add foreign key \"Product_brandId_fkey\" on \"Product\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Product_brandId_fkey",
+        "table": "Product"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Product_brandId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_brandId_fkey",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Product_brandId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Product\"\nADD CONSTRAINT \"Product_brandId_fkey\"\nFOREIGN KEY (\"brandId\")\nREFERENCES \"public\".\"Brand\" (\"id\")\nON DELETE RESTRICT"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Product_brandId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Product_brandId_fkey",
+          "public",
+          "\"public\".\"Product\""
+        ]
+      }
+    ]
+  }
+]

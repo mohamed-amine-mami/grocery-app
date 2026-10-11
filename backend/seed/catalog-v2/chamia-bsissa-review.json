@@ -1,0 +1,2513 @@
+[
+ {
+  "slug": "tahina-400-g-la-gazelle",
+  "name": "Tahina 400 g",
+  "brand": "La Gazelle",
+  "type": "other",
+  "finalCategory": "epicerie",
+  "sources": [
+   [
+    "geant",
+    "Tahina",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "tahina-400-g-le-moulin",
+  "name": "Tahina 400 g",
+  "brand": "Le Moulin",
+  "type": "other",
+  "finalCategory": "epicerie",
+  "sources": [
+   [
+    "geant",
+    "Tahina",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "tahina-semsem-400-g-papillon",
+  "name": "Tahina semsem 400 g",
+  "brand": "Papillon",
+  "type": "other",
+  "finalCategory": "epicerie",
+  "sources": [
+   [
+    "geant",
+    "Tahina",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "glace-chamia-gold-mythic-900-ml-selja",
+  "name": "Glace chamia Gold mythic 900 ml",
+  "brand": "Selja",
+  "type": "chamia (halva)",
+  "finalCategory": "surgeles",
+  "sources": [
+   [
+    "geant",
+    "Glace",
+    "glaces"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-amande-90-g-shehrazed",
+  "name": "Bsissa amande 90 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-fruits-secs-rima",
+  "name": "Bsissa aux fruits secs",
+  "brand": "Rima",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-fruits-secs-250-g-shehrazed",
+  "name": "Bsissa aux fruits secs 250 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-fruits-secs-500-g-arines",
+  "name": "Bsissa aux fruits secs 500 g",
+  "brand": "Arines",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-fruits-secs-light-250-g-shehrazed",
+  "name": "Bsissa aux fruits secs Light 250 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-pepites-de-chocolat-250-g-shehrazed",
+  "name": "Bsissa aux pépites de chocolat 250 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-aux-sesames-220-g-seniatna",
+  "name": "Bsissa aux sésames 220 g",
+  "brand": "Seniatna",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa aux sésames",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-ble-500-g-al-rayan",
+  "name": "Bsissa blé 500 g",
+  "brand": "Al Rayan",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa blé",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-ble-500-g-b-gaied-hassine",
+  "name": "Bsissa blé 500 g",
+  "brand": "B Gaied Hassine",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-chamia-fruits-500-g-b-gaied-hassine",
+  "name": "Bsissa chamia-fruits 500 g",
+  "brand": "B Gaied Hassine",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-cocktail-500-g-al-rayan",
+  "name": "Bsissa cocktail 500 g",
+  "brand": "Al Rayan",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa cocktail",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-d-avoine-500-g-agri-didon",
+  "name": "Bsissa d'avoine 500 g",
+  "brand": "Agri Didon",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa d'avoine",
+    "petit-dejeuner"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-d-orge-500-g-al-rayan",
+  "name": "Bsissa d'orge 500 g",
+  "brand": "Al Rayan",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa d'orge",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-d-orge-500-g-arines",
+  "name": "Bsissa d'orge 500 g",
+  "brand": "Arines",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa d'orge",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-d-orge-500-g-randa",
+  "name": "Bsissa d'orge 500 g",
+  "brand": "Randa",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa d'orge",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-d-orge-zammit-rima",
+  "name": "Bsissa d'orge zammit",
+  "brand": "Rima",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa d'orge zammit",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-250-g-vanoise",
+  "name": "Bsissa de blé 250 g",
+  "brand": "Vanoise",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-500-g-arines",
+  "name": "Bsissa de blé 500 g",
+  "brand": "Arines",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-500-g-mami",
+  "name": "Bsissa de blé 500 g",
+  "brand": "Mami",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-500-g-randa",
+  "name": "Bsissa de blé 500 g",
+  "brand": "Randa",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-500-g-vanoise",
+  "name": "Bsissa de blé 500 g",
+  "brand": "Vanoise",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-au-fenugrec-rima",
+  "name": "Bsissa de blé au fenugrec",
+  "brand": "Rima",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de blé",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-ble-vanoise-500-g-dr-oetker",
+  "name": "Bsissa de blé Vanoise 500 g",
+  "brand": "Dr. Oetker",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "carrefour",
+    "Bsissa de blé Vanoise",
+    "Épicerie Salée > Blé et Semoule"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-caroube-400-g-ceratonia",
+  "name": "Bsissa de caroube 400 g",
+  "brand": "Ceratonia",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de caroube",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-de-pois-chiche-500-g-hrayer-chebba",
+  "name": "Bsissa de pois chiche 500 g",
+  "brand": "Hrayer Chebba",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa de pois chiche",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-fruits-secs-500-g-b-gaied-hassine",
+  "name": "Bsissa fruits Secs 500 g",
+  "brand": "B Gaied Hassine",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-nature-250-g-shehrazed",
+  "name": "Bsissa nature 250 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-nature-80-g-shehrazed",
+  "name": "Bsissa nature 80 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-nature-90-g-shehrazed",
+  "name": "Bsissa nature 90 g",
+  "brand": "Shehrazed",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-orge-250-g-vanoise",
+  "name": "Bsissa orge 250 g",
+  "brand": "Vanoise",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa orge",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-orge-450-g-vanoise",
+  "name": "Bsissa orge 450 g",
+  "brand": "Vanoise",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa orge",
+    "preparations-traditionnelles"
+   ]
+  ]
+ },
+ {
+  "slug": "bsissa-orge-500-g-b-gaied-hassine",
+  "name": "Bsissa orge 500 g",
+  "brand": "B Gaied Hassine",
+  "type": "bsissa",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Bsissa",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-papillon",
+  "name": "Chamia",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-90-g-papillon",
+  "name": "Chamia 90 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-a-tartiner-nature-150-g-shehrazed",
+  "name": "Chamia à tartiner nature 150 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia à tartiner",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-a-tartiner-nature-350-g-papillon",
+  "name": "Chamia à tartiner nature 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia à tartiner",
+    "pates-a-tartiner"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-100-g-shehrazed",
+  "name": "Chamia amande 100 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-185-g-papillon",
+  "name": "Chamia amande 185 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-185-g-shehrazed",
+  "name": "Chamia amande 185 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-2-350-g-shehrazed",
+  "name": "Chamia amande 2 × 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-200-g-le-moulin",
+  "name": "Chamia amande 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-200-g-shehrazed",
+  "name": "Chamia amande 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-350-g-le-moulin",
+  "name": "Chamia amande 350 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-350-g-shehrazed",
+  "name": "Chamia amande 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-350-g-tous-les-jours",
+  "name": "Chamia amande 350 g",
+  "brand": "Tous les Jours",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-400-g-la-gazelle",
+  "name": "Chamia amande 400 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-400-g-le-moulin",
+  "name": "Chamia amande 400 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-400-g-shehrazed",
+  "name": "Chamia amande 400 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-500-g-papillon",
+  "name": "Chamia amande 500 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-550-g-le-moulin",
+  "name": "Chamia amande 550 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-550-g-shehrazed",
+  "name": "Chamia amande 550 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-750-g-la-gazelle",
+  "name": "Chamia amande 750 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-750-g-papillon",
+  "name": "Chamia amande 750 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-800-g-le-moulin",
+  "name": "Chamia amande 800 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-800-g-shehrazed",
+  "name": "Chamia amande 800 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-noisette-200-g-la-gazelle",
+  "name": "Chamia amande noisette 200 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-noisette-350-g-la-gazelle",
+  "name": "Chamia amande, noisette 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-noisette-550-g-la-gazelle",
+  "name": "Chamia amande, noisette 550 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-noisette-850-g-la-gazelle",
+  "name": "Chamia amande, noisette 850 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-pistache-chamia-nature-gratuite-200-g-200-g-le-moulin",
+  "name": "Chamia amande, pistache + chamia nature GRATUITE 200 g 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-pistache-350-g-le-moulin",
+  "name": "Chamia amande, pistache 350 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-amande-tahina-185-g-la-gazelle",
+  "name": "Chamia amande-Tahina 185 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-2-25-kg-le-lion",
+  "name": "Chamia aux amandes 2,25 kg",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-350-g-koll-youm",
+  "name": "Chamia aux amandes 350 g",
+  "brand": "Koll Youm",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "mg",
+    "Chamia aux amandes 350g Koll youm",
+    "Alimentaire"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-400-g-le-lion",
+  "name": "Chamia aux amandes 400 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-8-kg-le-lion",
+  "name": "Chamia aux amandes 8 kg",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-800-g-le-lion",
+  "name": "Chamia aux amandes 800 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-amandes-90-g-le-lion",
+  "name": "Chamia aux amandes 90 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-fruits-secs-2-kg-le-lion",
+  "name": "Chamia aux fruits secs 2 kg",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-fruits-secs-350-g-koll-youm",
+  "name": "Chamia aux fruits secs 350 g",
+  "brand": "Koll Youm",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "mg",
+    "Chamia aux  fruits secs 350G KOLLYOUM",
+    "Alimentaire"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-fruits-secs-850-g-le-lion",
+  "name": "Chamia aux fruits secs 850 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-pistaches-185-g-le-lion",
+  "name": "Chamia aux pistaches 185 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-aux-pistaches-400-g-le-lion",
+  "name": "Chamia aux pistaches 400 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-cacao-chamidoo-350-g-la-gazelle",
+  "name": "Chamia cacao Chamidoo 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-185-g-papillon",
+  "name": "Chamia chocolat 185 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-185-g-shehrazed",
+  "name": "Chamia chocolat 185 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-200-g-le-moulin",
+  "name": "Chamia chocolat 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-200-g-shehrazed",
+  "name": "Chamia chocolat 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-350-g-papillon",
+  "name": "Chamia chocolat 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-350-g-shehrazed",
+  "name": "Chamia chocolat 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-400-g-shehrazed",
+  "name": "Chamia chocolat 400 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-90-g-shehrazed",
+  "name": "Chamia chocolat 90 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-chocolat-noir-500-g-shehrazed",
+  "name": "Chamia chocolat noir 500 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-en-barquette-185-g-le-lion",
+  "name": "Chamia en barquette 185 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-en-barquette-350-g-papillon",
+  "name": "Chamia en barquette 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-en-boite-metal-185-g-le-lion",
+  "name": "Chamia en boîte métal 185 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-en-boite-metal-350-g-papillon",
+  "name": "Chamia en boîte métal 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-extra-185-g-papillon",
+  "name": "Chamia extra 185 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-extra-350-g-papillon",
+  "name": "Chamia extra 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-extra-nature-500-g-papillon",
+  "name": "Chamia extra nature 500 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-185-g-shehrazed",
+  "name": "Chamia fruits secs 185 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-2-kg-papillon",
+  "name": "Chamia fruits secs 2 kg",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-2-kg-shehrazed",
+  "name": "Chamia fruits secs 2 kg",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-200-g-shehrazed",
+  "name": "Chamia fruits secs 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-350-g-la-gazelle",
+  "name": "Chamia fruits secs 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-350-g-shehrazed",
+  "name": "Chamia fruits secs 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-350-g-tous-les-jours",
+  "name": "Chamia fruits secs 350 g",
+  "brand": "Tous les Jours",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-400-g-la-gazelle",
+  "name": "Chamia fruits secs 400 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-400-g-shehrazed",
+  "name": "Chamia fruits secs 400 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-500-g-papillon",
+  "name": "Chamia fruits secs 500 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-750-g-papillon",
+  "name": "Chamia fruits secs 750 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-800-g-shehrazed",
+  "name": "Chamia fruits secs 800 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-850-g-la-gazelle",
+  "name": "Chamia fruits secs 850 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-fruits-secs-90-g-shehrazed",
+  "name": "Chamia fruits secs 90 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-huile-de-lin-350-g-la-gazelle",
+  "name": "Chamia huile de lin 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-huile-de-nigelle-350-g-la-gazelle",
+  "name": "Chamia huile de nigelle 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-light-185-g-shehrazed",
+  "name": "Chamia light 185 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-light-350-g-le-moulin",
+  "name": "Chamia light 350 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-light-400-g-shehrazed",
+  "name": "Chamia light 400 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-light-550-g-le-moulin",
+  "name": "Chamia light 550 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-light-90-g-shehrazed",
+  "name": "Chamia light 90 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-100-g-le-moulin",
+  "name": "Chamia nature 100 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-100-g-shehrazed",
+  "name": "Chamia nature 100 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-185-g-papillon",
+  "name": "Chamia nature 185 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-185-g-shehrazed",
+  "name": "Chamia nature 185 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-2-kg-le-moulin",
+  "name": "Chamia nature 2 kg",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-2-350-g-shehrazed",
+  "name": "Chamia nature 2 × 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-2-25-kg-le-lion",
+  "name": "Chamia nature 2,25 kg",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-200-g-le-moulin",
+  "name": "Chamia nature 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-200-g-shehrazed",
+  "name": "Chamia nature 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-350-g-la-gazelle",
+  "name": "Chamia nature 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-350-g-le-moulin",
+  "name": "Chamia nature 350 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ],
+   [
+    "aziza",
+    "Chamia nature",
+    "weekly-promo"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-350-g-papillon",
+  "name": "Chamia nature 350 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-350-g-shehrazed",
+  "name": "Chamia nature 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-400-g-la-gazelle",
+  "name": "Chamia nature 400 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-400-g-le-lion",
+  "name": "Chamia nature 400 g",
+  "brand": "Le Lion",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-400-g-le-moulin",
+  "name": "Chamia nature 400 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-400-g-shehrazed",
+  "name": "Chamia nature 400 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-5-kg-le-moulin",
+  "name": "Chamia nature 5 kg",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-500-g-shehrazed",
+  "name": "Chamia nature 500 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-550-g-la-gazelle",
+  "name": "Chamia nature 550 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-550-g-le-moulin",
+  "name": "Chamia nature 550 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-550-g-shehrazed",
+  "name": "Chamia nature 550 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-800-g-la-gazelle",
+  "name": "Chamia nature 800 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-800-g-le-moulin",
+  "name": "Chamia nature 800 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-800-g-shehrazed",
+  "name": "Chamia nature 800 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-90-g-la-gazelle",
+  "name": "Chamia nature 90 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-90-g-le-moulin",
+  "name": "Chamia nature 90 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "aziza",
+    "Chamia nature",
+    "weekly-promo"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-chamidoo-350-g-la-gazelle",
+  "name": "Chamia nature Chamidoo 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-extra-750-g-papillon",
+  "name": "Chamia nature extra 750 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-light-200-g-le-moulin",
+  "name": "Chamia nature light 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia nature",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-helva-speciale-550-g-le-moulin",
+  "name": "Chamia nature-Helva speciale 550 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-light-200-g-shehrazed",
+  "name": "Chamia nature-Light 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-light-350-g-shehrazed",
+  "name": "Chamia nature-Light 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-light-800-g-shehrazed",
+  "name": "Chamia nature-Light 800 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-nature-tahina-185-g-la-gazelle",
+  "name": "Chamia nature-tahina 185 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-185-g-papillon",
+  "name": "Chamia pistache 185 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-2-kg-le-moulin",
+  "name": "Chamia pistache 2 kg",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-200-g-le-moulin",
+  "name": "Chamia pistache 200 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-200-g-shehrazed",
+  "name": "Chamia pistache 200 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-350-g-la-gazelle",
+  "name": "Chamia pistache 350 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-350-g-le-moulin",
+  "name": "Chamia pistache 350 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-350-g-shehrazed",
+  "name": "Chamia pistache 350 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-350-g-tous-les-jours",
+  "name": "Chamia pistache 350 g",
+  "brand": "Tous les Jours",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-400-g-la-gazelle",
+  "name": "Chamia pistache 400 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-500-g-papillon",
+  "name": "Chamia pistache 500 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-550-g-la-gazelle",
+  "name": "Chamia pistache 550 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-550-g-le-moulin",
+  "name": "Chamia pistache 550 g",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-550-g-shehrazed",
+  "name": "Chamia pistache 550 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-800-g-papillon",
+  "name": "Chamia pistache 800 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-850-g-la-gazelle",
+  "name": "Chamia pistache 850 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistache-90-g-shehrazed",
+  "name": "Chamia pistache 90 g",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-pistaches-200-g-la-gazelle",
+  "name": "Chamia pistaches 200 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-royale-2-kg-shehrazed",
+  "name": "Chamia royale 2 kg",
+  "brand": "Shehrazed",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-special-nature-5-kg-le-moulin",
+  "name": "Chamia spécial nature 5 kg",
+  "brand": "Le Moulin",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia spécial",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "chamia-tahina-500-g-la-gazelle",
+  "name": "Chamia Tahina 500 g",
+  "brand": "La Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Chamia Tahina",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "pate-a-tartiner-base-chamia-nature-200-g-gazelle",
+  "name": "Pâte à tartiner base chamia nature 200 g",
+  "brand": "Gazelle",
+  "type": "chamia (halva)",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "geant",
+    "Pâte à tartiner",
+    "pates-a-tartiner"
+   ]
+  ]
+ },
+ {
+  "slug": "zrir-recette-tunisienne",
+  "name": "Zrir recette Tunisienne",
+  "brand": "Zrir",
+  "type": "zrir",
+  "finalCategory": "produits-traditionnels",
+  "sources": [
+   [
+    "carrefour",
+    "Zrir recette Tunisienne",
+    "Le marché > Boulangerie et Pâtisserie > Pâtisserie traditionnelle"
+   ]
+  ]
+ },
+ {
+  "slug": "ghrayba-hommes-400-g-alyssa",
+  "name": "Ghrayba hommes 400 g",
+  "brand": "Alyssa",
+  "type": "other",
+  "finalCategory": "biscuits-gateaux",
+  "sources": [
+   [
+    "geant",
+    "Ghrayba hommes",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "bonbons-fourres-chamia-150-g-papillon",
+  "name": "Bonbons fourrés chamia 150 g",
+  "brand": "Papillon",
+  "type": "chamia (halva)",
+  "finalCategory": "chocolat-confiserie",
+  "sources": [
+   [
+    "geant",
+    "Bonbons fourrés",
+    "bonbons"
+   ]
+  ]
+ },
+ {
+  "slug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-250-g-kartago",
+  "name": "Choco pops dattes-Cacao-Noix de coco Energy snacks 250 g",
+  "brand": "Kartago",
+  "type": "other",
+  "finalCategory": "snacks-aperitif",
+  "sources": [
+   [
+    "geant",
+    "Choco pops",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "choco-pops-dattes-cacao-noix-de-coco-energy-snacks-50-g-kartago",
+  "name": "Choco pops dattes-Cacao-Noix de coco Energy snacks 50 g",
+  "brand": "Kartago",
+  "type": "other",
+  "finalCategory": "snacks-aperitif",
+  "sources": [
+   [
+    "geant",
+    "Choco pops",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "noisettes-pops-dattes-noisettes-energy-snacks-250-g-kartago",
+  "name": "Noisettes pops dattes-Noisettes Energy snacks 250 g",
+  "brand": "Kartago",
+  "type": "other",
+  "finalCategory": "snacks-aperitif",
+  "sources": [
+   [
+    "geant",
+    "Noisettes pops",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "noisettes-pops-dattes-noisettes-energy-snacks-50-g-kartago",
+  "name": "Noisettes pops dattes-Noisettes Energy snacks 50 g",
+  "brand": "Kartago",
+  "type": "other",
+  "finalCategory": "snacks-aperitif",
+  "sources": [
+   [
+    "geant",
+    "Noisettes pops",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ },
+ {
+  "slug": "sesames-pops-dattes-sesames-energy-snacks-250-g-kartago",
+  "name": "Sésames pops dattes-sésames Energy snacks 250 g",
+  "brand": "Kartago",
+  "type": "other",
+  "finalCategory": "snacks-aperitif",
+  "sources": [
+   [
+    "geant",
+    "Sésames pops",
+    "chamia-bsissa-et-zrir"
+   ]
+  ]
+ }
+]

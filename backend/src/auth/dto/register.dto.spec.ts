@@ -24,6 +24,17 @@ async function errorsFor(payload: Record<string, unknown>) {
   return { dto, properties: errors.map((error) => error.property) };
 }
 
+describe('RegisterDto photo', () => {
+  it('is not client-supplied: it is set by the photo upload only', async () => {
+    expect(
+      (await errorsFor({ photo: 'https://cdn.example.com/me.jpg' })).properties,
+    ).toEqual(['photo']);
+    expect(
+      (await errorsFor({ photoPublicId: 'users/1/me' })).properties,
+    ).toEqual(['photoPublicId']);
+  });
+});
+
 describe('RegisterDto phoneNumber', () => {
   it.each(['+21612345678', '98999240', '+216 12 345 678', '98-999-240'])(
     'accepts %s',

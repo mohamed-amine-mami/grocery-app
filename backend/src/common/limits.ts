@@ -4,7 +4,7 @@ export const ADDRESS_MAX_LENGTH = 200;
 export const DESCRIPTION_MAX_LENGTH = 1000;
 export const URL_MAX_LENGTH = 2048;
 
-/** Photos are plain URL strings for now (no upload): http(s) only, localhost allowed for dev. */
+/** Catalog photos are plain URL strings (set by the importer): http(s) only, localhost allowed for dev. User and store photos are not client-supplied. */
 export const PHOTO_URL_OPTIONS = {
   protocols: ['http', 'https'],
   require_protocol: true,

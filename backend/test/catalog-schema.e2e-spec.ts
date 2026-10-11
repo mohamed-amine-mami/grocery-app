@@ -12,6 +12,7 @@ const tag = `e2e${Date.now()}`;
 let counter = 0;
 const slug = (label: string) => `${tag}-${label}-${(counter += 1)}`;
 
+const brandIds: number[] = [];
 const categoryIds: number[] = [];
 const productIds: number[] = [];
 const offeringIds: number[] = [];
@@ -28,6 +29,17 @@ const makeCategory = async (overrides: Record<string, unknown> = {}) => {
   });
   categoryIds.push(category.id);
   return category;
+};
+
+const makeBrand = async (overrides: Record<string, unknown> = {}) => {
+  const label = slug('brand');
+  const brand = await db.orm.public.Brand.create({
+    slug: label,
+    name: `Marque ${label}`,
+    ...overrides,
+  });
+  brandIds.push(brand.id);
+  return brand;
 };
 
 const makeProduct = async (
@@ -101,6 +113,9 @@ afterAll(async () => {
   }
   for (const id of productIds) {
     await db.orm.public.Product.select('id').where({ id }).delete();
+  }
+  for (const id of brandIds) {
+    await db.orm.public.Brand.select('id').where({ id }).delete();
   }
   for (const id of categoryIds) {
     await db.orm.public.Category.select('id').where({ id }).delete();
@@ -242,6 +257,159 @@ describe('Product (global)', () => {
     await expect(
       db.orm.public.Category.select('id').where({ id: category.id }).delete(),
     ).rejects.toMatchObject(failsWith(FOREIGN_KEY));
+  });
+});
+
+describe('Brand (global)', () => {
+  it('can be created, and carries only an identity and timestamps', async () => {
+    const brand = await makeBrand({ name: `Heinz ${tag}` });
+    expect(brand).toMatchObject({ name: `Heinz ${tag}` });
+    expect(Object.keys(brand).sort()).toEqual(
+      ['createdAt', 'id', 'name', 'slug', 'updatedAt'].sort(),
+    );
+  });
+
+  it('has a unique slug', async () => {
+    const brand = await makeBrand();
+    await expect(
+      makeBrand({ slug: brand.slug, name: `Autre ${brand.slug}` }),
+    ).rejects.toMatchObject(failsWith(UNIQUE));
+  });
+
+  it('has a case-insensitively unique name', async () => {
+    await makeBrand({ name: `Amora ${tag}` });
+    await expect(makeBrand({ name: `AMORA ${tag}` })).rejects.toMatchObject(
+      failsWith(UNIQUE),
+    );
+  });
+
+  it.each([
+    ['a blank name', { name: '   ' }],
+    ['a malformed slug', { slug: 'Not A Slug' }],
+  ])('rejects %s', async (_label, overrides) => {
+    await expect(makeBrand(overrides)).rejects.toMatchObject(failsWith(CHECK));
+  });
+
+  it('is optional on a product, and a product can reference one', async () => {
+    const category = await makeCategory();
+    const brand = await makeBrand();
+    const without = await makeProduct(category.id);
+    const withBrand = await makeProduct(category.id, { brandId: brand.id });
+    expect(without.brandId).toBeNull();
+    expect(withBrand.brandId).toBe(brand.id);
+  });
+
+  it('requires an existing brand', async () => {
+    const category = await makeCategory();
+    await expect(
+      makeProduct(category.id, { brandId: 2_000_000_000 }),
+    ).rejects.toMatchObject(failsWith(FOREIGN_KEY));
+  });
+
+  it('refuses to delete a brand that a product still references', async () => {
+    const category = await makeCategory();
+    const brand = await makeBrand();
+    await makeProduct(category.id, { brandId: brand.id });
+    await expect(
+      db.orm.public.Brand.select('id').where({ id: brand.id }).delete(),
+    ).rejects.toMatchObject(failsWith(FOREIGN_KEY));
+  });
+});
+
+describe('Product names and brands', () => {
+  const ketchup = `Ketchup ${tag}`;
+
+  it('allows the same name under different brands and with no brand', async () => {
+    const category = await makeCategory();
+    const heinz = await makeBrand();
+    const amora = await makeBrand();
+    await expect(
+      makeProduct(category.id, { name: ketchup, brandId: heinz.id }),
+    ).resolves.toBeDefined();
+    await expect(
+      makeProduct(category.id, { name: ketchup, brandId: amora.id }),
+    ).resolves.toBeDefined();
+    await expect(
+      makeProduct(category.id, { name: ketchup, brandId: null }),
+    ).resolves.toBeDefined();
+  });
+
+  it('refuses the same active name twice under one brand, ignoring case', async () => {
+    const category = await makeCategory();
+    const heinz = await makeBrand();
+    await makeProduct(category.id, { name: `Mayo ${tag}`, brandId: heinz.id });
+    await expect(
+      makeProduct(category.id, { name: `MAYO ${tag}`, brandId: heinz.id }),
+    ).rejects.toMatchObject(failsWith(UNIQUE));
+  });
+
+  it('refuses the same active name twice when both have no brand', async () => {
+    const category = await makeCategory();
+    await makeProduct(category.id, { name: `Moutarde ${tag}`, brandId: null });
+    await expect(
+      makeProduct(category.id, { name: `moutarde ${tag}`, brandId: null }),
+    ).rejects.toMatchObject(failsWith(UNIQUE));
+  });
+
+  it('frees the name once the product is archived — branded or not', async () => {
+    const category = await makeCategory();
+    const heinz = await makeBrand();
+    const archive = (id: number) =>
+      db.orm.public.Product.where({ id }).update({
+        archivedAt: new Date().toISOString(),
+      });
+
+    const branded = await makeProduct(category.id, {
+      name: `Sel ${tag}`,
+      brandId: heinz.id,
+    });
+    await archive(branded.id);
+    await expect(
+      makeProduct(category.id, { name: `Sel ${tag}`, brandId: heinz.id }),
+    ).resolves.toBeDefined();
+
+    const brandless = await makeProduct(category.id, {
+      name: `Poivre ${tag}`,
+      brandId: null,
+    });
+    await archive(brandless.id);
+    await expect(
+      makeProduct(category.id, { name: `Poivre ${tag}`, brandId: null }),
+    ).resolves.toBeDefined();
+  });
+
+  it('refuses to restore a product whose name an active product now holds', async () => {
+    const category = await makeCategory();
+    const heinz = await makeBrand();
+    const first = await makeProduct(category.id, {
+      name: `Vinaigre ${tag}`,
+      brandId: heinz.id,
+    });
+    await db.orm.public.Product.where({ id: first.id }).update({
+      archivedAt: new Date().toISOString(),
+    });
+    await makeProduct(category.id, {
+      name: `Vinaigre ${tag}`,
+      brandId: heinz.id,
+    });
+    await expect(
+      db.orm.public.Product.where({ id: first.id }).update({
+        archivedAt: null,
+      }),
+    ).rejects.toMatchObject(failsWith(UNIQUE));
+  });
+
+  it('keeps a slug unique whatever the brand', async () => {
+    const category = await makeCategory();
+    const heinz = await makeBrand();
+    const first = await makeProduct(category.id, { brandId: heinz.id });
+    await expect(
+      makeProduct(category.id, {
+        slug: first.slug,
+        name: `Autre ${first.slug}`,
+        brandId: null,
+      }),
+    ).rejects.toMatchObject(failsWith(UNIQUE));
   });
 });
 

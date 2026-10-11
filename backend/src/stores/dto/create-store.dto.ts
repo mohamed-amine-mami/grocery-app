@@ -6,7 +6,6 @@ import {
   IsNotEmpty,
   IsOptional,
   IsString,
-  IsUrl,
   MaxLength,
   ValidateIf,
 } from 'class-validator';
@@ -14,8 +13,6 @@ import {
   ADDRESS_MAX_LENGTH,
   DESCRIPTION_MAX_LENGTH,
   NAME_MAX_LENGTH,
-  PHOTO_URL_OPTIONS,
-  URL_MAX_LENGTH,
 } from '../../common/limits.js';
 import { trimString } from '../../common/transforms.js';
 
@@ -42,14 +39,6 @@ export class CreateStoreDto {
   @IsString()
   @MaxLength(DESCRIPTION_MAX_LENGTH)
   description?: string;
-
-  @ApiPropertyOptional({
-    example: 'https://cdn.example.com/stores/1/photo.jpg',
-  })
-  @IsOptional()
-  @IsUrl(PHOTO_URL_OPTIONS)
-  @MaxLength(URL_MAX_LENGTH)
-  photo?: string;
 
   @ApiProperty({
     example: '12 Rue de la Liberté, Menzah 5, Tunis',

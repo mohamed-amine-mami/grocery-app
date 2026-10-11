@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import type { UnavailabilityReason } from '../../products/product-rules.js';
+import { BrandSummaryEntity } from '../../catalog/entities/brand.entity.js';
 import { SaleUnit } from '../../products/sale-unit.enum.js';
 
 export class StoreProductCategoryEntity {
@@ -17,6 +18,12 @@ export class StoreProductCatalogEntity {
   @ApiProperty({ nullable: true, type: String }) description!: string | null;
   @ApiProperty({ nullable: true, type: String, description: 'An image URL.' })
   photo!: string | null;
+  @ApiProperty({
+    type: BrandSummaryEntity,
+    nullable: true,
+    description: 'The product’s brand, or null when it has none.',
+  })
+  brand!: BrandSummaryEntity | null;
   @ApiProperty({ enum: SaleUnit }) defaultSaleUnit!: SaleUnit;
   @ApiProperty({
     enum: SaleUnit,

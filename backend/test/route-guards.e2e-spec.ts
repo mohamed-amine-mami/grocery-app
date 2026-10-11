@@ -21,10 +21,14 @@ const PUBLIC_ROUTES = [
 /** Every route the API is expected to expose. Adding one must be a conscious edit here. */
 const EXPECTED_ROUTES = [
   'DELETE /owner/store-products/{id}',
+  'DELETE /owner/store/photo',
+  'DELETE /users/me/photo',
   'GET /auth/me',
   'GET /health',
+  'GET /owner/catalog/browse',
   'GET /owner/catalog/categories',
   'GET /owner/catalog/products',
+  'GET /owner/catalog/products/{id}',
   'GET /owner/store',
   'GET /owner/store-products',
   'GET /owner/orders',
@@ -35,6 +39,8 @@ const EXPECTED_ROUTES = [
   'GET /stores',
   'GET /stores/{id}/products',
   'PATCH /owner/store',
+  'PUT /owner/store/photo',
+  'PUT /users/me/photo',
   'PATCH /owner/store-products/{id}',
   'PATCH /owner/store-products/{id}/availability',
   'POST /auth/login',
@@ -95,7 +101,13 @@ describe('the route table', () => {
     for (const { path } of routes) {
       expect(path).not.toMatch(/\{(ownerId|storeId)\}/);
     }
-    expect(routes.some((route) => /^\/users\b/.test(route.path))).toBe(false);
+    // No user CRUD, and no user route addressed by an id: only the own photo.
+    expect(
+      routes
+        .filter((route) => /^\/users\b/.test(route.path))
+        .map((route) => route.label)
+        .sort(),
+    ).toEqual(['DELETE /users/me/photo', 'PUT /users/me/photo']);
     // Customers only browse stores: nothing under /stores writes.
     const storeRoutes = routes.filter((route) =>
       /^\/stores\b/.test(route.path),
@@ -125,7 +137,7 @@ describe('the global catalog has no write route', () => {
     ).toEqual([]);
   });
 
-  it('allows writes only on the store, the store products, orders and auth', () => {
+  it('allows writes only on the store, the store products, orders, auth and the own-user photo', () => {
     const writers = routes
       .filter((route) => route.method !== 'get')
       .map((route) => route.path.split('/').slice(0, 3).join('/'));
@@ -137,6 +149,7 @@ describe('the global catalog has no write route', () => {
       '/owner/orders',
       '/owner/store',
       '/owner/store-products',
+      '/users/me',
     ]);
   });
 });
