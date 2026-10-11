@@ -120,8 +120,23 @@ Owner (OWNER, scoped to the owner's store; clients get 403): `GET /owner/orders?
 
 ## 13. Notifications
 
-V1 is polling and pull-to-refresh, with a count of `PENDING` orders for the owner. No push, no WebSockets and no automatic WhatsApp messages.
+V1 is polling and pull-to-refresh, with a count of `PENDING` orders for the owner. The owner app polls every 30 seconds while the Orders tab is visible and the app is in the foreground (one constant, `ordersPollInterval` in the Flutter app). No push, no WebSockets and no automatic WhatsApp messages.
 
 ## 14. Out of V1
 
 Open-order cap (the abuse risk is accepted), pickup slots and capacity, automatic expiry, quantity reduction, substitution, reserved stock, payment status or method, a server-side cart, multi-store orders, per-store order numbers, opening hours.
+
+## 15. Flutter customer app
+
+Tabs **Magasins · Panier · Commandes · Profil** (the cart badge counts products). Everything below uses only the endpoints in 12.
+
+- **Stores.** `GET /stores`: name, address, open/closed. A closed store opens and can be browsed; nothing can be added to the cart from it, and checkout refuses it (the backend's `STORE_CLOSED` stays the authority).
+- **Catalogue.** `GET /stores/:id/products`, grouped by category; search (accent-insensitive, over name, description and category) and category chips run locally. Each product shows its store price, unit, minimum / step / maximum and, when the backend says `isOrderable` is false, "Indisponible" (no reason, never a stock figure) with no add button.
+- **Cart.** Local to the app, one store. Adding puts the product at its minimum; `+` and `−` move by the product's step, `+` stops at the maximum, and `−` at the minimum removes the line. Adding from another store while the cart has products asks "Changer de magasin ?" and empties the cart only on "Vider et changer". The total is an estimate from the prices last loaded and is never sent. A fresh catalogue load flags cart lines that became unavailable or invalid; checkout is blocked until they are removed or corrected. Signing out empties the cart.
+- **Checkout.** Lines, estimated total, payment "À la récupération", and the pickup time: every 30 minutes (on the hour and half hour) from 30 minutes (plus one minute of margin for the request) to 48 hours ahead. The request carries `storeId`, `{ storeProductId, quantity }` lines, `requestedPickupAt` and `idempotencyKey` — no price, total, name, unit, stock or status.
+- **Idempotency.** One attempt, one key (a random UUID), created when the customer first sends. It is kept while the outcome is unknown (network or server error), so a retry resends the same request with the same key and the backend answers with the original order if the first call got through. A request that differs (another cart or pickup time) gets a new key; a definitive refusal ends the attempt; `IDEMPOTENCY_KEY_REUSED` is shown as a conflict, not retried. An order already created is never sent again.
+- **Errors** are French and keyed on status and `code`: `STORE_CLOSED`, `PRODUCT_UNAVAILABLE` and `INSUFFICIENT_STOCK` (the catalogue is reloaded and the cart reviewed; no quantity is shown), `INVALID_QUANTITY`, `INVALID_PICKUP_TIME` (the times are recalculated), network (retry), 401 (signs out), 404.
+- **After sending**, the screen shows the server's order (never one rebuilt from the cart), the cart is emptied only then, and the customer can go to "Mes commandes" or keep shopping.
+- **Orders.** `GET /orders` (pages of 20, pull-to-refresh) and `GET /orders/:id`: pickup code, status (En attente · Confirmée · Prête à retirer · Terminée · Annulée · Non retirée), pickup time, store, lines with their ordered prices, the server's total, lines the store removed, and the history. A four-step road (Envoyée → Confirmée → Prête → Récupérée) shows live orders; cancelled and uncollected ones are calm states. "Annuler la commande" (with a confirmation) is offered for pending and confirmed orders only; `ORDER_STATE_CHANGED` reloads the order and is never retried.
+- **Polling.** The same 30 s as the owner (`ordersPollInterval`): one timer per screen, no overlapping requests, only while the screen is visible, the app is in the foreground and nothing covers it (a finished order is not polled); coming back refreshes at once.
+
