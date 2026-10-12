@@ -1003,6 +1003,18 @@ void main() {
       await _tab(tester, 'Profil');
       await tester.tap(find.text('Se déconnecter'));
       await tester.pumpAndSettle();
+      // The profile asks first; the cart in progress is named.
+      expect(
+        find.text('Votre panier en cours (1 produit) sera vidé.'),
+        findsOneWidget,
+      );
+      await tester.tap(
+        find.descendant(
+          of: find.byType(AlertDialog),
+          matching: find.text('Se déconnecter'),
+        ),
+      );
+      await tester.pumpAndSettle();
 
       expect(find.byType(LoginView), findsOneWidget);
       final scope = CustomerScope.of(tester.element(find.byType(LoginView)));

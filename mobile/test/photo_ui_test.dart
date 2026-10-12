@@ -10,17 +10,24 @@ import 'package:grocery_mobile/data/services/api_client.dart';
 import 'package:grocery_mobile/data/services/image_picker_service.dart';
 import 'package:grocery_mobile/ui/core/photo/editable_photo.dart';
 
+import 'fake_image_http.dart';
 import 'fakes.dart';
 
 const _photoA = 'https://res.example/users/2/profile-a.jpg';
 const _storePhotoA = 'https://res.example/stores/10/photo-a.jpg';
 
-Finder _networkImage(String url) => find.byWidgetPredicate(
-  (widget) =>
-      widget is Image &&
-      widget.image is NetworkImage &&
-      (widget.image as NetworkImage).url == url,
-);
+/// The image provider under any resize wrapper (thumbnails are decoded at
+/// their own size).
+ImageProvider _unwrapped(ImageProvider provider) =>
+    provider is ResizeImage ? _unwrapped(provider.imageProvider) : provider;
+
+Finder _networkImage(String url) => find.byWidgetPredicate((widget) {
+  if (widget is! Image) {
+    return false;
+  }
+  final image = _unwrapped(widget.image);
+  return image is NetworkImage && image.url == url;
+});
 
 /// The no-photo placeholder of the photo being edited (the tab bar uses the
 /// same icons).
@@ -30,7 +37,7 @@ Finder get _avatarPlaceholder => find.descendant(
 );
 
 Finder get _anyNetworkImage => find.byWidgetPredicate(
-  (widget) => widget is Image && widget.image is NetworkImage,
+  (widget) => widget is Image && _unwrapped(widget.image) is NetworkImage,
 );
 
 /// Inside the open bottom sheet (the page behind may have the same words).
@@ -724,6 +731,10 @@ void main() {
 
   group('customer store card', () {
     Future<void> pumpStores(WidgetTester tester, List<dynamic> stores) async {
+      // Tall enough for every card: the list builds only what is near.
+      tester.view.physicalSize = const Size(400, 2400);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
       final api = ApiClient();
       final repository = FakeCustomerStoresRepository(
         api,
@@ -740,22 +751,25 @@ void main() {
     testWidgets('shows the remote photo when the store has one', (
       tester,
     ) async {
-      await pumpStores(tester, [
-        fakeCustomerStore(
-          id: 10,
-          name: 'Chez Sami',
-          photo: 'https://res.example/stores/10/photo-a.jpg',
-        ),
-      ]);
+      // Left loading: the strip is there as soon as there is a photo.
+      await servingImageErrors(hang: true, () async {
+        await pumpStores(tester, [
+          fakeCustomerStore(
+            id: 10,
+            name: 'Chez Sami',
+            photo: 'https://res.example/stores/10/photo-a.jpg',
+          ),
+        ]);
 
-      expect(find.text('Chez Sami'), findsOneWidget);
-      expect(
-        _networkImage('https://res.example/stores/10/photo-a.jpg'),
-        findsOneWidget,
-      );
+        expect(find.text('Chez Sami'), findsOneWidget);
+        expect(
+          _networkImage('https://res.example/stores/10/photo-a.jpg'),
+          findsOneWidget,
+        );
+      });
     });
 
-    testWidgets('keeps the card as it was when there is no photo', (
+    testWidgets('a store with no photo is not fetched, and has a face', (
       tester,
     ) async {
       await pumpStores(tester, [fakeCustomerStore(id: 10, name: 'Chez Sami')]);
@@ -767,21 +781,47 @@ void main() {
           of: find.byType(Card),
           matching: find.byIcon(Icons.storefront_rounded),
         ),
-        findsNothing,
+        findsOneWidget,
       );
     });
 
-    testWidgets('only the stores with a photo show one', (tester) async {
-      await pumpStores(tester, [
-        fakeCustomerStore(
-          id: 10,
-          name: 'Chez Sami',
-          photo: 'https://res.example/stores/10/photo-a.jpg',
-        ),
-        fakeCustomerStore(id: 20, name: 'Chez Leïla'),
-      ]);
+    testWidgets('only the stores with a photo fetch one', (tester) async {
+      await servingImageErrors(hang: true, () async {
+        await pumpStores(tester, [
+          fakeCustomerStore(
+            id: 10,
+            name: 'Chez Sami',
+            photo: 'https://res.example/stores/10/photo-a.jpg',
+          ),
+          fakeCustomerStore(id: 20, name: 'Chez Leïla'),
+        ]);
 
-      expect(_anyNetworkImage, findsOneWidget);
+        expect(_anyNetworkImage, findsOneWidget);
+      });
+    });
+
+    testWidgets('a photo that fails to load leaves the face, not a blank', (
+      tester,
+    ) async {
+      await servingImageErrors(() async {
+        await pumpStores(tester, [
+          fakeCustomerStore(
+            id: 10,
+            name: 'Chez Sami',
+            photo: 'https://res.example/stores/10/photo-a.jpg',
+          ),
+        ]);
+        await tester.pumpAndSettle();
+
+        expect(find.text('Chez Sami'), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byType(Card),
+            matching: find.byIcon(Icons.storefront_rounded),
+          ),
+          findsOneWidget,
+        );
+      });
     });
   });
 }

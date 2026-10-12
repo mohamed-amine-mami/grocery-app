@@ -101,21 +101,25 @@ void main() {
           .widgetList<ProductImage>(_inCart(find.byType(ProductImage)))
           .toList();
       expect(images.map((i) => i.photo), [_photo, null]);
-      // The catalogue's component, small, and the whole picture.
-      expect(images.every((i) => i.size == 56), isTrue);
+      // The catalogue's component and the whole picture: 56 px with a photo,
+      // the quiet 48 px tile without one.
+      expect(images.map((i) => i.size), [56, 48]);
+      expect(images.map((i) => i.quiet), [false, true]);
       expect(images.every((i) => i.fit == BoxFit.contain), isTrue);
 
       // Left of the name, level with it.
       final image = tester.getRect(_inCart(find.byType(ProductImage)).first);
       final name = tester.getTopLeft(_inCart(find.text('Banane')));
       expect(image.right, lessThan(name.dx));
-      // (The name sits on the amount's baseline, an 18 pt amount: ~3 px lower.)
       expect(image.top, closeTo(name.dy, 4));
-      // And the line's price stays at the right edge, after the name.
+      // The line's amount is under the name, on its left edge; the control
+      // is at the right edge of the same line.
+      final amount = tester.getRect(_inCart(find.text('0,900 DT')));
       expect(
-        tester.getTopRight(_inCart(find.text('0,900 DT'))).dx,
-        greaterThan(tester.getTopRight(_inCart(find.text('Banane'))).dx),
+        amount.top,
+        greaterThan(tester.getBottomLeft(_inCart(find.text('Banane'))).dy),
       );
+      expect(amount.left, closeTo(name.dx, 1));
       expect(tester.takeException(), isNull);
     });
 
@@ -135,16 +139,10 @@ void main() {
     testWidgets('the picture adds nothing for a screen reader', (tester) async {
       final semantics = tester.ensureSemantics();
       await _openCart(tester);
-      expect(
-        _inCart(find.bySemanticsLabel('Image du produit')),
-        findsNothing,
-      );
+      expect(_inCart(find.bySemanticsLabel('Image du produit')), findsNothing);
       // The name and the quantity controls are still there to be read.
       expect(_inCart(find.bySemanticsLabel(RegExp('Banane'))), findsWidgets);
-      expect(
-        find.byTooltip('Augmenter la quantité de Banane'),
-        findsOneWidget,
-      );
+      expect(find.byTooltip('Augmenter la quantité de Banane'), findsOneWidget);
       semantics.dispose();
     });
 
@@ -186,6 +184,84 @@ void main() {
     });
   });
 
+  group('cart list surface', () {
+    testWidgets('one list surface with hairlines, no card per line', (
+      tester,
+    ) async {
+      await _openCart(tester);
+      // The lines share one card; the store and the total have none.
+      expect(_inCart(find.byType(Card)), findsOneWidget);
+      expect(_inCart(find.byType(Divider)), findsOneWidget);
+      // The store is a heading above the list, not inside a card.
+      final store = tester.getTopLeft(_inCart(find.text('Menzah Market')));
+      final list = tester.getTopLeft(_inCart(find.byType(Card)));
+      expect(store.dy, lessThan(list.dy));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the divider starts at the text, not at the thumbnail', (
+      tester,
+    ) async {
+      await _openCart(tester);
+      final divider = tester.getTopLeft(_inCart(find.byType(Divider)));
+      final name = tester.getTopLeft(_inCart(find.text('Mayonnaise')));
+      expect(divider.dx, closeTo(name.dx, 1));
+    });
+
+    testWidgets('the total is the largest amount and is not in a card', (
+      tester,
+    ) async {
+      await _openCart(tester);
+      final label = find.text('Total estimé');
+      expect(label, findsOneWidget);
+      expect(
+        find.ancestor(of: label, matching: find.byType(Card)),
+        findsNothing,
+      );
+      // 20/700, above the 18/700 line amounts.
+      final total = tester.widget<Text>(_inCart(find.text('2,400 DT')).first);
+      expect(total.style?.fontSize, 20);
+      expect(total.style?.fontWeight, FontWeight.w700);
+      expect(
+        find.text('Le total définitif est confirmé à l’envoi de la commande.'),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('an emptied cart shows the empty state and its action', (
+      tester,
+    ) async {
+      final cart = await _openCart(tester);
+      cart.clear();
+      await tester.pumpAndSettle();
+      expect(find.text('Votre panier est vide'), findsOneWidget);
+      expect(find.text('Voir les magasins'), findsOneWidget);
+      expect(find.text('Commander'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    for (final (width, scale) in [(320.0, 2.0), (360.0, 1.65), (402.0, 1.0)]) {
+      testWidgets('amount and control stay whole at $width px, $scale×', (
+        tester,
+      ) async {
+        await _openCart(tester, size: Size(width, 2400), textScale: scale);
+        expect(tester.takeException(), isNull);
+        for (final name in ['Banane', 'Mayonnaise']) {
+          final plus = tester.getRect(
+            find.byTooltip('Augmenter la quantité de $name'),
+          );
+          expect(plus.right, lessThanOrEqualTo(width));
+          expect(plus.width, greaterThanOrEqualTo(44));
+        }
+        expect(_inCart(find.text('0,900 DT')), findsOneWidget);
+        expect(
+          tester.getRect(_inCart(find.text('0,900 DT'))).right,
+          lessThanOrEqualTo(width),
+        );
+      });
+    }
+  });
+
   group('checkout lines', () {
     testWidgets('show the same pictures, with the lines’ text unchanged', (
       tester,
@@ -197,7 +273,8 @@ void main() {
           .widgetList<ProductImage>(_inCheckout(find.byType(ProductImage)))
           .toList();
       expect(images.map((i) => i.photo), [_photo, null]);
-      expect(images.every((i) => i.size == 56), isTrue);
+      // The same tiles as the cart: 56 px with a photo, quiet 48 px without.
+      expect(images.map((i) => i.size), [56, 48]);
       expect(
         _inCheckout(find.byIcon(Icons.shopping_basket_rounded)),
         findsNWidgets(2),
@@ -215,10 +292,12 @@ void main() {
       expect(tester.takeException(), isNull);
 
       // Level with the name.
-      final image = tester.getRect(_inCheckout(find.byType(ProductImage)).first);
+      final image = tester.getRect(
+        _inCheckout(find.byType(ProductImage)).first,
+      );
       expect(
         image.top,
-        closeTo(tester.getTopLeft(_inCheckout(find.text('Banane'))).dy, 4),
+        closeTo(tester.getTopLeft(_inCheckout(find.text('Banane'))).dy, 6),
       );
     });
   });
@@ -226,35 +305,56 @@ void main() {
   group('line amount and tile', () {
     // The amount's role is the same on every screen: titleMedium, on the
     // first baseline of the name.
-    void expectAmount(WidgetTester tester, Finder scope, String amount) {
+    void expectAmount(
+      WidgetTester tester,
+      Finder scope,
+      String amount, {
+      FontWeight weight = FontWeight.w600,
+    }) {
       final text = tester.widget<Text>(
         find.descendant(of: scope, matching: find.text(amount)).first,
       );
       expect(text.style?.fontSize, 18);
-      expect(text.style?.fontWeight, FontWeight.w600);
+      expect(text.style?.fontWeight, weight);
     }
 
-    testWidgets('the cart line’s amount is titleMedium on the name’s baseline', (
+    testWidgets('the cart line’s amount is 18/700 at the text’s left edge', (
       tester,
     ) async {
       await _openCart(tester);
-      expectAmount(tester, find.byType(CartView), '0,900 DT');
+      expectAmount(
+        tester,
+        find.byType(CartView),
+        '0,900 DT',
+        weight: FontWeight.w700,
+      );
       final name = tester.getRect(_inCart(find.text('Banane')));
       final amount = tester.getRect(_inCart(find.text('0,900 DT')));
-      // Same first line: the amount's box and the name's overlap vertically,
-      // and the amount starts no lower than the name's top by more than the
-      // difference of their line heights.
-      expect(amount.top, closeTo(name.top, 4));
-      expect(amount.right, greaterThan(name.right));
+      // Under the name and its unit price, on the same left edge.
+      expect(amount.left, closeTo(name.left, 1));
+      expect(amount.top, greaterThan(name.bottom));
+      // The control sits at the right of the same line.
+      final plus = tester.getRect(
+        find.byTooltip('Augmenter la quantité de Banane'),
+      );
+      expect(plus.right, greaterThan(amount.right));
+      expect(plus.center.dy, closeTo(amount.center.dy, 12));
     });
 
     testWidgets('the checkout line’s amount is the same role', (tester) async {
       await _openCart(tester);
       await _openCheckout(tester);
-      expectAmount(tester, find.byType(CheckoutView), '0,900 DT');
+      expectAmount(
+        tester,
+        find.byType(CheckoutView),
+        '0,900 DT',
+        weight: FontWeight.w700,
+      );
       final name = tester.getRect(_inCheckout(find.text('Banane')));
       final amount = tester.getRect(_inCheckout(find.text('0,900 DT')));
-      expect(amount.top, closeTo(name.top, 4));
+      // The cart's anatomy: under the name and its meta, on its left edge.
+      expect(amount.left, closeTo(name.left, 1));
+      expect(amount.top, greaterThan(name.bottom));
     });
 
     testWidgets('the tile is 56 × 56, tinted, with or without a picture', (
@@ -271,11 +371,19 @@ void main() {
         matching: find.byType(ColoredBox),
       );
       expect(tiles, findsNWidgets(2));
+      final sizes = <Size>[];
       for (final element in tiles.evaluate()) {
         final box = element.widget as ColoredBox;
         expect(box.color, AppColors.primary.withValues(alpha: 0.08));
-        expect(tester.getSize(find.byWidget(box)), const Size(56, 56));
+        sizes.add(tester.getSize(find.byWidget(box)));
       }
+      // 56 px for the photographed product, the quiet 48 px for the other.
+      expect(sizes, [const Size(56, 56), const Size(48, 48)]);
+      // Both in the same 56 px slot: the names start at the same x.
+      expect(
+        tester.getTopLeft(_inCart(find.text('Banane'))).dx,
+        tester.getTopLeft(_inCart(find.text('Mayonnaise'))).dx,
+      );
       // Placeholder does not tint twice (the tile is the only tint).
       final placeholder = tester
           .widgetList<Container>(
@@ -302,26 +410,29 @@ void main() {
 
         final quantity = _inCheckout(find.text('1 pièce ·'));
         final unitPrice = _inCheckout(find.text('1,500 DT / pièce'));
-        final unitSize = tester.getSize(unitPrice);
-        final quantitySize = tester.getSize(quantity);
         // One line of the same text style: same height as the quantity piece.
-        expect(unitSize.height, quantitySize.height);
-        // Both pieces are fully visible, left-aligned with the name.
         expect(
-          tester.getTopLeft(quantity).dx,
-          tester.getTopLeft(_inCheckout(find.text('Mayonnaise'))).dx,
+          tester.getSize(unitPrice).height,
+          tester.getSize(quantity).height,
         );
-        expect(tester.getRect(unitPrice).right, lessThanOrEqualTo(width));
-        // Under the name: the unit price is not squeezed by the amount.
+        final name = _inCheckout(find.text('Mayonnaise'));
+        // Left-aligned with the name, under it; inside the screen.
+        expect(tester.getTopLeft(quantity).dx, tester.getTopLeft(name).dx);
         expect(
           tester.getTopLeft(quantity).dy,
-          greaterThan(tester.getTopLeft(_inCheckout(find.text('Mayonnaise'))).dy),
+          greaterThan(tester.getTopLeft(name).dy),
         );
-        // The amount keeps its role.
-        final amount = tester.widget<Text>(
-          _inCheckout(find.text('1,500 DT')).first,
+        expect(tester.getRect(unitPrice).right, lessThanOrEqualTo(width));
+        // The line's amount: 18/700, under the meta, on the same left edge.
+        final amount = _inCheckout(find.text('1,500 DT')).first;
+        final text = tester.widget<Text>(amount);
+        expect(text.style?.fontSize, 18);
+        expect(text.style?.fontWeight, FontWeight.w700);
+        expect(
+          tester.getTopLeft(amount).dy,
+          greaterThan(tester.getBottomLeft(quantity).dy - 1),
         );
-        expect(amount.style?.fontSize, 18);
+        expect(tester.getTopLeft(amount).dx, tester.getTopLeft(name).dx);
         expect(tester.takeException(), isNull);
       });
     }
@@ -332,13 +443,105 @@ void main() {
       final semantics = tester.ensureSemantics();
       await _openCart(tester);
       await _openCheckout(tester);
-      expect(_inCheckout(find.bySemanticsLabel(RegExp('1 pièce ·'))), findsWidgets);
+      expect(
+        _inCheckout(find.bySemanticsLabel(RegExp('1 pièce ·'))),
+        findsWidgets,
+      );
       expect(
         _inCheckout(find.bySemanticsLabel(RegExp('1,500 DT / pièce'))),
         findsWidgets,
       );
       semantics.dispose();
     });
+  });
+
+  group('checkout composition', () {
+    testWidgets('store is a heading, retrait and payment share one surface, '
+        'the lines share another', (tester) async {
+      await _openCart(tester);
+      await _openCheckout(tester);
+
+      // Two list surfaces only: pickup+payment, and the lines.
+      expect(_inCheckout(find.byType(Card)), findsNWidgets(2));
+      // The store is not in a card.
+      expect(
+        find.ancestor(
+          of: _inCheckout(find.text('Menzah Market')),
+          matching: find.byType(Card),
+        ),
+        findsNothing,
+      );
+      // Payment sits with the pickup time, above the order.
+      final pay = tester.getTopLeft(_inCheckout(find.text('Paiement'))).dy;
+      expect(
+        pay,
+        lessThan(
+          tester.getTopLeft(_inCheckout(find.text('Votre commande'))).dy,
+        ),
+      );
+      // The pickup note is kept.
+      expect(
+        find.text('C’est une heure souhaitée, pas un créneau réservé.'),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('the estimated total is not in a card, the bar repeats it', (
+      tester,
+    ) async {
+      await _openCart(tester);
+      await _openCheckout(tester);
+      final label = _inCheckout(find.text('Total estimé'));
+      expect(label, findsOneWidget);
+      expect(
+        find.ancestor(of: label, matching: find.byType(Card)),
+        findsNothing,
+      );
+      final total = tester.widget<Text>(
+        _inCheckout(find.text('2,400 DT')).first,
+      );
+      expect(total.style?.fontSize, 20);
+      expect(total.style?.fontWeight, FontWeight.w700);
+      expect(find.text('Confirmer la commande'), findsOneWidget);
+    });
+
+    testWidgets('the pickup row is a 48 px target that opens the sheet', (
+      tester,
+    ) async {
+      await _openCart(tester);
+      await _openCheckout(tester);
+      final row = find.byKey(const Key('pickup-field'));
+      expect(tester.getSize(row).height, greaterThanOrEqualTo(48));
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+      // The existing sheet: times grouped under their day.
+      expect(find.textContaining('Aujourd'), findsWidgets);
+    });
+
+    for (final (width, scale) in [(320.0, 2.0), (360.0, 1.65), (402.0, 1.0)]) {
+      testWidgets('payment and lines stay whole at $width px, $scale×', (
+        tester,
+      ) async {
+        await _openCart(tester, size: Size(width, 3000), textScale: scale);
+        await _openCheckout(tester);
+        expect(tester.takeException(), isNull);
+        // "À la récupération" is one piece of text, never split mid-word.
+        final payment = _inCheckout(find.text('À la récupération'));
+        expect(payment, findsOneWidget);
+        expect(tester.getRect(payment).right, lessThanOrEqualTo(width));
+        final painter = TextPainter(
+          text: const TextSpan(
+            text: 'À la récupération',
+            style: TextStyle(fontSize: 14, fontFamily: 'Inter'),
+          ),
+          textDirection: TextDirection.ltr,
+          textScaler: TextScaler.linear(scale),
+        )..layout();
+        // Whole words: the box is at least as wide as the text needs, or it
+        // wraps between words (at most two lines).
+        expect(tester.getSize(payment).height, lessThan(painter.height * 2.5));
+      });
+    }
   });
 
   group('text size', () {

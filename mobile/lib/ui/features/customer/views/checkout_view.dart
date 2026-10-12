@@ -11,7 +11,7 @@ import '../view_models/cart_view_model.dart';
 import '../view_models/checkout_failure.dart';
 import '../view_models/checkout_view_model.dart';
 import '../view_models/customer_scope.dart';
-import 'cart_view.dart' show EstimatedTotal, LineThumbnail;
+import 'cart_view.dart' show EstimatedTotal, LineDivider, LineThumbnail;
 import 'customer_order_detail_view.dart';
 
 /// The last step before an order is sent: what is ordered, when it will be
@@ -139,33 +139,86 @@ class _CheckoutViewState extends State<CheckoutView> {
                         ),
                         const SizedBox(height: AppSpacing.lg),
                       ],
-                      Text('Magasin', style: textTheme.titleMedium),
-                      const SizedBox(height: AppSpacing.sm),
-                      Card(
-                        child: ListTile(
-                          title: Text(store.name, style: textTheme.bodyMedium),
-                          subtitle: Text(store.address),
-                        ),
-                      ),
+                      // Where: the store, as a heading (no card).
+                      Text(store.name, style: textTheme.titleMedium),
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(store.address, style: textTheme.bodySmall),
                       const SizedBox(height: AppSpacing.xxl),
+                      // When and how: one list surface of two rows.
                       Text('Retrait', style: textTheme.titleMedium),
                       const SizedBox(height: AppSpacing.sm),
                       Card(
-                        child: ListTile(
-                          key: const Key('pickup-field'),
-                          leading: const Icon(
-                            Icons.schedule_rounded,
-                            color: AppColors.primary,
-                          ),
-                          title: const Text('Heure de retrait souhaitée'),
-                          subtitle: Text(
-                            viewModel.selectedSlot == null
-                                ? 'Aucun horaire disponible'
-                                : DateFormatFr.pickup(viewModel.selectedSlot!),
-                            style: textTheme.bodyMedium,
-                          ),
-                          trailing: const Icon(Icons.chevron_right_rounded),
-                          onTap: viewModel.isSubmitting ? null : _pickSlot,
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          children: [
+                            InkWell(
+                              key: const Key('pickup-field'),
+                              onTap: viewModel.isSubmitting ? null : _pickSlot,
+                              child: Padding(
+                                padding: const EdgeInsets.all(AppSpacing.lg),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.schedule_rounded,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                    const SizedBox(width: AppSpacing.md),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Heure de retrait souhaitée',
+                                            style: textTheme.bodySmall,
+                                          ),
+                                          const SizedBox(height: AppSpacing.xs),
+                                          Text(
+                                            viewModel.selectedSlot == null
+                                                ? 'Aucun horaire disponible'
+                                                : DateFormatFr.pickup(
+                                                    viewModel.selectedSlot!,
+                                                  ),
+                                            style: textTheme.titleMedium,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const Divider(height: 1),
+                            Padding(
+                              padding: const EdgeInsets.all(AppSpacing.lg),
+                              // Label and value side by side; at large
+                              // text the value goes under its label whole,
+                              // never broken inside a word.
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: Wrap(
+                                  alignment: WrapAlignment.spaceBetween,
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  spacing: AppSpacing.md,
+                                  runSpacing: AppSpacing.xs,
+                                  children: [
+                                    Text(
+                                      'Paiement',
+                                      style: textTheme.bodySmall,
+                                    ),
+                                    Text(
+                                      'À la récupération',
+                                      style: textTheme.labelLarge,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: AppSpacing.sm),
@@ -173,50 +226,22 @@ class _CheckoutViewState extends State<CheckoutView> {
                         'C’est une heure souhaitée, pas un créneau réservé.',
                         style: textTheme.bodySmall,
                       ),
-                      const SizedBox(height: AppSpacing.lg),
-                      Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(AppSpacing.lg),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Paiement',
-                                  style: textTheme.bodySmall,
-                                ),
-                              ),
-                              Text(
-                                'À la récupération',
-                                style: textTheme.labelLarge,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                       const SizedBox(height: AppSpacing.xxl),
+                      // What: the lines, on one list surface like the cart's.
                       Text('Votre commande', style: textTheme.titleMedium),
                       const SizedBox(height: AppSpacing.sm),
                       Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(AppSpacing.lg),
-                          child: Column(
-                            children: [
-                              for (final (index, line)
-                                  in cart.lines.indexed) ...[
-                                if (index > 0)
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: AppSpacing.md,
-                                    ),
-                                    child: Divider(height: 1),
-                                  ),
-                                _SummaryLine(line: line),
-                              ],
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          children: [
+                            for (final (index, line) in cart.lines.indexed) ...[
+                              if (index > 0) const LineDivider(),
+                              _SummaryLine(line: line),
                             ],
-                          ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: AppSpacing.lg),
+                      const SizedBox(height: AppSpacing.xxl),
                       EstimatedTotal(
                         totalMillimes: cart.estimatedTotalMillimes,
                       ),
@@ -238,53 +263,60 @@ class _SummaryLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final product = line.product;
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        LineThumbnail(photo: product.photo),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // The amount sits on the name's first baseline.
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Expanded(
-                    child: Text(product.name, style: textTheme.bodyMedium),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.pagePadding,
+        vertical: AppSpacing.md,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          LineThumbnail(photo: product.photo, quietWithoutPhoto: true),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // The name has the whole width of the text column.
+                Text(
+                  product.name,
+                  style: textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    height: 1.25,
                   ),
-                  const SizedBox(width: AppSpacing.md),
-                  Text(
-                    ProductFormat.price(line.subtotalMillimes),
-                    style: textTheme.titleMedium,
-                  ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              // Under the name *and* the amount, so it has the full width of
-              // the text area. Two pieces: the line breaks between them, never
-              // inside "2,000 DT / pièce".
-              Wrap(
-                spacing: AppSpacing.xs,
-                children: [
-                  Text(
-                    '${ProductFormat.quantity(product.saleUnit, line.quantity)} ·',
-                    style: textTheme.bodySmall,
-                  ),
-                  Text(
-                    ProductFormat.pricePerUnit(
-                      product.saleUnit,
-                      product.priceMillimes,
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                // Quantity and unit price, then the line's amount — the same
+                // anatomy as a cart line, in every row. The meta breaks
+                // between its two pieces, never inside "2,000 DT / pièce".
+                Wrap(
+                  spacing: AppSpacing.xs,
+                  children: [
+                    Text(
+                      '${ProductFormat.quantity(product.saleUnit, line.quantity)} ·',
+                      style: textTheme.bodySmall,
                     ),
-                    style: textTheme.bodySmall,
+                    Text(
+                      ProductFormat.pricePerUnit(
+                        product.saleUnit,
+                        product.priceMillimes,
+                      ),
+                      style: textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  ProductFormat.price(line.subtotalMillimes),
+                  style: textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontFeatures: const [FontFeature.tabularFigures()],
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

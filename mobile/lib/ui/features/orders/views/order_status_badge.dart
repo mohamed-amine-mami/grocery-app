@@ -48,12 +48,16 @@ class OrderStatusBadge extends StatelessWidget {
         children: [
           Icon(icon, size: 16, color: color),
           const SizedBox(width: AppSpacing.xs),
-          Text(
-            label ?? OrderLabels.status(status),
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: color,
+          // At large text on a narrow screen the word wraps inside the badge
+          // instead of running off it.
+          Flexible(
+            child: Text(
+              label ?? OrderLabels.status(status),
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
             ),
           ),
         ],

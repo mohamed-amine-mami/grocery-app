@@ -35,9 +35,8 @@ class QuantityStepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final buttonSize = compact
-        ? const BoxConstraints.tightFor(width: 44, height: 44)
-        : null;
+    // 44 px buttons, in the catalogue and in the cart alike.
+    const buttonSize = BoxConstraints.tightFor(width: 44, height: 44);
     final quantityText = Text(
       ProductFormat.quantity(unit, quantity),
       textAlign: TextAlign.center,

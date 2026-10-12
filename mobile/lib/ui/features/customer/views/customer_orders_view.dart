@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/customer_order.dart';
+import '../../../../data/models/order.dart';
 import '../../../core/app_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/utils/date_formatters.dart';
@@ -169,10 +170,25 @@ class _OrderList extends StatelessWidget {
                 ],
               ),
             ),
-          for (final order in orders) ...[
-            _OrderCard(order: order, onTap: () => onOpen(order)),
-            const SizedBox(height: AppSpacing.md),
-          ],
+          if (orders.isNotEmpty)
+            // One list surface, hairlines between the orders.
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  for (final (index, order) in orders.indexed) ...[
+                    if (index > 0)
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.pagePadding,
+                        ),
+                        child: Divider(height: 1),
+                      ),
+                    _OrderRow(order: order, onTap: () => onOpen(order)),
+                  ],
+                ],
+              ),
+            ),
           if (viewModel.hasMore)
             Padding(
               padding: const EdgeInsets.only(top: AppSpacing.sm),
@@ -193,8 +209,11 @@ class _OrderList extends StatelessWidget {
   }
 }
 
-class _OrderCard extends StatelessWidget {
-  const _OrderCard({required this.order, required this.onTap});
+/// One order of the list: the store and its status, when it is to be picked
+/// up, then the code and the total. Same order of information on every row;
+/// no colour per status (the badge says it, with an icon and a word).
+class _OrderRow extends StatelessWidget {
+  const _OrderRow({required this.order, required this.onTap});
 
   final CustomerOrder order;
   final VoidCallback onTap;
@@ -202,23 +221,26 @@ class _OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Card(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(AppRadii.card),
-        onTap: onTap,
-        child: Semantics(
-          button: true,
-          hint: 'Ouvrir la commande',
+    final ready = order.status == OrderStatus.readyForPickup;
+    return InkWell(
+      onTap: onTap,
+      child: Semantics(
+        button: true,
+        hint: 'Ouvrir la commande',
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 48),
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.lg),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: AppSpacing.md,
+                  runSpacing: AppSpacing.xs,
                   children: [
-                    Expanded(
-                      child: Text(order.code, style: textTheme.titleMedium),
-                    ),
+                    Text(order.storeName, style: textTheme.titleMedium),
                     OrderStatusBadge(
                       status: order.status,
                       label: CustomerOrderLabels.status(order.status),
@@ -226,26 +248,37 @@ class _OrderCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: AppSpacing.xs),
-                Text(order.storeName, style: textTheme.bodySmall),
+                Text(
+                  DateFormatFr.pickup(order.requestedPickupAt),
+                  style: textTheme.bodySmall,
+                ),
+                if (ready) ...[
+                  // What to do next, in words, for the one order that waits.
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    'Présentez votre code au magasin.',
+                    style: textTheme.labelLarge,
+                  ),
+                ],
                 const SizedBox(height: AppSpacing.md),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.end,
+                  spacing: AppSpacing.md,
                   children: [
-                    const Icon(
-                      Icons.schedule_rounded,
-                      size: 20,
-                      color: AppColors.primary,
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: Text(
-                        DateFormatFr.pickup(order.requestedPickupAt),
-                        style: textTheme.bodyMedium,
+                    Text(
+                      order.code,
+                      style: textTheme.labelSmall?.copyWith(
+                        letterSpacing: 1,
+                        fontFeatures: const [FontFeature.tabularFigures()],
                       ),
                     ),
                     Text(
                       ProductFormat.price(order.totalMillimes),
-                      style: textTheme.titleMedium,
+                      style: textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        fontFeatures: const [FontFeature.tabularFigures()],
+                      ),
                     ),
                   ],
                 ),

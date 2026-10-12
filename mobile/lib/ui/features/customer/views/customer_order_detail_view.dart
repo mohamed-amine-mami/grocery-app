@@ -173,42 +173,33 @@ class _CustomerOrderDetailViewState extends State<CustomerOrderDetailView> {
                   const SizedBox(height: AppSpacing.xxl),
                   _Lines(order: order),
                   const SizedBox(height: AppSpacing.xxl),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(AppSpacing.lg),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Total',
-                                  style: textTheme.bodyMedium,
-                                ),
-                              ),
-                              Text(
-                                ProductFormat.price(order.totalMillimes),
-                                style: textTheme.titleLarge,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Paiement',
-                                  style: textTheme.bodySmall,
-                                ),
-                              ),
-                              Text(
-                                'À la récupération',
-                                style: textTheme.labelLarge,
-                              ),
-                            ],
-                          ),
-                        ],
+                  // The server's total, apart from the line amounts above
+                  // it (20/700, no card), and how it will be paid.
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Expanded(
+                        child: Text('Total', style: textTheme.bodyLarge),
                       ),
+                      Text(
+                        ProductFormat.price(order.totalMillimes),
+                        style: textTheme.titleLarge?.copyWith(
+                          fontFeatures: const [FontFeature.tabularFigures()],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Wrap(
+                      alignment: WrapAlignment.spaceBetween,
+                      spacing: AppSpacing.md,
+                      children: [
+                        Text('Paiement', style: textTheme.bodySmall),
+                        Text('À la récupération', style: textTheme.labelLarge),
+                      ],
                     ),
                   ),
                   const SizedBox(height: AppSpacing.xxl),
@@ -273,10 +264,21 @@ class _PlacedBanner extends StatelessWidget {
   }
 }
 
+/// The pickup ticket: the code, where the order stands and what it means,
+/// the way it is going (tracker), then when and where to collect it.
+///
+/// The code is the big thing while the order can still be collected (pending,
+/// confirmed, ready). Once it is over (collected, cancelled, not collected) it
+/// stays readable but quiet: nothing says it can be presented.
 class _StatusCard extends StatelessWidget {
   const _StatusCard({required this.order});
 
   final CustomerOrder order;
+
+  static bool _open(OrderStatus status) =>
+      status == OrderStatus.pending ||
+      status == OrderStatus.confirmed ||
+      status == OrderStatus.readyForPickup;
 
   @override
   Widget build(BuildContext context) {
@@ -285,88 +287,178 @@ class _StatusCard extends StatelessWidget {
     final reason = order.status == OrderStatus.cancelled
         ? order.events.lastOrNull?.reason
         : null;
+    final open = _open(order.status);
+    const tabular = [FontFeature.tabularFigures()];
 
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Code de retrait', style: textTheme.bodySmall),
-                      Text(order.code, style: textTheme.headlineSmall),
-                    ],
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: AppSpacing.md,
+                  runSpacing: AppSpacing.sm,
+                  children: [
+                    Text('Code de retrait', style: textTheme.bodySmall),
+                    OrderStatusBadge(
+                      status: order.status,
+                      label: CustomerOrderLabels.status(order.status),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Semantics(
+                  label: 'Code de retrait ${order.code.split('').join(' ')}',
+                  excludeSemantics: true,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      order.code,
+                      maxLines: 1,
+                      style: open
+                          ? textTheme.displaySmall?.copyWith(
+                              letterSpacing: 1.5,
+                              fontFeatures: tabular,
+                            )
+                          : textTheme.titleLarge?.copyWith(
+                              color: AppColors.textSecondary,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              fontFeatures: tabular,
+                            ),
+                    ),
                   ),
                 ),
-                OrderStatusBadge(
-                  status: order.status,
-                  label: CustomerOrderLabels.status(order.status),
+                if (hint != null) ...[
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
+                    hint,
+                    style: open ? textTheme.bodyLarge : textTheme.bodySmall,
+                  ),
+                ],
+                if (reason != null) ...[
+                  const SizedBox(height: AppSpacing.sm),
+                  Text('Motif : $reason', style: textTheme.bodySmall),
+                ],
+              ],
+            ),
+          ),
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _TicketFact(
+                  icon: Icons.schedule_rounded,
+                  label: 'Retrait souhaité',
+                  value: DateFormatFr.pickup(order.requestedPickupAt),
+                  strong: true,
+                ),
+                const SizedBox(height: AppSpacing.md),
+                _TicketFact(
+                  icon: Icons.storefront_rounded,
+                  label: order.storeName,
+                  value: order.storeAddress,
                 ),
               ],
             ),
-            if (hint != null) ...[
-              const SizedBox(height: AppSpacing.sm),
-              Text(hint, style: textTheme.bodySmall),
-            ],
-            if (reason != null) ...[
-              const SizedBox(height: AppSpacing.sm),
-              Text('Motif : $reason', style: textTheme.bodySmall),
-            ],
-            const SizedBox(height: AppSpacing.lg),
-            _StatusTracker(status: order.status),
-            const SizedBox(height: AppSpacing.lg),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Icon(
-                  Icons.schedule_rounded,
-                  size: 24,
-                  color: AppColors.primary,
-                ),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Retrait souhaité', style: textTheme.bodySmall),
-                      Text(
-                        DateFormatFr.pickup(order.requestedPickupAt),
-                        style: textTheme.titleMedium,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.md),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Icon(
-                  Icons.storefront_rounded,
-                  size: 24,
-                  color: AppColors.primary,
-                ),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(order.storeName, style: textTheme.bodyMedium),
-                      Text(order.storeAddress, style: textTheme.bodySmall),
-                    ],
-                  ),
-                ),
-              ],
+          ),
+          if (order.status != OrderStatus.cancelled &&
+              order.status != OrderStatus.noShow) ...[
+            // The ticket's perforation, then the way it is going: the time
+            // and the place come first, so they are on screen with the code.
+            const _Perforation(),
+            Padding(
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              child: _StatusTracker(status: order.status),
             ),
           ],
-        ),
+        ],
       ),
+    );
+  }
+}
+
+/// A dashed line across the ticket, between its code and its tracker.
+class _Perforation extends StatelessWidget {
+  const _Perforation();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          const dash = 6.0;
+          const gap = 5.0;
+          final count = (constraints.maxWidth / (dash + gap)).floor();
+          return ExcludeSemantics(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                for (var i = 0; i < count; i++)
+                  const SizedBox(
+                    width: dash,
+                    height: 1,
+                    child: ColoredBox(color: Color(0x3318221C)),
+                  ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+/// An icon and two lines: a small label over its value (or a name over its
+/// address). The icon is a quiet Secondary Text one, not brand green.
+class _TicketFact extends StatelessWidget {
+  const _TicketFact({
+    required this.icon,
+    required this.label,
+    required this.value,
+    this.strong = false,
+  });
+
+  final IconData icon;
+  final String label;
+  final String value;
+  final bool strong;
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, size: 24, color: AppColors.textSecondary),
+        const SizedBox(width: AppSpacing.md),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: strong ? textTheme.bodySmall : textTheme.bodyLarge,
+              ),
+              Text(
+                value,
+                style: strong ? textTheme.titleMedium : textTheme.bodySmall,
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -470,22 +562,28 @@ class _Lines extends StatelessWidget {
     final kept = order.activeItems;
     final removed = order.removedItems;
 
+    Widget surface(List<OrderItem> items, {bool removed = false}) => Card(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          for (final (index, item) in items.indexed) ...[
+            if (index > 0)
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+                child: Divider(height: 1),
+              ),
+            _LineRow(item: item, removed: removed),
+          ],
+        ],
+      ),
+    );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Produits · ${kept.length}', style: textTheme.titleMedium),
         const SizedBox(height: AppSpacing.sm),
-        Card(
-          clipBehavior: Clip.antiAlias,
-          child: Column(
-            children: [
-              for (final (index, item) in kept.indexed) ...[
-                if (index > 0) const Divider(height: 1),
-                _LineRow(item: item),
-              ],
-            ],
-          ),
-        ),
+        surface(kept),
         if (removed.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.xxl),
           Text(
@@ -493,23 +591,15 @@ class _Lines extends StatelessWidget {
             style: textTheme.titleMedium,
           ),
           const SizedBox(height: AppSpacing.sm),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              children: [
-                for (final (index, item) in removed.indexed) ...[
-                  if (index > 0) const Divider(height: 1),
-                  _LineRow(item: item, removed: true),
-                ],
-              ],
-            ),
-          ),
+          surface(removed, removed: true),
         ],
       ],
     );
   }
 }
 
+/// One line of the order, the cart's anatomy without a control: name on the
+/// whole width, `quantité · prix unitaire / unité`, then the line amount.
 class _LineRow extends StatelessWidget {
   const _LineRow({required this.item, this.removed = false});
 
@@ -519,66 +609,76 @@ class _LineRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final nameStyle = textTheme.bodyLarge?.copyWith(
+      fontWeight: FontWeight.w500,
+      height: 1.25,
+    );
     return Padding(
       padding: const EdgeInsets.all(AppSpacing.lg),
-      child: Row(
-        // The amount sits on the name's first baseline.
-        crossAxisAlignment: CrossAxisAlignment.baseline,
-        textBaseline: TextBaseline.alphabetic,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  item.productName,
-                  style: removed
-                      ? textTheme.bodyMedium?.copyWith(
-                          color: AppColors.textSecondary,
-                          decoration: TextDecoration.lineThrough,
-                        )
-                      : textTheme.bodyMedium,
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  '${ProductFormat.quantity(item.saleUnit, item.quantity)} · ${ProductFormat.pricePerUnit(item.saleUnit, item.unitPriceMillimes)}',
-                  style: textTheme.bodySmall,
-                ),
-                if (removed) ...[
-                  const SizedBox(height: AppSpacing.xs),
-                  const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.remove_circle_outline_rounded,
-                        size: 16,
-                        color: AppColors.warning,
-                      ),
-                      SizedBox(width: AppSpacing.xs),
-                      Text(
-                        'Retiré de la commande',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.warning,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ],
-            ),
-          ),
-          const SizedBox(width: AppSpacing.md),
           Text(
-            ProductFormat.price(item.lineTotalMillimes),
+            item.productName,
             style: removed
-                ? textTheme.titleMedium?.copyWith(
+                ? nameStyle?.copyWith(
                     color: AppColors.textSecondary,
                     decoration: TextDecoration.lineThrough,
                   )
-                : textTheme.titleMedium,
+                : nameStyle,
           ),
+          const SizedBox(height: AppSpacing.xs),
+          // Breaks between its two pieces, never inside "2,000 DT / pièce".
+          Wrap(
+            spacing: AppSpacing.xs,
+            children: [
+              Text(
+                '${ProductFormat.quantity(item.saleUnit, item.quantity)} ·',
+                style: textTheme.bodySmall,
+              ),
+              Text(
+                ProductFormat.pricePerUnit(
+                  item.saleUnit,
+                  item.unitPriceMillimes,
+                ),
+                style: textTheme.bodySmall,
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            ProductFormat.price(item.lineTotalMillimes),
+            style: textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w700,
+              fontFeatures: const [FontFeature.tabularFigures()],
+              color: removed ? AppColors.textSecondary : null,
+              decoration: removed ? TextDecoration.lineThrough : null,
+            ),
+          ),
+          if (removed) ...[
+            const SizedBox(height: AppSpacing.xs),
+            const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.remove_circle_outline_rounded,
+                  size: 16,
+                  color: AppColors.warning,
+                ),
+                SizedBox(width: AppSpacing.xs),
+                Flexible(
+                  child: Text(
+                    'Retiré de la commande',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.warning,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ],
       ),
     );

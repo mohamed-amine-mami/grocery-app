@@ -235,7 +235,10 @@ void main() {
         }
 
         // The pickup code and time stay inside the screen.
-        expect(tester.getRect(find.text('K7M2QX')).right, lessThanOrEqualTo(320));
+        expect(
+          tester.getRect(find.text('K7M2QX')).right,
+          lessThanOrEqualTo(320),
+        );
         expect(
           tester.getRect(find.text(DateFormatFr.pickup(pickup))).right,
           lessThanOrEqualTo(320),
@@ -279,12 +282,12 @@ void main() {
       );
       final amount = tester.widget<Text>(find.text('0,900 DT'));
       expect(amount.style?.fontSize, 18);
-      expect(amount.style?.fontWeight, FontWeight.w600);
-      // On the name's line, at the right edge.
+      expect(amount.style?.fontWeight, FontWeight.w700);
+      // The cart's anatomy: under the name and its meta, on its left edge.
       final name = tester.getRect(find.text('Tomate'));
       final price = tester.getRect(find.text('0,900 DT'));
-      expect(price.top, closeTo(name.top, 4));
-      expect(price.right, greaterThan(name.right));
+      expect(price.left, closeTo(name.left, 1));
+      expect(price.top, greaterThan(name.bottom));
       expect(tester.takeException(), isNull);
     });
   });
@@ -301,7 +304,10 @@ void main() {
         code: 'K7M2QX',
         pickup: pickup,
       );
-      expect(find.text('Le magasin a confirmé votre commande.'), findsOneWidget);
+      expect(
+        find.text('Le magasin a confirmé votre commande.'),
+        findsOneWidget,
+      );
       expect(find.textContaining('prépare'), findsNothing);
     });
   });

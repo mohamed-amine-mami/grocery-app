@@ -93,85 +93,164 @@ class _CartContent extends StatelessWidget {
           child: ListView(
             padding: const EdgeInsets.all(AppSpacing.pagePadding),
             children: [
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              store.name,
-                              style: textTheme.titleMedium,
-                            ),
-                          ),
-                          StoreOpenBadge(isOpen: store.isOpen),
-                        ],
-                      ),
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(store.address, style: textTheme.bodySmall),
-                      if (!store.isOpen) ...[
-                        const SizedBox(height: AppSpacing.sm),
-                        const Text(
-                          'Ce magasin est fermé : vous ne pouvez pas commander pour le moment.',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.warning,
-                          ),
-                        ),
-                      ],
-                    ],
+              // The store, as a heading: no card of its own.
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(store.name, style: textTheme.titleMedium),
                   ),
-                ),
+                  const SizedBox(width: AppSpacing.sm),
+                  StoreOpenBadge(isOpen: store.isOpen),
+                ],
               ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(store.address, style: textTheme.bodySmall),
+              if (!store.isOpen) ...[
+                const SizedBox(height: AppSpacing.md),
+                const _ClosedStoreNotice(),
+              ],
               const SizedBox(height: AppSpacing.lg),
+              // One white list surface, hairlines between the lines.
               Card(
                 clipBehavior: Clip.antiAlias,
                 child: Column(
                   children: [
                     for (final (index, line) in cart.lines.indexed) ...[
-                      if (index > 0) const Divider(height: 1),
+                      if (index > 0) const LineDivider(),
                       _CartLineTile(line: line, cart: cart),
                     ],
                   ],
                 ),
               ),
-              const SizedBox(height: AppSpacing.lg),
+              const SizedBox(height: AppSpacing.xxl),
               EstimatedTotal(totalMillimes: cart.estimatedTotalMillimes),
             ],
           ),
         ),
+        // White bar with a hairline above it; the total sits in the action.
         Material(
           color: AppColors.surface,
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.pagePadding),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (cart.hasProblems) ...[
-                  const Text(
-                    'Corrigez votre panier avant de commander.',
-                    style: TextStyle(fontSize: 14, color: AppColors.warning),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                ],
-                AppPrimaryButton(
-                  label: 'Commander',
-                  // The same estimate as the total card above: one number.
-                  trailing: ProductFormat.price(cart.estimatedTotalMillimes),
-                  onPressed: blocked
-                      ? null
-                      : () => Navigator.of(context).push<void>(
-                          MaterialPageRoute(
-                            builder: (_) => const CheckoutView(),
+          child: DecoratedBox(
+            decoration: const BoxDecoration(
+              border: Border(top: BorderSide(color: Color(0x1A18221C))),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpacing.pagePadding),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (cart.hasProblems) ...[
+                    const Text(
+                      'Corrigez votre panier avant de commander.',
+                      style: TextStyle(fontSize: 14, color: AppColors.warning),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                  ],
+                  AppPrimaryButton(
+                    label: 'Commander',
+                    // The same estimate as the total above: one number.
+                    trailing: ProductFormat.price(cart.estimatedTotalMillimes),
+                    onPressed: blocked
+                        ? null
+                        : () => Navigator.of(context).push<void>(
+                            MaterialPageRoute(
+                              builder: (_) => const CheckoutView(),
+                            ),
                           ),
-                        ),
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
+        ),
+      ],
+    );
+  }
+}
+
+/// The closed-store note, in the catalogue's notice style.
+class _ClosedStoreNotice extends StatelessWidget {
+  const _ClosedStoreNotice();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: AppColors.warning.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(AppRadii.input),
+        border: Border.all(color: AppColors.warning.withValues(alpha: 0.3)),
+      ),
+      child: const Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.lock_clock_rounded, size: 20, color: AppColors.warning),
+          SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Text(
+              'Ce magasin est fermé : vous ne pouvez pas commander pour le moment.',
+              style: TextStyle(fontSize: 14, color: AppColors.warning),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The hairline between two lines, inset to the text (the thumbnail's slot
+/// and gap), like the catalogue's.
+class LineDivider extends StatelessWidget {
+  const LineDivider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final scale = MediaQuery.textScalerOf(context).scale(16) / 16;
+    final lead = scale > LineThumbnail.maxTextScale
+        ? 0.0
+        : LineThumbnail.size + AppSpacing.md;
+    return Padding(
+      padding: EdgeInsets.only(
+        left: AppSpacing.pagePadding + lead,
+        right: AppSpacing.pagePadding,
+      ),
+      child: const Divider(height: 1),
+    );
+  }
+}
+
+/// The total *for review*, on the cart and the checkout: from the prices last
+/// loaded, never sent, and not the final amount. The one big number of the
+/// page, apart from the line amounts above it (smaller, in the lines).
+class EstimatedTotal extends StatelessWidget {
+  const EstimatedTotal({required this.totalMillimes, super.key});
+
+  final int totalMillimes;
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            Expanded(child: Text('Total estimé', style: textTheme.bodyLarge)),
+            Text(
+              ProductFormat.price(totalMillimes),
+              style: textTheme.titleLarge?.copyWith(
+                fontFeatures: const [FontFeature.tabularFigures()],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Text(
+          'Le total définitif est confirmé à l’envoi de la commande.',
+          style: textTheme.bodySmall,
         ),
       ],
     );
@@ -190,101 +269,110 @@ class _CartLineTile extends StatelessWidget {
     final product = line.product;
     final problem = line.problem;
 
+    final Widget control = problem == CartProblem.unavailable
+        ? TextButton.icon(
+            onPressed: () => cart.remove(product.id),
+            icon: const Icon(Icons.delete_outline_rounded),
+            label: const Text('Retirer'),
+          )
+        : problem == CartProblem.invalidQuantity
+        ? TextButton(
+            onPressed: () => cart.fixQuantity(product.id),
+            child: const Text('Corriger la quantité'),
+          )
+        : QuantityStepper(
+            productName: product.name,
+            unit: product.saleUnit,
+            quantity: line.quantity,
+            atMinimum:
+                line.quantity - product.quantityStep < product.minQuantity,
+            canIncrement: line.canIncrement,
+            onIncrement: () => cart.increment(product.id),
+            onDecrement: () => cart.decrement(product.id),
+          );
+
     return Padding(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.pagePadding,
+        vertical: AppSpacing.md,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              LineThumbnail(
-                photo: product.photo,
-                // Same cue as the catalogue: a product that is gone is dimmed.
-                dimmed: problem == CartProblem.unavailable,
-              ),
-              // The amount sits on the name's first baseline.
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(product.name, style: textTheme.bodyMedium),
-                          const SizedBox(height: AppSpacing.xs),
-                          Text(
-                            ProductFormat.pricePerUnit(
-                              product.saleUnit,
-                              product.priceMillimes,
-                            ),
-                            style: textTheme.bodySmall,
-                          ),
-                        ],
+          LineThumbnail(
+            photo: product.photo,
+            // Same cue as the catalogue: a product that is gone is dimmed.
+            dimmed: problem == CartProblem.unavailable,
+            quietWithoutPhoto: true,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  product.name,
+                  style: textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    height: 1.25,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  ProductFormat.pricePerUnit(
+                    product.saleUnit,
+                    product.priceMillimes,
+                  ),
+                  style: textTheme.labelSmall?.copyWith(
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                if (problem != null) ...[
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.error_outline_rounded,
+                        size: 16,
+                        color: AppColors.warning,
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.md),
+                      const SizedBox(width: AppSpacing.xs),
+                      Expanded(
+                        child: Text(
+                          problem == CartProblem.unavailable
+                              ? 'Ce produit n’est plus disponible. Retirez-le du panier.'
+                              : 'La quantité n’est plus valide pour ce produit.',
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.warning,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+                const SizedBox(height: AppSpacing.sm),
+                // The line's amount at the left edge of the text, its control
+                // at the right; one above the other when they do not fit.
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: AppSpacing.md,
+                  runSpacing: AppSpacing.sm,
+                  children: [
                     Text(
                       ProductFormat.price(line.subtotalMillimes),
-                      style: textTheme.titleMedium,
+                      style: textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        fontFeatures: const [FontFeature.tabularFigures()],
+                      ),
                     ),
+                    control,
                   ],
-                ),
-              ),
-            ],
-          ),
-          if (problem != null) ...[
-            const SizedBox(height: AppSpacing.sm),
-            Row(
-              children: [
-                const Icon(
-                  Icons.error_outline_rounded,
-                  size: 16,
-                  color: AppColors.warning,
-                ),
-                const SizedBox(width: AppSpacing.xs),
-                Expanded(
-                  child: Text(
-                    problem == CartProblem.unavailable
-                        ? 'Ce produit n’est plus disponible. Retirez-le du panier.'
-                        : 'La quantité n’est plus valide pour ce produit.',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.warning,
-                    ),
-                  ),
                 ),
               ],
             ),
-          ],
-          const SizedBox(height: AppSpacing.sm),
-          Align(
-            alignment: Alignment.centerRight,
-            child: problem == CartProblem.unavailable
-                ? TextButton.icon(
-                    onPressed: () => cart.remove(product.id),
-                    icon: const Icon(Icons.delete_outline_rounded),
-                    label: const Text('Retirer'),
-                  )
-                : problem == CartProblem.invalidQuantity
-                ? TextButton(
-                    onPressed: () => cart.fixQuantity(product.id),
-                    child: const Text('Corriger la quantité'),
-                  )
-                : QuantityStepper(
-                    productName: product.name,
-                    unit: product.saleUnit,
-                    quantity: line.quantity,
-                    atMinimum:
-                        line.quantity - product.quantityStep <
-                        product.minQuantity,
-                    canIncrement: line.canIncrement,
-                    onIncrement: () => cart.increment(product.id),
-                    onDecrement: () => cart.decrement(product.id),
-                  ),
           ),
         ],
       ),
@@ -301,9 +389,18 @@ class _CartLineTile extends StatelessWidget {
 /// text and the picture steps aside: the line is then exactly what it was
 /// without pictures.
 class LineThumbnail extends StatelessWidget {
-  const LineThumbnail({required this.photo, this.dimmed = false, super.key});
+  const LineThumbnail({
+    required this.photo,
+    this.dimmed = false,
+    this.quietWithoutPhoto = false,
+    super.key,
+  });
 
   final String? photo;
+
+  /// A product without a picture gets the catalogue's quieter 48 px tile, in
+  /// the same 56 px slot (so the text still starts at the same place).
+  final bool quietWithoutPhoto;
 
   /// For a product that can no longer be ordered.
   final bool dimmed;
@@ -320,58 +417,27 @@ class LineThumbnail extends StatelessWidget {
     if (scale > maxTextScale) {
       return const SizedBox.shrink();
     }
+    final quiet = quietWithoutPhoto && photo == null;
     return Padding(
       padding: const EdgeInsets.only(right: AppSpacing.md),
-      child: ExcludeSemantics(
-        child: Opacity(
-          opacity: dimmed ? 0.45 : 1,
-          // A tile of its own: the same 56 px square whether the picture
-          // fills it, is narrower (whole picture) or is the placeholder.
-          child: ProductImage(
-            photo: photo,
-            size: size,
-            fit: BoxFit.contain,
-            tile: true,
+      child: SizedBox(
+        width: size,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: ExcludeSemantics(
+            child: Opacity(
+              opacity: dimmed ? 0.45 : 1,
+              // A tile of its own: the same 56 px square whether the picture
+              // fills it, is narrower (whole picture) or is the placeholder.
+              child: ProductImage(
+                photo: photo,
+                size: quiet ? 48 : size,
+                fit: BoxFit.contain,
+                tile: true,
+                quiet: quiet,
+              ),
+            ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-/// The cart's total *for review*: from the prices last loaded, never sent, and
-/// not the final amount.
-class EstimatedTotal extends StatelessWidget {
-  const EstimatedTotal({required this.totalMillimes, super.key});
-
-  final int totalMillimes;
-
-  @override
-  Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Text('Total estimé', style: textTheme.bodyMedium),
-                ),
-                Text(
-                  ProductFormat.price(totalMillimes),
-                  style: textTheme.titleLarge,
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              'Le total définitif est confirmé à l’envoi de la commande.',
-              style: textTheme.bodySmall,
-            ),
-          ],
         ),
       ),
     );

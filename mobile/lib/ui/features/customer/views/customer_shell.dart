@@ -40,7 +40,11 @@ class CustomerShell extends StatelessWidget {
               ScaffoldMessenger(
                 child: CustomerOrdersView(isActive: tab == CustomerTab.orders),
               ),
-              ScaffoldMessenger(child: const CustomerProfileView()),
+              ScaffoldMessenger(
+                child: CustomerProfileView(
+                  isActive: tab == CustomerTab.profile,
+                ),
+              ),
             ],
           ),
           bottomNavigationBar: NavigationBar(

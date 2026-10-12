@@ -5,6 +5,7 @@ import 'package:grocery_mobile/data/models/customer_order.dart';
 import 'package:grocery_mobile/data/models/order.dart';
 import 'package:grocery_mobile/data/models/sale_unit.dart';
 import 'package:grocery_mobile/data/services/api_client.dart';
+import 'package:grocery_mobile/ui/core/theme/app_theme.dart';
 import 'package:grocery_mobile/ui/core/utils/date_formatters.dart';
 import 'package:grocery_mobile/ui/features/orders/view_models/owner_orders_view_model.dart'
     show ordersPollInterval;
@@ -65,6 +66,150 @@ Finder get _cancelButton =>
     find.widgetWithText(OutlinedButton, 'Annuler la commande');
 
 void main() {
+  group('orders list composition', () {
+    testWidgets('one list surface; store first, then pickup, then code and '
+        'total', (tester) async {
+      await _pump(
+        tester,
+        orders: [
+          fakeCustomerOrder(id: 1, code: 'AAA111', storeName: 'Lac Épicerie'),
+          fakeCustomerOrder(
+            id: 2,
+            code: 'BBB222',
+            status: OrderStatus.cancelled,
+            storeName: 'Menzah Market',
+          ),
+        ],
+      );
+      // The orders share one card, the way the catalogue's rows do.
+      expect(find.byType(Card), findsOneWidget);
+      expect(find.byType(Divider), findsOneWidget);
+      final store = tester.getTopLeft(find.text('Lac Épicerie'));
+      final code = tester.getTopLeft(find.text('AAA111'));
+      expect(store.dy, lessThan(code.dy));
+      // The code is a caption now; the store is the title.
+      expect(
+        tester.widget<Text>(find.text('Lac Épicerie')).style?.fontSize,
+        18,
+      );
+      expect(tester.widget<Text>(find.text('AAA111')).style?.fontSize, 12);
+      // The total is the strong number of the row.
+      final total = tester.widget<Text>(find.text('3,300 DT').first);
+      expect(total.style?.fontWeight, FontWeight.w700);
+    });
+
+    testWidgets('a ready order says what to do, in words', (tester) async {
+      await _pump(
+        tester,
+        orders: [
+          fakeCustomerOrder(
+            id: 1,
+            code: 'RDY111',
+            status: OrderStatus.readyForPickup,
+          ),
+          fakeCustomerOrder(id: 2, code: 'PEN222'),
+        ],
+      );
+      expect(find.text('Prête à retirer'), findsOneWidget);
+      // Only the ready one carries the instruction.
+      expect(find.text('Présentez votre code au magasin.'), findsOneWidget);
+    });
+
+    testWidgets('rows stay whole at 2× on 320 px', (tester) async {
+      tester.platformDispatcher.textScaleFactorTestValue = 2;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      await _pump(
+        tester,
+        size: const Size(320, 3000),
+        orders: [
+          fakeCustomerOrder(
+            id: 1,
+            code: 'RDY111',
+            status: OrderStatus.readyForPickup,
+            storeName: 'Supermarché Coopérative de la Médina',
+          ),
+        ],
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.text('RDY111'), findsOneWidget);
+      expect(find.text('3,300 DT'), findsOneWidget);
+      expect(
+        tester.getRect(find.text('3,300 DT')).right,
+        lessThanOrEqualTo(320),
+      );
+    });
+
+    testWidgets('opening an order still goes to its detail', (tester) async {
+      await _pump(tester, orders: [fakeCustomerOrder(id: 1, code: 'AAA111')]);
+      await _openOrder(tester, 'AAA111');
+      expect(find.text('Commande AAA111'), findsOneWidget);
+      expect(find.text('Code de retrait'), findsOneWidget);
+    });
+  });
+
+  group('order ticket', () {
+    Future<void> detail(
+      WidgetTester tester,
+      OrderStatus status, {
+      Size size = const Size(400, 3000),
+    }) async {
+      await _pump(
+        tester,
+        size: size,
+        orders: [fakeCustomerOrder(id: 1, code: 'TKT123', status: status)],
+      );
+      await _openOrder(tester, 'TKT123');
+    }
+
+    for (final status in [
+      OrderStatus.pending,
+      OrderStatus.confirmed,
+      OrderStatus.readyForPickup,
+    ]) {
+      testWidgets('${status.name}: a big code and the tracker', (tester) async {
+        await detail(tester, status);
+        final code = tester.widget<Text>(find.text('TKT123').last);
+        expect(code.style?.fontSize, 28);
+        expect(code.style?.fontWeight, FontWeight.w700);
+        expect(find.text('Envoyée'), findsOneWidget);
+        expect(find.text('Récupérée'), findsOneWidget);
+      });
+    }
+
+    for (final status in [
+      OrderStatus.completed,
+      OrderStatus.cancelled,
+      OrderStatus.noShow,
+    ]) {
+      testWidgets('${status.name}: the code is quiet, nothing to present', (
+        tester,
+      ) async {
+        await detail(tester, status);
+        final code = tester.widget<Text>(find.text('TKT123').last);
+        expect(code.style?.fontSize, 20);
+        expect(code.style?.color, AppColors.textSecondary);
+        // The way back to the store is not offered.
+        expect(find.textContaining('Présentez votre code'), findsNothing);
+      });
+    }
+
+    testWidgets('the total is the biggest amount and not in a card', (
+      tester,
+    ) async {
+      await detail(tester, OrderStatus.confirmed);
+      final total = tester.widget<Text>(find.text('3,300 DT'));
+      expect(total.style?.fontSize, 20);
+      expect(total.style?.fontWeight, FontWeight.w700);
+      expect(
+        find.ancestor(of: find.text('Total'), matching: find.byType(Card)),
+        findsNothing,
+      );
+      // Line amounts are the smaller 18/700.
+      final line = tester.widget<Text>(find.text('0,900 DT'));
+      expect(line.style?.fontSize, 18);
+    });
+  });
+
   group('history', () {
     testWidgets(
       'lists the customer’s orders with code, store, pickup, total and status',
@@ -88,10 +233,10 @@ void main() {
           ],
         );
 
-        final card = find.ancestor(
-          of: find.text('NEW222'),
-          matching: find.byType(Card),
-        );
+        // The order's row (the orders share one list surface).
+        final card = find
+            .ancestor(of: find.text('NEW222'), matching: find.byType(InkWell))
+            .first;
         expect(
           find.descendant(of: card, matching: find.text('Menzah Market')),
           findsOneWidget,
@@ -263,14 +408,20 @@ void main() {
         expect(find.text('Commande AB12CD'), findsOneWidget);
         expect(find.text('Code de retrait'), findsOneWidget);
         expect(find.text('Confirmée'), findsWidgets);
-        expect(find.text('Le magasin a confirmé votre commande.'), findsOneWidget);
+        expect(
+          find.text('Le magasin a confirmé votre commande.'),
+          findsOneWidget,
+        );
         expect(find.text('Retrait souhaité'), findsOneWidget);
         expect(find.text(DateFormatFr.pickup(pickup)), findsOneWidget);
         expect(find.text('Menzah Market'), findsOneWidget);
         expect(find.text('Produits · 2'), findsOneWidget);
-        expect(find.text('500 g · 1,800 DT / kg'), findsOneWidget);
+        // Quantity and unit price are two pieces of one line.
+        expect(find.text('500 g ·'), findsOneWidget);
+        expect(find.text('1,800 DT / kg'), findsOneWidget);
         expect(find.text('0,900 DT'), findsOneWidget);
-        expect(find.text('2 pièces · 1,200 DT / pièce'), findsOneWidget);
+        expect(find.text('2 pièces ·'), findsOneWidget);
+        expect(find.text('1,200 DT / pièce'), findsOneWidget);
         expect(find.text('2,400 DT'), findsOneWidget);
         expect(find.text('Total'), findsOneWidget);
         expect(find.text('3,300 DT'), findsOneWidget); // the server's total

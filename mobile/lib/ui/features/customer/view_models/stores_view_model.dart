@@ -6,6 +6,10 @@ import '../../../core/utils/search_text.dart';
 
 enum StoresStatus { loading, ready, failed }
 
+/// What a store's address says before its owner has filled it in. It is not
+/// an address: it is neither shown nor searched.
+const storeAddressPlaceholder = 'Adresse à renseigner';
+
 /// The stores a customer can browse. Closed stores are listed too: they can
 /// be opened and browsed, they just cannot take orders.
 class StoresViewModel extends ChangeNotifier {
@@ -32,6 +36,37 @@ class StoresViewModel extends ChangeNotifier {
       return byName != 0 ? byName : a.id.compareTo(b.id);
     });
     return sorted;
+  }
+
+  String _query = '';
+
+  /// What the customer typed in the search field.
+  String get query => _query;
+
+  /// Whether a search is narrowing the list.
+  bool get isSearching => _query.trim().isNotEmpty;
+
+  void search(String query) {
+    if (query == _query) {
+      return;
+    }
+    _query = query;
+    notifyListeners();
+  }
+
+  /// The ordered stores whose name or address contains every word of the
+  /// query (case and accents ignored). An empty query shows them all, and the
+  /// order is [orderedStores]'s. The placeholder address is not searched.
+  List<CustomerStore> get visibleStores => [
+    for (final store in orderedStores)
+      if (SearchText.matches(_searchable(store), _query)) store,
+  ];
+
+  static String _searchable(CustomerStore store) {
+    final address = store.address.trim();
+    final isPlaceholder =
+        address.toLowerCase() == storeAddressPlaceholder.toLowerCase();
+    return '${store.name} ${isPlaceholder ? '' : address}';
   }
 
   bool _refreshFailed = false;
