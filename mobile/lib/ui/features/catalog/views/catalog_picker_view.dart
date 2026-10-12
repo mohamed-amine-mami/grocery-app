@@ -380,21 +380,32 @@ class _CategoryChips extends StatelessWidget {
 /// store archived says "Archivé" and opens its editor to restore it — it is
 /// never added a second time.
 ///
-/// A small picture leads the row: in a catalog of thousands, near-identical
-/// pack names are told apart by sight. It is the same [ProductImage] as
-/// everywhere (neutral placeholder without a photo, while loading, or on
-/// error), decoded at its own size, and only for the rows that are built.
+/// A picture leads the row: in a catalog of thousands, near-identical pack
+/// names are told apart by sight, so it is the largest picture of the owner
+/// app (72 px). It is the same [ProductImage] as everywhere (neutral
+/// placeholder without a photo, while loading, or on error), decoded at its
+/// own size and only for the rows that are built — shown whole (`contain`) on
+/// the catalogue's tinted tile, with a hairline so a white pack photo does not
+/// melt into the white card.
+///
+/// At large text the picture shrinks to 48 px instead of disappearing, and the
+/// status ("Ajouté", "Archivé") goes under the text so the name keeps the
+/// width.
 class _ProductRow extends StatelessWidget {
   const _ProductRow({required this.item, required this.onSelect});
 
   final CatalogItem item;
   final VoidCallback onSelect;
 
-  /// Smaller than the store catalogue's 56: these rows have fewer lines.
-  static const _thumbnailSize = 48.0;
+  /// The size at normal text (the row's three text lines are about this tall,
+  /// so the picture does not make the row taller than it was by much).
+  static const _thumbnailSize = 72.0;
 
-  /// Above this text scale the row keeps its width for the name.
-  static const _thumbnailMaxTextScale = 1.3;
+  /// The size above [_largeTextScale]: smaller, never hidden.
+  static const _largeThumbnailSize = 48.0;
+
+  /// Above this text scale the row stacks its status under the text.
+  static const _largeTextScale = 1.3;
 
   @override
   Widget build(BuildContext context) {
@@ -406,9 +417,22 @@ class _ProductRow extends StatelessWidget {
     final title = product.brand == null
         ? product.name
         : '${product.name}, ${product.brand!.name}';
-    final showThumbnail =
-        MediaQuery.textScalerOf(context).scale(16) / 16 <=
-        _thumbnailMaxTextScale;
+    final large =
+        MediaQuery.textScalerOf(context).scale(16) / 16 > _largeTextScale;
+    final thumbnailSize = large ? _largeThumbnailSize : _thumbnailSize;
+    final status = added
+        ? const _StatusLabel(
+            icon: Icons.check_circle_rounded,
+            label: 'Ajouté',
+            color: AppColors.success,
+          )
+        : archived
+        ? const _StatusLabel(
+            icon: Icons.inventory_2_rounded,
+            label: 'Archivé',
+            color: AppColors.textSecondary,
+          )
+        : null;
 
     return Semantics(
       button: !blocked,
@@ -432,10 +456,8 @@ class _ProductRow extends StatelessWidget {
               children: [
                 // Inside the row's own semantics (which hide their children):
                 // the row is announced by name, not as "an image".
-                if (showThumbnail) ...[
-                  ProductImage(photo: product.photo, size: _thumbnailSize),
-                  const SizedBox(width: AppSpacing.md),
-                ],
+                _Thumbnail(photo: product.photo, size: thumbnailSize),
+                const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -455,22 +477,18 @@ class _ProductRow extends StatelessWidget {
                         '${product.category.name} · ${ProductFormat.unitLabel(product.defaultSaleUnit)}',
                         style: textTheme.bodySmall,
                       ),
+                      if (large && status != null) ...[
+                        const SizedBox(height: AppSpacing.xs),
+                        status,
+                      ],
                     ],
                   ),
                 ),
                 const SizedBox(width: AppSpacing.sm),
-                if (added)
-                  const _StatusLabel(
-                    icon: Icons.check_circle_rounded,
-                    label: 'Ajouté',
-                    color: AppColors.success,
-                  )
-                else if (archived)
-                  const _StatusLabel(
-                    icon: Icons.inventory_2_rounded,
-                    label: 'Archivé',
-                    color: AppColors.textSecondary,
-                  )
+                if (status != null)
+                  // Beside the text at normal size; under it (above) at
+                  // large text, where the width belongs to the name.
+                  (large ? const SizedBox.shrink() : status)
                 else
                   const Icon(
                     Icons.add_circle_outline_rounded,
@@ -480,6 +498,34 @@ class _ProductRow extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// The product's picture: whole (`contain`) on the catalogue's tinted tile,
+/// with a hairline edge. A product without a photo, or whose photo cannot be
+/// loaded, shows the shared placeholder on the same tile.
+class _Thumbnail extends StatelessWidget {
+  const _Thumbnail({required this.photo, required this.size});
+
+  final String? photo;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      position: DecorationPosition.foreground,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppRadii.input),
+        border: Border.all(color: const Color(0x1A18221C)),
+      ),
+      child: ProductImage(
+        photo: photo,
+        size: size,
+        fit: BoxFit.contain,
+        tile: true,
+        quiet: photo == null,
       ),
     );
   }
@@ -503,12 +549,14 @@ class _StatusLabel extends StatelessWidget {
       children: [
         Icon(icon, size: 16, color: color),
         const SizedBox(width: AppSpacing.xs),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: color,
+        Flexible(
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: color,
+            ),
           ),
         ),
       ],

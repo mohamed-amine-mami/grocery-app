@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/store.dart';
+import '../../../../data/models/order.dart';
 import '../../../core/app_services.dart';
 import '../../catalog/views/catalog_view.dart';
 import '../../orders/views/owner_orders_view.dart';
@@ -36,6 +37,9 @@ class _OwnerShellState extends State<OwnerShell> {
   OwnerDashboardViewModel? _dashboardViewModel;
   OwnerTab _tab = OwnerTab.home;
 
+  /// The status the home asked the Commandes tab to show, if any.
+  OrdersFilterRequest? _filterRequest;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -47,6 +51,7 @@ class _OwnerShellState extends State<OwnerShell> {
       );
       _dashboardViewModel = OwnerDashboardViewModel(
         storeProductsRepository: services.storeProductsRepository,
+        ordersRepository: services.ordersRepository,
       )..refresh();
     }
   }
@@ -66,6 +71,14 @@ class _OwnerShellState extends State<OwnerShell> {
     }
   }
 
+  /// The home's workload: the Commandes tab, on that status.
+  void _openOrders(OrderStatus status) {
+    setState(() {
+      _filterRequest = OrdersFilterRequest(status);
+      _tab = OwnerTab.orders;
+    });
+  }
+
   /// Each tab gets its own [ScaffoldMessenger] so its snackbars are shown by
   /// the tab's own Scaffold — which lifts that tab's floating button above
   /// them. With the single app-wide messenger they would be drawn by the
@@ -78,6 +91,8 @@ class _OwnerShellState extends State<OwnerShell> {
       dashboardViewModel: _dashboardViewModel!,
       onOpenCatalog: () => _select(OwnerTab.catalog),
       onOpenStore: () => _select(OwnerTab.store),
+      onOpenOrders: _openOrders,
+      isActive: _tab == OwnerTab.home,
     ),
     OwnerTab.catalog => const CatalogView(),
     OwnerTab.store => StoreManageView(
@@ -85,7 +100,10 @@ class _OwnerShellState extends State<OwnerShell> {
       dashboardViewModel: _dashboardViewModel,
     ),
     // Polling runs only while this tab is the visible one.
-    OwnerTab.orders => OwnerOrdersView(isActive: _tab == OwnerTab.orders),
+    OwnerTab.orders => OwnerOrdersView(
+      isActive: _tab == OwnerTab.orders,
+      filterRequest: _filterRequest,
+    ),
   };
 
   static (String, IconData) _destination(OwnerTab tab) => switch (tab) {

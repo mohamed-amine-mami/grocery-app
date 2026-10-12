@@ -34,8 +34,9 @@ Future<FakeStoreProductsRepository> _openPicker(
   bool settle = true,
   List<StoreProduct> existing = const [],
   double height = 2600,
+  double width = 800,
 }) async {
-  tester.view.physicalSize = Size(800, height);
+  tester.view.physicalSize = Size(width, height);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
 
@@ -944,6 +945,10 @@ void main() {
       expect(catalog.browseCalls.last.cursor, isNull);
       expect(catalog.browseCalls.last.query, 'Produit 0009');
       expect(find.text('11 produits'), findsOneWidget); // 00009, 00090..00099
+      // The rows are taller than a screenful of these results: scroll to one.
+      // The offset of the long list is kept: back to the top.
+      await tester.drag(find.byType(ListView).last, const Offset(0, 2000));
+      await tester.pumpAndSettle();
       expect(find.text('Produit 00090'), findsOneWidget);
       expect(find.text('Produit 00045'), findsNothing);
     });
@@ -1016,32 +1021,41 @@ void main() {
       ),
     ];
 
-    Finder row(String name) => find
-        .ancestor(of: find.text(name), matching: find.byType(Card))
-        .first;
+    Finder row(String name) =>
+        find.ancestor(of: find.text(name), matching: find.byType(Card)).first;
 
-    testWidgets('each row leads with its product’s own picture, small', (
-      tester,
-    ) async {
-      await _openPicker(tester, _catalog(items: items));
+    testWidgets(
+      'each row leads with its product’s own picture, large enough to tell',
+      (tester) async {
+        await _openPicker(tester, _catalog(items: items));
 
-      final images = tester.widgetList<ProductImage>(find.byType(ProductImage));
-      expect(images.map((i) => i.photo), [photo, null, photo, null]);
-      expect(images.every((i) => i.size == 48), isTrue);
-
-      // At the start of the row, before the name, centred on the row.
-      for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature']) {
-        final image = tester.getRect(
-          find.descendant(of: row(name), matching: find.byType(ProductImage)),
+        final images = tester.widgetList<ProductImage>(
+          find.byType(ProductImage),
         );
-        final card = tester.getRect(row(name));
-        expect(image.right, lessThan(tester.getTopLeft(find.text(name)).dx));
-        expect(image.center.dy, closeTo(card.center.dy, 1), reason: name);
-        // The status stays at the end of the row.
-        expect(card.right - image.right, greaterThan(card.width / 2));
-      }
-      expect(tester.takeException(), isNull);
-    });
+        expect(images.map((i) => i.photo), [photo, null, photo, null]);
+        expect(images.every((i) => i.size == 72), isTrue);
+        // Whole product (never cropped), on the tinted tile.
+        expect(images.every((i) => i.fit == BoxFit.contain && i.tile), isTrue);
+        // Without a photo the placeholder is the quiet one.
+        expect(
+          images.where((i) => i.photo == null).every((i) => i.quiet),
+          isTrue,
+        );
+
+        // At the start of the row, before the name, centred on the row.
+        for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature']) {
+          final image = tester.getRect(
+            find.descendant(of: row(name), matching: find.byType(ProductImage)),
+          );
+          final card = tester.getRect(row(name));
+          expect(image.right, lessThan(tester.getTopLeft(find.text(name)).dx));
+          expect(image.center.dy, closeTo(card.center.dy, 1), reason: name);
+          // The status stays at the end of the row.
+          expect(card.right - image.right, greaterThan(card.width / 2));
+        }
+        expect(tester.takeException(), isNull);
+      },
+    );
 
     testWidgets('no photo, or one that fails to load, is the placeholder', (
       tester,
@@ -1100,10 +1114,12 @@ void main() {
           for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature'])
             tester.getTopLeft(find.text(name)).dy,
         ],
-        orderedEquals([
-          for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature'])
-            tester.getTopLeft(find.text(name)).dy,
-        ]..sort()),
+        orderedEquals(
+          [
+            for (final name in ['Pomme', 'Tomate', 'Banane', 'Yaourt nature'])
+              tester.getTopLeft(find.text(name)).dy,
+          ]..sort(),
+        ),
       );
 
       await _type(tester, 'tomate');
@@ -1136,25 +1152,78 @@ void main() {
       expect(
         tester
             .widgetList<ProductImage>(find.byType(ProductImage))
-            .every((i) => i.size == 48),
+            .every((i) => i.size == 72),
         isTrue,
       );
     });
 
-    testWidgets('at 1.3× text the pictures stay; at 2× they give the name its '
-        'width', (tester) async {
+    testWidgets('at 1.3× text the pictures keep their size; above it they '
+        'shrink to 48 and stay', (tester) async {
       tester.platformDispatcher.textScaleFactorTestValue = 1.3;
       addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
       await _openPicker(tester, _catalog(items: items));
       expect(find.byType(ProductImage), findsNWidgets(4));
+      expect(
+        tester
+            .widgetList<ProductImage>(find.byType(ProductImage))
+            .every((i) => i.size == 72),
+        isTrue,
+      );
       expect(tester.takeException(), isNull);
 
       tester.platformDispatcher.textScaleFactorTestValue = 2;
       await tester.pumpAndSettle();
-      expect(find.byType(ProductImage), findsNothing);
+      // Never hidden: smaller, with the status under the text.
+      expect(find.byType(ProductImage), findsNWidgets(4));
+      expect(
+        tester
+            .widgetList<ProductImage>(find.byType(ProductImage))
+            .every((i) => i.size == 48),
+        isTrue,
+      );
       expect(find.text('Pomme'), findsOneWidget);
       expect(find.text('Ajouté'), findsOneWidget);
+      final status = tester.getTopLeft(find.text('Ajouté'));
+      final name = tester.getTopLeft(find.text('Banane'));
+      expect(status.dy, greaterThan(name.dy));
+      expect(status.dx, closeTo(name.dx, 24));
       expect(tester.takeException(), isNull);
     });
+
+    for (final (width, scale) in [(320.0, 1.0), (320.0, 2.0), (360.0, 1.65)]) {
+      testWidgets('long names and brands do not overflow at $width px, '
+          '$scale×', (tester) async {
+        tester.platformDispatcher.textScaleFactorTestValue = scale;
+        addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+        await _openPicker(
+          tester,
+          _catalog(
+            items: [
+              fakeCatalogItem(
+                id: 1,
+                name: 'Lait demi-écrémé stérilisé UHT longue conservation 1 L',
+                photo: photo,
+                inMyStore: true,
+              ),
+              fakeCatalogItem(
+                id: 2,
+                name: 'Boisson gazeuse aromatisée citron vert 33 cl',
+                storeProductArchived: true,
+              ),
+            ],
+          ),
+          width: width,
+          height: 1800,
+        );
+        expect(tester.takeException(), isNull);
+        expect(find.byType(ProductImage), findsNWidgets(2));
+        for (final text in ['Ajouté', 'Archivé']) {
+          expect(
+            tester.getRect(find.text(text)).right,
+            lessThanOrEqualTo(width),
+          );
+        }
+      });
+    }
   });
 }

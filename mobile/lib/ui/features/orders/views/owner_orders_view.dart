@@ -18,13 +18,25 @@ import 'order_status_badge.dart';
 /// up top, a status filter, pull-to-refresh and polling while the tab is the
 /// one being looked at ([isActive]) and the app is in the foreground.
 class OwnerOrdersView extends StatefulWidget {
-  const OwnerOrdersView({this.isActive = true, super.key});
+  const OwnerOrdersView({this.isActive = true, this.filterRequest, super.key});
 
   /// Whether this tab is the visible one. Polling only runs while it is.
   final bool isActive;
 
+  /// Another part of the app (the home's workload) asking for a status filter.
+  /// A new request, even for the same status, applies the filter again.
+  final OrdersFilterRequest? filterRequest;
+
   @override
   State<OwnerOrdersView> createState() => _OwnerOrdersViewState();
+}
+
+/// A request to show the order list on one status. Compared by identity: each
+/// tap makes a new one.
+class OrdersFilterRequest {
+  const OrdersFilterRequest(this.status);
+
+  final OrderStatus status;
 }
 
 class _OwnerOrdersViewState extends State<OwnerOrdersView>
@@ -55,6 +67,10 @@ class _OwnerOrdersViewState extends State<OwnerOrdersView>
   @override
   void didUpdateWidget(OwnerOrdersView oldWidget) {
     super.didUpdateWidget(oldWidget);
+    final request = widget.filterRequest;
+    if (request != null && !identical(request, oldWidget.filterRequest)) {
+      _viewModel?.selectFilter(request.status);
+    }
     if (widget.isActive != oldWidget.isActive) {
       if (widget.isActive) {
         // Back on the tab: what it shows may be stale.
