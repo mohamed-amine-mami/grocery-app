@@ -95,7 +95,7 @@ Sizes come from the existing scale (12, 14, 16, 18, 20, 24, 28). **Weights are a
 | Role | Size / weight | Colour | Slot (+ override) |
 |---|---|---|---|
 | Store name — band | 24 / 700 | White | `headlineSmall` |
-| Store name — store row | 18 / 600 | Primary Text | `titleMedium` |
+| Store name — store card | 20 / 700 | Primary Text | `titleLarge` + w700 |
 | Section heading (category, "Produits") | 16 / 700, count in 14 / 400 Secondary | Primary Text | `bodyLarge` + w700 |
 | Product name | 16 / **500** | Primary Text (Secondary when unavailable) | `bodyLarge` + w500 *(Validate: today 600)* |
 | Brand | 12 / 500 | Secondary | `labelSmall` |
@@ -211,27 +211,41 @@ One row = thumbnail slot · one text column. The text column holds the name, its
 
 Quantity steps, minimums, maximums and cart totals are unchanged business rules (`product-rules.ts`, the cart view model); the visual spec never changes them.
 
-### 4.3 Store row
+### 4.3 Store card
 
 ```
+Ouverts maintenant · 2
 ┌────────────────────────────────────────────┐
-│ ┌──────┐  Menzah Market       ● Ouvert    ›│
-│ │ 64px │  12 Rue de la Liberté, Tunis       │
-│ │ tile │  Épicerie de quartier              │
-│ └──────┘  Panier en cours                   │
+│ ░░░░░░░░░░ photo, 2:1, cover ░░░░░░░░░░░░░ │
+│ Menzah Market                             ›│
+│ ● Ouvert                                    │
+│ 📍 12 Rue de la Liberté, Tunis              │
+│    Épicerie de quartier                     │
+│ 🛒 Panier en cours                          │
+└────────────────────────────────────────────┘
+                                          12 px
+┌────────────────────────────────────────────┐
+│            (  🏬  )  cream face, 2:1         │  ← no photo, or it failed
+│ Marché du Bardo                           ›│
+│ ◔ Fermé                                     │
 └────────────────────────────────────────────┘
 ```
 
-- **Thumbnail:** 64 × 64 tile. With a photo: the photo, `cover`, radius 12. Without: the tile with the store's **initial** (24/700, Primary at 60%), the same tint and tone as the product placeholder.
-- **Text block:** name (18/600) · open state as icon + text (4.4) · address (14/400, one line, ellipsis) · description (14/400, up to 2 lines) · optional `Panier en cours` marker (12/500, Secondary, with a cart icon).
-- The placeholder address `Adresse à renseigner` is not shown.
-- **Affordance:** trailing chevron; the whole row is the 48 px+ target, with `Voir le catalogue` as its semantics hint.
-- **No banner photo.** A large photo must never dominate the list; store photos are thumbnails.
-- Order: **open stores first**, then closed, name order inside each group (unchanged).
+- **One card per store**, independent: white, 16 radius, 12 px between cards, no shared container, no dividers. The photo is the card's first child, clipped to its corners, and the hairline border is painted over it. Padding 16 horizontal, 12 vertical; 4 px between name, state, address, description.
+- **Cover:** every card starts with a **2:1** landscape area across its full width, `cover`-cropped, decoded at that width. The area is always present, so nothing moves when a photo arrives or fails, and every card has the same photo height. On a wide window the list is a column of at most 560 px.
+- **Face (fallback):** the warm cream (`#F7F6F0`) with a quiet storefront (40 px, Primary at 35%) — no disc, no fill, no border of its own. It is what a store with no photo, an unusable address (blank, not http/https) or a photo that cannot load shows; it also sits under a loading photo, which fades in over it (200 ms). No spinner, no grey hole, no monogram.
+- **Name line:** name (20/700) with the chevron on its first line (Secondary Text). A long name wraps; the chevron stays on the first line.
+- **Open state** (under the name, not a pill): open = an 8 px Success dot + `Ouvert` (14/600, Success); closed = a 16 px neutral clock + `Fermé` (14/600, Secondary). The word carries the meaning; colour only helps.
+- **Address:** a 16 px pin (Secondary) + address (14/400, Secondary, one line, ellipsis; wraps above 1.3× text). The placeholder `Adresse à renseigner` is never shown.
+- **Description:** 14/400 Secondary, up to 2 lines, aligned with the address text (not its pin); at the left edge when there is no address.
+- **`Panier en cours`:** 16 px cart icon + 12/500 Secondary, no Citrus.
+- A missing address or description leaves no blank row.
+- **Affordance:** the whole card is the ≥ 48 px target with `Voir le catalogue` as its semantics hint. The cover is decorative and excluded from semantics.
+- **Sections:** cards sit under `Ouverts maintenant · n` and `Fermés · n` (the catalogue's section heading, §2.3: name 16/700, count 14/400 Secondary). A group with no store has no heading; the order inside each group is the view model's (by name, ids breaking ties).
 
 ### 4.4 Badges, status and open state
 
-- Open/closed: `Ouvert` (Success, check icon) / `Fermé` (Secondary, lock-clock icon). Icon + text.
+- Open/closed: `Ouvert` (Success, check icon) / `Fermé` (Secondary, lock-clock icon). Icon + text. The store list (4.3) uses a lighter form — a dot or a clock + the word, no pill.
 - Order status badge: 8 radius, 12% tint, 16 px icon + 12/600 label. Colours (unchanged): `En attente` Warning · `Confirmée` Primary · `Prête à retirer` Success · `Terminée`, `Annulée`, `Non retirée` Secondary. Cancelled and uncollected are **calm**, not red.
 - On the store band, the open/closed badge uses white text on a white 16% fill (derived), still with its icon.
 
@@ -325,29 +339,43 @@ For each screen: first focal point · hierarchy · primary action · secondary i
 ### 5.1 Store discovery (Magasins)
 
 ```
-Magasins                         (app bar title)
+Magasins
 ┌────────────────────────────────────────────┐
-│ ┌────┐ Menzah Market        ● Ouvert      ›│
-│ │ M  │ 12 Rue de la Liberté, Tunis          │
-│ └────┘ Épicerie de quartier                 │
-│────────────────────────────────────────────│
-│ ┌────┐ Lac Épicerie         ● Ouvert      ›│
-│ │foto│ Les Berges du Lac                    │
-│ └────┘ Panier en cours                      │
-│────────────────────────────────────────────│
-│ ┌────┐ Marché du Bardo      🔒 Fermé      ›│
-│ └────┘ Avenue Habib Bourguiba               │
+│ 🔍 Rechercher un magasin ou une ville    ✕ │
 └────────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│ 🛒 Reprendre mon panier                  ›│  ← only with a cart in progress
+│    Lac Épicerie · 3 produits               │
+└────────────────────────────────────────────┘
+Ouverts maintenant · 3
+┌────────────────────────────────────────────┐
+│ ░░░░░░░░░░ photo, 2:1 ░░░░░░░░░░░░░░░░░░░░ │
+│ Lac Épicerie                              ›│
+│ ● Ouvert                                    │
+│ 📍 Les Berges du Lac                        │
+│ 🛒 Panier en cours                          │
+└────────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│        (  🏬  )  face, 2:1                  │
+│ Menzah Market                             ›│
+│ ● Ouvert                                    │
+│ 📍 12 Rue de la Liberté, Tunis              │
+└────────────────────────────────────────────┘
+Fermés · 1
 ```
 
-- **Focal point:** the first open store's name.
-- **Hierarchy:** store name → open state → address → description → cart marker.
-- **Primary action:** tapping a row opens its catalogue. No button.
-- **Secondary:** description, `Panier en cours`.
-- **Scrolling:** the title and list scroll together; one list surface; pull to refresh.
-- **Narrow / large text:** the thumbnail stays until text scale 1.6×, then is hidden; the name wraps up to 3 lines; the open badge moves under the name rather than truncating either.
-- **Preserved:** open-first order, empty state `Aucun magasin`, failure/retry, closed stores remain browsable.
-- **Today:** text-only bordered cards, with a 16:9 banner when a store has a photo.
+- **Focal point:** the first open store's photo and name (20/700).
+- **Hierarchy:** search field → cart shortcut (only with a cart in progress) → section heading → card: cover (photo or face) → name → open state → address → description → `Panier en cours`. The card anatomy is 4.3.
+- **Search:** a field at the top of the list (same style as the catalogue's), hint `Rechercher un magasin ou une ville`, filtering as you type. It matches the **name and the address** — every word, in any order, ignoring case and accents (the catalogue's matcher); the description and the placeholder address are not searched. The result keeps the open-first, by-name order, the section counts follow the matches and a section with no match disappears. No match: `Aucun magasin trouvé`, `Essayez un autre nom ou une autre ville.` and `Effacer la recherche`; the ✕ in the field clears too. The query survives pull-to-refresh and a change of tab. With no store at all, the field is not shown. There is no region/city field in the data: "ville" means words of the address.
+- **Cart shortcut:** `Reprendre mon panier` with `Store name · n produit(s)` under it, in a Primary 8% pill (12 radius, ≥ 48 px, cart icon and chevron in Primary). It exists only while the cart has products and is absent — taking no space — otherwise. It reads the app's one cart (`CartViewModel`: store, line count) and opens the Panier tab; it is not a second source. A store with a blank name shows the count alone. At large text it wraps rather than clips.
+- **Sections:** `Ouverts maintenant · n` then `Fermés · n`, derived from each store's open state. A closed store is said in words (clock + `Fermé`) and opens like any other: it can be browsed, not ordered from.
+- **Header:** the plain app bar. No green band, no gradient: the one large green surface stays the store band of the catalogue.
+- **Photography:** every card has the same 2:1 cover; a store without a (working) photo shows the face. See 4.3.
+- **Spacing:** 12 px between cards, 24 px between sections, 16 px page padding, 32 px under the last card so it scrolls fully above the navigation bar.
+- **Scrolling:** the title, search and cards scroll together; dragging dismisses the keyboard; pull to refresh.
+- **Narrow / large text:** the cover keeps its 2:1; the name and open state wrap whole; the address may wrap (no line limit above 1.3×); the chevron stays on the name's first line; the cards grow rather than clip. The search hint may be cut at the largest text sizes.
+- **Preserved:** open-first order, empty state `Aucun magasin`, failure/retry, navigation into the catalogue, the per-store cart marker.
+- **Today (implemented):** as above. Observed on an iPhone 17 with five stores (three open, two closed; one real photo, four faces including a dead photo URL) at normal and accessibility-extra-large text: the 2:1 cover and the cream face, the cart shortcut with two products (and its absence with an empty cart) and its jump to Panier, search by name and by address, no result, clearing; scrolled to the end. The software keyboard was not shown (hardware keyboard connected); keyboard clearance is covered by a test only.
 
 ### 5.2 Store catalogue
 
@@ -393,161 +421,202 @@ Magasins                         (app bar title)
 
 ```
 Panier
+ Menzah Market                      ● Ouvert        ← heading, no card
+ 12 Rue de la Liberté, Tunis
 ┌────────────────────────────────────────────┐
-│ Menzah Market                  ● Ouvert     │  ← summary block
-│ 12 Rue de la Liberté, Tunis                 │
-└────────────────────────────────────────────┘
-Produits · 2
-┌────────────────────────────────────────────┐
-│ ┌────┐ Boisson au jus ananas     2,000 DT  │
+│ ┌────┐ Boisson au jus ananas 20 cl         │
 │ │tile│ 2,000 DT / pièce                    │
-│ └────┘                  [ 🗑  1 pièce  + ] │
-│────────────────────────────────────────────│
-│ ┌────┐ Banane                    0,900 DT  │
-│ │tile│ 1,800 DT / kg                       │
-│ └────┘                  [ −  500 g   +  ]  │
+│ └────┘ 2,000 DT          ( 🗑  1 pièce  + ) │
+│        ──────────────────────────────────  │
+│ ┌───┐  Baguette                            │
+│ │48 │  0,200 DT / pièce                    │
+│ └───┘  0,600 DT          ( 🗑  3 pièces + ) │
 └────────────────────────────────────────────┘
-┌────────────────────────────────────────────┐
-│ Total estimé                     2,900 DT  │
-│ Le total définitif est confirmé à l’envoi…  │
-└────────────────────────────────────────────┘
-┌────────────────────────────────────────────┐
-│ Total estimé 2,900 DT          [Commander]  │
-└────────────────────────────────────────────┘
+ Total estimé                         2,600 DT   ← 20/700, no card
+ Le total définitif est confirmé à l’envoi de la commande.
+────────────────────────────────────────────── ← bar, hairline
+[ Commander                          2,600 DT ]
 ```
 
-- **Focal point:** the total.
-- **Hierarchy:** store → lines → estimated total and its note → action.
-- **Primary action:** `Commander` (disabled when the store is closed or the cart has problems).
-- **Secondary:** unit prices, the note, `Retirer` / `Corriger la quantité` on problem lines.
+- **Focal point:** the total, then the `Commander` button.
+- **Hierarchy:** store (heading, with its open state) → lines on one list surface → estimated total and its note → action.
+- **Line (same anatomy as a catalogue row, 4.1):**
+  - Thumbnail slot 56 px wide: 56 px tile with a photo, quiet 48 px tile without.
+  - Name (16/500), unit price (12/400), then the **line amount** (18/700, tabular) at the left edge of the text with the stepper at the right edge; the control wraps under the amount when they do not fit.
+  - Stepper buttons are 44 px; at the minimum the `−` is the red trash that removes the line.
+  - Problem lines keep their notice (`Ce produit n’est plus disponible. Retirez-le du panier.` / `La quantité n’est plus valide pour ce produit.`) and the `Retirer` / `Corriger la quantité` text actions in the control's place.
+- **Total:** a heading row, not a card — `Total estimé` (16/400) and the amount at 20/700; it is the largest amount on the page. The note under it is 14/400 Secondary.
+- **Primary action:** `Commander` (disabled when the store is closed or the cart has problems), on a white bar with a hairline above it. The bar's amount is the same number as the total.
+- **Closed store:** the catalogue's notice style under the store heading.
 - **Scrolling:** content scrolls; the bar is pinned above the tab bar.
-- **Narrow / large text:** line thumbnails are hidden above 1.3×; the stepper keeps its 44 px buttons; the bar stacks.
-- **Preserved:** same row as the catalogue with the **line subtotal** in the amount position and the unit price on the meta line; calculations, quantity limits, problem states, empty state `Votre panier est vide`.
-- **Today:** lines are 56 px tile rows in a bordered card with the stepper right-aligned beneath; the `Commander` bar carries the total as trailing text.
+- **Narrow / large text:** line thumbnails are hidden above 1.3×; the amount and the control stack; in the bar the amount moves **under** the label above 1.3×, so a word of `Commander` is never broken.
+- **Preserved:** calculations, quantity limits, problem states, per-store cart, empty state `Votre panier est vide`.
+- **Today (implemented):** as above. Observed on an iPhone 17 at normal text and at ~2×. *Validate:* the total (20/700) and the line amounts (18/700) are close in weight; if the total does not stand out on a device, raise it (24/700) rather than adding a surface.
 
 ### 5.4 Checkout (Valider la commande)
 
 ```
 ‹  Valider la commande
-Retrait
+ Menzah Market                              ← heading, no card
+ 12 Rue de la Liberté, Tunis
+ Retrait
 ┌────────────────────────────────────────────┐
 │ 🕒 Heure de retrait souhaitée            › │
 │    Aujourd’hui · 18:30                      │
-└────────────────────────────────────────────┘
- C’est une heure souhaitée, pas un créneau réservé.
-┌────────────────────────────────────────────┐
+│────────────────────────────────────────────│
 │ Paiement                 À la récupération │
 └────────────────────────────────────────────┘
-Votre commande
+ C’est une heure souhaitée, pas un créneau réservé.
+ Votre commande
 ┌────────────────────────────────────────────┐
-│ ┌────┐ Boisson au jus ananas     2,000 DT  │
+│ ┌────┐ Boisson au jus ananas 20 cl         │
 │ │tile│ 1 pièce · 2,000 DT / pièce          │
-│ └────┘                                      │
+│ └────┘ 2,000 DT                            │
+│        ──────────────────────────────────  │
+│ ┌───┐  Baguette                            │
+│ │48 │  3 pièces · 0,200 DT / pièce         │
+│ └───┘  0,600 DT                            │
 └────────────────────────────────────────────┘
- Total estimé                        2,000 DT
+ Total estimé                         2,600 DT
  Le total définitif est confirmé à l’envoi de la commande.
-┌────────────────────────────────────────────┐
-│ Total estimé 2,000 DT [Confirmer la commande]│
-└────────────────────────────────────────────┘
+────────────────────────────────────────────── ← bar, hairline
+[ Confirmer la commande              2,600 DT ]
 ```
 
-- **Focal point:** the pickup time (the only choice the customer makes here).
-- **Hierarchy:** Magasin (store name and address, secondary) → Retrait → Paiement → Votre commande → total.
-- **Primary action:** `Confirmer la commande` (or `Réessayer l’envoi` after a network failure).
-- **Secondary:** the store's name and address, the explanatory note.
-- **Scrolling:** content scrolls; the bar is pinned and always shows the total; payment is above the order list, never below the fold.
-- **Narrow / large text:** the metadata line is two pieces (`1 pièce ·` / `2,000 DT / pièce`) that wrap between them, never inside the unit price; the bar stacks.
-- **Preserved:** pickup-time sheet (30-minute choices grouped by day), the "heure souhaitée, pas un créneau réservé" note, payment `À la récupération`, error banners (store closed, product unavailable, invalid pickup time), submission loading, idempotent retry, session-expired sign-out. Never styled or worded like an online checkout.
+- **Focal point:** the pickup time (the one choice the customer makes here), then the confirm button.
+- **Hierarchy:** where (store, as a heading) → when and how (`Retrait`: the time row, then `Paiement` on the same surface) → what (`Votre commande`) → the total → action.
+- **Primary action:** `Confirmer la commande` (or `Réessayer l’envoi` after a network failure), on a white bar with the total beside it.
+- **Two list surfaces only:** pickup + payment, and the order lines. The store and the total are headings, not cards.
+- **Pickup row:** the whole row is the target (≥ 48 px) and opens the existing sheet of 30-minute choices grouped by day. The small label `Heure de retrait souhaitée` sits above the value (18/600); the clock and chevron are Secondary Text, not green.
+- **Payment row:** `Paiement` and `À la récupération` on one line; at large text the value goes under the label whole, never broken inside a word.
+- **Lines:** the cart's anatomy without the control — thumbnail slot (56 px tile, quiet 48 px without a photo), name (16/500) on the whole text width, `quantité · prix unitaire / unité` (14/400, breaking only between the two pieces), then the line amount (18/700). The name is never squeezed by the amount.
+- **Total:** `Total estimé` (16/400) and the amount at 20/700, no card — the same component as the cart's; the same number is in the bar.
+- **Scrolling:** content scrolls; the bar is pinned. Payment is above the order lines, never below the fold.
+- **Narrow / large text:** thumbnails hidden above 1.3×; the bar's amount moves under the label above 1.3×; the pickup value wraps between words.
+- **Preserved:** pickup-time sheet and validation, the "heure souhaitée, pas un créneau réservé" note, payment `À la récupération`, error banners (store closed, product unavailable, invalid pickup time), submission loading, idempotent retry, session-expired sign-out. Never styled or worded like an online checkout.
+- **Today (implemented):** as above; observed on an iPhone 17 at normal text and at ~2× (accessibility-extra-large), including the pickup sheet and a selected time. The order lines show name, quantity and unit price, then the amount, in the same order as the cart.
 
 ### 5.5 Orders list (Commandes)
 
 ```
 Commandes
 ┌────────────────────────────────────────────┐
-│ Menzah Market                ⏳ En attente │
-│ aujourd’hui · 18:30                         │
+│ Menzah Market              ⏳ En attente  │
+│ Aujourd’hui · 18:30                         │
 │ K7M2QX                          2,000 DT   │
 │────────────────────────────────────────────│
-│ Menzah Market                ✓ Terminée    │
-│ sam. 10 oct. · 16:00                        │
-│ ZCM5VM                          1,200 DT   │
+│ Lac Épicerie              🛍 Prête à retirer│
+│ dim. 11 oct. · 19:30                        │
+│ Présentez votre code au magasin.            │
+│ Q9XW2L                          5,800 DT   │
+│────────────────────────────────────────────│
+│ Menzah Market              ✕ Annulée       │
+│ sam. 10 oct. · 23:30                        │
+│ FNTZT8                         19,000 DT   │
 └────────────────────────────────────────────┘
         [ Voir plus de commandes ]
 ```
 
-- **Focal point:** the store name and status of the newest order.
-- **Hierarchy:** store + status → pickup date/time → code and total.
-- **Primary action:** tapping a row opens the ticket.
-- **Secondary:** the code as a 12/500 caption; no thumbnails.
-- **Scrolling:** one list surface, newest first, paged (`Voir plus de commandes`), pull to refresh, polled while visible.
-- **Narrow / large text:** the status badge wraps under the store name; the total stays right-aligned or drops under the code.
-- **Preserved:** newest-first order, paging, polling pause/resume, `Aucune commande` empty state, failure retry. No grouping into active/finished (Candidate; revisit if users struggle to find a live order).
-- **Today:** the code is the card title, the store name is secondary text, and a green clock icon repeats on every card.
+- **Focal point:** the store and status of the newest order; a *ready* order is the one with an instruction in words.
+- **Row anatomy (same on every row):** store name (18/600) with its status badge (icon + word; wraps under the name when they do not fit) → pickup date/time (14/400) → the code as a caption (12/500, letter-spaced) at the left and the total (18/700, tabular) at the right.
+- **Ready orders:** the badge plus the line `Présentez votre code au magasin.` (14/500), so "ready" is never signalled by colour alone and it is the only row with a sentence.
+- **One list surface, hairline dividers** — no card and no colour per status; the badge carries the state. Cancelled and uncollected stay calm (Secondary Text badge).
+- **Primary action:** tapping a row opens the ticket (≥ 48 px target). No grouping into active/finished (Candidate).
+- **Scrolling:** newest first, paged (`Voir plus de commandes`), pull to refresh, polled while visible.
+- **Narrow / large text:** the badge wraps its word inside itself at the narrowest widths; the code and total share a line or the total drops under the code; nothing is cut.
+- **Preserved:** newest-first order, paging, polling pause/resume, `Aucune commande` empty state with `Voir les magasins`, failure retry, status wording.
+- **Today (implemented):** as above; observed on an iPhone 17 with pending and cancelled orders at normal text and at ~2× (accessibility-extra-large). A ready, completed or uncollected order was not available in the dev data (tests only).
 
 ### 5.6 Order detail — the pickup ticket
 
 ```
 ‹  Commande K7M2QX
 ┌────────────────────────────────────────────┐
-│ Code de retrait               ✓ Confirmée │
+│ Code de retrait             ⏳ En attente │
 │ K7M2QX                                      │  ← 28/700, letter-spaced
-│ Le magasin a confirmé votre commande.       │
-│ - - - - - - - - - - - - - - - - - - - - - - │  ← perforation (Validate)
-│ ●────●────○────○                            │
-│ Envoyée Confirmée Prête Récupérée           │
+│ Le magasin va confirmer votre commande.     │
+│────────────────────────────────────────────│
 │ 🕒 Retrait souhaité                         │
-│    sam. 10 oct. · 16:00                     │
+│    Aujourd’hui · 18:30                      │
 │ 🏪 Menzah Market                            │
 │    12 Rue de la Liberté, Tunis              │
+│ - - - - - - - - - - - - - - - - - - - - - - │  ← perforation
+│ ✓ Envoyée  ○ Confirmée  ○ Prête  ○ Récupérée│
 └────────────────────────────────────────────┘
-Produits · 1
+ Produits · 2
 ┌────────────────────────────────────────────┐
-│ Croissant                       1,200 DT   │
-│ 1 pièce · 1,200 DT / pièce                  │
+│ Bachkoutou sésame 1 kg                      │
+│ 1 pièce · 1,000 DT / pièce                  │
+│ 1,000 DT                                    │
+│────────────────────────────────────────────│
+│ Bière sans alcool citron 24 cl              │
+│ 1 pièce · 2,000 DT / pièce                  │
+│ 2,000 DT                                    │
 └────────────────────────────────────────────┘
-┌────────────────────────────────────────────┐
-│ Total                           1,200 DT   │
-│ Paiement                 À la récupération │
-└────────────────────────────────────────────┘
-Suivi …
+ Total                              3,000 DT   ← 20/700, no card
+ Paiement                  À la récupération
+ Suivi …
 [ Annuler la commande ]    ← destructive, pending/confirmed only
 ```
 
 - **Focal point:** the pickup code.
-- **Hierarchy:** code → status badge and sentence → tracker → pickup time and store → lines → server total and payment → history.
-- **Primary action:** none, except `Annuler la commande` (destructive, while `En attente` or `Confirmée`).
-- **Secondary:** history (`Suivi`), removed lines (`Retirés par le magasin`, struck through with `Retiré de la commande`).
-- **Scrolling:** the whole page scrolls; the cancel bar is pinned; pull to refresh; polls while the order can change and the screen is visible.
-- **Tracker:** four steps `Envoyée → Confirmée → Prête → Récupérée`, a connecting line, three visible states — **completed** (filled Primary check), **current** (filled Primary with a bold label; the last reached step), **upcoming** (outlined Disabled). Cancelled and uncollected show no tracker (the badge and sentence say it; the cancellation reason shows as `Motif : …`).
-- **Just placed:** while still `En attente`, a `Commande envoyée` banner (success icon, `Le magasin va la confirmer. Vous pouvez suivre son état ici.`, `Voir mes commandes`, `Continuer mes achats`) sits above the ticket. It disappears once the status moves on.
+- **Hierarchy:** code and status badge → what it means (the status sentence) → when and where (`Retrait souhaité`, store) → the way it is going (tracker) → lines → server total and payment → history.
+- **The ticket is one white card** (the screen's only card of its kind), with a hairline between its parts and a dashed perforation above the tracker.
+- **Code treatment by state:**
+  - *Pending, confirmed, ready* (the order can still be collected): 28/700, tabular, letter-spaced, with the status sentence at body size.
+  - *Collected, cancelled, uncollected*: the code stays readable but quiet (20/600, Secondary Text), the sentence (if any) at secondary size, and nothing says it can be presented. Cancelled and uncollected hide the tracker; the cancellation reason shows as `Motif : …`.
+  - No code is invented or shown unless the order carries one.
+- **Time and place come before the tracker**, so that with the just-placed banner on a 375 × 667 phone the code and the pickup time are on screen without scrolling.
+- **Tracker:** four steps `Envoyée → Confirmée → Prête → Récupérée`; reached steps are filled checks, upcoming ones outlined; the current step's label is bold. Above 1.3× text only the four icons and the current step's name remain. *(Validate: a distinct "current" mark beyond the bold label.)*
+- **Lines:** the cart's anatomy without a control or a thumbnail — name on the whole width, `quantité · prix unitaire / unité`, then the line amount (18/700). Removed lines are struck through under `Retirés par le magasin`, labelled `Retiré de la commande`, and excluded from the total.
+- **Total:** `Total` and the server's amount at 20/700, no card; `Paiement — À la récupération` under it.
+- **Primary action:** none, except `Annuler la commande` (destructive outlined, pinned, while `En attente` or `Confirmée`).
+- **Just placed:** while still `En attente`, the `Commande envoyée` banner sits above the ticket and disappears once the status moves on.
 - **Status sentences:** pending `Le magasin va confirmer votre commande.` · confirmed `Le magasin a confirmé votre commande.` · ready `Votre commande est prête. Présentez votre code au magasin.` · uncollected `La commande n’a pas été retirée.`
-- **Narrow / large text:** above 1.3× the tracker shows the four icons and **only the current step's name** on one line below; the code, badge and time stay inside the screen at 320 px and 2×.
-- **Preserved:** lifecycle, polling and its pause, the cancellation dialog, 404 closes the screen with a message, removed lines excluded from the total, the server's total shown as final, timestamps from the server only. Presentation never invents a status or a time.
-- **Validate:** the perforation divider and ticket-block treatment, and whether the code is large enough at 320 px and 2×.
+- **Scrolling:** the page scrolls; pull to refresh; polls while the order can change and the screen is visible.
+- **Narrow / large text:** the badge wraps under `Code de retrait`; the code scales down to fit one line rather than breaking; the pickup value wraps between words; the tracker uses its compact form above 1.3×.
+- **Preserved:** lifecycle, polling and its pause, the cancellation dialog, 404 closes the screen with a message, the server's total as final, timestamps from the server only, status wording and history.
+- **Today (implemented):** observed on an iPhone 17 for a pending and a cancelled order at normal text and at ~2×. The ready, collected and uncollected tickets were not available in the dev data (tests only).
 
 ### 5.7 Customer profile (Profil)
 
 ```
 Profil
-        ┌──────┐
-        │ 96px │  (avatar, camera action)
-        └──────┘
-Bonjour, Amine
-Vous êtes connecté en tant que client.
+┌────┐  sana ben ali
+│ 72 │  Votre compte GrocerGo
+└────┘  (photo, camera badge)
+
+Commande en cours                         (or: Dernière commande)
+┌────────────────────────────────────────────┐   Primary outline when live
+│ Menzah Market              ⏳ En attente    │
+│ Retrait · Demain · 00:30                    │
+│ Le magasin va confirmer votre commande.     │
+│ K7M2QX                       17,250 DT   ›  │
+└────────────────────────────────────────────┘
+  Voir les 3 commandes en cours               (only with several live orders)
+
+Mes informations
 ┌────────────────────────────────────────────┐
-│ Téléphone                       90 909 090 │
+│ 📞 Téléphone                    90 909 090  │
+│ ✉  E-mail                  sana@example.com │
+│ 💬 WhatsApp                  (only when set) │
 └────────────────────────────────────────────┘
 
-        [ Se déconnecter ]
+[ Se déconnecter ]   → dialog: "Se déconnecter ?"
 ```
 
-- **Focal point:** the avatar and greeting.
-- **Hierarchy:** greeting (24/700) → role sentence → one labelled info block (phone, when there is one).
-- **Primary action:** none; `Se déconnecter` is a secondary (neutral outline) button at the bottom.
-- **Secondary:** the role sentence and phone, labelled (12/500 label, 16/400 value).
-- **Scrolling:** short page; the sign-out button stays reachable at large text (the page scrolls rather than clipping).
-- **Preserved:** profile photo behaviour, sign out, session handling.
-- **Today:** a 112 px avatar, greeting, role sentence, a bare phone number, and the sign-out button pinned to the bottom of a mostly empty page.
+- **Focal point:** what is under way — the order card — then who the customer is.
+- **Header:** the editable photo at 72 px (camera badge, existing upload and removal flow) and the stored name (20/700, shown exactly as stored) with `Votre compte GrocerGo` (14/400 Secondary). No greeting, no role sentence.
+- **Order block:** the customer's own orders, the same data as `Commandes` (`GET /orders`), through the same `CustomerOrdersViewModel` class with a 10-order window, no polling, loaded with the tab and reloaded each time the tab is opened or an order page is closed. The block shows:
+  - **a live order** (`!isFinished`; the newest if several) under `Commande en cours`: store name, status badge (the shared badge and `CustomerOrderLabels`), `Retrait · day · time`, the existing next-step sentence, the code (12/500, letter-spaced) and the server's total (18/700). The whole card (≥ 48 px) opens the existing order page. With several live orders, `Voir les n commandes en cours` goes to the Commandes tab;
+  - **otherwise the latest order** under `Dernière commande`, calm (hairline border, no next-step sentence);
+  - **no order:** `Aucune commande pour le moment`, a sentence and the one primary button, `Voir les magasins`, which opens the Magasins tab;
+  - **loading / failure:** a one-line `Chargement…` / `Impossible de charger vos commandes.` with `Réessayer`. Nothing here is invented: every value is the server's.
+- **`Mes informations`:** a 16/700 heading over one list surface with hairlines. Each row is a 20 px Secondary icon, the label (14/500 Secondary) and the value (16/400, right-aligned) on one line; above 1.3× text the icon steps aside and the value goes under its label, so a long e-mail wraps in the whole width. Rows: `Téléphone`, `E-mail`, `WhatsApp` (only when set). A missing or blank value is not a row. Values are shown as stored (no phone formatting). **Read-only:** the backend has no endpoint to change them, so there is no edit affordance.
+- **Sign out:** a secondary button with the **neutral** outline (Secondary Text border, Primary Text label, 48 px minimum, padding that lets the label grow), after the content. It asks first: `Se déconnecter ?` — `Votre panier en cours (n produits) sera vidé.` when the cart has products, otherwise `Vous devrez vous reconnecter pour commander.` — with `Annuler` (nothing changes) and `Se déconnecter` (the existing sign-out: cart cleared, Magasins tab, token cleared, login). The dialog belongs to this screen; the shared sign-out function (also used by the owner) is unchanged.
+- **Scrolling:** the page is a scroll view; at large text or on a short phone it grows and the sign-out button stays reachable.
+- **Not here:** profile editing, password change, account deletion, help — none has backend support or a real destination.
+- **Today (implemented):** as above. Observed on an iPhone 17 with the dev account (three live orders, photo, phone, e-mail and WhatsApp): the live-order card, opening its page and coming back, the sign-out dialog and `Annuler`. The empty and failure states, 320 px and large text for the new card are covered by tests only. The app-wide `OutlinedButton` theme is still green; only this screen uses the neutral secondary.
 
 ---
 
@@ -655,7 +724,7 @@ Envoyée Confirmée Prête Récupérée
 | A bordered card around every product | Rows on one list surface with hairlines |
 | A full-width outlined "Ajouter" on every product | A compact 44 px add control in the price column |
 | A green outline on every secondary button | A neutral outline; green is the primary action |
-| A large store photo as the first element of a store | A 64 px thumbnail or initial tile |
+| A monogram or a small tile for a store with no photo | The same 16:9 cover with the storefront face |
 | The same weight (600) for name, price, address and date | 500 name, 700 price, 400 meta |
 | Hiding the price or control at large text to keep one line | Stack the row; let it grow |
 | Repeating the category heading under the selected tab | Show the heading only for `Tous` |
@@ -703,6 +772,34 @@ Envoyée Confirmée Prête Récupérée
 
 Same tokens and components, denser and more operational. Navigation (**Accueil · Commandes · Catalogue · Magasin**, icons home / receipt / category / storefront) and the order lifecycle UI are unchanged by this direction.
 
+**Accueil (owner home).** One scrolling column, most urgent first, on the same tokens as the customer app:
+
+```
+Accueil
+(48) Bonjour, Karim
+┌ store strip: Menzah Market   ▢ Magasin ouvert ┐   Primary 8% tint when open,
+│ 12 Rue de la Liberté, Tunis                   │   hairline outline when closed
+└────────────────────────────────────────────────┘
+Démarrer votre magasin · 1/2        (until complete)
+À traiter
+┌──────────┬──────────┬──────────────┐   one framed block, three tiles
+│ [ 2 ]    │    2     │      1       │   Citrus only behind a non-zero
+│À confirmer│À préparer│Prêtes à retirer│  "À confirmer"
+└──────────┴──────────┴──────────────┘
+Prochains retraits
+│ 23:42  Leïla Trabelsi        ›│   time rail (18/700) · customer · code ·
+│ lun.   R2D9WA ▢ Prête à retirer│   status badge · "Heure souhaitée passée"
+Stock
+│ ⚠ 2 produits en rupture de stock       › │
+```
+
+- **Hierarchy:** the store strip is flat and quiet; the workload block is the only framed block at the top and the Citrus count the single accent. Section headings are the catalogue's 16/700.
+- **Workload tiles:** number 28/700 tabular, label 12/500; zero recedes to Secondary. Each tile is ≥ 56 px and opens Commandes on that status. Above 1.3× text the tiles stack as rows (number, label, chevron).
+- **Pickups:** time leads (what the owner plans around). Soonest requested time first, confirmed and ready only; pending, cancelled, uncollected and completed are never listed. A past requested time is a Warning note with an icon, never "en retard" (it is not a reservation). Above 1.3× the time goes on its own line over the details.
+- **Stock:** counts of the backend's own verdicts (`OUT_OF_STOCK`, `STOCK_BELOW_MINIMUM`); a Warning icon, no red. With none: `Aucune alerte de stock`. Hidden for a store with no products.
+- **States:** the orders and the products load independently; a failure of one shows a single retry line and never hides the other. Previous numbers stay while refreshing. A store still being set up with no order shows only its checklist.
+- **Not here:** sales, revenue, charts, a store switch.
+
 **Catalogue rows** (store catalogue and picker) follow the same row model as 4.1:
 - one row = thumbnail (`ProductImage`) + text block + one trailing control or status;
 - text: name (up to two lines), brand (caption), one meta line (price per unit, then stock or category and unit, separated by `·`); "Par tranche de …" belongs in the editor;
@@ -710,7 +807,7 @@ Same tokens and components, denser and more operational. Navigation (**Accueil �
 - hairline dividers, no card inside a card, rows grow with text scale and never clip;
 - lists stay lazy and paged.
 
-**Today:** the store catalogue row shows a 56 px thumbnail, name, brand, price per unit, step, stock and status with an availability switch (up to six text lines); the picker shows a 48 px thumbnail, name, brand, `catégorie · unité` and an add icon or `Ajouté` / `Archivé`. Convergence on the single meta line is a Target.
+**Today:** the store catalogue row shows a 56 px thumbnail, name, brand, price per unit, step, stock and status with an availability switch (up to six text lines); the picker shows a **72 px** thumbnail — the whole product (`contain`) on the tinted tile with a hairline edge, the shared placeholder when there is no photo or it fails — then name, brand, `catégorie · unité` and an add icon or `Ajouté` / `Archivé`. Above 1.3× text the thumbnail shrinks to 48 px (it is not hidden) and `Ajouté` / `Archivé` moves under the text so the name keeps the width. Convergence on the single meta line is a Target.
 
 ---
 
